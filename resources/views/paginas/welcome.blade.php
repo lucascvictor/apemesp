@@ -97,13 +97,15 @@
                 <div class="jumbotron">
                     
                     <hr>
+                    <img class="img-responsive img-border img-left" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
+                    
                     <a href="/pages/post/{{ $post->id }}" class="" style="color: black;">
                     <h2 class="intro-text text-center"><strong>{{ $post->titulo }}</strong>
                         <br> {{ $post->subtitulo }}
                     </h2>
                     </a>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
+                    
                     <hr class="visible-xs">
                     <p>{{ $post->previa }}</p>
                     <a href="/pages/post/{{ $post->id }}" class=""> Continuar lendo <i class="fa fa-long-arrow-right"> </i></a>
