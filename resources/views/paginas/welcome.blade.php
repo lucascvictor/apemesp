@@ -97,15 +97,16 @@
                 <div class="jumbotron">
                     
                     <hr>
+                    
+                    <a href="/pages/post/{{ $post->id }}" class="" style="color: black;">
                     <h2 class="intro-text text-center"><strong>{{ $post->titulo }}</strong>
                         <br> {{ $post->subtitulo }}
                     </h2>
+                    </a>
                     
                     <img class="img-responsive img-border img-left" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
 
-                    <a href="/pages/post/{{ $post->id }}" class="" style="color: black;">
                     
-                    </a>
                     <hr>
                     
                     <hr class="visible-xs">

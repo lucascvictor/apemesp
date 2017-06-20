@@ -110,11 +110,16 @@ class PagesController extends Controller{
 	{
 		$postRepository = new PostRepository;
         $posts = $postRepository->search($request, 1);
+
         $path = "search?q=" . $request->q;
         $posts->setPath($path);
 
+        $page = new PagesRepository;
+		$tags = $page->getTags();
+
+		unset($page);
         unset($postRepository);
-        return view('paginas.welcome')->with('posts', $posts);
+        return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
 	}
 
 }
