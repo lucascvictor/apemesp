@@ -14,7 +14,6 @@
 - [Laravel File Manager: Unisharp](https://github.com/laravel/dusk)
 - [BestMono File Manager: ]()
 - [Google Mapper Cornford: ]()
-cd ape
 
 
 ### Maintainers:
