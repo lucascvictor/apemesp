@@ -17,7 +17,8 @@ class PostsTableSeeder extends Seeder
                 "id"        => 1,
                 "titulo"    => "Primeiro post de muitos",
                 "subtitulo"     => "Primeiro Post",
-                "id_user" 		=> 2,
+                "id_user" 		=> 304,
+                "previa" => "",
                 "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
@@ -28,10 +29,10 @@ class PostsTableSeeder extends Seeder
             ],
 
             [
-                "id"        => 2,
+                "id"        => 304,
                 "titulo"    => "ISS para MT em São Paulo inicia novo ciclo",
                 "subtitulo"     => "...",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "Em visita à Secretaria de Finanças e Desenvolvimento Econômico do Município de São Paulo, o MT Gildásio e o ex-estudante de musicoterapia Ricardo Augusto, deram mais um passo para a aquisição do número de cadastro exclusivo de ISS para a atividade de musicoterapia",
                 "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
@@ -62,13 +63,13 @@ class PostsTableSeeder extends Seeder
                 "id"        => 3,
                 "titulo"    => "Inscrição de chapa para eleições biênio",
                 "subtitulo"     => "Apemesp 2016-2018",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "As Eleições para a Diretoria Executiva e Conselho Fiscal realizar-se-ão, conjuntamente, de 02 (dois) em 02 (dois) anos, por chapa completa de candidatos para Assembléia Geral, podendo seus membros ser reeleitos por mais 02 (dois) anos.",
                 "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" =>  '<div id="post-1745" class="post-1745 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2016/02/22/inscricao-de-chapa-para-eleicoes-bienio-2016-2018-apemesp/" rel="bookmark">Inscrição de chapa para eleições biênio 2016-2018&nbsp;APEMESP</a></h2>            
+                                
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2016/02/22/inscricao-de-chapa-para-eleicoes-bienio-2016-2018-apemesp/" title="13:05" rel="bookmark"><span class="entry-date">22/02/2016</span></a>                  <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -103,13 +104,13 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "id"        => 4,
                 "titulo"    => "Chamada para integrar comissão Suas da Apemesp",
                 "subtitulo"     => "...",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "Participe da comissão!",
                 "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" => '<div id="post-1751" class="post-1751 post type-post status-publish format-image hentry category-uncategorized post_format-post-format-image">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2016/02/25/chamada-para-integrar-comissao-suas-da-apemesp/" rel="bookmark">Chamada para integrar comissão Suas da&nbsp;Apemesp</a></h2>          
+                                  
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2016/02/25/chamada-para-integrar-comissao-suas-da-apemesp/" title="12:41" rel="bookmark"><span class="entry-date">25/02/2016</span></a>                     <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -126,13 +127,13 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "id"        => 5,
                 "titulo"    => "Roda de debate FETSuas-SP",
                 "subtitulo"     => "Participação social e controle democrático no SUAS",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "O  Fórum Estadual de Trabalhadoras(es) do SUAS de São Paulo – FETSuas-SP realizará, no próximo dia 12 de março, uma roda de debate sobre o tema Participação social e do controle democrático",
                 "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" =>'<div id="post-1766" class="post-1766 post type-post status-publish format-standard hentry category-uncategorized">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2016/03/02/roda-de-debate-fetsuas-sp/" rel="bookmark">Roda de debate&nbsp;FETSuas-SP</a></h2>            
+                                       
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2016/03/02/roda-de-debate-fetsuas-sp/" title="00:06" rel="bookmark"><span class="entry-date">02/03/2016</span></a>                  <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -170,13 +171,13 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "id"        => 6,
                 "titulo"    => "Encontro Comissão Científica Apemesp",
                 "subtitulo"     => "Para inscrever-se acesse o formulário de inscrição",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "Metodologia cientifica e projetos",
                 "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" => '<div id="post-1778" class="post-1778 post type-post status-publish format-image hentry category-eventos tag-ciencia tag-comissao tag-pesquisa tag-roger tag-seminario post_format-post-format-image">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2016/03/10/encontro-comissao-cientifica-apemesp/" rel="bookmark">Encontro Comissão Científica&nbsp;Apemesp</a></h2>          
+                                  
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2016/03/10/encontro-comissao-cientifica-apemesp/" title="17:57" rel="bookmark"><span class="entry-date">10/03/2016</span></a>                   <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -194,13 +195,13 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "id"        => 7,
                 "titulo"    => "Diretoria e colaboradores se encontram para diálogo",
                 "subtitulo"     => "...",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "Nesse último domingo, 17 de março, a diretoria juntamente com os colaboradores das Comissões se reuniram para delimitar e planejar ações para esse ano",
                 "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" => '<div id="post-1807" class="post-1807 post type-post status-publish format-standard hentry category-eventos tag-colaboradores tag-comissoes tag-reuniao">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2016/03/17/diretoria-e-colaboradores-se-encontram-para-dialogo/" rel="bookmark">Diretoria e colaboradores se encontram para&nbsp;diálogo</a></h2>            
+                                      
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2016/03/17/diretoria-e-colaboradores-se-encontram-para-dialogo/" title="14:35" rel="bookmark"><span class="entry-date">17/03/2016</span></a>                    <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -234,13 +235,13 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "id"        => 8,
                 "titulo"    => "Lançada a 8ª Edição do JOMESP",
                 "subtitulo"     => "...",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "E nesta edição o leitor poderá acompanhar as novidades da APEMESP na área Social e Comunitária.",
-                "id_destino" => 2,
+                "id_destino" => 304,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" =>'<div id="post-2239" class="post-2239 post type-post status-publish format-standard hentry category-uncategorized">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2017/04/12/lancada-a-8a-edicao-do-jomesp/" rel="bookmark">Lançada a 8ª Edição do&nbsp;JOMESP</a></h2>            
+                                  
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2017/04/12/lancada-a-8a-edicao-do-jomesp/" title="14:44" rel="bookmark"><span class="entry-date">12/04/2017</span></a>                  <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -282,13 +283,13 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "id"        => 9,
                 "titulo"    => "Posicionamento da Diretoria APEMESP sobre a intevenção na Cracolândia",
                 "subtitulo"     => "...",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "",
-                "id_destino" => 2,
+                "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" =>'<div id="post-2263" class="post-2263 post type-post status-publish format-image hentry category-uncategorized post_format-post-format-image">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2017/05/24/posicionamento-da-diretoria-apemesp-sobre-a-intevencao-na-cracolandia/" rel="bookmark">Posicionamento da Diretoria APEMESP sobre a intevenção na&nbsp;Cracolândia</a></h2>            
+                                   
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2017/05/24/posicionamento-da-diretoria-apemesp-sobre-a-intevencao-na-cracolandia/" title="23:53" rel="bookmark"><span class="entry-date">24/05/2017</span></a>                  <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -305,14 +306,14 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "id"        => 10,
                 "titulo"    => "Adeus Mary Priestley",
                 "subtitulo"     => "...",
-                "id_user"       => 2,
+                "id_user"       => 304,
                 "previa" => "Os céus, nesta semana, a Musicoterapia preenche o espaço celeste de música",
-                "id_destino" => 2,
+                "id_destino" => 1,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
 
-        '<div id="post-2275" class="post-2275 post type-post status-publish format-standard hentry category-uncategorized">
-                            <h2 class="entry-title"><a href="https://apemesp.wordpress.com/2017/06/16/adeus-mary-priestley/" rel="bookmark">Adeus Mary Priestley</a></h2>           
+                'body' => '<div id="post-2275" class="post-2275 post type-post status-publish format-standard hentry category-uncategorized">
+                                     
             <div class="entry-meta">
                                     <span class="meta-prep meta-prep-author">Publicado em</span> <a href="https://apemesp.wordpress.com/2017/06/16/adeus-mary-priestley/" title="18:36" rel="bookmark"><span class="entry-date">16/06/2017</span></a>                   <span class="by-author"><span class="sep">por</span> <span class="author vcard"><a class="url fn n" href="https://apemesp.wordpress.com/author/apemesp/" title="Ver todos posts por apemesp" rel="author">apemesp</a></span> </span>                            </div><!-- .entry-meta -->
 
@@ -341,7 +342,7 @@ Informações sobre data e local serão divulgados posteriormente.</p>
             ],
 
             [
-                "id"        => 2,
+                "id"        => 304,
                 "total_visitas"    => 0,
 
             ],
