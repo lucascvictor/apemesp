@@ -1,7 +1,7 @@
  <!-- SIDEBAR -->
           <div class="sidebar" style="margin-top: 70px;">
             <?php $pagina = $_SERVER['PHP_SELF']; //captura a pagina atual para posterior comparação ?>
-
+            <?php dd($pagina) ?>
             @if($pagina == '/' || $pagina == '/index.php')
               <a href="" class="btn btn-primary">
                 <i class="chatter-bubble"></i> 
