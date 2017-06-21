@@ -79,7 +79,7 @@
 			<div class="col-md-10">
 
 			<div class="fb-share-button" 
-			    data-href="<?= $server . $endereco ?>" 
+			    
 			    data-layout="button_count">
   			</div>
 
