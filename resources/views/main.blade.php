@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    @yield('metatags')
     @include('partials._head')
     @yield('extrastyle')
 <style type="text/css">

@@ -1,14 +1,6 @@
 
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:url" content="https://www.facebook.com/apemesp/?fref=ts">
-    <meta property="og:type" content="APEMESP">
-    <meta property="og:title" content="APEMESP">
-    <meta property="og:description" content="APEMESP">
-    <meta property="og:image" content="https://scontent.fcgh13-1.fna.fbcdn.net/v/t1.0-9/387072_414145685315818_721808127_n.jpg?oh=ffdaba36a54bcc65c89996c142748e31&amp;oe=594976FC">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>APEMESP | Home</title>
 
     <!-- Bootstrap -->
