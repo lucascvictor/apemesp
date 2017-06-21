@@ -98,7 +98,7 @@ class DadosPessoaisRepository
 	public function fotoUpdate($cpf)
 	{
 		DadosPessoais::where('cpf', $cpf)->update([
-            'foto' => "ok",
+            'foto' => "foto.jpg",
             ]);
 	}
 
@@ -124,5 +124,11 @@ class DadosPessoaisRepository
             'updated_at' => $this->getData()
                 ]);
 	}
+
+
+    public function getCpf($id)
+    {
+        return DadosPessoais::where('id_user', $id)->select('cpf')->get();
+    }
 
 }

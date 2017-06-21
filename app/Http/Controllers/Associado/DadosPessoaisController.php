@@ -118,7 +118,7 @@ class DadosPessoaisController extends Controller{
 
             if ($request->file('foto') !== null ) {//verifica se a foto foi alterada
             
-            $arquivo = $request->file('foto');
+
             $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf ;
             $nomeArquivo = 'foto'  . "." . $request->file('foto')->getClientOriginalExtension();
 
@@ -154,7 +154,7 @@ class DadosPessoaisController extends Controller{
     public function dadospessoaisUpdate(Request $request, $id)
     {
         $associado = new Associado;
-        $verificacao = $associado->verificaCPF($request->cpf);
+        $verificacao = $associado->verificaCPFUpdate($request->cpf, $id);
         unset($associado);
 
         if($verificacao == false){

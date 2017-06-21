@@ -1,5 +1,7 @@
 
+<?php use App\Apemesp\Repositories\Associado\DadosPessoaisRepository; ?>
 
+<?php $dp = new DadosPessoaisRepository?>
 
 <!-- LOGOTIPO MOBILE -->
 <div class="logotipo_mobile">
@@ -31,9 +33,9 @@
       {{  Html::image('images/perfis/redator.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
 
       @else
-
+      <?php $cpf = $dp->getCpf(Auth::user()->id); ?>
       <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Associado</p></a>
-      {{  Html::image('files/' . Auth::user()->id . '/' . Auth::user()->id . '.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
+      {{  Html::image('files/' . $cpf[0]->cpf . '/' . 'foto.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
       @endif
 
       <a href="{{ url('/logout')}}" title="Sair">Sair</a>
@@ -107,7 +109,7 @@
         <li><a href="{{ url('/encontreummt') }}"> Encontre um MT</a></li>
 
         <li><a href="{{ url('/contato/mensagens') }}">Contato</a></li>
-       
+      
         
       </ul>
       </div>
