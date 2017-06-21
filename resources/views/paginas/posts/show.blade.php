@@ -15,10 +15,11 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{{ $post[0]->titulo  }}" />
     <meta property="og:description"   content="{{ $post[0]->subtitulo  }}" />
-    <meta property="og:image"         content="{{ url('/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }} " />
-    <meta property="og:image:type" content="image/jpeg">
-	<meta property="og:image:width" content="800"> 
-	<meta property="og:image:height" content="600">
+    <meta property="og:image"         content="{{ url('/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }}" />
+    <meta property="og:image:type" 	  content="image/jpeg">
+	<meta property="og:image:width"   content="800"> 
+	<meta property="og:image:height"  content="600">
+	<meta property="fb:app_id"        content="174472043066729"/>
 
 
 
