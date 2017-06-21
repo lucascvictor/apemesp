@@ -29,7 +29,7 @@ class PostsTableSeeder extends Seeder
             ],
 
             [
-                "id"        => 304,
+                "id"        => 2,
                 "titulo"    => "ISS para MT em São Paulo inicia novo ciclo",
                 "subtitulo"     => "...",
                 "id_user"       => 304,
@@ -237,7 +237,7 @@ Informações sobre data e local serão divulgados posteriormente.</p>
                 "subtitulo"     => "...",
                 "id_user"       => 304,
                 "previa" => "E nesta edição o leitor poderá acompanhar as novidades da APEMESP na área Social e Comunitária.",
-                "id_destino" => 304,
+                "id_destino" => 2,
                 "imagem_previa" => "apemesp.jpg",
                 "id_tag"        => 1,
                 "body" =>'<div id="post-2239" class="post-2239 post type-post status-publish format-standard hentry category-uncategorized">

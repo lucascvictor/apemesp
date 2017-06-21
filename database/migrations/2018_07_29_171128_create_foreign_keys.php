@@ -141,7 +141,7 @@ class CreateForeignKeys extends Migration
         });
 
         Schema::table('dados_profissionais', function (Blueprint $table) {
-            $table->dropForeign('dados_profissionais_id_users_foreign');
+            $table->dropForeign('dados_profissionais_id_user_foreign');
         });
 
         Schema::table('dados_pessoais', function (Blueprint $table) {

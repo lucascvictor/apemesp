@@ -33,6 +33,7 @@ Route::group(['prefix' => 'jomesp'], function () {
 	Route::get('', 'Jomesp\JomespController@getIndex')->name('jomesp.index');
 	Route::get('/contato', 'Jomesp\JomespController@getContato')->name('jomesp.contato');
 	Route::get('/edicoes', 'Jomesp\JomespController@getEdicoes')->name('jomesp.edicoes');
+	Route::get('/pages/post/{id}', 'Jomesp\JomespController@getPost');
 });
 
 Route::group(['prefix' => 'musicoterapia'], function () {
@@ -106,7 +107,7 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::group(['prefix' => 'posts'], function () {
 		Route::get('', 'Admin\PostController@index');
 		Route::get('/create', 'Admin\PostController@create');
-		Route::post('/store', 'Admin\PostController@store');
+		Route::post('/store', 'Admin\PostController@store')->name('posts.store');
 		Route::get('/show/{id}', 'Admin\PostController@show');
 		Route::get('/edit/{id}', 'Admin\PostController@edit');
 		Route::post('/update/{id}', 'Admin\PostController@update');

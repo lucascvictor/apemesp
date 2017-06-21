@@ -13,8 +13,9 @@
 
 
 
-      @include('partials._javascript')
+      @include('partials.jomesp._javascript')
       @yield('extrascript')
+      @include('partials.jomesp._footer')
     </body>
     
 </html>

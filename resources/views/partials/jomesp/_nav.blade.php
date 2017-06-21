@@ -18,9 +18,7 @@
                     <li>
                         <a href="{{ url('/jomesp')}}">Inicio</a>
                     </li>
-                    <li>
-                        <a href="{{ url('/')}} ">APEMESP</a>
-                    </li>
+                   
                     <li>
                         <a href="about.html">Sobre Nós</a>
                     </li>
@@ -29,6 +27,9 @@
                     </li>
                     <li>
                         <a href="{{ url('/jomesp/contato')}}">Contato</a>
+                    </li>
+                     <li>
+                        <a href="{{ url('/')}} ">APEMESP</a>
                     </li>
                 </ul>
             </div>

@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->integer('id_user')->unsigned();
             $table->integer('id_tag')->unsigned();
             $table->integer('id_destino')->unsigned();
-            $table->string('imagem_previa')->defatul('apemesp.png');
+            $table->string('imagem_previa')->defatul('apemesp.png')->nullable();
             $table->text('previa')->nullable();
             $table->text('body');
             $table->timestamps();
