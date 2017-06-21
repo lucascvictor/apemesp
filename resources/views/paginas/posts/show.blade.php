@@ -15,7 +15,7 @@
     <meta property="og:type"          content="APEMESP" />
     <meta property="og:title"         content="{{ $post[0]->titulo  }}" />
     <meta property="og:description"   content="{{ $post[0]->subtitulo  }}" />
-    <meta property="og:image"         content=" {{ url('/public/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }} " />
+    <meta property="og:image"         content=" {{ url('/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }} " />
 
 
 
