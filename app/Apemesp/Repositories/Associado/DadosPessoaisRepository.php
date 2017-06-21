@@ -82,7 +82,9 @@ class DadosPessoaisRepository
             $dadosPessoais->tel_comercial = $request->tel_comercial;
             $dadosPessoais->tel_celular = $request->tel_celular;
             $dadosPessoais->tel_residencial = $request->tel_residencial;
+
             $dadosPessoais->save();
+
 
         //Alterar o status de cadastros do associado
             

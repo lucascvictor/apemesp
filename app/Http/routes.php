@@ -12,40 +12,44 @@
 |
 */
 
+Route::get('/', 'Apemesp\PagesController@getIndex')->name('apemesp.index');
 Route::post('/send', 'Emails\EmailController@send')->name('jomesp.email.send');
-Route::get('/jomesp', 'Jomesp\JomespController@getIndex')->name('jomesp.index');
-Route::get('/jomesp/contato', 'Jomesp\JomespController@getContato')->name('jomesp.contato');
-Route::get('/jomesp/edicoes', 'Jomesp\JomespController@getEdicoes')->name('jomesp.edicoes');
 Route::get('/contato/localizacao', 'Apemesp\ContatoController@getLocalizacao')->name('jomesp.localizacao');
 Route::get('/contato/mensagens', 'Apemesp\ContatoController@getMensagens')->name('contato.mensagens');
+Route::get('/sobre', 'Apemesp\PagesController@getSobre')->name('apemesp.sobre');
+Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
 
 
-Route::get('sobre', 'Apemesp\PagesController@getSobre')->name('apemesp.sobre');
-Route::get('/', 'Apemesp\PagesController@getIndex')->name('apemesp.index');
+Route::group(['prefix' => 'apemesp'], function () {
+	Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');
+	Route::get('/estatuto', 'Apemesp\PagesController@getEstatuto')->name('apemesp.estatuto');
+	Route::get('/acoes', 'Apemesp\PagesController@getAcoes')->name('apemesp.acoes');
+	Route::get('/comissoes', 'Apemesp\PagesController@getComissoes')->name('apemesp.comissoes');
+	Route::get('/search', 'Apemesp\PagesController@search')->name('apemesp.search');
+});
 
-Route::get('/apemesp/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');
-Route::get('/apemesp/estatuto', 'Apemesp\PagesController@getEstatuto')->name('apemesp.estatuto');
-Route::get('/apemesp/acoes', 'Apemesp\PagesController@getAcoes')->name('apemesp.acoes');
-Route::get('/apemesp/comissoes', 'Apemesp\PagesController@getComissoes')->name('apemesp.comissoes');
-Route::get('/apemesp/search', 'Apemesp\PagesController@search')->name('apemesp.search');
 
+Route::group(['prefix' => 'jomesp'], function () {
+	Route::get('', 'Jomesp\JomespController@getIndex')->name('jomesp.index');
+	Route::get('/contato', 'Jomesp\JomespController@getContato')->name('jomesp.contato');
+	Route::get('/edicoes', 'Jomesp\JomespController@getEdicoes')->name('jomesp.edicoes');
+});
 
-Route::get('/musicoterapia/oquee', 'Apemesp\MusicoterapiaController@getOque')->name('apemesp.musicoterapia.oquee');
-Route::get('/musicoterapia/formacao', 'Apemesp\MusicoterapiaController@getFormacao')->name('apemesp.musicoterapia.formacao');
-Route::get('/musicoterapia/conquistas', 'Apemesp\MusicoterapiaController@getConquistas')->name('apemesp.musicoterapia.conquistas');
-Route::get('/musicoterapia/literatura', 'Apemesp\MusicoterapiaController@getLiteratura')->name('apemesp.musicoterapia.literatura');
-Route::get('/musicoterapia/literatura/indicacao', 'Apemesp\MusicoterapiaController@getIndicacao')->name('apemesp.musicoterapia.indicacao');
-Route::get('/musicoterapia/linhadotempo', 'Apemesp\MusicoterapiaController@getLinhaDoTempo')->name('apemesp.musicoterapia.linhadotempo');
+Route::group(['prefix' => 'musicoterapia'], function () {
+	Route::get('/oquee', 'Apemesp\MusicoterapiaController@getOque')->name('apemesp.musicoterapia.oquee');
+	Route::get('/formacao', 'Apemesp\MusicoterapiaController@getFormacao')->name('apemesp.musicoterapia.formacao');
+	Route::get('/conquistas', 'Apemesp\MusicoterapiaController@getConquistas')->name('apemesp.musicoterapia.conquistas');
+	Route::get('/literatura', 'Apemesp\MusicoterapiaController@getLiteratura')->name('apemesp.musicoterapia.literatura');
+	Route::get('/literatura/indicacao', 'Apemesp\MusicoterapiaController@getIndicacao')->name('apemesp.musicoterapia.indicacao');
+	Route::get('/linhadotempo', 'Apemesp\MusicoterapiaController@getLinhaDoTempo')->name('apemesp.musicoterapia.linhadotempo');
+
+});
 
 
 Route::get('/agenda', 'Apemesp\AgendaController@getAgenda')->name('apemesp.agenda');
 Route::get('/encontreummt', 'Apemesp\EncontreUmMtController@getIndex')->name('apemesp.encontreummt');
 
-Route::resource('posts', 'Admin\PostController');
-Route::post('posts/{id}', 'Admin\PostController@update');
-Route::get('post/{id}', 'Admin\PostController@update');
-Route::get('posts/destroy/{id}', 'Admin\PostController@destroy');
-Route::get('posts/search', 'Admin\PostController@search')->name('posts.search');
+
 
 
 //Rotas de autenticação
@@ -63,84 +67,94 @@ Route::auth();
 
 
 Route::get('/home', 'Apemesp\HomeController@index');
-Route::get('/admin', 'Admin\AdminController@index')->name('admin');
 
-Route::get('/admin/usuarios', 'Admin\UsuarioController@index');
-Route::get('/admin/usuarios/search', 'Admin\UsuarioController@search');
+Route::group(['prefix' => 'admin'], function () {
 
-Route::get('/admin/associados', 'Admin\AssociadoController@index')->name('admin.associados');
-Route::get('/admin/associados/search', 'Admin\AssociadoController@search')->name('associados.search');
-Route::get('/admin/associados/perfil/{id}', 'Admin\AssociadoController@getPerfil');
-Route::get('/admin/associados/perfil/editar/{id}', 'Admin\AssociadoController@editPerfil');
+	Route::get('', 'Admin\AdminController@index')->name('admin');
 
-Route::get('/admin/paginas', 'Admin\AdminController@getPaginas')->name('paginas.show');
-Route::get('/admin/paginas/edit/{id}', 'Admin\AdminController@editPagina')->name('pagina.edit');
-Route::post('/admin/paginas/update/{id}', 'Admin\AdminController@updatePagina')->name('pagina.update');
-Route::get('/admin/paginas/adicionar/literatura', 'Admin\PaginasController@addLiteratura');
-Route::get('/admin/paginas/adicionar/conquista', 'Admin\PaginasController@addConquista');
-Route::get('/admin/paginas/adicionar/formacao', 'Admin\PaginasController@addFormacao');
-Route::get('/admin/paginas/adicionar/comissao', 'Admin\PaginasController@addComissao');
-Route::get('/admin/paginas/adicionar/membro', 'Admin\PaginasController@addMembro');
+	Route::group(['prefix' => 'usuarios'], function () {
+		Route::get('', 'Admin\UsuarioController@index');
+		Route::get('/search', 'Admin\UsuarioController@search');
+	});
+
+	Route::group(['prefix' => 'associados'], function () {
+		Route::get('', 'Admin\AssociadoController@index')->name('admin.associados');
+		Route::get('/search', 'Admin\AssociadoController@search')->name('associados.search');
+		Route::get('/perfil/{id}', 'Admin\AssociadoController@getPerfil');
+		Route::get('/perfil/editar/{id}', 'Admin\AssociadoController@editPerfil');
+	});
+
+	Route::group(['prefix' => 'paginas'], function () {
+		Route::get('', 'Admin\AdminController@getPaginas')->name('paginas.show');
+		Route::get('/edit/{id}', 'Admin\AdminController@editPagina')->name('pagina.edit');
+		Route::post('/update/{id}', 'Admin\AdminController@updatePagina')->name('pagina.update');
+		Route::get('/adicionar/literatura', 'Admin\PaginasController@addLiteratura');
+		Route::get('/adicionar/conquista', 'Admin\PaginasController@addConquista');
+		Route::get('/adicionar/formacao', 'Admin\PaginasController@addFormacao');
+		Route::get('/adicionar/comissao', 'Admin\PaginasController@addComissao');
+		Route::get('/adicionar/membro', 'Admin\PaginasController@addMembro');
+	});
+
+	Route::group(['prefix' => 'configs'], function () {
+		Route::get('', 'Admin\ConfigsController@index')->name('configs');
+		Route::get('/addassunto', 'Admin\ConfigsController@getAssunto')->name('add.assunto');
+		Route::post('/addassunto', 'Admin\ConfigsController@setAssunto')->name('store.assunto');
+	});
+
+	Route::get('/financeiro', 'Admin\FinanceiroController@index');
+
+	Route::group(['prefix' => 'posts'], function () {
+		Route::get('', 'Admin\PostController@index');
+		Route::get('/create', 'Admin\PostController@create');
+		Route::post('/store', 'Admin\PostController@store');
+		Route::get('/show/{id}', 'Admin\PostController@show');
+		Route::get('/edit/{id}', 'Admin\PostController@edit');
+		Route::post('/update/{id}', 'Admin\PostController@update');
+		Route::get('destroy/{id}', 'Admin\PostController@destroy');
+		Route::get('/search', 'Admin\PostController@search')->name('posts.search');
+		Route::resource('posts', 'Admin\PostController');
+		Route::post('{id}', 'Admin\PostController@update');
+		Route::get('{id}', 'Admin\PostController@update');
+	});
 
 
-
-
-
-Route::get('/admin/configs', 'Admin\ConfigsController@index')->name('configs');
-Route::get('/admin/configs/addassunto', 'Admin\ConfigsController@getAssunto')->name('add.assunto');
-Route::post('/admin/configs/addassunto', 'Admin\ConfigsController@setAssunto')->name('store.assunto');
-
-Route::get('/admin/financeiro', 'Admin\FinanceiroController@index');
-
-//Posts
-Route::get('/admin/posts/', 'Admin\PostController@index');
-Route::get('/admin/posts/create', 'Admin\PostController@create');
-Route::post('/admin/posts/store', 'Admin\PostController@store');
-Route::get('/admin/posts/show/{id}', 'Admin\PostController@show');
-Route::get('/admin/posts/edit/{id}', 'Admin\PostController@edit');
-Route::post('/admin/posts/update/{id}', 'Admin\PostController@update');
-Route::post('/admin/posts/delete/{id}', 'Admin\PostController@destroy');
-Route::get('/admin/posts/search', 'Admin\PostController@search')->name('posts.search');
-
-
-//Post da pagina principal
-
-Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
-
-
-
-
-//Associados
-
-
-//Dados Pessoais
-Route::get('/associado/dadospessoais/', 'Associado\DadosPessoaisController@getDadosPessoais');
-Route::post('/associado/dadospessoais/', 'Associado\DadosPessoaisController@storeDadosPessoais')->name('dadospessoais');
-Route::post('/associado/dadospessoais/{id}', 'Associado\DadosPessoaisController@dadospessoaisUpdate')->name('dadospessoais.update');
-Route::post('/associado/foto/{cpf}', 'Associado\DadosPessoaisController@fotoUpdate')->name('foto.update');
-Route::get('/associado/ajax/{idEstado}', 'Associado\AssociadoController@getCidades'); //retorna as cidades recebendo o id do estado
-
-//Dados Academicos
-Route::get('/associado/dadosacademicos/', 'Associado\DadosAcademicosController@getDadosAcademicos')->name('dadosacademicos'); //Primeiro form para cadastro
-Route::post('/associado/dadosacademicos/', 'Associado\DadosAcademicosController@storeDadosAcademicos')->name('formacao.store'); //Salvar os dados do Primeiro contato
-
-Route::post('/associado/dadosacademicos/categoria', 'Associado\DadosAcademicosController@storeCategoria')->name('formacao.store.categoria'); //Salvar os dados do Primeiro contato
-
-Route::get('/associado/formacao/edit/{id}', 'Associado\DadosAcademicosController@editFormacao')->name('formacao.edit'); //Editar formação recebendo o id especifico
-Route::post('/associado/formacao/update/{id}', 'Associado\DadosAcademicosController@updateFormacao')->name('formacao.update'); //Atualiza formação recebendo o id especifico
-
-Route::get('/associado/formacao/{id}', 'Associado\DadosAcademicosController@showFormacao')->name('formacao.show');
-
-Route::get('/associado/download/{arquivo}', 'Associado\AssociadoController@getDownload')->name('download');
-
-//Dados Profissionais
-Route::get('/associado/dadosprofissionais/', 'Associado\DadosProfissionaisController@getDadosProfissionais');
+});
 
 
 
-//Documentação
-Route::get('/associado/documentacao/', 'Associado\DocumentacaoController@getIndex');
+Route::group(['prefix' => 'associado'], function () {
+
+	Route::group(['prefix' => 'dadospessoais'], function () {
+		Route::get('', 'Associado\DadosPessoaisController@getDadosPessoais');
+		Route::post('', 'Associado\DadosPessoaisController@storeDadosPessoais')->name('dadospessoais');
+		Route::post('/{id}', 'Associado\DadosPessoaisController@dadospessoaisUpdate')->name('dadospessoais.update');
+	});
+
+	Route::post('/foto/{cpf}', 'Associado\DadosPessoaisController@fotoUpdate')->name('foto.update');
+	Route::get('/ajax/{idEstado}', 'Associado\AssociadoController@getCidades'); //retorna as cidades recebendo o id do estado
+
+	Route::group(['prefix' => 'dadosacademicos'], function () {
+		Route::get('', 'Associado\DadosAcademicosController@getDadosAcademicos')->name('dadosacademicos'); //Primeiro form para cadastro
+		Route::post('', 'Associado\DadosAcademicosController@storeDadosAcademicos')->name('formacao.store'); //Salvar os dados do Primeiro contato
+		Route::post('/categoria', 'Associado\DadosAcademicosController@storeCategoria')->name('formacao.store.categoria'); //Salvar os dados do Primeiro contato
+	});
+
+	Route::get('/formacao/edit/{id}', 'Associado\DadosAcademicosController@editFormacao')->name('formacao.edit'); //Editar formação recebendo o id especifico
+	Route::post('/formacao/update/{id}', 'Associado\DadosAcademicosController@updateFormacao')->name('formacao.update'); //Atualiza formação recebendo o id especifico
+
+	Route::get('/formacao/{id}', 'Associado\DadosAcademicosController@showFormacao')->name('formacao.show');
+
+	Route::get('/download/{arquivo}', 'Associado\AssociadoController@getDownload')->name('download');
+
+	//Dados Profissionais
+	Route::get('/dadosprofissionais/', 'Associado\DadosProfissionaisController@getDadosProfissionais');
 
 
-//Financeiro do Associado
-Route::get('/associado/financeiro/', 'Associado\FinanceiroController@getIndex');
+
+	//Documentação
+	Route::get('/documentacao/', 'Associado\DocumentacaoController@getIndex');
+
+
+	//Financeiro do Associado
+	Route::get('/financeiro/', 'Associado\FinanceiroController@getIndex');
+});

@@ -23,7 +23,7 @@
         border-color: #008B8B;
       }
 
-</style>
+    </style>
 
  <!-- Para estilos especificos da p�gina -->
    
