@@ -77,8 +77,10 @@
 			<div class="row">
 			<div class="col-md-10">
 
-			<div id="shareBtn" class="btn btn-primary clearfix"><i class="fa fa-facebook"></i>  Compartilhar</div>
-			</div>
+			<div class="fb-share-button" 
+			    data-href="<?= $server . $endereco ?>" 
+			    data-layout="button_count">
+  			</div>
 
 
 			@include('paginas.posts.comentarios');
@@ -93,40 +95,13 @@
 
 @section('extrascript')
 
-<script>
-
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '174472043066729',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/pt_BR/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-
-
-  document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'share_open_graph',
-    action_type: 'og.likes',
-    action_properties: JSON.stringify({
-    object:'<?php echo "http://" . $server . $endereco;?>',
-  }),
-    display: 'popup',
-    href: '<?php echo "http://" . $server . $endereco;?>',
-  }, function(response){});
-}
-
-
-</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9&appId=174472043066729";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 @endsection
