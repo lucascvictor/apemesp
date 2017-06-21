@@ -11,7 +11,7 @@ class EspecialidadeTableSeeder extends Seeder
      */
     public function run()
     {
-        php artiDB::table('especialidades')->delete();
+        DB::table('especialidades')->delete();
         DB::table("especialidades")->insert([
             [
                 "id"      	=> 1,
@@ -22,7 +22,7 @@ class EspecialidadeTableSeeder extends Seeder
                 "id"      	=> 2,
                 "nome"    	=> "Musicoterapia para doenças mentais",
                 "descricao" => "asd",
-            ]
+            ],
          
         ]);
     }
