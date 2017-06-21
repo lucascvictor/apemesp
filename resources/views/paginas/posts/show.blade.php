@@ -10,7 +10,7 @@
 	  $endereco = $_SERVER ['REQUEST_URI'];
 	?>
 
-	
+
     <meta charset="utf-8">
 	<meta property="og:url"           content="<?php echo "http://" . $server . $endereco;?>" />
     <meta property="og:type"          content="website" />
@@ -20,7 +20,6 @@
     <meta property="og:image:type" 	  content="image/jpeg">
 	<meta property="og:image:width"   content="800"> 
 	<meta property="og:image:height"  content="600">
-	<meta property="fb:app_id"        content="174472043066729"/>
 
 
 @endsection
