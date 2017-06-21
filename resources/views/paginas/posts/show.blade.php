@@ -12,6 +12,7 @@
 
 
     <meta charset="utf-8">
+    <meta property="fb:app_id" content="174472043066729"/>
 	<meta property="og:url"           content="<?php echo "http://" . $server . $endereco;?>" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{{ $post[0]->titulo  }}" />
