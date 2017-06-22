@@ -3,8 +3,9 @@
   <head>
     @yield('metatags')
     @include('partials._head')
+    
     @yield('extrastyle')
-<style type="text/css">
+  <style type="text/css">
   .borda{
 
     border-radius: solid;
@@ -19,9 +20,10 @@
     }
 
 
-</style>
+  </style>
+
   {!! Html::script('js/bootstrap-typeahead.js') !!}
-</script>
+
   </head>
 
     <body style="background-color: #dbe3e9" id="app-layout">
