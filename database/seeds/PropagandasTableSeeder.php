@@ -24,6 +24,16 @@ class PropagandasTableSeeder extends Seeder
                 "updated_at"    => $data,
 
             ],
+             [
+                "id"        => 2,
+                "imagem"    => "imagem - 2017-07-04 19:28:00.jpg",
+                "link"    => "http://facebook.com/lucas.c.victor",
+                "frase"    => "Luke AD",
+                "titulo"    => "Lukes's ADSense",
+                "created_at"    => $data,
+                "updated_at"    => $data,
+
+            ],
 
         ]);
     }

@@ -21,8 +21,9 @@
                 
                 <a href="{{ $propaganda->link }}">
                   {{  Html::image('images/propagandas/' . $propaganda->imagem,  '', array('style' => 'width: 100%; height: 150px;')) }}
-                </a>
+                
                 {{ $propaganda->titulo}}
+                </a>
                 <hr>
               @endforeach
           </ul>
