@@ -1,7 +1,7 @@
 
 <?php use App\Apemesp\Repositories\Associado\DadosPessoaisRepository; ?>
 
-<?php $dp = new DadosPessoaisRepository?>
+<?php $dp = new DadosPessoaisRepository; ?>
 
 <!-- LOGOTIPO MOBILE -->
 <div class="logotipo_mobile">

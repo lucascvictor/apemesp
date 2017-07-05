@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EspecialidadeTableSeeder::class);
         $this->call(ProximidadeGeograficaTableSeeder::class);
         $this->call(LiteraturaTableSeeder::class);
+        $this->call(PropagandasTableSeeder::class);
     	
     }
 }
