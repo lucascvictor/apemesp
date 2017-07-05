@@ -51,6 +51,11 @@ public function getEdicoes()
     return view('jomesp.edicoes');
 }
 
+public function getSobre()
+{
+    return view('jomesp.sobre');
+}
+
 public function getPost($id)
 {
 

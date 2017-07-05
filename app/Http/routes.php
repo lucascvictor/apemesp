@@ -33,6 +33,7 @@ Route::group(['prefix' => 'jomesp'], function () {
     Route::get('', 'Jomesp\JomespController@getIndex')->name('jomesp.index');
     Route::get('/contato', 'Jomesp\JomespController@getContato')->name('jomesp.contato');
     Route::get('/edicoes', 'Jomesp\JomespController@getEdicoes')->name('jomesp.edicoes');
+    Route::get('/sobre', 'Jomesp\JomespController@getSobre')->name('jomesp.sobre');
     Route::get('/pages/post/{id}', 'Jomesp\JomespController@getPost');
 });
 

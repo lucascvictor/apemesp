@@ -20,7 +20,7 @@
                     </li>
                    
                     <li>
-                        <a href="about.html">Sobre Nós</a>
+                        <a href="{{ url('/jomesp/sobre')}}">Sobre Nós</a>
                     </li>
                     <li>
                         <a href="{{ url('/jomesp/edicoes')}}">Edições</a>
