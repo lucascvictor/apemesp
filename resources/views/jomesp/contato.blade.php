@@ -34,7 +34,7 @@
                                 <input type="email" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
-                                <label>Telefone/label>
+                                <label>Telefone</label>
                                 <input type="tel" class="form-control">
                             </div>
                             <div class="clearfix"></div>
