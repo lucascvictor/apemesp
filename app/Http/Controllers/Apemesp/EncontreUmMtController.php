@@ -17,6 +17,10 @@ class EncontreUmMtController extends Controller{
          View::composers([
             'App\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
         ]);
+
+         View::composers([
+            'App\Composers\PropagandasComposer'  => ['partials._sidebar'] 
+        ]);
      }
 
     public function getIndex(){
