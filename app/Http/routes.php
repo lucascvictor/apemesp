@@ -108,7 +108,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/store', 'Admin\PostController@store')->name('posts.store');
         Route::get('/show/{id}', 'Admin\PostController@show')->name('posts.show');
         Route::get('/edit/{id}', 'Admin\PostController@edit')->name('posts.edit');
-        Route::post('/update/{id}', 'Admin\PostController@update');
+        Route::post('/update/{id}', 'Admin\PostController@update')->name('posts.update');
         Route::get('destroy/{id}', 'Admin\PostController@destroy');
         Route::get('/search', 'Admin\PostController@search')->name('posts.search');
         Route::resource('posts', 'Admin\PostController');
