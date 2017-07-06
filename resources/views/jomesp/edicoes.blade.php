@@ -12,22 +12,43 @@
 
     
 
-    <div class="container">
+<div class="container">
 
         <div class="row">
-            <div class="box">
-                <div class="col-lg-12 text-center">
-                    <div id="carousel-example-generic" class="carousel slide">
+            <div class="box jumbotron">
+                <div class="col-lg-12" style="padding: 3%; background-color: #E8E0DA;">
+                    <hr>
+                    <h2 class="intro-text text-center">N Edição
+                        <strong>JoMESP</strong>
+                    </h2>
+                    <hr>
+                    <h3> Titulo da Edição </h4>
 
-<iframe width="800px" height="400px" src="https://www.yumpu.com/pt/embed/view/2OUSxcPbIwFNYK9H" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe>
-<hr>
-<br />
-<a href="https://yumpu.com/pt/embed/view/2OUSxcPbIwFNYK9H" target="_blank"> Abrir em tela cheia</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+                    <p> Ler online: Link</p>
+                    <p> Download: Link</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box jumbotron">
+                <div class="col-lg-12" style="padding: 3%; background-color: #E8E0DA;">
+                    <hr>
+                    <h2 class="intro-text text-center">N Edição
+                        <strong>JoMESP</strong>
+                    </h2>
+                    <hr>
+                    <h3> Titulo da Edição </h4>
+
+                    <p> Ler online: Link</p>
+                    <p> Download: Link</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 
