@@ -18,7 +18,7 @@
               @foreach($propagandas as $propaganda)
                 
                 <a href="{{ $propaganda->link }}">
-                  {{  Html::image('images/propagandas/' . $propaganda->imagem,  '', array('style' => 'width: 100%; height: 150px;')) }}
+                  {{  Html::image('images/propagandas/' . $propaganda->imagem,  '', array('style' => 'width: 100%; height: 250px;')) }}
                 
                 {{ $propaganda->titulo}}
                 </a>

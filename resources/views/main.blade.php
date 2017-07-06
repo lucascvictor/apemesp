@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metatags')
 
     @include('partials._head')
@@ -31,7 +32,7 @@
 
       @include('partials._nav')
 
-         <div  class="container mobile" style="padding-top: 22%;">
+         <div  class="container" style="padding-top: 22%;">
 
 
           <div class="row">
