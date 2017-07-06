@@ -29,7 +29,7 @@
 
 @include('partials._mensagens')
 
-		<div class="row">
+		<div class="row" style="background-color: #eff3f5; padding: 5%;">
 			<div class="col-md-10">
 		<fieldset>
 

@@ -35,7 +35,7 @@
     margin: 0 auto 0;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:1000px) {
     .brand {
         display: inherit;
         margin: 0;
@@ -94,7 +94,7 @@
           @if($i == $itens)
                 <br>
                 <br>
-                <div class="jumbotron">
+                <div class="jumbotron" style="background-color: #D6EEFB;">
                     
                     <hr>
                     
@@ -128,9 +128,8 @@
               </div>      
             
           @else
-           <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
+           <div class="jumbotron" style="background-color: #fffefd; padding-bottom: 10%;">
+            
                     <hr>
                     <a href="/pages/post/{{ $post->id }}" class="" style="color: black;">
                     <h2 class="intro-text text-center"><strong>{{ $post->titulo }}</strong>
@@ -151,8 +150,7 @@
                         ?>
                     </div></p>
 
-                </div>
-            </div>
+            
         </div>
           
           <hr>

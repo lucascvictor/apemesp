@@ -1,5 +1,5 @@
  <!-- SIDEBAR -->
-          <div class="sidebar" style="margin-top: 70px;">
+          <div class="sidebar" style= "background-color: #FFFFFF; margin-top: 30px; padding: 5%;">
            
               @yield('categorias')
 

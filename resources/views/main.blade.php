@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     @yield('metatags')
+
     @include('partials._head')
     
     @yield('extrastyle')
@@ -13,7 +14,7 @@
   }
 
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 1000px) {
     .mobile{ 
       padding-top: 0 !important; 
       }
@@ -30,7 +31,7 @@
 
       @include('partials._nav')
 
-         <div  class="container-fluid mobile" style="padding-top: 22%;">
+         <div  class="container mobile" style="padding-top: 22%;">
 
 
           <div class="row">
@@ -58,12 +59,13 @@
            
             </div>
 
-            <div class="col-md-9 col-sm-12 rcol-xl-8 right-column" style=" background-color: #FFFFFF; padding: 30px;">
+            <div class="col-md-9 col-sm-12 rcol-xl-8 right-column mobile" style=" margin-top: 30px; background-color: #eff3f5; padding: 15px;">
+
               @include('partials._mensagens')
               @yield('conteudo')
 
             </div>
-              <div class="col-sm-2 visible-xs">
+              <div class="col-sm-12 visible-sm">
            
             @include('partials._sidebar')
            
