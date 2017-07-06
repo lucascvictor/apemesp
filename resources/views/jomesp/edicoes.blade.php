@@ -22,10 +22,10 @@
                         <strong>JoMESP</strong>
                     </h2>
                     <hr>
-                    <h3> Titulo da Edição </h4>
+                    <h3> Titulo da Edição - Data de publicação</h4>
 
-                    <p> Ler online: Link</p>
-                    <p> Download: Link</p>
+                    <p> Ler online: <a>Link</a></p>
+                    <p> Download: <a>Link</a></p>
 
                 </div>
             </div>

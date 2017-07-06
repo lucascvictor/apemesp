@@ -18,10 +18,7 @@ class PaginasTableSeeder extends Seeder
                 "id"        => 1,
                 "titulo"    => "A APEMESP",
                 "subtitulo" => '',
-                "body"      => '<div class="col-md-9 col-sm-10 right-column" style=" background-color: #FFFFFF; padding: 50px;">
-					<div class="col-md-8">
-					<h1 class="entry-title">A APEMESP</h1>
-					</div>
+                "body"      => '
 					<center>
 					
 					<div class="entry-content">
@@ -41,8 +38,8 @@ class PaginasTableSeeder extends Seeder
 						</div>	
 				</div>
 			</center>
-			<br><br><br>
-            </div>
+
+
                 ',
                 "id_user" => 2,
                 "created_at" => $now,
