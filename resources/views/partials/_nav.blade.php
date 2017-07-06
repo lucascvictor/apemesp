@@ -4,8 +4,8 @@
 <?php $dp = new DadosPessoaisRepository; ?>
 
 <!-- LOGOTIPO MOBILE -->
-<div class="logotipo_mobile">
-<a href="{{ url('/')}}" title="APEMESP"><img src="{{ url('images/logo_mobile.png') }}" alt="APEMESP" title="APEMESP"></a>
+<div class="logotipo_mobile" >
+<a href="{{ url('/')}}" title="APEMESP"><img src="{{ url('images/logo_mobile.png') }}" alt="APEMESP" title="APEMESP" ></a>
 </div>
 <!-- LOGOTIPO MOBILE -->
 
