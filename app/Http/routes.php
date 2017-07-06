@@ -18,7 +18,7 @@ Route::get('/contato/localizacao', 'Apemesp\ContatoController@getLocalizacao')->
 Route::get('/contato/mensagens', 'Apemesp\ContatoController@getMensagens')->name('contato.mensagens');
 Route::get('/sobre', 'Apemesp\PagesController@getSobre')->name('apemesp.sobre');
 Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
-
+Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
 
 Route::group(['prefix' => 'apemesp'], function () {
     Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');

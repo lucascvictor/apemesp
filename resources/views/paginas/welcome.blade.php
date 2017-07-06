@@ -63,23 +63,23 @@
 
 @section('categorias')
 
-<a href="" class="btn btn-primary">
-                <i class="chatter-bubble"></i> 
-                Todas as categorias 
-              </a>
-              <ul class="nav nav-pills nav-stacked">
-             
-            @foreach($tags as $tag)
+    <a href="{{ url('')}}" class="btn btn-primary">
+        <i class="chatter-bubble"></i> 
+        Todas as categorias 
+      </a>
+      <ul class="nav nav-pills nav-stacked">
+     
+    @foreach($tags as $tag)
 
-                <li>
-                  <a href="">
-                    <div class="chatter-box"></div> 
-                    <i class="fa fa-music" aria-hidden="true"></i> 
-                    - {{ $tag->tag }}
-                  </a>
-                </li>
-            @endforeach
-              </ul>
+        <li>
+          <a href="{{ url('')}}/tags/{{ $tag->id }}">
+            <div class="chatter-box"></div> 
+            <i class="fa fa-music" aria-hidden="true"></i> 
+            - {{ $tag->tag }}
+          </a>
+        </li>
+    @endforeach
+      </ul>
 
 @endsection
 

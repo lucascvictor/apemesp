@@ -126,4 +126,16 @@ class PagesController extends Controller{
         return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
 	}
 
+	public function getPostsTag($id)
+	{
+		$page = new PagesRepository;
+		$postsTag = $page->getPostsTag($id);
+		$postsTag->setPath('/');
+		$tags = $page->getTags();
+		unset($page);
+		return view('paginas.welcome')->with('posts', $postsTag)->with('tags', $tags);
+		
+		
+	}
+
 }
