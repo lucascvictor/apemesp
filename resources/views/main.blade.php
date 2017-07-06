@@ -59,7 +59,7 @@
            
             </div>
 
-            <div class="col-md-9 col-sm-12 rcol-xl-8 right-column mobile" style=" margin-top: 30px; background-color: #eff3f5; padding: 15px;">
+            <div class="col-md-9 col-sm-12 rcol-xl-8 right-column mobile" style=" margin-top: 30px; background-color: #eff3f5; padding: 3%;">
 
               @include('partials._mensagens')
               @yield('conteudo')

@@ -3,7 +3,7 @@
         <div class="footer-above" style="background-color: #ADCEDD">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-4 col-sm-10">
                         <h3>Localização</h3>
                         <a href="{{ url('/contato/localizacao') }}">
                         <p>Rua dos Buritis, 310

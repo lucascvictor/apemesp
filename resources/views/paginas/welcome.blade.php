@@ -85,49 +85,10 @@
 
 @section('conteudo')
 
-
-    <?php $i=0; $itens=0; ?>
-
         
         @foreach($posts as $post)
 
-          @if($i == $itens)
-                <br>
-                <br>
-                <div class="jumbotron" style="background-color: #D6EEFB;">
-                    
-                    <hr>
-                    
-                    <a href="/pages/post/{{ $post->id }}" class="" style="color: black;">
-                    <h2 class="intro-text text-center"><strong>{{ $post->titulo }}</strong>
-                        <br> {{ $post->subtitulo }}
-                    </h2>
-                    </a>
-                    
-                    <img class="img-responsive img-border img-left" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
-
-                    
-                    <hr>
-                    
-                    <hr class="visible-xs">
-                    <p>{{ $post->previa }}</p>
-                    <a href="/pages/post/{{ $post->id }}" class=""> Continuar lendo <i class="fa fa-long-arrow-right"> </i></a>
-                    <p>
-                    <div style="float: left;"> Postado em: 
-                        <?php 
-
-                        $data = new DateTime($post->created_at); 
-                        echo $data->format('d-m-Y H:i:s');
-
-                        ?>
-                    </div>
-                    </p>
-
-                
-            
-              </div>      
-            
-          @else
+         
            <div class="jumbotron" style="background-color: #fffefd; padding-bottom: 10%;">
             
                     <hr>
@@ -153,10 +114,9 @@
             
         </div>
           
-          <hr>
-          @endif
+        <hr>
+       
 
-          <?php $i++ ?>
         @endforeach
           
         

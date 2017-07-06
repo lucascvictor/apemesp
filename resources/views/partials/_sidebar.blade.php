@@ -2,9 +2,7 @@
           <div class="sidebar" style= "background-color: #FFFFFF; margin-top: 30px; padding: 5%;">
            
               @yield('categorias')
-
-          
-            <hr>
+            
           <ul class="nav nav-pills nav-stacked">
               <h4>POSTS MAIS VISTOS </h4>
               @foreach($maisVistos as $maisVisto)
