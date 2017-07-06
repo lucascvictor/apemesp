@@ -66,7 +66,7 @@
 <!-- MENU -->
   <nav class="navbar navbar-default">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header" style="float: left;">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="background-color: #92BCCC; border-radius:50%; border: solid 5px #C4FAE3; width:60px; height:60px;">
         <center>
           <span class="sr-only">Toggle navigation</span>
