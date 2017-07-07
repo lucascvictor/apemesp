@@ -73,7 +73,8 @@
             </div>
 
            </div>
-           
+           </div>
+           <div class="container-fluid">
 
             @include('partials._footer')
 

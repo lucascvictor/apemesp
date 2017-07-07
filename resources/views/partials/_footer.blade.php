@@ -1,7 +1,7 @@
 
     <footer class="text-center" >
         <div class="footer-above" style="background-color: #ADCEDD">
-            <div class="container">
+            
                 <div class="row">
                     <div class="footer-col col-md-4 col-sm-10">
                         <h3>Localização</h3>
@@ -94,7 +94,7 @@
                     </ul>
                     </div>
                 </div>
-            </div>
+            
         </div>
         <div class="footer-below">
             <div class="container">
