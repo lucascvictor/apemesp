@@ -1,7 +1,8 @@
 
     <footer class="text-center" >
+      <center>
         <div class="footer-above" style="background-color: #ADCEDD">
-            
+            <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4 col-sm-10">
                         <h3>Localização</h3>
@@ -10,9 +11,10 @@
                             <br>Jabaquara, SP</p>
                         </a>
                     </div>
-                    <div class="footer-col col-md-4">
-                        <h3>APEMESP nas redes sociais</h3>
+                    <div class="footer-col col-md-4 col-sm-12">
+                       
                         <ul class="list-inline">
+                         <h3>APEMESP nas redes sociais</h3>
                             <a class="btn btn-block btn-social btn-facebook"
                                href="https://www.facebook.com/apemesp/"
                                target="blank">
@@ -46,7 +48,7 @@
 
                         </ul>
                     </div>
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-4 col-sm-10">
                         <h3>Parceiros</h3>
                          <ul class="list-inline text-center">
                         <li>
@@ -94,7 +96,7 @@
                     </ul>
                     </div>
                 </div>
-            
+            </div>
         </div>
         <div class="footer-below">
             <div class="container">
@@ -107,4 +109,5 @@
                 </div>
             </div>
         </div>
+        </center>
     </footer>
