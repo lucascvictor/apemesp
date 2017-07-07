@@ -342,6 +342,10 @@ body {
 		margin-top: 1000px;
 	}
 
+	.navbar-default {
+		margin-top: 15%;
+	}
+
 	.logotipo_header {
 		display:none;
 	}
