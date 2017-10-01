@@ -73,8 +73,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('', 'Admin\AdminController@index')->name('admin');
 
     Route::group(['prefix' => 'usuarios'], function () {
-        Route::get('', 'Admin\UsuarioController@index');
+        Route::get('', 'Admin\UsuarioController@index')->name('users.index');
         Route::get('/search', 'Admin\UsuarioController@search');
+        Route::get('/reset/{id}', 'Admin\UsuarioController@resetPassword');
+        Route::get('/usuarios/mensagem/{id}', 'Adimin\UsuarioController@mensagem');
+
     });
 
     Route::group(['prefix' => 'associados'], function () {

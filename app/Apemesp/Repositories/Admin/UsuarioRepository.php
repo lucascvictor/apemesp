@@ -39,4 +39,12 @@ class UsuarioRepository
 		return User::where('id_perfil', 3)->orWhere('id_perfil', 4)->orderBy('name', 'asc')->paginate(6);
 	}
 
+	public function resetPassword($id)
+	{
+		$usuario = User::find($id);
+		$usuario->password= '$2y$10$irM/9sn55aVw2UIQz05/Rek34fL2WFeaGiQolTRwrzWiHrNmODTMK';
+		$usuario->save();
+		return $usuario->name;
+	}
+
 }

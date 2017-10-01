@@ -16,7 +16,7 @@
 		
 
 		<div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
 
          
         
@@ -59,13 +59,13 @@
                                   <div class="modal-content">
                                         <div class="modal-header">
                                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Excluir usuario!</h4>
+                                                  <h4 class="modal-title">Reset de senha</h4>
                                                 </div>
                                                     <div class="modal-body">
                                                       <p>Deseja realmente resetar a senha  deste usuário?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="" class="btn btn-danger btn-block">
+                                                        <a href="/admin/usuarios/reset/{{ $usuario->id }}" class="btn btn-danger btn-block">
                                                           Sim
                                                         </a>
                                               <button type="button" class="btn btn-info btn-block" data-dismiss="modal">Não</button>
@@ -79,7 +79,8 @@
 
 
                                         </td>
-                                        <td><a class="btn btn-primary">Enviar e-mail</a></td>
+                                        <td><a href="mailto:{{ $usuario->email }}" class="btn btn-primary">Enviar e-mail</a></td>
+                                        <td><a href="/admin/usuarios/mensagem/{{ $usuario->id }}" class="btn btn-success">Enviar mensagem interna</a></td>
                                     </tr>
 
 								@endforeach

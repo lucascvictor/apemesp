@@ -14,19 +14,19 @@
 
 	<div class="col-md-4">
 
-	<!-- Adicionar botão para indicar Livros -->
-	
-<p><h2>{{ $literatura->titulo }}</h2></p>
+		<!-- Adicionar botão para indicar Livros -->
+		
+		<p><h2>{{ $literatura->titulo }}</h2></p>
 
-<img alt="{{ $literatura->titulo }}" src="{{ url('/images/musicoterapia/literatura')}}/{{ $literatura->imagem }}" style="height:200px; width:280px" title="Revista Brasileira de Mt" />
+		<img alt="{{ $literatura->titulo }}" src="{{ url('/images/musicoterapia/literatura')}}/{{ $literatura->imagem }}" style="height:200px; width:280px" title="Revista Brasileira de Mt" />
 
-{!! $literatura->conteudo !!}
+		{!! $literatura->conteudo !!}
 
 
 
 	</div>
-@endforeach
-
+	@endforeach
+	<p> {{ $literaturas->links() }} </p> 
 
 	</div>
 

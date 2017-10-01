@@ -264,7 +264,7 @@
                 });
             });
         });
-      </script>	
+</script>	
 
 <!--validar o campo somente numeros -->
 <script>

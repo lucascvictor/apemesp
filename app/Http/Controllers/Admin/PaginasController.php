@@ -31,18 +31,26 @@ class PaginasController extends Controller
         
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function addLiteratura()
     {
-        $pagina = new FinanceiroRepository;
-    	return view('admin.admin.paginas.add.literatura')->with("pagina", $pagina->busca("asd"));
+    	return view('admin.admin.paginas.add.literatura');
     }
 
+    public function listLiteratura()
+    {
+        
+    }
+
+    public function storeLiteratura()
+    {
+
+    }
+
+    public function destroyLiteratura()
+    {
+        
+    }
   
 }
 

@@ -22,7 +22,7 @@ class MusicoterapiaRepository
 
 	public function getLiteratura()
 	{
-		return Literatura::all();
+		return Literatura::where('id', '>', 0)->orderBy('titulo', 'asc')->paginate(3);
 	}
 
 	public function getLinhaDoTempo()
