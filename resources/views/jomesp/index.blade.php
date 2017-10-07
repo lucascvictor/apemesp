@@ -4,6 +4,7 @@
 @section('conteudo')
 
     @include('partials.jomesp._logo')
+   
     @include('partials.jomesp._nav')
 
     <div class="container">
@@ -37,7 +38,7 @@
     <!-- /.container -->
 
 
-
+@endsection
    
 
 </body>

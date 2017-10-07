@@ -1,1 +1,1 @@
-<div class="brand"><img src="{{ url('/images/jomesp/logo.png')}}" style="height: 25%; width: 55%;"></div>
+<div class="brand img-responsive"><img src="{{ url('/images/jomesp/logo.png')}}" style="height: 25%; width: 35%;"></div>
