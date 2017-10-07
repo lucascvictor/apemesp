@@ -6,6 +6,9 @@
     <!-- Custom CSS -->
     {!! Html::style('css/sb-admin.css') !!}
 
+       <!-- Custom CSS -->
+    {!! Html::style('css/dataTables.bootstrap4.css.css') !!}
+
 
     <!-- Morris Charts CSS -->
     {!! Html::style('css/plugins/morris.css') !!}

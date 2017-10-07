@@ -40,7 +40,8 @@ class PagesController extends Controller{
 		$posts->setPath('/');
 		$tags = $page->getTags();
 		unset($page);
-        return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
+        // return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
+        return view('paginas.manutencao');
 	}
 
 	

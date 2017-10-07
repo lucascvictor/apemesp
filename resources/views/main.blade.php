@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+ 
   <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('metatags')
 
@@ -29,6 +30,8 @@
   </head>
 
     <body style="background-color: #dbe3e9" id="app-layout">
+
+
 
       @include('partials._nav')
 
@@ -84,6 +87,7 @@
       @yield('extrascript')
 
 
+    
     </body>
   
 
