@@ -58,17 +58,12 @@
 				<div class="form-group">
                                 <label class="col-md-4 control-label">Categorias: </label>
                                 <label class=" radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="1" checked="">Graduação
+                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="1" checked="">Bacharelado em Músicoterapia
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="2">Especialização
+                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="2">Especiasta em Músicoterapia
                                 </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="3">Mestrado
-                                </label>
-                                 <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="4">Doutorado
-                                </label>
+                                
                                  <label class="radio-inline">
                                     <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5">Outros
                                 </label>
