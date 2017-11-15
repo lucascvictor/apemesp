@@ -91,11 +91,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('', 'Admin\AdminController@getPaginas')->name('paginas.show');
         Route::get('/edit/{id}', 'Admin\AdminController@editPagina')->name('pagina.edit');
         Route::post('/update/{id}', 'Admin\AdminController@updatePagina')->name('pagina.update');
-        Route::get('/adicionar/literatura', 'Admin\PaginasController@addLiteratura');
-        Route::get('/adicionar/conquista', 'Admin\PaginasController@addConquista');
-        Route::get('/adicionar/formacao', 'Admin\PaginasController@addFormacao');
-        Route::get('/adicionar/comissao', 'Admin\PaginasController@addComissao');
-        Route::get('/adicionar/membro', 'Admin\PaginasController@addMembro');
+
+        Route::group(['prefix' => 'adicionar'], function () {
+          Route::get('/literatura', 'Admin\PaginasController@addLiteratura');
+          Route::get('/conquista', 'Admin\PaginasController@addConquista');
+          Route::get('/formacao', 'Admin\PaginasController@addFormacao');
+          Route::get('/comissao', 'Admin\PaginasController@addComissao');
+          Route::get('/membro', 'Admin\PaginasController@addMembro');
+        });
+
     });
 
     Route::group(['prefix' => 'configs'], function () {
@@ -147,8 +151,12 @@ Route::group(['prefix' => 'associado'], function () {
     Route::get('/download/{arquivo}', 'Associado\AssociadoController@getDownload')->name('download');
 
     //Dados Profissionais
-    Route::get('/dadosprofissionais/', 'Associado\DadosProfissionaisController@getDadosProfissionais');
+    Route::group(['prefix' => 'dadosprofissionais'], function () {
+      Route::get('', 'Associado\DadosProfissionaisController@getDadosProfissionais');
+      Route::post('/especialidade', 'Admin\EspecialidadeController@storeEspecialidade');
 
+
+    });
 
 
     //Documentação

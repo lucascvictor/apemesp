@@ -379,10 +379,14 @@ body {
 		margin:0;
 		background:#fff;
 	}
-	
+
 	.navbar-default li {
 		border-right:0;
 		border-bottom:solid 1px #dbe3e9;
 	}
-	
+
+}
+
+.bordas {
+	border-radius: 10px;
 }

@@ -11,13 +11,22 @@
 
 
     @include('partials.admin._nav')
-    
-  
+
+
 
         <div id="page-wrapper">
 
             <div class="container-fluid">
                  @include('partials._mensagens')
+                 @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -35,7 +44,7 @@
                     </div>
                 </div>
                 <!-- /.row -->
-               
+
                 @yield('conteudo')
 
             </div>
@@ -48,7 +57,7 @@
     <!-- /#wrapper -->
 
     @include('partials.admin._scripts')
-    
+
     @yield('extrascript')
 </body>
 

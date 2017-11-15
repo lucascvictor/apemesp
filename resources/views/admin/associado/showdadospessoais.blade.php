@@ -18,7 +18,7 @@
 {{ csrf_field() }}
 		<fieldset>
 
-				
+
 				<legend>Foto</legend>
 					<!-- Aviso sobre o tipo de arquivo -->
 					<div class="form-group">
@@ -35,7 +35,7 @@
           			<p>Foto do perfil</p>
           		</center>
 
-					  <label class="col-md-4 control-label" for="filebutton">Alterar Foto 
+					  <label class="col-md-4 control-label" for="filebutton">Alterar Foto
 					  </label>
 
 					  <div class="col-md-4" id="mensagem">
@@ -54,15 +54,15 @@
 	{{ csrf_field() }}
 		<fieldset>
 
-				
+
 				<legend>Dados Pessoais</legend>
 
-				<!-- Botão de Arquivo --> 
-        
-      
+				<!-- Botão de Arquivo -->
+
+
 				<!-- Campo Nome -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="name">Nome Completo:</label>  
+					  <label class="col-md-4 control-label" for="name">Nome Completo:</label>
 					  <div class="col-md-4">
 					  <input id="name" name="name" type="text" placeholder="Nome" class="form-control input-md" required="" value="{{ $dadospessoais[0]->name }}">
 					  </div>
@@ -70,7 +70,7 @@
 
 				<!-- Campo Nascimento -->
 					<div class="form-group">
-			
+
                 <label class="col-md-4 control-label" for="nascimento">Data de Nascimento:</label>
                 <div class="col-md-4">
                 <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
@@ -80,8 +80,8 @@
                 </div>
                 </div>
       			  </div>
-        
-					
+
+
 
 				<!-- Nascionalidade -->
 
@@ -90,14 +90,14 @@
 					  <div class="col-md-4">
 					    <select id="nacionalidade" name="nacionalidade" class="form-control">
 					    @foreach($nacionalidades as $nacionalidade)
-					      <option 
+					      <option
 					      <?php if($dadospessoais[0]->id_nacionalidade == $nacionalidade->id)
 					      {
 					      	echo ("selected");
-					      			
+
 					      } ?>
 					      value="{{ $nacionalidade->id }}">
-					      {{ $nacionalidade->nacionalidade }} 
+					      {{ $nacionalidade->nacionalidade }}
 
 					     	</option>
 					     @endforeach
@@ -108,7 +108,7 @@
 
 					<!-- RG -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="rg">RG:</label>  
+					  <label class="col-md-4 control-label" for="rg">RG:</label>
 					  <div class="col-md-4">
 					  <input id="rg" name="rg" type="text" maxlength="12" placeholder="Registro Geral" class="form-control input-md" required="" value="{{ $dadospessoais[0]->rg }} ">
 					  </div>
@@ -116,35 +116,29 @@
 
 					<!-- CPF -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="cpf">CPF:</label>  
+					  <label class="col-md-4 control-label" for="cpf">CPF:</label>
 					  <div class="col-md-4">
 					  <input id="cpf" name="cpf" type="text" onkeyup="somenteNumeros(this);" maxlength="11" placeholder=" CPF " class="form-control input-md" required="" value="{{ $dadospessoais[0]->cpf }}">
 					  </div>
 					</div>
 
-				
+
 
 				<legend>Dados de contato</legend>
 
 				<div class="form-group">
-					  <label class="col-md-4 control-label" for="facebook"><span class="fa fa-facebook"></span></label>  
+					  <label class="col-md-4 control-label" for="facebook"><span class="fa fa-facebook"></span></label>
 					  <div class="col-md-4">
-					  
+
 					  <input id="facebook" name="facebook" type="text" placeholder="facebook.com/seuperfil" class="form-control"  value="{{ $dadospessoais[0]->facebook }}">
-					  
-					  </div>
-					</div>
-				<!-- Campo LinkedIn -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="linkedin"><span class="fa fa-linkedin"></span></label>  
-					  <div class="col-md-4">
-					  <input id="ies" name="ies" type="text" placeholder="linkedin.com/in/seuperfil" class="form-control input-md" value="{{ $dadospessoais[0]->linkedin }}">
+
 					  </div>
 					</div>
 
+
 				<!-- CEP -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="cep">CEP:</label>  
+					  <label class="col-md-4 control-label" for="cep">CEP:</label>
 					  <div class="col-md-4">
 					  <input id="cep" name="cep" type="text" placeholder="CEP" class="form-control input-md" required="" value="{{ $dadospessoais[0]->cep }}">
 					  </div>
@@ -152,7 +146,7 @@
 
 				<!-- Endereço -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="endereco">Endereço:</label>  
+					  <label class="col-md-4 control-label" for="endereco">Endereço:</label>
 					  <div class="col-md-4">
 					  <input id="endereco" name="endereco" type="text" placeholder=" Endereço " class="form-control input-md" required="" value="{{ $dadospessoais[0]->endereco }}">
 					  </div>
@@ -160,7 +154,7 @@
 
 				<!-- Complemento -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="complemento">Complemento:</label>  
+					  <label class="col-md-4 control-label" for="complemento">Complemento:</label>
 					  <div class="col-md-4">
 					  <input id="complemento" name="complemento" type="text" placeholder=" Compl. " class="form-control input-md" value="{{ $dadospessoais[0]->complemento }}">
 					  </div>
@@ -168,13 +162,13 @@
 
 				<!-- Bairro -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>  
+					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
 					  <div class="col-md-4">
 					  <input id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="" value="{{ $dadospessoais[0]->bairro }}">
 					  </div>
 					</div>
 
-				
+
 
 				<!-- Estado -->
 					<div class="form-group">
@@ -186,7 +180,7 @@
 					      <?php if($dadospessoais[0]->id_estado == $estado->id)
 					      {
 					      	echo ("selected");
-					      			
+
 					      } ?>
 					      >{{ $estado->nome }}</option>
 					     @endforeach
@@ -200,7 +194,7 @@
 					  <div class="col-md-4">
 					    <select id="cidade" name="cidade" class="form-control">
 
-					   	
+
 					     <option value="{{ $cidade[0]->id }}">{{ $cidade[0]->nome}} </option>
 					   	</select>
 					  </div>
@@ -223,7 +217,7 @@
 					 <label class="col-md-4 control-label" for="tel_celular">Tel. Celular</label>
 					  <div class="col-md-4">
 					    <input id="tel_celular" name="tel_celular" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control" value="{{ $dadospessoais[0]->tel_celular }}" required="">
-					   
+
 					  </div>
 					</div>
 
@@ -238,7 +232,7 @@
 
 				<!-- Botão -->
 					<div class="form-group">
-					  
+
 					  <div class="col-md-4">
 					    <button id="singlebutton" name="singlebutton" class="btn btn-danger">Atualizar</button>
 					  </div>
@@ -281,9 +275,9 @@
             	formato = formato + foto[limite];
             	limite++;
             }
-      		
+
       		if(formato != 'jpg'){
-  
+
       			if(i < 1){
       			$("#mensagem").append('<div id="fotomensagem" class=" alert alert-danger" role="alert"><strong>Cuidado:</strong> Esta imagem não é do tipo JPG</div>');
       			i++;
@@ -292,7 +286,7 @@
       		}else{
       			document.getElementById("fotomensagem").remove();
       		}
-      		
+
         });
 </script>
 
@@ -303,19 +297,19 @@
             $.get('/associado/ajax/' + idEstado, function (cidades) {
                  $('#cidade').empty();
             var i =0;
-      
+
                 $.each(cidades, function (key, cidade) {
-                	
+
                 	var size = cidade.length;
                 	while(i < size){
                 		$('#cidade').append('<option value=' + cidade[i].id + '>' + cidade[i].nome + '</option>');
                 		i++;
-                	}          
-                   
+                	}
+
                 });
             });
         });
-      </script>	
+      </script>
 
 
 
@@ -330,9 +324,9 @@
                 $("#bairro").val("");
                 $("#cidade").val("");
                 $("#estado").val("");
-               
+
             }
-            
+
             //Quando o campo cep perde o foco.
             $("#cep").blur(function() {
 
@@ -353,7 +347,7 @@
                         $("#bairro").val("...");
                         $("#cidade").val("...");
                         $("#estado").val("...");
-                        
+
 
                         //Consulta o webservice viacep.com.br/
                         $.getJSON("http://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {

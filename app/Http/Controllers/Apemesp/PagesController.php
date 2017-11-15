@@ -24,13 +24,13 @@ class PagesController extends Controller{
 
 	public function __construct()
     {
-         
+
          View::composers([
-            'App\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
+            'App\Composers\MaisVistosComposer'  => ['partials._sidebar']
         ]);
 
          View::composers([
-            'App\Composers\PropagandasComposer'  => ['partials._sidebar'] 
+            'App\Composers\PropagandasComposer'  => ['partials._sidebar']
         ]);
      }
 
@@ -40,11 +40,11 @@ class PagesController extends Controller{
 		$posts->setPath('/');
 		$tags = $page->getTags();
 		unset($page);
-        // return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
-        return view('paginas.manutencao');
+        return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
+        //return view('paginas.manutencao');
 	}
 
-	
+
 
 	public function getPost($id)
 	{
@@ -52,7 +52,7 @@ class PagesController extends Controller{
 		$page = new PagesRepository;
 		$post = $page->getPost($id);
 	    $view = $page->getPostView($id);
-	
+
 	    if ($post == null){
 	    	return view('errors.post');
 	    } else {
@@ -100,7 +100,7 @@ class PagesController extends Controller{
 		} else {
 			return view('paginas.apemesp.quemsomos')->with('pagina', $pagina);
 		}
-		
+
 	}
 
 	public function getEstatuto()
@@ -135,8 +135,8 @@ class PagesController extends Controller{
 		$tags = $page->getTags();
 		unset($page);
 		return view('paginas.welcome')->with('posts', $postsTag)->with('tags', $tags);
-		
-		
+
+
 	}
 
 }

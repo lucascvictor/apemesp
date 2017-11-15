@@ -43,13 +43,13 @@ class DadosPessoaisController extends Controller{
         $nacionalidades = $dadosPessoais->getNacionalidade();
         $estados = $dadosPessoais->getEstados();
         $cidades = []; //É preciso passar um array vazio para que a váriavel na View seja inicializada
-        
+
         $id_cadastro = Auth::user()->id_cadastro;
 
         if($id_cadastro == 1 ){
             return view('admin.associado.dadospessoais')->with('nacionalidades', $nacionalidades)->with('estados', $estados)->with('cidades', $cidades);
         }
-        
+
         if($id_cadastro > 1){
 
             $dados = $dadosPessoais->getDadosPessoais(Auth::user()->id);
@@ -65,11 +65,11 @@ class DadosPessoaisController extends Controller{
     }
 
 
-    
+
     public function storeDadosPessoais(Request $request)
     {
         //Validar os dados
-        
+
             $this->validate($request, array(
                     'name' => 'required|max:255',
                     'cpf' => 'required',
@@ -90,7 +90,7 @@ class DadosPessoaisController extends Controller{
 
             //Carregando a foto
             $arquivo = $request->file('foto');
-        
+
             $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $request->cpf;
             $nomeArquivo = 'foto' . '.' . $request->file('foto')->getClientOriginalExtension();
 
@@ -101,7 +101,7 @@ class DadosPessoaisController extends Controller{
             $dadosPessoais->storeDadosPessoais($request, Auth::user()->id, $nomeArquivo);
 
             unset($dadosPessoais);
-        
+
             Session::flash('sucesso', 'Seus dados foram salvos com sucesso');
             //flash para esta request e put para salvar na sessao
             return redirect()->route('dadosacademicos');
@@ -111,13 +111,13 @@ class DadosPessoaisController extends Controller{
 
     public function fotoUpdate(Request $request, $cpf)
     {
-        
+
         if ($cpf == null || ($cpf[0] == 0 && $cpf[1] ==0)) {
             return redirect()->back();
-        } else { 
+        } else {
 
             if ($request->file('foto') !== null ) {//verifica se a foto foi alterada
-            
+
 
             $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf ;
             $nomeArquivo = 'foto'  . "." . $request->file('foto')->getClientOriginalExtension();
@@ -125,9 +125,9 @@ class DadosPessoaisController extends Controller{
             if ($request->file('foto')->getClientOriginalExtension() !== 'jpg') {
                 Session::flash('cuidado', 'O formato da imagem não é válido, por favor selecione um arquivo .jpg');
                 return redirect()->back();
-            }               
+            }
             $filename = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf  . "/" . 'foto' .".jpg";
-            
+
             if (file_exists($filename)) {
                 unlink($filename);
             }
@@ -139,7 +139,7 @@ class DadosPessoaisController extends Controller{
             unset($dadosPessoais);
             Session::flash('sucesso', 'Sua foto foi atualizada com sucesso');
             return redirect()->back();
-                
+
             } else {
                   $this->validate($request, array(
                         'foto' => 'required',
@@ -147,7 +147,7 @@ class DadosPessoaisController extends Controller{
 
             }
         }
-        
+
     }
 
 
@@ -163,7 +163,7 @@ class DadosPessoaisController extends Controller{
             return redirect()->back();
         }else{
 
-       
+
             $dadosPessoais = new DadosPessoaisRepository;
             $dadosPessoais->updateDadosPessoais($request, $id);
 
@@ -174,7 +174,7 @@ class DadosPessoaisController extends Controller{
             } else {
                 return redirect()->route('admin');
             }
-        } 
+        }
     }
 
 }

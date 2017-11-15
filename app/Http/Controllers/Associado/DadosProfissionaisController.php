@@ -12,19 +12,7 @@ use App\Http\Requests;
 
 use App\Classes\Associado;
 
-use App\Apemesp\Models\Nacionalidade;
-
-use App\Apemesp\Models\Cidade;
-
-use App\Apemesp\Models\Estado;
-
-use App\Apemesp\Models\User;
-
-use App\Apemesp\Models\DadosPessoais;
-
-use App\Apemesp\Models\FormacoesAcademicas;
-
-use App\Apemesp\Models\UsuarioCategoria;
+use App\Apemesp\Repositories\Associado\DadosProfissionaisRepository;
 
 use Auth;
 
@@ -43,13 +31,9 @@ class DadosProfissionaisController extends Controller{
     {
         $this->middleware('auth', ['except' => 'logout']);
 
-       
-
         View::composers([
             'App\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
-        
-        
 
     }
 
@@ -58,21 +42,22 @@ class DadosProfissionaisController extends Controller{
     public function getDadosProfissionais()
     {
 
-       
-        $id_cadastro = Auth::user()->id_cadastro;
-        $id_user = Auth::user()->id;
-         $estados = Estado::orderby('nome', 'asc')->get();
-         $cidades = [];
-         
+
+      $id_cadastro = Auth::user()->id_cadastro;
+
+      $dadosProfissionais = new DadosProfissionaisRepository;
+
        if($id_cadastro < 3){
             return view('admin.associado.restricao');
        }
         if($id_cadastro >= 3 ){
-            return view('admin.associado.dadosprofissionais')->with('estados', $estados)->with('cidades', $cidades);
+            return view('admin.associado.dadosprofissionais')
+            ->with('estados', $dadosProfissionais->getEstados())
+            ->with('cidades', [])
+            ->with('especialidades', $dadosProfissionais->getEspecialidades());
         }
-        
-
     }
 
+  
 
 }

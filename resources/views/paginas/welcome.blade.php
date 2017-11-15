@@ -64,17 +64,17 @@
 @section('categorias')
 
     <a href="{{ url('')}}" class="btn btn-primary">
-        <i class="chatter-bubble"></i> 
-        Todas as categorias 
+        <i class="chatter-bubble"></i>
+        Todas as categorias
       </a>
       <ul class="nav nav-pills nav-stacked">
-     
+
     @foreach($tags as $tag)
 
         <li>
           <a href="{{ url('')}}/tags/{{ $tag->id }}">
-            <div class="chatter-box"></div> 
-            <i class="fa fa-music" aria-hidden="true"></i> 
+            <div class="chatter-box"></div>
+            <i class="fa fa-music" aria-hidden="true"></i>
             - {{ $tag->tag }}
           </a>
         </li>
@@ -85,12 +85,12 @@
 
 @section('conteudo')
 
-        
+
         @foreach($posts as $post)
 
-         
+
            <div class="jumbotron" style="background-color: #fffefd; padding-bottom: 10%;">
-            
+
                     <hr>
                     <a href="/pages/post/{{ $post->id }}" class="" style="color: black;">
                     <h2 class="intro-text text-center"><strong>{{ $post->titulo }}</strong>
@@ -98,31 +98,31 @@
                     </h2>
                     </a>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
+                    <img class="img-responsive img-border img-left bordas" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
                     <hr class="visible-xs">
                     <p>{{ $post->previa }}</p>
                     <a href="/pages/post/{{ $post->id }}" class=""> Continuar lendo <i class="fa fa-long-arrow-right"> </i></a>
-                    <p><div style="float: left;"> Postado em: 
-                        <?php 
+                    <p><div style="float: left;"> Postado em:
+                        <?php
 
-                        $data = new DateTime($post->created_at); 
+                        $data = new DateTime($post->created_at);
                         echo $data->format('d-m-Y H:i:s');
 
                         ?>
                     </div></p>
 
-            
+
         </div>
-          
+
         <hr>
-       
+
 
         @endforeach
-          
-        
-         <p> {{ $posts->links() }} </p> 
 
-        
-        
+
+         <p> {{ $posts->links() }} </p>
+
+
+
     </div>
     @endsection

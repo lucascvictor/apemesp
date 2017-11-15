@@ -17,7 +17,7 @@
 	{{ csrf_field() }}
 		<fieldset>
 
-				
+
 				<legend>Dados Pessoais</legend>
 				<!-- Aviso sobre o tipo de arquivo -->
 					<div class="form-group">
@@ -28,16 +28,16 @@
 						  </div>
 					 </div>
 
-				<!-- Botão de Arquivo --> 
+				<!-- Botão de Arquivo -->
 					<div class="form-group" id="mensagem">
 					  <label class="col-md-4 control-label" for="filebutton">Foto do perfil: </label>
 					  <div class="col-md-4">
-					    <input id="foto" name="foto" class="input-file" type="file"> 
+					    <input id="foto" name="foto" class="input-file" type="file">
 					  </div>
 					</div>
 				<!-- Campo Nome -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="name">Nome Completo:</label>  
+					  <label class="col-md-4 control-label" for="name">Nome Completo:</label>
 					  <div class="col-md-4">
 					  <input id="name" name="name" type="text" placeholder="Nome" class="form-control input-md" required="">
 					  </div>
@@ -45,7 +45,7 @@
 
 				<!-- Campo Nascimento -->
 					<div class="form-group">
-			
+
                 <label class="col-md-4 control-label" for="nascimento">Data de Nascimento:</label>
                 <div class="col-md-4">
                 <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
@@ -55,8 +55,8 @@
                 </div>
                 </div>
       			  </div>
-        
-					
+
+
 
 				<!-- Nascionalidade -->
 
@@ -74,7 +74,7 @@
 
 					<!-- RG -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="rg">RG:</label>  
+					  <label class="col-md-4 control-label" for="rg">RG:</label>
 					  <div class="col-md-4">
 					  <input id="rg" name="rg" type="text" maxlength="12" placeholder="Registro Geral" class="form-control input-md" required="">
 					  </div>
@@ -82,36 +82,30 @@
 
 					<!-- CPF -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="cpf">CPF:</label>  
+					  <label class="col-md-4 control-label" for="cpf">CPF:</label>
 					  <div class="col-md-4">
 					  <input id="cpf" name="cpf" type="text" onkeyup="somenteNumeros(this);" maxlength="11" placeholder=" CPF (somente numeros) " class="form-control input-md" required="">
 					  </div>
 					</div>
 
-				
+
 
 				<legend>Dados de contato</legend>
 
 				<div class="form-group">
-					  <label class="col-md-4 control-label" for="facebook"><span class="fa fa-facebook"></span></label>  
+					  <label class="col-md-4 control-label" for="facebook"><span class="fa fa-facebook"></span></label>
 					  <div class="col-md-4">
-					  
+
 					  <input id="facebook" name="facebook" type="text" placeholder="facebook.com/seuperfil" class="form-control">
-					  
+
 					  </div>
 					</div>
 
-				<!-- Campo LinkedIn -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="linkedin"><span class="fa fa-linkedin"></span></label>  
-					  <div class="col-md-4">
-					  <input id="ies" name="ies" type="text" placeholder="linkedin.com/in/seuperfil" class="form-control input-md">
-					  </div>
-					</div>
+
 
 				<!-- CEP -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="cep">CEP:</label>  
+					  <label class="col-md-4 control-label" for="cep">CEP:</label>
 					  <div class="col-md-4">
 					  <input id="cep" name="cep" type="text" placeholder="CEP" class="form-control input-md" required="">
 					  </div>
@@ -119,7 +113,7 @@
 
 				<!-- Endereço -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="endereco">Endereço:</label>  
+					  <label class="col-md-4 control-label" for="endereco">Endereço:</label>
 					  <div class="col-md-4">
 					  <input id="endereco" name="endereco" type="text" placeholder=" Endereço " class="form-control input-md" required="">
 					  </div>
@@ -127,7 +121,7 @@
 
 				<!-- Complemento -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="complemento">Complemento:</label>  
+					  <label class="col-md-4 control-label" for="complemento">Complemento:</label>
 					  <div class="col-md-4">
 					  <input id="complemento" name="complemento" type="text" placeholder=" Compl. " class="form-control input-md">
 					  </div>
@@ -135,13 +129,13 @@
 
 				<!-- Bairro -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>  
+					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
 					  <div class="col-md-4">
 					  <input id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="">
 					  </div>
 					</div>
 
-				
+
 
 				<!-- Estado -->
 					<div class="form-group">
@@ -174,7 +168,7 @@
 					 <label class="col-md-4 control-label" for="selectbasic">Tel. Comercial</label>
 					  <div class="col-md-4">
 					    <input id="tel_comercial" name="tel_comercial" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control">
-					   	
+
 
 					  </div>
 					</div>
@@ -184,7 +178,7 @@
 					 <label class="col-md-4 control-label" for="selectbasic">Tel. Celular</label>
 					  <div class="col-md-4">
 					    <input id="tel_celular" name="tel_celular" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control" required="">
-					   
+
 					  </div>
 					</div>
 
@@ -199,7 +193,7 @@
 
 				<!-- Botão -->
 					<div class="form-group">
-					  
+
 					  <div class="col-md-4">
 					    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Salvar</button>
 					  </div>
@@ -229,9 +223,9 @@
             	formato = formato + foto[limite];
             	limite++;
             }
-      		
+
       		if(formato != 'jpg'){
-  
+
       			if(i < 1){
       			$("#mensagem").append('<div id="fotomensagem" class=" alert alert-danger" role="alert"><strong>Cuidado:</strong> Esta imagem não é do tipo JPG</div>');
       			i++;
@@ -240,7 +234,7 @@
       		}else{
       			document.getElementById("fotomensagem").remove();
       		}
-      		
+
         });
 </script>
 
@@ -252,19 +246,19 @@
             $.get('/associado/ajax/' + idEstado, function (cidades) {
                  $('#cidade').empty();
             var i =0;
-      
+
                 $.each(cidades, function (key, cidade) {
-                	
+
                 	var size = cidade.length;
                 	while(i < size){
                 		$('#cidade').append('<option value=' + cidade[i].id + '>' + cidade[i].nome + '</option>');
                 		i++;
-                	}          
-                   
+                	}
+
                 });
             });
         });
-</script>	
+</script>
 
 <!--validar o campo somente numeros -->
 <script>
@@ -290,9 +284,9 @@
                 $("#bairro").val("");
                 $("#cidade").val("");
                 $("#estado").val("");
-               
+
             }
-            
+
             //Quando o campo cep perde o foco.
             $("#cep").blur(function() {
 
@@ -313,7 +307,7 @@
                         $("#bairro").val("...");
                         $("#cidade").val("...");
                         $("#estado").val("...");
-                        
+
 
                         //Consulta o webservice viacep.com.br/
                         $.getJSON("http://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {

@@ -17,7 +17,8 @@ class CreateComissoesUsersTable extends Migration
             $table->integer('id_comissao')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->string('titulo');
-           
+            $table->integer('ano');
+
         });
     }
 

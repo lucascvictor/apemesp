@@ -10,13 +10,10 @@ use App\Http\Requests;
 
 use App\Apemesp\Repositories\Admin\AssociadoRepository;
 
-use Auth;
-
 use Session;
 
 use View;
 
-use DB;
 
 class AssociadoController extends Controller
 {
@@ -25,10 +22,10 @@ class AssociadoController extends Controller
         $this->middleware('auth', ['except' => 'logout']);
 
          View::composers([
-            'App\Composers\MenuComposer'  => ['partials.admin._nav'] 
-        ]);  
-         
-        
+            'App\Composers\MenuComposer'  => ['partials.admin._nav']
+        ]);
+
+
     }
 
     public function index()
