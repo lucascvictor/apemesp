@@ -59,9 +59,22 @@ class DadosProfissionaisRepository
     return DadosProfissionais::where('id_user', $user_id)->get();
   }
 
-  public function storeDadosProfissionais()
+  public function storeDadosProfissionais($request)
   {
-    $estado = Estado::where('abrev', $request->estado)->get();
+    $dadosProssidionais = new FormacoesAcademicas;
+    $dadosProssidionais->id_usuario = $id_user;
+    $dadosProssidionais->nomeies = $request->nomeies;
+    $dadosProssidionais->arquivotcc= $arquivoTcc;
+    $dadosProssidionais->certificado = $arquivoCertificado;
+    $dadosProssidionais->id_categoria_formacao = $request->id_categoria_formacao;
+    $dadosProssidionais->id_estado = $request->id_estado;
+    $dadosProssidionais->id_cidade = $request->id_cidade;
+    $dadosProssidionais->titulo = $request->titulo;
+    $dadosProssidionais->anodeconclusao = $request->anodeconclusao;
+    $dadosProssidionais->titulotcc = $request->titulotcc;
+    $dadosProssidionais->atividades = $request->atividades;
+    $dadosProssidionais->cargahoraria = $request->cargahoraria;
+    $dadosProssidionais->save();
   }
 
 }

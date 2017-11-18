@@ -15,6 +15,7 @@ class CreateProximidadeGeograficaTable extends Migration
         Schema::create('proximidade_geografica', function (Blueprint $table) {
             $table->integer('id');
             $table->string('localidade');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

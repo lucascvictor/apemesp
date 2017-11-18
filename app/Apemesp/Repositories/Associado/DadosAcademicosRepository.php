@@ -122,7 +122,7 @@ class DadosAcademicosRepository
 
 	public function storeDadosAcademicos($id_user, $request, $arquivoTcc, $arquivoCertificado)
 	{
-		$dadosAcademicos = new FormacoesAcademicas;
+				$dadosAcademicos = new FormacoesAcademicas;
         $dadosAcademicos->id_usuario = $id_user;
         $dadosAcademicos->nomeies = $request->nomeies;
         $dadosAcademicos->arquivotcc= $arquivoTcc;
@@ -175,5 +175,11 @@ class DadosAcademicosRepository
 		if ($id_atual[0]->id < 3) {
 			User::where('id', $id_user)->update(['id_cadastro' => 3]);
 		}
+	}
+
+	public function deleteDadosAcademicos($id)
+	{
+
+		FormacoesAcademicas::where('id', $id)->update(['D_E_L_E_T_E_D' => 1]);
 	}
 }

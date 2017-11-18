@@ -18,6 +18,7 @@ class CreateLiteraturaTable extends Migration
             $table->string('imagem');
             $table->text('conteudo');
             $table->timestamps();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

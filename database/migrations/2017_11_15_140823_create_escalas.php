@@ -15,6 +15,7 @@ class CreateEscalas extends Migration
       Schema::create('escalas', function (Blueprint $table) {
           $table->increments('id');
           $table->string('escala');
+          $table->integer('D_E_L_E_T_E_D')->defatul(0);
 
       });
     }

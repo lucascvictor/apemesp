@@ -20,6 +20,7 @@ class CreateStatesTable extends Migration
             $table->string('nome', 64)->unique();
             $table->string('abrev', 2)->unique();
             $table->timestamps();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
 
         });
 

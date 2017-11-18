@@ -16,6 +16,7 @@ class CreateNacionalidadeTable extends Migration {
 		//    $table->engine = 'InnoDB';
 		    $table->increments("id");
 		    $table->string("nacionalidade");
+				$table->integer('D_E_L_E_T_E_D')->defatul(0);
 		});
 	}
 

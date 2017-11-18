@@ -19,6 +19,7 @@ class CreatePaginasTable extends Migration
             $table->integer('id_user')->unsigned();
             $table->text('body');
             $table->timestamps();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

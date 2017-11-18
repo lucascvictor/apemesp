@@ -16,6 +16,7 @@ class CreateCategoriasTable extends Migration
             $table->increments('id');
             $table->integer('categoria');
             $table->string('desc');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

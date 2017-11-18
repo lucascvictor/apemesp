@@ -20,6 +20,7 @@ class CreateCitiesTable extends Migration
             $table->integer('id_estado')->unsigned();
             $table->string('nome', 64);
             $table->timestamps();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
 
         });
 

@@ -170,9 +170,8 @@ Route::group(['prefix' => 'associado'], function () {
     //Dados Profissionais
     Route::group(['prefix' => 'dadosprofissionais'], function () {
       Route::get('', 'Associado\DadosProfissionaisController@getDadosProfissionais');
+      Route::post('', 'Associado\DadosProfissionaisController@storeDadosProfissionais');
       Route::post('/especialidade', 'Admin\EspecialidadeController@storeEspecialidade');
-
-
     });
 
 

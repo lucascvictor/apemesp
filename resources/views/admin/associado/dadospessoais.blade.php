@@ -154,15 +154,7 @@
 
 				<legend>Numeros de Telefones</legend>
 
-				<!-- Comercial -->
-					<div class="form-group">
-					 <label class="col-md-4 control-label" for="selectbasic">Tel. Comercial</label>
-					  <div class="col-md-4">
-					    <input id="tel_comercial" name="tel_comercial" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control">
-
-
-					  </div>
-					</div>
+		
 
 				<!-- Celular -->
 					<div class="form-group">

@@ -18,6 +18,7 @@ class CreateMenusTable extends Migration
             $table->string('icone');
             $table->string('link');
             $table->integer('id_perfil')->unsigned()->default(4);
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

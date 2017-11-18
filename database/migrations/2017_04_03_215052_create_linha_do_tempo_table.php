@@ -17,6 +17,7 @@ class CreateLinhaDoTempoTable extends Migration
             $table->integer('ano');
             $table->text('acontecimentos');
             $table->timestamps();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

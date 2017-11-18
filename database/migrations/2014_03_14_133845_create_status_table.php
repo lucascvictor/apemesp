@@ -16,7 +16,8 @@ class CreateStatusTable extends Migration
             $table->increments('id');
             $table->string('status');
             $table->string('desc');
-           
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
+
         });
     }
 

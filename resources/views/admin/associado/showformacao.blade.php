@@ -26,7 +26,7 @@
                                      @if($formacao->id_categoria_formacao == 3)
                                      <div class="col-md-4">Mestrado</div>
                                      @endif
-                                     
+
                                 </strong>
 
                 </div>
@@ -80,17 +80,15 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="estado">Estado</label>
 					  <div class="col-md-4">
-					    <select id="estado" name="estado" class="form-control" enabled="false">
 					    @foreach($estados as $estado)
-					      <option value="{{ $estado->id }}"
+					      <strong>
 					      <?php if($formacao->id_estado == $estado->id)
 					      {
-					      	echo ("selected");
+					      	echo $estado->nome;
 
 					      } ?>
-					      >{{ $estado->nome }}</option>
+							</strong>
 					     @endforeach
-					    </select>
 					  </div>
 					</div>
 
@@ -98,11 +96,10 @@
 					<div class="form-group">
 					 <label class="col-md-4 control-label" for="cidade">Cidade</label>
 					  <div class="col-md-4">
-					    <select id="cidade" name="cidade" class="form-control">
 
 
-					     <option value="{{ $cidade[0]->id }}">{{ $cidade[0]->nome}} </option>
-					   	</select>
+					     <strong >{{ $cidade[0]->nome}} </strong>
+
 					  </div>
 					</div>
 

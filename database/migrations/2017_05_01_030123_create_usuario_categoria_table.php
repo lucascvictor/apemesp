@@ -16,6 +16,7 @@ class CreateUsuarioCategoriaTable extends Migration
             $table->integer('id');
             $table->integer('id_user')->unsigned();
             $table->integer('id_categoria')->unsigned();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

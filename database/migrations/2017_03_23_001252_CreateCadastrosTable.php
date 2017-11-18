@@ -15,6 +15,7 @@ class CreateCadastrosTable extends Migration
         Schema::create('cadastros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('desc');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

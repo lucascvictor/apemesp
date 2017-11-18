@@ -16,6 +16,7 @@ class CreatePerfisTable extends Migration
             $table->increments('id');
             $table->string('Perfil');
             $table->string('Desc');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

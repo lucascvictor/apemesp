@@ -16,6 +16,7 @@ class CreateAssuntosTable extends Migration
             $table->increments('id');
             $table->string('assunto');
             $table->string('email');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

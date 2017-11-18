@@ -101,7 +101,7 @@
 
 					<!-- Campo Telefone -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="linkedin">Telefone para atendimento</label>
+					  <label class="col-md-4 control-label" for="telefone">Telefone para atendimento</label>
 					  <div class="col-md-4">
 					  	<input onkeyup="somenteNumeros(this)"id="telefone" name="telefone" type="text" placeholder="Somente numeros" class="form-control input-md" required="">
 					  </div>
@@ -109,9 +109,9 @@
 
 					<!-- Dias de atendimento -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="linkedin">Dias de atendimento</label>
+					  <label class="col-md-4 control-label" for="dias_atendimento">Dias de atendimento</label>
 					  <div class="col-md-4">
-							<select id="assunto" name="assunto" class="form-control">
+							<select id="dias_atendimento" name="dias_atendimento" class="form-control">
 								@foreach($escalas as $escala)
 									<option value="{{ $escala->id }}">{{ $escala->nome }}</option>
 								@endforeach
@@ -145,17 +145,17 @@
 								 <form class="form-horizontal" method="POST" action="{{ url('associado/dadosprofissionais/especialidade')}}">
 
 									{{ csrf_field() }}
-									 <legend>Digite abaixo a sua especialidade</legenda>
-									 <input name="especialidade" id="especialidade" type="text">
-
-
+									 <legend>Digite abaixo a sua especialidade</legend>
+									 <input class="col-md-10" name="especialidade" id="especialidade" type="text">
+									 <br />
+									 </div>
 								 		<div class="modal-footer">
 											 <button class="btn btn-success btn-block">
 												 OK
 											 </button>
 									 </div>
 							 </form>
-							 </div>
+
 					 </div>
 
 		 </div>

@@ -197,9 +197,14 @@ class DadosAcademicosController extends Controller{
             //flash para esta request e put para salvar na sessao
 
             return redirect()->back();
+      }
+
+      public function deleteDadosAcademicos($id)
+      {
+        $dadosAcademicos = new DadosAcademicosRepository;
+        $dadosAcademicos->deleteDadosAcademicos($id);
+        
+      }
+
+
 }
-
-
-
-
-    }

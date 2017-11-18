@@ -58,6 +58,28 @@ class DadosProfissionaisController extends Controller{
         }
     }
 
+    public function storeDadosProfissionais()
+    {
+
+      $dadosProfissionais = new DadosProfissionaisRepository;
+      $id_cadastro = Auth::user()->id_cadastro;
+      $id_user = Auth::user()->id;
+
+      $teste = $this->validate($request, array(
+              'cep' => 'required|max:255',
+              'endereco' => 'required',
+              'bairro' => 'required',
+              'proximidade' => 'required',
+              'especialidade' => 'required',
+              'telefone' => 'required',
+              'dias_atendimento' => 'required'
+          ));
+
+      $dadosProfissionais->storeDadosProfissionais($request);
+
+
+    }
+
 
 
 }

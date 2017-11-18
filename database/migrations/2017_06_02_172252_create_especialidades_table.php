@@ -16,6 +16,7 @@ class CreateEspecialidadesTable extends Migration
             $table->integer('id');
             $table->string('nome');
             $table->text('descricao');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

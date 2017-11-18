@@ -22,14 +22,12 @@ class CreateDadosPessoaisTable extends Migration
             $table->date('nascimento');
             $table->string('cpf');
             $table->string('facebook')->nullable();
-            $table->string('linkedin')->nullable();
             $table->string('endereco');
             $table->string('bairro');
             $table->string('complemento')->nullable();
             $table->string('cep');
             $table->integer('id_cidade')->unsigned();
             $table->integer('id_estado')->unsigned();
-            $table->string('tel_comercial')->nullable();
             $table->string('tel_celular')->nullable();
             $table->string('tel_residencial')->nullable();
             $table->timestamps();

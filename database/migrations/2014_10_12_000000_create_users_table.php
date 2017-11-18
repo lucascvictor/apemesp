@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('id_perfil')->unsigned()->default(4);
             $table->integer('id_status')->unsigned()->default(0);
             $table->integer('id_cadastro')->unsigned()->default(1);
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
             $table->timestamps();
         });
     }

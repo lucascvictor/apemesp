@@ -27,6 +27,7 @@ class CreateFormacoesAcademicasTable extends Migration
             $table->text('atividades');
             $table->text('cargahoraria')->nullable();
             $table->timestamps();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

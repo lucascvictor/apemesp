@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->text('previa')->nullable();
             $table->text('body');
             $table->timestamps();
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

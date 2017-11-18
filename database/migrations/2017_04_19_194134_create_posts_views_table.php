@@ -15,6 +15,7 @@ class CreatePostsViewsTable extends Migration
         Schema::create('posts_views', function (Blueprint $table) {
             $table->integer('id');
             $table->integer('total_visitas');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });
     }
 

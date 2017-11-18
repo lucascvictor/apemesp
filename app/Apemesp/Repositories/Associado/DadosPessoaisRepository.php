@@ -69,7 +69,6 @@ class DadosPessoaisRepository
             $dadosPessoais->name = $request->name;
             $dadosPessoais->foto= $nomeArquivo;
             $dadosPessoais->facebook = $request->facebook;
-            $dadosPessoais->linkedin = $request->linkedin;
             $dadosPessoais->nascimento = $request->nascimento;
             $dadosPessoais->id_nacionalidade = $request->nacionalidade;
             $dadosPessoais->rg = $request->rg;
@@ -80,7 +79,6 @@ class DadosPessoaisRepository
             $dadosPessoais->cep = $request->cep;
             $dadosPessoais->id_estado = $this->getEstado($request->estado);
             $dadosPessoais->id_cidade = $request->codCidade;
-            $dadosPessoais->tel_comercial = $request->tel_comercial;
             $dadosPessoais->tel_celular = $request->tel_celular;
             $dadosPessoais->tel_residencial = $request->tel_residencial;
 
