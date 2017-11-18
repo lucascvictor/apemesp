@@ -15,18 +15,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                  <?php
+                  $endereco = $_SERVER['REQUEST_URI'];
+
+                  ?>
                     <li>
-                        <a href="{{ url('/jomesp')}}">Inicio</a>
+                        <a href="{{ url('/jomesp')}}" class="@if ($endereco == '/jomesp') active @endif">Inicio</a>
                     </li>
-                   
+
                     <li>
-                        <a href="{{ url('/jomesp/sobre')}}">Sobre Nós</a>
+                        <a href="{{ url('/jomesp/sobre')}}" class="@if ($endereco == '/jomesp/sobre') active @endif">Sobre Nós</a>
                     </li>
                     <li>
-                        <a href="{{ url('/jomesp/edicoes')}}">Edições</a>
+                        <a href="{{ url('/jomesp/edicoes')}}" class="@if ($endereco == '/jomesp/edicoes') active @endif">Edições</a>
                     </li>
                     <li>
-                        <a href="{{ url('/jomesp/contato')}}">Contato</a>
+                        <a href="{{ url('/jomesp/contato')}}" class="@if ($endereco == '/jomesp/contato') active @endif">Contato</a>
                     </li>
                      <li>
                         <a href="{{ url('/')}} ">APEMESP</a>
