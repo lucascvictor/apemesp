@@ -11,7 +11,7 @@ use App\Apemesp\Models\Assunto;
 
 use DB;
 
-class ConfigsRepository
+class AssuntoRepository
 {
 
 	public function getAssuntos()
@@ -19,15 +19,7 @@ class ConfigsRepository
 		return DB::table('assuntos')->select('*')->paginate(4);
 	}
 
-	public function getEscalas()
-	{
-		return DB::table('escalas')->select('*')->paginate(4);
-	}
 
-	public function getProximidades()
-	{
-		return DB::table('proximidade_geografica')->select('*')->paginate(4);
-	}
 
 	public function setAssunto($assunto, $email)
 	{

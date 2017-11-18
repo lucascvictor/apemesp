@@ -8,44 +8,37 @@
 	<div class="col-md-10">
 
 
-		<div class="row">
-                    <div class="col-lg-10">
-                        <h2>Assuntos da página de mensagens</h2>
-                        <p><a class="btn btn-success" href="{{ url('/admin/configs/addassunto') }}">Adicionar assunto </a></p>
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Assunto</th>
-                                        <th>E-mail Associado </th>
-                                        <th colspan="2"> </th>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($assuntos as $assunto)
-								<tr>
-                                        <td>{{ $assunto->assunto }}</td>
-                                        <td>{{ $assunto->email }}</td>
-                                        <td><a class="btn btn-default">Editar</a></td>
-                                        <td><a class="btn btn-danger">Deletar</a></td>
-                                    </tr>
+		<div class="panel panel-default">
 
-								@endforeach
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-		
-	</div>
-	<div class="row">
-    <p> {{ $assuntos->links() }} </p>
-	
-	</div>
+		  <div class="panel-heading">Configurações gerais do sistema</div>
+
+			<table class="table">
+		   <thead>
+		     <tr>
+		       <th>Configuração</th>
+		       <th colspan="2">Descrição</th>
+		     </tr>
+		   </thead>
+		   <tbody>
+		     <tr>
+		       <th><a href="{{ url('/admin/configs/assuntos') }}">Assuntos</a></th>
+		       <td>Configure os assuntos da páginas de mensagens (contato)</td>
+		     </tr>
+				 <tr>
+		       <th><a href="{{ url('/admin/configs/escalas') }}">Escalas</a></th>
+		       <td>Configure as escalas exibidas na página de dados profissionais do associado e na pesquisa dos musicoterapeutas</td>
+		     </tr>
+				 <tr>
+					<th><a href="{{ url('/admin/configs/proximidades') }}">Proximidades</a></th>
+					<td>Configure as proximidades geográficas exibidas em dados profissionais e na pesquisa dos musicoterapeutas</td>
+				</tr>
+		   </tbody>
+		 </table>
+		</div>
 
 
-</div>
-</div>
+
+
+
 
 @endsection

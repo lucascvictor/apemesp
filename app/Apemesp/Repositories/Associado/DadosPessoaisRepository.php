@@ -62,6 +62,7 @@ class DadosPessoaisRepository
 
 	public function storeDadosPessoais($request, $user_id, $nomeArquivo)
 	{
+
 		 //Salvar no BD os dados pessoais
             $dadosPessoais = new DadosPessoais;
             $dadosPessoais->id_user = $user_id;
@@ -77,8 +78,8 @@ class DadosPessoaisRepository
             $dadosPessoais->complemento = $request->complemento;
             $dadosPessoais->bairro = $request->bairro;
             $dadosPessoais->cep = $request->cep;
-            $dadosPessoais->id_estado = $request->estado;
-            $dadosPessoais->id_cidade = $request->cidade;
+            $dadosPessoais->id_estado = $this->getEstado($request->estado);
+            $dadosPessoais->id_cidade = $request->codCidade;
             $dadosPessoais->tel_comercial = $request->tel_comercial;
             $dadosPessoais->tel_celular = $request->tel_celular;
             $dadosPessoais->tel_residencial = $request->tel_residencial;
@@ -87,7 +88,7 @@ class DadosPessoaisRepository
 
 
         //Alterar o status de cadastros do associado
-            
+
             User::where('id', $user_id)
             ->update([
                 'id_cadastro' => 2,
@@ -104,8 +105,11 @@ class DadosPessoaisRepository
 
 	public function updateDadosPessoais($request, $id)
 	{
+
+
 		DadosPessoais::where('id', $id)
             ->update([
+
             'name' => $request->name,
             'facebook' => $request->facebook,
             'nascimento' => $request->nascimento,
@@ -116,13 +120,19 @@ class DadosPessoaisRepository
             'complemento' => $request->complemento,
             'bairro' => $request->bairro,
             'cep' => $request->cep,
-            'id_estado' => $request->estado,
-            'id_cidade' => $request->cidade,
+            'id_estado' => $this->getEstado($request->estado),
+            'id_cidade' => $request->codCidade,
             'tel_comercial' => $request->tel_comercial,
             'tel_celular' => $request->tel_celular,
             'tel_residencial' => $request->tel_residencial,
             'updated_at' => $this->getData()
                 ]);
+	}
+
+	public function getEstado($abrev)
+	{
+		$estado = Estado::where('abrev', $abrev)->select('id')->get();
+		return $estado[0]->id;
 	}
 
 

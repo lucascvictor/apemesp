@@ -10,7 +10,7 @@ use App\Http\Requests;
 
 use App\Apemesp\Models\Menu;
 
-use App\Apemesp\Repositories\Admin\ConfigsRepository;
+use App\Apemesp\Repositories\Admin\AssuntoRepository;
 
 use Auth;
 
@@ -18,7 +18,7 @@ use Session;
 
 use View;
 
-class ConfigsController extends Controller
+class AssuntoController extends Controller
 {
 
 
@@ -34,19 +34,22 @@ class ConfigsController extends Controller
 
 
    public function index(){
-   		$configsRepository = New ConfigsRepository;
-        $assuntos = $configsRepository->getAssuntos();
-        $assuntos->setPath('configs');
-        unset($configsRepository);
-        $id_perfil = Auth::user()->id_perfil;
-        return view('admin.admin.configs.configuracoes')->with('assuntos', $assuntos);
+
+   			$assuntoRepository = New AssuntoRepository;
+        $assuntos = $assuntoRepository->getAssuntos();
+
+        $assuntos->setPath('assuntos');
+
+        unset($assuntoRepository);
+
+        return view('admin.admin.configs.assuntos.showassuntos')
+				->with('assuntos', $assuntos);
+
     }
 
-    public function getAssunto(){
+    public function addAssunto(){
 
-
-
-        return view('admin.admin.configs.addassunto');
+        return view('admin.admin.configs.assuntos.addassunto');
     }
 
      public function setAssunto(Request $request){
@@ -59,7 +62,7 @@ class ConfigsController extends Controller
         $configsRepository = new ConfigsRepository;
         $configsRepository->setAssunto($request->assunto, $request->email);
         unset($configsRepository);
-        return redirect()->route('configs');
+        return redirect()->route('show.assuntos');
     }
 
 }

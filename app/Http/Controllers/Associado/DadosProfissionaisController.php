@@ -52,12 +52,12 @@ class DadosProfissionaisController extends Controller{
        }
         if($id_cadastro >= 3 ){
             return view('admin.associado.dadosprofissionais')
-            ->with('estados', $dadosProfissionais->getEstados())
-            ->with('cidades', [])
-            ->with('especialidades', $dadosProfissionais->getEspecialidades());
+            ->with('especialidades', $dadosProfissionais->getEspecialidades())
+            ->with('proximidades', $dadosProfissionais->getProximidades())
+            ->with('escalas', $dadosProfissionais->getEscalas());
         }
     }
 
-  
+
 
 }

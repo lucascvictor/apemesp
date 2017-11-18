@@ -127,39 +127,30 @@
 					  </div>
 					</div>
 
-				<!-- Bairro -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
-					  <div class="col-md-4">
-					  <input id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="">
-					  </div>
-					</div>
+          <!-- Bairro -->
+  					<div class="form-group">
+  					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
+  					  <div class="col-md-4">
+  					  <input readonly="true" id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="">
+  					  </div>
+  					</div>
 
+  				<!-- Cidade  -->
+  					<div class="form-group">
+  					  <label class="col-md-4 control-label" for="cidade">Cidade:</label>
+  					  <div class="col-md-4">
+  					  <input readonly="true" id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
+  					  </div>
+  					</div>
+  					<input id="codCidade" name="codCidade" type="hidden"> </input>
 
-
-				<!-- Estado -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="selectbasic">Estado</label>
-					  <div class="col-md-4">
-					    <select id="estado" name="estado" class="form-control">
-					    @foreach($estados as $estado)
-					      <option value="{{ $estado->id }}">{{ $estado->nome }}</option>
-					     @endforeach
-					    </select>
-					  </div>
-					</div>
-
-				<!-- Cidade -->
-					<div class="form-group">
-					 <label class="col-md-4 control-label" for="selectbasic">Cidade</label>
-					  <div class="col-md-4">
-					    <select id="cidade" name="cidade" class="form-control">
-					   	@foreach($cidades as $cidade)
-					      <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
-					     @endforeach
-					   	</select>
-					  </div>
-					</div>
+  					<!-- Estado -->
+  						<div class="form-group">
+  						  <label class="col-md-4 control-label" for="estado">Estado:</label>
+  						  <div class="col-md-4">
+  						  <input readonly="true" id="estado" name="estado" type="text" placeholder="Estado" class="form-control input-md" required="">
+  						  </div>
+  						</div>
 
 				<legend>Numeros de Telefones</legend>
 
@@ -273,72 +264,72 @@
  </script>
 
 
-       <!-- Adicionando Javascript para busca de CEP -->
-    <script type="text/javascript" >
+ <!-- Adicionando Javascript para busca de CEP -->
+<script type="text/javascript" >
 
-        $(document).ready(function() {
+	$(document).ready(function() {
 
-            function limpa_formulário_cep() {
-                // Limpa valores do formulário de cep.
-                $("#endereco").val("");
-                $("#bairro").val("");
-                $("#cidade").val("");
-                $("#estado").val("");
+			function limpa_formulário_cep() {
+					// Limpa valores do formulário de cep.
+					$("#endereco").val("");
+					$("#bairro").val("");
+					$("#cidade").val("");
+					$("#estado").val("");
+					$("#codCidade").val("");
+			}
 
-            }
+			//Quando o campo cep perde o foco.
+			$("#cep").blur(function() {
 
-            //Quando o campo cep perde o foco.
-            $("#cep").blur(function() {
+					//Nova variável "cep" somente com dígitos.
+					var cep = $(this).val().replace(/\D/g, '');
 
-                //Nova variável "cep" somente com dígitos.
-                var cep = $(this).val().replace(/\D/g, '');
+					//Verifica se campo cep possui valor informado.
+					if (cep != "") {
 
-                //Verifica se campo cep possui valor informado.
-                if (cep != "") {
+							//Expressão regular para validar o CEP.
+							var validacep = /^[0-9]{8}$/;
 
-                    //Expressão regular para validar o CEP.
-                    var validacep = /^[0-9]{8}$/;
+							//Valida o formato do CEP.
+							if(validacep.test(cep)) {
 
-                    //Valida o formato do CEP.
-                    if(validacep.test(cep)) {
+									//Preenche os campos com "..." enquanto consulta webservice.
+									$("#endereco").val("...");
+									$("#bairro").val("...");
+									$("#cidade").val("...");
+									$("#estado").val("...");
+									$("#codCidade").val("...");
 
-                        //Preenche os campos com "..." enquanto consulta webservice.
-                        $("#endereco").val("...");
-                        $("#bairro").val("...");
-                        $("#cidade").val("...");
-                        $("#estado").val("...");
+									//Consulta o webservice viacep.com.br/
+									$.getJSON("http://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
 
-
-                        //Consulta o webservice viacep.com.br/
-                        $.getJSON("http://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
-
-                            if (!("erro" in dados)) {
-                                //Atualiza os campos com os valores da consulta.
-                                $("#endereco").val(dados.logradouro);
-                                $("#bairro").val(dados.bairro);
-
-                      		  $("#cidade").val(dados.localidade);
-                                $("#estado").val(dados.uf);
-                            } //end if.
-                            else {
-                                //CEP pesquisado não foi encontrado.
-                                limpa_formulário_cep();
-                                alert("CEP não encontrado.");
-                            }
-                        });
-                    } //end if.
-                    else {
-                        //cep é inválido.
-                        limpa_formulário_cep();
-                        alert("Formato de CEP inválido.");
-                    }
-                } //end if.
-                else {
-                    //cep sem valor, limpa formulário.
-                    limpa_formulário_cep();
-                }
-            });
-        });
-       </script>
+											if (!("erro" in dados)) {
+													//Atualiza os campos com os valores da consulta.
+													$("#endereco").val(dados.logradouro);
+													$("#bairro").val(dados.bairro);
+													$("#cidade").val(dados.localidade);
+													$("#estado").val(dados.uf);
+													$("#codCidade").val(dados.ibge);
+											} //end if.
+											else {
+													//CEP pesquisado não foi encontrado.
+													limpa_formulário_cep();
+													alert("CEP não encontrado.");
+											}
+									});
+							} //end if.
+							else {
+									//cep é inválido.
+									limpa_formulário_cep();
+									alert("Formato de CEP inválido.");
+							}
+					} //end if.
+					else {
+							//cep sem valor, limpa formulário.
+							limpa_formulário_cep();
+					}
+			});
+	});
+ </script>
 
 @endsection

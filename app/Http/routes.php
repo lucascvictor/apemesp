@@ -48,8 +48,11 @@ Route::group(['prefix' => 'musicoterapia'], function () {
 
 
 Route::get('/agenda', 'Apemesp\AgendaController@getAgenda')->name('apemesp.agenda');
-Route::get('/encontreummt', 'Apemesp\EncontreUmMtController@getIndex')->name('apemesp.encontreummt');
 
+Route::group(['prefix' => 'encontreummt'], function () {
+  Route::get('/search', 'Apemesp\EncontreUmMtController@search')->name('apemesp.encontreummt.search');
+  Route::get('', 'Apemesp\EncontreUmMtController@getIndex')->name('apemesp.encontreummt');
+});
 
 
 
@@ -103,9 +106,24 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'configs'], function () {
-        Route::get('', 'Admin\ConfigsController@index')->name('configs');
-        Route::get('/addassunto', 'Admin\ConfigsController@getAssunto')->name('add.assunto');
-        Route::post('/addassunto', 'Admin\ConfigsController@setAssunto')->name('store.assunto');
+      Route::group(['prefix' => 'assuntos'], function () {
+        Route::get('/', 'Admin\AssuntoController@index');
+        Route::get('/addassunto', 'Admin\AssuntoController@addAssunto')->name('add.assunto');
+        Route::post('/', 'Admin\AssuntoController@storeAssunto')->name('store.assunto');
+      });
+      Route::group(['prefix' => 'escalas'], function () {
+        Route::get('/', 'Admin\EscalaController@index');
+        Route::get('/addescala', 'Admin\EscalaController@addEscala')->name('add.escala');
+        Route::post('/', 'Admin\EscalaController@storeEscala')->name('store.escala');
+      });
+      Route::group(['prefix' => 'proximidades'], function () {
+        Route::get('/', 'Admin\ProximidadeController@index');
+        Route::get('/addproximidade', 'Admin\ProximidadeController@addProximidade')->name('add.proximidade');
+        Route::post('/', 'Admin\ProximidadeController@storeProximidade')->name('store.proximidade');
+      });
+
+      Route::get('', 'Admin\ConfigsController@index')->name('configs');
+
     });
 
     Route::get('/financeiro', 'Admin\FinanceiroController@index');

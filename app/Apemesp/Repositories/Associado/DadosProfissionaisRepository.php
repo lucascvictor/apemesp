@@ -11,7 +11,7 @@ use App\Apemesp\Models\Nacionalidade;
 
 use App\Apemesp\Models\Estado;
 
-use App\Apemesp\Models\Cidade;
+use App\Apemesp\Models\Escala;
 
 use App\Apemesp\Models\DadosProfissionais;
 
@@ -44,6 +44,11 @@ class DadosProfissionaisRepository
     return Estado::orderby('nome', 'asc')->get();
   }
 
+  public function getEscalas()
+  {
+    return Escala::orderby('escala', 'asc')->get();
+  }
+
   public function getCidadeEspecifica($id_cidade)
   {
     return Cidade::where('id', $id_cidade)->get();
@@ -52,6 +57,11 @@ class DadosProfissionaisRepository
   public function getDadosProfissionais($user_id)
   {
     return DadosProfissionais::where('id_user', $user_id)->get();
+  }
+
+  public function storeDadosProfissionais()
+  {
+    $estado = Estado::where('abrev', $request->estado)->get();
   }
 
 }

@@ -10,7 +10,7 @@
 {{ csrf_field() }}
 		<fieldset>
 
-				
+
 				<legend>Formação Acadêmica</legend>
 
 				<div class="form-group">
@@ -21,22 +21,17 @@
                                 <label class="radio-inline">
                                     <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="2" @if($formacao->id_categoria_formacao == 2)checked="" @endif>Especialização
                                 </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="3" @if($formacao->id_categoria_formacao == 3)checked="" @endif>Mestrado
-                                </label>
-                                 <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="4" @if($formacao->id_categoria_formacao == 4)checked="" @endif>Doutorado
-                                </label>
+                              
                                  <label class="radio-inline">
                                     <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5" @if($formacao->id_categoria_formacao == 5)checked="" @endif>Outros
                                 </label>
-                           
+
                 </div>
 
 
 				<!-- Campo IES -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nomeies">Nome da IES:</label>  
+					  <label class="col-md-4 control-label" for="nomeies">Nome da IES:</label>
 					  <div class="col-md-4">
 					  <input id="nomeies" name="nomeies" type="text" placeholder="Instituição de Ensino" class="form-control input-md" required="" value="{{ $formacao->nomeies }}">
 					  </div>
@@ -44,7 +39,7 @@
 
 				<!-- Campo Titulo -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="titulo">Titulo:</label>  
+					  <label class="col-md-4 control-label" for="titulo">Titulo:</label>
 					  <div class="col-md-4">
 					  <input id="titulo" name="titulo" type="text" placeholder="Titulo" class="form-control input-md" required="" value="{{ $formacao->titulo }}">
 					  </div>
@@ -52,7 +47,7 @@
 
 				<!-- Ano de conclusão -->
 					<div class="form-group">
-			
+
                 <label class="col-md-4 control-label" for="ano">Ano de Conclusão/ Previsão:</label>
                 <div class="col-md-4">
                 <div class="input-group" data-link-format="yyyy">
@@ -61,10 +56,10 @@
                 </div>
                 </div>
       			  </div>
-        
+
         <!-- Campo Titulo do TCC -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>  
+					  <label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>
 					  <div class="col-md-4">
 					  <input id="titulotcc" name="titulotcc" type="text" placeholder="TCC" class="form-control input-md" required="" value="{{ $formacao->titulotcc }}">
 
@@ -81,7 +76,7 @@
 					      <?php if($formacao->id_estado == $estado->id)
 					      {
 					      	echo ("selected");
-					      			
+
 					      } ?>
 					      >{{ $estado->nome }}</option>
 					     @endforeach
@@ -95,7 +90,7 @@
 					  <div class="col-md-4">
 					    <select id="cidade" name="cidade" class="form-control">
 
-					   	
+
 					     <option value="{{ $cidade[0]->id }}">{{ $cidade[0]->nome}} </option>
 					   	</select>
 					  </div>
@@ -111,7 +106,7 @@
 					  </div>
 					 </div>
 
-					<!-- Botão de Arquivo --> 
+					<!-- Botão de Arquivo -->
 					<div class="form-group" id="mensagemtcc">
 					  <label class="col-md-4 control-label" for="filebutton">Cópia Salva do TCC/Monografia/Pesquisa: </label>
 					  <div class="col-md-4">
@@ -127,7 +122,7 @@
 					</div>
 
 
-					<!-- Botão de Arquivo --> 
+					<!-- Botão de Arquivo -->
 					<div class="form-group" id="mensagemcertificado">
 					  <label class="col-md-4 control-label" for="filebutton">Certificado de conclusão: </label>
 					  <div class="col-md-4">
@@ -138,13 +133,13 @@
 					  		@endif
 					  </div>
 					  <div class="col-md-4">
-					    <input id="certificado" name="certificado" class="input-file" type="file"> 
+					    <input id="certificado" name="certificado" class="input-file" type="file">
 					  </div>
 					</div>
 
 					<!-- Campo Atividades-->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nome">Atividades Desenvolvidas:</label>  
+					  <label class="col-md-4 control-label" for="nome">Atividades Desenvolvidas:</label>
 					  <div class="col-md-4">
 					  <textarea id="atividades" name="atividades" type="text" placeholder="Descreva aqui suas experiências obtidas durante o curso em questão" class="form-control input-md" required="">{{ $formacao->atividades }}</textarea>
 					  </div>
@@ -152,7 +147,7 @@
 
 					<!-- Carga Horária-->
 					<div class="form-group">
-			
+
                 <label class="col-md-4 control-label" for="ano">Carga horária:</label>
                 <div class="col-md-4">
                 <div class="input-group" data-link-format="yyyy">
@@ -161,18 +156,18 @@
                 </div>
                 </div>
       			  </div>
-					
 
-				
+
+
 
 				<!-- Botão -->
 					<div class="form-group">
-					  
+
 					  <div class="col-md-4">
 					    <button id="editar" name="editar" class="btn btn-primary" type="submit">Salvar alterações</button>
 
-					   
-					    
+
+
 					  </div>
 					</div>
 
@@ -205,18 +200,18 @@
             $.get('/associado/ajax/' + idEstado, function (cidades) {
                  $('#cidade').empty();
             var i =0;
-      
+
                 $.each(cidades, function (key, cidade) {
-                	
+
                 	var size = cidade.length;
                 	while(i < size){
                 		i++;
-                	}          
-                   
+                	}
+
                 });
             });
         });
-      </script>	
+      </script>
 <!-- Verificar tipo de arquivo a ser enviado -->
   <script type = "text/javascript" language = "javascript">
   		var i=0;
@@ -224,14 +219,14 @@
         $('#arquivotcc').on('change',function () {
             var tcc = $(this).val();
             var formato = '';
-            
+
             var limite = tcc.length - 3;
             while(limite < tcc.length)
             {
             	formato = formato + tcc[limite];
             	limite++;
             }
-      		
+
       		if(formato != 'pdf'){
       			if(i < 1){
       			$("#mensagemtcc").append('<div id="tccmensagem" class=" alert alert-danger" role="alert"><strong>Cuidado:</strong> O arquivo TCC não é do tipo PDF</div>');
@@ -241,7 +236,7 @@
       		}else{
       			document.getElementById("tccmensagem").remove();
       		}
-      		
+
         });
 
         $('#certificado').on('change',function () {
@@ -253,9 +248,9 @@
             	formato = formato + certificado[limite];
             	limite++;
             }
-      		
+
       		if(formato != 'pdf'){
-  
+
       			if(i2 < 1){
       			$("#mensagemcertificado").append('<div id="certificadomensagem" class=" alert alert-danger" role="alert"><strong>Cuidado:</strong> O arquivo de Certificado não é do tipo PDF</div>');
       			i2++;
@@ -264,9 +259,9 @@
       		}else{
       			document.getElementById("certificadomensagem").remove();
       		}
-      		
+
         });
-      </script>	
+      </script>
 
 
 @endsection

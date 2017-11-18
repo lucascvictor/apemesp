@@ -160,45 +160,44 @@
 					  </div>
 					</div>
 
-				<!-- Bairro -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
-					  <div class="col-md-4">
-					  <input id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="" value="{{ $dadospessoais[0]->bairro }}">
-					  </div>
-					</div>
 
 
+          <!-- Bairro -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="bairro">Bairro:</label>
+              <div class="col-md-4">
+              <input readonly="true" id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="" value="{{ $dadospessoais[0]->bairro }}">
+              </div>
+            </div>
 
-				<!-- Estado -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="estado">Estado</label>
-					  <div class="col-md-4">
-					    <select id="estado" name="estado" class="form-control">
-					    @foreach($estados as $estado)
-					      <option value="{{ $estado->id }}"
-					      <?php if($dadospessoais[0]->id_estado == $estado->id)
-					      {
-					      	echo ("selected");
+          <!-- Cidade  -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="cidade">Cidade:</label>
+              <div class="col-md-4">
+              <input readonly="true" id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="" value="{{ $cidade[0]->nome }}">
+              </div>
+            </div>
+            <input id="codCidade" name="codCidade" type="hidden" value="{{ $cidade[0]->id }}"> </input>
 
-					      } ?>
-					      >{{ $estado->nome }}</option>
-					     @endforeach
-					    </select>
-					  </div>
-					</div>
+            <!-- Estado -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="estado">Estado:</label>
+                <div class="col-md-4">
+                <input readonly="true" id="estado" name="estado" type="text" placeholder="Estado" class="form-control input-md" required=""
+                @foreach($estados as $estado)
 
-				<!-- Cidade -->
-					<div class="form-group">
-					 <label class="col-md-4 control-label" for="cidade">Cidade</label>
-					  <div class="col-md-4">
-					    <select id="cidade" name="cidade" class="form-control">
+                 <?php if($dadospessoais[0]->id_estado == $estado->id)
+                 {
+                   echo ("value=" . '"' . $estado->nome . '"');
+
+                 } ?>
+
+                @endforeach
+                 />
+                </div>
+              </div>
 
 
-					     <option value="{{ $cidade[0]->id }}">{{ $cidade[0]->nome}} </option>
-					   	</select>
-					  </div>
-					</div>
 
 
 
