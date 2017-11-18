@@ -10,19 +10,19 @@
 	<legend> Lista de formações adicionadas</legend>
 	<div class="row">
 	<div class="col-md-10">
-		
+
 
 
 		<div class="row">
                     <div class="col-lg-10">
-                       
+
                         <div class="table-responsive">
                             <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>
                                         <th>Instituição</th>
                                         <th>Titulo</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,14 +34,14 @@
                                         <td><a class="btn btn-primary" href="{{ url('/associado/formacao/') }}/{{ $formacao->id }}">Visualizar Formação</a></td>
                                  </tr>
                                  @endforeach
-								
-                                    
-                                   
+
+
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
-		
+
 	</div>
 	<div class="row">
 		<p> {{ $formacoes->links() }}</p>
@@ -52,7 +52,7 @@
 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/dadosacademicos')}}" >
 		<fieldset>
 		{{ csrf_field() }}
-				
+
 				<legend>Formação Acadêmica</legend>
 
 				<div class="form-group">
@@ -63,17 +63,17 @@
                                 <label class="radio-inline">
                                     <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="2">Especiasta em Músicoterapia
                                 </label>
-                                
+
                                  <label class="radio-inline">
                                     <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5">Outros
                                 </label>
-                           
+
                 </div>
 
 
 				<!-- Campo IES -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nomeies">Nome da IES:</label>  
+					  <label class="col-md-4 control-label" for="nomeies">Nome da IES:</label>
 					  <div class="col-md-4">
 					  <input id="nomeies" name="nomeies" type="text" placeholder="Instituição de Ensino" class="form-control input-md" required="">
 					  </div>
@@ -81,7 +81,7 @@
 
 				<!-- Campo Titulo -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="titulo">Titulo:</label>  
+					  <label class="col-md-4 control-label" for="titulo">Titulo:</label>
 					  <div class="col-md-4">
 					  <input id="titulo" name="titulo" type="text" placeholder="Titulo" class="form-control input-md" required="">
 					  </div>
@@ -89,7 +89,7 @@
 
 				<!-- Ano de conclusão -->
 					<div class="form-group">
-			
+
                 <label class="col-md-4 control-label" for="ano">Ano de Conclusão/ Previsão:</label>
                 <div class="col-md-4">
                 <div class="input-group" data-link-format="yyyy">
@@ -98,10 +98,10 @@
                 </div>
                 </div>
       			  </div>
-        
+
         <!-- Campo Titulo do TCC -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>  
+					  <label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>
 					  <div class="col-md-4">
 					  <input id="titulotcc" name="titulotcc" type="text" placeholder="TCC" class="form-control input-md" required="">
 
@@ -141,25 +141,25 @@
 					  </div>
 					 </div>
 
-					<!-- Botão de Arquivo --> 
+					<!-- Botão de Arquivo -->
 					<div class="form-group" id="mensagemtcc">
 					  <label class="col-md-4 control-label" for="filebutton">Cópia do TCC/Monografia/Pesquisa: </label>
 					  <div class="col-md-4">
-					    <input id="arquivotcc" name="arquivotcc" class="input-file" type="file"> 
+					    <input id="arquivotcc" name="arquivotcc" class="input-file" type="file">
 					  </div>
 					</div>
 
-					<!-- Botão de Arquivo --> 
+					<!-- Botão de Arquivo -->
 					<div class="form-group" id="mensagemcertificado">
 					  <label class="col-md-4 control-label" for="filebutton">Certificado de conclusão: </label>
 					  <div class="col-md-4">
-					    <input id="certificado" name="certificado" class="input-file" type="file"> 
+					    <input id="certificado" name="certificado" class="input-file" type="file">
 					  </div>
 					</div>
 
 					<!-- Campo Atividades-->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nome">Atividades Desenvolvidas:</label>  
+					  <label class="col-md-4 control-label" for="nome">Atividades Desenvolvidas:</label>
 					  <div class="col-md-4">
 					  <textarea id="atividades" name="atividades" type="text" placeholder="Descreva aqui suas experiências obtidas durante o curso em questão" class="form-control input-md" required="">
 					  	</textarea>
@@ -168,7 +168,7 @@
 
 					<!-- Carga Horária-->
 					<div class="form-group">
-			
+
                 <label class="col-md-4 control-label" for="ano">Carga horária:</label>
                 <div class="col-md-4">
                 <div class="input-group" data-link-format="yyyy">
@@ -177,13 +177,13 @@
                 </div>
                 </div>
       			  </div>
-					
 
-				
+
+
 
 				<!-- Botão -->
 					<div class="form-group">
-					  
+
 					  <div class="col-md-4">
 					    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Adicionar</button>
 					  </div>
@@ -193,62 +193,6 @@
 		</fieldset>
 </form>
 
-<form class="form-horizontal" action="{{ url('/associado/dadosacademicos/categoria')}}" method="POST">
-		<fieldset>
-    {{ csrf_field() }}
-				
-				<legend>Sua classificação</legend>
-        <center>
-				<div class="form-group">
-					<div class="row">
-					  <div class="col-md-4 alert alert-info alert-dismissable" role="alert">
-							  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					  	<strong>Por favor.</strong> Selecione sua classificação atual seguindo seu nível acadêmico. Obs.: Mt. = Musicoterapeuta.
-					  </div>
-            </div>
-            <div class="row">
-            <div class="col-md-4 alert alert-success alert-dismissable" role="alert">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <strong>Categoria Atual:
-             </strong> 
-            </div>
-            </div>
-				</div>
-        </center>
-				<!-- Categorias -->
-				<div class="form-group">
-        
-                                <label class="col-md-4 control-label" for="nome">Categorias:</label>  
-
-					  <div class="col-md-4">
-					  			<div class="radio">
-                                    <label>
-                                        <input type="radio" name="categoria" id="categoria" value="3">Mt.Estudante
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="categoria" id="categoria" value="1" checked="">Mt.Bacharel
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="categoria" id="categoria" value="2">Mt.Especialista
-                                    </label>
-                                </div>
-                                
-                                 <div class="radio">
-                                    <label>
-                                        <input type="radio" name="categoria" id="categoria" value="4">Colaborador
-                                    </label>
-                                </div>
-                       </div>
-                 </div>
-
-                 
-					<button class="btn btn-primary"> Salvar Categoria</button>
-		</fieldset>
-	</form>
 
 @endsection
 
@@ -272,19 +216,19 @@
             $.get('/associado/ajax/' + idEstado, function (cidades) {
                  $('#id_cidade').empty();
             var i =0;
-      
+
                 $.each(cidades, function (key, cidade) {
-                	
+
                 	var size = cidade.length;
                 	while(i < size){
                 		$('#id_cidade').append('<option value=' + cidade[i].id + '>' + cidade[i].nome + '</option>');
                 		i++;
-                	}          
-                   
+                	}
+
                 });
             });
         });
-      </script>	
+      </script>
 <!-- Verificar tipo de arquivo a ser enviado -->
   <script type = "text/javascript" language = "javascript">
   		var i=0;
@@ -292,14 +236,14 @@
         $('#arquivotcc').on('change',function () {
             var tcc = $(this).val();
             var formato = '';
-            
+
             var limite = tcc.length - 3;
             while(limite < tcc.length)
             {
             	formato = formato + tcc[limite];
             	limite++;
             }
-      		
+
       		if(formato != 'pdf'){
       			if(i < 1){
       			$("#mensagemtcc").append('<div id="tccmensagem" class=" alert alert-danger" role="alert"><strong>Cuidado:</strong> O arquivo TCC não é do tipo PDF</div>');
@@ -309,7 +253,7 @@
       		}else{
       			document.getElementById("tccmensagem").remove();
       		}
-      		
+
         });
 
         $('#certificado').on('change',function () {
@@ -321,9 +265,9 @@
             	formato = formato + certificado[limite];
             	limite++;
             }
-      		
+
       		if(formato != 'pdf'){
-  
+
       			if(i2 < 1){
       			$("#mensagemcertificado").append('<div id="certificadomensagem" class=" alert alert-danger" role="alert"><strong>Cuidado:</strong> O arquivo de Certificado não é do tipo PDF</div>');
       			i2++;
@@ -332,8 +276,8 @@
       		}else{
       			document.getElementById("certificadomensagem").remove();
       		}
-      		
+
         });
-      </script>	
+      </script>
 
  @endsection

@@ -158,7 +158,7 @@ class DadosAcademicosRepository
 	public function updateArquivoTcc($id, $arquivoTcc)
 	{
 		FormacoesAcademicas::where('id', $id)->update([
-                 'arquivotcc' => $arquivoTcc 
+                 'arquivotcc' => $arquivoTcc
                 ]);
 	}
 
@@ -169,8 +169,11 @@ class DadosAcademicosRepository
                 ]);
 	}
 
-	public function changeCadastro($id)
+	public function changeCadastro($id_user, $id)
 	{
-		User::where('id', $id)->update(['id_cadastro' => 3]);
+		$id_atual = User::where('id', $id)->get();
+		if ($id_atual[0]->id < 3) {
+			User::where('id', $id_user)->update(['id_cadastro' => 3]);
+		}
 	}
 }

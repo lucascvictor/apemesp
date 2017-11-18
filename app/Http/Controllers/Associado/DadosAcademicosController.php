@@ -58,7 +58,7 @@ class DadosAcademicosController extends Controller{
                 ->with('formacoes', $formacoes)
                 ->with('categoria', $categoria);
         }
-        
+
     }
 
 
@@ -73,14 +73,15 @@ class DadosAcademicosController extends Controller{
                     'anodeconclusao' => 'required',
                 ));
         $dadosAcademicos = new DadosAcademicosRepository;
-
+        $id_cadastro = Auth::user()->id_cadastro;
+        $id_user = Auth::user()->id;
         //Carregando o arquivo do TCC
-        
+
         $arquivoTcc = $request->file('arquivotcc');
         $arquivoCertificado = $request->file('certificado');
 
         if ($arquivoTcc != null) { //Verifica se algum arquivo foi enviado
-            
+
             $cpf = $dadosAcademicos->getCpf(Auth::user()->id);
             $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf;
             $formato = $request->file('arquivotcc')->getClientOriginalExtension();
@@ -101,10 +102,11 @@ class DadosAcademicosController extends Controller{
         }
 
 
-        //Salvar no BD os dados pessoais
-            $dadosAcademicos->storeDadosAcademicos(Auth::user()->id, $request, $arquivoTcc, $arquivoCertificado);
+        //Salvar no BD os dados academicos e altera o status do cadastro
 
-        
+            $dadosAcademicos->storeDadosAcademicos(Auth::user()->id, $request, $arquivoTcc, $arquivoCertificado);
+            $dadosAcademicos->changeCadastro($id_user, $id_cadastro);
+
         //redirecionar a pagina
             Session::flash('sucesso', 'Seus dados  salvos com sucesso');
             //flash para esta request e put para salvar na sessao
@@ -126,7 +128,7 @@ class DadosAcademicosController extends Controller{
     }
 
     public function editFormacao($id)
-    {   
+    {
         $dadosAcademicos = new DadosAcademicosRepository;
         $formacao = $dadosAcademicos->getFormacao($id);
         $estados = $dadosAcademicos->getEstados();
@@ -159,7 +161,7 @@ class DadosAcademicosController extends Controller{
         $arquivoCertificado = $request->file('certificado');
 
         if ($arquivoTcc != null) { //Verifica se algum arquivo foi enviado
-        
+
             $formato = $request->file('arquivotcc')->getClientOriginalExtension();
             $arquivoTcc =  $dadosAcademicos->verificaTcc($id);
 
@@ -174,10 +176,10 @@ class DadosAcademicosController extends Controller{
         }
 
         //Carregando o arquivo do Certificado
-        
+
         if ($arquivoCertificado != null) { //Verifica se algum arquivo foi enviado
 
-            
+
             $formato = $request->file('certificado')->getClientOriginalExtension();
             $arquivoCertificado =  $dadosAcademicos->verificaCertificado($id);
             if ($arquivoCertificado == null) {
@@ -187,29 +189,17 @@ class DadosAcademicosController extends Controller{
             $request->file('certificado')->move($pastaDestino, $arquivoCertificado);
             $dadosAcademicos->updateArquivoCertificado($id, $arquivoCertificado);
         }
-       
+
            $dadosAcademicos->updateDadosAcademicos($id, $request);
 
 
             Session::flash('sucesso', 'Seus dados acadêmicos foram atualizado com sucesso');
             //flash para esta request e put para salvar na sessao
-            
+
             return redirect()->back();
-} 
+}
 
 
-
-        public function storeCategoria(Request $request){
-            $dadosAcademicos = new DadosAcademicosRepository;
-            $id_user = Auth::user()->id;
-            $verificacao = $dadosAcademicos->getCategoriaUsuario($id_user);
-            $dadosAcademicos->storeUsuarioCategoria($id_user, $request);
-            $dadosAcademicos->changeCadastro($id_user);
-            Session::flash('sucesso', 'Seus dados acadêmicos foram atualizado com sucesso');
-            //flash para esta request e put para salvar na sessao
-            
-            return redirect()->back();
-        }
 
 
     }

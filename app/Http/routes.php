@@ -158,7 +158,6 @@ Route::group(['prefix' => 'associado'], function () {
     Route::group(['prefix' => 'dadosacademicos'], function () {
         Route::get('', 'Associado\DadosAcademicosController@getDadosAcademicos')->name('dadosacademicos'); //Primeiro form para cadastro
         Route::post('', 'Associado\DadosAcademicosController@storeDadosAcademicos')->name('formacao.store'); //Salvar os dados do Primeiro contato
-        Route::post('/categoria', 'Associado\DadosAcademicosController@storeCategoria')->name('formacao.store.categoria'); //Salvar os dados do Primeiro contato
     });
 
     Route::get('/formacao/edit/{id}', 'Associado\DadosAcademicosController@editFormacao')->name('formacao.edit'); //Editar formação recebendo o id especifico
