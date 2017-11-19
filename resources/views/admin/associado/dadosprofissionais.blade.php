@@ -1,136 +1,96 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Página Inicial')
+@section('titulo', 'Cadastro de dados profissionais')
 
 @section('conteudo')
 
 
+<legend>Dados Profissionais Cadastrados</legend>
+
+<div class="row">
+								<div class="col-lg-12">
 
 
-<form class="form-horizontal" method="POST" action="{{ url('/dadosprofissionais') }}">
-		<fieldset>
-				<legend>Dados Profissionais</legend>
+												<table class="table table-hover table-striped">
+														<thead>
+																<tr>
+																		<th>Endereço</th>
+																		<th>Localização</th>
+																		<th>Telefone</th>
+																		<th colspan="2"></th>
+																</tr>
+														</thead>
+														<tbody>
+														@foreach($dados as $dado)
+														<tr>
+																		<td>{{ $dado->endereco }}</td>
+																		@foreach($proximidades as $proximidade)
+																			@if($dado->id_proximidade == $proximidade->id) <td>{{ $proximidade->localidade }}</td> @endif
+																		@endforeach
+																		<td>{{ $dado->telefone }}</td>
+																		<td><a class="btn btn-default" href="{{ url('/associado/dadosprofissionais/edit/') }}/{{ $dado->id }}">Editar</a></td>
+																		<td><a class="btn btn-primary" href="{{ url('/associado/dadosprofissionais/') }}/{{ $dado->id }}">Visualizar Dados Profissionais</a></td>
+														 </tr>
+														 @endforeach
 
-				<center> <h4> Dados comerciais</h4> </center>
-				<!-- CEP -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="cep">CEP:</label>
-					  <div class="col-md-4">
-					  <input id="cep" name="cep" type="text" placeholder="CEP" class="form-control input-md" required="">
-					  </div>
-					</div>
 
-				<!-- Endereço Comercial-->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="endereco">Endereço:</label>
-					  <div class="col-md-4">
-					  <input id="endereco" name="endereco" type="text" placeholder=" Endereço " class="form-control input-md" required="">
-					  </div>
-					</div>
 
-				<!-- Complemento -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="complemento">Complemento:</label>
-					  <div class="col-md-4">
-					  <input id="complemento" name="complemento" type="text" placeholder=" Compl. " class="form-control input-md">
-					  </div>
-					</div>
+														</tbody>
+												</table>
 
-				<!-- Bairro -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
-					  <div class="col-md-4">
-					  <input readonly="true" id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="">
-					  </div>
-					</div>
 
-				<!-- Cidade  -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="cidade">Cidade:</label>
-					  <div class="col-md-4">
-					  <input readonly="true" id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
-					  </div>
-					</div>
-					<input id="codCidade" name="codCidade" type="hidden"> </input>
+										</div>
 
-					<!-- Estado -->
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="estado">Estado:</label>
-						  <div class="col-md-4">
-						  <input readonly="true" id="estado" name="estado" type="text" placeholder="Estado" class="form-control input-md" required="">
-						  </div>
+						</div>
+
+						<div class="row">
+							<p> {{ $dados->links() }}</p>
+						</div>
+
+						<div class="row" style="margin-top: 20%;">
+							<div class="col-md-4">
+						<a class="btn btn-success btn-block" href="" data-toggle="modal" data-target="#CadastroModal">Adicionar novos dados profissionais</a>
+						<a href="" data-toggle="modal" data-target="#myModal">Sua especialidade não está listada? Clique aqui </a>
+							</div>
+							<div class="col-md-4">
+							<a class="btn btn-info btn-block" href="" data-toggle="modal" data-target="#Atendimento">Não realizo atendimentos no momento</a>
+							</div>
 						</div>
 
 
 
-				<!--área de atuação geográfica -->
-				<div class="form-group">
-											 <label class="col-md-4 control-label" for="proximidade">Localização:</label>
-											 <div class="col-md-4">
-												 <select id="proximidade" name="proximidade" class="form-control">
-												 @foreach($proximidades as $proximidade)
-													 <option value="{{ $proximidade->id }}">{{ $proximidade->localidade }}</option>
-												 @endforeach
-												</select>
-												<p>Este campo será utilizado para filtrar sua localização em buscas da página "Encontre um M.T."</p>
-											</div>
+
+		<div class="modal fade" id="Atendimento" role="dialog">
+				 <div class="modal-dialog">
+
+					 <!-- Modal content-->
+							 <div class="modal-content">
+									 <div class="modal-header">
+									 <button type="button" class="close" data-dismiss="modal">&times;</button>
+											 <h4 class="modal-title">Condições para esta opção</h4>
+										 </div>
+									 <div class="modal-body">
+
+											 <legend>Optante por não realização de atendimentos momentaneamente</legend>
+											 <p> 1- Seus dados não serão exibidos na busca de musicoterapeutas</p>
+											 <p> 2- Não será possível cadastrar dados profisionais até que esta ação seja desfeita</p>
+											 <p> 3- Para que esta ação seja desfeita, por favor acesse as confirgurações do seu perfil</p>
+											 <br />
+
+											 </div>
+										 		<div class="modal-footer">
+													<button class="btn btn-danger btn-block" data-dismiss="modal">
+														Cancelar
+													</button>
+													 <a href="{{ url('/associado/dadosprofissionais/atendimento') }}" class="btn btn-success btn-block">
+														 Concordo
+													 </a>
+											 </div>
+							 </div>
+
 				 </div>
+		</div>
 
-				<!-- Categorias -->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="especialidade">Especialidade de atendimento:</label>
-					<div class="col-md-4">
-						<select id="assunto" name="assunto" class="form-control">
-							@foreach($especialidades as $especialidade)
-								<option value="{{ $especialidade->id }}">{{ $especialidade->nome }}</option>
-							@endforeach
-					 </select>
-					 <a href="" data-toggle="modal" data-target="#myModal">Sua especialidade não está listatada? Clique aqui </a>
-
-
-					</div>
-      	</div>
-
-          <!-- Campo LinkedIn -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="linkedin"><span class="fa fa-linkedin"></span></label>
-					  <div class="col-md-4">
-					  	<input id="linkedin" name="linkedin" type="text" placeholder="http://linkedin.com/in/seuperfil" class="form-control input-md" required="">
-					  </div>
-					</div>
-
-					<!-- Campo Telefone -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="telefone">Telefone para atendimento</label>
-					  <div class="col-md-4">
-					  	<input onkeyup="somenteNumeros(this)"id="telefone" name="telefone" type="text" placeholder="Somente numeros" class="form-control input-md" required="">
-					  </div>
-					</div>
-
-					<!-- Dias de atendimento -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="dias_atendimento">Dias de atendimento</label>
-					  <div class="col-md-4">
-							<select id="dias_atendimento" name="dias_atendimento" class="form-control">
-								@foreach($escalas as $escala)
-									<option value="{{ $escala->id }}">{{ $escala->nome }}</option>
-								@endforeach
-						 </select>
-					  </div>
-					</div>
-
-
-				<!-- Botão -->
-					<div class="form-group">
-
-					  <div class="col-md-4">
-					    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Salvar</button>
-					  </div>
-					</div>
-
-
-		</fieldset>
-</form>
 
 <div class="modal fade" id="myModal" role="dialog">
 		 <div class="modal-dialog">
@@ -153,12 +113,152 @@
 											 <button class="btn btn-success btn-block">
 												 OK
 											 </button>
+											 <center><p style="color: red;">Esta especialidade pode ser removida pelo administrador caso seja necessário</p></center>
 									 </div>
 							 </form>
 
 					 </div>
 
 		 </div>
+</div>
+
+
+<div class="modal fade" id="CadastroModal" role="dialog">
+		 <div class="modal-dialog">
+
+			 <!-- Modal content-->
+					 <div class="modal-content">
+							 <div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal">&times;</button>
+									 <h4 class="modal-title">Adicionar dados profissionais</h4>
+								 </div>
+							 <div class="modal-body">
+								 <form class="form-horizontal" method="POST" action="{{ url('/associado/dadosprofissionais') }}">
+								 	{{ csrf_field() }}
+								 		<fieldset>
+								 				<legend>Dados Profissionais</legend>
+
+								 				<center> <h4> Dados comerciais</h4> </center>
+								 				<!-- CEP -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="cep">CEP:</label>
+								 					  <div class="col-md-4">
+								 					  <input onkeyup="somenteNumeros(this)" id="cep" name="cep" type="text" placeholder="CEP" class="form-control input-md" required="">
+								 					  </div>
+								 					</div>
+
+								 				<!-- Endereço Comercial-->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="endereco">Endereço:</label>
+								 					  <div class="col-md-4">
+								 					  <input id="endereco" name="endereco" type="text" placeholder=" Endereço " class="form-control input-md" required="">
+								 					  </div>
+								 					</div>
+
+								 				<!-- Complemento -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="complemento">Complemento:</label>
+								 					  <div class="col-md-4">
+								 					  <input id="complemento" name="complemento" type="text" placeholder=" Compl. " class="form-control input-md">
+								 					  </div>
+								 					</div>
+
+								 				<!-- Bairro -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
+								 					  <div class="col-md-4">
+								 					  <input readonly="true" id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md" required="">
+								 					  </div>
+								 					</div>
+
+								 				<!-- Cidade  -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="cidade">Cidade:</label>
+								 					  <div class="col-md-4">
+								 					  <input readonly="true" id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
+								 					  </div>
+								 					</div>
+								 					<input id="codCidade" name="codCidade" type="hidden"> </input>
+
+								 					<!-- Estado -->
+								 						<div class="form-group">
+								 						  <label class="col-md-4 control-label" for="estado">Estado:</label>
+								 						  <div class="col-md-4">
+								 						  <input readonly="true" id="estado" name="estado" type="text" placeholder="Estado" class="form-control input-md" required="">
+								 						  </div>
+								 						</div>
+
+
+
+								 				<!--área de atuação geográfica -->
+								 				<div class="form-group">
+								 											 <label class="col-md-4 control-label" for="proximidade">Localização:</label>
+								 											 <div class="col-md-4">
+								 												 <select id="proximidade" name="proximidade" class="form-control">
+								 												 @foreach($proximidades as $proximidade)
+								 													 <option value="{{ $proximidade->id }}">{{ $proximidade->localidade }}</option>
+								 												 @endforeach
+								 												</select>
+								 												<p>Este campo será utilizado para filtrar sua localização em buscas da página "Encontre um M.T."</p>
+								 											</div>
+								 				 </div>
+
+								 				<!-- Especialidades -->
+								 				<div class="form-group">
+								 					<label class="col-md-4 control-label" for="especialidade">Especialidade de atendimento:</label>
+								 					<div class="col-md-4">
+								 						<select id="especialidade" name="especialidade" class="form-control">
+								 							@foreach($especialidades as $especialidade)
+								 								<option value="{{ $especialidade->id }}">{{ $especialidade->nome }}</option>
+								 							@endforeach
+								 					 </select>
+
+								 					</div>
+								       	</div>
+
+								           <!-- Campo LinkedIn -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="linkedin"><span class="fa fa-linkedin"></span> / Site para contato</label>
+								 					  <div class="col-md-4">
+								 					  	<input id="linkedin" name="linkedin" type="text" placeholder="http://linkedin.com/in/seuperfil" class="form-control input-md" >
+								 					  </div>
+								 					</div>
+
+								 					<!-- Campo Telefone -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="telefone">Telefone para atendimento</label>
+								 					  <div class="col-md-4">
+								 					  	<input onkeyup="somenteNumeros(this)" id="telefone" name="telefone" type="text" placeholder="Somente numeros" class="form-control input-md" required="">
+								 					  </div>
+								 					</div>
+
+								 					<!-- Dias de atendimento -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="dias_atendimento">Dias de atendimento</label>
+								 					  <div class="col-md-4">
+
+								 							<select id="dias_atendimento" name="dias_atendimento" class="form-control">
+								 								@foreach($escalas as $escala)
+								 									<option value="{{ $escala->id }}">{{ $escala->escala }}</option>
+								 								@endforeach
+
+								 						 </select>
+								 					  </div>
+								 					</div>
+
+								 		</fieldset>
+										<div class="modal-footer">
+											 <button class="btn btn-success btn-block">
+												 OK
+											 </button>
+									 </div>
+								 </form>
+
+							</div>
+
+
+		 </div>
+</div>
 </div>
 
 @endsection

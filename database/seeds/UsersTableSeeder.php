@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
         DB::table('users')->insert([
 
-        0=> [ 
- "id" =>1, 
+        0=> [
+ "id" =>1,
 "name" => "Ubaldo Ridney de Jesus Rizzaldo Junior",
 "email" => "urjrj@hotmail.com",
 "password" => Hash::make("r80719"),
@@ -26,9 +26,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-1=> [ 
- "id" =>2, 
+],
+1=> [
+ "id" =>2,
 "name" => "Rinaldo Gonçalves Ferreira",
 "email" => "rinaldocavaco@hotmail.com",
 "password" => Hash::make("a73419"),
@@ -37,9 +37,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-2=> [ 
- "id" =>3, 
+],
+2=> [
+ "id" =>3,
 "name" => "Marcos Alberto Taddeo Cipullo",
 "email" => "matcipullo@gmail.com",
 "password" => Hash::make("o80519"),
@@ -48,9 +48,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-3=> [ 
- "id" =>4, 
+],
+3=> [
+ "id" =>4,
 "name" => "Ivette Catarina Jabour Kairalla",
 "email" => "ivettekairalla@hotmail.com",
 "password" => Hash::make("a84919"),
@@ -59,9 +59,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-4=> [ 
- "id" =>5, 
+],
+4=> [
+ "id" =>5,
 "name" => "Osvaldo Barbosa Júnior",
 "email" => "terapiaortomolecular@hotmail.com",
 "password" => Hash::make("r000"),
@@ -70,9 +70,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-5=> [ 
- "id" =>6, 
+],
+5=> [
+ "id" =>6,
 "name" => "Maria Isabel da Penha Sinegaglia Hori",
 "email" => "belmusical@yahoo.com.br",
 "password" => Hash::make("i80219"),
@@ -81,9 +81,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-6=> [ 
- "id" =>7, 
+],
+6=> [
+ "id" =>7,
 "name" => "Veronica Duarte",
 "email" => "veroflautista@hotmail.com",
 "password" => Hash::make("e65319"),
@@ -92,9 +92,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-7=> [ 
- "id" =>8, 
+],
+7=> [
+ "id" =>8,
 "name" => "Nathalya de Carvalho Avelino",
 "email" => "mtnathalya@gmail.com",
 "password" => Hash::make("o21519"),
@@ -103,9 +103,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-8=> [ 
- "id" =>9, 
+],
+8=> [
+ "id" =>9,
 "name" => "Frederico Antônio Dervão Jovini",
 "email" => "fredanto@outlook.com",
 "password" => Hash::make("i86619"),
@@ -114,9 +114,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-9=> [ 
- "id" =>10, 
+],
+9=> [
+ "id" =>10,
 "name" => "Marcelle Trindade Guion Lorenzzoni",
 "email" => "marcellemusic@hotmail.com",
 "password" => Hash::make("i70719"),
@@ -125,9 +125,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-10=> [ 
- "id" =>11, 
+],
+10=> [
+ "id" =>11,
 "name" => "Ricardo Antonio Romanha Sousa",
 "email" => "ricardoromanha@gmail.com",
 "password" => Hash::make("a59119"),
@@ -136,9 +136,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-11=> [ 
- "id" =>12, 
+],
+11=> [
+ "id" =>12,
 "name" => "Débora Cristina Rédua Cabral",
 "email" => "deboracabral91@gmail.com",
 "password" => Hash::make("l86519"),
@@ -147,9 +147,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-12=> [ 
- "id" =>13, 
+],
+12=> [
+ "id" =>13,
 "name" => "Libiane Cristine Barroso",
 "email" => "libianebarroso@yahoo.com.br",
 "password" => Hash::make("o84219"),
@@ -158,9 +158,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-13=> [ 
- "id" =>14, 
+],
+13=> [
+ "id" =>14,
 "name" => "Renata Craveiro da Costa Monteiro",
 "email" => "tata.remonteiro@gmail.com",
 "password" => Hash::make("o80619"),
@@ -169,9 +169,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-14=> [ 
- "id" =>15, 
+],
+14=> [
+ "id" =>15,
 "name" => "José Eduardo Gomes da Silva",
 "email" => "mt.psicanalise@gmail.com",
 "password" => Hash::make("a47519"),
@@ -180,9 +180,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-15=> [ 
- "id" =>16, 
+],
+15=> [
+ "id" =>16,
 "name" => "Luis Carlos Bueno de Oliveira",
 "email" => "luiscarlospulica@hotmail.com",
 "password" => Hash::make("a81019"),
@@ -191,9 +191,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-16=> [ 
- "id" =>17, 
+],
+16=> [
+ "id" =>17,
 "name" => "Maria Anastácia Manzano",
 "email" => "mt.anastacia@gmail.com",
 "password" => Hash::make("o80119"),
@@ -202,9 +202,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-17=> [ 
- "id" =>18, 
+],
+17=> [
+ "id" =>18,
 "name" => "Ednaldo Antonio dos Santos",
 "email" => "ednaldo_antonio@yahoo.com.br",
 "password" => Hash::make("s80219"),
@@ -213,9 +213,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-18=> [ 
- "id" =>19, 
+],
+18=> [
+ "id" =>19,
 "name" => "Kleber Daniel da Silva",
 "email" => "musicokleber@hotmail.com",
 "password" => Hash::make("a80619"),
@@ -224,9 +224,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-19=> [ 
- "id" =>20, 
+],
+19=> [
+ "id" =>20,
 "name" => "Ilza Zenker Leme Joly",
 "email" => "ilzazenker@gmail.com",
 "password" => Hash::make("y83419"),
@@ -235,9 +235,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-20=> [ 
- "id" =>21, 
+],
+20=> [
+ "id" =>21,
 "name" => "Perola Carvalho Pereira",
 "email" => "perolacarvalhopereira@gmail.com",
 "password" => Hash::make("a81819"),
@@ -246,9 +246,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-21=> [ 
- "id" =>22, 
+],
+21=> [
+ "id" =>22,
 "name" => "José de Lima Torres",
 "email" => "torresminho@yahoo.com.br",
 "password" => Hash::make("s42019"),
@@ -257,9 +257,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-22=> [ 
- "id" =>23, 
+],
+22=> [
+ "id" =>23,
 "name" => "Patrícia Rull Gomes",
 "email" => "patriciarullgomes@hotmail.com",
 "password" => Hash::make("s000"),
@@ -268,9 +268,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-23=> [ 
- "id" =>24, 
+],
+23=> [
+ "id" =>24,
 "name" => "Paulo Roberto Suzuki",
 "email" => "suzuki@pobox.com; szk.pobox@gmail.com",
 "password" => Hash::make("i86219"),
@@ -279,9 +279,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-24=> [ 
- "id" =>25, 
+],
+24=> [
+ "id" =>25,
 "name" => "Clara Yoko Shimoda Ikuta",
 "email" => "claraikuta@yahoo.com.br",
 "password" => Hash::make("a00019"),
@@ -290,9 +290,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-25=> [ 
- "id" =>26, 
+],
+25=> [
+ "id" =>26,
 "name" => "Fernanda Vieira da Motta",
 "email" => "fmotta68@gmail.com",
 "password" => Hash::make("a88019"),
@@ -301,9 +301,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-26=> [ 
- "id" =>27, 
+],
+26=> [
+ "id" =>27,
 "name" => "Márcia Malentacchi Lacerda",
 "email" => "marcia.musicoterapia@hotmail.com",
 "password" => Hash::make("a89019"),
@@ -312,9 +312,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-27=> [ 
- "id" =>28, 
+],
+27=> [
+ "id" =>28,
 "name" => "Ana Maria Caramujo Pires de Campos",
 "email" => "anamariacaramujo@uol.com.br",
 "password" => Hash::make("s82219"),
@@ -323,9 +323,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-28=> [ 
- "id" =>29, 
+],
+28=> [
+ "id" =>29,
 "name" => "Marilena Fernandes do Nascimento",
 "email" => "marilena.nascimento@gmail.com",
 "password" => Hash::make("o86719"),
@@ -334,9 +334,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-29=> [ 
- "id" =>30, 
+],
+29=> [
+ "id" =>30,
 "name" => "Fabio Pontes de Andrade",
 "email" => "fpaadm@gmail.com",
 "password" => Hash::make("e83319"),
@@ -345,9 +345,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-30=> [ 
- "id" =>31, 
+],
+30=> [
+ "id" =>31,
 "name" => "Tânya Marques Cardoso",
 "email" => "tanyamarx@hotmail.com",
 "password" => Hash::make("o82319"),
@@ -356,9 +356,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-31=> [ 
- "id" =>32, 
+],
+31=> [
+ "id" =>32,
 "name" => "Ligia Fiocco",
 "email" => "ligiafiocco@gmail.com / ligiafiocco@yahoo.com.br",
 "password" => Hash::make("o80319"),
@@ -367,9 +367,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-32=> [ 
- "id" =>33, 
+],
+32=> [
+ "id" =>33,
 "name" => "Solange Ferraz da Fonseca",
 "email" => "soferraz7@gmail.com",
 "password" => Hash::make("a87619"),
@@ -378,9 +378,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-33=> [ 
- "id" =>34, 
+],
+33=> [
+ "id" =>34,
 "name" => "Fabricio Lacerda Cardial",
 "email" => "fabriciocardial@yahoo.com.br",
 "password" => Hash::make("l89019"),
@@ -389,9 +389,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-34=> [ 
- "id" =>35, 
+],
+34=> [
+ "id" =>35,
 "name" => "Fernanda Simião Kalife",
 "email" => "fernandasimiaokalife@gmail.com",
 "password" => Hash::make("e80419"),
@@ -400,9 +400,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-35=> [ 
- "id" =>36, 
+],
+35=> [
+ "id" =>36,
 "name" => "Nivaldo Colchon Montezino Junior ",
 "email" => "junior_montezino@hotmail.com",
 "password" => Hash::make(" 83519"),
@@ -411,9 +411,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-36=> [ 
- "id" =>37, 
+],
+36=> [
+ "id" =>37,
 "name" => "Beatriz Aurea de Siqueira",
 "email" => "baurea@uol.com.br",
 "password" => Hash::make("a88519"),
@@ -422,9 +422,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-37=> [ 
- "id" =>38, 
+],
+37=> [
+ "id" =>38,
 "name" => "Ronaldo Vieira Martins",
 "email" => "ronaldo_mt@hotmail.com",
 "password" => Hash::make("s86019"),
@@ -433,9 +433,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-38=> [ 
- "id" =>39, 
+],
+38=> [
+ "id" =>39,
 "name" => "Maria Elizabeth Magnusson Gabanyi",
 "email" => "beth@tael.com.br",
 "password" => Hash::make("i86819"),
@@ -444,9 +444,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-39=> [ 
- "id" =>40, 
+],
+39=> [
+ "id" =>40,
 "name" => "Aline Sant'Anna Barbosa",
 "email" => "alinesantb@gmail.com",
 "password" => Hash::make("a80619"),
@@ -455,9 +455,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-40=> [ 
- "id" =>41, 
+],
+40=> [
+ "id" =>41,
 "name" => "Fabiane Carneiro Dos Santos",
 "email" => "fbe.fcs@gmail.com",
 "password" => Hash::make("s82119"),
@@ -466,9 +466,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-41=> [ 
- "id" =>42, 
+],
+41=> [
+ "id" =>42,
 "name" => "Thiago Nishimura Sievers",
 "email" => "waves_sievers@hotmail.com",
 "password" => Hash::make("s84219"),
@@ -477,9 +477,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-42=> [ 
- "id" =>43, 
+],
+42=> [
+ "id" =>43,
 "name" => "Alexandre Roberto Lazzarini",
 "email" => "alexandre_lazzarini@yahoo.com.br",
 "password" => Hash::make("i80019"),
@@ -488,9 +488,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-43=> [ 
- "id" =>44, 
+],
+43=> [
+ "id" =>44,
 "name" => "Natália Onori Ferraz",
 "email" => "natalia.onori@gmail.com",
 "password" => Hash::make("z84019"),
@@ -499,9 +499,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-44=> [ 
- "id" =>45, 
+],
+44=> [
+ "id" =>45,
 "name" => "Emily Hanna Pinheiro Ferreira",
 "email" => "hemyhannahpf@gmail.com",
 "password" => Hash::make("a67019"),
@@ -510,9 +510,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-45=> [ 
- "id" =>46, 
+],
+45=> [
+ "id" =>46,
 "name" => "Henriane Camile Pimenta de Souza",
 "email" => "henrianecamile@yahoo.com.br",
 "password" => Hash::make("a63119"),
@@ -521,9 +521,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-46=> [ 
- "id" =>47, 
+],
+46=> [
+ "id" =>47,
 "name" => "Larissa Nunes Gonçalves",
 "email" => "lng.mus@gmail.com",
 "password" => Hash::make("s66019"),
@@ -532,9 +532,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-47=> [ 
- "id" =>48, 
+],
+47=> [
+ "id" =>48,
 "name" => "Gabriel Estanislau Machado",
 "email" => "gabriel_estanislau@hotmail.com",
 "password" => Hash::make("o68419"),
@@ -543,9 +543,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-48=> [ 
- "id" =>49, 
+],
+48=> [
+ "id" =>49,
 "name" => "Andréa Alvim Gomes",
 "email" => "andreaag68@gmail.com",
 "password" => Hash::make("s661"),
@@ -554,10 +554,10 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
+],
 
-50=> [ 
- "id" =>51, 
+50=> [
+ "id" =>51,
 "name" => "Carlos Eduardo França Siqueira",
 "email" => "mtkdufranca@gmail.com",
 "password" => Hash::make("a000"),
@@ -566,9 +566,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-51=> [ 
- "id" =>52, 
+],
+51=> [
+ "id" =>52,
 "name" => "Maria Alice de Mesquita",
 "email" => "nayamesquita@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -577,9 +577,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-52=> [ 
- "id" =>53, 
+],
+52=> [
+ "id" =>53,
 "name" => "Jean Vitor Merjan de Paula",
 "email" => "jvictor669@hotmail.com",
 "password" => Hash::make("a000"),
@@ -588,9 +588,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-53=> [ 
- "id" =>54, 
+],
+53=> [
+ "id" =>54,
 "name" => "Suzana Yara Guttmamm",
 "email" => "suzigut@uol.com.br",
 "password" => Hash::make("m000"),
@@ -599,9 +599,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-54=> [ 
- "id" =>55, 
+],
+54=> [
+ "id" =>55,
 "name" => "Adriano Pedro Bom",
 "email" => "adrianopedrobom@uol.com.br",
 "password" => Hash::make("m000"),
@@ -610,9 +610,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-55=> [ 
- "id" =>56, 
+],
+55=> [
+ "id" =>56,
 "name" => "Sonia Regina Marx",
 "email" => "soniamarx@terra.com.br",
 "password" => Hash::make("x000"),
@@ -621,9 +621,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-56=> [ 
- "id" =>57, 
+],
+56=> [
+ "id" =>57,
 "name" => "Gabriella da Silva Fischer",
 "email" => "gabibi_fischer@hotmail.com",
 "password" => Hash::make("r000"),
@@ -632,9 +632,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-57=> [ 
- "id" =>58, 
+],
+57=> [
+ "id" =>58,
 "name" => "Rosangela Dias Silva",
 "email" => "estercastro.98@hotmail.com",
 "password" => Hash::make("a000"),
@@ -643,9 +643,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-58=> [ 
- "id" =>59, 
+],
+58=> [
+ "id" =>59,
 "name" => "Renata Gisele da Silva Moura Bittencourt",
 "email" => "r.gisele70@hotmail.com",
 "password" => Hash::make("t000"),
@@ -654,9 +654,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-59=> [ 
- "id" =>60, 
+],
+59=> [
+ "id" =>60,
 "name" => "Wilma Heirinch",
 "email" => "mtwilma@hotmail.com",
 "password" => Hash::make("h000"),
@@ -665,9 +665,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-60=> [ 
- "id" =>61, 
+],
+60=> [
+ "id" =>61,
 "name" => "Viviane Barbosa de Magalhães ",
 "email" => "vivianebmagalhaes@hotmail.com",
 "password" => Hash::make(" 82319"),
@@ -676,9 +676,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-61=> [ 
- "id" =>62, 
+],
+61=> [
+ "id" =>62,
 "name" => "Rocheli Faila",
 "email" => "rochelifaila@uol.com.br",
 "password" => Hash::make("a897"),
@@ -687,9 +687,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-62=> [ 
- "id" =>63, 
+],
+62=> [
+ "id" =>63,
 "name" => "Vitória de Morais Goes",
 "email" => "vitoriamgoes@hotmail.com",
 "password" => Hash::make("s81019"),
@@ -698,9 +698,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-63=> [ 
- "id" =>64, 
+],
+63=> [
+ "id" =>64,
 "name" => "Bárbara Fernandes de Moraes Sousa",
 "email" => "ba.fmoraes@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -709,9 +709,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-64=> [ 
- "id" =>65, 
+],
+64=> [
+ "id" =>65,
 "name" => "Thiago Candido Batista",
 "email" => "thiago-hunter1@hotmail.com",
 "password" => Hash::make("a807"),
@@ -720,9 +720,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-65=> [ 
- "id" =>66, 
+],
+65=> [
+ "id" =>66,
 "name" => "Adriano Comenale Arnaldo",
 "email" => "adriano_comenalearnaldo@yahoo.com",
 "password" => Hash::make("o88019"),
@@ -731,9 +731,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-66=> [ 
- "id" =>67, 
+],
+66=> [
+ "id" =>67,
 "name" => "Fernanda dos Santos",
 "email" => "fhe.santos@hotmail.com",
 "password" => Hash::make("s86319"),
@@ -742,9 +742,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-67=> [ 
- "id" =>68, 
+],
+67=> [
+ "id" =>68,
 "name" => "Natália Migliari Ramalho",
 "email" => "nataliamr_76@hotmail.com",
 "password" => Hash::make("o-3719"),
@@ -753,9 +753,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-68=> [ 
- "id" =>69, 
+],
+68=> [
+ "id" =>69,
 "name" => "Milena de Queiroz Caramelo Oliveira",
 "email" => "queirozcaramelo@gmail.com",
 "password" => Hash::make("a85019"),
@@ -764,9 +764,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-69=> [ 
- "id" =>70, 
+],
+69=> [
+ "id" =>70,
 "name" => "Henrique Lisboa Vitorino",
 "email" => "henriquelisboav@gmail.com",
 "password" => Hash::make("o84219"),
@@ -775,9 +775,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-70=> [ 
- "id" =>71, 
+],
+70=> [
+ "id" =>71,
 "name" => "Julio Cesar Ramon Oliveira",
 "email" => "jmisscool@gmail.com",
 "password" => Hash::make("a89319"),
@@ -786,9 +786,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-71=> [ 
- "id" =>72, 
+],
+71=> [
+ "id" =>72,
 "name" => "Marcos Vinicius de Souza",
 "email" => "marcusconsult@live.com",
 "password" => Hash::make("a83219"),
@@ -797,9 +797,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-72=> [ 
- "id" =>73, 
+],
+72=> [
+ "id" =>73,
 "name" => "Marcela Helena Tinem",
 "email" => "marcela_tinem@hotmail.com",
 "password" => Hash::make("m88019"),
@@ -808,9 +808,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-73=> [ 
- "id" =>74, 
+],
+73=> [
+ "id" =>74,
 "name" => "Juliana Baltazar Dantas",
 "email" => "julibaltazar@hotmail.com",
 "password" => Hash::make("s85119"),
@@ -819,9 +819,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-74=> [ 
- "id" =>75, 
+],
+74=> [
+ "id" =>75,
 "name" => "João Goulart Correia Junior",
 "email" => "joaogoulart.jr@hotmail.com",
 "password" => Hash::make("r89819"),
@@ -830,9 +830,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-75=> [ 
- "id" =>76, 
+],
+75=> [
+ "id" =>76,
 "name" => "Eloisa Sanches Ribeiro",
 "email" => "elosanches@hotmail.com",
 "password" => Hash::make("o85419"),
@@ -841,9 +841,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-76=> [ 
- "id" =>77, 
+],
+76=> [
+ "id" =>77,
 "name" => "Daniela Cristina Pomini Gomes",
 "email" => "danielapomini@yhaoo.com.br",
 "password" => Hash::make("s80019"),
@@ -852,9 +852,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-77=> [ 
- "id" =>78, 
+],
+77=> [
+ "id" =>78,
 "name" => "Juliane Eller Coutinho",
 "email" => "juliane_eller@yahoo.com.br",
 "password" => Hash::make("o84119"),
@@ -863,9 +863,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-78=> [ 
- "id" =>79, 
+],
+78=> [
+ "id" =>79,
 "name" => "Julia Pelucio de Andrade Almada Quissak",
 "email" => "julia.quissak@gmail.com",
 "password" => Hash::make("k86019"),
@@ -874,9 +874,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-79=> [ 
- "id" =>80, 
+],
+79=> [
+ "id" =>80,
 "name" => "Alessandra Claudete Baena",
 "email" => "ale.baena.mt@gmail.com",
 "password" => Hash::make("a87619"),
@@ -885,9 +885,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-80=> [ 
- "id" =>81, 
+],
+80=> [
+ "id" =>81,
 "name" => "Marcela Vieira Guarnieri Stock",
 "email" => "marcelastock@hotmail.com",
 "password" => Hash::make("k84019"),
@@ -896,9 +896,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-81=> [ 
- "id" =>82, 
+],
+81=> [
+ "id" =>82,
 "name" => "Leandra de Souza Pereira Ferreira",
 "email" => "leandra.sp@hotmail.com",
 "password" => Hash::make("a89019"),
@@ -907,9 +907,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-82=> [ 
- "id" =>83, 
+],
+82=> [
+ "id" =>83,
 "name" => "Veronica de Lelis Alves",
 "email" => "vero.lelis@gmail.com",
 "password" => Hash::make("s84019"),
@@ -918,9 +918,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-83=> [ 
- "id" =>84, 
+],
+83=> [
+ "id" =>84,
 "name" => "Aline Akemi Maziero Shibuya",
 "email" => "alineakemish@live.com",
 "password" => Hash::make("a84619"),
@@ -929,9 +929,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-84=> [ 
- "id" =>85, 
+],
+84=> [
+ "id" =>85,
 "name" => "Waleska Tigre dos Santos",
 "email" => "waleska.tigre@gmail.com",
 "password" => Hash::make("s83919"),
@@ -940,9 +940,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-85=> [ 
- "id" =>86, 
+],
+85=> [
+ "id" =>86,
 "name" => "Thaís de Oliveira da Silva",
 "email" => "tha.oliveiraa@hotmail.com; mt.thaisoliveiraa@gmail.com",
 "password" => Hash::make("a89719"),
@@ -951,9 +951,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-86=> [ 
- "id" =>87, 
+],
+86=> [
+ "id" =>87,
 "name" => "Jéssica de Oliveira Delgadillo",
 "email" => "jessy.fox@hotmail.com",
 "password" => Hash::make("o82019"),
@@ -962,9 +962,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-87=> [ 
- "id" =>88, 
+],
+87=> [
+ "id" =>88,
 "name" => "Juliana Leonardi",
 "email" => "professoraleonardi@outlook.com",
 "password" => Hash::make("i17219"),
@@ -973,9 +973,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-88=> [ 
- "id" =>89, 
+],
+88=> [
+ "id" =>89,
 "name" => "Rogério José de Souza",
 "email" => "rogeriosossa@hotmail.com",
 "password" => Hash::make("a89919"),
@@ -984,9 +984,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-89=> [ 
- "id" =>90, 
+],
+89=> [
+ "id" =>90,
 "name" => "Taís Perticarrara Ferezin",
 "email" => "tais_tata_is@hotmail.com",
 "password" => Hash::make("n85019"),
@@ -995,9 +995,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-90=> [ 
- "id" =>91, 
+],
+90=> [
+ "id" =>91,
 "name" => "Sabrina Kuszer",
 "email" => "sakuszer@gmail.com",
 "password" => Hash::make("r72819"),
@@ -1006,9 +1006,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-91=> [ 
- "id" =>92, 
+],
+91=> [
+ "id" =>92,
 "name" => "Gabriela Chinen Ruiz",
 "email" => "gabichinen@gmail.com",
 "password" => Hash::make("z83819"),
@@ -1017,9 +1017,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-92=> [ 
- "id" =>93, 
+],
+92=> [
+ "id" =>93,
 "name" => "Deisyane da Silva Gomes",
 "email" => "deisy_deda@hotmail.com",
 "password" => Hash::make("s80619"),
@@ -1028,9 +1028,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-93=> [ 
- "id" =>94, 
+],
+93=> [
+ "id" =>94,
 "name" => "Maria Madalena Lima Paranhos",
 "email" => "madaparanhos@hotmail.com",
 "password" => Hash::make("s87619"),
@@ -1039,9 +1039,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-94=> [ 
- "id" =>95, 
+],
+94=> [
+ "id" =>95,
 "name" => "Aparecida Maria Zabczuk",
 "email" => "aparecidazabczuk@hotmail.com",
 "password" => Hash::make("k80019"),
@@ -1050,9 +1050,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-95=> [ 
- "id" =>96, 
+],
+95=> [
+ "id" =>96,
 "name" => "Juliana Valim de Souza",
 "email" => "julianavalim_1980@yahoo.com.br",
 "password" => Hash::make("a86619"),
@@ -1061,9 +1061,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-96=> [ 
- "id" =>97, 
+],
+96=> [
+ "id" =>97,
 "name" => "Talita Mieko Oliveira Saito",
 "email" => "talita.saito@yahoo.com.br",
 "password" => Hash::make("o84519"),
@@ -1072,9 +1072,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-97=> [ 
- "id" =>98, 
+],
+97=> [
+ "id" =>98,
 "name" => "Marilia Nogueira Vasques de Oliveira",
 "email" => "marilia.nogueira.oliveira@gmail.com",
 "password" => Hash::make("a84219"),
@@ -1083,9 +1083,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-98=> [ 
- "id" =>99, 
+],
+98=> [
+ "id" =>99,
 "name" => "Eduardo Pereira de Vasconcellos Júnior",
 "email" => "eduvasconcellosjr@gmail.com",
 "password" => Hash::make("r80619"),
@@ -1094,9 +1094,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-99=> [ 
- "id" =>100, 
+],
+99=> [
+ "id" =>100,
 "name" => "Tania Regina Peixoto da Silva",
 "email" => "tania.regina.peixoto.da.silva@gmail.com",
 "password" => Hash::make("a94719"),
@@ -1105,9 +1105,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-100=> [ 
- "id" =>101, 
+],
+100=> [
+ "id" =>101,
 "name" => "Ana Carolina Lamarque",
 "email" => "mtcarolamarque@gmail.com",
 "password" => Hash::make("e84119"),
@@ -1116,9 +1116,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-101=> [ 
- "id" =>102, 
+],
+101=> [
+ "id" =>102,
 "name" => "Daniel da Conceição Santana",
 "email" => "daniel.musicoterapia@gmail.com",
 "password" => Hash::make("a89519"),
@@ -1127,9 +1127,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-102=> [ 
- "id" =>103, 
+],
+102=> [
+ "id" =>103,
 "name" => "Bruna Dos Santos Garcia",
 "email" => "brunagarciamt@hotmail.com",
 "password" => Hash::make("a80319"),
@@ -1138,9 +1138,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-103=> [ 
- "id" =>104, 
+],
+103=> [
+ "id" =>104,
 "name" => "Rodrigo Santos",
 "email" => "mt.rodrigosantos@gmail.com",
 "password" => Hash::make("s84519"),
@@ -1149,9 +1149,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-104=> [ 
- "id" =>105, 
+],
+104=> [
+ "id" =>105,
 "name" => "Karis Santos da Rocha",
 "email" => "karis.rocha@hotmail.com",
 "password" => Hash::make("a88919"),
@@ -1160,9 +1160,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-105=> [ 
- "id" =>106, 
+],
+105=> [
+ "id" =>106,
 "name" => "Fabiano Leal Santana",
 "email" => "fabianoleal12@yahoo.com; fabianoleal78@gmail.com",
 "password" => Hash::make("a89019"),
@@ -1171,9 +1171,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-106=> [ 
- "id" =>107, 
+],
+106=> [
+ "id" =>107,
 "name" => "Alexandre de Lima Faria",
 "email" => "alexandre.faria@hotmail.com.br",
 "password" => Hash::make("a81219"),
@@ -1182,9 +1182,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-107=> [ 
- "id" =>108, 
+],
+107=> [
+ "id" =>108,
 "name" => "Flávio Azevedo Sao Roque",
 "email" => "afrocultura@gmail.com",
 "password" => Hash::make("e82919"),
@@ -1193,9 +1193,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-108=> [ 
- "id" =>109, 
+],
+108=> [
+ "id" =>109,
 "name" => "Bruna Rodrigues Ribeiro",
 "email" => "bruna.musicoterapia@gmail.com",
 "password" => Hash::make("o86719"),
@@ -1204,9 +1204,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-109=> [ 
- "id" =>110, 
+],
+109=> [
+ "id" =>110,
 "name" => "Juliana Simoni Silva",
 "email" => "jusimonimt@gmail.com",
 "password" => Hash::make("a88619"),
@@ -1215,9 +1215,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-110=> [ 
- "id" =>111, 
+],
+110=> [
+ "id" =>111,
 "name" => "Thais Oliveira",
 "email" => "thaisoliveira1992@hotmail.com",
 "password" => Hash::make("a84019"),
@@ -1226,9 +1226,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-111=> [ 
- "id" =>112, 
+],
+111=> [
+ "id" =>112,
 "name" => "Maria Amélia Santos Vaz",
 "email" => "mamelia800@hotmail.com",
 "password" => Hash::make("z87319"),
@@ -1237,9 +1237,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-112=> [ 
- "id" =>113, 
+],
+112=> [
+ "id" =>113,
 "name" => "Angélica Di Giaimo Canuto",
 "email" => "angelldigiaimo@hotmail.com",
 "password" => Hash::make("o89519"),
@@ -1248,9 +1248,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-113=> [ 
- "id" =>114, 
+],
+113=> [
+ "id" =>114,
 "name" => "Flávia de Oliveira Pinho",
 "email" => "flaoliveirapinho@hotmail.com",
 "password" => Hash::make("o80719"),
@@ -1259,9 +1259,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-114=> [ 
- "id" =>115, 
+],
+114=> [
+ "id" =>115,
 "name" => "Lucia Yukari Nakane Tsukamoto",
 "email" => "tsukamotolyukari@gmail.com",
 "password" => Hash::make("o90019"),
@@ -1270,9 +1270,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-115=> [ 
- "id" =>116, 
+],
+115=> [
+ "id" =>116,
 "name" => "Elizabeth Maria de Mello Connolly",
 "email" => "elizabethmariaconnolly@gmail.com",
 "password" => Hash::make("y81019"),
@@ -1281,9 +1281,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-116=> [ 
- "id" =>117, 
+],
+116=> [
+ "id" =>117,
 "name" => "Antonio Carlos Galvão de Paula Leite",
 "email" => "jaumt@hotmail.com",
 "password" => Hash::make("e80819"),
@@ -1292,9 +1292,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-117=> [ 
- "id" =>118, 
+],
+117=> [
+ "id" =>118,
 "name" => "Marcia Batista da Silva Assis",
 "email" => "marciabassis@hotmail.com",
 "password" => Hash::make("s80919"),
@@ -1303,9 +1303,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-118=> [ 
- "id" =>119, 
+],
+118=> [
+ "id" =>119,
 "name" => "Naomi Myra Mundy Machado",
 "email" => "naomimundy@hotmail.com",
 "password" => Hash::make("o85119"),
@@ -1314,9 +1314,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-119=> [ 
- "id" =>120, 
+],
+119=> [
+ "id" =>120,
 "name" => "Fernando Carlos Siegl",
 "email" => "sieglfernando@hotmail.com",
 "password" => Hash::make("l89819"),
@@ -1325,9 +1325,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-120=> [ 
- "id" =>121, 
+],
+120=> [
+ "id" =>121,
 "name" => "Maria Soeli B Araujo",
 "email" => "soeli_2012cjsfmu@hotmail.com",
 "password" => Hash::make("o80919"),
@@ -1336,9 +1336,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-121=> [ 
- "id" =>122, 
+],
+121=> [
+ "id" =>122,
 "name" => "Rosangela Saorin Ghialdini",
 "email" => "rosangela.saorin@terra.com.br",
 "password" => Hash::make("i000"),
@@ -1347,9 +1347,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-122=> [ 
- "id" =>123, 
+],
+122=> [
+ "id" =>123,
 "name" => "Rosana Maria Ojeda",
 "email" => "rosanaojeda_64@hotmail.com",
 "password" => Hash::make("a17919"),
@@ -1358,9 +1358,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-123=> [ 
- "id" =>124, 
+],
+123=> [
+ "id" =>124,
 "name" => "Paulo Ricardo Betencourt",
 "email" => "paulrb@ig.com.br",
 "password" => Hash::make("t82419"),
@@ -1369,9 +1369,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-124=> [ 
- "id" =>125, 
+],
+124=> [
+ "id" =>125,
 "name" => "Fabiane Mayumi Shimoze",
 "email" => "fabiane.shimoze@gmail.com",
 "password" => Hash::make("e80619"),
@@ -1380,9 +1380,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-125=> [ 
- "id" =>126, 
+],
+125=> [
+ "id" =>126,
 "name" => "Valeria Maria Julio Silva",
 "email" => "vajulio@gmail.com",
 "password" => Hash::make("a84519"),
@@ -1391,9 +1391,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-126=> [ 
- "id" =>127, 
+],
+126=> [
+ "id" =>127,
 "name" => "Nathalia Maria Romano Reina",
 "email" => "mnathalia2112@yahoo.com.br; nathigaita@yahoo.com.br",
 "password" => Hash::make("a85019"),
@@ -1402,9 +1402,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-127=> [ 
- "id" =>128, 
+],
+127=> [
+ "id" =>128,
 "name" => "Letícia Tanelli",
 "email" => "letanelli@hotmail.com",
 "password" => Hash::make("i84819"),
@@ -1413,9 +1413,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-128=> [ 
- "id" =>129, 
+],
+128=> [
+ "id" =>129,
 "name" => "Ricardo Augusto Santos da Silva",
 "email" => "cardoaug@live.com",
 "password" => Hash::make("a80619"),
@@ -1424,9 +1424,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-129=> [ 
- "id" =>130, 
+],
+129=> [
+ "id" =>130,
 "name" => "Sara dos Santos Moura",
 "email" => "sara-moura1@bol.com.br",
 "password" => Hash::make("a84119"),
@@ -1435,9 +1435,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-130=> [ 
- "id" =>131, 
+],
+130=> [
+ "id" =>131,
 "name" => "Sabrina de Souza Macedo",
 "email" => "sabrina_ilm@yahoo.com.br",
 "password" => Hash::make("o870"),
@@ -1446,9 +1446,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-131=> [ 
- "id" =>132, 
+],
+131=> [
+ "id" =>132,
 "name" => "Renata Teixeira Santiago",
 "email" => "renatatsan.mt@gmail.com",
 "password" => Hash::make("o67919"),
@@ -1457,9 +1457,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-132=> [ 
- "id" =>133, 
+],
+132=> [
+ "id" =>133,
 "name" => "Maysa Zichel de Lima",
 "email" => "ma_zick@hotmail.com",
 "password" => Hash::make("a80219"),
@@ -1468,9 +1468,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-133=> [ 
- "id" =>134, 
+],
+133=> [
+ "id" =>134,
 "name" => "Marcia Moreira Pires",
 "email" => "marciapiresmt@gmail.com",
 "password" => Hash::make("s86219"),
@@ -1479,9 +1479,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-134=> [ 
- "id" =>135, 
+],
+134=> [
+ "id" =>135,
 "name" => "Claudia Beserra Trindade",
 "email" => "claumusique@hotmail.com",
 "password" => Hash::make("e 1319"),
@@ -1490,9 +1490,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-135=> [ 
- "id" =>136, 
+],
+135=> [
+ "id" =>136,
 "name" => "Diogo Francisco dos Santos",
 "email" => "diogomusicoterapia@hotmail.com",
 "password" => Hash::make("s80719"),
@@ -1501,9 +1501,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-136=> [ 
- "id" =>137, 
+],
+136=> [
+ "id" =>137,
 "name" => "Roberta Dantonio Paciencia",
 "email" => "be.dp@hotmail.com",
 "password" => Hash::make("a86119"),
@@ -1512,9 +1512,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-137=> [ 
- "id" =>138, 
+],
+137=> [
+ "id" =>138,
 "name" => "Carolina Ferreira Santos",
 "email" => "carolina.musicoterapia@gmail.com",
 "password" => Hash::make("s86419"),
@@ -1523,9 +1523,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-138=> [ 
- "id" =>139, 
+],
+138=> [
+ "id" =>139,
 "name" => "Irina Kokado",
 "email" => "irinak@ig.com.br     ",
 "password" => Hash::make("o85719"),
@@ -1534,9 +1534,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-139=> [ 
- "id" =>140, 
+],
+139=> [
+ "id" =>140,
 "name" => "Marina Moreno",
 "email" => "mt.marinamoreno@yahoo.com.br",
 "password" => Hash::make("o85819"),
@@ -1545,9 +1545,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-140=> [ 
- "id" =>141, 
+],
+140=> [
+ "id" =>141,
 "name" => "Ana Paula Meusburger Soares",
 "email" => "apmeusburger@yahoo.com.br",
 "password" => Hash::make("s89919"),
@@ -1556,9 +1556,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-141=> [ 
- "id" =>142, 
+],
+141=> [
+ "id" =>142,
 "name" => "Renata Fernanda Pupin Alves",
 "email" => "renatafpupin@bol.com.br",
 "password" => Hash::make("s80719"),
@@ -1567,9 +1567,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-142=> [ 
- "id" =>143, 
+],
+142=> [
+ "id" =>143,
 "name" => "Maria Cristina de Lucca",
 "email" => "cris_musicoterapia@hotmail.com",
 "password" => Hash::make("a85519"),
@@ -1578,9 +1578,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-143=> [ 
- "id" =>144, 
+],
+143=> [
+ "id" =>144,
 "name" => "Maiara Medeiros dos Santos",
 "email" => "maiaramedeiros@hotmail.com",
 "password" => Hash::make("s84319"),
@@ -1589,9 +1589,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-144=> [ 
- "id" =>145, 
+],
+144=> [
+ "id" =>145,
 "name" => "Flavia Barros Nogueira",
 "email" => "flasbn@gmail.com",
 "password" => Hash::make("a81219"),
@@ -1600,9 +1600,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-145=> [ 
- "id" =>146, 
+],
+145=> [
+ "id" =>146,
 "name" => "Paula de Marchi Scarpin Hagemann",
 "email" => "paulascarpin@hotmail.com",
 "password" => Hash::make("n80319"),
@@ -1611,9 +1611,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-146=> [ 
- "id" =>147, 
+],
+146=> [
+ "id" =>147,
 "name" => "Mauro Pereira Anastacio",
 "email" => "mauro_paa@yahoo.com.br",
 "password" => Hash::make("o84019"),
@@ -1622,9 +1622,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-147=> [ 
- "id" =>148, 
+],
+147=> [
+ "id" =>148,
 "name" => "William Aparecido das Neves Leles",
 "email" => "williamleles@yahoo.com.br",
 "password" => Hash::make("s800"),
@@ -1633,9 +1633,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-148=> [ 
- "id" =>149, 
+],
+148=> [
+ "id" =>149,
 "name" => "Heide Vieira de Souza",
 "email" => "heidevs@gmail.com",
 "password" => Hash::make("a000"),
@@ -1644,9 +1644,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-149=> [ 
- "id" =>150, 
+],
+149=> [
+ "id" =>150,
 "name" => "Paulo Henrique Carvalho Passos",
 "email" => "paulohcpassos@hotmail.com",
 "password" => Hash::make("s000"),
@@ -1655,9 +1655,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-150=> [ 
- "id" =>151, 
+],
+150=> [
+ "id" =>151,
 "name" => "Roger Kozo Imamura",
 "email" => "rogerkozoi@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -1666,9 +1666,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-151=> [ 
- "id" =>152, 
+],
+151=> [
+ "id" =>152,
 "name" => "Claudia Mirian Fonda Kageyama",
 "email" => "claudiakageyama@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -1677,9 +1677,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-152=> [ 
- "id" =>153, 
+],
+152=> [
+ "id" =>153,
 "name" => "Alan Edson Gonçalves",
 "email" => "alanelt@yahoo.com.br",
 "password" => Hash::make("s000"),
@@ -1688,9 +1688,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-153=> [ 
- "id" =>154, 
+],
+153=> [
+ "id" =>154,
 "name" => "Dorcas Bueno Grimaldi Lima",
 "email" => "dorquinhas@hotmail.com",
 "password" => Hash::make("a000"),
@@ -1699,9 +1699,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-154=> [ 
- "id" =>155, 
+],
+154=> [
+ "id" =>155,
 "name" => "Raphael Soares",
 "email" => "ph_mt1@yahoo.com.br",
 "password" => Hash::make("s86319"),
@@ -1710,9 +1710,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-155=> [ 
- "id" =>156, 
+],
+155=> [
+ "id" =>156,
 "name" => "Tatiana Ramalho Brown",
 "email" => "tatyramalhom@yahoo.com.br",
 "password" => Hash::make("n000"),
@@ -1721,9 +1721,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-156=> [ 
- "id" =>157, 
+],
+156=> [
+ "id" =>157,
 "name" => "Setsuo Quinocita",
 "email" => "taiko@taiko.com.br",
 "password" => Hash::make("a000"),
@@ -1732,9 +1732,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-157=> [ 
- "id" =>158, 
+],
+157=> [
+ "id" =>158,
 "name" => "Glaucia Teresa Ribeiro Faxina de Salles",
 "email" => "glausalles@hotmail.com",
 "password" => Hash::make("s000"),
@@ -1743,9 +1743,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-158=> [ 
- "id" =>159, 
+],
+158=> [
+ "id" =>159,
 "name" => "Monica Coimbra",
 "email" => "coimbracastelo@hotmail.com",
 "password" => Hash::make("a000"),
@@ -1754,9 +1754,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-159=> [ 
- "id" =>160, 
+],
+159=> [
+ "id" =>160,
 "name" => "Roberta Soares de Barros Florencio",
 "email" => "robeflor@hotmail.com; robertasoflor@yahoo.com",
 "password" => Hash::make("o88519"),
@@ -1765,9 +1765,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-160=> [ 
- "id" =>161, 
+],
+160=> [
+ "id" =>161,
 "name" => "Michele Barros de Souza Simões",
 "email" => "michelemusicoterapia@yahoo.com.br",
 "password" => Hash::make("s000"),
@@ -1776,9 +1776,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-161=> [ 
- "id" =>162, 
+],
+161=> [
+ "id" =>162,
 "name" => "Márcia Conceição Porto",
 "email" => "marciaviol@hotmail.com",
 "password" => Hash::make("o000"),
@@ -1787,9 +1787,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-162=> [ 
- "id" =>163, 
+],
+162=> [
+ "id" =>163,
 "name" => "Hilara Ballestero Machado Crestana",
 "email" => "hilaraida@hotmail.com; operaida@ig.com.br",
 "password" => Hash::make("a000"),
@@ -1798,9 +1798,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-163=> [ 
- "id" =>164, 
+],
+163=> [
+ "id" =>164,
 "name" => "Diná Corrêa Sigolo",
 "email" => "dinasigolo@hotmail.com",
 "password" => Hash::make("o000"),
@@ -1809,9 +1809,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-164=> [ 
- "id" =>165, 
+],
+164=> [
+ "id" =>165,
 "name" => "Thiago Tatsuro Aoki",
 "email" => "thiago-aoki@hotmail.com",
 "password" => Hash::make("i000"),
@@ -1820,9 +1820,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-165=> [ 
- "id" =>166, 
+],
+165=> [
+ "id" =>166,
 "name" => "Fernanda Batista Santos",
 "email" => "shambelinha@yahoo.com.br",
 "password" => Hash::make("s89019"),
@@ -1831,9 +1831,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-166=> [ 
- "id" =>167, 
+],
+166=> [
+ "id" =>167,
 "name" => "Tatiane André de Oliveira",
 "email" => "tatianeandre@hotmail.com",
 "password" => Hash::make("a000"),
@@ -1842,9 +1842,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-167=> [ 
- "id" =>168, 
+],
+167=> [
+ "id" =>168,
 "name" => "Rafael Ludovico Moreira",
 "email" => "rafael_terapia@hotmail.com",
 "password" => Hash::make("a86519"),
@@ -1853,9 +1853,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-168=> [ 
- "id" =>169, 
+],
+168=> [
+ "id" =>169,
 "name" => "Diego Maia de Azevedo",
 "email" => "diegomaiaaze@yahoo.com.br",
 "password" => Hash::make("o000"),
@@ -1864,9 +1864,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-169=> [ 
- "id" =>170, 
+],
+169=> [
+ "id" =>170,
 "name" => "Allana Gomes Costa Morais",
 "email" => "allana_morais@hotmail.com",
 "password" => Hash::make("s87319"),
@@ -1875,9 +1875,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-170=> [ 
- "id" =>171, 
+],
+170=> [
+ "id" =>171,
 "name" => "Marly Abramo",
 "email" => "abramo_marly_@hotmail.com",
 "password" => Hash::make("o000"),
@@ -1886,9 +1886,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-171=> [ 
- "id" =>172, 
+],
+171=> [
+ "id" =>172,
 "name" => "Eliane Okubo",
 "email" => "elianeokubo@yahoo.com.br",
 "password" => Hash::make("o000"),
@@ -1897,9 +1897,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-172=> [ 
- "id" =>173, 
+],
+172=> [
+ "id" =>173,
 "name" => "Mauren Vasconcelos de Sousa Almeida",
 "email" => "mauren_mt@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -1908,9 +1908,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-173=> [ 
- "id" =>174, 
+],
+173=> [
+ "id" =>174,
 "name" => "Felipe Hartwig Vieira",
 "email" => "felipehvieira@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -1919,9 +1919,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-174=> [ 
- "id" =>175, 
+],
+174=> [
+ "id" =>175,
 "name" => "Aline Lúcia da Silva Labiapari",
 "email" => "ninelucia@gmail.com",
 "password" => Hash::make("i81219"),
@@ -1930,9 +1930,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-175=> [ 
- "id" =>176, 
+],
+175=> [
+ "id" =>176,
 "name" => "Renato Pinto de Souza",
 "email" => "rsouzap04@gmail.com",
 "password" => Hash::make("a000"),
@@ -1941,9 +1941,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-176=> [ 
- "id" =>177, 
+],
+176=> [
+ "id" =>177,
 "name" => "Marina Gil Bergamini",
 "email" => "mt.marina.gil@gmail.com",
 "password" => Hash::make("i81819"),
@@ -1952,9 +1952,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-177=> [ 
- "id" =>178, 
+],
+177=> [
+ "id" =>178,
 "name" => "Miriam Puerto Amato",
 "email" => "amiriamp@yahoo.com",
 "password" => Hash::make("o000"),
@@ -1963,9 +1963,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-178=> [ 
- "id" =>179, 
+],
+178=> [
+ "id" =>179,
 "name" => "Michelle de Melo Ferreira",
 "email" => "mt.michelledemelo@gmail.com",
 "password" => Hash::make("a84519"),
@@ -1974,9 +1974,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-179=> [ 
- "id" =>180, 
+],
+179=> [
+ "id" =>180,
 "name" => "André Pereira Lindenberg",
 "email" => "andrepereira@estadao.com.br",
 "password" => Hash::make("g862"),
@@ -1985,9 +1985,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-180=> [ 
- "id" =>181, 
+],
+180=> [
+ "id" =>181,
 "name" => "Helena Peters Rodrigues",
 "email" => "helenapeters@terra.com.br",
 "password" => Hash::make("s872"),
@@ -1996,9 +1996,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-181=> [ 
- "id" =>182, 
+],
+181=> [
+ "id" =>182,
 "name" => "Rosilene Rodrigues da Silva",
 "email" => "rosimvd@hotmail.com; mt.rosirs@gmail.com",
 "password" => Hash::make("a80119"),
@@ -2007,9 +2007,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-182=> [ 
- "id" =>183, 
+],
+182=> [
+ "id" =>183,
 "name" => "Tânia Cristina Vigola",
 "email" => "tania.musicoterapia@hotmail.com",
 "password" => Hash::make("a000"),
@@ -2018,9 +2018,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-183=> [ 
- "id" =>184, 
+],
+183=> [
+ "id" =>184,
 "name" => "Regina Helena Maykot",
 "email" => "rhmaykot@gmail.com",
 "password" => Hash::make("t83219"),
@@ -2029,9 +2029,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-184=> [ 
- "id" =>185, 
+],
+184=> [
+ "id" =>185,
 "name" => "Bruna Pierami",
 "email" => "bruninha_mp@hotmail.com",
 "password" => Hash::make("i000"),
@@ -2040,9 +2040,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-185=> [ 
- "id" =>186, 
+],
+185=> [
+ "id" =>186,
 "name" => "Raphael Strohl",
 "email" => "strhol.mt@gmail.com",
 "password" => Hash::make("l000"),
@@ -2051,9 +2051,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-186=> [ 
- "id" =>187, 
+],
+186=> [
+ "id" =>187,
 "name" => "Patrícia Helena de Oliveira Maldonado",
 "email" => "patheol@yahoo.com.br; contato@musicoterapiaclinica.com.br",
 "password" => Hash::make("o000"),
@@ -2062,9 +2062,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-187=> [ 
- "id" =>188, 
+],
+187=> [
+ "id" =>188,
 "name" => "David Martins de Almeida Maldonado",
 "email" => "david@musicoterapiaclinica.com.br; contato@musicoterapiaclinica.com.br",
 "password" => Hash::make("o000"),
@@ -2073,9 +2073,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-188=> [ 
- "id" =>189, 
+],
+188=> [
+ "id" =>189,
 "name" => "Cilene Guimarães Archanjo da Silva",
 "email" => "cilene.archanjo@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2084,9 +2084,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-189=> [ 
- "id" =>190, 
+],
+189=> [
+ "id" =>190,
 "name" => "Diogo Rodrigues dos Santos",
 "email" => "diogo_musicoterapia@yahoo.com.br",
 "password" => Hash::make("s87119"),
@@ -2095,9 +2095,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-190=> [ 
- "id" =>191, 
+],
+190=> [
+ "id" =>191,
 "name" => "Flávio Roberto dos Santos Correia",
 "email" => "flaviocorreia.mt@gmail.com",
 "password" => Hash::make("a000"),
@@ -2106,9 +2106,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-191=> [ 
- "id" =>192, 
+],
+191=> [
+ "id" =>192,
 "name" => "Denise Chrysostomo Suzuki",
 "email" => "suzukidenise@gmail.com",
 "password" => Hash::make("i85719"),
@@ -2117,9 +2117,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-192=> [ 
- "id" =>193, 
+],
+192=> [
+ "id" =>193,
 "name" => "Dayane Lima Silva",
 "email" => "dayane@souzalima.com.br; days-lima@hotmail.com",
 "password" => Hash::make("a000"),
@@ -2128,9 +2128,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-193=> [ 
- "id" =>194, 
+],
+193=> [
+ "id" =>194,
 "name" => "Antonio Luiz Ciardulo",
 "email" => "toninhociardulo@ig.com.br",
 "password" => Hash::make("o813"),
@@ -2139,9 +2139,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-194=> [ 
- "id" =>195, 
+],
+194=> [
+ "id" =>195,
 "name" => "Agnnis Gama Franscisco",
 "email" => "agnnis@gmail.com",
 "password" => Hash::make("o000"),
@@ -2150,9 +2150,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-195=> [ 
- "id" =>196, 
+],
+195=> [
+ "id" =>196,
 "name" => "Igor Ortega Rodrigues",
 "email" => "igorortega@msn.com",
 "password" => Hash::make("s85519"),
@@ -2161,9 +2161,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-196=> [ 
- "id" =>197, 
+],
+196=> [
+ "id" =>197,
 "name" => "Kelly Faé Xavier",
 "email" => "kelly.faex@gmail.com",
 "password" => Hash::make("r88019"),
@@ -2172,9 +2172,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-197=> [ 
- "id" =>198, 
+],
+197=> [
+ "id" =>198,
 "name" => "Maria Carolina dos Santos Cruz Pacheco",
 "email" => "carol_cruz7@yahoo.com.br",
 "password" => Hash::make("o870"),
@@ -2183,9 +2183,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-198=> [ 
- "id" =>199, 
+],
+198=> [
+ "id" =>199,
 "name" => "Ariadne Américo",
 "email" => "arimaximomt@gmail.com",
 "password" => Hash::make("o87719"),
@@ -2194,9 +2194,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-199=> [ 
- "id" =>200, 
+],
+199=> [
+ "id" =>200,
 "name" => "Renan Barreto de Souza",
 "email" => "rebarreto.mt@gmail.com",
 "password" => Hash::make("a000"),
@@ -2205,9 +2205,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-200=> [ 
- "id" =>201, 
+],
+200=> [
+ "id" =>201,
 "name" => "Silene Aparecida Santana Jacinto",
 "email" => "mtsilene@gmail.com",
 "password" => Hash::make("o/50"),
@@ -2216,9 +2216,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-201=> [ 
- "id" =>202, 
+],
+201=> [
+ "id" =>202,
 "name" => "Talita Carneiro Cantazaro",
 "email" => "talitinha_th@hotmail.com",
 "password" => Hash::make("o000"),
@@ -2227,9 +2227,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-202=> [ 
- "id" =>203, 
+],
+202=> [
+ "id" =>203,
 "name" => "Barbara Gracioso Santiago",
 "email" => "babigsantiago@hotmail.com",
 "password" => Hash::make("o000"),
@@ -2238,9 +2238,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-203=> [ 
- "id" =>204, 
+],
+203=> [
+ "id" =>204,
 "name" => "Adriana Freires Aragão",
 "email" => "adrianafaragaomusicoterapeuta@gmail.com",
 "password" => Hash::make("o000"),
@@ -2249,9 +2249,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-204=> [ 
- "id" =>205, 
+],
+204=> [
+ "id" =>205,
 "name" => "Luciana Ribeiro Leal Silvério",
 "email" => "luciana_silvério@hotmail.com",
 "password" => Hash::make("o89419"),
@@ -2260,9 +2260,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-205=> [ 
- "id" =>206, 
+],
+205=> [
+ "id" =>206,
 "name" => "Melina Charlila Oliveira Vanderlei",
 "email" => "melinacharlila@gmail.com",
 "password" => Hash::make("i83719"),
@@ -2271,9 +2271,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-206=> [ 
- "id" =>207, 
+],
+206=> [
+ "id" =>207,
 "name" => "Mariana Hofer M. Ferreira",
 "email" => "marianahofer@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2282,9 +2282,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-207=> [ 
- "id" =>208, 
+],
+207=> [
+ "id" =>208,
 "name" => "Gildásio Januário de Souza",
 "email" => "giljanuario@yahoo.com.br",
 "password" => Hash::make("a81819"),
@@ -2293,9 +2293,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-208=> [ 
- "id" =>209, 
+],
+208=> [
+ "id" =>209,
 "name" => "Rachel Barzilay",
 "email" => "rachel.barzilay@hotmail.com",
 "password" => Hash::make("y000"),
@@ -2304,9 +2304,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-209=> [ 
- "id" =>210, 
+],
+209=> [
+ "id" =>210,
 "name" => "Roberta Helena Conceição Oliveira",
 "email" => "rhsonorizacao@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2315,9 +2315,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-210=> [ 
- "id" =>211, 
+],
+210=> [
+ "id" =>211,
 "name" => "Marcia Maria Machado da Rocha",
 "email" => "marcia2mr@hotmail.com",
 "password" => Hash::make("a000"),
@@ -2326,9 +2326,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-211=> [ 
- "id" =>212, 
+],
+211=> [
+ "id" =>212,
 "name" => "Roberta Nagai",
 "email" => "roberta@berlin.com",
 "password" => Hash::make("i000"),
@@ -2337,9 +2337,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-212=> [ 
- "id" =>213, 
+],
+212=> [
+ "id" =>213,
 "name" => "Isadora Fuzihara Gascon",
 "email" => "isadorafg@hotmail.com",
 "password" => Hash::make("n000"),
@@ -2348,9 +2348,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-213=> [ 
- "id" =>214, 
+],
+213=> [
+ "id" =>214,
 "name" => "Marcos Lopes Lima",
 "email" => "bassmarcos@ig.com.br; bassmarco3@hotmail.com",
 "password" => Hash::make("a000"),
@@ -2359,9 +2359,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-214=> [ 
- "id" =>215, 
+],
+214=> [
+ "id" =>215,
 "name" => "Lívia Rocha Coelho",
 "email" => "livia_rochacoelho@yahoo.com.br",
 "password" => Hash::make("o865"),
@@ -2370,9 +2370,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-215=> [ 
- "id" =>216, 
+],
+215=> [
+ "id" =>216,
 "name" => "Nelida de Lima Silva",
 "email" => "nelida_lima@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2381,9 +2381,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-216=> [ 
- "id" =>217, 
+],
+216=> [
+ "id" =>217,
 "name" => "Barbara Vanessa Nakamoto Lima",
 "email" => "barbarank@hotmail.com",
 "password" => Hash::make("a000"),
@@ -2392,9 +2392,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-217=> [ 
- "id" =>218, 
+],
+217=> [
+ "id" =>218,
 "name" => "Ariane da Silva Souza",
 "email" => "aryanejc@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2403,9 +2403,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-218=> [ 
- "id" =>219, 
+],
+218=> [
+ "id" =>219,
 "name" => "Saturnino Collaço Teixeira Filho",
 "email" => "scollaco@gmail.com",
 "password" => Hash::make("o000"),
@@ -2414,9 +2414,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-219=> [ 
- "id" =>220, 
+],
+219=> [
+ "id" =>220,
 "name" => "Maria Carolina Simões dos Santos",
 "email" => "mcarolss@terra.com.br",
 "password" => Hash::make("s86919"),
@@ -2425,9 +2425,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-220=> [ 
- "id" =>221, 
+],
+220=> [
+ "id" =>221,
 "name" => "Marilia Prado de Oliveira",
 "email" => "marilia.musicoterapia@gmail.com",
 "password" => Hash::make("a83219"),
@@ -2436,9 +2436,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-221=> [ 
- "id" =>222, 
+],
+221=> [
+ "id" =>222,
 "name" => "Maya Sandra Kann",
 "email" => "mayaskann@gmail.com",
 "password" => Hash::make("n000"),
@@ -2447,9 +2447,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-222=> [ 
- "id" =>223, 
+],
+222=> [
+ "id" =>223,
 "name" => "Mariana de Oliveira Costa",
 "email" => "maridolc@hotmail.com",
 "password" => Hash::make("a000"),
@@ -2458,9 +2458,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-223=> [ 
- "id" =>224, 
+],
+223=> [
+ "id" =>224,
 "name" => "Fernando Dantas Castellar",
 "email" => "fernandogrungecastellar@hotmail.com; fernandocastellar@hotmail.com",
 "password" => Hash::make("r830"),
@@ -2469,9 +2469,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-224=> [ 
- "id" =>225, 
+],
+224=> [
+ "id" =>225,
 "name" => "Elvira Maria Mugia",
 "email" => "elviramugia@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2480,9 +2480,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-225=> [ 
- "id" =>226, 
+],
+225=> [
+ "id" =>226,
 "name" => "Guilherme Zava Zamprogna",
 "email" => "guilhermefmyou@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2491,9 +2491,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-226=> [ 
- "id" =>227, 
+],
+226=> [
+ "id" =>227,
 "name" => "Pablo de Moraes Prearo",
 "email" => "pabloprearo@terra.com.br",
 "password" => Hash::make("o000"),
@@ -2502,9 +2502,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-227=> [ 
- "id" =>228, 
+],
+227=> [
+ "id" =>228,
 "name" => "Vera Lúcia Custódio",
 "email" => "custodiovera5@gmail.com",
 "password" => Hash::make("o/0419"),
@@ -2513,9 +2513,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-228=> [ 
- "id" =>229, 
+],
+228=> [
+ "id" =>229,
 "name" => "Juliana keiko kawachi",
 "email" => "keikinho@hotmail.com",
 "password" => Hash::make("i000"),
@@ -2524,9 +2524,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-229=> [ 
- "id" =>230, 
+],
+229=> [
+ "id" =>230,
 "name" => "Adriano Martins da Silva",
 "email" => "a.martinssilva@terra.com.br",
 "password" => Hash::make("a000"),
@@ -2535,9 +2535,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-230=> [ 
- "id" =>231, 
+],
+230=> [
+ "id" =>231,
 "name" => "Lícia de Almeida Linhares",
 "email" => "linhares.licia@gmail.com",
 "password" => Hash::make("s81219"),
@@ -2546,9 +2546,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-231=> [ 
- "id" =>232, 
+],
+231=> [
+ "id" =>232,
 "name" => "Dalila Santana Melo Silva",
 "email" => "dalila881@gmail.com",
 "password" => Hash::make("a000"),
@@ -2557,9 +2557,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-232=> [ 
- "id" =>233, 
+],
+232=> [
+ "id" =>233,
 "name" => "Luma Carolina Radomille",
 "email" => "luma.radomille@yahoo.com.br",
 "password" => Hash::make("e000"),
@@ -2568,9 +2568,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-233=> [ 
- "id" =>234, 
+],
+233=> [
+ "id" =>234,
 "name" => "Alessandra Billar Dias",
 "email" => "alessandrabillar@hotmail.com",
 "password" => Hash::make("s000"),
@@ -2579,9 +2579,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-234=> [ 
- "id" =>235, 
+],
+234=> [
+ "id" =>235,
 "name" => "Helena D´Angelo",
 "email" => "helenadangelo@hotmail.com",
 "password" => Hash::make("o000"),
@@ -2590,9 +2590,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-235=> [ 
- "id" =>236, 
+],
+235=> [
+ "id" =>236,
 "name" => "Juliana Maria Tasso Braga",
 "email" => "julianatasso@gmail.com",
 "password" => Hash::make("a000"),
@@ -2601,9 +2601,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-236=> [ 
- "id" =>237, 
+],
+236=> [
+ "id" =>237,
 "name" => "Tatiana Barbosa Gomes",
 "email" => "tatibgomes_21@yahoo.com.br",
 "password" => Hash::make("s000"),
@@ -2612,9 +2612,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-237=> [ 
- "id" =>238, 
+],
+237=> [
+ "id" =>238,
 "name" => "Lilian Godinho Hokama ",
 "email" => "lilianghokama@yahoo.com.br",
 "password" => Hash::make(" 000"),
@@ -2623,9 +2623,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-238=> [ 
- "id" =>239, 
+],
+238=> [
+ "id" =>239,
 "name" => "Ludmila Christina Simões Poyares",
 "email" => "ludychris_mt@yahoo.com.br",
 "password" => Hash::make("s88319"),
@@ -2634,9 +2634,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-239=> [ 
- "id" =>240, 
+],
+239=> [
+ "id" =>240,
 "name" => "Rebeca Fogaça Porto",
 "email" => "becaporto@yahoo.com.br",
 "password" => Hash::make("o000"),
@@ -2645,9 +2645,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-240=> [ 
- "id" =>241, 
+],
+240=> [
+ "id" =>241,
 "name" => "Viviane Rose Fowler",
 "email" => "vivianefowler@yahoo.com.br",
 "password" => Hash::make("r000"),
@@ -2656,9 +2656,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-241=> [ 
- "id" =>242, 
+],
+241=> [
+ "id" =>242,
 "name" => "Rui Marcelo Mendonça Perestrelo",
 "email" => "marceloperestrelo@gmail.com",
 "password" => Hash::make("o000"),
@@ -2667,9 +2667,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-242=> [ 
- "id" =>243, 
+],
+242=> [
+ "id" =>243,
 "name" => "João Luiz Ferraz Braghetta",
 "email" => "jbraghetta@yahoo.com.br",
 "password" => Hash::make("a000"),
@@ -2678,9 +2678,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-243=> [ 
- "id" =>244, 
+],
+243=> [
+ "id" =>244,
 "name" => "Maria Cecília Sevilio d'Oliveira",
 "email" => "cecilia.musica@uol.com.br",
 "password" => Hash::make("a000"),
@@ -2689,9 +2689,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-244=> [ 
- "id" =>245, 
+],
+244=> [
+ "id" =>245,
 "name" => "Maria Gabriela Benetti Raimundo",
 "email" => "gabriela.benetti@gmail.com",
 "password" => Hash::make("o88019"),
@@ -2700,9 +2700,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-245=> [ 
- "id" =>246, 
+],
+245=> [
+ "id" =>246,
 "name" => "Andreza Cristina de Souza Rego",
 "email" => "andreza.rego@gmail.com",
 "password" => Hash::make("o000"),
@@ -2711,9 +2711,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-246=> [ 
- "id" =>247, 
+],
+246=> [
+ "id" =>247,
 "name" => "Larissa Mariano Pizzol",
 "email" => "larissa.pizzol@yahoo.com.br",
 "password" => Hash::make("l000"),
@@ -2722,9 +2722,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-247=> [ 
- "id" =>248, 
+],
+247=> [
+ "id" =>248,
 "name" => "Jusleida Carolina Baldin",
 "email" => "jusleida_baldin@yahoo.com.br; carolbaldin@yahoo.com.br",
 "password" => Hash::make("n87019"),
@@ -2733,9 +2733,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-248=> [ 
- "id" =>249, 
+],
+248=> [
+ "id" =>249,
 "name" => "Diógenes Guerini Utrabo",
 "email" => "digutdy@yahoo.com.br; mt.diogenes@yahoo.com.br",
 "password" => Hash::make("o86019"),
@@ -2744,10 +2744,10 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
+],
 
-249=> [ 
- "id" =>250, 
+249=> [
+ "id" =>250,
 "name" => "Priscila Bernardo Mulin",
 "email" => "priscilamulin@gmail.com",
 "password" => Hash::make("n88819"),
@@ -2756,10 +2756,10 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
+],
 
-251=> [ 
- "id" =>252, 
+251=> [
+ "id" =>252,
 "name" => "Rodrigo Dias de Paiva",
 "email" => "info.rodrigodias@gmail.com",
 "password" => Hash::make("a820"),
@@ -2768,9 +2768,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-252=> [ 
- "id" =>253, 
+],
+252=> [
+ "id" =>253,
 "name" => "Rita de Cássia Ribeiro Bianchi",
 "email" => "ritabianchi@ig.com.br",
 "password" => Hash::make("i000"),
@@ -2779,9 +2779,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-253=> [ 
- "id" =>254, 
+],
+253=> [
+ "id" =>254,
 "name" => "Maria Cecília Morbi Amaral",
 "email" => "mcmamaral@gmail.com",
 "password" => Hash::make("l000"),
@@ -2790,9 +2790,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-254=> [ 
- "id" =>255, 
+],
+254=> [
+ "id" =>255,
 "name" => "Maria Augusta do Val Mazzini Brancaccio",
 "email" => "berimbaugusta@gmail.com",
 "password" => Hash::make("o000"),
@@ -2801,9 +2801,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-255=> [ 
- "id" =>256, 
+],
+255=> [
+ "id" =>256,
 "name" => "Lauane Ramos Teodoro",
 "email" => "lauane2@hotmail.com",
 "password" => Hash::make("o000"),
@@ -2812,9 +2812,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-256=> [ 
- "id" =>257, 
+],
+256=> [
+ "id" =>257,
 "name" => "Elidinéia de Jesus S. Zakuzaku ",
 "email" => "eli.zakuzaku@ig.com.br",
 "password" => Hash::make(" 000"),
@@ -2823,9 +2823,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-257=> [ 
- "id" =>258, 
+],
+257=> [
+ "id" =>258,
 "name" => "Valéria Maria Marra",
 "email" => "marravaleria@gmail.com; valeria.marra@educacao.sp.gov.br",
 "password" => Hash::make("a87019"),
@@ -2834,9 +2834,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-258=> [ 
- "id" =>259, 
+],
+258=> [
+ "id" =>259,
 "name" => "Roseane Araújo dos Santos",
 "email" => "rose.musicoterapeuta@yahoo.com.br; rose@rosemusicoterapeuta.com.br",
 "password" => Hash::make("s000"),
@@ -2845,9 +2845,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-259=> [ 
- "id" =>260, 
+],
+259=> [
+ "id" =>260,
 "name" => "Vanessa Silva Lira ",
 "email" => "vanessa_slira@yahoo.com.br",
 "password" => Hash::make(" 000"),
@@ -2856,9 +2856,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-260=> [ 
- "id" =>261, 
+],
+260=> [
+ "id" =>261,
 "name" => "Luis Fernando Leão de Mello",
 "email" => "luisfleaom@terra.com.br",
 "password" => Hash::make("o000"),
@@ -2867,9 +2867,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-261=> [ 
- "id" =>262, 
+],
+261=> [
+ "id" =>262,
 "name" => "Ana Paula Romero",
 "email" => "ana.romero@terra.com.br; ana.romero@itau-unibanco.com.br",
 "password" => Hash::make("o000"),
@@ -2878,9 +2878,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-262=> [ 
- "id" =>263, 
+],
+262=> [
+ "id" =>263,
 "name" => "Andréia Bagi ",
 "email" => "andreiab_mt@yahoo.com.br",
 "password" => Hash::make(" 897"),
@@ -2889,9 +2889,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-263=> [ 
- "id" =>264, 
+],
+263=> [
+ "id" =>264,
 "name" => "Carolina de Castro Gonçalves Rodrigues",
 "email" => "carolina_musicoterapeuta@yahoo.com.br",
 "password" => Hash::make("s000"),
@@ -2900,9 +2900,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-264=> [ 
- "id" =>265, 
+],
+264=> [
+ "id" =>265,
 "name" => "Ana Carolina Rodrigues de C. D. Molinari",
 "email" => "acrcd@hotmail.com",
 "password" => Hash::make("i82419"),
@@ -2911,9 +2911,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-265=> [ 
- "id" =>266, 
+],
+265=> [
+ "id" =>266,
 "name" => "Wanderley Alves Junior",
 "email" => "contato@wanderleyalv​es.com.br",
 "password" => Hash::make("r000"),
@@ -2922,9 +2922,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-266=> [ 
- "id" =>267, 
+],
+266=> [
+ "id" =>267,
 "name" => "Gabriela Pelosi de Abreu",
 "email" => "gabriela.pelosi@gmail.com",
 "password" => Hash::make("u000"),
@@ -2933,9 +2933,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-267=> [ 
- "id" =>268, 
+],
+267=> [
+ "id" =>268,
 "name" => "Priscilla Winandy",
 "email" => "priswy@yahoo.com.br",
 "password" => Hash::make("y000"),
@@ -2944,9 +2944,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-268=> [ 
- "id" =>269, 
+],
+268=> [
+ "id" =>269,
 "name" => "Lourdes Aparecida Vigatto Rocha",
 "email" => "lourdesvigatto@superig.com.br; lakismi70@yahoo.com.br",
 "password" => Hash::make("a82119"),
@@ -2955,9 +2955,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-269=> [ 
- "id" =>270, 
+],
+269=> [
+ "id" =>270,
 "name" => "Juliana Bertelli Bertoncel",
 "email" => "terapiaemusica@gmail.com",
 "password" => Hash::make("l83919"),
@@ -2966,9 +2966,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-270=> [ 
- "id" =>271, 
+],
+270=> [
+ "id" =>271,
 "name" => "Talita Ribeiro Passoni",
 "email" => "talpass@yahoo.com; talita.passoni@gmail.com",
 "password" => Hash::make("i80219"),
@@ -2977,9 +2977,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-271=> [ 
- "id" =>272, 
+],
+271=> [
+ "id" =>272,
 "name" => "Camila Gomes Turco",
 "email" => "camilaturco@gmail.com",
 "password" => Hash::make("o00019"),
@@ -2988,9 +2988,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-272=> [ 
- "id" =>273, 
+],
+272=> [
+ "id" =>273,
 "name" => "Mechthild Elisabeth W. S.Vargas",
 "email" => "mecavargas@gmail.com",
 "password" => Hash::make("s87619"),
@@ -2999,9 +2999,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-273=> [ 
- "id" =>274, 
+],
+273=> [
+ "id" =>274,
 "name" => "Edson Fernandes",
 "email" => "edsonshin@ig.com.br",
 "password" => Hash::make("s00019"),
@@ -3010,9 +3010,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-274=> [ 
- "id" =>275, 
+],
+274=> [
+ "id" =>275,
 "name" => "Priscila Ladeira de Pinho",
 "email" => "priladeira13@gmail.com",
 "password" => Hash::make("o00019"),
@@ -3021,9 +3021,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-275=> [ 
- "id" =>276, 
+],
+275=> [
+ "id" =>276,
 "name" => "Denise Aya Nisibayashi",
 "email" => "denise_aya@hotmail.com",
 "password" => Hash::make("i82819"),
@@ -3032,9 +3032,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-276=> [ 
- "id" =>277, 
+],
+276=> [
+ "id" =>277,
 "name" => "Maria Conceição Pires",
 "email" => "conceicaosol@gmail.com",
 "password" => Hash::make("s87219"),
@@ -3043,9 +3043,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-277=> [ 
- "id" =>278, 
+],
+277=> [
+ "id" =>278,
 "name" => "Luiz Rogerio Jorgensen Carrer",
 "email" => "rogercarrer@sinergiamusic.com",
 "password" => Hash::make("r90419"),
@@ -3054,9 +3054,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-278=> [ 
- "id" =>279, 
+],
+278=> [
+ "id" =>279,
 "name" => "Priscila Borchardt",
 "email" => "priscilabor@gmail.com",
 "password" => Hash::make("t00019"),
@@ -3065,9 +3065,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-279=> [ 
- "id" =>280, 
+],
+279=> [
+ "id" =>280,
 "name" => "Sandra Marina Witkowski",
 "email" => "sandrawit@hotmail.com",
 "password" => Hash::make("i000"),
@@ -3076,9 +3076,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-280=> [ 
- "id" =>281, 
+],
+280=> [
+ "id" =>281,
 "name" => "Roberta Engle Barsotti",
 "email" => "betabarsotti@hotmail.com",
 "password" => Hash::make("i84519"),
@@ -3087,9 +3087,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-281=> [ 
- "id" =>282, 
+],
+281=> [
+ "id" =>282,
 "name" => "Clementina Nastari",
 "email" => "clementinanastari@uol.com.br",
 "password" => Hash::make("i000"),
@@ -3098,9 +3098,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-282=> [ 
- "id" =>283, 
+],
+282=> [
+ "id" =>283,
 "name" => "Mauro Lúcio Ferreira",
 "email" => "mauroluciomt@gmail.com; mlferrei@ig.com.br",
 "password" => Hash::make("a00019"),
@@ -3109,9 +3109,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-283=> [ 
- "id" =>284, 
+],
+283=> [
+ "id" =>284,
 "name" => "Juliana Domingues Pauletti",
 "email" => "jupauletti@gmail.com",
 "password" => Hash::make("i00019"),
@@ -3120,9 +3120,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-284=> [ 
- "id" =>285, 
+],
+284=> [
+ "id" =>285,
 "name" => "Orlene Queila de Oliveira",
 "email" => "mt_queila@yahoo.com.br",
 "password" => Hash::make("a80519"),
@@ -3131,9 +3131,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-285=> [ 
- "id" =>286, 
+],
+285=> [
+ "id" =>286,
 "name" => "Gisele Celia Furusava Ywashima",
 "email" => "gisele@musicoterapiasp.com.br",
 "password" => Hash::make("a80219"),
@@ -3142,9 +3142,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-286=> [ 
- "id" =>287, 
+],
+286=> [
+ "id" =>287,
 "name" => "Suzana Margot Brunhara",
 "email" => "suzana@suzanabrunhara.com.br",
 "password" => Hash::make("a86119"),
@@ -3153,9 +3153,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-287=> [ 
- "id" =>288, 
+],
+287=> [
+ "id" =>288,
 "name" => "Cláudia Maria Carrara Lélis",
 "email" => "claudiaclelis@gmail.com",
 "password" => Hash::make("s000"),
@@ -3164,9 +3164,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-288=> [ 
- "id" =>289, 
+],
+288=> [
+ "id" =>289,
 "name" => "Mônica Prado Borges",
 "email" => "monicapraddo@gmail.com",
 "password" => Hash::make("s59119"),
@@ -3175,9 +3175,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-289=> [ 
- "id" =>290, 
+],
+289=> [
+ "id" =>290,
 "name" => "Maria Clarice Schiller de Moura Costa",
 "email" => "maria.schiller.costa@gmail.com",
 "password" => Hash::make("a-20"),
@@ -3186,9 +3186,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-290=> [ 
- "id" =>291, 
+],
+290=> [
+ "id" =>291,
 "name" => "Ana Cristina Sanches de Assis Domingos",
 "email" => "anasanchez.musico@gmail.com",
 "password" => Hash::make("s-20"),
@@ -3197,9 +3197,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-291=> [ 
- "id" =>292, 
+],
+291=> [
+ "id" =>292,
 "name" => "Noemi Lang",
 "email" => "noemilang@hotmail.com",
 "password" => Hash::make("g-19"),
@@ -3208,9 +3208,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-292=> [ 
- "id" =>293, 
+],
+292=> [
+ "id" =>293,
 "name" => "Mara Regina dos Santos Damasceno",
 "email" => "mrsmagalhaes@terra.com.br",
 "password" => Hash::make("o-19"),
@@ -3219,9 +3219,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-293=> [ 
- "id" =>294, 
+],
+293=> [
+ "id" =>294,
 "name" => "Maristela Pires da Cruz Smith",
 "email" => "smithmaristela@globo.com",
 "password" => Hash::make("h88219"),
@@ -3230,9 +3230,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-294=> [ 
- "id" =>295, 
+],
+294=> [
+ "id" =>295,
 "name" => "Selma",
 "email" => "selma@apemesp.com",
 "password" => Hash::make("a-20"),
@@ -3241,9 +3241,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-295=> [ 
- "id" =>296, 
+],
+295=> [
+ "id" =>296,
 "name" => "Rita de Cássia Dultra Nascimento ",
 "email" => "mtrdultra@yahoo.com.br",
 "password" => Hash::make(" 58719"),
@@ -3252,9 +3252,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-296=> [ 
- "id" =>297, 
+],
+296=> [
+ "id" =>297,
 "name" => "Maria Aparecida Martinho",
 "email" => "musicamartinho@gmail.com",
 "password" => Hash::make("o84319"),
@@ -3263,9 +3263,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-297=> [ 
- "id" =>298, 
+],
+297=> [
+ "id" =>298,
 "name" => "Cristiane Amorosino",
 "email" => "amorosino@yahoo.com; crisamorosino@yahoo.com.br",
 "password" => Hash::make("o87819"),
@@ -3274,9 +3274,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-298=> [ 
- "id" =>299, 
+],
+298=> [
+ "id" =>299,
 "name" => "Cleo Monteiro França Correia",
 "email" => "cleomt_98@yahoo.com",
 "password" => Hash::make("a80820"),
@@ -3285,9 +3285,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-299=> [ 
- "id" =>300, 
+],
+299=> [
+ "id" =>300,
 "name" => "Mirian Steinberg ",
 "email" => "miriansteinberg@yahoo.com.br",
 "password" => Hash::make(" 80919"),
@@ -3296,9 +3296,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-300=> [ 
- "id" =>301, 
+],
+300=> [
+ "id" =>301,
 "name" => "Lilian Monaro Engelmann Coelho",
 "email" => "lilianengelmannmt@gmail.com",
 "password" => Hash::make("o80219"),
@@ -3307,9 +3307,9 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
-301=> [ 
- "id" =>302, 
+],
+301=> [
+ "id" =>302,
 "name" => "Raul Jaime Brabo",
 "email" => "raulbrabo@terra.com.br",
 "password" => Hash::make("o84819"),
@@ -3318,7 +3318,7 @@ class UsersTableSeeder extends Seeder
 "id_cadastro" => 2,
 "created_at" => "2017-05-17 05:12:28",
 "updated_at" => "2017-05-17 05:12:28",
-], 
+],
 
 
                 302 => [
@@ -3448,4 +3448,3 @@ class UsersTableSeeder extends Seeder
         }
 
     }
-

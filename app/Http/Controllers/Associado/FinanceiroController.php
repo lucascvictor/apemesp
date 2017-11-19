@@ -14,6 +14,8 @@ use App\Apemesp\Repositories\Associado\AssociadoRepository;
 
 use View;
 
+use Auth;
+
 class FinanceiroController extends Controller{
 
     public function __construct()
@@ -27,10 +29,18 @@ class FinanceiroController extends Controller{
 
     public function getIndex()
     {
- 
-       return view('admin.associado.financeiro');
+        if($this->getIdCadastro() < 5){
+             return view('admin.associado.restricao');
+        }
+        if($this->getIdCadastro() >= 5 ){
+         return view('admin.associado.financeiro');
+      }
     }
 
 
+    public function getIdCadastro()
+    {
+      return Auth::user()->id_cadastro;
+    }
 
 }

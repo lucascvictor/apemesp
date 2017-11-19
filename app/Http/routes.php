@@ -160,18 +160,25 @@ Route::group(['prefix' => 'associado'], function () {
         Route::post('', 'Associado\DadosAcademicosController@storeDadosAcademicos')->name('formacao.store'); //Salvar os dados do Primeiro contato
     });
 
-    Route::get('/formacao/edit/{id}', 'Associado\DadosAcademicosController@editFormacao')->name('formacao.edit'); //Editar formação recebendo o id especifico
-    Route::post('/formacao/update/{id}', 'Associado\DadosAcademicosController@updateFormacao')->name('formacao.update'); //Atualiza formação recebendo o id especifico
-
-    Route::get('/formacao/{id}', 'Associado\DadosAcademicosController@showFormacao')->name('formacao.show');
+    Route::group(['prefix' => 'formacao'], function () {
+      Route::get('/edit/{id}', 'Associado\DadosAcademicosController@editFormacao')->name('formacao.edit'); //Editar formação recebendo o id especifico
+      Route::post('/update/{id}', 'Associado\DadosAcademicosController@updateFormacao')->name('formacao.update'); //Atualiza formação recebendo o id especifico
+      Route::get('/{id}', 'Associado\DadosAcademicosController@showFormacao')->name('formacao.show');
+      Route::delete('/{id}', 'Associado\DadosAcademicosController@deleteFormacao')->name('formacao.delete');
+    });
 
     Route::get('/download/{arquivo}', 'Associado\AssociadoController@getDownload')->name('download');
 
     //Dados Profissionais
     Route::group(['prefix' => 'dadosprofissionais'], function () {
       Route::get('', 'Associado\DadosProfissionaisController@getDadosProfissionais');
+      Route::get('/atendimento', 'Associado\DadosProfissionaisController@storeOpcaoDeAtendimento');
+      Route::get('{id}', 'Associado\DadosProfissionaisController@showDadosProfissionais');
+      Route::post('{id}', 'Associado\DadosProfissionaisController@updateDadosProfissionais');
+      Route::get('/edit/{id}', 'Associado\DadosProfissionaisController@editDadosProfissionais');
       Route::post('', 'Associado\DadosProfissionaisController@storeDadosProfissionais');
       Route::post('/especialidade', 'Admin\EspecialidadeController@storeEspecialidade');
+
     });
 
 

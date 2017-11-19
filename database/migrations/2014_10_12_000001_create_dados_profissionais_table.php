@@ -24,9 +24,9 @@ class CreateDadosProfissionaisTable extends Migration
             $table->integer('id_proximidade')->unsigned();
             $table->integer('id_especialidade')->unsigned();
             $table->string('linkedin')->nullable();
-            $table->integer('telefone');
+            $table->string('telefone');
             $table->integer('id_dias_atendimento')->unsigned();
-            $table->integer('n_registro');
+            $table->integer('D_E_L_E_T_E_D')->defatul(0); //0 - não deletado; 1- deletado
         });
     }
 

@@ -19,7 +19,7 @@ class CreateFormacoesAcademicasTable extends Migration
             $table->integer('id_cidade')->unsigned();
             $table->integer('id_usuario')->unsigned();
             $table->string('nomeies');
-            $table->string('titulo');
+            $table->string('titulo')->nullable();
             $table->string('anodeconclusao');
             $table->string('titulotcc');
             $table->string('arquivotcc')->nullable();

@@ -23,7 +23,7 @@ class AssuntoRepository
 
 	public function setAssunto($assunto, $email)
 	{
-		$table = new Assunto;
+		    $table = new Assunto;
         $table->assunto = $assunto;
         $table->email = $email;
         $table->save();

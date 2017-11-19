@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Dados Acadêmicos')
+@section('titulo', 'Cadastro de Dados Acadêmicos')
 
 
 @section('conteudo')
@@ -21,7 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>Instituição</th>
-                                        <th>Titulo</th>
+                                        <th>Ano/previsão de conclusão</th>
 
                                     </tr>
                                 </thead>
@@ -29,7 +29,7 @@
                                 @foreach($formacoes as $formacao)
 								<tr>
                                         <td>{{ $formacao->nomeies }}</td>
-                                        <td>{{ $formacao->titulo }}</td>
+                                        <td>{{ $formacao->anodeconclusao }}</td>
                                         <td><a class="btn btn-default" href="{{ url('/associado/formacao/edit/') }}/{{ $formacao->id }}">Editar</a></td>
                                         <td><a class="btn btn-primary" href="{{ url('/associado/formacao/') }}/{{ $formacao->id }}">Visualizar Formação</a></td>
                                  </tr>
@@ -46,153 +46,167 @@
 	<div class="row">
 		<p> {{ $formacoes->links() }}</p>
 	</div>
+	<div class="col-md-4">
+		<a class="btn btn-success btn-block" href="" data-toggle="modal" data-target="#CadastroModal">Adicionar novos dados acadêmicos</a>
+	</div>
 </fieldset>
 
+<div class="modal fade" id="CadastroModal" role="dialog">
+		 <div class="modal-dialog">
 
-<form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/dadosacademicos')}}" >
-		<fieldset>
-		{{ csrf_field() }}
+			 <!-- Modal content-->
+					 <div class="modal-content">
+							 <div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal">&times;</button>
+									 <h4 class="modal-title">Adicionar dados profissionais</h4>
+								 </div>
+							 <div class="modal-body">
+									<form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/dadosacademicos')}}" >
+											<fieldset>
+											{{ csrf_field() }}
 
-				<legend>Formação Acadêmica</legend>
+													<legend>Formação Acadêmica</legend>
 
-				<div class="form-group">
-                                <label class="col-md-4 control-label">Categorias: </label>
-                                <label class=" radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="1" checked="">Bacharelado em Músicoterapia
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="2">Especiasta em Músicoterapia
-                                </label>
+													<div class="form-group">
+														<center>
+                              <label class=" control-label">Categorias: </label>
+															<br />
+                              <label class="col-md-10 radio-inline">
+                                  <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="1" checked="">Bacharelado em Músicoterapia
+                              </label>
+                              <label class="col-md-10 radio-inline">
+                                  <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="2">Especiasta em Músicoterapia
+                              </label>
 
-                                 <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5">Outros
-                                </label>
+                               <label class="col-md-10 radio-inline">
+                                  <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5">Outros
+                              </label>
+														</center>
+									        </div>
 
-                </div>
+
+													<!-- Campo IES -->
+														<div class="form-group">
+														  <label class="col-md-4 control-label" for="nomeies">Nome da IES:</label>
+														  <div class="col-md-4">
+														  <input id="nomeies" name="nomeies" type="text" placeholder="Instituição de Ensino" class="form-control input-md" required="">
+														  </div>
+														</div>
+
+													<!-- Campo Titulo -->
+														<div class="form-group">
+														  <label class="col-md-4 control-label" for="titulo">Titulo:</label>
+														  <div class="col-md-4">
+														  <input id="titulo" name="titulo" type="text" placeholder="Titulo" class="form-control input-md">
+														  </div>
+														</div>
+
+													<!-- Ano de conclusão -->
+														<div class="form-group">
+
+									                <label class="col-md-4 control-label" for="ano">Ano de Conclusão/ Previsão:</label>
+									                <div class="col-md-4">
+									                <div class="input-group" data-link-format="yyyy">
+									                    <input name="anodeconclusao" id="anodeconclusao" onkeyup="somenteNumeros(this);" maxlength="4" class="form-control" type="text" value="">
+														<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+									                </div>
+									                </div>
+									      			  </div>
+
+									        <!-- Campo Titulo do TCC -->
+														<div class="form-group">
+														  <label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>
+														  <div class="col-md-4">
+														  <input id="titulotcc" name="titulotcc" type="text" placeholder="TCC" class="form-control input-md" required="">
+
+														  </div>
+														</div>
+
+											<!-- Estado -->
+														<div class="form-group">
+														  <label class="col-md-4 control-label" for="selectbasic">Estado</label>
+														  <div class="col-md-4">
+														    <select id="id_estado" name="id_estado" class="form-control">
+														    @foreach($estados as $estado)
+														      <option value="{{ $estado->id }}">{{ $estado->nome }}</option>
+														     @endforeach
+														    </select>
+														  </div>
+														</div>
+
+													<!-- Cidade -->
+														<div class="form-group">
+														 <label class="col-md-4 control-label" for="selectbasic">Cidade</label>
+														  <div class="col-md-4">
+														    <select id="id_cidade" name="id_cidade" class="form-control">
+														   	@foreach($cidades as $cidade)
+														      <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
+														     @endforeach
+														   	</select>
+														  </div>
+														</div>
+
+														<!-- Aviso sobre o tipo de arquivo -->
+														<div class="form-group">
+														<div class="col-md-4"></div>
+														  <div class="col-md-4 alert alert-info alert-dismissable" role="alert">
+																  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+														  	<strong>Por favor.</strong> Carregue os arquivos abaixo no formato PDF.
+														  </div>
+														 </div>
+
+														<!-- Botão de Arquivo -->
+														<div class="form-group" id="mensagemtcc">
+														  <label class="col-md-4 control-label" for="filebutton">Cópia do TCC/Monografia/Pesquisa: </label>
+														  <div class="col-md-4">
+														    <input id="arquivotcc" name="arquivotcc" class="input-file" type="file">
+														  </div>
+														</div>
+
+														<!-- Botão de Arquivo -->
+														<div class="form-group" id="mensagemcertificado">
+														  <label class="col-md-4 control-label" for="filebutton">Certificado de conclusão: </label>
+														  <div class="col-md-4">
+														    <input id="certificado" name="certificado" class="input-file" type="file">
+														  </div>
+														</div>
+
+														<!-- Campo Atividades-->
+														<div class="form-group">
+														  <label class="col-md-4 control-label" for="nome">Atividades Desenvolvidas:</label>
+														  <div class="col-md-4">
+														  <textarea id="atividades" name="atividades" type="text" placeholder="Descreva aqui suas experiências obtidas durante o curso em questão" class="form-control input-md" required="">
+														  	</textarea>
+														  </div>
+														</div>
+
+														<!-- Carga Horária-->
+														<div class="form-group">
+
+									                <label class="col-md-4 control-label" for="ano">Carga horária:</label>
+									                <div class="col-md-4">
+									                <div class="input-group" data-link-format="yyyy">
+									                    <input name="cargahoraria" id="cargahoraria" onkeyup="somenteNumeros(this);" maxlength="5" class="form-control" type="text" value="" placeholder="Apenas números">
+														<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+									                </div>
+									                </div>
+									      			  </div>
 
 
-				<!-- Campo IES -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nomeies">Nome da IES:</label>
-					  <div class="col-md-4">
-					  <input id="nomeies" name="nomeies" type="text" placeholder="Instituição de Ensino" class="form-control input-md" required="">
-					  </div>
+
+
+
+											</fieldset>
+											<div class="modal-footer">
+												 <button class="btn btn-success btn-block">
+													 OK
+												 </button>
+										 </div>
+								</form>
+							</div>
+						</div>
 					</div>
-
-				<!-- Campo Titulo -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="titulo">Titulo:</label>
-					  <div class="col-md-4">
-					  <input id="titulo" name="titulo" type="text" placeholder="Titulo" class="form-control input-md" required="">
-					  </div>
-					</div>
-
-				<!-- Ano de conclusão -->
-					<div class="form-group">
-
-                <label class="col-md-4 control-label" for="ano">Ano de Conclusão/ Previsão:</label>
-                <div class="col-md-4">
-                <div class="input-group" data-link-format="yyyy">
-                    <input name="anodeconclusao" id="anodeconclusao" onkeyup="somenteNumeros(this);" maxlength="4" class="form-control" type="text" value="">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
-                </div>
-      			  </div>
-
-        <!-- Campo Titulo do TCC -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>
-					  <div class="col-md-4">
-					  <input id="titulotcc" name="titulotcc" type="text" placeholder="TCC" class="form-control input-md" required="">
-
-					  </div>
-					</div>
-
-		<!-- Estado -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="selectbasic">Estado</label>
-					  <div class="col-md-4">
-					    <select id="id_estado" name="id_estado" class="form-control">
-					    @foreach($estados as $estado)
-					      <option value="{{ $estado->id }}">{{ $estado->nome }}</option>
-					     @endforeach
-					    </select>
-					  </div>
-					</div>
-
-				<!-- Cidade -->
-					<div class="form-group">
-					 <label class="col-md-4 control-label" for="selectbasic">Cidade</label>
-					  <div class="col-md-4">
-					    <select id="id_cidade" name="id_cidade" class="form-control">
-					   	@foreach($cidades as $cidade)
-					      <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
-					     @endforeach
-					   	</select>
-					  </div>
-					</div>
-
-					<!-- Aviso sobre o tipo de arquivo -->
-					<div class="form-group">
-					<div class="col-md-4"></div>
-					  <div class="col-md-4 alert alert-info alert-dismissable" role="alert">
-							  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					  	<strong>Por favor.</strong> Carregue os arquivos abaixo no formato PDF.
-					  </div>
-					 </div>
-
-					<!-- Botão de Arquivo -->
-					<div class="form-group" id="mensagemtcc">
-					  <label class="col-md-4 control-label" for="filebutton">Cópia do TCC/Monografia/Pesquisa: </label>
-					  <div class="col-md-4">
-					    <input id="arquivotcc" name="arquivotcc" class="input-file" type="file">
-					  </div>
-					</div>
-
-					<!-- Botão de Arquivo -->
-					<div class="form-group" id="mensagemcertificado">
-					  <label class="col-md-4 control-label" for="filebutton">Certificado de conclusão: </label>
-					  <div class="col-md-4">
-					    <input id="certificado" name="certificado" class="input-file" type="file">
-					  </div>
-					</div>
-
-					<!-- Campo Atividades-->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="nome">Atividades Desenvolvidas:</label>
-					  <div class="col-md-4">
-					  <textarea id="atividades" name="atividades" type="text" placeholder="Descreva aqui suas experiências obtidas durante o curso em questão" class="form-control input-md" required="">
-					  	</textarea>
-					  </div>
-					</div>
-
-					<!-- Carga Horária-->
-					<div class="form-group">
-
-                <label class="col-md-4 control-label" for="ano">Carga horária:</label>
-                <div class="col-md-4">
-                <div class="input-group" data-link-format="yyyy">
-                    <input name="cargahoraria" id="cargahoraria" onkeyup="somenteNumeros(this);" maxlength="5" class="form-control" type="text" value="" placeholder="Apenas números">
-					<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                </div>
-                </div>
-      			  </div>
-
-
-
-
-				<!-- Botão -->
-					<div class="form-group">
-
-					  <div class="col-md-4">
-					    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Adicionar</button>
-					  </div>
-					</div>
-
-
-		</fieldset>
-</form>
-
+				</div>
 
 @endsection
 

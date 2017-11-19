@@ -14,6 +14,8 @@ use App\Apemesp\Repositories\Associado\AssociadoRepository;
 
 use View;
 
+use Auth;
+
 class DocumentacaoController extends Controller{
 
     public function __construct()
@@ -27,8 +29,19 @@ class DocumentacaoController extends Controller{
 
     public function getIndex()
     {
- 
-       return view('admin.associado.documentacao');
+
+      if($this->getIdCadastro() < 4){
+           return view('admin.associado.restricao');
+      }
+      if($this->getIdCadastro() >= 4 ){
+          return view('admin.associado.documentacao');
+      }
+    }
+
+
+    public function getIdCadastro()
+    {
+      return Auth::user()->id_cadastro;
     }
 
 

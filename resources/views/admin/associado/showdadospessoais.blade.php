@@ -181,19 +181,20 @@
 
             <!-- Estado -->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="estado">Estado:</label>
+                <label class="col-md-4 control-label" for="estadoExibicao">Estado:</label>
                 <div class="col-md-4">
-                <input readonly="true" id="estado" name="estado" type="text" placeholder="Estado" class="form-control input-md" required=""
+                <input readonly="true" id="estadoExibicao" name="estadoExibicao" type="text" placeholder="Estado" class="form-control input-md" required=""
                 @foreach($estados as $estado)
 
                  <?php if($dadospessoais[0]->id_estado == $estado->id)
                  {
                    echo ("value=" . '"' . $estado->nome . '"');
-
+                   $idEstado = $estado->id;
                  } ?>
 
                 @endforeach
                  />
+                 <input type="hidden" value="{{ $idEstado }}" name="estado" id="estado">
                 </div>
               </div>
 
@@ -202,14 +203,6 @@
 
 
 				<legend>Numeros de Telefones</legend>
-
-				<!-- Comercial -->
-					<div class="form-group">
-					 <label class="col-md-4 control-label" for="tel_comercial">Tel. Comercial</label>
-					  <div class="col-md-4">
-					    <input id="tel_comercial" name="tel_comercial" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control" value="{{ $dadospessoais[0]->tel_comercial }}">
-					  </div>
-					</div>
 
 				<!-- Celular -->
 					<div class="form-group">

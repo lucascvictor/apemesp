@@ -104,7 +104,6 @@ class DadosPessoaisRepository
 	public function updateDadosPessoais($request, $id)
 	{
 
-
 		DadosPessoais::where('id', $id)
             ->update([
 
@@ -118,9 +117,8 @@ class DadosPessoaisRepository
             'complemento' => $request->complemento,
             'bairro' => $request->bairro,
             'cep' => $request->cep,
-            'id_estado' => $this->getEstado($request->estado),
+            'id_estado' => $request->estado,
             'id_cidade' => $request->codCidade,
-            'tel_comercial' => $request->tel_comercial,
             'tel_celular' => $request->tel_celular,
             'tel_residencial' => $request->tel_residencial,
             'updated_at' => $this->getData()

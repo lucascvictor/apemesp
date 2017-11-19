@@ -6,11 +6,8 @@
 @section('conteudo')
 
 
-<form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/formacao/', $formacao->id )}}">
-{{ csrf_field() }}
-		<fieldset>
+<form class="form-horizontal" >
 
-	{{ csrf_field() }}
 
 				<legend>Formação Acadêmica</legend>
 
@@ -70,11 +67,12 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>
 					  <div class="col-md-4">
-					  <label id="titulotcc" name="titulotcc" type="text" class="form-control input-md">
+					  <p id="titulotcc" name="titulotcc" class="form-control ">
 					  {{ $formacao->titulotcc }}
-					  </label>
+						</p>
 					  </div>
 					</div>
+					<br />
 
 		<!-- Estado -->
 					<div class="form-group">
@@ -96,7 +94,6 @@
 					<div class="form-group">
 					 <label class="col-md-4 control-label" for="cidade">Cidade</label>
 					  <div class="col-md-4">
-
 
 					     <strong >{{ $cidade[0]->nome}} </strong>
 
@@ -160,10 +157,13 @@
 
 					    <!-- Modal -->
                       <div class="modal fade" id="myModal" role="dialog">
+
                             <div class="modal-dialog">
 
                               <!-- Modal content-->
                                   <div class="modal-content">
+																		<form class="form-horizontal" method="GET" action="{{ url('/associado/formacao')}}/{{ $formacao->id}}">
+																		 {{ csrf_field() }}
                                         <div class="modal-header">
                                               <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                   <h4 class="modal-title">Excluir Formação!</h4>
@@ -172,14 +172,16 @@
                                                       <p>Deseja realmente excluir esta formação?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="/associado/formacao/destroy/{{ $formacao->id }}" class="btn btn-danger btn-block">
-                                                          Sim
-                                                        </a>
-                                              <button type="button" class="btn btn-info btn-block" data-dismiss="modal">Não</button>
-                                        </div>
+																											<a href="#" class="btn btn-info btn-block" data-dismiss="modal">
+																												Não
+																											</a>
+                                              			<button class="btn btn-danger btn-block">Sim</button>
+                                        					</div>
+																			</form>
                                   </div>
 
                             </div>
+
                       </div>
 
 					  </div>
@@ -188,7 +190,7 @@
 
 		</fieldset>
 
-</form>
+
 
 
 @endsection

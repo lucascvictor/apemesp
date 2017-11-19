@@ -54,7 +54,7 @@ class DadosAcademicosRepository
 
 	public function getFormacoes($id_user)
 	{
-		return FormacoesAcademicas::where('id_usuario', $id_user)->paginate(7);
+		return FormacoesAcademicas::where('id_usuario', $id_user)->where('D_E_L_E_T_E_D', 0)->paginate(7);
 	}
 
 	public function getFormacao($id)
@@ -179,7 +179,9 @@ class DadosAcademicosRepository
 
 	public function deleteDadosAcademicos($id)
 	{
-
 		FormacoesAcademicas::where('id', $id)->update(['D_E_L_E_T_E_D' => 1]);
 	}
+
+
+
 }

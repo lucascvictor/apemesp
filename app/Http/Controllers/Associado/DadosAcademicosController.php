@@ -193,17 +193,17 @@ class DadosAcademicosController extends Controller{
            $dadosAcademicos->updateDadosAcademicos($id, $request);
 
 
-            Session::flash('sucesso', 'Seus dados acadêmicos foram atualizado com sucesso');
+            Session::flash('sucesso', 'Seus dados acadêmicos foram atualizados com sucesso');
             //flash para esta request e put para salvar na sessao
 
             return redirect()->back();
       }
 
-      public function deleteDadosAcademicos($id)
+      public function deleteFormacao($id)
       {
         $dadosAcademicos = new DadosAcademicosRepository;
         $dadosAcademicos->deleteDadosAcademicos($id);
-        
+
       }
 
 

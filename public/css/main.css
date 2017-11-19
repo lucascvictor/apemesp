@@ -5,9 +5,11 @@ body {
 
 #wrapper {
   padding-left: 250px;
+  padding-bottom: 300px;
   -webkit-transition: all .25s ease-in-out;
   -moz-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
+
 }
 #wrapper .content {
   padding: 5px 15px;

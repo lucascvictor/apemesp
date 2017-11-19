@@ -11,7 +11,11 @@ use App\Apemesp\Models\Nacionalidade;
 
 use App\Apemesp\Models\Estado;
 
+use App\Apemesp\Models\Cidade;
+
 use App\Apemesp\Models\Escala;
+
+use App\Apemesp\Models\User;
 
 use App\Apemesp\Models\DadosProfissionais;
 
@@ -20,6 +24,8 @@ use App\Apemesp\Models\ProximidadeGeografica;
 use App\Apemesp\Models\Especialidade;
 
 use DB;
+
+use Auth;
 
 class DadosProfissionaisRepository
 {
@@ -51,30 +57,93 @@ class DadosProfissionaisRepository
 
   public function getCidadeEspecifica($id_cidade)
   {
-    return Cidade::where('id', $id_cidade)->get();
+    $cidade = Cidade::where('id', $id_cidade)->select('nome')->get();
+    return $cidade[0]->nome;
+  }
+
+  public function getEstadoEspecifico($id_estado)
+  {
+    $estado = Estado::where('id', $id_estado)->select('abrev')->get();
+    return $estado[0]->abrev;
   }
 
   public function getDadosProfissionais($user_id)
   {
-    return DadosProfissionais::where('id_user', $user_id)->get();
+    return DadosProfissionais::where('id_user', $user_id)->paginate(5);
+  }
+
+  public function getDadoProfissional($id, $user_id)
+  {
+    return DadosProfissionais::where('id_user', $user_id)->where('id', $id)->get();
+  }
+
+  public function storeOpcaoDeAtendimento()
+  {
+    User::where('id', $this->getIdUser())->update(['opcao_dados_profissionais' => 1,]); //1- para desativado
   }
 
   public function storeDadosProfissionais($request)
   {
-    $dadosProssidionais = new FormacoesAcademicas;
-    $dadosProssidionais->id_usuario = $id_user;
-    $dadosProssidionais->nomeies = $request->nomeies;
-    $dadosProssidionais->arquivotcc= $arquivoTcc;
-    $dadosProssidionais->certificado = $arquivoCertificado;
-    $dadosProssidionais->id_categoria_formacao = $request->id_categoria_formacao;
-    $dadosProssidionais->id_estado = $request->id_estado;
-    $dadosProssidionais->id_cidade = $request->id_cidade;
-    $dadosProssidionais->titulo = $request->titulo;
-    $dadosProssidionais->anodeconclusao = $request->anodeconclusao;
-    $dadosProssidionais->titulotcc = $request->titulotcc;
-    $dadosProssidionais->atividades = $request->atividades;
-    $dadosProssidionais->cargahoraria = $request->cargahoraria;
-    $dadosProssidionais->save();
+
+    $dadosProfissionais = new DadosProfissionais;
+    $dadosProfissionais->id_user = $this->getIdUser();
+    $dadosProfissionais->cep = $request->cep;
+    $dadosProfissionais->endereco= $request->endereco;
+    $dadosProfissionais->complemento = $request->complemento;
+    $dadosProfissionais->bairro = $request->bairro;
+    $dadosProfissionais->id_estado = $this->getEstado($request->estado);
+    $dadosProfissionais->id_cidade = $request->codCidade;
+    $dadosProfissionais->id_proximidade = $request->proximidade;
+    $dadosProfissionais->id_especialidade = $request->especialidade;
+    $dadosProfissionais->id_dias_atendimento = $request->dias_atendimento;
+    $dadosProfissionais->linkedin = $request->linkedin;
+    $dadosProfissionais->telefone = $request->telefone;
+    $dadosProfissionais->save();
+
+    if ($dadosProfissionais->id > 0) {
+      return 0;
+    }
+    return 1;
   }
+
+  public function getEstado($abrev)
+	{
+		$estado = Estado::where('abrev', $abrev)->select('id')->get();
+		return $estado[0]->id;
+	}
+
+  public function getIdUser()
+  {
+    return Auth::user()->id;
+  }
+
+  public function changeCadastro($id_user, $id)
+  {
+    $id_atual = User::where('id', $id)->get();
+    if ($id_atual[0]->id < 4) {
+      User::where('id', $id_user)->update(['id_cadastro' => 4]);
+    }
+  }
+
+  public function updateDadosProfissionais($request, $id)
+  {
+     DadosProfissionais::where('id', $id)->where('id_user', $this->getIdUser())
+            ->update([
+            'cep' => $request->cep,
+            'endereco' => $request->endereco,
+            'complemento' => $request->complemento,
+            'bairro' => $request->bairro,
+            'id_estado' => $this->getEstado($request->estado),
+            'id_cidade' => $request->codCidade,
+            'id_proximidade' => $request->proximidade,
+            'id_especialidade' => $request->especialidade,
+            'id_dias_atendimento' => $request->dias_atendimento,
+            'linkedin' => $request->linkedin,
+            'telefone' => $request->telefone
+
+                ]);
+
+  }
+
 
 }

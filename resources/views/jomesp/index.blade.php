@@ -3,10 +3,6 @@
 
 @section('conteudo')
 
-    @include('partials.jomesp._logo')
-   
-    @include('partials.jomesp._nav')
-
     <div class="container">
 
         <div class="row">
@@ -21,7 +17,7 @@
                     <h2 class="intro-text text-center">{{ $post->titulo }}
                     </h2>
                     <hr>
-                    
+
                     <p>{{ $post->previa }}</p>
                     <center>
                     <img class="img-responsive img-border " src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="width: 300px; height: 200px;" alt="">
@@ -32,15 +28,14 @@
             </div>
         </div>
 @endforeach
-        
+
 
     </div>
     <!-- /.container -->
+  </div>
+</div>
+</div>
+</div>
 
 
 @endsection
-   
-
-</body>
-
-</html>
