@@ -50,7 +50,7 @@ Route::group(['prefix' => 'musicoterapia'], function () {
 Route::get('/agenda', 'Apemesp\AgendaController@getAgenda')->name('apemesp.agenda');
 
 Route::group(['prefix' => 'encontreummt'], function () {
-  Route::get('/search', 'Apemesp\EncontreUmMtController@search')->name('apemesp.encontreummt.search');
+  Route::post('/search', 'Apemesp\EncontreUmMtController@search')->name('apemesp.encontreummt.search');
   Route::get('', 'Apemesp\EncontreUmMtController@getIndex')->name('apemesp.encontreummt');
 });
 

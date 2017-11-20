@@ -18,7 +18,7 @@
     <meta property="og:description"   content="{{ $post[0]->subtitulo  }}" />
     <meta property="og:image"         content="{{ url('/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }}" />
     <meta property="og:image:type" 	  content="image/jpeg">
-	<meta property="og:image:width"   content="800"> 
+	<meta property="og:image:width"   content="800">
 	<meta property="og:image:height"  content="600">
 
 
@@ -27,8 +27,6 @@
 
 @section('conteudo')
 
-    @include('partials.jomesp._logo')
-    @include('partials.jomesp._nav')
 
     <div class="container">
 
@@ -84,8 +82,8 @@
 			<div class="row">
 			<div class="col-md-10">
 
-			<div class="fb-share-button" 
-			    
+			<div class="fb-share-button"
+
 			    data-layout="button_count">
   			</div>
 
