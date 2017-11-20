@@ -31,11 +31,11 @@ class DatabaseSeeder extends Seeder
         $this->call(PostsTableSeeder::class);
         $this->call(LinhaDoTempoTableSeeder::class);
         $this->call(DadosPessoaisTableSeeder::class);
+        $this->call(DadosAcademicosTableSeeder::class);
         $this->call(EspecialidadeTableSeeder::class);
         $this->call(ProximidadeGeograficaTableSeeder::class);
         $this->call(LiteraturaTableSeeder::class);
         $this->call(PropagandasTableSeeder::class);
-        $this->call(DadosPessoaisTableSeeder::class);
         $this->call(DadosAcademicosTableSeeder::class);
         $this->call(FormacoesAcademicasTableSeeder::class);
         $this->call(EscalasTableSeeder::class);
