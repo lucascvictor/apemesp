@@ -51,7 +51,7 @@
 																							<td><?php if ($anuidade->arq_avaliado == 0) { echo "Não"; } else
 																																													{	echo "Sim"; } ?>
 																							</td>
-																							<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#rgModal">Editar</a></td>
+																							<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#enviar_{{ $anuidade->ano }}">Editar</a></td>
 																							<td><a href="/associado/download/anuidade_{{ $anuidade->ano }}.pdf">dowload</a></td>
 																							<td><a href="{{ url('/associado/financeiro/anuidade/') }} {{ $anuidade->id }}">Solicitar verificação</a></td>
 																			 </tr>
@@ -66,30 +66,30 @@
 										</div>
 
 
+@foreach ($anuidades as $anuidade)
 
-
-<div class="modal fade" id="rgModal" role="dialog">
+<div class="modal fade" id="enviar_{{ $anuidade->ano }}" role="dialog">
 	 <div class="modal-dialog">
 
 		 <!-- Modal content-->
 				 <div class="modal-content">
 						 <div class="modal-header">
 						 <button type="button" class="close" data-dismiss="modal">&times;</button>
-								 <h4 class="modal-title">Enviar RG</h4>
+								 <h4 class="modal-title">Enviar comprovante de {{ $anuidade->ano }}</h4>
 							 </div>
 						 <div class="modal-body">
 
-		 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/documentacao/rg')}}">
+		 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/financeiro/comprovante/') }}{{ $anuidade->ano}}">
 
 		 	{{ csrf_field() }}
 					<!-- Botão de Arquivo para CPF -->
 						<div class="form-group" id="mensagem1">
-						  <label class="col-md-4 control-label" for="filebutton">RG: </label>
+						  <label class="col-md-4 control-label" for="filebutton">Comprovante: </label>
 						  <div class="col-md-4">
-						    <input id="documento1" name="rg" class="input-file" type="file">
+						    <input id="comprovante_{{ $anuidade->ano }}" name="comprovante_{{ $anuidade->ano }}" class="input-file" type="file">
 								<br />
 								<button class="btn btn-success" id="botao1">
-									Enviar novo RG
+									Enviar
 								</button>
 						  </div>
 
@@ -102,7 +102,7 @@
 
 		</div>
 	</div>
-
+@endforeach
 
 </fieldset>
 

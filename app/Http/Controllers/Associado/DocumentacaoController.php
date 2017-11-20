@@ -14,6 +14,8 @@ use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DocumentacaoRepository;
 
+use Apemesp\Apemesp\Repositories\Associado\FinanceiroRepository;
+
 use View;
 
 use Auth;
@@ -114,10 +116,14 @@ class DocumentacaoController extends Controller{
     {
         $documentacao = new DocumentacaoRepository;
         $dadosAcademicos = new DadosAcademicosRepository;
+        $financeiro = new FinanceiroRepository;
+
         if ($request->rg == 1 || $request->cpf == 1 || $request->cnh == 1) {
           $documentacao->storeDocumentacao($request->rg, $request->cpf, $request->cnh, $this->getUserId(), $request->comprovante_e);
           $documentacao->changeCadastro($this->getUserId(), $this->getUserCadastro());
-          return view('admin.associado.financeiro')->with('cpf', $dadosAcademicos->getCpf($this->getUserId()));
+          return view('admin.associado.financeiro')
+          ->with('cpf', $dadosAcademicos->getCpf($this->getUserId()))
+          ->with('anuidades', $financeiro->getAnuidades($this->getUserId()));
           Session::flash('sucesso','Documentação confirmada');
         }
         Session::flash('cuidado','Nenhum documento com foto foi enviado');

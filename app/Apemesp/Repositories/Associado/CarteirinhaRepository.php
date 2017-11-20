@@ -13,7 +13,7 @@ use Apemesp\Apemesp\Models\Certeirinha;
 
 use Apemesp\Apemesp\Models\Financeiro;
 
-use Apemesp\Apemesp\Repository\Certeirinha;
+use Apemesp\Apemesp\Repository\CerteirinhaRepository;
 
 use Apemesp\Apemesp\Repository\FinanceiroRepository;
 
