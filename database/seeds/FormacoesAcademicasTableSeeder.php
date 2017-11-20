@@ -4,11 +4,7 @@ use Illuminate\Database\Seeder;
 
 class FormacoesAcademicasTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
       DB::table('formacoes_academicas')->delete();
@@ -2490,7 +2486,7 @@ class FormacoesAcademicasTableSeeder extends Seeder
       "titulotcc" => "OS EFEITOS DA MUSICOTERAPIA ATRAVÉS DO SOFTWARE CROMOTMUSIC EM ASPECTOS SENSORIAIS, EMOCIONAIS E MUSICAIS DE CRIANÇAS E JOVENS SURDOS: ENSAIO CONTROLADO RANDOMIZADO",
       "id_estado" => 43,
       "id_cidade" => 4314902,
-      ]
+    ],
     ]);
     }
 }
