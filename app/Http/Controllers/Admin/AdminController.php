@@ -31,7 +31,29 @@ class AdminController extends Controller
 
     public function perfil()
     {
-        return view('admin.perfil');
+      $id_perfil = Auth::user()->id_perfil;
+      $id_status = Auth::user()->id_status;
+      
+      if ($id_perfil == 1) {
+          return view('admin.perfil');
+      }
+      if ($id_perfil == 2) {
+          return view('admin.redator.perfil');
+      }
+      if ($id_perfil == 3 || $id_perfil == 4) {
+          if ($id_status == 1 || $id_status ==2) {
+              if ($id_status == 2) {
+                  $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
+              }
+              $adminRepository = new AdminRepository;
+              $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
+              $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
+              unset($adminRepository);
+              return view('admin.associado.perfil');
+          } else {
+              return view('admin.inadimplente');
+          }
+      }
     }
     /**
      * Display a listing of the resource.
@@ -41,12 +63,12 @@ class AdminController extends Controller
     public function index()
     {
 
-       
+
         //Todos os menus foram capturados no construct da classe
         $id_perfil = Auth::user()->id_perfil;
         $id_status = Auth::user()->id_status;
         $mensagem = "";
-        
+
 
         if ($id_perfil == 1) {
             return view('admin.admin.index');
@@ -89,7 +111,7 @@ class AdminController extends Controller
         unset($adminRepository);
         Session::flash('sucesso', 'A página foi atualizada com sucesso');
             //flash para esta request e put para salvar na sessao
-            
+
             return redirect()->route('paginas.show');
     }
 

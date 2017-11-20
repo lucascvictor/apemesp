@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Controle financeiro')
+@section('titulo', 'Perfil do associado')
 
 @section('extrastyle')
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,9 +13,9 @@
 
 
 			<fieldset>
-				<legend>Anuidades</legend>
+				<legend>Configurações</legend>
 
-
+<!--
 				<div class="row">
 												<div class="col-lg-12">
 
@@ -32,31 +32,7 @@
 																				</tr>
 																		</thead>
 																		<tbody>
-																			<?php $i = 0; ?>
-																			@foreach ($anuidades as $anuidade)
-																			<tr>
-																							<td><b>{{ $anuidade->ano }}</b></td>
 
-																							<?php $arquivo = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/anuidade_" . $anuidade->ano .".pdf" ?>
-																							<td>
-																									<?php if (file_exists($arquivo)) {
-																												    echo "SIM";
-																														$documentacao[$i] = 1;
-																												} else {
-																												    echo "Não";
-																														$documentacao[$i] = 0;
-
-																												} ?>
-																							</td>
-																							<td><?php if ($anuidade->arq_avaliado == 0) { echo "Não"; } else
-																																													{	echo "Sim"; } ?>
-																							</td>
-																							<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#rgModal">Editar</a></td>
-																							<td><a href="/associado/download/anuidade_{{ $anuidade->ano }}.pdf">dowload</a></td>
-																							<td><a href="{{ url('/associado/financeiro/anuidade/') }} {{ $anuidade->id }}">Solicitar verificação</a></td>
-																			 </tr>
-																			 <?php $i++; ?>
-																			 @endforeach
 
 																		</tbody>
 																</table>
@@ -64,7 +40,7 @@
 														</div>
 
 										</div>
-
+-->
 
 
 

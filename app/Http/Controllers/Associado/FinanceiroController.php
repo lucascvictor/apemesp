@@ -40,6 +40,7 @@ class FinanceiroController extends Controller{
              return view('admin.associado.restricao');
         }
         if($this->getIdCadastro() >= 5 ){
+
          return view('admin.associado.financeiro')
          ->with('cpf', $dadosAcademicos->getCpf($this->getIdUsuario()))
          ->with('anuidades', $financeiro->getAnuidades($this->getIdUsuario()));

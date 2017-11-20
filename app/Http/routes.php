@@ -75,6 +75,8 @@ Route::get('/home', 'Apemesp\HomeController@index');
 Route::group(['prefix' => 'admin'], function () {
     Route::get('', 'Admin\AdminController@index')->name('admin');
 
+    Route::get('perfil', 'Admin\AdminController@perfil')->name('admin');
+
     Route::group(['prefix' => 'usuarios'], function () {
         Route::get('', 'Admin\UsuarioController@index')->name('users.index');
         Route::get('/search', 'Admin\UsuarioController@search');
