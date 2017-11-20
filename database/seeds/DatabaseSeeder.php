@@ -39,6 +39,9 @@ class DatabaseSeeder extends Seeder
         $this->call(DadosAcademicosTableSeeder::class);
         $this->call(FormacoesAcademicasTableSeeder::class);
         $this->call(EscalasTableSeeder::class);
+        $this->call(ControleAnosTableSeeder::class);
+        $this->call(StatusAnuidadesTableSeeder::class);
+        $this->call(AnuidadesTableSeeder::class);
 
     }
 }
