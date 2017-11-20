@@ -35,8 +35,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ProximidadeGeograficaTableSeeder::class);
         $this->call(LiteraturaTableSeeder::class);
         $this->call(PropagandasTableSeeder::class);
-        $this->call(EscalasTableSeeder::class);
         $this->call(DadosPessoaisTableSeeder::class);
         $this->call(FormacoesAcademicasTableSeeder::class);
+        $this->call(EscalasTableSeeder::class);
+
     }
 }
