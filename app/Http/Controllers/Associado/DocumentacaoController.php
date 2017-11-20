@@ -113,10 +113,11 @@ class DocumentacaoController extends Controller{
     public function updateDocumentacao(Request $request)
     {
         $documentacao = new DocumentacaoRepository;
+        $dadosAcademicos = new DadosAcademicosRepository;
         if ($request->rg == 1 || $request->cpf == 1 || $request->cnh == 1) {
           $documentacao->storeDocumentacao($request->rg, $request->cpf, $request->cnh, $this->getUserId(), $request->comprovante_e);
           $documentacao->changeCadastro($this->getUserId(), $this->getUserCadastro());
-          return view('admin.associado.financeiro');
+          return view('admin.associado.financeiro')->with('cpf', $dadosAcademicos->getCpf($this->getUserId()));
           Session::flash('sucesso','Documentação confirmada');
         }
         Session::flash('cuidado','Nenhum documento com foto foi enviado');

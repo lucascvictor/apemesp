@@ -193,5 +193,13 @@ Route::group(['prefix' => 'associado'], function () {
     });
 
     //Financeiro do Associado
-    Route::get('/financeiro/', 'Associado\FinanceiroController@getIndex');
+    Route::group(['prefix' => 'financeiro'], function () {
+      Route::get('', 'Associado\FinanceiroController@getIndex');
+    });
+
+
+    //Certeirinha do Associado
+    Route::group(['prefix' => 'carteirinha'], function () {
+      Route::get('', 'Associado\CarteirinhaController@getIndex');
+    });
 });

@@ -13,9 +13,10 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
+                  <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown"> -->
+                    
+                        <!-- <li class="message-preview">
                             <a href="#">
                                 <div class="media">
                                     <span class="pull-left">
@@ -64,7 +65,8 @@
                             <a href="#">Read All New Messages</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
+                <!--
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
@@ -91,7 +93,7 @@
                             <a href="#">View All</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="dropdown">
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ Auth::user()->name }} <b class="caret"></b></a>
@@ -102,7 +104,7 @@
                         <li>
                             <a href="{{ url('/forums') }}"><i class="fa fa-fw fa-group"></i> Forum</a>
                         </li>
-                      
+
                         <li class="divider"></li>
                         <li>
                             <a href="{{ url('/logout') }}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
@@ -111,14 +113,14 @@
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            
+
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-            
+
                 <ul class="nav navbar-nav side-nav">
                 <?php $pagina = $_SERVER['PHP_SELF']; //captura a pagina atual para posterior comparação na linha 136 ?>
-                
 
-               
+
+
                 @foreach($menus as $menu) <!-- Transforma o primero array em um array só-->
 
                   <?php $limite = (count($menu));
@@ -127,13 +129,13 @@
                    ?>
 
                   <?php while($i < $limite){ //define o limite de itens do menu?>
-                  <?php 
+                  <?php
 
                   $link = '/index.php'. $menu[$i]->link; //Monta o link de comparação para a classe active
 
                   ?>
 
-                    @if ( $pagina == $link ) 
+                    @if ( $pagina == $link )
                     <li class="active">
                     @else
                     <li>
@@ -141,11 +143,11 @@
                         <a href="{{ $menu[$i]->link }}"><i class="fa fa-fw {{ $menu[$i]->icone}}"></i> {{ $menu[$i]->titulo }}</a>
                     </li>
                     <?php $i++;} //Fim do loop while?>
-                    
+
                 @endforeach
 
 
-                    
+
                     <!--<li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
@@ -157,7 +159,7 @@
                             </li>
                         </ul>
                     </li>-->
-                    
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
