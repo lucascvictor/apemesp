@@ -11,8 +11,7 @@ class DadosAcademicosTableSeeder extends Seeder
      */
     public function run()
     {
-      public function run()
-      {
+
         DB::table('formacoes_academicas')->delete();
         DB::table('formacoes_academicas')->insert([
         0=> [
