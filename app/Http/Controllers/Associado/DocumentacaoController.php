@@ -10,11 +10,15 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests;
 
-use App\Apemesp\Repositories\Associado\AssociadoRepository;
+use App\Apemesp\Repositories\Associado\DadosAcademicosRepository;
+
+use App\Apemesp\Repositories\Associado\DocumentacaoRepository;
 
 use View;
 
 use Auth;
+
+use Session;
 
 class DocumentacaoController extends Controller{
 
@@ -34,7 +38,8 @@ class DocumentacaoController extends Controller{
            return view('admin.associado.restricao');
       }
       if($this->getIdCadastro() >= 4 ){
-          return view('admin.associado.documentacao');
+          $dadosAcademicos = new DadosAcademicosRepository;
+          return view('admin.associado.documentacao')->with('cpf', $dadosAcademicos->getCpf($this->getIdUsuario()));
       }
     }
 
@@ -42,6 +47,91 @@ class DocumentacaoController extends Controller{
     public function getIdCadastro()
     {
       return Auth::user()->id_cadastro;
+    }
+
+    public function getIdUsuario()
+    {
+      return Auth::user()->id;
+    }
+
+    public function storeRg(Request $request)
+    {
+      $teste = $this->validate($request, array(
+              'rg' => 'required|max:255',
+          ));
+      //Carregando o rg
+      $dadosAcademicos = new DadosAcademicosRepository;
+      $arquivo = $request->file('rg');
+      $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
+      $nomeArquivo = 'rg' . '.' . $request->file('rg')->getClientOriginalExtension();
+      $request->file('rg')->move($pastaDestino, $nomeArquivo);
+      return redirect()->back();
+
+    }
+
+    public function storeCpf(Request $request)
+    {
+      $teste = $this->validate($request, array(
+              'cpf' => 'required|max:255',
+          ));
+      $dadosAcademicos = new DadosAcademicosRepository;
+      $arquivo = $request->file('rg');
+      $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
+      $nomeArquivo = 'cpf' . '.' . $request->file('cpf')->getClientOriginalExtension();
+      $request->file('cpf')->move($pastaDestino, $nomeArquivo);
+      return redirect()->back();
+    }
+
+    public function storeCnh(Request $request)
+    {
+      $teste = $this->validate($request, array(
+              'cnh' => 'required|max:255',
+          ));
+      $dadosAcademicos = new DadosAcademicosRepository;
+      $arquivo = $request->file('rg');
+      $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
+      $nomeArquivo = 'cnh' . '.' . $request->file('cnh')->getClientOriginalExtension();
+      $request->file('cnh')->move($pastaDestino, $nomeArquivo);
+      return redirect()->back();
+    }
+
+
+    public function storeComprovante(Request $request)
+    {
+      $teste = $this->validate($request, array(
+              'cnh' => 'required|max:255',
+          ));
+      $dadosAcademicos = new DadosAcademicosRepository;
+      $arquivo = $request->file('rg');
+      $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
+      $nomeArquivo = 'comprovante_e' . '.' . $request->file('cnh')->getClientOriginalExtension();
+      $request->file('cnh')->move($pastaDestino, $nomeArquivo);
+      return redirect()->back();
+    }
+
+
+    public function updateDocumentacao(Request $request)
+    {
+        $documentacao = new DocumentacaoRepository;
+        if ($request->rg == 1 || $request->cpf == 1 || $request->cnh == 1) {
+          $documentacao->storeDocumentacao($request->rg, $request->cpf, $request->cnh, $this->getUserId(), $request->comprovante_e);
+          $documentacao->changeCadastro($this->getUserId(), $this->getUserCadastro());
+          return view('admin.associado.financeiro');
+          Session::flash('sucesso','Documentação confirmada');
+        }
+        Session::flash('cuidado','Nenhum documento com foto foi enviado');
+
+    }
+
+
+    public function getUserCadastro()
+    {
+      return Auth::user()->id_cadastro;
+    }
+
+    public function getUserId()
+    {
+      return Auth::user()->id;
     }
 
 

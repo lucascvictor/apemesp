@@ -14,6 +14,8 @@ use App\Classes\Associado;
 
 use App\Apemesp\Repositories\Associado\DadosProfissionaisRepository;
 
+use App\Apemesp\Repositories\Associado\DadosAcademicosRepository;
+
 use Auth;
 
 use Session;
@@ -55,20 +57,32 @@ class DadosProfissionaisController extends Controller{
       $id_cadastro = $this->getUserCadastro();
       $dados = array();
       $dadosProfissionais = new DadosProfissionaisRepository;
+      $dadosAcademicos = new DadosAcademicosRepository;
+      $formacoes = $dadosAcademicos->getFormacoes($this->getUserId());
 
-       if ($id_cadastro < 3){
+       if ($id_cadastro < 3 && count($formacoes) == 0){
             return view('admin.associado.restricao');
        }
-        if ($id_cadastro >= 3 ){
-          if (Auth::user()->opcao_dados_profissionais == 1) {
-            return view('admin.associado.dadosprofissionaisinativos');
-          }
-            return view('admin.associado.dadosprofissionais')
-            ->with('dados', $dadosProfissionais->getDadosProfissionais($this->getUserId()))
-            ->with('especialidades', $dadosProfissionais->getEspecialidades())
-            ->with('proximidades', $dadosProfissionais->getProximidades())
-            ->with('escalas', $dadosProfissionais->getEscalas());
+       if ($id_cadastro < 3 && count($formacoes) >= 1) {
+         $dadosAcademicos->changeCadastro($this->getUserId(), $id_cadastro);
+         return $this->index();
+       }
+      if ($id_cadastro >= 3){
+        if (Auth::user()->opcao_dados_profissionais == 1) {
+          return view('admin.associado.dadosprofissionaisinativos');
         }
+          return $this->index();
+      }
+    }
+
+    public function index()
+    {
+      $dadosProfissionais = new DadosProfissionaisRepository;
+      return view('admin.associado.dadosprofissionais')
+      ->with('dados', $dadosProfissionais->getDadosProfissionais($this->getUserId()))
+      ->with('especialidades', $dadosProfissionais->getEspecialidades())
+      ->with('proximidades', $dadosProfissionais->getProximidades())
+      ->with('escalas', $dadosProfissionais->getEscalas());
     }
 
     public function storeDadosProfissionais(Request $request)
@@ -104,9 +118,10 @@ class DadosProfissionaisController extends Controller{
     public function storeOpcaoDeAtendimento(){
 
         $dadosProfissionais = new DadosProfissionaisRepository;
+        $dadosAcademicos = new DadosAcademicosRepository;
         $dadosProfissionais->storeOpcaoDeAtendimento();
         $dadosProfissionais->changeCadastro($this->getUserId(), $this->getUserCadastro());
-        return view('admin.associado.documentacao');
+        return view('admin.associado.documentacao')->with('cpf', $dadosAcademicos->getCpf($this->getUserId()));
         Session::flash('sucesso', 'Seus dados profissionais foram atualizados com sucesso');
     }
 

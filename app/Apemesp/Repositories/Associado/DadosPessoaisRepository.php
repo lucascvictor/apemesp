@@ -57,6 +57,7 @@ class DadosPessoaisRepository
 
 	public function getDadosPessoais($user_id)
 	{
+	
 		return DadosPessoais::where('id_user', $user_id)->get();
 	}
 

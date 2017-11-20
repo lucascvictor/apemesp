@@ -183,8 +183,14 @@ Route::group(['prefix' => 'associado'], function () {
 
 
     //Documentação
-    Route::get('/documentacao/', 'Associado\DocumentacaoController@getIndex');
-
+    Route::group(['prefix' => 'documentacao'], function () {
+      Route::get('/', 'Associado\DocumentacaoController@getIndex');
+      Route::post('/rg', 'Associado\DocumentacaoController@storeRG');
+      Route::post('/cpf', 'Associado\DocumentacaoController@storeCPF');
+      Route::post('/cnh', 'Associado\DocumentacaoController@storeCNH');
+      Route::post('/comprovante', 'Associado\DocumentacaoController@storeComprovante');
+      Route::post('/', 'Associado\DocumentacaoController@updateDocumentacao')->name('documentacao.update');
+    });
 
     //Financeiro do Associado
     Route::get('/financeiro/', 'Associado\FinanceiroController@getIndex');

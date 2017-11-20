@@ -62,15 +62,13 @@ class DadosAcademicosController extends Controller{
     }
 
 
-
-
     public function storeDadosAcademicos(Request $request)
     {
         //Validar os dados
             $teste = $this->validate($request, array(
                     'nomeies' => 'required|max:255',
-                    'titulo' => 'required',
                     'anodeconclusao' => 'required',
+                    'id_categoria_formacao' => 'required',
                 ));
         $dadosAcademicos = new DadosAcademicosRepository;
         $id_cadastro = Auth::user()->id_cadastro;
@@ -148,7 +146,6 @@ class DadosAcademicosController extends Controller{
         //Validar os dados
             $teste = $this->validate($request, array(
                     'nomeies' => 'required|max:255',
-                    'titulo' => 'required',
                     'anodeconclusao' => 'required',
                 ));
 

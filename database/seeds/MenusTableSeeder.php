@@ -116,6 +116,13 @@ class MenusTableSeeder extends Seeder
                 "id_perfil" => 4,
             ],
 
+            [
+               "id"        => 15,
+               "titulo"    => "Carteirinha",
+               "icone"     => "fa-file-o",
+               "link"      => "/associado/carteirinha",
+               "id_perfil" => 4,
+           ],
 
 
 

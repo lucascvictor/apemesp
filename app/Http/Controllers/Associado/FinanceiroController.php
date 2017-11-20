@@ -12,6 +12,8 @@ use App\Http\Requests;
 
 use App\Apemesp\Repositories\Associado\AssociadoRepository;
 
+use App\Apemesp\Repositories\Associado\DadosAcademicosRepository;
+
 use View;
 
 use Auth;
@@ -29,11 +31,12 @@ class FinanceiroController extends Controller{
 
     public function getIndex()
     {
+      $dadosAcademicos = new DadosAcademicosRepository;
         if($this->getIdCadastro() < 5){
              return view('admin.associado.restricao');
         }
         if($this->getIdCadastro() >= 5 ){
-         return view('admin.associado.financeiro');
+         return view('admin.associado.financeiro')->with('cpf', $dadosAcademicos->getCpf($this->getIdUsuario()));
       }
     }
 
@@ -41,6 +44,11 @@ class FinanceiroController extends Controller{
     public function getIdCadastro()
     {
       return Auth::user()->id_cadastro;
+    }
+
+    public function getIdUsuario()
+    {
+      return Auth::user()->id;
     }
 
 }

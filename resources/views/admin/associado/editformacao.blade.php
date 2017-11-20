@@ -21,7 +21,7 @@
                                 <label class="radio-inline">
                                     <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="2" @if($formacao->id_categoria_formacao == 2)checked="" @endif>Especialização
                                 </label>
-                              
+
                                  <label class="radio-inline">
                                     <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5" @if($formacao->id_categoria_formacao == 5)checked="" @endif>Outros
                                 </label>
@@ -41,7 +41,7 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="titulo">Titulo:</label>
 					  <div class="col-md-4">
-					  <input id="titulo" name="titulo" type="text" placeholder="Titulo" class="form-control input-md" required="" value="{{ $formacao->titulo }}">
+					  <input id="titulo" name="titulo" type="text" placeholder="Titulo" class="form-control input-md" value="{{ $formacao->titulo }}">
 					  </div>
 					</div>
 
@@ -141,7 +141,7 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="nome">Atividades Desenvolvidas:</label>
 					  <div class="col-md-4">
-					  <textarea id="atividades" name="atividades" type="text" placeholder="Descreva aqui suas experiências obtidas durante o curso em questão" class="form-control input-md" required="">{{ $formacao->atividades }}</textarea>
+					  <textarea id="atividades" name="atividades" type="text" placeholder="Descreva aqui suas experiências obtidas durante o curso em questão" class="form-control input-md" >{{ $formacao->atividades }}</textarea>
 					  </div>
 					</div>
 
@@ -151,7 +151,7 @@
                 <label class="col-md-4 control-label" for="ano">Carga horária:</label>
                 <div class="col-md-4">
                 <div class="input-group" data-link-format="yyyy">
-                    <input name="cargahoraria" id="cargahoraria" onkeyup="somenteNumeros(this);" maxlength="5" class="form-control" type="text" value="{{ $formacao->cargahoraria }}" placeholder="Apenas números">
+                    <input name="cargahoraria" id="cargahoraria" onkeyup="somenteNumeros(this);" maxlength="5" class="form-control" type="text" value="{{ $formacao->cargahoraria }}" placeholder="Apenas números" required="">
 					<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
                 </div>
                 </div>
