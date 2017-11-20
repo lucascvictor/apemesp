@@ -155,7 +155,10 @@ class EncontreUmMtController extends Controller{
 					->with('escalas', $escalas->getEscalas());
 				}
 
-
+				return view('paginas.encontreummt')->with('mts', $mts)
+				->with('especialidades', $especialidades->getEspecialidades())
+				->with('proximidades', $proximidades->getProximidades())
+				->with('escalas', $escalas->getEscalas());
 
 		}
 

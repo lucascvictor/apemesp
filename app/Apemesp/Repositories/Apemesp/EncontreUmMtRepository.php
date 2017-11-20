@@ -37,7 +37,6 @@ class EncontreUmMtRepository
 		return DB::table('dados_profissionais')
 						->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
 						->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
-						->join('users', 'user.id', '=', 'dados_profissionais.id_user')
 						->where('dados_profissionais.id_especialidade', '=', $especialidade)
 						->where('dados_profissionais.id_especialidade', '<>', 0)
             ->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
