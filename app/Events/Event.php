@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Apemesp\Events;
 
 abstract class Event
 {

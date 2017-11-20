@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Apemesp;
+namespace Apemesp\Http\Controllers\Apemesp;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

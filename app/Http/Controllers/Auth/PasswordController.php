@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Apemesp\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use View;
 
@@ -30,7 +30,7 @@ class PasswordController extends Controller
     {
         $this->middleware('guest');
          View::composers([
-            'App\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
         ]);
     }
 }

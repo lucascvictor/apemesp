@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Apemesp\Repositories\Admin;
+namespace Apemesp\Apemesp\Repositories\Admin;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Post;
+use Apemesp\Apemesp\Models\Post;
 
-use App\Apemesp\Models\PostView;
+use Apemesp\Apemesp\Models\PostView;
 
-use App\Apemesp\Models\Tag;
+use Apemesp\Apemesp\Models\Tag;
 
 use Auth;
 

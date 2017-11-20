@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Apemesp\Http\Controllers\Auth;
 
-use App\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\User;
 use Validator;
 use View;
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -41,10 +41,10 @@ class AuthController extends Controller
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
          View::composers([
-            'App\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
         ]);
          View::composers([
-            'App\Composers\PropagandasComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'] 
         ]);
     }
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Apemesp\Classes;
+namespace Apemesp\Apemesp\Classes;
 
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Apemesp\Models\DadosPessoais;
+use Apemesp\Apemesp\Models\DadosPessoais;
 
 
 /**

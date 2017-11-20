@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Apemesp\Repositories\Associado;
+namespace Apemesp\Apemesp\Repositories\Associado;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Nacionalidade;
+use Apemesp\Apemesp\Models\Nacionalidade;
 
-use App\Apemesp\Models\Cidade;
+use Apemesp\Apemesp\Models\Cidade;
 
-use App\Apemesp\Models\Estado;
+use Apemesp\Apemesp\Models\Estado;
 
-use App\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\User;
 
-use App\Apemesp\Models\DadosPessoais;
+use Apemesp\Apemesp\Models\DadosPessoais;
 
-use App\Apemesp\Models\FormacoesAcademicas;
+use Apemesp\Apemesp\Models\FormacoesAcademicas;
 
-use App\Apemesp\Models\UsuarioCategoria;
+use Apemesp\Apemesp\Models\UsuarioCategoria;
 
 use Illuminate\Support\Collection;
 

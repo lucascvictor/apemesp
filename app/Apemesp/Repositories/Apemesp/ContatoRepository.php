@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Apemesp\Repositories\Apemesp;
+namespace Apemesp\Apemesp\Repositories\Apemesp;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Assunto;
+use Apemesp\Apemesp\Models\Assunto;
 
 use DB;
 

@@ -1,9 +1,9 @@
 <?php 
-namespace App\Composers;
+namespace Apemesp\Composers;
 
 use Auth;
 
-use App\Apemesp\Models\Menu;
+use Apemesp\Apemesp\Models\Menu;
 
 class MenuComposer
 {

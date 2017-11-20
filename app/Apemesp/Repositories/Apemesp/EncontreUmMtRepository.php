@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Apemesp\Repositories\Apemesp;
+namespace Apemesp\Apemesp\Repositories\Apemesp;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Page;
+use Apemesp\Apemesp\Models\Page;
 
-use App\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\User;
 
-use App\Apemesp\Models\ProximidadeGeografica;
+use Apemesp\Apemesp\Models\ProximidadeGeografica;
 
-use App\Apemesp\Models\Especialidade;
+use Apemesp\Apemesp\Models\Especialidade;
 
 use DB;
 

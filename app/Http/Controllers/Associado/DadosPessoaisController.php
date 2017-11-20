@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Associado;
+namespace Apemesp\Http\Controllers\Associado;
 
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Classes\Associado;
+use Apemesp\Apemesp\Classes\Associado;
 
-use App\Apemesp\Repositories\Associado\DadosPessoaisRepository;
+use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository;
 
 use Auth;
 
@@ -27,7 +27,7 @@ class DadosPessoaisController extends Controller{
     {
         $this->middleware('auth', ['except' => 'logout']);
         View::composers([
-            'App\Composers\MenuComposer'  => ['partials.admin._nav']
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
     }
 

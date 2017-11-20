@@ -1,5 +1,5 @@
 <?php
-namespace App\Composers;
+namespace Apemesp\Composers;
 
 use Auth;
 use DB;

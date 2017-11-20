@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Apemesp\Repositories\Associado;
+namespace Apemesp\Apemesp\Repositories\Associado;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Assunto;
+use Apemesp\Apemesp\Models\Assunto;
 
-use App\Apemesp\Models\Nacionalidade;
+use Apemesp\Apemesp\Models\Nacionalidade;
 
-use App\Apemesp\Models\Estado;
+use Apemesp\Apemesp\Models\Estado;
 
-use App\Apemesp\Models\Cidade;
+use Apemesp\Apemesp\Models\Cidade;
 
-use App\Apemesp\Models\Escala;
+use Apemesp\Apemesp\Models\Escala;
 
-use App\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\User;
 
-use App\Apemesp\Models\DadosProfissionais;
+use Apemesp\Apemesp\Models\DadosProfissionais;
 
-use App\Apemesp\Models\ProximidadeGeografica;
+use Apemesp\Apemesp\Models\ProximidadeGeografica;
 
-use App\Apemesp\Models\Especialidade;
+use Apemesp\Apemesp\Models\Especialidade;
 
 use DB;
 

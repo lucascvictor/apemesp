@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Apemesp\Repositories\Associado;
+namespace Apemesp\Apemesp\Repositories\Associado;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
 
-use App\Apemesp\Models\Documentacao;
+use Apemesp\Apemesp\Models\Documentacao;
 
-use App\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\User;
 
 use DB;
 

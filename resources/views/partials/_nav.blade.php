@@ -1,5 +1,5 @@
 
-<?php use App\Apemesp\Repositories\Associado\DadosPessoaisRepository; ?>
+<?php use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository; ?>
 
 <?php $dp = new DadosPessoaisRepository; ?>
 
@@ -77,7 +77,7 @@
     <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px; margin-right: 2%; ">
 
       <ul class="nav navbar-nav navbar-right" >
-      
+
 
         <li><a href="{{ url('/') }}">Home</a></li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> A Apemesp <b class="caret"></b></a>
@@ -99,7 +99,7 @@
               </ul>
             </li>
           <li><a href="{{ url('/agenda') }}"> Agenda</a></li>
-      
+
         @if(isset(Auth::user()->id))
         <li><a href="{{ url('/forums') }}">Forum</a></li>
         @endif
@@ -107,8 +107,8 @@
         <li><a href="{{ url('/encontreummt') }}"> Encontre um MT</a></li>
 
         <li><a href="{{ url('/contato/mensagens') }}">Contato</a></li>
-      
-        
+
+
       </ul>
       </div>
 

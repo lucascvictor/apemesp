@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Apemesp\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Repositories\Admin\EspecialidadeRepository;
+use Apemesp\Apemesp\Repositories\Admin\EspecialidadeRepository;
 
 
 

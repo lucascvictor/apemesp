@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Apemesp\Repositories\Admin;
+namespace Apemesp\Apemesp\Repositories\Admin;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Page;
+use Apemesp\Apemesp\Models\Page;
 
-use App\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\User;
 
-use App\Apemesp\Models\DadosPessoais;
+use Apemesp\Apemesp\Models\DadosPessoais;
 
-use App\Apemesp\Models\DadosProfissionais;
+use Apemesp\Apemesp\Models\DadosProfissionais;
 
 use Auth;
 

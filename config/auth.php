@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Apemesp\Models\User::class,
+            'model' => Apemesp\Apemesp\Models\User::class,
         ],
 
         // 'users' => [
@@ -100,7 +100,7 @@ return [
             'provider' => 'users',
             'email' => 'auth.emails.password',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 120,
         ],
     ],
 

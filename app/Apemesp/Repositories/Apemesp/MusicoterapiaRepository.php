@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Apemesp\Repositories\Apemesp;
+namespace Apemesp\Apemesp\Repositories\Apemesp;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\LinhaDoTempo;
+use Apemesp\Apemesp\Models\LinhaDoTempo;
 
-use App\Apemesp\Models\Literatura;
+use Apemesp\Apemesp\Models\Literatura;
 
-use App\Apemesp\Models\Page;
+use Apemesp\Apemesp\Models\Page;
 
 use DB;
 

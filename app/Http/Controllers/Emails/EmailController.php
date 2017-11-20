@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Emails;
+namespace Apemesp\Http\Controllers\Emails;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Apemesp\Models\Assunto;
+use Apemesp\Apemesp\Models\Assunto;
 
 use Mail;
 

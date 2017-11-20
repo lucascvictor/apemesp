@@ -157,10 +157,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Apemesp\Providers\AppServiceProvider::class,
+        Apemesp\Providers\AuthServiceProvider::class,
+        Apemesp\Providers\EventServiceProvider::class,
+        Apemesp\Providers\RouteServiceProvider::class,
         
 
 

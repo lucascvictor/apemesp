@@ -1,13 +1,13 @@
 <?php
-namespace App\Http\Controllers\Admin;
+namespace Apemesp\Http\Controllers\Admin;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Apemesp\Repositories\FinanceiroRepository;
+use Apemesp\Apemesp\Repositories\FinanceiroRepository;
 
 use Auth;
 
@@ -25,7 +25,7 @@ class FinanceiroController extends Controller
     	$this->middleware('auth', ['except' => 'logout']);
     	
         View::composers([
-            'App\Composers\MenuComposer'  => ['partials.admin._nav'] 
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'] 
         ]);
 
         

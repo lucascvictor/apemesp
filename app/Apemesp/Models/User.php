@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Apemesp\Models;
+namespace Apemesp\Apemesp\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

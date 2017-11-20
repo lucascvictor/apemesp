@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Apemesp\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Repositories\Admin\AssociadoRepository;
+use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
 
 use Session;
 
@@ -22,7 +22,7 @@ class AssociadoController extends Controller
         $this->middleware('auth', ['except' => 'logout']);
 
          View::composers([
-            'App\Composers\MenuComposer'  => ['partials.admin._nav']
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
 
 

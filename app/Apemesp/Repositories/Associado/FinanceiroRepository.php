@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Apemesp\Repositories\Associado;
+namespace Apemesp\Apemesp\Repositories\Associado;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\DadosPessoais;
+use Apemesp\Apemesp\Models\DadosPessoais;
 
-use App\Apemesp\Models\FormacoesAcademicas;
+use Apemesp\Apemesp\Models\FormacoesAcademicas;
 
-use App\Apemesp\Models\Certeirinha;
+use Apemesp\Apemesp\Models\Certeirinha;
 
-use App\Apemesp\Models\Financeiro;
+use Apemesp\Apemesp\Models\Financeiro;
 
-use App\Apemesp\Models\Anuidade;
+use Apemesp\Apemesp\Models\Anuidade;
 
 
 use DB;

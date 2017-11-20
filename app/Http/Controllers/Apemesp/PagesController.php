@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Apemesp;
+namespace Apemesp\Http\Controllers\Apemesp;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Repositories\Apemesp\PagesRepository;
+use Apemesp\Apemesp\Repositories\Apemesp\PagesRepository;
 
-use App\Apemesp\Repositories\Admin\PostRepository;
+use Apemesp\Apemesp\Repositories\Admin\PostRepository;
 
 use View;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
 
 
@@ -26,11 +26,11 @@ class PagesController extends Controller{
     {
 
          View::composers([
-            'App\Composers\MaisVistosComposer'  => ['partials._sidebar']
+            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar']
         ]);
 
          View::composers([
-            'App\Composers\PropagandasComposer'  => ['partials._sidebar']
+            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar']
         ]);
      }
 

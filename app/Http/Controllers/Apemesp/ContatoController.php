@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Apemesp;
+namespace Apemesp\Http\Controllers\Apemesp;
 
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Apemesp\Repositories\Apemesp\ContatoRepository;
+use Apemesp\Apemesp\Repositories\Apemesp\ContatoRepository;
 
 use Request;
 
@@ -18,11 +18,11 @@ class ContatoController extends Controller{
     {
          
          View::composers([
-            'App\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
         ]);
 
          View::composers([
-            'App\Composers\PropagandasComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'] 
         ]);
      }
 

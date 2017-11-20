@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Apemesp\Repositories\Apemesp;
+namespace Apemesp\Apemesp\Repositories\Apemesp;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Tag;
+use Apemesp\Apemesp\Models\Tag;
 
-use App\Apemesp\Models\Post;
+use Apemesp\Apemesp\Models\Post;
 
-use App\Apemesp\Models\PostView;
+use Apemesp\Apemesp\Models\PostView;
 
-use App\Apemesp\Models\Page;
+use Apemesp\Apemesp\Models\Page;
 
 use DB;
 

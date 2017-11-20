@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Jomesp;
+namespace Apemesp\Http\Controllers\Jomesp;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
 use Auth;
 
@@ -14,11 +14,11 @@ use View;
 
 use DB;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Apemesp\Repositories\Apemesp\PagesRepository;
+use Apemesp\Apemesp\Repositories\Apemesp\PagesRepository;
 
-use App\Apemesp\Models\Tag;
+use Apemesp\Apemesp\Models\Tag;
 
 use Cache;
 

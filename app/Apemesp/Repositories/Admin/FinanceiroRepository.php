@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Apemesp\Repositories\Admin;
+namespace Apemesp\Apemesp\Repositories\Admin;
 
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\User;
 
-use App\Apemesp\Models\Post;
+use Apemesp\Apemesp\Models\Post;
 
 use DB;
 

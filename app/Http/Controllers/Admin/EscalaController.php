@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Apemesp\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Models\Menu;
+use Apemesp\Apemesp\Models\Menu;
 
-use App\Apemesp\Repositories\Admin\EscalaRepository;
+use Apemesp\Apemesp\Repositories\Admin\EscalaRepository;
 
 use Auth;
 
@@ -27,7 +27,7 @@ class EscalaController extends Controller
         $this->middleware('auth', ['except' => 'logout']);
 
         View::composers([
-            'App\Composers\MenuComposer'  => ['partials.admin._nav']
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
 
     }

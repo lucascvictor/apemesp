@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Associado;
+namespace Apemesp\Http\Controllers\Associado;
 
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Response;
 
-use App\Http\Controllers\Controller;
+use Apemesp\Http\Controllers\Controller;
 
-use App\Http\Requests;
+use Apemesp\Http\Requests;
 
-use App\Apemesp\Repositories\Associado\DadosAcademicosRepository;
+use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
 
-use App\Apemesp\Repositories\Associado\DocumentacaoRepository;
+use Apemesp\Apemesp\Repositories\Associado\DocumentacaoRepository;
 
 use View;
 
@@ -26,7 +26,7 @@ class DocumentacaoController extends Controller{
     {
         $this->middleware('auth', ['except' => 'logout']);
         View::composers([
-            'App\Composers\MenuComposer'  => ['partials.admin._nav']
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
 
     }

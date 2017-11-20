@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Apemesp;
+namespace Apemesp\Http\Controllers\Apemesp;
 
-use App\Http\Controllers\Controller;
-use App\Apemesp\Repositories\Apemesp\EncontreUmMtRepository;
-use App\Apemesp\Repositories\Admin\EspecialidadeRepository;
-use App\Apemesp\Repositories\Admin\EscalaRepository;
-use App\Apemesp\Repositories\Admin\ProximidadeRepository;
+use Apemesp\Http\Controllers\Controller;
+use Apemesp\Apemesp\Repositories\Apemesp\EncontreUmMtRepository;
+use Apemesp\Apemesp\Repositories\Admin\EspecialidadeRepository;
+use Apemesp\Apemesp\Repositories\Admin\EscalaRepository;
+use Apemesp\Apemesp\Repositories\Admin\ProximidadeRepository;
 use View;
 
 class EncontreUmMtController extends Controller{
@@ -15,11 +15,11 @@ class EncontreUmMtController extends Controller{
     {
 
          View::composers([
-            'App\Composers\MaisVistosComposer'  => ['partials._sidebar']
+            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar']
         ]);
 
          View::composers([
-            'App\Composers\PropagandasComposer'  => ['partials._sidebar']
+            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar']
         ]);
      }
 

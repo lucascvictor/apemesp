@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Apemesp\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
