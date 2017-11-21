@@ -13,8 +13,8 @@
 .bs-wizard > .bs-wizard-step + .bs-wizard-step {}
 .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
 .bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fbe8aa; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #fbbd19; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fbe8aa; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #fbbd19; border-radius: 50px; position: absolute; top: 8px; left: 8px; }
 .bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
 .bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #fbe8aa;}
 .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
@@ -35,18 +35,18 @@
 
 
 <div class="container">
-		
-        
-            <div class="row bs-wizard" style="border-bottom:0;">
 
-            <h3>Passos para obtenção do numero de registro:</h3>    
+
+            <div class="row bs-wizard" style="margin-bottom: 15px;">
+
+            <h3>Passos para obtenção do numero de registro:</h3>
                 <div class="col-xs-3 bs-wizard-step complete">
                   <div class="text-center bs-wizard-stepnum">Passo 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Cadastro de usuário e senha.</div>
                 </div>
-                
+
                 <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 1)
                                                     complete
                                                     @else
@@ -62,36 +62,40 @@
                                                     complete
                                                     @else
                                                     disabled
-                                                    @endif"><!-- complete -->
+                                                    @endif" ><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 3</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Cadastro dos dados acadêmicos</div>
                 </div>
-                
+
                 <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 3)
                                                     complete
                                                     @else
                                                     disabled
-                                                    @endif"><!-- complete -->
+                                                    @endif"  ><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 4</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Cadastro dos dados profissionais</div>
                 </div>
-                
+
                 <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 4)
                                                     complete
                                                     @else
                                                     disabled
-                                                    @endif"><!-- active -->
+                                                    @endif" style="margin-top: 70px;"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Passo 5</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center"> Confirmação da documentação necessária</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step disabled">
+                <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 6)
+                                                    complete
+                                                    @else
+                                                    disabled
+                                                    @endif" style="margin-top: 70px;">
                   <div class="text-center bs-wizard-stepnum">Passo 6</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
@@ -101,25 +105,27 @@
             </div>
 
 
-            <div class="row bs-wizard" style="border-bottom:0;">
+            <div class="row bs-wizard" style="">
 
-            <h3>Passos para emissão da carteirinha:</h3>    
-                
-                
+            <h3>Passos para emissão da carteirinha:</h3>
+
+						<div class="col-xs-3">
+						<button class="btn btn-info" type="button" name="opcaoCarteirinha">Já possuo a carteirinha</button>
+						</div>
                 <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Pedido de confecção</div>
                 </div>
-                
+
                 <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 2</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Confecção realizada</div>
                 </div>
-                
+
                 <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Passo 3</div>
                   <div class="progress"><div class="progress-bar"></div></div>
@@ -127,10 +133,10 @@
                   <div class="bs-wizard-info text-center">Envio da carteirinha</div>
                 </div>
             </div>
-        
-        
 
-        
+
+
+
 	</div>
 
 

@@ -17,9 +17,10 @@ class EspecialidadeController extends Controller
 
   public function storeEspecialidade(Request $request){
 
-     $this->validate($request, array(
-             'especialidade' => 'required|max:255',
-             ));
+    if ($request->especialidade == null) {
+      Session::flash("cuidado", "Nenhuma informação inserida");
+      return redirect()->back();
+    }
 
      $especialidadeRepository = new EspecialidadeRepository;
      $especialidadeRepository->setEspecialidade($request->especialidade);

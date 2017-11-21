@@ -15,7 +15,7 @@ class MenusTableSeeder extends Seeder
         DB::table("menus")->insert([
             [
                 "id"        => 1,
-                "titulo"    => "Dashboard",
+                "titulo"    => "Inicio",
                 "icone"     => "fa-dashboard",
                 "link" 		=> "/admin",
                 "id_perfil" => 5,

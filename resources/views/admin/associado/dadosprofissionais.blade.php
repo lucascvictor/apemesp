@@ -102,7 +102,7 @@
 									 <h4 class="modal-title">Adicionar especialidade</h4>
 								 </div>
 							 <div class="modal-body">
-								 <form class="form-horizontal" method="POST" action="{{ url('associado/dadosprofissionais/especialidade')}}">
+								 <form class="form-horizontal" id="especialidade" method="POST" action="{{ url('associado/dadosprofissionais/especialidade')}}">
 
 									{{ csrf_field() }}
 									 <legend>Digite abaixo a sua especialidade</legend>
