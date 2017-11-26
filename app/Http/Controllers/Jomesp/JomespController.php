@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Apemesp\Http\Requests;
 
-use Auth;
+use Response;
 
 use Session;
 
@@ -20,9 +20,12 @@ use Apemesp\Apemesp\Repositories\Apemesp\PagesRepository;
 
 use Apemesp\Apemesp\Models\Tag;
 
+use Apemesp\Apemesp\Repositories\Admin\PaginasRepository;
+
 use Cache;
 
 class JomespController extends Controller{
+
 
 
 public function getIndex()
@@ -35,10 +38,11 @@ public function getIndex()
 
 		$posts->setPath('/');
 		$tags = Tag::all();
-		
-        return view('jomesp.index')
-        		->with('posts', $posts)
-        		->with('tags', $tags);
+		if(count($posts) == 0) {
+			return view('errors.404');
+		} else {
+    	return view('jomesp.index')->with('posts', $posts)->with('tags', $tags);
+		}
 }
 
 public function getContato()
@@ -48,7 +52,9 @@ public function getContato()
 
 public function getEdicoes()
 {
-    return view('jomesp.edicoes');
+		$page = new PagesRepository;
+		$edicoes = $page->getEdicoes();
+    return view('jomesp.edicoes')->with('edicoes', $edicoes);
 }
 
 public function getSobre()
@@ -62,7 +68,7 @@ public function getPost($id)
         $page = new PagesRepository;
         $post = $page->getPost($id);
         $view = $page->getPostView($id);
-    
+
         if ($post == null) {
             return view('errors.post');
         } else {
@@ -79,7 +85,19 @@ public function getPost($id)
 }
 
 
+public function download($arquivo)
+{
+		$file= public_path(). "/files/edicoesJomesp" . "/" . $arquivo;
+		$headers = array('Content-Type: application/pdf',);
+		if (file_exists($file)) {
+			return Response::download($file, 'edicaoJomesp.pdf', $headers);
+		} else {
+			Session::flash('cuidado','Arquivo não encontrado para download');
+			return redirect()->back();
+		}
+}
+
+
 
 
 }
-

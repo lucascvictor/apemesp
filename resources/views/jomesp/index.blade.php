@@ -29,7 +29,7 @@
         </div>
 @endforeach
 
-
+        <p> {{ $posts->links() }} </p>
     </div>
     <!-- /.container -->
   </div>

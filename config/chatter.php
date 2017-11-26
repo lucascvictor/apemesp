@@ -130,7 +130,7 @@ return [
     */
 
     'user' => [
-        'namespace'                     => 'App\Apemesp\Models\User',
+        'namespace'                     => 'Apemesp\Apemesp\Models\User',
         'database_field_with_user_name' => 'name',
         'relative_url_to_profile'       => '',
         'relative_url_to_image_assets'  => '',

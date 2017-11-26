@@ -9,6 +9,8 @@ use Apemesp\Apemesp\Models\User;
 
 use Apemesp\Apemesp\Models\Page;
 
+use Apemesp\Apemesp\Models\EdicaoJomesp;
+
 use DB;
 
 class PaginasRepository
@@ -19,6 +21,12 @@ class PaginasRepository
 		$busca = '%' . $item . '%';
         return Page::where('titulo', 'like', $busca)->get();
 	}
+
+	public function getEdicoes()
+	{
+		return EdicaoJomesp::all();
+	}
+
 
 
 }

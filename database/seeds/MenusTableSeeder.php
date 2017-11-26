@@ -123,7 +123,13 @@ class MenusTableSeeder extends Seeder
                "link"      => "/associado/carteirinha",
                "id_perfil" => 4,
            ],
-
+           [
+               "id"        => 16,
+               "titulo"    => "Edições Jomesp",
+               "icone"     => "fa-bars",
+               "link"      => "/admin/edicoesjomesp",
+               "id_perfil" => 2,
+           ],
 
 
 

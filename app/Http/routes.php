@@ -35,6 +35,7 @@ Route::group(['prefix' => 'jomesp'], function () {
     Route::get('/edicoes', 'Jomesp\JomespController@getEdicoes')->name('jomesp.edicoes');
     Route::get('/sobre', 'Jomesp\JomespController@getSobre')->name('jomesp.sobre');
     Route::get('/pages/post/{id}', 'Jomesp\JomespController@getPost');
+    Route::get('/edicoesjomesp/download/{arquivo}', 'Jomesp\JomespController@download');
 });
 
 Route::group(['prefix' => 'musicoterapia'], function () {
@@ -85,6 +86,16 @@ Route::group(['prefix' => 'admin'], function () {
 
     });
 
+    Route::group(['prefix' => 'edicoesjomesp'], function () {
+      Route::get('', 'Jomesp\EdicoesJomespController@index')->name('edicoesJomesp.index');
+      Route::get('/{id}', 'Jomesp\EdicoesJomespController@editEdicao');
+      Route::post('', 'Jomesp\EdicoesJomespController@storeEdicao');
+      Route::post('{id}', 'Jomesp\EdicoesJomespController@updateEdicao');
+      Route::get('/download/{arquivo}', 'Jomesp\EdicoesJomespController@download');
+      Route::delete('{id}', 'Jomesp\EdicoesJomespController@dropEdicao');
+
+    });
+
     Route::group(['prefix' => 'associados'], function () {
         Route::get('', 'Admin\AssociadoController@index')->name('admin.associados');
         Route::get('/search', 'Admin\AssociadoController@search')->name('associados.search');
@@ -113,6 +124,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/addassunto', 'Admin\AssuntoController@addAssunto')->name('add.assunto');
         Route::post('/', 'Admin\AssuntoController@storeAssunto')->name('store.assunto');
       });
+
+
+
+
       Route::group(['prefix' => 'escalas'], function () {
         Route::get('/', 'Admin\EscalaController@index');
         Route::get('/addescala', 'Admin\EscalaController@addEscala')->name('add.escala');

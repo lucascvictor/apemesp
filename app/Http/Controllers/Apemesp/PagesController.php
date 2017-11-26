@@ -40,8 +40,12 @@ class PagesController extends Controller{
 		$posts->setPath('/');
 		$tags = $page->getTags();
 		unset($page);
-        return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
-        //return view('paginas.manutencao');
+		if(count($posts) == 0) {
+			return view('errors.404');
+		} else {
+    	return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
+		}
+    //return view('paginas.manutencao');
 	}
 
 
@@ -51,7 +55,7 @@ class PagesController extends Controller{
 
 		$page = new PagesRepository;
 		$post = $page->getPost($id);
-	    $view = $page->getPostView($id);
+	  $view = $page->getPostView($id);
 
 	    if ($post == null){
 	    	return view('errors.post');
@@ -63,7 +67,11 @@ class PagesController extends Controller{
 		    }
 		    unset($page);
 
-		    return view('paginas.posts.show')->with('post', $post);
+				if(count($post) == 0) {
+					return view('errors.404');
+				} else {
+		    	return view('paginas.posts.show')->with('post', $post);
+				}
 		}
 
 	}
@@ -134,6 +142,7 @@ class PagesController extends Controller{
 		$postsTag->setPath('/');
 		$tags = $page->getTags();
 		unset($page);
+
 		return view('paginas.welcome')->with('posts', $postsTag)->with('tags', $tags);
 
 

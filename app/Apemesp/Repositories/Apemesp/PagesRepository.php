@@ -36,6 +36,15 @@ class PagesRepository
 	         ->get();
 	}
 
+
+	public function getEdicoes()
+	{
+		return DB::table('edicoes_jomesp')
+					 ->select('*')
+					 ->where('D_E_L_E_T_E_D', '=', 0)
+					 ->orderBy('edicoes_jomesp.id', 'desc')->paginate(6);
+	}
+
 	public function getPostView($id)
 	{
 		return PostView::find($id);
