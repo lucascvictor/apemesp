@@ -120,9 +120,12 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'configs'], function () {
       Route::group(['prefix' => 'assuntos'], function () {
-        Route::get('/', 'Admin\AssuntoController@index');
-        Route::get('/addassunto', 'Admin\AssuntoController@addAssunto')->name('add.assunto');
+        Route::get('/', 'Admin\AssuntoController@index')->name('show.assuntos');
+        Route::get('/add', 'Admin\AssuntoController@addAssunto')->name('add.assuntos');
+        Route::get('{id}', 'Admin\AssuntoController@editAssunto')->name('edit.assuntos');
+        Route::post('{id}', 'Admin\AssuntoController@updateAssunto')->name('update.assuntos');
         Route::post('/', 'Admin\AssuntoController@storeAssunto')->name('store.assunto');
+        Route::get('/delete/{id}', 'Admin\AssuntoController@destroyAssunto')->name('destroy.assunto');
       });
 
 

@@ -16,10 +16,28 @@ class AssuntoRepository
 
 	public function getAssuntos()
 	{
-		return DB::table('assuntos')->select('*')->paginate(4);
+		return DB::table('assuntos')->select('*')->orderBy('id', 'desc')->paginate(4);
+	}
+
+	public function getAssunto($id)
+	{
+		return DB::table('assuntos')->select('*')->where('id', '=',$id)->get();
 	}
 
 
+	public function updateAssunto($request, $id)
+	{
+		Assunto::where('id', $id)
+            ->update([
+                'assunto' => $request->assunto,
+                'email' => $request->email,
+                ]);
+	}
+
+	public function deleteAssunto($id)
+	{
+		Assunto::where('id', $id)->delete();
+	}
 
 	public function setAssunto($assunto, $email)
 	{

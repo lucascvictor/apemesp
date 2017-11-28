@@ -5,7 +5,7 @@
 @section('conteudo')
 
 
-<!-- Icon Cards-->
+<!-- 
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">
@@ -74,7 +74,7 @@
       </div>
 
 
-      !-- Area Chart Example-->
+      !-- Area Chart Example
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-area-chart"></i> Area Chart Example</div>
@@ -85,7 +85,7 @@
       </div>
       <div class="row">
         <div class="col-lg-8">
-          <!-- Example Bar Chart Card-->
+          <!-- Example Bar Chart Card-
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
@@ -108,12 +108,12 @@
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
-          <!-- Card Columns Example Social Feed-->
+          <!-- Card Columns Example Social Fee
           <div class="mb-0 mt-4">
             <i class="fa fa-newspaper-o"></i> News Feed</div>
           <hr class="mt-2">
           <div class="card-columns">
-            <!-- Example Social Card-->
+            <!-- Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
@@ -170,7 +170,7 @@
               </div>
               <div class="card-footer small text-muted">Posted 32 mins ago</div>
             </div>
-            <!-- Example Social Card-->
+            <!-- Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=180" alt="">
@@ -210,7 +210,7 @@
               </div>
               <div class="card-footer small text-muted">Posted 46 mins ago</div>
             </div>
-            <!-- Example Social Card-->
+            <!-- Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
@@ -234,7 +234,7 @@
               </div>
               <div class="card-footer small text-muted">Posted 1 hr ago</div>
             </div>
-            <!-- Example Social Card-->
+            <!-- Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=185" alt="">
@@ -301,7 +301,7 @@
           <!-- /Card Columns-->
         </div>
         <div class="col-lg-4">
-          <!-- Example Pie Chart Card-->
+          <!-- Example Pie Chart Card
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
@@ -310,7 +310,7 @@
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
-          <!-- Example Notifications Card-->
+          <!-- Example Notifications Card
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-bell-o"></i> Feed Example</div>
@@ -362,7 +362,7 @@
           </div>
         </div>
       </div>
-      <!-- Example DataTables Card-->
+      <!-- Example DataTables Card
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i> Data Table Example</div>
@@ -852,6 +852,6 @@
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
-    </div>
+    </div> -->
 
 @endsection

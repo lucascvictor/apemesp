@@ -12,6 +12,8 @@ use Apemesp\Apemesp\Models\Menu;
 
 use Apemesp\Apemesp\Repositories\Admin\AssuntoRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\ConfigsRepository;
+
 use Auth;
 
 use Session;
@@ -35,7 +37,7 @@ class AssuntoController extends Controller
 
    public function index(){
 
-   			$assuntoRepository = New AssuntoRepository;
+   		$assuntoRepository = New AssuntoRepository;
         $assuntos = $assuntoRepository->getAssuntos();
 
         $assuntos->setPath('assuntos');
@@ -52,7 +54,32 @@ class AssuntoController extends Controller
         return view('admin.admin.configs.assuntos.addassunto');
     }
 
-     public function setAssunto(Request $request){
+    public function editAssunto($id){
+
+        $assuntoRepository = New AssuntoRepository;
+        $assunto = $assuntoRepository->getAssunto($id);
+
+        return view('admin.admin.configs.assuntos.editassunto')->with('assunto', $assunto);
+    }
+
+
+     public function updateAssunto(Request $request, $id){
+
+         $this->validate($request, array(
+                'assunto' => 'required|max:255',
+                'email' => 'required|max:255',
+                ));
+
+        $assuntoRepository = New AssuntoRepository;
+        $assuntoRepository->updateAssunto($request, $id);
+        $assuntos = $assuntoRepository->getAssuntos();
+        $assuntos->setPath('assuntos');
+        Session::flash('sucesso', 'O assunto foi atualizado');
+         return view('admin.admin.configs.assuntos.showassuntos')
+                ->with('assuntos', $assuntos);
+    }
+
+     public function storeAssunto(Request $request){
 
         $this->validate($request, array(
                 'assunto' => 'required|max:255',
@@ -62,6 +89,15 @@ class AssuntoController extends Controller
         $configsRepository = new ConfigsRepository;
         $configsRepository->setAssunto($request->assunto, $request->email);
         unset($configsRepository);
+        Session::flash('sucesso', 'O assunto foi adicionado com sucesso!');
+        return redirect()->route('show.assuntos');
+    }
+
+    public function destroyAssunto($id)
+    {
+        $assuntoRepository = new AssuntoRepository;
+        $assuntoRepository->deleteAssunto($id);
+        Session::flash('cuidado', 'O assunto foi removido com sucesso!');
         return redirect()->route('show.assuntos');
     }
 
