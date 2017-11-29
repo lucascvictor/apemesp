@@ -44,7 +44,7 @@
 
 	</div>
 	<div class="row">
-		<p> {{ $formacoes->links() }}</p>
+		<p> {{ $formacoes->render() }}</p>
 	</div>
 	<div class="col-md-4">
 		<a class="btn btn-success btn-block" href="" data-toggle="modal" data-target="#CadastroModal">Adicionar novos dados acadêmicos</a>

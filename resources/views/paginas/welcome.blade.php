@@ -120,7 +120,7 @@
         @endforeach
 
 
-         <p> {{ $posts->links() }} </p>
+         <p> {{ $posts->render() }} </p>
 
 
 

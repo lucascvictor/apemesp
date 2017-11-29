@@ -86,7 +86,7 @@
 
 		 						
 								@endforeach
-                {{ $posts->links() }} 
+                {{ $posts->render() }} 
                                     
                                 </tbody>
                             </table>
@@ -152,7 +152,7 @@
 
                 
                 @endforeach
-                {{ $postsjomesp->links() }} 
+                {{ $postsjomesp->render() }} 
                                     
                                 </tbody>
                             </table>

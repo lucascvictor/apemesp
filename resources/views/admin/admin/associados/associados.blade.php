@@ -52,7 +52,7 @@
 		
 	</div>
 	<div class="row">
-		<p> {{ $associados->links() }} </p>
+		<p> {{ $associados->render() }} </p>
 	</div>
 
 

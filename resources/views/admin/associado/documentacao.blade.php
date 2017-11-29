@@ -25,85 +25,81 @@
 
 										 <!-- Aviso de prosseguimento -->
 
-					 							  <div class="col-md-4 alert alert-info alert-dismissable" role="alert">
-					 								  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					 								  	O upload de ao menos um arquivo abaixo é <strong>necessário.</strong>
-					 							  </div>
+<div class="col-md-4 alert alert-info alert-dismissable" role="alert">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  	O upload de ao menos um arquivo abaixo é <strong>necessário.</strong>
+</div>
 
-				<div class="row">
-												<div class="col-lg-12">
+<div class="row">
+<div class="col-lg-12">
 
 
-																<table class="table table-hover table-striped">
-																		<thead>
-																				<tr>
-																						<th> </th>
-																						<th>Arquivo enviado?</th>
-																						<th>Link para Download</th>
-																						<th colspan="2"></th>
-																				</tr>
-																		</thead>
-																		<tbody>
+		<table class="table table-hover table-striped">
+				<thead>
+						<tr>
+								<th> </th>
+								<th>Arquivo enviado?</th>
+								<th>Link para Download</th>
+								<th colspan="2"></th>
+						</tr>
+				</thead>
+				<tbody>
 
-																			<tr>
-																							<td><b>RG:</b></td>
-																							<?php $arquivorg = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/rg.pdf"; ?>
-																							<td>
-																									<?php if (file_exists($arquivorg)) {
-																												    echo "SIM";
-																														$documentacao[0] = 1;
-																												} else {
-																												    echo "Não";
-																														$documentacao[0] = 0;
-																												} ?>
-																							</td>
-																							<td><a href="/associado/download/rg.pdf">dowload</a></td>
-																							<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#rgModal">Editar</a></td>
-																			 </tr>
-																			 <tr>
-																							 <td><b>CPF:</b></td>
-																							 <?php $arquivocpf = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/cpf.pdf"; ?>
-																							 <td>
-																									 <?php if (file_exists($arquivocpf)) {
-																														 echo "SIM";
-																														 $documentacao[1] = 1;
-																												 } else {
-																														 echo "Não";
-																														 $documentacao[1] = 0;
-																												 } ?>
-																							 </td>
-																							 <td><a href="/associado/download/cpf.pdf">dowload</a></td>
-																							 <td><a class="btn btn-default" href="" data-toggle="modal" data-target="#cpfModal">Editar</a></td>
-																				</tr>
-																				<tr>
-																								<td><b>CNH:</b></td>
-																								<?php $arquivocnh = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/cnh.pdf"; ?>
-																								<td>
-																										<?php if (file_exists($arquivocnh)) {
-																															echo "SIM";
-																															$documentacao[2] = 1;
-																													} else {
-																															echo "Não";
-																															$documentacao[2] = 0;
-																													} ?>
-																								</td>
-																								<td><a href="/associado/download/cnh.pdf">dowload</a></td>
-																								<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#cnhModal">Editar</a></td>
-																				 </tr>
-																				 <tr>
- 																								<td><b>Comprovante de Endereço:</b></td>
- 																								<?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/comprovante_e.pdf"; ?>
- 																								<td>
- 																										<?php if (file_exists($arquivocnh)) {
- 																															echo "SIM";
- 																															$documentacao[3] = 1;
- 																													} else {
- 																															echo "Não";
- 																															$documentacao[3] = 0;
- 																													} ?>
- 																								</td>
- 																								<td><a href="/associado/download/comprovante_e.pdf">dowload</a></td>
- 																								<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#cnhModal">Editar</a></td>
+					<tr>
+									<td><b>RG:</b></td>
+									<?php $arquivorg = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/rg.pdf"; ?>
+									<td>
+											<?php if (file_exists($arquivorg)) {
+														    echo "SIM";
+																$documentacao[0] = 1;
+														} else {
+														    echo "Não";
+																$documentacao[0] = 0;
+														} ?>
+									</td>
+									<td><a href="/associado/download/rg.pdf">dowload</a></td>
+									<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#rgModal">Editar</a></td>
+					 </tr>
+					 <tr>
+									 <td><b>CPF:</b></td>
+									 <?php $arquivocpf = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/cpf.pdf"; ?>
+									 <td>
+											 <?php if (file_exists($arquivocpf)) {
+																 echo "SIM";
+																 $documentacao[1] = 1;
+														 } else {
+																 echo "Não";
+																 $documentacao[1] = 0;
+														 } ?>
+									 </td>
+									 <td><a href="/associado/download/cpf.pdf">dowload</a></td>
+									 <td><a class="btn btn-default" href="" data-toggle="modal" data-target="#cpfModal">Editar</a></td>
+						</tr>
+						<tr>
+										<td><b>CNH:</b></td>
+										<?php $arquivocnh = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/cnh.pdf"; ?>
+										<td>
+												<?php if (file_exists($arquivocnh)) {
+																	echo "SIM";
+																	$documentacao[2] = 1;
+															} else {
+																	echo "Não";
+																	$documentacao[2] = 0;
+															} ?>
+										</td>
+										<td><a href="/associado/download/cnh.pdf">dowload</a></td>
+										<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#cnhModal">Editar</a></td>
+						 </tr>
+						 <tr>
+											<td><b>Comprovante de Endereço:</b></td>
+											<?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/comprovante_e.pdf"; ?>
+											<td>
+													<?php if (file_exists($arquivocnh)) {
+																		echo "SIM";
+ 														 ?>
+	</td>
+	<td><a href="/associado/download/comprovante_e.pdf">dowload</a></td>
+	<td><a class="btn btn-default" href="" data-toggle="modal" data-target="#cnhModal">Editar</a></td>
  																				 </tr>
 
 																		</tbody>

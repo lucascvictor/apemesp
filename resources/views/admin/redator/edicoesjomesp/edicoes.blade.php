@@ -22,55 +22,55 @@
 											  </div>
 
 				<div class="row">
-												<div class="col-lg-12">
+<div class="col-lg-12">
 
 
-																<table class="table table-hover table-striped">
-																		<thead>
-																				<tr>
-																						<th> Edição </th>
-																						<th>Arquivo enviado?</th>
-																						<th>Link para Download</th>
-																						<th colspan="2"></th>
-																				</tr>
-																		</thead>
-																		<tbody>
-                                      @foreach($edicoes as $edicao)
-																			<tr>
-																							<td><b>{{ $edicao->edicao }}</b></td>
-																							<?php $arquivoe = public_path(). "/files/edicoesJomesp/" . $edicao->arquivo; ?>
-																							<td>
-																									<?php if (file_exists($arquivoe)) {
-																												    echo "Sim";
-																												} else {
-																												    echo "Não";
-																												} ?>
-																							</td>
-																							<td><a href="/admin/edicoesjomesp/download/{{ $edicao->arquivo }}">dowload</a></td>
-																							<td><a class="btn btn-default" href="{{ url('/admin/edicoesjomesp') }}/ {{ $edicao->id }}">Editar</a></td>
-                                              <td>
-                                                <form method="POST"  action="{{ url('/admin/edicoesjomesp/') }}/ {{ $edicao->id }}">
-                                                  {{ csrf_field() }}
-                                                  <input type="hidden" name="_method" value="DELETE">
-                                                  <button class="btn btn-danger">Deletar</button>
-                                                </form>
-                                              </td>
-                                       </tr>
-                                      @endforeach
+	<table class="table table-hover table-striped">
+			<thead>
+					<tr>
+							<th> Edição </th>
+							<th>Arquivo enviado?</th>
+							<th>Link para Download</th>
+							<th colspan="2"></th>
+					</tr>
+			</thead>
+			<tbody>
+@foreach($edicoes as $edicao)
+				<tr>
+								<td><b>{{ $edicao->edicao }}</b></td>
+								<?php $arquivoe = public_path(). "/files/edicoesJomesp/" . $edicao->arquivo; ?>
+								<td>
+										<?php if (file_exists($arquivoe)) {
+													    echo "Sim";
+													} else {
+													    echo "Não";
+													} ?>
+								</td>
+								<td><a href="/admin/edicoesjomesp/download/{{ $edicao->arquivo }}">dowload</a></td>
+								<td><a class="btn btn-default" href="{{ url('/admin/edicoesjomesp') }}/ {{ $edicao->id }}">Editar</a></td>
+<td>
+<form method="POST"  action="{{ url('/admin/edicoesjomesp/') }}/ {{ $edicao->id }}">
+{{ csrf_field() }}
+<input type="hidden" name="_method" value="DELETE">
+<button class="btn btn-danger">Deletar</button>
+</form>
+</td>
+</tr>
+@endforeach
 
 
-																		</tbody>
-																</table>
+			</tbody>
+	</table>
 
 
 
-																<button class="btn btn-success" data-toggle="modal" data-target="#novaEdicao">
-																	Enviar nova edição
-																</button>
+	<button class="btn btn-success" data-toggle="modal" data-target="#novaEdicao">
+		Enviar nova edição
+	</button>
 
-														</div>
-
-										</div>
+</div>
+{{ $edicoes->render() }}
+</div>
 
 
 

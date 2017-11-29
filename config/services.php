@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\Apemesp\Models\User::class,
+        'model' => Apemesp\Apemesp\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
