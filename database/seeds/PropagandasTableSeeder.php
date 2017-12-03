@@ -11,25 +11,23 @@ class PropagandasTableSeeder extends Seeder
      */
     public function run()
     {
-    	$data = date("Y-m-d H:i:s");
+    	 $data = date("Y-m-d H:i:s");
         DB::table('propagandas')->delete();
         DB::table('propagandas')->insert([
             [
                 "id"        => 1,
-                "imagem"    => "imagem - 2017-07-04 19:28:00.jpg",
-                "link"    => "http://facebook.com/lucas.c.victor",
-                "frase"    => "Luke AD",
-                "titulo"    => "Lukes's ADSense",
+                "imagem"    => "propaganda1.jpg",
+                "link"    => "http://teste.com",
+                "titulo"    => "Propaganda 1",
                 "created_at"    => $data,
                 "updated_at"    => $data,
 
             ],
              [
                 "id"        => 2,
-                "imagem"    => "imagem - 2017-07-04 19:28:00.jpg",
-                "link"    => "http://facebook.com/lucas.c.victor",
-                "frase"    => "Luke AD",
-                "titulo"    => "Lukes's ADSense",
+                "imagem"    => "propaganda2.jpg",
+                "link"    => "http://teste2.com",
+                "titulo"    => "Propaganda 2",
                 "created_at"    => $data,
                 "updated_at"    => $data,
 

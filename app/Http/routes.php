@@ -114,6 +114,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/formacao', 'Admin\FormacaoController@addFormacao');
           Route::get('/comissao', 'Admin\ComissaoController@addComissao');
           Route::get('/membro', 'Admin\MembroController@addMembro');
+          Route::get('/propaganda', 'Admin\PropagandaController@addPropaganda');
         });
 
 
@@ -122,6 +123,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::post('/formacao', 'Admin\FormacaoController@storeFormacao');
           Route::post('/comissao', 'Admin\ComissaoController@storeComissao');
           Route::post('/membro', 'Admin\MembroController@storeMembro');
+          Route::post('/propaganda', 'Admin\MembroController@storePropaganda');
 
 
           Route::get('/literaturas', 'Admin\LiteraturaController@listLiteratura')->name('list.literatura');
@@ -129,6 +131,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/formacoes', 'Admin\FormacaoController@listFormacao')->name('list.formacao');
           Route::get('/comissaos', 'Admin\ComissaoController@listComissao')->name('list.comissao');
           Route::get('/membros', 'Admin\MembroController@listMembro')->name('list.membro');
+          Route::get('/propagandas', 'Admin\PropagandaController@listPropaganda')->name('list.propaganda');
 
 
           Route::get('/literatura/destroy/{id}', 'Admin\LiteraturaController@destroyLiteratura');
@@ -136,6 +139,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/formacao/destroy/{id}', 'Admin\FormacaoController@destroyFormacao');
           Route::get('/comissao/destroy/{id}', 'Admin\ComissaoController@destroyComissao');
           Route::get('/membro/destroy/{id}', 'Admin\MembroController@destroyMembro');
+          Route::get('/propaganda/destroy/{id}', 'Admin\PropagandaController@destroyPropaganda');
 
 
           Route::get('/literatura/{id}', 'Admin\LiteraturaController@editLiteratura');
@@ -143,6 +147,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/formacao/{id}', 'Admin\FormacaoController@editFormacao');
           Route::get('/comissao/{id}', 'Admin\ComissaoController@editComissao');
           Route::get('/membro/{id}', 'Admin\MembroController@editMembro');
+          Route::get('/propaganda/{id}', 'Admin\PropagandaController@editMembro');
 
 
           Route::post('/literatura/{id}', 'Admin\LiteraturaController@updateLiteratura');
@@ -150,7 +155,8 @@ Route::group(['prefix' => 'admin'], function () {
           Route::post('/formacao/{id}', 'Admin\FormacaoController@updateFormacao');
           Route::post('/comissao/{id}', 'Admin\ComissaoController@updateComissao');
           Route::post('/membro/{id}', 'Admin\MembroController@updateMembro');
-
+          Route::post('/propaganda/{id}', 'Admin\PropagandaController@updatePropaganda');
+          Route::post('/propagandaativa', 'Admin\PropagandaController@updatePropagandaAtiva');
 
     });
 

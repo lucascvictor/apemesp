@@ -126,8 +126,9 @@
                                 <tbody>
 																	<tr>
 																		<td> Quantidade de propagandas ativas:
-																		<form action="POST" method="{{ url('/') }}">
-																			<input size="1" name="quantidade" id="quantidade">
+																		<form action="{{ url('/admin/paginas/propagandaativa') }}" method="POST">
+																			{{ csrf_field() }}
+																			<input size="1" name="quantidade" id="quantidade" value="{{ $propagandasAtivas[0]->quantidade }}">
 																			<button>ok</button>
 																		</form>
 																		</td>

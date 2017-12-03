@@ -9,7 +9,7 @@ use Apemesp\Http\Controllers\Controller;
 use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\AdminRepository;
-
+use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 use Auth;
 
 use Session;
@@ -33,7 +33,7 @@ class AdminController extends Controller
     {
       $id_perfil = Auth::user()->id_perfil;
       $id_status = Auth::user()->id_status;
-      
+
       if ($id_perfil == 1) {
           return view('admin.perfil');
       }
@@ -99,9 +99,13 @@ class AdminController extends Controller
     public function getPaginas()
     {
         $adminRepository = new AdminRepository;
+        $propagandasRepositoy = new PropagandaRepository;
         $paginas = $adminRepository->getPaginasIndex();
+        $propagandas_ativas = $propagandasRepositoy->getPropagandasAtivas();
         unset($adminRepository);
-        return view('admin.admin.paginas.paginas')->with('paginas', $paginas);
+        return view('admin.admin.paginas.paginas')
+        ->with('paginas', $paginas)
+        ->with('propagandasAtivas', $propagandas_ativas);
     }
 
     public function updatePagina(Request $request, $id)
