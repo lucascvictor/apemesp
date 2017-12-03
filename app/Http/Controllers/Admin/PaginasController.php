@@ -23,34 +23,15 @@ class PaginasController extends Controller
     public function __construct()
     {
     	$this->middleware('auth', ['except' => 'logout']);
-    	
+
         View::composers([
-            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'] 
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
 
-        
-    }
-
-
-    public function addLiteratura()
-    {
-    	return view('admin.admin.paginas.add.literatura');
-    }
-
-    public function listLiteratura()
-    {
-        
-    }
-
-    public function storeLiteratura()
-    {
 
     }
 
-    public function destroyLiteratura()
-    {
-        
-    }
-  
+
+
+
 }
-

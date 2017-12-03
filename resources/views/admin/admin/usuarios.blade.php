@@ -12,16 +12,16 @@
 @section('conteudo')
 
 <div class="row">
-	<div class="col-md-10">
-		
+	<div class="col-md-12">
+
 
 		<div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 ">
 
-         
-        
-              <div class="col-md-4" style="float: right;">
-               
+
+
+              <div class="col-md-12" style="float: right;">
+
                     {{ Form::open(['action' => ['Admin\UsuarioController@search'], 'method' => 'GET']) }}
                     <div class="form-group input-group">
                     {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Procurar Usuarios', 'class' => 'form-control'])}}
@@ -29,9 +29,9 @@
                     <span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></span>
                     </div>
                 {{ Form::close() }}
-                
+
             </div>
-          
+
                         <h2>Lista de Associados</h2>
                         <div class="table-responsive">
                             <table class="table table-hover table-striped">
@@ -40,21 +40,21 @@
                                         <th>Nome do Associado</th>
                                         <th>Usuário (e-mail)</th>
                                         <th colspan="2"> </th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($usuarios as $usuario)
+                @foreach($usuarios as $usuario)
 								<tr>
-                                        <td>{{ $usuario->name }}</td>
-                                        <td>{{ $usuario->email }}</td>
-                                        <td>
-                                             <button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#myModal">Resetar senha</button>
+                  <td>{{ $usuario->name }}</td>
+                  <td>{{ $usuario->email }}</td>
+                  <td>
+                  <button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#myModal">Resetar senha</button>
 
                       <!-- Modal -->
                       <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
-                            
+
                               <!-- Modal content-->
                                   <div class="modal-content">
                                         <div class="modal-header">
@@ -69,9 +69,9 @@
                                                           Sim
                                                         </a>
                                               <button type="button" class="btn btn-info btn-block" data-dismiss="modal">Não</button>
-                                        </div>  
+                                        </div>
                                   </div>
-                              
+
                             </div>
                       </div>
 
@@ -81,16 +81,16 @@
                                         </td>
                                         <td><a href="mailto:{{ $usuario->email }}" class="btn btn-primary">Enviar e-mail</a></td>
                                         <td><a href="/admin/usuarios/mensagem/{{ $usuario->id }}" class="btn btn-success">Enviar mensagem interna</a></td>
-                                    </tr>
+                </tr>
 
 								@endforeach
-                                    
-                                   
+
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
-		
+
 	</div>
 	<div class="row">
 		<p> {{ $usuarios->links() }} </p>

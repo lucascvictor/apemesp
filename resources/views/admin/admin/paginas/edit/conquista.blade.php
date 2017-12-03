@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Adicionar Conquista')
+@section('titulo', 'Editar Conquista')
 
 @section('extrastyle')
 
@@ -11,16 +11,18 @@
 @section('conteudo')
 
 
-<form method="POST"  enctype="multipart/form-data" action="{{ url('/admin/paginas/conquista') }}">
+<form method="POST"  action="{{ url('/admin/paginas/conquista/') }}/{{ $conquista[0]->id }}">
  {{ csrf_field() }}
   <fieldset>
-  <legend>Inserção de conquista na página Musicoterapia/Conquistas </legend>
+
+<br />
+
 
   <!-- Campo Titulo -->
     <div class="form-group">
       <label class="col-md-4 control-label" for="titulo">Titulo:</label>
       <div class="col-md-4">
-      <input id="titulo" name="titulo" type="text" placeholder="Titulo da conquista" class="form-control input-md" required="">
+      <input id="titulo" name="titulo" type="text" placeholder="Titulo da Obra ou do Site" class="form-control input-md" required="" value="{{ $conquista[0]->titulo }}">
       </div>
     </div>
     <br />
@@ -30,24 +32,22 @@
       <label class="col-md-4 control-label" for="descricao">Descrição:</label>
       <div class="col-md-6">
         {{ Form::label('conteudo', 'Conteudo:') }}
-        {{ Form::textarea('conteudo', null, array('class' => 'form-control input-md',
+        {{ Form::textarea('conteudo', $conquista[0]->conteudo, array('class' => 'form-control input-md',
         'id' => 'conteudo',
         'name' => 'conteudo',
         'placeholder' => 'Breve descrição sobre a indicação. Você pode incluir aqui links(para leitura ou compra e de páginas de redes sociais)',
         'cols' => '30',
-        'required' => ''
+        'required' => '',
         )) }}
       </div>
     </div>
     <br />
 
     <hr>
-
-  <label class="col-md-4 control-label" for="salvar"></label>
-  <center class="col-md-4">  <button id="salvar" type="submit" class="btn btn-success btn-block"> Salvar</button> </center>
-
-</div>
+    <label class="col-md-4 control-label" for="salvar"></label>
+    <center class="col-md-1"><button type="submit" id="salvar" class="btn btn-success"> Salvar alteração</button></center>
   </fieldset>
+    </div>
 </form>
 
 

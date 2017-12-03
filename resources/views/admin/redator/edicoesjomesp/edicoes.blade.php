@@ -5,11 +5,13 @@
 
 @section('conteudo')
 
-<h3> Os arquivos lançados neste painel são visível somente na página da JOMESP</h3>
+
 
 
 <div class="container">
-
+	<div class="row">
+<div class="col-lg-10 col-md-10">
+<h3> Os arquivos lançados neste painel são visível somente na página da JOMESP</h3>
 
 			<fieldset>
 				<legend>Edições</legend>
@@ -21,8 +23,7 @@
 												  	<span style="color: gray;"><strong>Por favor.</strong> Carregue as edições abaixo no formato PDF.</span>
 											  </div>
 
-				<div class="row">
-<div class="col-lg-12">
+
 
 
 	<table class="table table-hover table-striped">

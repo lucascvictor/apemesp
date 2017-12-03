@@ -30,7 +30,7 @@ class EdicoesJomespController extends Controller
 
   public function index()
   {
-        $edicoes =  DB::table('edicoes_jomesp')->select('*')->orderBy('edicoes_jomesp.id', 'desc')->paginate(6);
+        $edicoes =  DB::table('edicoes_jomesp')->select('*')->orderBy('edicoes_jomesp.id', 'desc')->paginate(8);
 
         return view('admin.redator.edicoesjomesp.edicoes')->with('edicoes', $edicoes);
 

@@ -96,6 +96,7 @@
 											<td>
 													<?php if (file_exists($arquivocnh)) {
 																		echo "SIM";
+																	}
  														 ?>
 	</td>
 	<td><a href="/associado/download/comprovante_e.pdf">dowload</a></td>
@@ -110,7 +111,7 @@
 													<input type="hidden" name="rg" value="{{ $documentacao[0] }}">
 													<input type="hidden" name="cpf" value="{{ $documentacao[1] }}">
 													<input type="hidden" name="cnh" value="{{ $documentacao[2] }}">
-													<input type="hidden" name="comprovante_e" value="{{ $documentacao[3] }}">
+													<input type="hidden" name="comprovante_e" value="">
 																<button class="btn btn-success">
 																	Confirmar documentação
 																</button>

@@ -42,6 +42,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ControleAnosTableSeeder::class);
         $this->call(StatusAnuidadesTableSeeder::class);
         $this->call(AnuidadesTableSeeder::class);
+        $this->call(ConquistasTableSeeder::class);
+        $this->call(FormacoesTableSeeder::class);
 
     }
 }

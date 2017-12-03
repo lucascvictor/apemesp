@@ -12,10 +12,10 @@
 <div class="row">
 	@foreach($literaturas as $literatura)
 
-	<div class="col-md-4">
+	<div class="col-md-6 col-lg-6">
 
 		<!-- Adicionar botão para indicar Livros -->
-		
+
 		<p><h2>{{ $literatura->titulo }}</h2></p>
 
 		<img alt="{{ $literatura->titulo }}" src="{{ url('/images/musicoterapia/literatura')}}/{{ $literatura->imagem }}" style="height:200px; width:280px" title="Revista Brasileira de Mt" />
@@ -26,7 +26,7 @@
 
 	</div>
 	@endforeach
-	<p> {{ $literaturas->links() }} </p> 
+	<p> {{ $literaturas->links() }} </p>
 
 	</div>
 

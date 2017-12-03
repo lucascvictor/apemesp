@@ -109,12 +109,48 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/update/{id}', 'Admin\AdminController@updatePagina')->name('pagina.update');
 
         Route::group(['prefix' => 'adicionar'], function () {
-          Route::get('/literatura', 'Admin\PaginasController@addLiteratura');
-          Route::get('/conquista', 'Admin\PaginasController@addConquista');
-          Route::get('/formacao', 'Admin\PaginasController@addFormacao');
-          Route::get('/comissao', 'Admin\PaginasController@addComissao');
-          Route::get('/membro', 'Admin\PaginasController@addMembro');
+          Route::get('/literatura', 'Admin\LiteraturaController@addLiteratura');
+          Route::get('/conquista', 'Admin\ConquistaController@addConquista');
+          Route::get('/formacao', 'Admin\FormacaoController@addFormacao');
+          Route::get('/comissao', 'Admin\ComissaoController@addComissao');
+          Route::get('/membro', 'Admin\MembroController@addMembro');
         });
+
+
+          Route::post('/literatura', 'Admin\LiteraturaController@storeLiteratura');
+          Route::post('/conquista', 'Admin\ConquistaController@storeConquista');
+          Route::post('/formacao', 'Admin\FormacaoController@storeFormacao');
+          Route::post('/comissao', 'Admin\ComissaoController@storeComissao');
+          Route::post('/membro', 'Admin\MembroController@storeMembro');
+
+
+          Route::get('/literaturas', 'Admin\LiteraturaController@listLiteratura')->name('list.literatura');
+          Route::get('/conquistas', 'Admin\ConquistaController@listConquista')->name('list.conquista');
+          Route::get('/formacoes', 'Admin\FormacaoController@listFormacao')->name('list.formacao');
+          Route::get('/comissaos', 'Admin\ComissaoController@listComissao')->name('list.comissao');
+          Route::get('/membros', 'Admin\MembroController@listMembro')->name('list.membro');
+
+
+          Route::get('/literatura/destroy/{id}', 'Admin\LiteraturaController@destroyLiteratura');
+          Route::get('/conquista/destroy/{id}', 'Admin\ConquistaController@destroyConquista');
+          Route::get('/formacao/destroy/{id}', 'Admin\FormacaoController@destroyFormacao');
+          Route::get('/comissao/destroy/{id}', 'Admin\ComissaoController@destroyComissao');
+          Route::get('/membro/destroy/{id}', 'Admin\MembroController@destroyMembro');
+
+
+          Route::get('/literatura/{id}', 'Admin\LiteraturaController@editLiteratura');
+          Route::get('/conquista/{id}', 'Admin\ConquistaController@editConquista');
+          Route::get('/formacao/{id}', 'Admin\FormacaoController@editFormacao');
+          Route::get('/comissao/{id}', 'Admin\ComissaoController@editComissao');
+          Route::get('/membro/{id}', 'Admin\MembroController@editMembro');
+
+
+          Route::post('/literatura/{id}', 'Admin\LiteraturaController@updateLiteratura');
+          Route::post('/conquista/{id}', 'Admin\ConquistaController@updateConquista');
+          Route::post('/formacao/{id}', 'Admin\FormacaoController@updateFormacao');
+          Route::post('/comissao/{id}', 'Admin\ComissaoController@updateComissao');
+          Route::post('/membro/{id}', 'Admin\MembroController@updateMembro');
+
 
     });
 
@@ -150,6 +186,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'posts'], function () {
         Route::get('', 'Admin\PostController@index');
+        Route::get('/apemesp/list', 'Admin\PostController@indexApemesp');
+        Route::get('/jomesp/list', 'Admin\PostController@indexJomesp');
         Route::get('/create', 'Admin\PostController@create');
         Route::post('/store', 'Admin\PostController@store')->name('posts.store');
         Route::get('/show/{id}', 'Admin\PostController@show')->name('posts.show');

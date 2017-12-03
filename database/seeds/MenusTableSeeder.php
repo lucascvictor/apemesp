@@ -85,7 +85,7 @@ class MenusTableSeeder extends Seeder
             ],
             [
                 "id"        => 11,
-                "titulo"    => "Páginas",
+                "titulo"    => "Páginas/Propagandas",
                 "icone"     => "fa-desktop",
                 "link"      => "/admin/paginas",
                 "id_perfil" => 2,

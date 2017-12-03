@@ -35,23 +35,37 @@ class PostController extends Controller
 
     public function index()
     {
-        $postRepository = new PostRepository;
-        $posts = $postRepository->getPosts(1);
-        $posts->setPath('pages/posts');
-
-        $postsjomesp = $postRepository->getPosts(2);
-        $postsjomesp->setPath('pages/postsj');
 
         $id_perfil = Auth::user()->id_perfil;
         unset($postRepository);
         if ($id_perfil == 1 || $id_perfil == 2) {
 
-            return view('posts.index')->with('posts', $posts)->with('postsjomesp', $postsjomesp);
+            return view('posts.index');
 
         } else {
 
             return view('errors.400');
         }
+
+    }
+
+
+    public function indexApemesp()
+    {
+      $postRepository = new PostRepository;
+      $posts = $postRepository->getPosts(1);
+      $posts->setPath('pages/posts');
+      return view('posts.listPosts')->with('posts', $posts)->with('pagina', 'APEMESP');
+      unset($postRepository);
+    }
+
+    public function indexJomesp()
+    {
+      $postRepository = new PostRepository;
+      $postsjomesp = $postRepository->getPosts(2);
+      $postsjomesp->setPath('pages/postsj');
+      return view('posts.listPosts')->with('posts', $postsjomesp)->with('pagina', 'JOMESP');
+      unset($postRepository);
 
     }
 
@@ -82,14 +96,14 @@ class PostController extends Controller
                 ));
 
          //Salvar no BD
-         $postRepository = new PostRepository;   
+         $postRepository = new PostRepository;
          $id_post = $postRepository->storePost($request);
 
         //Salvar imagem
         $imagemAtual = $postRepository->getImage($id_post);
         $imagem = $this->storeImage($request, $id_post, $imagemAtual);
         $postRepository->storeImage($id_post, $imagem);
-       
+
 
         if ($request->destino == 1) {
             Session::flash('sucesso', 'O post da APEMESP foi salvo com sucesso');
@@ -107,7 +121,7 @@ class PostController extends Controller
     public function storeImage($request, $id, $imagemAtual)
     {
         $arquivo = $request->file('imagem');
-        
+
         $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/posts/imagens/previas';
         if ($arquivo == null) {
             $nomeArquivo = $imagemAtual;
@@ -160,13 +174,13 @@ class PostController extends Controller
                     'previa' => 'required',
                     'conteudo' => 'required'
                 ));
-            
+
             $postRepository = new PostRepository;
             $postRepository->updatePost($request, $id);
             $imagemAtual = $postRepository->getImage($id);
             $imagem = $this->storeImage($request, $id, $imagemAtual);
             $postRepository->storeImage($id, $imagem);
-            
+
             Session::flash('sucesso', 'O post foi atualizado com sucesso');
             //flash para esta request e put para salvar na sessao
             return redirect()->route('posts.show', $id);

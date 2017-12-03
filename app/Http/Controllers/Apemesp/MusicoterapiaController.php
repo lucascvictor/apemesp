@@ -3,6 +3,8 @@
 namespace Apemesp\Http\Controllers\Apemesp;
 
 use Apemesp\Apemesp\Repositories\Apemesp\MusicoterapiaRepository;
+use Apemesp\Apemesp\Repositories\Admin\ConquistaRepository;
+use Apemesp\Apemesp\Repositories\Admin\FormacaoRepository;
 use View;
 use Apemesp\Http\Controllers\Controller;
 
@@ -12,16 +14,18 @@ class MusicoterapiaController extends Controller{
 	public function __construct()
     {
          View::composers([
-            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar']
         ]);
 
          View::composers([
-            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar']
         ]);
      }
 
 	public function getFormacao(){
-		return view('paginas.musicoterapia.formacao');
+		$repository = new FormacaoRepository;
+		$formacoes = $repository->listAll();
+		return view('paginas.musicoterapia.formacao')->with('formacoes', $formacoes);
 	}
 
 	public function getOque()
@@ -33,11 +37,13 @@ class MusicoterapiaController extends Controller{
 
 	public function getConquistas()
 	{
-		return view('paginas.musicoterapia.conquistas');
+		$repository = new ConquistaRepository;
+		$conquistas = $repository->listAll();
+		return view('paginas.musicoterapia.conquistas')->with('conquistas', $conquistas);
 	}
 
 	public function getLiteratura()
-	{	
+	{
 		$musicoterapia = new MusicoterapiaRepository;
 		$literaturas = $musicoterapia->getLiteratura();
 		return view('paginas.musicoterapia.literatura')->with('literaturas', $literaturas);
