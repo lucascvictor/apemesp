@@ -135,7 +135,7 @@
 																	</tr>
                                   <tr>
 
-                                        <td><a href="{{ url('/admin/paginas/propaganda/add') }}" class="btn btn-success btn-block">Adicionar uma nova propaganda</a></td>
+                                        <td><a href="{{ url('/admin/paginas/adicionar/propaganda') }}" class="btn btn-success btn-block">Adicionar uma nova propaganda</a></td>
 
                                 	</tr>
 																	<tr>
