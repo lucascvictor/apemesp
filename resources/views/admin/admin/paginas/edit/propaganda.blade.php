@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Editar Formação')
+@section('titulo', 'Editar Propaganda')
 
 @section('extrastyle')
 
@@ -11,7 +11,7 @@
 @section('conteudo')
 
 
-<form method="POST"  action="{{ url('/admin/paginas/formacao/') }}/{{ $formacao[0]->id }}">
+<form method="POST"  action="{{ url('/admin/paginas/propaganda/') }}/{{ $propaganda[0]->id }}">
  {{ csrf_field() }}
   <fieldset>
   <legend>Indicação de item para o acervo</legend>
@@ -21,7 +21,7 @@
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="img">Imagem Atual: </label>
-      <img src="{{ url('/images/musicoterapia/formacao')}}/{{ $formacao[0]->imagem }}" style="width: 20%; heigth: 25%;">
+      <img src="{{ url('/images/propagandas')}}/{{ $propaganda[0]->imagem }}" style="width: 20%; heigth: 25%;">
       <hr>
     </div>
     <div class="form-group" id="mensagem">
@@ -36,30 +36,22 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="titulo">Titulo:</label>
       <div class="col-md-4">
-      <input id="titulo" name="titulo" type="text" placeholder="Titulo da Obra ou do Site" class="form-control input-md" required="" value="{{ $formacao[0]->titulo }}">
+      <input id="titulo" name="titulo" type="text" placeholder="Titulo da Obra ou do Site" class="form-control input-md" required="" value="{{ $propaganda[0]->titulo }}">
       </div>
     </div>
     <br />
-    <br />
-  <!-- Campo Descrição -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="descricao">Descrição:</label>
-      <div class="col-md-6">
-        {{ Form::label('conteudo', 'Conteudo:') }}
-        {{ Form::textarea('conteudo', $formacao[0]->conteudo, array('class' => 'form-control input-md',
-        'id' => 'conteudo',
-        'name' => 'conteudo',
-        'placeholder' => 'Breve descrição sobre a indicação. Você pode incluir aqui links(para leitura ou compra e de páginas de redes sociais)',
-        'cols' => '30',
-        'required' => '',
-        )) }}
+    <br /><!-- Campo URL -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="link">Link(URL):</label>
+        <div class="col-md-4">
+        <input value="{{ $propaganda[0]->link }}" id="link" name="link" type="text" placeholder="Link para acesso ao site do patrocinador" class="form-control input-md" required="">
+        </div>
       </div>
-    </div>
-    <br />
+      <br />
 
     <hr>
     <label class="col-md-4 control-label" for="salvar"></label>
-    <center class="col-md-1"><button type="submit" id="salvar" class="btn btn-success"> Salvar formação</button></center>
+    <center class="col-md-1"><button type="submit" id="salvar" class="btn btn-success"> Salvar alteração</button></center>
   </fieldset>
 </form>
 

@@ -36,7 +36,7 @@ class PropagandaRepository
 	{
 				$propaganda = new Propaganda;
         $propaganda->titulo = $request->titulo;
-        $propaganda->conteudo = $request->conteudo;
+        $propaganda->link = $request->link;
         $propaganda->created_at = $this->getData();
 				$propaganda->updated_at = $this->getData();
         $propaganda->save();

@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Adicionar Literatura')
+@section('titulo', 'Adicionar Membro')
 
 @section('extrastyle')
 

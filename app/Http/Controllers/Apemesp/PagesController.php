@@ -10,6 +10,9 @@ use Apemesp\Apemesp\Repositories\Apemesp\PagesRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\PostRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
+
+
 use View;
 
 use Apemesp\Http\Controllers\Controller;
@@ -39,11 +42,14 @@ class PagesController extends Controller{
 		$posts = $page->getIndex();
 		$posts->setPath('/');
 		$tags = $page->getTags();
+		$propagandasRepositoy = new PropagandaRepository;
+		$propagandas_ativas = $propagandasRepositoy->getPropagandasAtivas();
 		unset($page);
+		unset($propagandasRepositoy);
 		if(count($posts) == 0) {
 			return view('errors.404');
 		} else {
-    	return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags);
+    	return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags)->with('propagandasAtivas', $propagandas_ativas);
 		}
     //return view('paginas.manutencao');
 	}

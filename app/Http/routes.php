@@ -123,7 +123,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::post('/formacao', 'Admin\FormacaoController@storeFormacao');
           Route::post('/comissao', 'Admin\ComissaoController@storeComissao');
           Route::post('/membro', 'Admin\MembroController@storeMembro');
-          Route::post('/propaganda', 'Admin\MembroController@storePropaganda');
+          Route::post('/propaganda', 'Admin\PropagandaController@storePropaganda');
 
 
           Route::get('/literaturas', 'Admin\LiteraturaController@listLiteratura')->name('list.literatura');
@@ -147,7 +147,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/formacao/{id}', 'Admin\FormacaoController@editFormacao');
           Route::get('/comissao/{id}', 'Admin\ComissaoController@editComissao');
           Route::get('/membro/{id}', 'Admin\MembroController@editMembro');
-          Route::get('/propaganda/{id}', 'Admin\PropagandaController@editMembro');
+          Route::get('/propaganda/{id}', 'Admin\PropagandaController@editPropaganda');
 
 
           Route::post('/literatura/{id}', 'Admin\LiteraturaController@updateLiteratura');

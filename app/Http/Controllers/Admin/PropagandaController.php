@@ -63,7 +63,7 @@ class PropagandaController extends Controller
 		{
 			//Armazenamento da imagem
 			$extensao = $request->file('imagem')->getClientOriginalExtension();
-			$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/musicoterapia/propaganda/';
+			$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/propagandas/';
 			$nomeArquivo ='propaganda'. $id . '.' . $extensao;
 			$request->file('imagem')->move($pastaDestino, $nomeArquivo);
 

@@ -15,14 +15,17 @@
           </ul>
           <ul class="nav nav-pills nav-stacked">
               <h4>Patrocinadores e associados </h4>
+              <?php $i = 0; ?>
               @foreach($propagandas as $propaganda)
-
+              @if($propagandasAtivas[0]->quantidade > $i)
                 <a href="{{ $propaganda->link }}">
                   {{  Html::image('images/propagandas/' . $propaganda->imagem,  '', array('style' => 'width: 100%; height: 250px;', 'class' => 'bordas')) }}
 
                 {{ $propaganda->titulo}}
                 </a>
                 <hr>
+                <?php $i++; ?>
+              @endif
               @endforeach
           </ul>
 
