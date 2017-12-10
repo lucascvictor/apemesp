@@ -33,7 +33,7 @@
     <br />
     <br />
 
-    <!-- Campo Titulo -->
+    <!-- Campo URL -->
       <div class="form-group">
         <label class="col-md-4 control-label" for="link">Link(URL):</label>
         <div class="col-md-4">

@@ -14,9 +14,8 @@ class CreatePropagandasTable extends Migration
     {
         Schema::create('propagandas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imagem');
-            $table->string('link');
-            $table->string('titulo')->nullable();
+            $table->string('titulo');
+            $table->string('conteudo');
             $table->timestamps();
             $table->integer('D_E_L_E_T_E_D')->defatul(0);
         });

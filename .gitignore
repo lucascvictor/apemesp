@@ -7,3 +7,6 @@ Homestead.json
 /public/files/78777357078
 /public/files/96807429118
 composer.lock
+.env
+.env-prod
+.env-dev
