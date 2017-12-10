@@ -3,21 +3,26 @@ namespace Apemesp\Composers;
 
 use Auth;
 use DB;
+use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 
 class PropagandasComposer
 {
 	public function compose($view)
     {
-        $propagandas = $this->Propagandas();
-        $view->with('propagandas', $propagandas);
+
+        $view->with('propagandas', $this->Propagandas())->with('propagandasAtivas', $this->PropagandasAtivas());
     }
 
 	public function Propagandas()
 	{
-		$propagandas = DB::table('propagandas')
-                     ->select('*')
-                     ->get();
-       
-		return $propagandas;
+		$propagandasRepositoy = new PropagandaRepository;
+		return $propagandas = $propagandasRepositoy->listAll();
+
+	}
+
+	public function PropagandasAtivas()
+	{
+		$propagandasRepositoy = new PropagandaRepository;
+		return $propagandas_ativas = $propagandasRepositoy->getPropagandasAtivas();
 	}
 }

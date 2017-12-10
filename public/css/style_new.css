@@ -241,7 +241,7 @@ body {
 	border-left:solid 1px #fff;
 	border-bottom:solid 1px #fff;
 	background:url(../images/bg_submenu.png);
-	min-width:inherit;
+	-width:inherit;
 }
 
 .navbar-right .dropdown-menu {
@@ -278,9 +278,30 @@ body {
 	padding:0;
 }
 
-@media (max-width: 1516px) {
+
+@media screen and (min-width: 1716px) {
+	.navbar-default{
+		margin-top: 200px;
+	}
+}
+
+@media screen and (min-width: 1616px) {
+	.navbar-default{
+		margin-top: 200px;
+	}
+}
+
+@media screen and (min-width: 1516px) {
+	.navbar-default{
+		margin-top: 100px;
+	}
+}
+
+
+@media screen and (max-width: 1516px) {
 	.navbar-default {
 		font-size:15px;
+
 	}
 }
 
@@ -332,14 +353,14 @@ body {
 }
 
 
-@media (max-width: 780px) {
+@media screen and (max-width: 780px) {
 	body {
 		background:url(../images/bg_topo2.png) no-repeat top center #fff;
 		background-size:contain;
 	}
 
 	.login_header2 {
-		margin-top: 1000px;
+		margin-top: 100px;
 	}
 
 	.navbar-default {
@@ -370,7 +391,7 @@ body {
 }
 }
 
-@media (max-width: 765px) {
+@media (-width: 765px) {
 	.navbar-default {
 		width:95%;
 		margin-top:0;
