@@ -19,9 +19,8 @@ class PropagandasAtivasTableSeeder extends Seeder
                "quantidade"    => 2,
                "created_at"    => $data,
                "updated_at"    => $data,
-
            ],
        ]);
    }
-    
+
 }

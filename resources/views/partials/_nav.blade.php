@@ -15,7 +15,6 @@
 
   @if(isset(Auth::user()->id))
 
-
     <div id="login_header2" class="borda">
 
       @if(Auth::user()->id_perfil == 1)
@@ -28,8 +27,9 @@
       <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Redator</p></a>
       {{  Html::image('images/perfis/redator.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
 
-      @else
+      @elseif(Auth::user()->id_perfil > 2)
       <?php $cpf = $dp->getCpf(Auth::user()->id); ?>
+  
       <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Associado</p></a>
       {{  Html::image('files/' . $cpf[0]->cpf . '/' . 'foto.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
       @endif

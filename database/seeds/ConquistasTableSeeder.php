@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ConquistaTableSeeder extends Seeder
+class ConquistasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

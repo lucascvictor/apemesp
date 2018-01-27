@@ -2,7 +2,7 @@
    RewriteEngine on
 RewriteCond %{REQUEST_URI} !^public
 RewriteRule ^(.*)$ public/$1 [L]
-
+AllowOverride All
 
 php_value post_max_size 2000M
 php_value upload_max_filesize 2500M
