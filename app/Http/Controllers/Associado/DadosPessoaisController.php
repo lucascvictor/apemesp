@@ -160,7 +160,7 @@ class DadosPessoaisController extends Controller{
             Session::flash('cuidado', 'O CPF é inválido ou já foi cadastrado por outro associado');
             //flash para esta request e put para salvar na sessao
             return redirect()->back();
-        }else{
+        } else {
 
 
             $dadosPessoais = new DadosPessoaisRepository;
