@@ -8,5 +8,4 @@ Homestead.json
 /public/files/96807429118
 composer.lock
 .env
-.env-prod
 .env-dev
