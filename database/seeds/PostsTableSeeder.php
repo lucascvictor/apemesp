@@ -330,6 +330,65 @@ Informações sobre data e local serão divulgados posteriormente.</p>
         'updated_at' => '2017-06-16 14:27:56',
 
         ],
+        [
+            "id"        => 11,
+            "titulo"    => "ASSEMBLÉIA ORDINÁRIA",
+            "subtitulo"     => " ",
+            "id_user"       => 304,
+            "previa" => "Convocamos a todos os associados a Assembléia Ordinária dia 09/12.",
+            "id_destino" => 1,
+            "imagem_previa" => "apemesp.jpg",
+            "id_tag"        => 1,
+
+            'body' => '<p class="lead"> </p><p>APEMESP, Associação de Profissionais e Estudantes de Musicoterapia do Estado de São Paulo, CNPJ 64.016.934/0001-02 em conformidade com seu Estatuto vigente, convoca seus associados para sua Assembleia Geral Ordinária, que será realizada na Faculdade UNINOVE, localizada na Rua Vergueiro, 235/249 - Liberdade, São Paulo - SP, 01504-000, em 09 de dezembro de 2017, com a seguinte ordem do dia:</p>
+
+            <p>1. Apresentação das comissões.<br>
+            2. Prestação de contas;<br>
+            3. Aprovação do código de ética nacional de musicoterapia (nível estadual);<br>
+            4. Convocação de Eleições 2018;<br>
+            5. Assuntos gerais.</p>
+            
+            <p>A Assembleia será instalada às 13:00h, em primeira chamada, com a maioria absoluta dos associados ou às 13:30h, em segunda chamada, com qualquer número, em conformidade com o Art 4 do Estatuto vigente.</p>
+             <p></p>',
+            'created_at' => '2017-11-23 19:06:41',
+            'updated_at' => '2017-11-23 19:06:41',
+
+    ],
+    [
+        "id"        => 12,
+        "titulo"    => "Inscrições de Chapas Candidatas a Gestão 2018 - 2020",
+        "subtitulo"     => " ",
+        "id_user"       => 304,
+        "previa" => "Estão abertas as inscrições para chapas candidatas a gestão 2018-2020 da Diretoria Executiva da APEMESP.",
+        "id_destino" => 1,
+        "imagem_previa" => "previa12.png",
+        "id_tag"        => 1,
+
+        'body' => '	<p class="lead"> </p><p>Estamos concluindo o ciclo de mais uma gestão da diretoria executiva da APEMESP e convidamos você, associado interessado, para formar uma chapa e estar à frente da próxima gestão.</p>
+
+        <p>A Diretoria Executiva da Associação será constituída por 07 membros, que ocuparão os cargos de:</p>
+        
+        <p>I - Presidente<br>
+        Il - Primeiro Vice-Presidente:&nbsp;<br>
+        III&nbsp;-&nbsp;Segundo Vice-Presidente (Representante Estudantil)<br>
+        IV - Primeiro Tesoureiro<br>
+        V - Segundo Tesoureiro<br>
+        VI - Primeiro Secretário<br>
+        VII&nbsp;-&nbsp;Segundo Secretário</p>
+        
+        <p>Para assumir os carros da diretoria é necessário:<br>
+        - ser graduado em musicoterapia (com exceção do representante estudantil - que deve ser graduando em musicoterapia - e segundo secretário - que pode ser pós graduado em musicoterapia);<br>
+        - ser associado APEMESP;<br>
+        - estar em dia com suas obrigações junto a associação.</p>
+        
+        <p>Os cargos de Diretoria não serão remunerados e a eleição da nova chapa será realizada na Assembleia Ordinária, no dia 07 de abril (em breve mais informações).</p>
+        
+        <p>Os interessados deverão preencher o <a href="https://drive.google.com/open?id=1_XAl1AQotrmJgZuGndlMfV-7LpUVF92w">formulário de inscrição</a> com o nome de todos os candidatos da chapa e enviar para contato@apemesp.com até o dia <strong>10 de março de 2018</strong>.</p>
+         <p></p>',
+        'created_at' => '2018-01-30 17:17:33',
+        'updated_at' => '2018-01-30 17:17:33',
+
+    ],
 
         ]);
 
@@ -391,6 +450,16 @@ Informações sobre data e local serão divulgados posteriormente.</p>
 
             [
                 "id"        => 10,
+                "total_visitas"    => 0,
+
+            ],
+            [
+                "id"        => 11,
+                "total_visitas"    => 0,
+
+            ],
+            [
+                "id"        => 12,
                 "total_visitas"    => 0,
 
             ],
