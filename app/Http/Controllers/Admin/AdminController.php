@@ -116,7 +116,7 @@ class AdminController extends Controller
         Session::flash('sucesso', 'A página foi atualizada com sucesso');
             //flash para esta request e put para salvar na sessao
 
-            return redirect()->route('paginas.show');
+        return redirect()->route('paginas.show');
     }
 
     public function editPagina($id)
@@ -130,5 +130,14 @@ class AdminController extends Controller
             return view('admin.admin.paginas.editarpagina')
                         ->with('pagina', $pagina);
         }
+    }
+
+    public function updateEstatutoPdf(Request $request)
+    {
+        $extensao = $request->file('estatuto')->getClientOriginalExtension();
+        $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/apemesp/estatuto/';
+        $nomeArquivo ='estatuto.'. $extensao;
+        $request->file('estatuto')->move($pastaDestino, $nomeArquivo);
+        return redirect()->back();
     }
 }

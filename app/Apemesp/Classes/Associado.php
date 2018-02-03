@@ -42,7 +42,7 @@ class Associado
         } else { 
             $numero = DadosPessoais::where([['cpf', '=', $cpf],['id', '=', $id]])->select('cpf')->get();
         }
-
+        
         if (!empty($numero[0])) {
                 if ($numero[0]->cpf == $cpf) {
                     return !$lReturn;

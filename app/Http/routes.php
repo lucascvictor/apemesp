@@ -12,6 +12,7 @@ Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
 Route::group(['prefix' => 'apemesp'], function () {
     Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');
     Route::get('/estatuto', 'Apemesp\PagesController@getEstatuto')->name('apemesp.estatuto');
+    Route::get('/estatuto/download', 'Apemesp\PagesController@downloadEstatuto')->name('apemesp.estatuto.download');
     Route::get('/acoes', 'Apemesp\PagesController@getAcoes')->name('apemesp.acoes');
     Route::get('/comissoes', 'Apemesp\PagesController@getComissoes')->name('apemesp.comissoes');
     Route::get('/search', 'Apemesp\PagesController@search')->name('apemesp.search');
@@ -96,7 +97,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('', 'Admin\AdminController@getPaginas')->name('paginas.show');
         Route::get('/edit/{id}', 'Admin\AdminController@editPagina')->name('pagina.edit');
         Route::post('/update/{id}', 'Admin\AdminController@updatePagina')->name('pagina.update');
-
+        Route::post('/update/estatuto/pdf', 'Admin\AdminController@updateEstatutoPdf');
         Route::group(['prefix' => 'adicionar'], function () {
           Route::get('/literatura', 'Admin\LiteraturaController@addLiteratura');
           Route::get('/conquista', 'Admin\ConquistaController@addConquista');

@@ -49,8 +49,6 @@ class FormacaoController extends Controller
 
     public function storeFormacao(Request $request)
     {
-
-
       $repository = new FormacaoRepository;
       $id = $repository->store($request);
 

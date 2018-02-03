@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Apemesp\Http\Requests;
 
+use Illuminate\Support\Facades\Response;
+
 use Apemesp\Apemesp\Repositories\Apemesp\PagesRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\PostRepository;
@@ -124,6 +126,15 @@ class PagesController extends Controller{
 		unset($page);
 		return view('paginas.apemesp.estatuto')->with('pagina', $pagina);
 	}
+
+	public function downloadEstatuto()
+    {
+        $file= public_path(). "/images/apemesp/estatuto/estatuto.pdf";
+        $headers = array('Content-Type: application/pdf',);
+        if (file_exists($file)) {
+          return Response::download($file, 'estatuto.pdf', $headers);
+		}
+    }
 
 	public function search(Request $request)
 	{

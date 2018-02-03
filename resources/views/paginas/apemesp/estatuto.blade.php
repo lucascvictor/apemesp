@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-<a class="btn btn-default" href="/apemesp/downloads/estatuto.pdf">Download do arquivo PDF</a>
+<a class="btn btn-default" href="estatuto/download">Download do arquivo PDF</a>
 <center>
 <h2>{{ $pagina->titulo }}</h2>
 </center>

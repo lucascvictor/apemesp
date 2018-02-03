@@ -12,7 +12,7 @@
 
             <!-- Botão de upload do arquivo PDF do estatuto-->
             @if($pagina->id == 2)
-             <form method="POST"  enctype="multipart/form-data" action="{{ url('/apemesp/estatuto/pdf') }}">
+             <form method="POST"  enctype="multipart/form-data" action="{{ url('admin/paginas/update/estatuto/pdf') }}">
                 {{ csrf_field() }}
                 <fieldset>
                 <legend>Upload do estatuto em PDF</legend>
