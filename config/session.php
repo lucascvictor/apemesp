@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'lifetime' => 45, //em minutos
+    'lifetime' => 200, //em minutos
 
     'expire_on_close' => false,
 
