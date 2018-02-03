@@ -51,8 +51,12 @@ class Handler extends ExceptionHandler
         return response()->view('errors.400', [], 400);
     }
 
-        if($e instanceof NotFoundHttpException){
+        if ($e instanceof NotFoundHttpException){
         return response()->view('errors.404', [], 404);
+    }
+        if ($e instanceof TokenMismatchException){
+            // Redirecionamento para casos de timeout
+            return redirect()->route('apemesp.index');
     }
 
     return parent::render($request, $e);
