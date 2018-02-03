@@ -69,14 +69,13 @@ class DadosPessoaisController extends Controller{
     public function storeDadosPessoais(Request $request)
     {
         //Validar os dados
-
             $this->validate($request, array(
                     'name' => 'required|max:255',
                     'cpf' => 'required',
                     'rg' => 'required',
                     'nascimento' => 'required',
-                    'foto' => 'required',
                 ));
+
         $associado = new Associado;
         $verificacao = $associado->verificaCPF($request->cpf);
         unset($associado);
@@ -154,7 +153,7 @@ class DadosPessoaisController extends Controller{
     public function dadospessoaisUpdate(Request $request, $id)
     {
         $associado = new Associado;
-        $verificacao = $associado->verificaCPFUpdate($request->cpf, $id);
+        $verificacao = $associado->verificaCPF($request->cpf, $id);
         unset($associado);
 
         if($verificacao == false){
