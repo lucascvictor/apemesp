@@ -69,13 +69,13 @@ class PropagandaRepository
 		return PropagandaAtiva::select('quantidade')->where('id','=',1)->get();
 	}
 
-	public function update($request, $id)
+	public function update($request, $id, $nomeArquivo)
 	{
 		Propaganda::where('id', $id)
 						->update([
 								'titulo' => $request->titulo,
 								'link' => $request->link,
-								'imagem' => $request->imagem,
+								'imagem' => $nomeArquivo,
 								'updated_at' => $this->getData()
 								]);
 	}

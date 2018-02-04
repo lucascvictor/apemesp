@@ -88,9 +88,10 @@ class PropagandaController extends Controller
 		public function updatePropaganda(Request $request, $id)
 		{
 			$repository = new PropagandaRepository;
-			$repository->update($request, $id);
+			$nomeArquivo = $this->storeImage($id, $request);
+			$repository->update($request, $id, $nomeArquivo);	
 			Session::flash('sucesso', 'A propaganda foi atualizada');
-			return route('list.propaganda');
+			return redirect()->route('list.propaganda');
 		}
 
 		public function updatePropagandaAtiva(Request $request)
