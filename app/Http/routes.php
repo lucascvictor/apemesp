@@ -8,6 +8,7 @@ Route::get('/contato/mensagens', 'Apemesp\ContatoController@getMensagens')->name
 Route::get('/sobre', 'Apemesp\PagesController@getSobre')->name('apemesp.sobre');
 Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
 Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
+Route::post('/verificar', 'Associado\AssociadoController@verificarCpf')->name('apemesp.verificar');
 
 Route::group(['prefix' => 'apemesp'], function () {
     Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');
@@ -56,6 +57,7 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::post('register/create', 'Auth\AuthController@postRegister')->name('apemesp.register');
 
 
 Route::auth();

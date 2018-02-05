@@ -14,13 +14,13 @@ use Apemesp\Apemesp\Repositories\Associado\AssociadoRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
 
+use Apemesp\Apemesp\Classes\Associado;
+
 use Auth;
 
 use Session;
 
 use View;
-
-use Input;
 
 class AssociadoController extends Controller
 {
@@ -56,6 +56,16 @@ class AssociadoController extends Controller
           Session::flash('cuidado','Arquivo não encontrado para download');
           return redirect()->back();
         }
+    }
+
+    public function verificarCpf(Request $request)
+    {
+        $result = 0;
+        dd($result);
+        $associado = new Associado;
+        $result = $associado->verificaCPF($request->cpf);
+        
+        
     }
 
 

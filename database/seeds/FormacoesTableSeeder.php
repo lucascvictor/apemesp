@@ -18,7 +18,6 @@ class FormacoesTableSeeder extends Seeder
               "id"        => 1,
               "titulo"    => "São Paulo",
               "conteudo"     => '<p>FMU, Faculdades Metropolitanas Unidas (G, P)</p>
-
 <p>www.fmu.com.br</p>',
               "imagem" 		=> "fmu.png",
               "updated_at" => $now,

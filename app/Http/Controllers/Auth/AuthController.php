@@ -8,6 +8,12 @@ use View;
 use Apemesp\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
+use Auth;
+use Session;
+use Input;
 
 class AuthController extends Controller
 {
@@ -70,14 +76,17 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    protected function postRegister(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'id_perfil' => 4,
-            'password' => bcrypt($data['password']),
-        ]);
+        $user = new UserRepository;
+        $result = $user->create($request);
+        if ($result) {
+            Session::flash('sucesso', 'Seus dados foram salvos com sucesso');
+            return redirect()->route('admin');
+        } else {
+            Session::flash('cuidado', 'O e-mail informado já foi cadastrado ou é inválido, por favor tente novamente ou entre em contato');
+            return redirect()->back();
+        }
     }
 
     public function getLogin(){

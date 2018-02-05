@@ -32,11 +32,11 @@ class ConquistaRepository
 
 	public function store($request)
 	{
-				$conquista = new Conquista;
+		$conquista = new Conquista;
         $conquista->titulo = $request->titulo;
         $conquista->conteudo = $request->conteudo;
         $conquista->created_at = $this->getData();
-				$conquista->updated_at = $this->getData();
+		$conquista->updated_at = $this->getData();
         $conquista->save();
         return $conquista->id;
 	}
