@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'contato@apemesp.com.br', 'name' => 'Contato APEMESP'],
+    'from' => ['address' => 'site.apemesp@gmail.com', 'name' => 'Contato APEMESP'],
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','contato.apemesp'),
+    'username' => env('MAIL_USERNAME','site.apemesp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD', 'apemesp123456'),
+    'password' => env('MAIL_PASSWORD', 'Apemesp@2018'),
 
     /*hopmfxopdjlzptzz
     |--------------------------------------------------------------------------

@@ -7,6 +7,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Models\User;
 
+use Apemesp\Apemesp\Models\AditionalUserData;
+
 use DB;
 
 class UserRepository
@@ -25,10 +27,20 @@ class UserRepository
                 } else {
                         return false;
                 }
+                
                 if (!empty($newUser->id)) {
-                        return true;
+                        return $newUser->id;
                 } else {
                         return false;
                 }
-	}
+        }
+        
+        public function storeCode($id_user, $code)
+        {
+                $aud = new AditionalUserData;
+                $aud->id_user = $id_user;
+                $aud->confirm_mail = 2;
+                $aud->code = $code;
+                $aud->save();
+        }
 }

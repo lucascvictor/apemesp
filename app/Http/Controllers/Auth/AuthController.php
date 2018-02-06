@@ -14,6 +14,7 @@ use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 use Auth;
 use Session;
 use Input;
+use Mail;
 
 class AuthController extends Controller
 {
@@ -81,17 +82,60 @@ class AuthController extends Controller
         $user = new UserRepository;
         $result = $user->create($request);
         if ($result) {
-            Session::flash('sucesso', 'Seus dados foram salvos com sucesso');
-            return redirect()->route('admin');
+            Session::flash('sucesso', 'Seus dados foram salvos com sucesso. Por favor verifique o seu e-mail.');
+            $confirmCode = $this->generateCode();
+            $user->storeCode($result, $confirmCode);
+            $this->sendEmailReminder($result, $confirmCode);
         } else {
             Session::flash('cuidado', 'O e-mail informado já foi cadastrado ou é inválido, por favor tente novamente ou entre em contato');
-            return redirect()->back();
         }
+        return redirect()->back();
     }
 
     public function getLogin(){
         
         return ("man");
+    }
+
+    public function generateCode()
+    {
+        return  uniqid(rand(), true);
+    }
+
+      /**
+     * Handle an authentication attempt.
+     *
+     * @return Response
+     */
+    public function authenticate()
+    {
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
+    }
+
+      /**
+     * Send an e-mail reminder to the user.
+     *
+     * @param  Request  $request
+     * @param  int  $id
+     * @return Response
+     */
+    public function sendEmailReminder($id, $confirmCode)
+    {
+        $user = User::findOrFail($id);
+
+        Mail::send('emails.reminder', ['confirmCode' => $confirmCode], function ($m) use ($user) {
+            $m->from('site.apemesp@gmail.com', 'APEMESP');
+
+            $m->to($user->email, $user->name)->subject('Validação de cadastro!');
+        });
+    }
+
+    public function confirm($code)
+    {
+        return ($code);
     }
 
   

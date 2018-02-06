@@ -9,6 +9,7 @@ Route::get('/sobre', 'Apemesp\PagesController@getSobre')->name('apemesp.sobre');
 Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
 Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
 Route::post('/verificar', 'Associado\AssociadoController@verificarCpf')->name('apemesp.verificar');
+Route::get('/confirm/{code}', 'Auth\AuthController@confirm')->name('apemesp.confirm');
 
 Route::group(['prefix' => 'apemesp'], function () {
     Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');
