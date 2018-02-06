@@ -43,4 +43,14 @@ class UserRepository
                 $aud->code = $code;
                 $aud->save();
         }
+
+        public function findCode($code)
+        {
+                $aud = AditionalUserData::where('code', $code)->select('id')->get();
+                if (!empty($aud)) {
+                        
+                        return true;
+                }
+                return false;
+        }
 }
