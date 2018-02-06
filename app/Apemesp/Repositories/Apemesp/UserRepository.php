@@ -44,13 +44,21 @@ class UserRepository
                 $aud->save();
         }
 
+
+        //return $id from aditional_users_data
         public function findCode($code)
         {
-                $aud = AditionalUserData::where('code', $code)->select('id')->get();
-                if (!empty($aud)) {
-                        
-                        return true;
-                }
-                return false;
+                return AditionalUsersData::where('code', $code)->select('id')->get();
         }
+
+        public function findUser($id)
+        {
+                return AditionalUsersData::where('id_user', $id)->get();
+        }
+
+        public function update($id)
+        {
+                AditionalUserData::where('id', $id)->update(['confirm_mail' => 1,'updated_at' => $this->getData()]);
+        }
+
 }

@@ -10,6 +10,7 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\AdminRepository;
 use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 use Auth;
 
 use Session;
@@ -33,6 +34,7 @@ class AdminController extends Controller
     {
       $id_perfil = Auth::user()->id_perfil;
       $id_status = Auth::user()->id_status;
+      $user = new UserRepository;
 
       if ($id_perfil == 1) {
           return view('admin.perfil');
@@ -45,6 +47,9 @@ class AdminController extends Controller
               if ($id_status == 2) {
                   $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
               }
+                if ($user->getConfirmMail(Auth::user()->id)) {
+                    return redirect()->back();
+                }
               $adminRepository = new AdminRepository;
               $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
               $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
