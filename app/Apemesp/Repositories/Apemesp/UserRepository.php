@@ -62,7 +62,7 @@ class UserRepository
         public function confirmCodeById($id)
         {
                 $cc = $this->findUserById($id);
-                if ($cc->confirm_mail == 1) {
+                if ($cc->confirm_mail    == 1) {
                         return true;
                 } else {
                         return false;
