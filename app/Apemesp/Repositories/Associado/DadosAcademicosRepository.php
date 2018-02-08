@@ -122,7 +122,7 @@ class DadosAcademicosRepository
 
 	public function storeDadosAcademicos($id_user, $request, $arquivoTcc, $arquivoCertificado)
 	{
-				$dadosAcademicos = new FormacoesAcademicas;
+		$dadosAcademicos = new FormacoesAcademicas;
         $dadosAcademicos->id_usuario = $id_user;
         $dadosAcademicos->nomeies = $request->nomeies;
         $dadosAcademicos->arquivotcc= $arquivoTcc;
