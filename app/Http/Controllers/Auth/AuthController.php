@@ -135,6 +135,11 @@ class AuthController extends Controller
 
     public function confirm($code)
     {
+        $aud = new UserRepository;
+        $id = $aud->findCode($code);
+        if (!empty($id)) {
+            $aud->update($id);
+        }
         return ($code);
     }
 

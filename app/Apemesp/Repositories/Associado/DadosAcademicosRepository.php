@@ -157,16 +157,12 @@ class DadosAcademicosRepository
 
 	public function updateArquivoTcc($id, $arquivoTcc)
 	{
-		FormacoesAcademicas::where('id', $id)->update([
-                 'arquivotcc' => $arquivoTcc
-                ]);
+		FormacoesAcademicas::where('id', $id)->update(['arquivotcc' => $arquivoTcc]);
 	}
 
 	public function updateArquivoCertificado($id, $arquivoCertificado)
 	{
-		FormacoesAcademicas::where('id', $id)->update([
-                 'certificado' => $arquivoCertificado
-                ]);
+		FormacoesAcademicas::where('id', $id)->update(['certificado' => $arquivoCertificado]);
 	}
 
 	public function changeCadastro($id_user, $id)
