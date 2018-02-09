@@ -7,8 +7,6 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Models\User;
 
-use Apemesp\Apemesp\Models\AditionalUserData;
-
 use DB;
 
 class UserRepository
@@ -46,12 +44,12 @@ class UserRepository
 
 
         //return $id from aditional_users_data
-        public function findCode($code)
+        public function findCodeById($code)
         {
                 return AditionalUsersData::where('code', $code)->select('id')->get();
         }
 
-        public function findUser($id)
+        public function findUserById($id)
         {
                 return AditionalUsersData::where('id_user', $id)->get();
         }
@@ -59,6 +57,16 @@ class UserRepository
         public function update($id)
         {
                 AditionalUserData::where('id', $id)->update(['confirm_mail' => 1,'updated_at' => $this->getData()]);
+        }
+
+        public function confirmCodeById($id)
+        {
+                $cc = $this->findUserById($id);
+                if ($cc->confirm_mail    == 1) {
+                        return true;
+                } else {
+                        return false;
+                }
         }
 
 }

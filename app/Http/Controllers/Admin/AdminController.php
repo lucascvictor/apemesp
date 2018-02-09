@@ -47,9 +47,11 @@ class AdminController extends Controller
               if ($id_status == 2) {
                   $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
               }
+              
                 if ($user->getConfirmMail(Auth::user()->id)) {
                     return redirect()->back();
                 }
+
               $adminRepository = new AdminRepository;
               $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
               $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
@@ -73,7 +75,7 @@ class AdminController extends Controller
         $id_perfil = Auth::user()->id_perfil;
         $id_status = Auth::user()->id_status;
         $mensagem = "";
-
+        $user = new UserRepository;
 
         if ($id_perfil == 1) {
             return view('admin.admin.index');
@@ -83,9 +85,16 @@ class AdminController extends Controller
         }
         if ($id_perfil == 3 || $id_perfil == 4) {
             if ($id_status == 1 || $id_status ==2) {
+
                 if ($id_status == 2) {
                     $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
                 }
+
+                if ($user->confirmCode(Auth::user()->id)) {
+                    Session::flash('cuidado', 'Seu e-mail não foi confirmado, por favor verifique-o');
+                    return redirect()->back();
+                }
+
                 $adminRepository = new AdminRepository;
                 $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
                 $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);

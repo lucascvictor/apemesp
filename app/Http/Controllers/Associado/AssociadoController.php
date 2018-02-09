@@ -65,7 +65,6 @@ class AssociadoController extends Controller
         $associado = new Associado;
         $result = $associado->verificaCPF($request->cpf);
         
-        
     }
 
 

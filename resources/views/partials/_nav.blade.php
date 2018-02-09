@@ -29,9 +29,11 @@
 
       @elseif(Auth::user()->id_perfil > 2)
       <?php $cpf = $dp->getCpf(Auth::user()->id); ?>
-  
+      //verificar a váriavel $cpf que não é setada em casos de login sem cpf e sem foto.
+      <?php if (empty($cpf[0]->cpf)) { $cpf[0]->cpf = 0;} ?>
       <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Associado</p></a>
       {{  Html::image('files/' . $cpf[0]->cpf . '/' . 'foto.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
+      
       @endif
 
       <a href="{{ url('/logout')}}" title="Sair">Sair</a>
