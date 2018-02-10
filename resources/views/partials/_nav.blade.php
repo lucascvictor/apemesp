@@ -28,19 +28,30 @@
       {{  Html::image('images/perfis/redator.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
 
       @elseif(Auth::user()->id_perfil > 2)
-      <?php $cpf = $dp->getCpf(Auth::user()->id); ?>
-      //verificar a váriavel $cpf que não é setada em casos de login sem cpf e sem foto.
-      <?php if (empty($cpf[0]->cpf)) { $cpf[0]->cpf = 0;} ?>
-      <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Associado</p></a>
-      {{  Html::image('files/' . $cpf[0]->cpf . '/' . 'foto.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
-      
+        <?php $cpf = $dp->getCpf(Auth::user()->id); ?>
+
+        @if (empty($cpf[0]))
+
+                <h2>Área do<br />Associado</h2>
+                <form method="POST" action="{{ url('/login') }}">
+                {{ csrf_field() }}
+                <input type="text" name="email"placeholder="E-mail" />
+                <input type="password" name="password" placeholder="Senha"/>
+                <br />
+                <button type="submit" class="esconder"></button>
+                <p> Não é cadastrado? </p>
+                <a href="{{ url('/register')}}" title="Associe-se">Associe-se</a>
+                </form>
+
+        @else
+          <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Associado</p></a>
+          {{  Html::image('files/' . $cpf[0]->cpf . '/' . 'foto.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
+        @endif
+
       @endif
 
       <a href="{{ url('/logout')}}" title="Sair">Sair</a>
     </div>
-
-
-  <!-- ÁREA DO CLIENTE -->
 
   @else
 <!-- ÁREA DO CLIENTE -->
