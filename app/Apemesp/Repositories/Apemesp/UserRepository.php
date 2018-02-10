@@ -72,12 +72,12 @@ class UserRepository
         //return $id from aditional_users_data
         public function findCode($code)
         {
-                return AditionalUserData::where('code', $code)->select('id')->get();
+                return AditionalUserData::where('code', $code)->select('id')->get()->first();
         }
 
         public function findUserById($id)
         {
-                return AditionalUserData::where('id_user', $id)->get();
+                return AditionalUserData::where('id_user', $id)->get()->first();
         }
 
         public function updateAditionalUserData($id)
@@ -94,7 +94,10 @@ class UserRepository
         {
                 $cc = $this->findUserById($id);
 
-                if ($cc[0]->confirm_mail == 1) {
+                if(empty($cc)) {
+                        return 2;
+                }
+                if ($cc->confirm_mail == 1) {
                         return 1;
                 } else {
                         return 2;
