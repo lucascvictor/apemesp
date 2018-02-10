@@ -33,12 +33,12 @@
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Nome</label>
-                                <input type="text" class="form-control nota " placeholder="Nome Completo" id="nome" name="nome" required data-validation-required-message="Por favor insira seu nome.">
+                                <input type="text" value="@if ((Auth::user()) !== null ) {!! Auth::user()->name !!} @endif" class="form-control nota " placeholder="Nome Completo" id="nome" name="nome" required data-validation-required-message="Por favor insira seu nome.">
                             <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Endereço de Email</label>
-                                 <input type="email" class="form-control nota " placeholder="Endereço de e-mail" id="email" name="email" required data-validation-required-message="Por favor insira seu e-mail.">
+                                 <input type="email" value="@if ((Auth::user()) !== null ) {!! Auth::user()->email !!} @endif" class="form-control nota " placeholder="Endereço de e-mail" id="email" name="email" required data-validation-required-message="Por favor insira seu e-mail.">
                             <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group col-lg-4">
