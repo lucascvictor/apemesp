@@ -88,6 +88,7 @@ class AdminController extends Controller
 
                 if ($id_status == 2) {
                     $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
+                    Auth::logout();
                 }
 
                 if (!$user->confirmCodeById(Auth::user()->id)) {
