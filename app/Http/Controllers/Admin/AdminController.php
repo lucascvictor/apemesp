@@ -44,7 +44,7 @@ class AdminController extends Controller
       if ($id_perfil == 3 || $id_perfil == 4) {
           if ($id_status == 1 || $id_status ==2) {
               if ($id_status == 2) {
-                  $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
+                Session::flash('cuidado', "Você tem pendências com a associação, por favor verifique ou entre em contato.");
               }
             
               $adminRepository = new AdminRepository;
@@ -69,7 +69,6 @@ class AdminController extends Controller
         //Todos os menus foram capturados no construct da classe
         $id_perfil = Auth::user()->id_perfil;
         $id_status = Auth::user()->id_status;
-        $mensagem = "";
         $user = new UserRepository;
 
         if ($id_perfil == 1) {
@@ -82,8 +81,7 @@ class AdminController extends Controller
             if ($id_status == 1 || $id_status ==2) {
 
                 if ($id_status == 2) {
-                    $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
-                    Auth::logout();
+                    Session::flash('cuidado', "Você tem pendências com a associação, por favor verifique ou entre em contato.");
                 }
 
                 if ($user->confirmCodeById(Auth::user()->id) == 2) {
