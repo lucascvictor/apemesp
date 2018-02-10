@@ -91,8 +91,9 @@ class AdminController extends Controller
                 }
 
                 if (!$user->confirmCodeById(Auth::user()->id)) {
-                    Session::flash('cuidado', 'Seu e-mail não foi confirmado, por favor verifique-o');
-                    return redirect()->route('apemesp.index');
+                    Session::flash('cuidado', 'Seu e-mail não foi confirmado, por favor verifique-o.');
+                    Auth::logout();
+                    return redirect()->back();
                 }
 
                 $adminRepository = new AdminRepository;
