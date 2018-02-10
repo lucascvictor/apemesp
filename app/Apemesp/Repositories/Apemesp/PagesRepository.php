@@ -65,4 +65,6 @@ class PagesRepository
 		return DB::table('posts')->select('*')->where([['id_destino','=', 1], ['id_tag', '=', $id]])->orderBy('posts.id', 'desc')->paginate(6);
 	}
 
+
+
 }
