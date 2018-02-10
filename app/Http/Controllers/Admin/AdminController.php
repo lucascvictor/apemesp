@@ -46,7 +46,7 @@ class AdminController extends Controller
               if ($id_status == 2) {
                   $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
               }
-
+            
               $adminRepository = new AdminRepository;
               $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
               $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
