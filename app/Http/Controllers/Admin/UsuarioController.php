@@ -27,8 +27,7 @@ class UsuarioController extends Controller
          View::composers([
             'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'] 
         ]);  
-         
-        
+          
     }
 
     public function index()
