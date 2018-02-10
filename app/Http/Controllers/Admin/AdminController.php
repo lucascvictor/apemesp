@@ -48,7 +48,7 @@ class AdminController extends Controller
                   $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
               }
               
-                if ($user->getConfirmMail(Auth::user()->id)) {
+                if ($user->getConfirmMailById(Auth::user()->id)) {
                     return redirect()->back();
                 }
 
@@ -90,7 +90,7 @@ class AdminController extends Controller
                     $mensagem = "Você tem pendências com a associação, por favor verifique ou entre em contato.";
                 }
 
-                if ($user->confirmCode(Auth::user()->id)) {
+                if (!$user->confirmCodeById(Auth::user()->id)) {
                     Session::flash('cuidado', 'Seu e-mail não foi confirmado, por favor verifique-o');
                     return redirect()->back();
                 }
