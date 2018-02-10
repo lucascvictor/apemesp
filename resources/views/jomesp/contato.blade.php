@@ -20,29 +20,32 @@
                     </h2>
                     <hr>
                     <p>Entre em contato conosco. Tentaremos responder o mais brevepossível.</p>
-                    <form role="form">
+                    <form role="form" action="{{ url('/send') }}" method="POST">
+                    {{ csrf_field() }}
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Nome</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="nome" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Endereço de e-mail</label>
-                                <input type="email" class="form-control">
+                                <input type="email" name="email" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control">
+                                <input type="tel" name="telefone" class="form-control">
                             </div>
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-12">
                                 <label>Mensagem</label>
-                                <textarea class="form-control" rows="6"></textarea>
+                                <textarea class="form-control" name="mensagem" rows="6"></textarea>
                             </div>
                             <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
+                                <input type="hidden" name="assunto" value="jomesp">
+                                <input type="hidden" name="pagina" value="jomesp">
                                 <button type="submit" class="btn btn-default">Enviar</button>
                             </div>
+
                         </div>
                     </form>
                 </div>

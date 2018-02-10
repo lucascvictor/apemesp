@@ -29,27 +29,33 @@ class EmailController extends Controller
     	$this->setMensagem($request->mensagem);
     	$this->setDate(date("m-d-Y H:i:s"));
 
-    	$assunto = $request->assunto;
-    	$assunto_ = Assunto::find($assunto);
+		$assunto = $request->assunto;
+		$pagina = $request->pagina;
 
+		$oEmail = Assunto::where('id', '=', $assunto)->orWhere('assunto', '=', $assunto)->select('*')->get()->first();
 
-    	$dados = array(
-			'titulo' => $assunto_->assunto,
+		$dados = array(
+			'titulo' => $oEmail->assunto,
 			'mensagem' => $this->getMensagem(), 
 			'nome' => $this->getNome(),
 			'telefone' => $this->getTelefone(),
 			'email' => $this->getEmail(),
 			'data' => $this->getDate(),
-    		);
-    	Mail::send('emails.send', $dados, function ($message) use ($assunto_)
+			);
+			
+    	Mail::send('emails.send', $dados, function ($message) use ($oEmail)
     	{
     		$message->from($this->getEmail(), $this->getNome());
-    		$message->to($assunto_->email)->subject($assunto_->assunto);
+    		$message->to($oEmail->email)->subject($oEmail->assunto);
     	});
     	
-    Session::flash('sucesso', 'A mensagem foi enviada com sucesso');
-    
-    return redirect()->route('contato.mensagens');
+    	Session::flash('sucesso', 'A mensagem foi enviada com sucesso');
+		
+		if($pagina == 'jomesp') {
+			return redirect()->route('jomesp.contato');
+		} else {
+			return redirect()->route('contato.mensagens');
+		}
 	}
 
 	public function getNome(){

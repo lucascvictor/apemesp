@@ -46,6 +46,12 @@ class AssuntosTableSeeder extends Seeder
                     'email'          => 'eventos@apemesp.com',
                 ],
 
+                5 => [
+                    'id'             => 6,
+                    'assunto'           => 'Jomesp',
+                    'email'          => 'site.apemesp@gmail.com',
+                ],
+
 
             ]);
     }

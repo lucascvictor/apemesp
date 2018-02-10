@@ -11,7 +11,8 @@
       @include('partials.jomesp._logo')
       @include('partials.jomesp._nav')
 
-
+      @include('partials._mensagens')
+      
         @yield('conteudo')
         
 
