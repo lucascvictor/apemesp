@@ -9,7 +9,7 @@
 
 <!-- LOGOTIPO -->
 <div class="logotipo_header">
-<a href="#" title="APEMESP"><img src="{{ url('images/logo.png') }}" alt="APEMESP" title="APEMESP"></a>
+<a href="{{ url('/') }}" title="APEMESP"><img src="{{ url('images/logo.png') }}" alt="APEMESP" title="APEMESP"></a>
 </div>
 <!-- LOGOTIPO -->
 
@@ -53,9 +53,9 @@
 {{ csrf_field() }}
 <input type="text" name="email"placeholder="E-mail" />
 <input type="password" name="password" placeholder="Senha"/>
-<br />
-<button type="submit" class="esconder"></button>
-<p> Não é cadastrado? </p>
+<br>
+<button type="submit" class="" style="margin-top: 5px; width: 50%; heigth: 10%;">Entrar</button>
+<br>
 <a href="{{ url('/register')}}" title="Associe-se">Associe-se</a>
 </form>
 </div>

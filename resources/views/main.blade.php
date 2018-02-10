@@ -27,6 +27,8 @@
 
   {!! Html::script('js/bootstrap-typeahead.js') !!}
 
+  <link rel="Apemesp" href="{{ url('/favicon.png') }}" >
+
   </head>
 
     <body style="background-color: #dbe3e9" id="app-layout">
