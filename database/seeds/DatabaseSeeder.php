@@ -45,5 +45,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ConquistasTableSeeder::class);
         $this->call(FormacoesTableSeeder::class);
         $this->call(PropagandasAtivasTableSeeder::class);
+        $this->call(AditionalUserDataTableSeeder::class);
     }
 }

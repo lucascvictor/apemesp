@@ -9,7 +9,7 @@
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*",
         "cornford/googlmapper": "2.*",
-        "devdojo/chatter": "0.2.*",
+        "devdojo/chatter": "0.2.5",
         "graham-campbell/markdown": "^7.1",
         "unisharp/laravel-filemanager": "^1.7",
         "intervention/image": "^2.3",

@@ -21,21 +21,21 @@ class AssuntosTableSeeder extends Seeder
 
                 1 => [
                     'id'             => 2,
-              'assunto'           => 'Sugestões',
-                    'email'          => 'contato.apemesp@gmail.com',
+                    'assunto'           => 'Sugestões',
+                    'email'          => 'site.apemesp@gmail.com',
 
                 ],
 
                 2 => [
                     'id'             => 3,
-          	  'assunto'           => 'Reclamação',
+          	        'assunto'           => 'Reclamação',
                     'email'          => 'reclamacoes@apemesp.com',
 
                 ],
 
                 3 => [
                     'id'             => 4,
-                'assunto'           => 'Anuidade',
+                     'assunto'           => 'Anuidade',
                     'email'          => 'anuidade@apemesp.com',
 
                 ],

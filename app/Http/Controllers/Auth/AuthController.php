@@ -136,11 +136,16 @@ class AuthController extends Controller
     public function confirm($code)
     {
         $aud = new UserRepository;
-        $id = $aud->findCode($code);
-        if (!empty($id)) {
-            $aud->update($id);
+        $user = $aud->findCode($code);
+
+        if (!empty($user[0]->id)) {
+            $aud->updateAditionalUserData($user[0]->id);
+            Session::flash('sucesso', 'E-mail confirmado com sucesso. Prossiga com o seu Login.');
+        } else {
+            Session::flash('cuidade', 'Código de verificação inválido tente novamente');
         }
-        return ($code);
+        
+        return redirect()->route('apemesp.index');
     }
 
   
