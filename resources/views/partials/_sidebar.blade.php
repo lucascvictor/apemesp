@@ -1,4 +1,5 @@
  <!-- SIDEBAR -->
+<nav id="sidebar" class="navbar navbar-light bg-light">
           <div class="sidebar" style= "background-color: #FFFFFF; margin-top: 30px; padding: 5%;">
 
               @yield('categorias')
@@ -30,4 +31,5 @@
           </ul>
 
         </div>
+</nav>
 <!-- END SIDEBAR -->

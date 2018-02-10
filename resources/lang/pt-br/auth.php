@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'failed' => 'Essas credenciais não correspondem aos nossos registros.',
+    'failed' => 'Essas credenciais não correspondem aos nossos registros.
+                <a href="/redefinir"> Clique aqui para redefinira a sua senha</a>',
     'throttle' => 'Muitas tentativas de login. POr favor tente novamente em :segundos segundos.',
 
 ];

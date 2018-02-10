@@ -13,7 +13,7 @@
 		<strong> Erros: </strong>
 		<ul>
 			@foreach($errors->all() as $error)
-				<li> {{ $error }}</li>
+				<li> {!! $error !!}</li>
 			@endforeach
 		</ul>
 	</div>
@@ -21,9 +21,9 @@
 
 @if (Session::has('cuidado'))
 
-	<div class="alert alert-danger" role="alert">
+	<div class="alert alert-warning" role="alert">
 
-		<strong>Cuidado:</strong> {{ Session::get('cuidado') }}
+		<strong>Cuidado:</strong> {!! Session::get('cuidado') !!}
 	</div>
 
 @endif

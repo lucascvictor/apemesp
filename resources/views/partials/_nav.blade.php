@@ -32,16 +32,8 @@
 
         @if (empty($cpf[0]))
 
-                <h2>Área do<br />Associado</h2>
-                <form method="POST" action="{{ url('/login') }}">
-                {{ csrf_field() }}
-                <input type="text" name="email"placeholder="E-mail" />
-                <input type="password" name="password" placeholder="Senha"/>
-                <br />
-                <button type="submit" class="esconder"></button>
-                <p> Não é cadastrado? </p>
-                <a href="{{ url('/register')}}" title="Associe-se">Associe-se</a>
-                </form>
+        <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Associado</p></a>
+          {{  Html::image('files/apemesp' . 'foto.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
 
         @else
           <a href="{{ url('/admin') }}"><p style="font-size: 12px;">Área do<br />Associado</p></a>
