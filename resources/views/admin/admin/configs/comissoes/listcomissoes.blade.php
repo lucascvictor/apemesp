@@ -5,25 +5,25 @@
 @section('conteudo')
 <div class="row">
                 <div class="col-lg-10">
-                    <h2>Assuntos da página de mensagens</h2>
-                    <p><a class="btn btn-success" href="{{ url('/admin/configs/assuntos/add') }}">Adicionar assunto </a></p>
+                    <h2>comissoes da página de mensagens</h2>
+                    <p><a class="btn btn-success" href="{{ url('/admin/paginas/adicionar/comissao') }}">Adicionar comissao </a></p>
                     <div class="table-responsive">
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th>Assunto</th>
-                                    <th>E-mail Associado </th>
+                                    <th>comissao</th>
+
                                     <th colspan="2"> </th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($assuntos as $assunto)
+                            @foreach($comissoes as $comissao)
             <tr>
-                                    <td>{{ $assunto->assunto }}</td>
-                                    <td>{{ $assunto->email }}</td>
-                                    <td><a class="btn btn-default" href="{{ url('/admin/configs/assuntos') }}/{{ $assunto->id }}">Editar</a></td>
-                                    <td><a class="btn btn-danger" href="{{ url('/admin/configs/assuntos/delete') }}/{{ $assunto->id }}">Deletar</a></td>
+                                    <td>{{ $comissao->comissao }}</td>
+
+                                    <td><a class="btn btn-default" href="{{ url('/admin/paginas/comissao') }}/{{ $comissao->id }}">Editar</a></td>
+                                    <td><a class="btn btn-danger" href="{{ url('/admin/configs/comissoes/delete') }}/{{ $comissao->id }}">Deletar</a></td>
                                 </tr>
 
             @endforeach
@@ -35,7 +35,7 @@
 
 </div>
 <div class="row">
-<p> {{ $assuntos->links() }} </p>
+<p> {{ $comissoes->links() }} </p>
 
 </div>
 

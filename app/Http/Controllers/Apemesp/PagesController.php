@@ -14,6 +14,7 @@ use Apemesp\Apemesp\Repositories\Admin\PostRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\ComissaoRepository;
 
 use View;
 
@@ -100,7 +101,9 @@ class PagesController extends Controller{
 	}
 
 	public function getComissoes() {
-		return view('paginas.apemesp.comissoes');
+		$comissaoRepository = new ComissaoRepository;
+		$comissoes = $comissaoRepository->list();
+		return view('paginas.apemesp.comissoes')->with('comissoes', $comissoes);
 	}
 
 	public function getDocumentos() {

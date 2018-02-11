@@ -55,8 +55,9 @@ class ComissaoController extends Controller
     }
 
     public function listComissoes(){
-
-        return view('admin.admin.configs.comissoes.listcomissoes');
+        $comissaoRepository = New ComissaoRepository;
+        $comissoes = $comissaoRepository->list();
+        return view('admin.admin.configs.comissoes.listcomissoes')->with('comissoes', $comissoes);
     }
 
     public function editComissao($id){
@@ -86,16 +87,16 @@ class ComissaoController extends Controller
 
      public function storeComissao(Request $request){
 
-        $this->validate($request, array(
-                'comissao' => 'required|max:255',
-                'email' => 'required|max:255',
-                ));
-
-        $configsRepository = new ConfigsRepository;
-        $configsRepository->setComissao($request->comissao, $request->email);
+        $comissaoRepository = New ComissaoRepository;
+        $id = $comissaoRepository->store($request->comissao, $request->atribuicoes);
         unset($configsRepository);
-        Session::flash('sucesso', 'O comissao foi adicionado com sucesso!');
-        return redirect()->route('show.comissoes');
+        if (empty($id)) {
+            Session::flash('cuidado', 'Algo aconteceu e a comissão não foi salva!');
+            return redirect()->route('show.comissoes');
+        } else {
+            Session::flash('sucesso', 'O comissao foi adicionada com sucesso!');
+            return redirect()->route('list.comissoes');
+        }
     }
 
     public function destroyComissao($id)
@@ -104,6 +105,11 @@ class ComissaoController extends Controller
         $comissaoRepository->deleteComissao($id);
         Session::flash('cuidado', 'O comissao foi removido com sucesso!');
         return redirect()->route('show.comissoes');
+    }
+
+    public function getComissao($id)
+    {
+        
     }
 
 }

@@ -126,7 +126,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/literaturas', 'Admin\LiteraturaController@listLiteratura')->name('list.literatura');
           Route::get('/conquistas', 'Admin\ConquistaController@listConquista')->name('list.conquista');
           Route::get('/formacoes', 'Admin\FormacaoController@listFormacao')->name('list.formacao');
-          Route::get('/comissoes', 'Admin\ComissaoController@listComissoes')->name('list.comissao');
+          Route::get('/comissoes', 'Admin\ComissaoController@listComissoes')->name('list.comissoes');
           Route::get('/membros', 'Admin\MembroController@listMembro')->name('list.membro');
           Route::get('/propagandas', 'Admin\PropagandaController@listPropaganda')->name('list.propaganda');
 
