@@ -17,6 +17,7 @@ class CreateAditionalUsersData extends Migration
             $table->integer('id_user')->unsigned();
             $table->string('confirm_mail'); //1-sim; 2-não
             $table->string('code');
+            $table->string('resetcode');
         });
     }
 

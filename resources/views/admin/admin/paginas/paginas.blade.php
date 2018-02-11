@@ -48,14 +48,8 @@
                                 <tr>
                                         <td>Adicionar Comissão</td>
                                         <td>Adicionar acomissão ou editar comissões existentes<a href="{{ url('/apemesp/comissoes')}}"> {{ url('/apemesp/comissoes')}}</a></td>
-                                        <td><a class="btn btn-warning">Adicionar</a></td>
-                                        <td><a class="btn btn-info">Visualizar itens existentes</a></td>
-                                </tr>
-                                <tr>
-                                        <td>Adicionar mebro de comissão</td>
-                                        <td>Alterar a lista de membros por comissão<a href="{{ url('/apemesp/comissoes')}}"> {{ url('/apemesp/comissoes')}}</a></td>
-                                        <td><a class="btn btn-warning">Adicionar</a></td>
-                                        <td><a class="btn btn-info">Visualizar itens existentes</a></td>
+                                        <td><a class="btn btn-warning" href="{{ url('/admin/paginas/adicionar/comissao')}}">Adicionar</a></td>
+                                        <td><a class="btn btn-info" href="{{ url('/admin/paginas/comissoes')}}">Visualizar itens existentes</a></td>
                                 </tr>
 
 

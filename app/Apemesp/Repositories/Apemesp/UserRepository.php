@@ -68,6 +68,12 @@ class UserRepository
                 
         }
 
+        public function newResetCode($id_user, $code)
+        {
+                AditionalUserData::where('id', $id)->update(['resetcode' => $code,'updated_at' => $this->getData()]);
+        }
+
+
 
         //return $id from aditional_users_data
         public function findCode($code)

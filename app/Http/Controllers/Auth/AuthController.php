@@ -148,5 +148,21 @@ class AuthController extends Controller
         return redirect()->route('apemesp.index');
     }
 
+
+    public function reenviar()
+    {
+        return view('emails.resend');
+    }
+
+    public function reset()
+    {
+        return view('auth.passwords.reset');
+    }
+
+    public function redefinir()
+    {
+        return view('auth.passwords.email');
+    }
+
   
 }

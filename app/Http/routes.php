@@ -10,6 +10,10 @@ Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
 Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
 Route::post('/verificar', 'Associado\AssociadoController@verificarCpf')->name('apemesp.verificar');
 Route::get('/confirm/{code}', 'Auth\AuthController@confirm')->name('apemesp.confirm');
+Route::get('/reenviar/', 'Auth\AuthController@reenviar')->name('apemesp.reenviar');
+Route::get('/redefinir/', 'Auth\AuthController@redefinir')->name('apemesp.redefinir');
+Route::get('/reset/{token}', 'Auth\AuthController@reset')->name('apemesp.reset');
+
 
 Route::group(['prefix' => 'apemesp'], function () {
     Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');
@@ -122,7 +126,7 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/literaturas', 'Admin\LiteraturaController@listLiteratura')->name('list.literatura');
           Route::get('/conquistas', 'Admin\ConquistaController@listConquista')->name('list.conquista');
           Route::get('/formacoes', 'Admin\FormacaoController@listFormacao')->name('list.formacao');
-          Route::get('/comissaos', 'Admin\ComissaoController@listComissao')->name('list.comissao');
+          Route::get('/comissoes', 'Admin\ComissaoController@listComissoes')->name('list.comissao');
           Route::get('/membros', 'Admin\MembroController@listMembro')->name('list.membro');
           Route::get('/propagandas', 'Admin\PropagandaController@listPropaganda')->name('list.propaganda');
 

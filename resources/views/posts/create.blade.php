@@ -12,7 +12,7 @@
 
 @section('conteudo')
 
-            {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate' => '', 'files' => true)) !!}
+          {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate' => '', 'files' => true)) !!}
           <!-- Titulo -->
     			{{ Form::label('titulo', 'Titulo:') }}
                 {{ Form::text('titulo', null, array('class' => 'form-control')) }}

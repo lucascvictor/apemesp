@@ -28,9 +28,11 @@ class PasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
-         View::composers([
-            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
+        $this->middleware('auth', ['except' => 'logout']);
+
+        View::composers([
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
+
     }
 }

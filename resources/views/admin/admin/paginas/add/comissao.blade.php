@@ -15,7 +15,7 @@
     			{{ Form::label('titulo', 'Titulo:') }}
                 {{ Form::text('titulo', $pagina->titulo ,array('class' => 'form-control')) }}
 
-          {{ Form::label('subtitulo', 'Subtitulo:') }}
+                {{ Form::label('subtitulo', 'Subtitulo:') }}
                 {{ Form::text('subtitulo', $pagina->subtitulo ,array('class' => 'form-control')) }}
 
 

@@ -10,7 +10,7 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Models\Menu;
 
-use Apemesp\Apemesp\Repositories\Admin\AssuntoRepository;
+use Apemesp\Apemesp\Repositories\Admin\ComissaoRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\ConfigsRepository;
 
@@ -37,68 +37,73 @@ class ComissaoController extends Controller
 
    public function index(){
 
-   		$assuntoRepository = New AssuntoRepository;
-        $assuntos = $assuntoRepository->getAssuntos();
+   		$comissaoRepository = New ComissaoRepository;
+        $comissoes = $comissaoRepository->getComissoes();
 
-        $assuntos->setPath('assuntos');
+        $comissoes->setPath('comissoes');
 
-        unset($assuntoRepository);
+        unset($comissaoRepository);
 
-        return view('admin.admin.configs.assuntos.showassuntos')
-				->with('assuntos', $assuntos);
+        return view('admin.admin.configs.comissoes.showcomissoes')
+				->with('comissoes', $comissoes);
 
     }
 
-    public function addAssunto(){
+    public function addComissao(){
 
-        return view('admin.admin.configs.assuntos.addassunto');
+        return view('admin.admin.configs.comissoes.addcomissao');
     }
 
-    public function editAssunto($id){
+    public function listComissoes(){
 
-        $assuntoRepository = New AssuntoRepository;
-        $assunto = $assuntoRepository->getAssunto($id);
+        return view('admin.admin.configs.comissoes.listcomissoes');
+    }
 
-        return view('admin.admin.configs.assuntos.editassunto')->with('assunto', $assunto);
+    public function editComissao($id){
+
+        $comissaoRepository = New ComissaoRepository;
+        $comissao = $comissaoRepository->getComissao($id);
+
+        return view('admin.admin.configs.comissoes.editcomissao')->with('comissao', $comissao);
     }
 
 
-     public function updateAssunto(Request $request, $id){
+     public function updateComissao(Request $request, $id){
 
          $this->validate($request, array(
-                'assunto' => 'required|max:255',
+                'comissao' => 'required|max:255',
                 'email' => 'required|max:255',
                 ));
 
-        $assuntoRepository = New AssuntoRepository;
-        $assuntoRepository->updateAssunto($request, $id);
-        $assuntos = $assuntoRepository->getAssuntos();
-        $assuntos->setPath('assuntos');
-        Session::flash('sucesso', 'O assunto foi atualizado');
-         return view('admin.admin.configs.assuntos.showassuntos')
-                ->with('assuntos', $assuntos);
+        $comissaoRepository = New ComissaoRepository;
+        $comissaoRepository->updateComissao($request, $id);
+        $comissoes = $comissaoRepository->getComissoes();
+        $comissoes->setPath('comissoes');
+        Session::flash('sucesso', 'O comissao foi atualizado');
+         return view('admin.admin.configs.comissoes.showcomissoes')
+                ->with('comissoes', $comissoes);
     }
 
-     public function storeAssunto(Request $request){
+     public function storeComissao(Request $request){
 
         $this->validate($request, array(
-                'assunto' => 'required|max:255',
+                'comissao' => 'required|max:255',
                 'email' => 'required|max:255',
                 ));
 
         $configsRepository = new ConfigsRepository;
-        $configsRepository->setAssunto($request->assunto, $request->email);
+        $configsRepository->setComissao($request->comissao, $request->email);
         unset($configsRepository);
-        Session::flash('sucesso', 'O assunto foi adicionado com sucesso!');
-        return redirect()->route('show.assuntos');
+        Session::flash('sucesso', 'O comissao foi adicionado com sucesso!');
+        return redirect()->route('show.comissoes');
     }
 
-    public function destroyAssunto($id)
+    public function destroyComissao($id)
     {
-        $assuntoRepository = new AssuntoRepository;
-        $assuntoRepository->deleteAssunto($id);
-        Session::flash('cuidado', 'O assunto foi removido com sucesso!');
-        return redirect()->route('show.assuntos');
+        $comissaoRepository = new ComissaoRepository;
+        $comissaoRepository->deleteComissao($id);
+        Session::flash('cuidado', 'O comissao foi removido com sucesso!');
+        return redirect()->route('show.comissoes');
     }
 
 }

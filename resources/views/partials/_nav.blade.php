@@ -51,10 +51,10 @@
 <h2>Área do<br />Associado</h2>
 <form method="POST" action="{{ url('/login') }}">
 {{ csrf_field() }}
-<input type="text" name="email"placeholder="E-mail" />
-<input type="password" name="password" placeholder="Senha"/>
+<input type="text" name="email"placeholder="E-mail" required=""/>
+<input type="password" name="password" placeholder="Senha" required=""/>
 <br>
-<button type="submit" class="" style="margin-top: 5px; width: 50%; heigth: 10%;">Entrar</button>
+<button type="submit" class="badge badge-primary"  style="margin: 5px;">Entrar</button>
 <br>
 <a href="{{ url('/register')}}" title="Associe-se">Associe-se</a>
 </form>
