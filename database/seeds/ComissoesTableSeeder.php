@@ -175,9 +175,7 @@ class ComissoesTableSeeder extends Seeder
                     rodas de conversa e encontros do FETSuas-SP, de
                     conferências municipais e estaduais do Suas e do SUS.
                     Realiza estudos técnicos de legislação (leis, portarias,
-                    atos normativos normativos etc
-                    
-                    ) de ambas políticas políticas públicas públicas para
+                    atos normativos normativos etc) de ambas políticas políticas públicas públicas para
                     melhor desempenho do trabalho do Musicoterapeuta.
                     Auxilia Mts sobre procedimentos e espaços de atuação
                     na saúde e assistência social. </p>',

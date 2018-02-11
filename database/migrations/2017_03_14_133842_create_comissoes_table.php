@@ -15,7 +15,7 @@ class CreateComissoesTable extends Migration
         Schema::create('comissoes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('comissao');
-            $table->string('atribuicoes');
+            $table->text('atribuicoes');
         });
     }
 

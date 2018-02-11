@@ -46,5 +46,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FormacoesTableSeeder::class);
         $this->call(PropagandasAtivasTableSeeder::class);
         $this->call(AditionalUserDataTableSeeder::class);
+        $this->call(ComissoesTableSeeder::class);
+        $this->call(EdicoesJomespTableSeeder::class);
     }
 }
