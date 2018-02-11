@@ -89,7 +89,7 @@ class AdminController extends Controller
                 }
 
                 if ($user->confirmCodeById(Auth::user()->id) == 2) {
-                    Session::flash('cuidado', 'Seu e-mail não foi confirmado, por favor verifique-o. 
+                    Session::flash('cuidado', 'Seu e-mail não foi confirmado, por favor, verifique a caixa de entrada do e-mail cadastrado. 
                                     <a href="/reenviar"> Clique aqui para reenviar o e-mail de confirmação</a>');
                     Auth::logout();
                     return redirect()->back();
