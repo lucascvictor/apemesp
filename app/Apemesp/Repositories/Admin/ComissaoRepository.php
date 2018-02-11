@@ -39,9 +39,14 @@ class ComissaoRepository
         return $comissao->id;
 	}
 
+	public function listToConfig()
+	{
+		return Comissao::select('*')->paginate('6');
+	}
+
 	public function list()
 	{
-		return Comissao::select('*')->paginate(6);
+		return Comissao::select('*')->get();
 	}
 
 

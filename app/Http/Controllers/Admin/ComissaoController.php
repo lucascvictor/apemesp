@@ -56,7 +56,7 @@ class ComissaoController extends Controller
 
     public function listComissoes(){
         $comissaoRepository = New ComissaoRepository;
-        $comissoes = $comissaoRepository->list();
+        $comissoes = $comissaoRepository->listToConfig();
         return view('admin.admin.configs.comissoes.listcomissoes')->with('comissoes', $comissoes);
     }
 
@@ -109,7 +109,7 @@ class ComissaoController extends Controller
 
     public function getComissao($id)
     {
-        
+
     }
 
 }

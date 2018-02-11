@@ -2,30 +2,39 @@
 
 @section('titulo', '| Comissões')
 
-@section('extrastyle')
 
-
-
-@endsection
 
 @section('conteudo')
+        <h1 class="entry-title">Comissões</h1>
 
-
-					<h1 class="entry-title">Comissões</h1>
-
-          @foreach($comissoes as $comissao)
+        @foreach($comissoes as $comissao)
                 <ul>
                 <li>{{$comissao->comissao }}</li>
                 </ul>
           @endforeach
- 
-          @foreach($comissoes as $comissao)
-                      <div class="card border-primary mb-3" style="max-width: 18rem;">
-                      <div class="card-header">{{$comissao->comissao }}</div>
-                      <div class="card-body text-primary">
-                        <p class="card-text">{!! $comissao->atribuicoes !!}</p>
-                      </div>
+
+              @foreach($comissoes as $comissao)
+                <div class="card col-md-12" style="background-color: #fffefd; padding-bottom: 10%; border-radius: 10%; margin: 10px;">
+
+                    <hr>
+                    <div class="card-title " style="">
+                      <h2 class="intro-text text-center" style="border-radius: 15%;"><strong>{{$comissao->comissao }}</strong>
                     </div>
-          @endforeach
+                    <br>  
+                    </h2>
+                    </a>
+                    <hr>
+                   
+                    <p>{!! $comissao->atribuicoes !!}</p>
+              </div>
+
+              @endforeach
+
+					
+
+        
+
+          
+
 
 @endsection
