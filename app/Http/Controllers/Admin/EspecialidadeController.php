@@ -15,6 +15,17 @@ use Apemesp\Apemesp\Repositories\Admin\EspecialidadeRepository;
 class EspecialidadeController extends Controller
 {
 
+  public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'logout']);
+
+        View::composers([
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'],
+            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
+        ]);
+
+    }
+  
   public function storeEspecialidade(Request $request){
 
     if ($request->especialidade == null) {

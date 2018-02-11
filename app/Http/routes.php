@@ -11,6 +11,7 @@ Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
 Route::post('/verificar', 'Associado\AssociadoController@verificarCpf')->name('apemesp.verificar');
 Route::get('/confirm/{code}', 'Auth\AuthController@confirm')->name('apemesp.confirm');
 Route::get('/reenviar/', 'Auth\AuthController@reenviar')->name('apemesp.reenviar');
+Route::post('/reenviarconfirmacao', 'Auth\AuthController@reenviarconfirmacao');
 Route::get('/redefinir/', 'Auth\AuthController@redefinir')->name('apemesp.redefinir');
 Route::get('/reset/{token}', 'Auth\AuthController@reset')->name('apemesp.reset');
 
@@ -73,8 +74,11 @@ Route::get('/home', 'Apemesp\HomeController@index');
 Route::group(['prefix' => 'admin'], function () {
     Route::get('', 'Admin\AdminController@index')->name('admin');
 
-    Route::get('perfil', 'Admin\AdminController@perfil')->name('admin');
-
+    Route::group(['prefix' => 'perfil'], function () {
+      Route::get('', 'Admin\AdminController@perfil')->name('admin');
+      Route::post('/alteraremail', 'Admin\AdminController@alterarEmail')->name('admin.alteraremail');
+      Route::post('/alterarsenha', 'Admin\AdminController@alterarSenha')->name('admin.alterarsenha');
+    });
     Route::group(['prefix' => 'usuarios'], function () {
         Route::get('', 'Admin\UsuarioController@index')->name('users.index');
         Route::get('/search', 'Admin\UsuarioController@search');
@@ -208,8 +212,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => 'associado'], function () {
     Route::group(['prefix' => 'dadospessoais'], function () {
-        Route::get('', 'Associado\DadosPessoaisController@getDadosPessoais');
-        Route::post('', 'Associado\DadosPessoaisController@storeDadosPessoais')->name('dadospessoais');
+        Route::get('', 'Associado\DadosPessoaisController@getDadosPessoais')->name('dadospessoais');
+        Route::post('', 'Associado\DadosPessoaisController@storeDadosPessoais')->name('dadospessoais.store');
         Route::post('/{id}', 'Associado\DadosPessoaisController@dadospessoaisUpdate')->name('dadospessoais.update');
     });
 

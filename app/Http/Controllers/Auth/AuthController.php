@@ -138,8 +138,8 @@ class AuthController extends Controller
         $aud = new UserRepository;
         $user = $aud->findCode($code);
 
-        if (!empty($user[0]->id)) {
-            $aud->updateAditionalUserData($user[0]->id);
+        if (!empty($user->id)) {
+            $aud->updateAditionalUserData($user->id);
             Session::flash('sucesso', 'E-mail confirmado com sucesso. Prossiga com o seu Login.');
         } else {
             Session::flash('cuidade', 'Código de verificação inválido tente novamente');
@@ -152,6 +152,31 @@ class AuthController extends Controller
     public function reenviar()
     {
         return view('emails.resend');
+    }
+
+    public function reenviarconfirmacao(Request $request)
+    {
+        $aud = new UserRepository;
+        $user = $aud->findAditionalUserByEmail($request->email);
+
+        if (empty($user->email)) {
+
+            Session::flash('cuidado', 'O e-mail informado é inválido ou não consta em nosso banco de dados.');
+            return redirect()->back();
+
+        } else {
+
+            $dadosEmail = $aud->findUserById($user->id);
+
+            Mail::send('emails.reminder', ['confirmCode' => $dadosEmail->code], function ($m) use ($user) {
+                $m->from('site.apemesp@gmail.com', 'APEMESP');
+                $m->to($user->email, $user->name)->subject('Validação de cadastro!');
+            });
+
+           Session::flash('sucesso', 'O e-mail de confirmação foi reenviado');
+
+            return redirect()->route('apemesp.index');
+        }
     }
 
     public function reset()

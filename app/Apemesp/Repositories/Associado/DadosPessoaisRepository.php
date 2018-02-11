@@ -104,10 +104,9 @@ class DadosPessoaisRepository
 
 	public function updateDadosPessoais($request, $id)
 	{
-
+   
 		DadosPessoais::where('id', $id)
             ->update([
-
             'name' => $request->name,
             'facebook' => $request->facebook,
             'nascimento' => $request->nascimento,
@@ -118,7 +117,7 @@ class DadosPessoaisRepository
             'complemento' => $request->complemento,
             'bairro' => $request->bairro,
             'cep' => $request->cep,
-            'id_estado' => $request->estado,
+            'id_estado' => $this->getEstado($request->estado),
             'id_cidade' => $request->codCidade,
             'tel_celular' => $request->tel_celular,
             'tel_residencial' => $request->tel_residencial,
@@ -128,8 +127,14 @@ class DadosPessoaisRepository
 
 	public function getEstado($abrev)
 	{
-		$estado = Estado::where('abrev', $abrev)->select('id')->get();
-		return $estado[0]->id;
+        if($abrev > 0 && $abrev < 99){
+            return $abrev;
+        } else {
+
+            $estado = Estado::where('abrev', $abrev)->select('id')->get()->first();
+            return $estado->id;
+        }
+       
 	}
 
 

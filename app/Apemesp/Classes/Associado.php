@@ -36,15 +36,17 @@ class Associado
 
     if ($lReturn) {
 
-        
         if ($id == 0) { 
-            $numero = DadosPessoais::where('cpf', $cpf)->select('cpf')->get();
+            $numero = DadosPessoais::where('cpf', $cpf)->select('cpf')->get()->first();
         } else { 
-            $numero = DadosPessoais::where([['cpf', '=', $cpf],['id', '=', $id]])->select('cpf')->get();
+            $numero = DadosPessoais::where([['cpf', '=', $cpf],['id', '=', $id]])->select('cpf', 'id')->get()->first();
         }
         
-        if (!empty($numero[0])) {
-                if ($numero[0]->cpf == $cpf) {
+        if (!empty($numero)) {
+                if ($numero->cpf == $cpf) {
+                    if ($id == $numero->id) {
+                        return $lReturn;
+                    }
                     return !$lReturn;
                 } 
             } else {

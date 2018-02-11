@@ -13,7 +13,7 @@
                     </h2>
                     <hr>
                     <p>O e-mail de confirmação contém o código único responsável pela validação da sua inscrição. </p>
-                    <form role="form" action="/reenviarConfirmacao" method="POST">
+                    <form role="form" action="/reenviarconfirmacao" method="POST">
                     {{ csrf_field() }}
                 
                         <div class="row">

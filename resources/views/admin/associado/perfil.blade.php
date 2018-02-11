@@ -4,9 +4,6 @@
 
 @section('conteudo')
 
-<form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/dadospessoais')}}">
-
-	{{ csrf_field() }}
 		<fieldset>
 
 				
@@ -15,16 +12,16 @@
 				
 				<!-- Campo Nome -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="name">Nome Completo:</label>  
-					  <div class="col-md-4">
+					  <label class="col-md-12 control-label" for="name">Nome Completo:</label>  
+					  <div class="col-md-8">
 					  <input id="name" name="name" type="text" placeholder="{{ Auth::user()->name }}" class="form-control input-md" readonly="">
 					  </div>
 					</div>
 
 					<!-- E-mail -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="email">E-mail:</label>  
-					  <div class="col-md-4">
+					  <label class="col-md-12 control-label" for="email">E-mail:</label>  
+					  <div class="col-md-8">
 					  <input id="email" name="email" type="text" placeholder="{{ Auth::user()->email }}" class="form-control input-md" readonly="">
 					  <a class="btn btn-warning" href="" data-toggle="modal" data-target="#AlterarEmail"> Alterar e-mail</a>
 					  </div>
@@ -32,14 +29,35 @@
 
 					<!-- senha -->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="password">Senha:</label>  
-					  <div class="col-md-4">
+					  <label class="col-md-12 control-label" for="password">Senha:</label>  
+					  <div class="col-md-8">
 					  <input id="password" name="password" type="password" placeholder="***************" class="form-control input-md" readonly="">
 					  <a class="btn btn-warning" href="" data-toggle="modal" data-target="#AlterarSenha"> Alterar senha</a>
 					  </div>
 					</div>
 		</fieldset>
 
+
+		<fieldset style="margin: 20px;">
+
+				
+				<legend>Exibição de dados profissionais</legend>
+
+				
+				<!-- Campo Nome -->
+					<div class="form-group">
+					  <label class="col-md-12 control-label" for="name">Deseja permitir a exibição de seus dados profissionais?</label>  
+					  <div class="col-md-4">
+					  <select class="form-control form-control-lg">
+						<option>Sim</option>
+						<option>Não</option>
+					</select>
+						  <a class="btn btn-warning" href="" data-toggle="modal" data-target="#AlterarEmail"> Confirmar</a>
+					  </div>
+					</div>
+
+			
+		</fieldset>
 
 
 <div class="modal fade" id="AlterarEmail" role="dialog">
@@ -67,7 +85,7 @@
 												<div class="form-group">
 														<label class="col-md-4 control-label" for="email">Novo E-mail:</label>  
 														<div class="col-md-4">
-														<input id="email" name="email" type="text"  class="form-control input-md">
+														<input id="email" name="email" type="text"  class="form-control input-md" required="">
 											
 														</div>
 												</div>
@@ -108,7 +126,7 @@
 												<div class="form-group">
 														<label class="col-md-4 control-label" for="email">Digite a nova senha:</label>  
 														<div class="col-md-4">
-														<input id="email" name="email" type="password"  class="form-control input-md">
+														<input id="email" name="email" type="password"  class="form-control input-md" required="">
 											
 														</div>
 												</div>
@@ -116,7 +134,7 @@
 												<div class="form-group">
 														<label class="col-md-4 control-label" for="email">Repita a nova senha:</label>  
 														<div class="col-md-4">
-														<input id="email" name="email" type="password"  class="form-control input-md">
+														<input id="email" name="email" type="password"  class="form-control input-md" required="">
 											
 														</div>
 												</div>

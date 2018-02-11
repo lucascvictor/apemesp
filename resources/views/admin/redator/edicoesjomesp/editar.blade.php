@@ -27,7 +27,7 @@
            <div class="form-group">
            <label class="col-md-4 control-label" for="arquivoAnterior">Arquivo enviado anteriormente: </label>
            <div class="col-md-4">
-             <input readonly="true" class="input" type="text" name="arquivoAnterior" value="{{ $edicao->arquivo }}" />
+             <input class="input" type="text" name="arquivoAnterior" value="{{ $edicao->arquivo }}" readonly="">
              <br />
              <a href="/admin/edicoesjomesp/download/{{ $edicao->arquivo }}">Dowload do arquivo anterior</a>
              <br />

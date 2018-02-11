@@ -30,6 +30,10 @@ class ConquistaController extends Controller
 
         View::composers([
             'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
+		]);
+		
+		View::composers([
+            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
         ]);
 
     }

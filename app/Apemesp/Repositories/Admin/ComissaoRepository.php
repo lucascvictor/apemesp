@@ -41,12 +41,22 @@ class ComissaoRepository
 
 	public function listToConfig()
 	{
-		return Comissao::select('*')->paginate('6');
+		return Comissao::select('*')->orderby('id', 'desc')->paginate('6');
 	}
 
 	public function list()
 	{
 		return Comissao::select('*')->get();
+	}
+
+	public function getComissao($id)
+	{
+		return Comissao::where('id', $id)->get()->first();
+	}
+
+	public function updateComissao($id, $request)
+	{
+		Comissao::where('id', $id)->update(['comissao' => $request->comissao,'atribuicoes' => $request->atribuicoes]);
 	}
 
 

@@ -129,6 +129,7 @@ class EdicoesJomespController extends Controller
 
     } else {
       $arquivoAnterior = public_path(). "/files/edicoesJomesp" . "/" . $request->arquivoAnterior;
+
       array_map( "unlink", glob( $arquivoAnterior ) );
 
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/edicoesJomesp';

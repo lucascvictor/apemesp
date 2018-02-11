@@ -71,4 +71,15 @@ class AdminRepository
 	}
 
 
+	public function updateEmail()
+	{
+
+	}
+
+	public function updatePassword()
+	{
+		
+	}
+
+
 }

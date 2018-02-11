@@ -86,9 +86,14 @@ class UserRepository
                 return AditionalUserData::where('id_user', $id)->get()->first();
         }
 
+        public function findAditionalUserByEmail($email)
+        {
+                return User::where('email', '=', $email)->select('id', 'name', 'email')->get()->first();
+        }
+
         public function updateAditionalUserData($id)
         {
-                AditionalUserData::where('id', $id)->update(['confirm_mail' => 1,'updated_at' => $this->getData()]);
+                AditionalUserData::where('id', $id)->update(['confirm_mail' => 1]);
         }
 
         public function updateCodeById($id, $code)

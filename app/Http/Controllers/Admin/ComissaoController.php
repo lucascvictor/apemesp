@@ -32,6 +32,10 @@ class ComissaoController extends Controller
             'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
 
+        View::composers([
+            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
+        ]);
+
     }
 
 
@@ -73,16 +77,12 @@ class ComissaoController extends Controller
 
          $this->validate($request, array(
                 'comissao' => 'required|max:255',
-                'email' => 'required|max:255',
+                'atribuicoes' => 'required|max:2000',
                 ));
-
         $comissaoRepository = New ComissaoRepository;
-        $comissaoRepository->updateComissao($request, $id);
-        $comissoes = $comissaoRepository->getComissoes();
-        $comissoes->setPath('comissoes');
-        Session::flash('sucesso', 'O comissao foi atualizado');
-         return view('admin.admin.configs.comissoes.showcomissoes')
-                ->with('comissoes', $comissoes);
+        $comissaoRepository->updateComissao($id, $request);
+        Session::flash('sucesso', 'A comissao foi atualizado');
+         return redirect()->route('list.comissoes');
     }
 
      public function storeComissao(Request $request){

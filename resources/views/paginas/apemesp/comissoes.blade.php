@@ -26,12 +26,12 @@
                     </h2>
                     </a>
                     <hr>
-                    <centerr style="width: 50%;">
-                    <p>{!! $comissao->atribuicoes !!}</p>
-                    </center>
+
+                    {!! $comissao->atribuicoes !!}
+                
               </div>
               <?php $i++; ?>
-              @endforeach
+          @endforeach
 
 					
 

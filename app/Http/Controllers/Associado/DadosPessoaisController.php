@@ -162,16 +162,15 @@ class DadosPessoaisController extends Controller{
             return redirect()->back();
         } else {
 
-
             $dadosPessoais = new DadosPessoaisRepository;
             $dadosPessoais->updateDadosPessoais($request, $id);
 
             Session::flash('sucesso', 'Seus daos pessoais foram atualizado com sucesso');
             //flash para esta request e put para salvar na sessao
             if (Auth::user()->id_perfil == 1) {
-                return redirect()->route('admin.associados');
-            } else {
                 return redirect()->route('admin');
+            } else {
+                return redirect()->route('dadospessoais');
             }
         }
     }

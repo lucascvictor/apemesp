@@ -16,12 +16,12 @@ class CreateMensagensTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('email');
+            $table->string('email_to');
             $table->string('telefone');
             $table->text('mensagem');
             $table->integer('id_assunto')->unsigned();
             $table->timestamps();
             $table->integer('D_E_L_E_T_E_D')->defatul(0);
-
         });
     }
 

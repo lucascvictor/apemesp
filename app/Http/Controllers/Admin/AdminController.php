@@ -28,6 +28,10 @@ class AdminController extends Controller
         View::composers([
             'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
         ]);
+
+        View::composers([
+            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
+        ]);
     }
 
     public function perfil()
@@ -95,16 +99,12 @@ class AdminController extends Controller
                 $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
                 $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
                 unset($adminRepository);
-                return view('admin.associado.index')->with('mensagem', $mensagem);
+                return view('admin.associado.index');
             } else {
                 return view('admin.inadimplente');
             }
         }
     }
-
-
-
-
 
     public function getPaginas()
     {
@@ -149,5 +149,11 @@ class AdminController extends Controller
         $nomeArquivo ='estatuto.'. $extensao;
         $request->file('estatuto')->move($pastaDestino, $nomeArquivo);
         return redirect()->back();
+    }
+
+
+    public function alterarEmail(Request $request)
+    {
+
     }
 }
