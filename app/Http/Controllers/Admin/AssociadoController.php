@@ -47,9 +47,9 @@ class AssociadoController extends Controller
         $associado = $associadoRepository->getAssociado($id);
         $nacionalidades = $associadoRepository->getNacionalidades();
         $estados = $associadoRepository->getEstados();
-        $cidades = $associadoRepository->getCidades();
+        $cidade = $associadoRepository->getCidades($associado->id_cidade);
         unset($associadoRepository);
-        return view("admin.admin.associados.editperfil")->with('associado', $associado)->with("nacionalidades", $nacionalidades)->with("estados", $estados)->with("cidades", $cidades);
+        return view("admin.admin.associados.editperfil")->with('associado', $associado)->with("nacionalidades", $nacionalidades)->with("estados", $estados)->with("cidade", $cidade);
     }
 
     public function getPerfil($id)

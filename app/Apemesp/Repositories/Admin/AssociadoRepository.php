@@ -54,9 +54,13 @@ class AssociadoRepository
 		return Estado::all();
 	}
 
-	public function getCidades()
+	public function getCidades($id = "")
 	{
-		return Cidade::all();
+		if(empty($id)) {
+			return Cidade::all();
+		} else {
+			return Cidade::where('id', $id)->select('id', 'nome')->get()->first();
+		}
 	}
 
 	public function search($request)
