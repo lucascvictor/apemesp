@@ -98,6 +98,14 @@
            </div>
          </div>
 
+          <!-- Campo E-mail -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="email">E-mail para contato neste local.</label>
+            <div class="col-md-4">
+              <input id="email" name="email" type="email" placeholder="endereco@provedor.com" class="form-control input-md" required="" value="{{ $dados[0]->email }}">
+            </div>
+          </div>
+
          <!-- Campo Telefone -->
          <div class="form-group">
            <label class="col-md-4 control-label" for="telefone">Telefone para atendimento</label>

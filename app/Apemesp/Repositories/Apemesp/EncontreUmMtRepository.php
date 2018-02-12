@@ -163,7 +163,7 @@ class EncontreUmMtRepository
 		->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
 		->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
 		->orderBy('dados_pessoais.name')
-		->get();
+		->paginate(30);
 	}
 
 
