@@ -48,11 +48,11 @@ class AuthController extends Controller
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
          View::composers([
-            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'] 
-        ]);
-         View::composers([
+            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'],
+            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens'],
             'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'] 
         ]);
+   
     }
 
 

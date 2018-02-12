@@ -27,12 +27,12 @@ class EspecialidadeController extends Controller
     }
   
   public function storeEspecialidade(Request $request){
-
+    
     if ($request->especialidade == null) {
       Session::flash("cuidado", "Nenhuma informação inserida");
       return redirect()->back();
     }
-
+     
      $especialidadeRepository = new EspecialidadeRepository;
      $especialidadeRepository->setEspecialidade($request->especialidade);
      unset($especialidadeRepository);

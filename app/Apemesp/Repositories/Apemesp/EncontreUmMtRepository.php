@@ -156,6 +156,16 @@ class EncontreUmMtRepository
 						->get();
 	}
 
+	public function getAll()
+	{
+		return DB::table('dados_profissionais')
+		->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
+		->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
+		->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
+		->orderBy('dados_pessoais.name')
+		->get();
+	}
+
 
 
 }

@@ -106,7 +106,7 @@
 
 									{{ csrf_field() }}
 									 <legend>Digite abaixo a sua especialidade</legend>
-									 <input class="col-md-10" name="especialidade" id="especialidade" type="text">
+									 <input class="col-md-10" name="especialidade" id="especialidade" type="text" required="">
 									 <br />
 									 </div>
 								 		<div class="modal-footer">
@@ -216,11 +216,19 @@
 								 					</div>
 								       	</div>
 
-								           <!-- Campo LinkedIn -->
+								          			<!-- Campo LinkedIn -->
 								 					<div class="form-group">
 								 					  <label class="col-md-4 control-label" for="linkedin"><span class="fa fa-linkedin"></span> / Site para contato</label>
 								 					  <div class="col-md-4">
 								 					  	<input id="linkedin" name="linkedin" type="text" placeholder="http://linkedin.com/in/seuperfil" class="form-control input-md" >
+								 					  </div>
+								 					</div>
+
+													 <!-- Campo E-mail -->
+								 					<div class="form-group">
+								 					  <label class="col-md-4 control-label" for="email">E-mail para contato neste local.</label>
+								 					  <div class="col-md-4">
+								 					  	<input id="email" name="email" type="email" placeholder="endereco@provedor.com" class="form-control input-md" required="">
 								 					  </div>
 								 					</div>
 

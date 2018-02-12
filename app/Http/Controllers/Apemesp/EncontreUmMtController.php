@@ -27,11 +27,12 @@ class EncontreUmMtController extends Controller{
      }
 
     public function getIndex(){
-    	$especialidades = new EspecialidadeRepository;
+    		$especialidades = new EspecialidadeRepository;
 			$escalas = new EscalaREpository;
 			$proximidades = new ProximidadeRepository;
 			$pesquisa = 0;
-			$mts = [];
+			$mtRepository = new EncontreUmMtRepository;
+			$mts = $mtRepository->getAll();
         return view('paginas.encontreummt')
 				->with('especialidades', $especialidades->getEspecialidades())
 				->with('proximidades', $proximidades->getProximidades())

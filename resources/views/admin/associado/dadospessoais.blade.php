@@ -16,8 +16,6 @@
 
   {{ csrf_field() }}
     <fieldset>
-
-
         <legend>Dados Pessoais</legend>
         <!-- Aviso sobre o tipo de arquivo -->
           <div class="form-group">
@@ -49,7 +47,7 @@
                 <label class="col-md-4 control-label" for="nascimento">Data de Nascimento:</label>
                 <div class="col-md-4">
                 <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
-                    <input name="nascimento" id="nascimento" class="form-control" type="text" value="" readonly="">
+                    <input name="nascimento" id="nascimento" class="form-control" type="text" value="" readonly="" required="">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -61,7 +59,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="nacionalidade">Nacionalidade</label>
             <div class="col-md-4">
-              <select id="nacionalidade" name="nacionalidade" class="form-control">
+              <select id="nacionalidade" name="nacionalidade" class="form-control" required="">
               @foreach($nacionalidades as $nacionalidade)
                 <option value="{{ $nacionalidade->id }}">{{ $nacionalidade->nacionalidade }}</option>
                @endforeach
@@ -98,8 +96,6 @@
 
             </div>
           </div>
-
-
 
         <!-- CEP -->
           <div class="form-group">

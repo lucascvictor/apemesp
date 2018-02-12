@@ -15,6 +15,7 @@ class CreateDadosProfissionaisTable extends Migration
         Schema::create('dados_profissionais', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();
+            $table->string('email');
             $table->string('cep');
             $table->string('endereco');
             $table->string('complemento')->nullable();

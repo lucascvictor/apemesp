@@ -97,6 +97,7 @@ class DadosProfissionaisRepository
     $dadosProfissionais->id_especialidade = $request->especialidade;
     $dadosProfissionais->id_dias_atendimento = $request->dias_atendimento;
     $dadosProfissionais->linkedin = $request->linkedin;
+    $dadosProfissionais->email = $request->email;
     $dadosProfissionais->telefone = $request->telefone;
     $dadosProfissionais->save();
 
@@ -139,9 +140,9 @@ class DadosProfissionaisRepository
             'id_especialidade' => $request->especialidade,
             'id_dias_atendimento' => $request->dias_atendimento,
             'linkedin' => $request->linkedin,
+            'email' => $request->email,
             'telefone' => $request->telefone
-
-                ]);
+              ]);
 
   }
 

@@ -81,6 +81,7 @@
                                         </td>
                                         <td><a href="mailto:{{ $usuario->email }}" class="btn btn-primary">Enviar e-mail</a></td>
                                         <td><a href="/admin/usuarios/mensagem/{{ $usuario->id }}" class="btn btn-success">Enviar mensagem interna</a></td>
+                                         <td><a href="/admin/usuarios/desativar/{{ $usuario->id }}" class="btn btn-danger">Desativar</a></td>
                 </tr>
 
 								@endforeach
