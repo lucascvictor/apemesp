@@ -81,7 +81,11 @@
                                         </td>
                                         <td><a href="mailto:{{ $usuario->email }}" class="btn btn-primary">Enviar e-mail</a></td>
                                         <td><a href="/admin/usuarios/mensagem/{{ $usuario->id }}" class="btn btn-success">Enviar mensagem interna</a></td>
-                                         <td><a href="/admin/usuarios/desativar/{{ $usuario->id }}" class="btn btn-danger">Desativar</a></td>
+                                        @if($usuario->id_status < 4)
+                                            <td><a href="/admin/usuarios/desativar/{{ $usuario->id }}" class="btn btn-danger">Desativar</a></td>
+                                        @else
+                                            <td><a href="/admin/usuarios/reativar/{{ $usuario->id }}" class="btn btn-success">Reativar</a></td>
+                                        @endif
                 </tr>
 
 								@endforeach
