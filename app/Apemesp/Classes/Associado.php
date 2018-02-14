@@ -34,21 +34,16 @@ class Associado
             }
         }
 
-    if ($lReturn) {
 
-        if ($id == 0) { 
-            $numero = DadosPessoais::where('cpf', $cpf)->select('cpf')->get()->first();
-        } else { 
-            $numero = DadosPessoais::where([['cpf', '=', $cpf],['id', '=', $id]])->select('cpf', 'id')->get()->first();
-        }
+    if ($lReturn) {
         
+        $numero = DadosPessoais::where('cpf', $cpf)->select('cpf')->get()->first();
+      
         if (!empty($numero)) {
-                if ($numero->cpf == $cpf) {
-                    if ($id == $numero->id) {
-                        return $lReturn;
-                    }
-                    return !$lReturn;
-                } 
+                if ($id == $numero->id) {
+                    return $lReturn;
+                }
+                return !$lReturn;
             } else {
                 return $lReturn;
             }
