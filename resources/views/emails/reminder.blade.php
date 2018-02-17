@@ -12,11 +12,10 @@
         
 
         <p> Ao clicar neste link, o destinatário deste e-mail autoriza expressamente </p>
-        <p><b> a Associação Paulista de Estudantes e Musicoterapeutas do Estado de São Paulo </b></p>
-        <p> a inclusão dos dados cadastrais em meios de armazenamento lógicos e físicos da entidade, </p>
-        <p> para utilização em todo o território nacional e no exterior. </p>
-        <p> Estes dados podem ser utilizados para divulgação e análise estatistica, </p>
-        <p> avaliação de possíveis empregadores e compartilhamento em redes sociais.</p>
+        <p>Autorizo a ASSOCIAÇÃO DE PROFISSIONAIS E ESTUDANTES DE MUSICOTERAPIA DO ESTADO DE SÃO PAULO </p>
+        <p>a inclusão dos meus dados pessoais, preenchidos no formulário de associação encaminhado pelo site, </p>
+        <p> no banco de dados da entidade, para utilização em todo território nacional e no exterior, </p>
+        <p>para divulgação no site desta entidade e outras atividades e mídias por ela desenvolvidas..</p>
 
         <p>
             <img src="http://apemesp.com/images/posts/imagens/previas/apemesp.jpg" width="200px" height="100px"></img>
