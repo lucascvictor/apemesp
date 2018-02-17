@@ -6,7 +6,7 @@
     <!-- Custom CSS -->
     {!! Html::style('css/sb-admin.css') !!}
 
-       <!-- Custom CSS -->
+    <!-- Custom CSS -->
     {!! Html::style('css/dataTables.bootstrap4.css.css') !!}
 
 
@@ -16,4 +16,6 @@
 
     <!-- Custom Fonts -->
     {!! Html::style('font-awesome/css/font-awesome.min.css') !!}
+
+
    
