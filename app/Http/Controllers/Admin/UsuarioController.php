@@ -37,7 +37,7 @@ class UsuarioController extends Controller
         $usuarios = $usuarioRepository->getUsuarioIndex();
         $usuarios->setPath('usuarios');
         unset($adminRepository);
-        return view('admin.admin.usuarios')->with('usuarios', $usuarios);
+        return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
     }
 
     public function search(Request $request)
@@ -46,7 +46,7 @@ class UsuarioController extends Controller
         $usuarios = $usuarioRepository->search($request);
         $path = "search?q=" . $request->q;
         $usuarios->setPath($path);
-        return view('admin.admin.usuarios')->with('usuarios', $usuarios);
+        return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
     }
 
     public function resetPassword($id)
@@ -57,9 +57,19 @@ class UsuarioController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function createUser()
+    public function new()
     {
-        
+        return view('admin.admin.usuarios.new');
+    }
+
+    public function newAdmin()
+    {
+        return view('admin.admin.usuarios.new_admin');
+    }
+
+    public function newComum()
+    {
+        return view('admin.admin.usuarios.new_comum');
     }
 
 }

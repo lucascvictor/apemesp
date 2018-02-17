@@ -7,7 +7,6 @@ composer.lock
 /public/files/41633038807
 /public/files/78777357078
 /public/files/96807429118
-composer.lock
 .env
 .env-dev
 .env-prod

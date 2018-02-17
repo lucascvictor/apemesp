@@ -105,7 +105,7 @@
 
     </div>
     <div class="col-md-2">
-        <a class="btn btn-success">Criar novo usuário</a>
+        <a class="btn btn-success" href="{{ url('/admin/usuarios/new') }}">Criar novo usuário</a>
     </div>
   </div>
 

@@ -19,7 +19,7 @@
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{!! $errors->first('email') !!}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -46,7 +46,7 @@
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        <strong>{!! $errors->first('password_confirmation') !!}</strong>
                                     </span>
                                 @endif
                             </div>

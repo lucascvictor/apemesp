@@ -129,7 +129,7 @@
             labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
            datasets: [{
                 type: 'bar',
-                label: 'Novos Associados',
+                label: 'Associados ativos',
                 backgroundColor: "#4BC0C0",
                 data: [
                 "40",

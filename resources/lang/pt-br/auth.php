@@ -13,8 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Usuário ou senha incorreta. Esqueceu a senha?
-                <a href="/redefinir"> Clique aqui para redefinira a sua senha</a>',
-    'throttle' => 'Muitas tentativas de login. POr favor tente novamente em :segundos segundos.',
+    'failed' => 'Usuário ou senha incorreta.',
+    'throttle' => 'Muitas tentativas de login. Por favor tente novamente em :segundos segundos.',
 
 ];
