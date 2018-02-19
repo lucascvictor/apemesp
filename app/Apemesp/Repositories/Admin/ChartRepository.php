@@ -5,44 +5,27 @@ namespace Apemesp\Apemesp\Repositories\Admin;
 
 use Apemesp\Http\Requests;
 
-use Apemesp\Apemesp\Models\User;
+use Apemesp\Apemesp\Models\AditionalUserData;
 
 use DB;
 
-class AssuntoRepository
+class ChartRepository
 {
 
-	public function getAssuntos()
+	public function getMeses()
 	{
-		return DB::table('assuntos')->select('*')->orderBy('id', 'desc')->paginate(4);
+		return User::where('created_at', '>', '(NOW() - INTERVAL 30 DAY)')->get();
 	}
 
-	public function getAssunto($id)
+	public function getAnos()
 	{
 		return DB::table('assuntos')->select('*')->where('id', '=',$id)->get();
 	}
 
-
-	public function updateAssunto($request, $id)
+	public function getIntervalo($intervalo)
 	{
-		Assunto::where('id', $id)
-            ->update([
-                'assunto' => $request->assunto,
-                'email' => $request->email,
-                ]);
+		return User::where('created_at', '>', '(NOW() - INTERVAL'. $intervalo .'DAY)')->count()->get();
 	}
 
-	public function deleteAssunto($id)
-	{
-		Assunto::where('id', $id)->delete();
-	}
-
-	public function setAssunto($assunto, $email)
-	{
-		$table = new Assunto;
-        $table->assunto = $assunto;
-        $table->email = $email;
-        $table->save();
-	}
 
 }

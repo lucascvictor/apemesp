@@ -6,16 +6,16 @@
 <div class="col-md-8 col-md-offset-2" style="margin-top: 100px;">
         <div class="panel panel-default">
                 <div class="panel-heading"> <h3> Já é associado e possui um número de registro? </h3>
-        <h4> Insira o seu CPF abaixo e verifique seus dados </h4></div>
+        <h4> Insira o número abaixo e verifique seus dados </h4></div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('/verificar') }}">
+                    <form class="form-horizontal" role="form" method="GET" action="{{ url('/verificar') }}">
                         {{ csrf_field() }}
 
                         
-                            <label for="cpf" class="col-md-4 control-label">CPF: </label>
+                            <label for="registro" class="col-md-4 control-label">CPF: </label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control" name="cpf">
+                                <input id="cpf" type="text" class="form-control" name="cpf" required="">
 
                             </div>
                        <br><br>

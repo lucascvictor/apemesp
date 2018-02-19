@@ -27,7 +27,7 @@ class UserRepository
 
 	public function setData()
 	{
-		$this->data = date("d-m-Y H:i:s");
+		$this->data = date("Y-m-d H:i:s");
 	}
 
 	public function create($request)
@@ -61,6 +61,8 @@ class UserRepository
                         $aud->id_user = $id_user;
                         $aud->confirm_mail = 2;
                         $aud->code = $code;
+                        $aud->created_at = $this->getData();
+                        $aud->updated_at = $this->getData();
                         $aud->save();
                 } else {
                         $this->updateCodeById($id_user, $code);

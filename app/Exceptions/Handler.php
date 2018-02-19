@@ -47,14 +47,15 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
 
-         if ($e instanceof CustomException) {
+    if ($e instanceof CustomException) {
         return response()->view('errors.400', [], 400);
     }
 
-        if ($e instanceof NotFoundHttpException){
+    if ($e instanceof NotFoundHttpException){
         return response()->view('errors.404', [], 404);
     }
-        if ($e instanceof TokenMismatchException){
+    
+    if ($e instanceof TokenMismatchException){
             // Redirecionamento para casos de timeout
             return redirect()->route('apemesp.index');
     }

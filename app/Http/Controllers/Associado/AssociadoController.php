@@ -61,11 +61,13 @@ class AssociadoController extends Controller
 
     public function verificarCpf(Request $request)
     {
-        $result = 0;
-        dd($result);
-        $associado = new Associado;
-        $result = $associado->verificaCPF($request->cpf);
-        
+        $cpf  = $request->cpf;
+        dd($cpf);
+    }
+
+    public function jaRegistrado()
+    {
+        return view('auth.verifyRegister');
     }
 
 

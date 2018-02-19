@@ -59,7 +59,7 @@ class DadosPessoaisRepository
 	{
 
 		return DadosPessoais::where('id_user', $user_id)->get();
-	}
+    }
 
 	public function storeDadosPessoais($request, $user_id, $nomeArquivo)
 	{

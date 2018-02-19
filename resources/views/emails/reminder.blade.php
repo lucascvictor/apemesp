@@ -9,8 +9,9 @@
         <p>Confirmação de cadastro.</p>
         <p>Por favor clique no link abaixo para confirmar a sua inscrição.</p>
         <a href="http://apemesp.com/confirm/{{ $confirmCode }}"> Confirmação de cadastro APEMESP</a>
-        
-        <p> Ao clicar neste link, o destinatário deste e-mail autoriza expressamente </p>
+        <br>
+        <br>
+        <br>
         <p>Autorizo a ASSOCIAÇÃO DE PROFISSIONAIS E ESTUDANTES DE MUSICOTERAPIA DO ESTADO DE SÃO PAULO </p>
         <p>a inclusão dos meus dados pessoais, preenchidos no formulário de associação encaminhado pelo site, </p>
         <p> no banco de dados da entidade, para utilização em todo território nacional e no exterior, </p>

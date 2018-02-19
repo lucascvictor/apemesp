@@ -34,11 +34,11 @@ class PropagandaRepository
 
 	public function store($request)
 	{
-				$propaganda = new Propaganda;
+		$propaganda = new Propaganda;
         $propaganda->titulo = $request->titulo;
         $propaganda->link = $request->link;
         $propaganda->created_at = $this->getData();
-				$propaganda->updated_at = $this->getData();
+		$propaganda->updated_at = $this->getData();
         $propaganda->save();
         return $propaganda->id;
 	}

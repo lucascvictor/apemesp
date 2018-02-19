@@ -1,20 +1,17 @@
 <?php
 
-
 Route::get('/', 'Apemesp\PagesController@getIndex')->name('apemesp.index');
 Route::post('/send', 'Emails\EmailController@send')->name('jomesp.email.send');
 Route::get('/contato/localizacao', 'Apemesp\ContatoController@getLocalizacao')->name('jomesp.localizacao');
 Route::get('/contato/mensagens', 'Apemesp\ContatoController@getMensagens')->name('contato.mensagens');
-Route::get('/sobre', 'Apemesp\PagesController@getSobre')->name('apemesp.sobre');
 Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
 Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
-Route::post('/verificar', 'Associado\AssociadoController@verificarCpf')->name('apemesp.verificar');
 Route::get('/confirm/{code}', 'Auth\AuthController@confirm')->name('apemesp.confirm');
 Route::get('/reenviar/', 'Auth\AuthController@reenviar')->name('apemesp.reenviar');
 Route::post('/reenviarconfirmacao', 'Auth\AuthController@reenviarconfirmacao');
-Route::get('/redefinir/', 'Auth\AuthController@redefinir')->name('apemesp.redefinir');
+Route::get('/redefinir', 'Auth\AuthController@redefinir')->name('apemesp.redefinir');
 Route::get('/reset/{token}', 'Auth\AuthController@reset')->name('apemesp.reset');
-
+Route::get('/verificar/', 'Apemesp\PagesController@verificarCpf');
 
 Route::group(['prefix' => 'apemesp'], function () {
     Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');

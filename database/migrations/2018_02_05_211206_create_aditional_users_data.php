@@ -18,6 +18,7 @@ class CreateAditionalUsersData extends Migration
             $table->string('confirm_mail'); //1-sim; 2-não
             $table->string('code');
             $table->string('resetcode');
+            $table->timestamps();
         });
     }
 

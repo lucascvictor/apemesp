@@ -8,7 +8,7 @@ use Apemesp\Http\Requests;
 
 
 
-class AssuntoController extends Controller
+class ChartController extends Controller
 {
 
 
