@@ -40,14 +40,14 @@ class Associado
     if ($lReturn) {
         
         if ($id){
-            $numero = DadosPessoais::where('id','=', $id, 'and','cpf','=', $cpf)->select('id', 'cpf')->get()->first();
+            $numero = DadosPessoais::where('id','=', $id, 'and','cpf','=', $cpf)->select('id', 'cpf')->get();
         } else { 
-            $numero = DadosPessoais::where('cpf', $cpf)->select('cpf')->get()->first();
+            $numero = DadosPessoais::where('cpf','=', $cpf)->select('cpf')->get();
         }
-       
-        if (empty($numero)) {
-                if (isset($numero->id))
-                if ($id == $numero->id) {
+
+        if (empty($numero[0])) {
+                if (isset($numero[0]->id))
+                if ($id == $numero[0]->id) {
                     return $lReturn;
                 } elseif (Auth::user()->id_perfil == 1) {
                     return $lReturn;
@@ -55,14 +55,14 @@ class Associado
 
                 return !$lReturn;
             } else {
-                if ($id == $numero->id && $cpf == $numero->cpf) {
+                if ($id == $numero[0]->id && $cpf == $numero[0]->cpf) {
                     return $lReturn;
                 } elseif (Auth::user()->id_perfil == 1) {
                     return $lReturn;
                 } elseif ($registro) {
                     return $lReturn;
                 }
-
+                
                 return !$lReturn;
             }
         }
