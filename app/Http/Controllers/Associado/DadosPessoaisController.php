@@ -78,7 +78,7 @@ class DadosPessoaisController extends Controller{
                 ));
 
         $associado = new Associado;
-        $verificacao = $associado->verificaCPF($request->cpf);
+        $verificacao = $associado->verificaCPF($request->cpf, Auth::user()->id);
         unset($associado);
 
         if ($verificacao == false) {
