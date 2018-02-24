@@ -1,5 +1,6 @@
 
-
+    <link rel="icon" type="imagem/jpg" href="{{ url('/images/posts/imagens/previas/apemesp.jpg') }}" />
+    
     <!-- Bootstrap Core CSS -->
     {!! Html::style('css/bootstrap.min.css') !!}
 

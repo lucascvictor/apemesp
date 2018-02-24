@@ -186,6 +186,5 @@ class AuthController extends Controller
     {
         return view('auth.passwords.email');
     }
-
   
 }
