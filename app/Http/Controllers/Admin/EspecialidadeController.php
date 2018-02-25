@@ -36,6 +36,7 @@ class EspecialidadeController extends Controller
      $especialidadeRepository = new EspecialidadeRepository;
      $especialidadeRepository->setEspecialidade($request->especialidade);
      unset($especialidadeRepository);
+     Session::flash("sucesso", "A especialidade foi salva com sucesso");
      return redirect()->back();
   }
 

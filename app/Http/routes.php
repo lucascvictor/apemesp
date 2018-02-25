@@ -251,10 +251,9 @@ Route::group(['prefix' => 'associado'], function () {
       Route::post('{id}', 'Associado\DadosProfissionaisController@updateDadosProfissionais');
       Route::get('/edit/{id}', 'Associado\DadosProfissionaisController@editDadosProfissionais');
       Route::post('', 'Associado\DadosProfissionaisController@storeDadosProfissionais');
-      Route::post('/especialidade', 'Admin\EspecialidadeController@storeEspecialidade');
-
     });
 
+    Route::post('especpro', 'Admin\EspecialidadeController@storeEspecialidade');
 
     //Documentação
     Route::group(['prefix' => 'documentacao'], function () {

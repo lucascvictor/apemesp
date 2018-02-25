@@ -21,7 +21,7 @@ class EspecialidadeRepository
 
 	public function setEspecialidade($especialidade)
 	{
-		$table = new Especialidade;
+				$table = new Especialidade;
         $table->nome = $especialidade;
         $table->save();
 	}

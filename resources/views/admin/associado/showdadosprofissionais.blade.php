@@ -98,7 +98,7 @@
          <div class="form-group">
            <label class="col-md-4 control-label" for="linkedin"><span class="fa fa-linkedin"></span></label>
            <div class="col-md-4">
-             <input id="linkedin" name="linkedin" type="text" placeholder="http://linkedin.com/in/seuperfil" class="form-control input-md" value="{{ $dados[0]->linkedin }}">
+             <input readonly="" id="linkedin" name="linkedin" type="text" placeholder="http://linkedin.com/in/seuperfil" class="form-control input-md" value="{{ $dados[0]->linkedin }}">
            </div>
          </div>
 
@@ -106,7 +106,7 @@
          <div class="form-group">
            <label class="col-md-4 control-label" for="telefone">Telefone para atendimento</label>
            <div class="col-md-4">
-             <input onkeyup="somenteNumeros(this)" id="telefone" name="telefone" type="text" placeholder="Somente numeros" class="form-control input-md" value="{{ $dados[0]->telefone }}">
+             <input readonly="" onkeyup="somenteNumeros(this)" id="telefone" name="telefone" type="text" placeholder="Somente numeros" class="form-control input-md" value="{{ $dados[0]->telefone }}">
            </div>
          </div>
 

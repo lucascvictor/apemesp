@@ -92,7 +92,7 @@ class DadosProfissionaisController extends Controller{
       $dadosProfissionais = new DadosProfissionaisRepository;
       $id_cadastro = $this->getUserCadastro();
       $id_user = $this->getUserId();
-
+      
       $teste = $this->validate($request, array(
               'cep' => 'required|max:8',
               'endereco' => 'required',
