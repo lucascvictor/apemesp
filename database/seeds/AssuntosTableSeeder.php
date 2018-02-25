@@ -70,6 +70,11 @@ class AssuntosTableSeeder extends Seeder
                     'email'          => 'rep.estudantil@apemesp.com',
                 ],
 
+                9 => [
+                    'id'             => 10,
+                    'assunto'           => 'Jomesp',
+                    'email'          => 'jornalmesp@gmail.com',
+                ],
 
             ]);
     }

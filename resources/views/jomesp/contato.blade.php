@@ -41,7 +41,7 @@
                                 <textarea class="form-control" name="mensagem" rows="6" required=""></textarea>
                             </div>
                             <div class="form-group col-lg-12">
-                                <input type="hidden" name="assunto" value="jomesp">
+                                <input type="hidden" name="assunto" value="Jomesp">
                                 <input type="hidden" name="pagina" value="jomesp">
                                 <button type="submit" class="btn btn-default">Enviar</button>
                             </div>
