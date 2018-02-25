@@ -83,8 +83,10 @@
                   <td>
                      <?php if (file_exists($arquivocnh)) {
                         echo "SIM";
+						$documentacao[3] = 1;
                         } else {
 						echo "Não";
+						$documentacao[3] = 0;
 						}
                         ?>
                   </td>

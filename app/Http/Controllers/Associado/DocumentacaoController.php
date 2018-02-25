@@ -60,7 +60,7 @@ class DocumentacaoController extends Controller{
     public function storeRg(Request $request)
     {
       $teste = $this->validate($request, array(
-              'rg' => 'required|max:255',
+              'rg' => 'required|max:2550',
           ));
       //Carregando o rg
       $dadosAcademicos = new DadosAcademicosRepository;
@@ -75,7 +75,7 @@ class DocumentacaoController extends Controller{
     public function storeCpf(Request $request)
     {
       $teste = $this->validate($request, array(
-              'cpf' => 'required|max:255',
+              'cpf' => 'required|max:2550',
           ));
       $dadosAcademicos = new DadosAcademicosRepository;
       $arquivo = $request->file('rg');
@@ -88,7 +88,7 @@ class DocumentacaoController extends Controller{
     public function storeCnh(Request $request)
     {
       $teste = $this->validate($request, array(
-              'cnh' => 'required|max:255',
+              'cnh' => 'required|max:2550',
           ));
       $dadosAcademicos = new DadosAcademicosRepository;
       $arquivo = $request->file('rg');
@@ -102,7 +102,7 @@ class DocumentacaoController extends Controller{
     public function storeComprovante(Request $request)
     {
       $teste = $this->validate($request, array(
-              'cnh' => 'required|max:255',
+              'cnh' => 'required|max:2550',
           ));
       $dadosAcademicos = new DadosAcademicosRepository;
       $arquivo = $request->file('rg');
