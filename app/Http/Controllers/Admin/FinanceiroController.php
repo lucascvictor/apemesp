@@ -7,9 +7,7 @@ use Apemesp\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use Apemesp\Apemesp\Repositories\FinanceiroRepository;
-
-use Auth;
+use Apemesp\Apemesp\Repositories\Admin\FinanceiroRepository;
 
 use View;
 
@@ -40,7 +38,12 @@ class FinanceiroController extends Controller
 
     public function index()
     {
-    	return view('admin.admin.financeiro.financeiro');
+        $financeiroRespository = new FinanceiroRepository;
+        $associados = $financeiroRespository->getAssociados();
+        $associados->setPath('usuarios');
+        unset($financeiroRespository);
+     
+    	return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
     }
 
     public function busca(Request $request)
@@ -49,6 +52,11 @@ class FinanceiroController extends Controller
         $posts = $financeiroRepository->busca($request->associado);
         unset($financeiroRepository);
         return view('blog.posts', compact('posts'));
+    }
+
+    public function getAssociado($id)
+    {
+        return $id;
     }
 }
 

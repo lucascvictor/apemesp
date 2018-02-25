@@ -16,13 +16,18 @@
 
                 
                 <legend>Pesquisar Associados</legend>
-        <div class="row">
-              <div class="col-md-4" style="float: right;">
-               <div class="form-group input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+                <div class="row">
+                    <div class="col-md-4" style="float: right;">
+                    
+                {{ Form::open(['action' => ['Admin\AssociadoController@search'], 'method' => 'GET']) }}
+                <div class="form-group input-group">
+                {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Procurar Associados', 'class' => 'form-control'])}}
+
+                <span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></span>
                 </div>
-            </div>
+            {{ Form::close() }}
+            </div>  
+
           </div>
         </fieldset>
 </form>
@@ -30,23 +35,20 @@
                             <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Assunto</th>
-                                        <th>E-mail Associado </th>
+                                        <th>Nome</th>
+                                        <th>CPF</th>
                                         <th colspan="2"> </th>
                                         
                                     </tr>
                                 </thead>
                                 <tbody>
-                               
-								<tr>
-                                        <td>Nome do associado</td>
-                                        <td>Situação</td>
-                                        <td><a class="btn btn-default">Editar</a></td>
-                                        <td><a class="btn btn-danger">Deletar</a></td>
+                                @foreach($associados as $associado)
+								    <tr>
+                                        <td>{{$associado->name}}</td>
+                                        <td>{{$associado->cpf}}</td>
+                                        <td><a class="btn btn-success" href="{{ url('/admin/financeiro/associado/') }}/{{$associado->id_user}}">Gerenciar</a></td>
                                     </tr>
-
-							
-                                    
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

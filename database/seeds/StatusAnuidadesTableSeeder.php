@@ -49,7 +49,7 @@ class StatusAnuidadesTableSeeder extends Seeder
               ],
               7 => [
                   "id"            => 8,
-                  "descricao"          => "Negado por data limite, será necesário renegociar",
+                  "descricao"          => "Negado por data limite, será necessário renegociar",
               ],
 
               8 => [
