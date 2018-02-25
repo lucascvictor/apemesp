@@ -10,8 +10,8 @@
 
 		<div class="row">
                     <div class="col-lg-12">
-                        <h2>Situações financeiras do associado: {{ $associado[0]->name }}</h2>
-
+                        <h2>Situações financeiras do associado: @if(isset($associado[0]->name)) {{ $associado[0]->name }} @endif</h2>
+                        <a href="" class="btn btn-default" style="background-color: orange;color: white;">Adicionar lançamento financeiro</a>
                         <div class="table-responsive">
                             <table class="table table-hover table-striped">
                                 <thead>
