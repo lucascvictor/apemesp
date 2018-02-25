@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 use Apemesp\Apemesp\Repositories\Admin\FinanceiroRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
+
 use View;
 
 class FinanceiroController extends Controller
@@ -46,17 +48,22 @@ class FinanceiroController extends Controller
     	return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
     }
 
-    public function busca(Request $request)
+    public function search(Request $request)
     {
-        $financeiroRepository = new FinanceiroRepository;
-        $posts = $financeiroRepository->busca($request->associado);
-        unset($financeiroRepository);
-        return view('blog.posts', compact('posts'));
+        $associadoRepository = new AssociadoRepository;
+        $associados = $associadoRepository->search($request);
+        $path = "search?q=" . $request->q;
+        $associados->setPath($path);
+
+        unset($associadoRepository);
+        return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
     }
 
     public function getAssociado($id)
     {
-        return $id;
+        $financeiroRespository = new FinanceiroRepository;
+        $associado = $financeiroRespository->getAssociado($id);
+        return view('admin.admin.financeiro.associado')->with('associado',$associado);
     }
 }
 

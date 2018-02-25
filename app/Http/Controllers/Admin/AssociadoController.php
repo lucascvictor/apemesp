@@ -62,7 +62,7 @@ class AssociadoController extends Controller
         $path = "search?q=" . $request->q;
         $associados->setPath($path);
 
-        unset($postRepository);
+        unset($associadoRepository);
         return view('admin.admin.associados.associados')->with('associados', $associados);
     }
 

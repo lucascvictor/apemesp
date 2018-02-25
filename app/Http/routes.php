@@ -192,6 +192,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'financeiro'], function () {
       Route::get('', 'Admin\FinanceiroController@index');
       Route::get('associado/{id}', 'Admin\FinanceiroController@getAssociado');
+      Route::get('search', 'Admin\FinanceiroController@search');
     });
 
     Route::group(['prefix' => 'posts'], function () {

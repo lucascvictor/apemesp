@@ -5,7 +5,7 @@
 @section('conteudo')
 
 <div class="row">
-	<div class="col-md-10">
+	<div class="col-md-12">
 
 
 		<div class="row">
@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-4" style="float: right;">
                     
-                {{ Form::open(['action' => ['Admin\AssociadoController@search'], 'method' => 'GET']) }}
+                {{ Form::open(['action' => ['Admin\FinanceiroController@search'], 'method' => 'GET']) }}
                 <div class="form-group input-group">
                 {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Procurar Associados', 'class' => 'form-control'])}}
 
@@ -56,8 +56,7 @@
 		
 	</div>
 	<div class="row">
-    <p>  </p>
-	
+		<p> {{ $associados->render() }} </p>
 	</div>
 
 
