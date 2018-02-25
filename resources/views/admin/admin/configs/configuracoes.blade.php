@@ -32,6 +32,10 @@
 					<th><a href="{{ url('/admin/configs/proximidades') }}">Proximidades</a></th>
 					<td>Configure as proximidades geográficas exibidas em dados profissionais e na pesquisa dos musicoterapeutas</td>
 				</tr>
+				<tr>
+					<th><a href="{{ url('/admin/configs/especialidades') }}">Especiaidades profissionais</a></th>
+					<td>Administre todas as especialidades indicadas e cadastradas </td>
+				</tr>
 		   </tbody>
 		 </table>
 		</div>

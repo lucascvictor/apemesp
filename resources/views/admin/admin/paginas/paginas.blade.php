@@ -11,7 +11,7 @@
 
 
 		<div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <h2>Adicionar conteudo para páginas principais</h2>
 
                         <div class="table-responsive">
