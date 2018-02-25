@@ -16,40 +16,58 @@ class AssuntosTableSeeder extends Seeder
                 0 => [
                     'id'             => 1,
                     'assunto'           => 'Dúvidas',
-                    'email'          => 'contato.apemesp@gmail.com',
+                    'email'          => 'contato@apemesp.com',
                 ],
 
                 1 => [
                     'id'             => 2,
                     'assunto'           => 'Sugestões',
-                    'email'          => 'site.apemesp@gmail.com',
+                    'email'          => 'contato@apemesp.com',
 
                 ],
 
                 2 => [
                     'id'             => 3,
           	        'assunto'           => 'Reclamação',
-                    'email'          => 'reclamacoes@apemesp.com',
+                    'email'          => 'contato@apemesp.com',
 
                 ],
 
                 3 => [
                     'id'             => 4,
                      'assunto'           => 'Anuidade',
-                    'email'          => 'anuidade@apemesp.com',
+                    'email'          => 'financeiro@apemesp.com',
 
                 ],
 
                 4 => [
                     'id'             => 5,
                    'assunto'           => 'Eventos',
-                    'email'          => 'eventos@apemesp.com',
+                    'email'          => 'contato@apemesp.com',
                 ],
 
                 5 => [
                     'id'             => 6,
-                    'assunto'           => 'Jomesp',
-                    'email'          => 'site.apemesp@gmail.com',
+                    'assunto'           => 'Comissões',
+                    'email'          => 'comissoes@apemesp.com',
+                ],
+
+                6 => [
+                    'id'             => 7,
+                    'assunto'           => 'Documentação',
+                    'email'          => 'secretaria@apemesp.com',
+                ],
+
+                7 => [
+                    'id'             => 8,
+                    'assunto'           => 'Fale com o presidente',
+                    'email'          => 'falapresidente@apemesp.com',
+                ],
+
+                8 => [
+                    'id'             => 9,
+                    'assunto'           => 'Representante estudantil',
+                    'email'          => 'rep.estudantil@apemesp.com',
                 ],
 
 
