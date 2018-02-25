@@ -178,7 +178,7 @@ class ComissoesTableSeeder extends Seeder
                     atos normativos normativos etc) de ambas políticas políticas públicas públicas para
                     melhor desempenho do trabalho do Musicoterapeuta.
                     Auxilia Mts sobre procedimentos e espaços de atuação
-                    na saúde e assistência social. </p>',
+                    na saúde e assistência social.</p>',
 
                 ],
             ]);
