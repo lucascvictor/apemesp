@@ -28,14 +28,14 @@
 
         <!-- Botão de Arquivo -->
           <div class="form-group" id="mensagem">
-            <label class="col-md-4 control-label" for="filebutton">Foto do perfil: </label>
+            <label class="col-md-4 control-label" for="filebutton"><span style="color:red;">*</span>Foto do perfil: </label>
             <div class="col-md-4">
-              <input id="foto" name="foto" class="input-file" type="file">
+              <input id="foto" name="foto" class="input-file" type="file" required="">
             </div>
           </div>
         <!-- Campo Nome -->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="name">Nome Completo:</label>
+            <label class="col-md-4 control-label" for="name"><span style="color:red;">*</span>Nome Completo:</label>
             <div class="col-md-4">
             <input id="name" name="name" type="text" placeholder="Nome" class="form-control input-md" required="">
             </div>
@@ -44,7 +44,7 @@
         <!-- Campo Nascimento -->
           <div class="form-group">
 
-                <label class="col-md-4 control-label" for="nascimento">Data de Nascimento:</label>
+                <label class="col-md-4 control-label" for="nascimento"><span style="color:red;">*</span>Data de Nascimento:</label>
                 <div class="col-md-4">
                 <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
                     <input name="nascimento" id="nascimento" class="form-control" type="text" value="" readonly="" required="">
@@ -78,7 +78,7 @@
 
           <!-- CPF -->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="cpf">CPF:</label>
+            <label class="col-md-4 control-label" for="cpf"><span style="color:red;">*</span>CPF:</label>
             <div class="col-md-4">
             <input id="cpf" name="cpf" type="text" onkeyup="somenteNumeros(this);" maxlength="11" placeholder=" CPF (somente numeros) " class="form-control input-md" required="">
             </div>
@@ -99,7 +99,7 @@
 
         <!-- CEP -->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="cep">CEP:</label>
+            <label class="col-md-4 control-label" for="cep"><span style="color:red;">*</span>CEP:</label>
             <div class="col-md-4">
             <input id="cep" name="cep" type="text" placeholder="CEP" class="form-control input-md" required="">
             </div>
@@ -152,7 +152,7 @@
 
         <!-- Celular -->
           <div class="form-group">
-           <label class="col-md-4 control-label" for="selectbasic">Tel. Celular</label>
+           <label class="col-md-4 control-label" for="selectbasic"><span style="color:red;">*</span>Tel. Celular</label>
             <div class="col-md-4">
               <input id="tel_celular" name="tel_celular" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control" required="">
 
