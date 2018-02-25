@@ -78,7 +78,7 @@ class DadosPessoaisController extends Controller{
                 ));
 
         $associado = new Associado;
-        $verificacao = $associado->verificaCPF($request->cpf, Auth::user()->id);
+        $verificacao = $associado->verificaCPF($request->cpf);
         unset($associado);
 
         if ($verificacao == false) {
@@ -157,7 +157,7 @@ class DadosPessoaisController extends Controller{
         $verificacao = $associado->verificaCPF($request->cpf, $id);
         unset($associado);
 
-        if($verificacao == false){
+        if(!$verificacao){
             Session::flash('cuidado', 'O CPF é inválido ou já foi cadastrado por outro associado');
             //flash para esta request e put para salvar na sessao
             return redirect()->back();

@@ -52,7 +52,9 @@ class Associado
                 } elseif (Auth::user()->id_perfil == 1) {
                     return $lReturn;
                 }
-
+                if (!$id){
+                    return $lReturn;
+                }
                 return !$lReturn;
             } else {
                 if ($id == $numero[0]->id && $cpf == $numero[0]->cpf) {

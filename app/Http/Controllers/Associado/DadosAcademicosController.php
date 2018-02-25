@@ -194,7 +194,7 @@ class DadosAcademicosController extends Controller{
             Session::flash('sucesso', 'Seus dados acadêmicos foram atualizados com sucesso');
             //flash para esta request e put para salvar na sessao
 
-            return redirect()->back();
+            return redirect()->route('dadosacademicos');
       }
 
       public function deleteFormacao($id)

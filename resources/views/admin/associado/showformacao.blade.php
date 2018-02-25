@@ -106,7 +106,7 @@
 					<div class="form-group" id="mensagemtcc">
 					  <label class="col-md-4 control-label" for="filebutton">Cópia Salva do TCC/Monografia/Pesquisa: </label>
 					  <div class="col-md-4">
-					  		<a href="/associado/download/{{ $formacao->arquivotcc }}"> TCC </a>
+					  		<a href="/associado/download/@if(empty($formacao->arquivotcc))tcc.pdf @else{{ $formacao->arquivotcc }}@endif"> TCC </a>
 					  </div>
 
 					</div>
@@ -115,7 +115,7 @@
 					<div class="form-group" id="mensagemcertificado">
 					  <label class="col-md-4 control-label" for="filebutton">Certificado Salvo de conclusão: </label>
 					  <div class="col-md-4">
-					  		<a href="/associado/download/{{ $formacao->certificado }}"> Certificado </a>
+					  		<a href="/associado/download/@if(empty($formacao->certificado)) certificado.pdf @else{{ $formacao->certificado }} @endif"> Certificado </a>
 					  </div>
 					</div>
 
