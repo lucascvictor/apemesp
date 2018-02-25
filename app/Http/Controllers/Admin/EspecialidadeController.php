@@ -10,7 +10,7 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\EspecialidadeRepository;
 
-
+use View;
 
 class EspecialidadeController extends Controller
 {
@@ -37,6 +37,14 @@ class EspecialidadeController extends Controller
      $especialidadeRepository->setEspecialidade($request->especialidade);
      unset($especialidadeRepository);
      return redirect()->back();
- }
+  }
+
+  public function index()
+  {
+    $especialidadeRepository = new EspecialidadeRepository;
+    $especialidades = $especialidadeRepository->getEspecialidades();
+    $especialidades->setPath('especialidades');
+    return view('admin.admin.configs.especialidades.showespecialidades')->with('especialidades', $especialidades);
+  }
 
 }

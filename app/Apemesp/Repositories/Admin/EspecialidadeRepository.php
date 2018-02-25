@@ -28,7 +28,7 @@ class EspecialidadeRepository
 
   public function getEspecialidades()
   {
-    return Especialidade::all();
+    return Especialidade::select('*')->paginate(10);
   }
 
 }

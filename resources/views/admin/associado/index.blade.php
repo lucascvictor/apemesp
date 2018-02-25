@@ -33,21 +33,17 @@
 
 @section('conteudo')
 
-
-<div class="container">
-
-
-            <div class="row bs-wizard" style="margin-bottom: 15px;">
+            <div class="row bs-wizard col-md-12" style="margin-bottom: 15px;">
 
             <h3>Passos para obtenção do numero de registro:</h3>
-                <div class="col-xs-3 bs-wizard-step complete">
+                <div class="col-xs-3 col-md-4 bs-wizard-step complete">
                   <div class="text-center bs-wizard-stepnum">Passo 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Cadastro de usuário e senha.</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 1)
+                <div class="col-xs-3 col-md-4 bs-wizard-step @if(Auth::user()->id_cadastro > 1)
                                                     complete
                                                     @else
                                                     disabled
@@ -58,7 +54,7 @@
                   <div class="bs-wizard-info text-center">Cadastro dos dados pessoais</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 2)
+                <div class="col-xs-3 col-md-4 bs-wizard-step @if(Auth::user()->id_cadastro > 2)
                                                     complete
                                                     @else
                                                     disabled
@@ -68,8 +64,8 @@
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Cadastro dos dados acadêmicos</div>
                 </div>
-
-                <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 3)
+                <br><br><br><br><br><br><br>                
+                <div class="col-xs-3 col-md-4 bs-wizard-step @if(Auth::user()->id_cadastro > 3)
                                                     complete
                                                     @else
                                                     disabled
@@ -80,22 +76,22 @@
                   <div class="bs-wizard-info text-center">Cadastro dos dados profissionais</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 4)
+                <div class="col-xs-3 col-md-4 bs-wizard-step @if(Auth::user()->id_cadastro > 4)
                                                     complete
                                                     @else
                                                     disabled
-                                                    @endif" style="margin-top: 70px;"><!-- active -->
+                                                    @endif" ><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Passo 5</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center"> Confirmação da documentação necessária</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step @if(Auth::user()->id_cadastro > 6)
+                <div class="col-xs-3 col-md-4 bs-wizard-step @if(Auth::user()->id_cadastro > 6)
                                                     complete
                                                     @else
                                                     disabled
-                                                    @endif" style="margin-top: 70px;">
+                                                    @endif" >
                   <div class="text-center bs-wizard-stepnum">Passo 6</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>

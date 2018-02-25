@@ -124,13 +124,10 @@
 		</div>
 
 			</div>
+			<div class="row">
+				<p> {{ $edicoes->links() }} </p>
 
+			</div>
 		</div>
 	</div>
-
-
-
-
-
-
 @endsection

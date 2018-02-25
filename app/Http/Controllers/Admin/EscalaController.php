@@ -35,16 +35,13 @@ class EscalaController extends Controller
 
 
    public function index(){
-   			$escalaRepository = New EscalaRepository;
-
-				$escalas = $escalaRepository->getEscalas();
-				$escalas->setPath('escalas');
-
+        $escalaRepository = New EscalaRepository;
+        $escalas = $escalaRepository->getEscalas();
+        $escalas->setPath('escalas');
 
         unset($escalaRepository);
 
-        return view('admin.admin.configs.escalas.showescalas')
-				->with('escalas', $escalas);
+        return view('admin.admin.configs.escalas.showescalas')->with('escalas', $escalas);
 
     }
 
@@ -55,14 +52,14 @@ class EscalaController extends Controller
   }
 
   public function storeEscala(Request $request){
-    $this->validate($request, array(
-            'escala' => 'required|max:500',
-            ));
+        $this->validate($request, array(
+                'escala' => 'required|max:500',
+                ));
 
-    $escalaRepository = new EscalaRepository;
-    $escalaRepository->storeEscala($request->escala);
-    unset($escalaRepository);
-    return redirect()->back();
-}
+        $escalaRepository = new EscalaRepository;
+        $escalaRepository->storeEscala($request->escala);
+        unset($escalaRepository);
+        return redirect()->back();
+    }
 
 }

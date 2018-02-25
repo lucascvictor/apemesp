@@ -162,6 +162,7 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'configs'], function () {
+
       Route::group(['prefix' => 'assuntos'], function () {
         Route::get('/', 'Admin\AssuntoController@index')->name('show.assuntos');
         Route::get('/add', 'Admin\AssuntoController@addAssunto')->name('add.assuntos');
@@ -171,16 +172,20 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/delete/{id}', 'Admin\AssuntoController@destroyAssunto')->name('destroy.assunto');
       });
 
-
-
-
       Route::group(['prefix' => 'escalas'], function () {
         Route::get('/', 'Admin\EscalaController@index');
         Route::get('/addescala', 'Admin\EscalaController@addEscala')->name('add.escala');
         Route::post('/', 'Admin\EscalaController@storeEscala')->name('store.escala');
       });
+
       Route::group(['prefix' => 'proximidades'], function () {
         Route::get('/', 'Admin\ProximidadeController@index');
+        Route::get('/addproximidade', 'Admin\ProximidadeController@addProximidade')->name('add.proximidade');
+        Route::post('/', 'Admin\ProximidadeController@storeProximidade')->name('store.proximidade');
+      });
+
+      Route::group(['prefix' => 'especialidades'], function () {
+        Route::get('/', 'Admin\EspecialidadeController@index');
         Route::get('/addproximidade', 'Admin\ProximidadeController@addProximidade')->name('add.proximidade');
         Route::post('/', 'Admin\ProximidadeController@storeProximidade')->name('store.proximidade');
       });
