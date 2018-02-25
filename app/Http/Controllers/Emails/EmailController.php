@@ -33,7 +33,7 @@ class EmailController extends Controller
 		$pagina = $request->pagina;
 
 		$oEmail = Assunto::where('id', '=', $assunto)->orWhere('assunto', '=', $assunto)->select('*')->get()->first();
-
+		
 		$dados = array(
 			'titulo' => $oEmail->assunto,
 			'mensagem' => $this->getMensagem(), 
