@@ -29,12 +29,9 @@ class ConquistaController extends Controller
         $this->middleware('auth', ['except' => 'logout']);
 
         View::composers([
-            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav']
-		]);
-		
-		View::composers([
+            'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'],
             'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
-        ]);
+		]);
 
     }
 

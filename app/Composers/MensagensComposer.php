@@ -15,8 +15,8 @@ class MensagensComposer
     }
 
 
-    public function getMenus(){
-
+    public function getMenus()
+    {
         $mensagens = $this->vMensagens();
         $armensagens = (array)$mensagens;
         return ($armensagens);
