@@ -180,10 +180,7 @@ class ComissoesTableSeeder extends Seeder
                     Auxilia Mts sobre procedimentos e espaços de atuação
                     na saúde e assistência social. </p>',
 
-                ]
-
-
+                ],
             ]);
-    
     }
 }
