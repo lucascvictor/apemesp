@@ -17,7 +17,7 @@
         <div id="page-wrapper">
 
             <div class="container-fluid">
-                 @include('partials._mensagens')
+                 
                  @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
