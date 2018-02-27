@@ -389,7 +389,8 @@ Informações sobre data e local serão divulgados posteriormente.</p>
         'updated_at' => '2018-01-30 17:17:33',
 
     ],
-    ["id"        => 13,
+    [
+    "id"        => 13,
     "titulo"    => "CHAMADA DE TRABALHOS - FÓRUM PAULISTA 2018",
     "subtitulo"     => " ",
     "id_user"       => 304,
@@ -419,7 +420,10 @@ Informações sobre data e local serão divulgados posteriormente.</p>
 
 	<p>3) O pôster passará por avaliação e aprovação na Comissão Científica APEMESP com base nos critérios listados para o conteúdo, não sendo aceito caso o conteúdo esteja fora da temática do encontro e do formato padrão acima descrito.</p>
 
-    <p>Comissão Científica / APEMESP - 2018</p>'],
+    <p>Comissão Científica / APEMESP - 2018</p>',
+    'created_at' => '2018-02-20 17:17:33',
+    'updated_at' => '2018-02-20 17:17:33',
+],
 
         ]);
 
