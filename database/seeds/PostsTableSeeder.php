@@ -389,6 +389,37 @@ Informações sobre data e local serão divulgados posteriormente.</p>
         'updated_at' => '2018-01-30 17:17:33',
 
     ],
+    ["id"        => 13,
+    "titulo"    => "CHAMADA DE TRABALHOS - FÓRUM PAULISTA 2018",
+    "subtitulo"     => " ",
+    "id_user"       => 304,
+    "previa" => "Tema: MUSICOTERAPIA SOCIAL, CLÍNICA E PESQUISA",
+    "id_destino" => 1,
+    "imagem_previa" => "previa13.png",
+    "id_tag"        => 1,
+
+    'body' => '	
+    <p>Tema: MUSICOTERAPIA SOCIAL, CLÍNICA E PESQUISA</p>
+
+    <p>Formato: Pôster</p>
+
+    <p>Tamanho: 90cm/comprimento x 80cm/largura</p>
+
+    <p>Conteúdo:</p>
+	<p>1) Resumo</p>
+	<p>2) Introdução</p>
+	<p>3) Método e Materiais</p>
+    <p>	4) Resultados</p>
+	<p>5) Discussão/Conclusão</p>
+
+    <p>Prazo e Critérios:</p>
+	<p>1) O pôster deverá ser enciado em formato PDF para avaliação e aprovação até a data de 09 de março de 2018</p>
+
+	<p>2) A confecção do pôster é de responsabilidade dos autores</p>
+
+	<p>3) O pôster passará por avaliação e aprovação na Comissão Científica APEMESP com base nos critérios listados para o conteúdo, não sendo aceito caso o conteúdo esteja fora da temática do encontro e do formato padrão acima descrito.</p>
+
+    <p>Comissão Científica / APEMESP - 2018</p>'],
 
         ]);
 
