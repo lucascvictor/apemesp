@@ -30,7 +30,7 @@ class AssuntoController extends Controller
 
         View::composers([
             'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'],
-            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
+            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens'],
         ]);
 
     }
