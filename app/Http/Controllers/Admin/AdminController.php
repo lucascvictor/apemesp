@@ -11,6 +11,7 @@ use Apemesp\Http\Requests;
 use Apemesp\Apemesp\Repositories\Admin\AdminRepository;
 use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
+use Apemesp\Apemesp\Repositories\Admin\ChartRepository;
 use Auth;
 
 use Session;
@@ -65,15 +66,25 @@ class AdminController extends Controller
      */
     public function index()
     {
-
-
         //Todos os menus foram capturados no construct da classe
         $id_perfil = Auth::user()->id_perfil;
         $id_status = Auth::user()->id_status;
         $user = new UserRepository;
+        $adminRepository = new AdminRepository;
+        $chart = new ChartRepository;
+        $dados_dez = $chart->getIntervalo(10);
+        $dados_vinte = $chart->getIntervalo(20);
+        $dados_trinta = $chart->getIntervalo(30); 
+        $meses = $chart->getMeses();
+        $anos = $chart->getAnos();
 
         if ($id_perfil == 1) {
-            return view('admin.admin.index');
+            return view('admin.admin.index')
+            ->with('dadosdez', $dados_dez)
+            ->with('dadosvinte', $dados_vinte)
+            ->with('dadostrinta', $dados_trinta)
+            ->with('meses', $meses)
+            ->with('anos', $anos);
         }
         if ($id_perfil == 2) {
             return view('admin.redator.index');
@@ -92,7 +103,7 @@ class AdminController extends Controller
                     return redirect()->back();
                 }
 
-                $adminRepository = new AdminRepository;
+               
                 $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
                 $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
                 unset($adminRepository);

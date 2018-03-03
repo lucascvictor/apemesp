@@ -89,9 +89,9 @@
                 label: 'Novos Associados',
                 backgroundColor: "#4BC0C0",
                 data: [
-                "19",
-                "25",
-                "40"    
+                {{ $dadosdez }},
+                {{ $dadosvinte }},
+                {{ $dadostrinta }}    
                 ]
             }]
         };
@@ -125,16 +125,18 @@
 
     <script>
 
-   var barChartData = {
+   var barChartData = { 
             labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
            datasets: [{
                 type: 'bar',
                 label: 'Associados ativos',
                 backgroundColor: "#4BC0C0",
                 data: [
-                "40",
-                "45",
-                "10",
+                <?php $i=1;?>
+                @while($i <= 12)
+                {{ $meses[$i] }},
+                <?php $i++; ?>
+                @endwhile
 
                 ]
             }]
@@ -181,12 +183,16 @@
                 label: 'Novos Associados',
                 backgroundColor: "#7B68EE",
                 data: [
-                "300",
+                 <?php $i = 2018; ?>
+                    @while($i <= 2048)
+                    {{ $anos[$i] }},
+                    <?php $i++; ?>
+                    @endwhile
                 ]
             }]
         };
 
-   var ctx = document.getElementById("canvas3");
+       var ctx = document.getElementById("canvas3");
     var myBar = new Chart(ctx, {
                 type: 'bar',
                 data: barChartData,
