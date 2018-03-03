@@ -60,7 +60,7 @@ class AdminController extends Controller
       }
     }
     /**
-     * Display a listing of the resource.
+     * Retorna a pagina inicial do dashboard por perfil.
      *
      * @return \Illuminate\Http\Response
      */
@@ -76,7 +76,8 @@ class AdminController extends Controller
         $dados_vinte = $chart->getIntervalo(20);
         $dados_trinta = $chart->getIntervalo(30); 
         $meses = $chart->getMeses();
-        $anos = $chart->getAnos();
+        $ano = date("Y");
+        $anos = $chart->getAnos($ano);
 
         if ($id_perfil == 1) {
             return view('admin.admin.index')
@@ -84,7 +85,8 @@ class AdminController extends Controller
             ->with('dadosvinte', $dados_vinte)
             ->with('dadostrinta', $dados_trinta)
             ->with('meses', $meses)
-            ->with('anos', $anos);
+            ->with('anos', $anos)
+            ->with('year', $ano);
         }
         if ($id_perfil == 2) {
             return view('admin.redator.index');
@@ -111,6 +113,27 @@ class AdminController extends Controller
             } else {
                 return view('admin.inadimplente');
             }
+        }
+    }
+
+    public function indexChart(Request $request)
+    {
+        $id_perfil = Auth::user()->id_perfil;
+        $chart = new ChartRepository;
+        $dados_dez = $chart->getIntervalo(10);
+        $dados_vinte = $chart->getIntervalo(20);
+        $dados_trinta = $chart->getIntervalo(30); 
+        $meses = $chart->getMeses($request->ano);
+        $anos = $chart->getAnos();
+
+        if ($id_perfil == 1) {
+            return view('admin.admin.index')
+            ->with('dadosdez', $dados_dez)
+            ->with('dadosvinte', $dados_vinte)
+            ->with('dadostrinta', $dados_trinta)
+            ->with('meses', $meses)
+            ->with('anos', $anos)
+            ->with('year', $request->ano);
         }
     }
 

@@ -70,6 +70,7 @@ Route::get('/home', 'Apemesp\HomeController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('', 'Admin\AdminController@index')->name('admin');
+    Route::post('/chart', 'Admin\AdminController@indexChart')->name('admin');
 
     Route::group(['prefix' => 'perfil'], function () {
       Route::get('', 'Admin\AdminController@perfil')->name('admin');
