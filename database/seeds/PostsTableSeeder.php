@@ -390,7 +390,29 @@ Informações sobre data e local serão divulgados posteriormente.</p>
 
     ],
     [
-    "id"        => 13,
+        "id"        => 13,
+        "titulo"    => "PESQUISA COMISSÃO CIENTÍFICA",
+        "subtitulo"     => " ",
+        "id_user"       => 304,
+        "previa" => "Tema: MUSICOTERAPIA SOCIAL, CLÍNICA E PESQUISA",
+        "id_destino" => 1,
+        "imagem_previa" => "previa13.png",
+        "id_tag"        => 1,
+    
+        'body' => 
+        '<p class="lead"> </p><p>Queremos saber sua opinião sobre os encontros da Comissão Científica e sobre os principais conteúdos a serem discutidos e trabalhados em nossos encontros mensais, por isso preparamos uma pesquisa rápida para que você possa participar mais ativamente da construção desses encontros.</p>
+        
+        <p>A pesquisa é anônima e os resultados serão divulgados no próximo fórum da APEMESP em abril. Clique no link a seguir para responde-la: <a class="vglnk" href="https://goo.gl/forms/0h5r8b8z0OmfEDqS2" rel="nofollow"><span>https</span><span>://</span><span>goo</span><span>.</span><span>gl</span><span>/</span><span>forms</span><span>/</span><span>0h5r8b8z0OmfEDqS2</span></a></p>
+        
+        <p>Ajude-nos a construir e disponibilizar os melhores conteúdos para você.</p>
+         <p></p>',
+         'created_at' => '2018-02-28 17:17:33',
+         'updated_at' => '2018-02-28 17:17:33',     
+            
+    ],
+
+    [
+    "id"        => 14,
     "titulo"    => "CHAMADA DE TRABALHOS - FÓRUM PAULISTA 2018",
     "subtitulo"     => " ",
     "id_user"       => 304,
@@ -421,9 +443,9 @@ Informações sobre data e local serão divulgados posteriormente.</p>
 	<p>3) O pôster passará por avaliação e aprovação na Comissão Científica APEMESP com base nos critérios listados para o conteúdo, não sendo aceito caso o conteúdo esteja fora da temática do encontro e do formato padrão acima descrito.</p>
 
     <p>Comissão Científica / APEMESP - 2018</p>',
-    'created_at' => '2018-02-20 17:17:33',
-    'updated_at' => '2018-02-20 17:17:33',
-],
+    'created_at' => '2018-02-29 14:17:33',
+    'updated_at' => '2018-02-29 14:17:33',
+],	
 
         ]);
 
@@ -490,17 +512,22 @@ Informações sobre data e local serão divulgados posteriormente.</p>
             ],
             [
                 "id"        => 11,
-                "total_visitas"    => 0,
+                "total_visitas"    => 5,
 
             ],
             [
                 "id"        => 12,
-                "total_visitas"    => 0,
+                "total_visitas"    => 6,
 
             ],
             [
                 "id"        => 13,
-                "total_visitas"    => 0,
+                "total_visitas"    => 7,
+
+            ],
+            [
+                "id"        => 14,
+                "total_visitas"    => 8,
 
             ],
 
