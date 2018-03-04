@@ -45,8 +45,7 @@ class AssuntoController extends Controller
 
         unset($assuntoRepository);
 
-        return view('admin.admin.configs.assuntos.showassuntos')
-				->with('assuntos', $assuntos);
+        return view('admin.admin.configs.assuntos.showassuntos')->with('assuntos', $assuntos);
 
     }
 
