@@ -418,7 +418,7 @@ Informações sobre data e local serão divulgados posteriormente.</p>
     "id_user"       => 304,
     "previa" => "Tema: MUSICOTERAPIA SOCIAL, CLÍNICA E PESQUISA",
     "id_destino" => 1,
-    "imagem_previa" => "previa13.png",
+    "imagem_previa" => "previa14.png",
     "id_tag"        => 1,
 
     'body' => '	
