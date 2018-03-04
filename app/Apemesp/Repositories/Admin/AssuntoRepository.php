@@ -16,7 +16,7 @@ class AssuntoRepository
 
 	public function getAssuntos()
 	{
-		return DB::table('assuntos')->select('*')->orderBy('id', 'desc')->paginate(4);
+		return Assunto::Select('*')->orderBy('id', 'desc')->paginate(4);
 	}
 
 	public function getAssunto($id)
