@@ -1,4 +1,4 @@
-                    @foreach($mensagens as $mensagem)
+                   
                     <li class="message-preview">
                             <a href="#">
                                 <div class="media">
@@ -14,4 +14,4 @@
                                 </div>
                             </a>
                         </li>
-                   @endforeach
+                 

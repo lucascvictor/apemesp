@@ -7,7 +7,8 @@
 @endsection
 
 @section('conteudo')
-
+<a href="" class="btn btn-default" style="background-color: orange;color: white;">Adicionar lançamento financeiro</a>
+                        
 <fieldset>
    <legend>Anuidades</legend>
    <div class="row">

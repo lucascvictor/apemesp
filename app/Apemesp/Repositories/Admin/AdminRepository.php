@@ -73,12 +73,12 @@ class AdminRepository
 
 	public function updateEmail()
 	{
-
+		return false;
 	}
 
 	public function updatePassword()
 	{
-		
+		return false;	
 	}
 
 

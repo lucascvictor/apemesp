@@ -99,7 +99,6 @@
 	</div>
 	<div class="row">
 		<p> {{ $usuarios->render() }} </p>
-
 	</div>
 
 

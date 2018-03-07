@@ -238,15 +238,15 @@ body {
 .dropdown-menu {
 	box-shadow:none;
 	border:none;
-	border-left:solid 1px #fff;
-	border-bottom:solid 1px #fff;
+	border-left:solid 10px #fff;
+	border-bottom:solid 10px #fff;
 	background:url(../images/bg_submenu.png);
 	-width:inherit;
 }
 
 .navbar-right .dropdown-menu {
 	right:auto;
-	left:0;
+	left:10px;
 	margin-left:-1px;
 }
 

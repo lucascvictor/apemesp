@@ -30,7 +30,7 @@ class AssuntoController extends Controller
 
         View::composers([
             'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'],
-            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
+            'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens'],
         ]);
 
     }
@@ -45,8 +45,7 @@ class AssuntoController extends Controller
 
         unset($assuntoRepository);
 
-        return view('admin.admin.configs.assuntos.showassuntos')
-				->with('assuntos', $assuntos);
+        return view('admin.admin.configs.assuntos.showassuntos')->with('assuntos', $assuntos);
 
     }
 
