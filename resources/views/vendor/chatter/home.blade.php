@@ -115,7 +115,7 @@
 	        	</div>
 
 	        	<div id="pagination">
-	        		{{ $discussions->links() }}
+	        		{{ $discussions->render() }}
 	        	</div>
 
 	        </div>

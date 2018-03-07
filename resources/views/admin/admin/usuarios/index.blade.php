@@ -98,7 +98,7 @@
 
 	</div>
 	<div class="row">
-		<p> {{ $usuarios->links() }} </p>
+		<p> {{ $usuarios->render() }} </p>
 
 	</div>
 

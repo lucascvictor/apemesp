@@ -86,8 +86,8 @@ PRESIDENTE â€“ Nome completo e NÃºmero de Associado</p>
 <p>2Âº VICE-PRESIDENTE ( Estudante) Nome completo e NÃºmero de Associado</p>
 <p>1Âº TESOUREIRO Nome completo e NÃºmero de Associado</p>
 <p>2Âº TESOUREIRO Nome completo e NÃºmero de Associado</p>
-<p>1Âº SECRETÃRIO Nome completo e NÃºmero de Associado</p>
-<p>2Âº SECRETÃRIO Nome completo e NÃºmero de Associado<br>
+<p>1Âº SECRETÃRIO Nome completo e NÃºmero de Associado</p>
+<p>2Âº SECRETÃRIO Nome completo e NÃºmero de Associado<br>
 InformaÃ§Ãµes sobre data e local serÃ£o divulgados posteriormente.</p>
 <p>Equipe APEMESP</p>
 <p><img class="" src="https://apemesp.files.wordpress.com/2016/02/convocac3a7c3a3o-apemesp.jpg?w=610&amp;h=457" alt="" width="610" height="457"></p>
@@ -332,7 +332,7 @@ InformaÃ§Ãµes sobre data e local serÃ£o divulgados posteriormente.</p>
         ],
         [
             "id"        => 11,
-            "titulo"    => "ASSEMBLÃ‰IA ORDINÃRIA",
+            "titulo"    => "ASSEMBLÃ‰IA ORDINÃRIA",
             "subtitulo"     => " ",
             "id_user"       => 304,
             "previa" => "Convocamos a todos os associados a AssemblÃ©ia OrdinÃ¡ria dia 09/12.",
@@ -389,6 +389,31 @@ InformaÃ§Ãµes sobre data e local serÃ£o divulgados posteriormente.</p>
         'updated_at' => '2018-01-30 17:17:33',
 
     ],
+
+
+    <p>CHAMADA DE TRABALHOS - FÓRUM PAULISTA 2018
+
+Tema: MUSICOTERAPIA SOCIAL, CLÍNICA E PESQUISA
+
+Formato: Pôster
+
+Tamanho: 90cm/comprimento x 80cm/largura
+
+Conteúdo:
+	1) Resumo
+	2) Introdução
+	3) Método e Materiais
+	4) Resultados
+	5) Discussão/Conclusão
+
+Prazo e Critérios:
+	1) O pôster deverá ser enciado em formato PDF para avaliação e aprovação até a data de 09 de março de 2018
+
+	2) A confecção do pôster é de responsabilidade dos autores
+
+	3) O pôster passará por avaliação e aprovação na Comissão Científica APEMESP com base nos critérios listados para o conteúdo, não sendo aceito caso o conteúdo esteja fora da temática do encontro e do formato padrão acima descrito.
+
+Comissão Científica / APEMESP - 2018
 
         ]);
 

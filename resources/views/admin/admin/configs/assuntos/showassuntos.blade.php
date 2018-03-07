@@ -35,7 +35,7 @@
 
 </div>
 <div class="row">
-<p> {{ $assuntos->links() }} </p>
+<p> {{ $assuntos->render() }} </p>
 
 </div>
 

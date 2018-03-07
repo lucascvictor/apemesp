@@ -26,7 +26,7 @@
 
 	</div>
 	@endforeach
-	<p> {{ $literaturas->links() }} </p>
+	<p> {{ $literaturas->render() }} </p>
 
 	</div>
 

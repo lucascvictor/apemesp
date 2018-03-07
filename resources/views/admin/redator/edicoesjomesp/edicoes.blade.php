@@ -125,7 +125,7 @@
 
 			</div>
 			<div class="row">
-				<p> {{ $edicoes->links() }} </p>
+				<p> {{ $edicoes->render() }} </p>
 
 			</div>
 		</div>

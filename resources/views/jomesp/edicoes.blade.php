@@ -28,7 +28,7 @@
             </div>
         </div>
 @endforeach
-  <p> {{ $edicoes->links() }} </p>
+  <p> {{ $edicoes->render() }} </p>
     </div>
 
 @endsection

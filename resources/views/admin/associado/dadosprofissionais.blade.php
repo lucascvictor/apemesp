@@ -44,7 +44,7 @@
 						</div>
 
 						<div class="row">
-							<p> {{ $dados->links() }}</p>
+							<p> {{ $dados->render() }}</p>
 						</div>
 
 						<div class="row" style="margin-top: 20%;">
