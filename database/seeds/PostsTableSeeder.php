@@ -446,33 +446,7 @@ Informa√ß√µes sobre data e local ser√£o divulgados posteriormente.</p>
     'created_at' => '2018-02-29 14:17:33',
     'updated_at' => '2018-02-29 14:17:33',
 ],	
-
-
-    <p>CHAMADA DE TRABALHOS - F”RUM PAULISTA 2018
-
-Tema: MUSICOTERAPIA SOCIAL, CLÕNICA E PESQUISA
-
-Formato: PÙster
-
-Tamanho: 90cm/comprimento x 80cm/largura
-
-Conte˙do:
-	1) Resumo
-	2) IntroduÁ„o
-	3) MÈtodo e Materiais
-	4) Resultados
-	5) Discuss„o/Conclus„o
-
-Prazo e CritÈrios:
-	1) O pÙster dever· ser enciado em formato PDF para avaliaÁ„o e aprovaÁ„o atÈ a data de 09 de marÁo de 2018
-
-	2) A confecÁ„o do pÙster È de responsabilidade dos autores
-
-	3) O pÙster passar· por avaliaÁ„o e aprovaÁ„o na Comiss„o CientÌfica APEMESP com base nos critÈrios listados para o conte˙do, n„o sendo aceito caso o conte˙do esteja fora da tem·tica do encontro e do formato padr„o acima descrito.
-
-Comiss„o CientÌfica / APEMESP - 2018
-
-        ]);
+]);
 
         DB::table('posts_views')->delete();
         DB::table('posts_views')->insert([
