@@ -38,7 +38,7 @@
 
 	</div>
 	<div class="row">
-    <p> {{ $especialidades->links() }} </p>
+    <p> {{ $especialidades->render() }} </p>
 
 	</div>
 

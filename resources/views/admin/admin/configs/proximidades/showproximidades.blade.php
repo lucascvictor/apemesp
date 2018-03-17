@@ -38,7 +38,7 @@
 
 	</div>
 	<div class="row">
-    <p> {{ $proximidades->links() }} </p>
+    <p> {{ $proximidades->render() }} </p>
 
 	</div>
 

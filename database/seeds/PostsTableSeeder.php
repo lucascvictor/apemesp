@@ -86,8 +86,8 @@ PRESIDENTE – Nome completo e Número de Associado</p>
 <p>2º VICE-PRESIDENTE ( Estudante) Nome completo e Número de Associado</p>
 <p>1º TESOUREIRO Nome completo e Número de Associado</p>
 <p>2º TESOUREIRO Nome completo e Número de Associado</p>
-<p>1º SECRETÁRIO Nome completo e Número de Associado</p>
-<p>2º SECRETÁRIO Nome completo e Número de Associado<br>
+<p>1º SECRETÝRIO Nome completo e Número de Associado</p>
+<p>2º SECRETÝRIO Nome completo e Número de Associado<br>
 Informações sobre data e local serão divulgados posteriormente.</p>
 <p>Equipe APEMESP</p>
 <p><img class="" src="https://apemesp.files.wordpress.com/2016/02/convocac3a7c3a3o-apemesp.jpg?w=610&amp;h=457" alt="" width="610" height="457"></p>
@@ -332,7 +332,7 @@ Informações sobre data e local serão divulgados posteriormente.</p>
         ],
         [
             "id"        => 11,
-            "titulo"    => "ASSEMBLÉIA ORDINÁRIA",
+            "titulo"    => "ASSEMBLÉIA ORDINÝRIA",
             "subtitulo"     => " ",
             "id_user"       => 304,
             "previa" => "Convocamos a todos os associados a Assembléia Ordinária dia 09/12.",
@@ -446,8 +446,7 @@ Informações sobre data e local serão divulgados posteriormente.</p>
     'created_at' => '2018-02-29 14:17:33',
     'updated_at' => '2018-02-29 14:17:33',
 ],	
-
-        ]);
+]);
 
         DB::table('posts_views')->delete();
         DB::table('posts_views')->insert([

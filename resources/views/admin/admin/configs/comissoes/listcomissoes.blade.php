@@ -35,7 +35,7 @@
 
 </div>
 <div class="row">
-<p> {{ $comissoes->links() }} </p>
+<p> {{ $comissoes->render() }} </p>
 
 </div>
 

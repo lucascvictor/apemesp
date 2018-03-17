@@ -110,7 +110,7 @@
 	                </ul>
 	            </div>
 
-	            <div id="pagination">{{ $posts->links() }}</div>
+	            <div id="pagination">{{ $posts->render() }}</div>
 
 	            @if(!Auth::guest())
 

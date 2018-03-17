@@ -38,7 +38,7 @@
 
 	</div>
 	<div class="row">
-    <p> {{ $escalas->links() }} </p>
+    <p> {{ $escalas->render() }} </p>
 
 	</div>
 

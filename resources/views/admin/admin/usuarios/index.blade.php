@@ -98,8 +98,7 @@
 
 	</div>
 	<div class="row">
-		<p> {{ $usuarios->appends(array_except(Request::query(), 'user'))->links() }} </p>
-
+		<p> {{ $usuarios->render() }} </p>
 	</div>
 
 
