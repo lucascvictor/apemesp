@@ -32,7 +32,6 @@ class AssociadoController extends Controller
     {
         $associadoRepository = new AssociadoRepository;
         $associados = $associadoRepository->getAssociadoIndex();
-        $associados->setPath('associados');
         unset($adminRepository);
         return view('admin.admin.associados.associados')->with('associados', $associados);
     }
@@ -59,8 +58,6 @@ class AssociadoController extends Controller
     {
         $associadoRepository = new AssociadoRepository;
         $associados = $associadoRepository->search($request);
-        $path = "search?q=" . $request->q;
-        $associados->setPath($path);
 
         unset($associadoRepository);
         return view('admin.admin.associados.associados')->with('associados', $associados);

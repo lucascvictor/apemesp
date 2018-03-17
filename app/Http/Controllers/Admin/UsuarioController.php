@@ -35,7 +35,7 @@ class UsuarioController extends Controller
     {
         $usuarioRepository = new UsuarioRepository;
         $usuarios = $usuarioRepository->getUsuarioIndex();
-        $usuarios->setPath('usuarios');
+
         unset($adminRepository);
         return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
     }
@@ -44,8 +44,7 @@ class UsuarioController extends Controller
     {
         $usuarioRepository = new UsuarioRepository;
         $usuarios = $usuarioRepository->search($request);
-        $path = "search?q=" . $request->q;
-        $usuarios->setPath($path);
+
         return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
     }
 

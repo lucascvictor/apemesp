@@ -41,8 +41,6 @@ class ComissaoController extends Controller
    		$comissaoRepository = New ComissaoRepository;
         $comissoes = $comissaoRepository->getComissoes();
 
-        $comissoes->setPath('comissoes');
-
         unset($comissaoRepository);
 
         return view('admin.admin.configs.comissoes.showcomissoes')

@@ -36,25 +36,21 @@ class ProximidadeController extends Controller
 
 
    public function index(){
-   			$proximidadeRepository = New ProximidadeRepository;
+		$proximidadeRepository = New ProximidadeRepository;
 
-				$proximidades = $proximidadeRepository->getProximidades();
-				$proximidades->setPath('proximidades');
-
+		$proximidades = $proximidadeRepository->getProximidades();
 
         unset($proximidadeRepository);
 
-        return view('admin.admin.configs.proximidades.showproximidades')
-
-				->with('proximidades', $proximidades);
+        return view('admin.admin.configs.proximidades.showproximidades')->with('proximidades', $proximidades);
 
     }
 
 
-        public function addProximidade(){
+    public function addProximidade(){
 
-            return view('admin.admin.configs.proximidades.addproximidade');
-        }
+        return view('admin.admin.configs.proximidades.addproximidade');
+    }
 
 
 

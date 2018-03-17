@@ -42,7 +42,6 @@ class FinanceiroController extends Controller
     {
         $financeiroRespository = new FinanceiroRepository;
         $associados = $financeiroRespository->getAssociados();
-        $associados->setPath('financeiro');
         unset($financeiroRespository);
      
     	return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
@@ -52,9 +51,7 @@ class FinanceiroController extends Controller
     {
         $associadoRepository = new AssociadoRepository;
         $associados = $associadoRepository->search($request);
-        $path = "search?q=" . $request->q;
-        $associados->setPath($path);
-
+        
         unset($associadoRepository);
         return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
     }

@@ -44,7 +44,7 @@ class EspecialidadeController extends Controller
   {
     $especialidadeRepository = new EspecialidadeRepository;
     $especialidades = $especialidadeRepository->getEspecialidades();
-    $especialidades->setPath('especialidades');
+
     return view('admin.admin.configs.especialidades.showespecialidades')->with('especialidades', $especialidades);
   }
 
