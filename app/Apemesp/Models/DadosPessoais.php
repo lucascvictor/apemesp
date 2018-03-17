@@ -8,4 +8,5 @@ class DadosPessoais extends Model
 {
     protected $table = 'dados_pessoais';
     public $timestamps = false;
+    public $fillable = ['name','tel_celular', 'cpf'];
 }
