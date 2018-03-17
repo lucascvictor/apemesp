@@ -37,7 +37,7 @@ class UsuarioController extends Controller
         $usuarios = $usuarioRepository->getUsuarioIndex();
 
         unset($adminRepository);
-        return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
+        return View::make('admin.admin.usuarios.index', compact('usuarios', $usuarios));
     }
 
     public function search(Request $request)
