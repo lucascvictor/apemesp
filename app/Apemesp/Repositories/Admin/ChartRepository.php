@@ -40,5 +40,10 @@ class ChartRepository
 		return AditionalUserData::where('created_at', '>', '(NOW() - INTERVAL'. $intervalo .'DAY)')->count();
 	}
 
+	public function getPostsViews()
+	{
+		return PostView::select("*")->get();
+	}
+
 
 }
