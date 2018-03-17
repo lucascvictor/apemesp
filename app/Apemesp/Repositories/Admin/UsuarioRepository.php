@@ -36,7 +36,7 @@ class UsuarioRepository
 
 	public function getUsuarioIndex()
 	{
-		return DB::table('users')->where('id_perfil', 3)->orWhere('id_perfil', 4)->orderBy('name', 'asc')->paginate(6);
+		return User::where('id_perfil', 3)->orWhere('id_perfil', 4)->orderBy('name', 'asc')->paginate(10);
 	}
 
 	public function resetPassword($id)

@@ -34,8 +34,8 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarioRepository = new UsuarioRepository;
-        $usuarios = $usuarioRepository->getUsuarioIndex();
 
+        $usuarios = $usuarioRepository->getUsuarioIndex();
         unset($adminRepository);
         return View::make('admin.admin.usuarios.index', compact('usuarios', $usuarios));
     }
