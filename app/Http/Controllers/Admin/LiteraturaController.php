@@ -9,6 +9,7 @@ use Apemesp\Apemesp\Repositories\Admin\ConfigsRepository;
 use Auth;
 use Session;
 use View;
+
 class LiteraturaController extends Controller
 {
 	 public function __construct()
