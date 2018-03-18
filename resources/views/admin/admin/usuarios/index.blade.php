@@ -98,7 +98,7 @@
 
 	</div>
 	<div class="row">
-		<p> {{ $usuarios->appends($_GET)->render() }} </p>
+		<p> {{ $usuarios->appends(Request::all())->render() }} </p>
 	</div>
 
 
