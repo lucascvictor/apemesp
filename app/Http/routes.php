@@ -93,7 +93,7 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'indicacoesliterarias'], function () {
-      Route::get('', 'Apemesp\EdicoesJomespController@index')->name('edicoesJomesp.index');
+      Route::get('', 'Admin\LiteraturaController@adminIndex')->name('admin.literatura.index');
     });
 
     Route::group(['prefix' => 'edicoesjomesp'], function () {
