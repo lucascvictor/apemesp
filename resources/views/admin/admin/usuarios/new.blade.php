@@ -15,7 +15,7 @@
 	<div class="col-md-12">
         <a class="btn btn-success" href="{{ url('/admin/usuarios/new/comum') }}"> Criar usuário comum </a>
         <a class="btn btn-warning" href="{{ url('/admin/usuarios/new/admin') }}"> Criar usuário administrador </a>
-
+        <a class="btn btn-danger" href="{{ url('/admin/usuarios/new/redator') }}"> Criar usuário redator </a>
     </div>
   </div>
 

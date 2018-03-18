@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Novo usuário Administrador')
+@section('titulo', 'Novo usuário Redator')
 
 @section('extrastyle')
 
@@ -14,7 +14,7 @@
 <div class="row">
 	<div class="col-md-8">
 
-        <form action="{{ url('/admin/usuarios/new/admin') }}" id="newUser" name="newUser" method="POST" onsubmit="return validarSenha();">
+        <form action="{{ url('/admin/usuarios/new/redator') }}" id="newUser" name="newUser" method="POST" onsubmit="return validarSenha();">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="name">Nome:</label>
@@ -34,13 +34,12 @@
                 <input type="password" class="form-control" id="repassword" name="repassword" required="">
             </div>
 
-            <button type="submit" class="btn btn-success">Salvar o novo usuário administrador</button>
+            <button type="submit" class="btn btn-success">Salvar o novo usuário redator</button>
         </form>
         <br>
         <p> OU </p>
         <a class="btn btn-default" href="{{ url('/admin/usuarios/new/comum') }}"> Criar usuário Comum </a>
-        <a class="btn btn-warning" href="{{ url('/admin/usuarios/new/redator') }}"> Criar usuário Redator </a>
-
+        <a class="btn btn-warning" href="{{ url('/admin/usuarios/new/admin') }}"> Criar usuário Administrador</a>
     </div>
   </div>
 

@@ -6,6 +6,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Models\AditionalUserData;
 
+use Apemesp\Apemesp\Models\PostView;
+
 use DB;
 
 class ChartRepository

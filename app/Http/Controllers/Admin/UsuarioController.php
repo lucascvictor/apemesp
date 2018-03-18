@@ -10,6 +10,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\UsuarioRepository;
 
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
+
 use Auth;
 
 use Session;
@@ -68,6 +70,35 @@ class UsuarioController extends Controller
     public function newComum()
     {
         return view('admin.admin.usuarios.new_comum');
+    }
+
+    public function newRedator()
+    {
+        return view('admin.admin.usuarios.new_redator');
+    }
+
+    public function storeAdmin(Request $request)
+    {
+        $user = new UserRepository;
+        $result = $user->createAdmin($request);
+        Session::flash('sucesso', 'Usuário Administrador salvo com sucesso');
+        return view('admin.admin.usuarios.new_admin');
+    }
+
+    public function storeComum(Request $request)
+    {
+        $user = new UserRepository;
+        $result = $user->create($request);
+        Session::flash('sucesso', 'Usuário Comum salvo com sucesso');
+        return view('admin.admin.usuarios.new_comum');
+    }
+
+    public function storeRedator(Request $request)
+    {
+        $user = new UserRepository;
+        $result = $user->createRedator($request);
+        Session::flash('sucesso', 'Usuário Redator salvo com sucesso');
+        return view('admin.admin.usuarios.new_redator');
     }
 
 }
