@@ -72,6 +72,9 @@ class AdminController extends Controller
         $user = new UserRepository;
         $adminRepository = new AdminRepository;
         $chart = new ChartRepository;
+        
+
+        if ($id_perfil == 1) {
         $dados_dez = $chart->getIntervalo(10);
         $dados_vinte = $chart->getIntervalo(20);
         $dados_trinta = $chart->getIntervalo(30); 
@@ -79,7 +82,6 @@ class AdminController extends Controller
         $ano = date("Y");
         $anos = $chart->getAnos($ano);
 
-        if ($id_perfil == 1) {
             return view('admin.admin.index')
             ->with('dadosdez', $dados_dez)
             ->with('dadosvinte', $dados_vinte)
@@ -89,7 +91,8 @@ class AdminController extends Controller
             ->with('year', $ano);
         }
         if ($id_perfil == 2) {
-            return view('admin.redator.index');
+            $views = $chart->getPostsViews();
+            return view('admin.redator.index')->with('views', $views);
         }
         if ($id_perfil == 3 || $id_perfil == 4) {
             if ($id_status == 1 || $id_status ==2) {

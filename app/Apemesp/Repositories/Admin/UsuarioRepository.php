@@ -31,12 +31,12 @@ class UsuarioRepository
 	public function search($request)
 	{
 		$query = "%" . $request->input('q') . "%";
-		return User::select('name', 'email')->where('name', 'LIKE', $query)->orderBy('name', 'asc')->paginate(6);
+		return DB::table('users')->select('id','id_status','name', 'email')->where('name', 'LIKE', $query)->orderBy('name', 'asc')->paginate(6);
 	}
 
 	public function getUsuarioIndex()
 	{
-		return User::where('id_perfil', 3)->orWhere('id_perfil', 4)->orderBy('name', 'asc')->paginate(6);
+		return User::where('id_perfil', 3)->orWhere('id_perfil', 4)->orderBy('name', 'asc')->paginate(10);
 	}
 
 	public function resetPassword($id)

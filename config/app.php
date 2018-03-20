@@ -213,6 +213,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 

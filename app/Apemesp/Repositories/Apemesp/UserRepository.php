@@ -51,6 +51,50 @@ class UserRepository
                         return false;
                 }
         }
+
+        public function createAdmin($request)
+	{
+                $user = User::where('email', $request->email)->get();
+                if ( empty($user[0]->id) ) {
+                        $newUser = new User;
+                        $newUser->name = $request->name;
+                        $newUser->email = $request->email;
+                        $newUser->id_perfil = 1;
+                        $newUser->password = bcrypt($request->password);
+                        $newUser->id_status = 1;
+                        $newUser->save();
+                } else {
+                        return false;
+                }
+                
+                if (!empty($newUser->id)) {
+                        return $newUser->id;
+                } else {
+                        return false;
+                }
+        }
+
+        public function createRedator($request)
+	{
+                $user = User::where('email', $request->email)->get();
+                if ( empty($user[0]->id) ) {
+                        $newUser = new User;
+                        $newUser->name = $request->name;
+                        $newUser->email = $request->email;
+                        $newUser->id_perfil = 2;
+                        $newUser->password = bcrypt($request->password);
+                        $newUser->id_status = 1;
+                        $newUser->save();
+                } else {
+                        return false;
+                }
+                
+                if (!empty($newUser->id)) {
+                        return $newUser->id;
+                } else {
+                        return false;
+                }
+        }
         
         public function storeCode($id_user, $code)
         {
@@ -74,8 +118,6 @@ class UserRepository
         {
                 AditionalUserData::where('id', $id)->update(['resetcode' => $code,'updated_at' => $this->getData()]);
         }
-
-
 
         //return $id from aditional_users_data
         public function findCode($code)

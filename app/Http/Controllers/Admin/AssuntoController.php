@@ -40,9 +40,6 @@ class AssuntoController extends Controller
 
    		$assuntoRepository = New AssuntoRepository;
         $assuntos = $assuntoRepository->getAssuntos();
-
-        $assuntos->setPath('assuntos');
-
         unset($assuntoRepository);
 
         return view('admin.admin.configs.assuntos.showassuntos')->with('assuntos', $assuntos);
@@ -73,7 +70,6 @@ class AssuntoController extends Controller
         $assuntoRepository = New AssuntoRepository;
         $assuntoRepository->updateAssunto($request, $id);
         $assuntos = $assuntoRepository->getAssuntos();
-        $assuntos->setPath('assuntos');
         Session::flash('sucesso', 'O assunto foi atualizado');
          return view('admin.admin.configs.assuntos.showassuntos')
                 ->with('assuntos', $assuntos);

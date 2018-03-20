@@ -14,7 +14,8 @@
 <div class="row">
 	<div class="col-md-8">
 
-        <form action="{{ url('/admin/usuarios/new/admin') }}" id="newUser" name="newUser" method="POST" onsubmit="return validarSenha();">
+        <form action="{{ url('/admin/usuarios/new/comum') }}" id="newUser" name="newUser" method="POST" onsubmit="return validarSenha();">
+            {{ csrf_field() }}
             <div class="form-group">
                 <label for="name">Nome:</label>
                 <input type="name" class="form-control" id="name" name="name" required="">
@@ -30,7 +31,7 @@
 
             <div class="form-group">
                 <label for="repassword">Repita a Senha:</label>
-                <input type="password" class="form-control" id="repassword" name="password" required="">
+                <input type="password" class="form-control" id="repassword" name="repassword" required="">
             </div>
             <p><u> Ao salvar este usuário, o e-mail de confirmação será enviado automáticamente </u></p>
             <button type="submit" class="btn btn-success">Salvar o novo usuário comum</button>
@@ -38,6 +39,7 @@
         <br>
         <p> OU </p>
         <a class="btn btn-default" href="{{ url('/admin/usuarios/new/admin') }}"> Criar usuário Administrador </a>
+        <a class="btn btn-warning" href="{{ url('/admin/usuarios/new/redator') }}"> Criar usuário Redator </a>
 
     </div>
   </div>

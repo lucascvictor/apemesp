@@ -36,7 +36,6 @@ public function getIndex()
                      ->orderBy('posts.id', 'desc')
                      ->paginate(6);
 
-		$posts->setPath('/');
 		$tags = Tag::all();
 		if(count($posts) == 0) {
 			return view('errors.404');

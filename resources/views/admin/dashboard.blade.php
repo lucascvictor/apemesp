@@ -35,7 +35,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="<?= $_SERVER['HTTP_REFERER']; ?>">Voltar</a>
+                                <i class="fa fa-dashboard"></i>  <a href="javascript:history.back()">Voltar</a>
                             </li>
                             <li class="active">
                                 <i class="fa "></i> @yield('titulo')

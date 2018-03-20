@@ -45,7 +45,6 @@ class PagesController extends Controller{
 	public function getIndex() {
 		$page = new PagesRepository;
 		$posts = $page->getIndex();
-		$posts->setPath('/');
 		$tags = $page->getTags();
 		$propagandasRepositoy = new PropagandaRepository;
 		$propagandas_ativas = $propagandasRepositoy->getPropagandasAtivas();
@@ -146,9 +145,6 @@ class PagesController extends Controller{
 		$postRepository = new PostRepository;
         $posts = $postRepository->search($request, 1);
 
-        $path = "search?q=" . $request->q;
-        $posts->setPath($path);
-
         $page = new PagesRepository;
 		$tags = $page->getTags();
 
@@ -161,7 +157,6 @@ class PagesController extends Controller{
 	{
 		$page = new PagesRepository;
 		$postsTag = $page->getPostsTag($id);
-		$postsTag->setPath('/');
 		$tags = $page->getTags();
 		unset($page);
 

@@ -6,6 +6,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Models\AditionalUserData;
 
+use Apemesp\Apemesp\Models\PostView;
+
 use DB;
 
 class ChartRepository
@@ -38,6 +40,11 @@ class ChartRepository
 	public function getIntervalo($intervalo)
 	{
 		return AditionalUserData::where('created_at', '>', '(NOW() - INTERVAL'. $intervalo .'DAY)')->count();
+	}
+
+	public function getPostsViews()
+	{
+		return PostView::select("*")->get();
 	}
 
 

@@ -13,14 +13,13 @@
                     </h2>
                     <hr>
                     <p>O e-mail de confirmação contém o código único responsável pela validação da sua inscrição. </p>
-                    <form role="form" action="/reenviarconfirmacao" method="POST">
+                    <form action="{{ url('/reenviarconfirmacao') }}" method="POST">
                     {{ csrf_field() }}
                 
                         <div class="row">
-
                             <div class="form-group col-lg-10">
                                 <label>Endereço de Email</label>
-                                 <input type="email" value="@if ((Auth::user()) !== null ) {!! Auth::user()->email !!} @endif" class="form-control " placeholder="Endereço de e-mail" id="email" name="email" required data-validation-required-message="Por favor insira seu e-mail.">
+                                 <input type="email" class="form-control " placeholder="Endereço de e-mail" id="email" name="email" required data-validation-required-message="Por favor insira seu e-mail.">
                             <p class="help-block text-danger"></p>
                             </div>
                           <br>

@@ -83,10 +83,18 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/new', 'Admin\UsuarioController@new')->name('users.new');
         Route::get('/new/admin', 'Admin\UsuarioController@newAdmin')->name('users.new_admin');
         Route::get('/new/comum', 'Admin\UsuarioController@newComum')->name('users.new_comum');
+        Route::get('/new/redator', 'Admin\UsuarioController@newRedator')->name('users.new_redator');
+        Route::post('/new/admin', 'Admin\UsuarioController@storeAdmin')->name('users.store_admin');
+        Route::post('/new/comum', 'Admin\UsuarioController@storeComum')->name('users.store_comum');
+        Route::post('/new/redator', 'Admin\UsuarioController@storeRedator')->name('users.store_redator');
         Route::get('/search', 'Admin\UsuarioController@search');
         Route::get('/reset/{id}', 'Admin\UsuarioController@resetPassword');
         Route::get('/usuarios/mensagem/{id}', 'Adimin\UsuarioController@mensagem');
 
+    });
+
+    Route::group(['prefix' => 'indicacoesliterarias'], function () {
+      Route::get('', 'Admin\LiteraturaController@adminIndex')->name('admin.literatura.index');
     });
 
     Route::group(['prefix' => 'edicoesjomesp'], function () {

@@ -37,7 +37,6 @@ class EscalaController extends Controller
    public function index(){
         $escalaRepository = New EscalaRepository;
         $escalas = $escalaRepository->getEscalas();
-        $escalas->setPath('escalas');
 
         unset($escalaRepository);
 

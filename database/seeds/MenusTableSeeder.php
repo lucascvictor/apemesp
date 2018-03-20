@@ -138,7 +138,13 @@ class MenusTableSeeder extends Seeder
             "id_perfil" => 2,
            ],
 
-
+           [
+                "id"        => 17,
+                "titulo"    => "Indicações literárias",
+                "icone"     => "fa-bookmark-o",
+                "link"      => "/admin/indicacoesliterarias",
+                "id_perfil" => 2,
+           ],
 
         ]);
     }

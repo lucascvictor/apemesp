@@ -37,7 +37,6 @@ class ConfigsController extends Controller
    public function index(){
    		$configsRepository = New ConfigsRepository;
         $assuntos = $configsRepository->getAssuntos();
-        $assuntos->setPath('configs');
         unset($configsRepository);
         $id_perfil = Auth::user()->id_perfil;
         return view('admin.admin.configs.configuracoes')->with('assuntos', $assuntos);

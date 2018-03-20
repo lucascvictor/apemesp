@@ -10,6 +10,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\UsuarioRepository;
 
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
+
 use Auth;
 
 use Session;
@@ -35,17 +37,15 @@ class UsuarioController extends Controller
     {
         $usuarioRepository = new UsuarioRepository;
         $usuarios = $usuarioRepository->getUsuarioIndex();
-        $usuarios->setPath('user');
         unset($adminRepository);
-        return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
+        return View::make('admin.admin.usuarios.index', compact('usuarios', $usuarios));
     }
 
     public function search(Request $request)
     {
         $usuarioRepository = new UsuarioRepository;
         $usuarios = $usuarioRepository->search($request);
-        $path = "search?q=" . $request->q;
-        $usuarios->setPath($path);
+
         return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
     }
 
@@ -70,6 +70,35 @@ class UsuarioController extends Controller
     public function newComum()
     {
         return view('admin.admin.usuarios.new_comum');
+    }
+
+    public function newRedator()
+    {
+        return view('admin.admin.usuarios.new_redator');
+    }
+
+    public function storeAdmin(Request $request)
+    {
+        $user = new UserRepository;
+        $result = $user->createAdmin($request);
+        Session::flash('sucesso', 'Usuário Administrador salvo com sucesso');
+        return view('admin.admin.usuarios.new_admin');
+    }
+
+    public function storeComum(Request $request)
+    {
+        $user = new UserRepository;
+        $result = $user->create($request);
+        Session::flash('sucesso', 'Usuário Comum salvo com sucesso');
+        return view('admin.admin.usuarios.new_comum');
+    }
+
+    public function storeRedator(Request $request)
+    {
+        $user = new UserRepository;
+        $result = $user->createRedator($request);
+        Session::flash('sucesso', 'Usuário Redator salvo com sucesso');
+        return view('admin.admin.usuarios.new_redator');
     }
 
 }

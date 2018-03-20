@@ -55,7 +55,7 @@ class PostController extends Controller
     {
       $postRepository = new PostRepository;
       $posts = $postRepository->getPosts(1);
-      $posts->setPath('pages/posts');
+
       return view('posts.listPosts')->with('posts', $posts)->with('pagina', 'APEMESP');
       unset($postRepository);
     }
@@ -64,7 +64,7 @@ class PostController extends Controller
     {
       $postRepository = new PostRepository;
       $postsjomesp = $postRepository->getPosts(2);
-      $postsjomesp->setPath('pages/postsj');
+
       return view('posts.listPosts')->with('posts', $postsjomesp)->with('pagina', 'JOMESP');
       unset($postRepository);
 
@@ -202,12 +202,10 @@ class PostController extends Controller
     {
         $postRepository = new PostRepository;
         $posts = $postRepository->search($request, 1);
-        $path = "search?q=" . $request->q;
-        $posts->setPath($path);
+
 
         $postsjomesp = $postRepository->search($request, 2);
-        $path = "searchj?q=" . $request->q;
-        $postsjomesp->setPath($path);
+
 
         unset($postRepository);
         return view('posts.index')->with('posts', $posts)->with('postsjomesp', $postsjomesp);
