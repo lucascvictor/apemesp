@@ -80,6 +80,7 @@
                   <li><a href="{{ url('/musicoterapia/oquee') }}">O que é?</a></li>
                   <li><a href="{{ url('/musicoterapia/formacao') }}">Formação</a></li>
                   <li><a href="{{ url('/musicoterapia/conquistas') }}">Conquistas</a></li>
+                  <li><a href="{{ url('/musicoterapia/materiais') }}">Materiais Informativos</a></li>
                   <li><a href="{{ url('/musicoterapia/literatura') }}">Literatura</a></li>
                   <li><a href="{{ url('/musicoterapia/linhadotempo') }}">Linha do tempo da Mt em SP</a></li>
                </ul>

@@ -34,6 +34,12 @@
                                         <td><a class="btn btn-info" href="{{ url('/admin/paginas/literaturas')}}">Visualizar itens existentes</a></td>
                                 </tr>
                                 <tr>
+                                        <td>Adicionar item para Materiais informativos</td>
+                                        <td>Adicione ou edite itens para a página: <a href="{{ url('/musicoterapia/materiais')}}"> {{ url('/musicoterapia/materiais')}}</a></td>
+                                        <td><a class="btn btn-default" href="/admin/paginas/adicionar/material">Adicionar</a></td>
+                                        <td><a class="btn btn-info" href="{{ url('/admin/paginas/material')}}">Visualizar itens existentes</a></td>
+                                </tr>
+                                <tr>
                                         <td>Adicionar item para Conquistas</td>
                                         <td>Adicionar ou editar item para a página: <a href="{{ url('/musicoterapia/conquistas')}}"> {{ url('/musicoterapia/conquistas')}}</a></td>
                                         <td><a class="btn btn-default" href="/admin/paginas/adicionar/conquista">Adicionar</a></td>

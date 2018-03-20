@@ -9,6 +9,8 @@ use Apemesp\Apemesp\Models\LinhaDoTempo;
 
 use Apemesp\Apemesp\Models\Literatura;
 
+use Apemesp\Apemesp\Models\Material;
+
 use Apemesp\Apemesp\Models\Page;
 
 use DB;
@@ -28,5 +30,10 @@ class MusicoterapiaRepository
 	public function getLinhaDoTempo()
 	{
 		return LinhaDoTempo::where('id', '>=', 1)->orderBy('ano', 'asc')->get();
+	}
+
+	public function getMateriais()
+	{
+		return Material::where('id', '>', 0)->orderBy('titulo', 'asc')->paginate(4);
 	}
 }

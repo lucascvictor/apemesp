@@ -130,6 +130,13 @@ class MenusTableSeeder extends Seeder
                "link"      => "/admin/edicoesjomesp",
                "id_perfil" => 2,
            ],
+           [
+            "id"        => 17,
+            "titulo"    => "Indicações literárias",
+            "icone"     => "glyphicon glyphicon-book",
+            "link"      => "/admin/edicoesjomesp",
+            "id_perfil" => 2,
+           ],
 
 
 

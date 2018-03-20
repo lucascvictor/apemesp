@@ -36,6 +36,7 @@ Route::group(['prefix' => 'musicoterapia'], function () {
     Route::get('/oquee', 'Apemesp\MusicoterapiaController@getOque')->name('apemesp.musicoterapia.oquee');
     Route::get('/formacao', 'Apemesp\MusicoterapiaController@getFormacao')->name('apemesp.musicoterapia.formacao');
     Route::get('/conquistas', 'Apemesp\MusicoterapiaController@getConquistas')->name('apemesp.musicoterapia.conquistas');
+    Route::get('/materiais', 'Apemesp\MusicoterapiaController@getMateriais')->name('apemesp.musicoterapia.materiais');
     Route::get('/literatura', 'Apemesp\MusicoterapiaController@getLiteratura')->name('apemesp.musicoterapia.literatura');
     Route::get('/literatura/indicacao', 'Apemesp\MusicoterapiaController@getIndicacao')->name('apemesp.musicoterapia.indicacao');
     Route::get('/linhadotempo', 'Apemesp\MusicoterapiaController@getLinhaDoTempo')->name('apemesp.musicoterapia.linhadotempo');
@@ -112,6 +113,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/update/estatuto/pdf', 'Admin\AdminController@updateEstatutoPdf');
         Route::group(['prefix' => 'adicionar'], function () {
           Route::get('/literatura', 'Admin\LiteraturaController@addLiteratura');
+          Route::get('/material', 'Admin\MaterialController@addMaterial');
           Route::get('/conquista', 'Admin\ConquistaController@addConquista');
           Route::get('/formacao', 'Admin\FormacaoController@addFormacao');
           Route::get('/comissao', 'Admin\ComissaoController@addComissao');
@@ -121,6 +123,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
           Route::post('/literatura', 'Admin\LiteraturaController@storeLiteratura');
+          Route::post('/material', 'Admin\MaterialController@storeMaterial');
           Route::post('/conquista', 'Admin\ConquistaController@storeConquista');
           Route::post('/formacao', 'Admin\FormacaoController@storeFormacao');
           Route::post('/comissao', 'Admin\ComissaoController@storeComissao');
@@ -129,6 +132,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
           Route::get('/literaturas', 'Admin\LiteraturaController@listLiteratura')->name('list.literatura');
+          Route::get('/material', 'Admin\MaterialController@listMateriais')->name('list.materiais');
           Route::get('/conquistas', 'Admin\ConquistaController@listConquista')->name('list.conquista');
           Route::get('/formacoes', 'Admin\FormacaoController@listFormacao')->name('list.formacao');
           Route::get('/comissoes', 'Admin\ComissaoController@listComissoes')->name('list.comissoes');
@@ -137,6 +141,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
           Route::get('/literatura/destroy/{id}', 'Admin\LiteraturaController@destroyLiteratura');
+          Route::get('/material/destroy/{id}', 'Admin\MaterialController@destroyMaterial');
           Route::get('/conquista/destroy/{id}', 'Admin\ConquistaController@destroyConquista');
           Route::get('/formacao/destroy/{id}', 'Admin\FormacaoController@destroyFormacao');
           Route::get('/comissao/destroy/{id}', 'Admin\ComissaoController@destroyComissao');
@@ -145,6 +150,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
           Route::get('/literatura/{id}', 'Admin\LiteraturaController@editLiteratura');
+          Route::get('/material/{id}', 'Admin\MaterialController@editMaterial');
           Route::get('/conquista/{id}', 'Admin\ConquistaController@editConquista');
           Route::get('/formacao/{id}', 'Admin\FormacaoController@editFormacao');
           Route::get('/comissao/{id}', 'Admin\ComissaoController@editComissao');
@@ -153,6 +159,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
           Route::post('/literatura/{id}', 'Admin\LiteraturaController@updateLiteratura');
+          Route::post('/material/{id}', 'Admin\MaterialController@updateMaterial');
           Route::post('/conquista/{id}', 'Admin\ConquistaController@updateConquista');
           Route::post('/formacao/{id}', 'Admin\FormacaoController@updateFormacao');
           Route::post('/comissao/{id}', 'Admin\ComissaoController@updateComissao');

@@ -61,4 +61,11 @@ class MusicoterapiaController extends Controller{
 		return view('paginas.musicoterapia.indicacao');
 	}
 
+	public function getMateriais()
+	{
+		$materiais = new MusicoterapiaRepository;
+		$materiais = $materiais->getMateriais();
+		return view('paginas.musicoterapia.materiais')->with('materiais', $materiais);
+	}
+
 }
