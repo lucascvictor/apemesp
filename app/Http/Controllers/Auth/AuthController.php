@@ -158,14 +158,16 @@ class AuthController extends Controller
     {
         $aud = new UserRepository;
         $user = $aud->findAditionalUserByEmail($request->email);
-        $dadosEmail = $aud->findUserById($user->id);
-        if (empty($user->email) || empty($dadosEmail)) {
+        
+        if (empty($user->email)) {
 
             Session::flash('cuidado', 'O e-mail informado é inválido ou não consta em nosso banco de dados.');
             return redirect()->back();
 
         } else {
-
+            $confirmCode = $this->generateCode();
+            $aud->storeCode($user->id, $confirmCode);       
+            $dadosEmail = $aud->findUserById($user->id);
             Mail::send('emails.reminder', ['confirmCode' => $dadosEmail->code], function ($m) use ($user) {
                 $m->from('site.apemesp@gmail.com', 'APEMESP');
                 $m->to($user->email, $user->name)->subject('Validação de cadastro!');
