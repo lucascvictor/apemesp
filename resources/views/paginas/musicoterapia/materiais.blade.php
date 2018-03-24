@@ -25,7 +25,7 @@
     
 </div>
 <div class="row">
-    <p> {{ $materiais->render() }} </p>
+    <p> {{ $materiais->appends($_GET)->render() }} </p>
 </div>
 
 @endsection

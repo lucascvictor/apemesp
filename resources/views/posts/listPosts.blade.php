@@ -86,7 +86,7 @@
 
 
 								@endforeach
-                {{ $posts->render() }}
+                {{ $posts->appends($_GET)->render() }}
 
                                 </tbody>
                             </table>

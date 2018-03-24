@@ -29,7 +29,7 @@
         </div>
 @endforeach
 
-        <p> {{ $posts->render() }} </p>
+        <p> {{ $posts->appends($_GET)->render() }} </p>
     </div>
     <!-- /.container -->
   </div>
