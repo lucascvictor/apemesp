@@ -10,4 +10,5 @@ composer.lock
 .env-dev
 .env-prod
 .htaccess
+.htaccess2
 composer.lock
