@@ -56,7 +56,7 @@
 		
 	</div>
 	<div class="row">
-		<p> {{ $associados->render() }} </p>
+		<p> {{ $associados->setPath('')->render() }} </p>
 	</div>
 
 

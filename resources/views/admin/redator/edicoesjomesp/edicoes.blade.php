@@ -125,7 +125,7 @@
 
 			</div>
 			<div class="row">
-				<p> {{ $edicoes->render() }} </p>
+				<p> {{ $edicoes->setPath('')->render() }} </p>
 
 			</div>
 		</div>

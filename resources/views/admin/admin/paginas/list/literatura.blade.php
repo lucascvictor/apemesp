@@ -79,7 +79,7 @@
 
 
 </div>
-{{ $literaturas->render() }}
+{{ $literaturas->setPath('')->render() }}
 </div>
 
 </div>

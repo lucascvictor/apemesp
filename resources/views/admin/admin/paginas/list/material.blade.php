@@ -79,7 +79,7 @@
 
 
 </div>
-{{ $materiais->render() }}
+{{ $materiais->setPath('')->render() }}
 </div>
 
 </div>

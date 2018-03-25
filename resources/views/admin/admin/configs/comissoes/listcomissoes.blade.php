@@ -35,7 +35,7 @@
 
 </div>
 <div class="row">
-<p> {{ $comissoes->render() }} </p>
+<p> {{ $comissoes->setPath('')->render() }} </p>
 
 </div>
 

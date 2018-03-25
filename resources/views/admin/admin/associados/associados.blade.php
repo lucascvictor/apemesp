@@ -39,7 +39,7 @@
       </div>
    </div>
    <div class="row">
-      <p> {{ $associados->appends($_GET)->render() }} </p>
+      <p> {{ $associados->setPath('')->render() }} </p>
    </div>
 </div>
 @endsection

@@ -35,7 +35,7 @@
 
 </div>
 <div class="row">
-<p> {{ $assuntos->render() }} </p>
+<p> {{ $assuntos->setPath('')->render() }} </p>
 
 </div>
 

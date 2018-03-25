@@ -38,7 +38,7 @@
 
 	</div>
 	<div class="row">
-    <p> {{ $escalas->render() }} </p>
+    <p> {{ $escalas->setPath('')->render() }} </p>
 
 	</div>
 

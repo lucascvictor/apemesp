@@ -74,7 +74,7 @@
          </div>
       </div>
       <div class="row">
-         <p> {{ $usuarios->appends($_GET)->render() }} </p>
+         <p> {{ $usuarios->setPath('')->render() }} </p>
       </div>
    </div>
    <div class="col-md-2">

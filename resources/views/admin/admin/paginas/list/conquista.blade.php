@@ -76,7 +76,7 @@
 
 
 </div>
-{{ $conquistas->render() }}
+{{ $conquistas->setPath('')->render() }}
 </div>
 
 </div>

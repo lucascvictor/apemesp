@@ -76,7 +76,7 @@
 			</tbody>
 	</table>
 
-{{ $formacoes->render() }}
+{{ $formacoes->setPath('')->render() }}
 </div>
 
 </div>

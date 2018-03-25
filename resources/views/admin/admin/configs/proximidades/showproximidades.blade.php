@@ -38,7 +38,7 @@
 
 	</div>
 	<div class="row">
-    <p> {{ $proximidades->render() }} </p>
+    <p> {{ $proximidades->setPath('')->render() }} </p>
 
 	</div>
 
