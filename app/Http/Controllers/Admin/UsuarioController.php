@@ -38,6 +38,7 @@ class UsuarioController extends Controller
         $usuarioRepository = new UsuarioRepository;
         $usuarios = $usuarioRepository->getUsuarioIndex();
         unset($adminRepository);
+        $usuarios->setPath('usuarios');
         return View::make('admin.admin.usuarios.index', compact('usuarios', $usuarios));
     }
 
