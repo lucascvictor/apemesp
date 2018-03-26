@@ -74,7 +74,7 @@
          </div>
       </div>
       <div class="row">
-         <p> {!! $usuarios->render() !!} </p>
+         <p> {!! $usuarios->links() !!} </p>
       </div>
    </div>
    <div class="col-md-2">
