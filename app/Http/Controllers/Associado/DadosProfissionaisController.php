@@ -54,7 +54,6 @@ class DadosProfissionaisController extends Controller{
     public function getDadosProfissionais()
     {
 
-
       $id_cadastro = $this->getUserCadastro();
       $dados = array();
       $dadosProfissionais = new DadosProfissionaisRepository;
@@ -102,7 +101,7 @@ class DadosProfissionaisController extends Controller{
               'telefone' => 'required',
               'dias_atendimento' => 'required',
           ));
-
+      
       $resultado = $dadosProfissionais->storeDadosProfissionais($request);
       $dadosProfissionais->changeCadastro($id_user, $id_cadastro);
       if ($resultado == 0) {
@@ -111,7 +110,7 @@ class DadosProfissionaisController extends Controller{
         ->with('especialidades', $dadosProfissionais->getEspecialidades())
         ->with('proximidades', $dadosProfissionais->getProximidades())
         ->with('escalas', $dadosProfissionais->getEscalas());
-        Session::flash('sucesso', 'Seus dados profissionais foram atualizados com sucesso');
+        Session::flash('sucesso', 'Seus dados profissionais foram inseridos com sucesso');
       }
 
     }

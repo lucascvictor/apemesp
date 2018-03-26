@@ -79,7 +79,7 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post('/alterarsenha', 'Admin\AdminController@alterarSenha')->name('admin.alterarsenha');
     });
     Route::group(['prefix' => 'usuarios'], function () {
-        Route::get('', 'Admin\UsuarioController@index')->name('users.index');
+        Route::get('', 'Admin\UsuarioController@index')->where('page', '.*')->name('users.index');
         Route::get('/new', 'Admin\UsuarioController@new')->name('users.new');
         Route::get('/new/admin', 'Admin\UsuarioController@newAdmin')->name('users.new_admin');
         Route::get('/new/comum', 'Admin\UsuarioController@newComum')->name('users.new_comum');

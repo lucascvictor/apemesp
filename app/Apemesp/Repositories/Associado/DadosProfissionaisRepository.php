@@ -143,7 +143,11 @@ class DadosProfissionaisRepository
             'email' => $request->email,
             'telefone' => $request->telefone
               ]);
+  }
 
+  public function getQuant()
+  {
+    return DadosProfissionais::where('id_user', $this->getIdUser())->count();
   }
 
 
