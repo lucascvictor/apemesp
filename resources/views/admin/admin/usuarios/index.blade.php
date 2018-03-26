@@ -74,7 +74,7 @@
          </div>
       </div>
       <div class="row">
-         <p> {!! $usuarios->links() !!} </p>
+         <p> {!! $usuarios->appends(request()->query())->links() !!} </p>
       </div>
    </div>
    <div class="col-md-2">
