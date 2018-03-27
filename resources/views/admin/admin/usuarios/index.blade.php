@@ -83,7 +83,7 @@
 </div>
 @endsection
 @section('extrascript')
-<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>s
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript">
    $(function()
    {
