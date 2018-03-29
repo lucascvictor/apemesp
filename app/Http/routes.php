@@ -7,11 +7,11 @@ Route::get('/contato/mensagens', 'Apemesp\ContatoController@getMensagens')->name
 Route::get('/pages/post/{id}', 'Apemesp\PagesController@getPost');
 Route::get('/tags/{id}', 'Apemesp\PagesController@getPostsTag');
 Route::get('/confirm/{code}', 'Auth\AuthController@confirm')->name('apemesp.confirm');
-Route::get('/reenviar/', 'Auth\AuthController@reenviar')->name('apemesp.reenviar');
+Route::get('/reenviar', 'Auth\AuthController@reenviar')->name('apemesp.reenviar');
 Route::post('/reenviarconfirmacao', 'Auth\AuthController@reenviarconfirmacao');
 Route::get('/redefinir', 'Auth\AuthController@redefinir')->name('apemesp.redefinir');
 Route::get('/reset/{token}', 'Auth\AuthController@reset')->name('apemesp.reset');
-Route::get('/verificar/', 'Apemesp\PagesController@verificarCpf');
+Route::get('/verificar', 'Apemesp\PagesController@verificarCpf');
 
 Route::group(['prefix' => 'apemesp'], function () {
     Route::get('/quemsomos', 'Apemesp\PagesController@getQuemSomos')->name('apemesp.quemsomos');
