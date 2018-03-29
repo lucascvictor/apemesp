@@ -31,9 +31,9 @@
 <![endif] -->
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link media="all" type="text/css" rel="stylesheet" href="{{ url('public/font-awesome/css/font-awesome.min.css') }}">
-<link media="all" type="text/css" rel="stylesheet" href="{{ url('public/css/rodape.css') }}">
-<link media="all" type="text/css" rel="stylesheet" href="{{ url('public/css/bootstrap-social.css') }}">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/font-awesome/css/font-awesome.min.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/rodape.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-social.css">
 <style type="text/css">
    .navbar .ul .li{
    background-color: transparent;
