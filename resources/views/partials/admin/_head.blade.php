@@ -18,7 +18,7 @@
 
     <!-- Custom Fonts 
     {!! Html::style('font-awesome/css/font-awesome.min.css') !!}-->
-    <link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/publicfont-awesome/css/font-awesome.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/font-awesome/css/font-awesome.min.css">
 
     
 
