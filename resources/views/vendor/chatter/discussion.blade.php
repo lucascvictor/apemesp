@@ -1,8 +1,8 @@
 @extends(Config::get('chatter.master_file_extend'))
 
 @section(Config::get('chatter.yields.head'))
-	<link href="/vendor/devdojo/chatter/assets/css/chatter.css" rel="stylesheet">
-	<link href="/vendor/devdojo/chatter/assets/css/simplemde.min.css" rel="stylesheet">
+	<link href="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/css/chatter.css" rel="stylesheet">
+	<link href="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/css/simplemde.min.css" rel="stylesheet">
 @stop
 
 

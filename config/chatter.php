@@ -55,7 +55,7 @@ return [
 
     'headline'      => 'Bem-vindo ao Forum APEMESP',
     'description'   => 'Simplicidade para discutir a complexidade.',
-    'headline_logo' => '/vendor/devdojo/chatter/assets/images/logo-light.png',
+    'headline_logo' => '"http://www.apemesp.com/public/vendor/devdojo/chatter/assets/images/logo-light.png',
 
     /*
     |--------------------------------------------------------------------------
