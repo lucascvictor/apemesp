@@ -191,8 +191,8 @@
 
 
 @if( $chatter_editor == 'tinymce' || empty($chatter_editor) )
-	<script src="/vendor/devdojo/chatter/assets/vendor/tinymce/tinymce.min.js"></script>
-	<script src="/vendor/devdojo/chatter/assets/js/tinymce.js"></script>
+	<script src="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/vendor/tinymce/tinymce.min.js"></script>
+	<script src="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/js/tinymce.js"></script>
 	<script>
 		var my_tinymce = tinyMCE;
 		$('document').ready(function(){
