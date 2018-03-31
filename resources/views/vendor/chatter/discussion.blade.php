@@ -320,6 +320,6 @@
 
 
 </script>
-<script src="/vendor/devdojo/chatter/assets/js/chatter.js"></script>
+<script src="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/js/chatter.js"></script>
 
 @stop
