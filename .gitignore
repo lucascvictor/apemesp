@@ -11,4 +11,6 @@ composer.lock
 .env-prod
 .htaccess
 .htaccess2
+.htaccess_server
+index.php
 composer.lock
