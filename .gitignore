@@ -13,4 +13,5 @@ composer.lock
 .htaccess2
 .htaccess_server
 index.php
+server.php
 composer.lock
