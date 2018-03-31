@@ -13,5 +13,6 @@ composer.lock
 .htaccess2
 .htaccess_server
 index.php
+index_old.php
 server.php
 composer.lock
