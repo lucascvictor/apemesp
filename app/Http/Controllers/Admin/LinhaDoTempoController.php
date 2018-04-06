@@ -41,4 +41,12 @@ class LinhaDoTempoController extends Controller
         $linhaDoTempo = $linhaDoTempoRep->listAll();
         return view('admin.admin.paginas.list.linhadotempo')->with('linhadotempo', $linhaDoTempo);
     }
+
+
+    public function editItem($id)
+    {
+        $linhaDoTempoRep = new LinhaDoTempoRepository;
+        $linhaDoTempo = $linhaDoTempoRep->getItem($id);
+        return view('admin.admin.paginas.list.linhadotempo')->with('linhadotempo', $linhaDoTempo);
+    }
 }

@@ -139,7 +139,9 @@ Route::group(['prefix' => 'admin'], function () {
           Route::post('/comissao', 'Admin\ComissaoController@storeComissao');
           Route::post('/membro', 'Admin\MembroController@storeMembro');
           Route::post('/propaganda', 'Admin\PropagandaController@storePropaganda');
-
+          Route::post('/footer', 'Admin\FooterController@storeItem');
+          Route::post('/linhadotempo', 'Admin\LinhaDoTempoController@storeItem');
+        
 
           Route::get('/literaturas', 'Admin\LiteraturaController@listLiteratura')->name('list.literatura');
           Route::get('/material', 'Admin\MaterialController@listMateriais')->name('list.materiais');
@@ -159,6 +161,8 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/comissao/destroy/{id}', 'Admin\ComissaoController@destroyComissao');
           Route::get('/membro/destroy/{id}', 'Admin\MembroController@destroyMembro');
           Route::get('/propaganda/destroy/{id}', 'Admin\PropagandaController@destroyPropaganda');
+          Route::get('/linhadotempo/destroy/{id}', 'Admin\LinhaDoTempoController@destroyItem');
+          Route::get('/footer/destroy/{id}', 'Admin\FooterController@destroyItem');
 
 
           Route::get('/literatura/{id}', 'Admin\LiteraturaController@editLiteratura');
@@ -168,6 +172,8 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/comissao/{id}', 'Admin\ComissaoController@editComissao');
           Route::get('/membro/{id}', 'Admin\MembroController@editMembro');
           Route::get('/propaganda/{id}', 'Admin\PropagandaController@editPropaganda');
+          Route::get('/linhadotempo/{id}', 'Admin\LinhaDoTempoController@editItem');
+          Route::get('/footer/{id}', 'Admin\FooterController@editItem');
 
 
           Route::post('/literatura/{id}', 'Admin\LiteraturaController@updateLiteratura');
@@ -178,7 +184,8 @@ Route::group(['prefix' => 'admin'], function () {
           Route::post('/membro/{id}', 'Admin\MembroController@updateMembro');
           Route::post('/propaganda/{id}', 'Admin\PropagandaController@updatePropaganda');
           Route::post('/propagandaativa', 'Admin\PropagandaController@updatePropagandaAtiva');
-
+          Route::post('/linhadotempo/{id}', 'Admin\LinhaDoTempoController@updateItem');
+          Route::post('/footer/{id}', 'Admin\FooterController@updateItem');
     });
 
     Route::group(['prefix' => 'configs'], function () {
