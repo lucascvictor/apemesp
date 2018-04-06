@@ -51,51 +51,19 @@
                <div class="footer-col col-md-4 col-sm-10">
                   <h3>Parceiros</h3>
                   <ul class="list-inline text-center">
+                     @foreach($footer as $item)
                      <li>
-                        <a href="http://www.colmeiamedicina.com.br" target="_blank">
-                        {{ Html::image('images/footer/colmeia.png',  '', array('style' => 'height: 50px; width: 100px;' )) }}
+                        <?php $imagem = 'images/footer/' . $item->imagem; ?>
+                        @if($item->formato == 1)
+                            <?php $formato = 'height: 100px; width: 100px;'; ?>
+                        @else
+                            <?php $formato = 'height: 50px; width: 100px;'; ?>
+                        @endif
+                        <a href="{{ $item->link }}" target="_blank">
+                        {{ Html::image($imagem,  '', array('style' => $formato )) }}
                         </a>
                      </li>
-                     <li>
-                        <a href="http://www.EMIND.info" target="_blank">
-                        {{ Html::image('images/footer/emind.png',  '', array('style' => 'height: 50px; width: 100px;' )) }}
-                        </a>
-                     </li>
-                     <li>
-                        <a href="http://www.maceloperestrelo.com.br" target="_blank">
-                        {{ Html::image('images/footer/essencia-musical.png',  '', array('style' => 'height: 50px; width: 100px;' )) }}
-                        </a>
-                     </li>
-                     <li>
-                        <a href="http://wwww.minarete.com.br" target="_blank">
-                        {{ Html::image('images/footer/minarete.png',  '', array('style' => 'height: 50px; width: 100px;' )) }}
-                        </a>
-                     </li>
-                     <li>
-                        <a href="http://www.neuromusicoterapia.com.br" target="_blank">
-                        {{ Html::image('images/footer/neuromusicoterapia.png',  '', array('style' => 'height: 50px; width: 50px;' )) }}
-                        </a>
-                     </li>
-                     <li>
-                        <a href="http://www.institutonumen.com.br" target="_blank">
-                        {{ Html::image('images/footer/numen.png',  '', array('style' => 'height: 50px; width: 100px;' )) }}
-                        </a>
-                     </li>
-                     <li>
-                        <a href="http://www.musicoterapia.mus.br" target="_blank">
-                        {{ Html::image('images/footer/ubam.png',  '', array('style' => 'height: 50px; width: 70px;' )) }}
-                        </a>
-                     </li>
-                     <li>
-                        <a href="http://www.musictherapyworld.net" target="_blank">
-                        {{ Html::image('images/footer/wfmt.png',  '', array('style' => 'height: 50px; width: 100px;' )) }}
-                        </a>
-                     </li>
-                     <li>
-                        <a href="http://www.fmu.com" target="_blank">
-                        {{ Html::image('images/footer/fmu.png',  '', array('style' => 'height: 100px; width: 100px;' )) }}
-                        </a>
-                     </li>
+                     @endforeach
                   </ul>
                </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Apemesp;
+namespace Apemesp\Apemesp\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

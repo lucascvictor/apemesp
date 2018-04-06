@@ -7,6 +7,7 @@ class CreateForeignKeys extends Migration
 {
     public function up()
     {
+        /*
         Schema::table('chatter_discussion', function (Blueprint $table) {
             $table->foreign('chatter_category_id')->references('id')->on('chatter_categories')
                         ->onDelete('cascade')
@@ -25,7 +26,7 @@ class CreateForeignKeys extends Migration
                         ->onUpdate('cascade');
         });
 
-         Schema::table('dados_profissionais', function (Blueprint $table) {
+        Schema::table('dados_profissionais', function (Blueprint $table) {
         $table->foreign('id_user')->references('id')->on('users')
                         ->onDelete('cascade')
                         ->onUpdate('cascade');
@@ -125,7 +126,7 @@ class CreateForeignKeys extends Migration
            
         });
 
-       
+       */
 
     }
 
