@@ -8,7 +8,7 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Http\Requests;
 
-use Apemesp\Apemesp\Models\Menu;
+use Apemesp\Apemesp\Repositories\Admin\LinhaDoTempoRepository;
 
 use Auth;
 
@@ -37,6 +37,8 @@ class LinhaDoTempoController extends Controller
 
     public function listTimeLine()
     {
-        return view('admin.admin.paginas.list.linhadotempo');
+        $linhaDoTempoRep = new LinhaDoTempoRepository;
+        $linhaDoTempo = $linhaDoTempoRep->listAll();
+        return view('admin.admin.paginas.list.linhadotempo')->with('linhadotempo', $linhaDoTempo);
     }
 }
