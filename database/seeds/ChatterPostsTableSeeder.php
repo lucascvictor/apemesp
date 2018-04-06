@@ -23,8 +23,8 @@ class ChatterPostsTableSeeder extends Seeder
                         'user_id'               => 303,
                         'body'                  => '<p>Bem-vindos ao forum da APEMESP nosso site se destina a orientar e promover musicoterapeutas do estado de São Paulo <a href="https://apemesp.com.br" target="_blank">APEMESP</a> Trabalhamos com uma equipe de profissionais qualificados para melhor atender Mt\'s e pacientes</p>
         <p>Você pode conferir nossa página no<a href="http://www.facebook.com/apemesp" target="_blank">Facebook</a></p>',
-                        'created_at' => '2016-08-18 14:27:56',
-                        'updated_at' => '2016-08-18 14:27:56',
+                        'created_at' => '2018-02-18 14:27:56',
+                        'updated_at' => '2018-02-18 14:27:56',
                     ],
                     1 => [
                         'id'                    => 2,
@@ -33,8 +33,8 @@ class ChatterPostsTableSeeder extends Seeder
                         'body'                  => '<p>Hey!</p>
         <p>Este é um forum dedicado à musicoterapeutas, por este motivo seu acesso como associado é necessário</p>',
 
-                    'created_at' => '2016-08-18 14:39:36',
-                    'updated_at' => '2016-08-18 14:39:36',
+                    'created_at' => '2018-02-18 14:39:36',
+                    'updated_at' => '2018-02-18 14:39:36',
                 ],
 
         ]);
