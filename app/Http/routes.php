@@ -127,6 +127,8 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/comissao', 'Admin\ComissaoController@addComissao');
           Route::get('/membro', 'Admin\MembroController@addMembro');
           Route::get('/propaganda', 'Admin\PropagandaController@addPropaganda');
+          Route::get('/footer', 'Admin\FooterController@addItem');
+          Route::get('/linhadotempo', 'Admin\LinhaDoTempoController@addItem');
         });
 
 
@@ -146,6 +148,8 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/comissoes', 'Admin\ComissaoController@listComissoes')->name('list.comissoes');
           Route::get('/membros', 'Admin\MembroController@listMembro')->name('list.membro');
           Route::get('/propagandas', 'Admin\PropagandaController@listPropaganda')->name('list.propaganda');
+          Route::get('/footer', 'Admin\FooterController@listFooter')->name('list.footer');
+          Route::get('/linhadotempo', 'Admin\LinhaDoTempoController@listTimeLine')->name('list.linhadotempo');
 
 
           Route::get('/literatura/destroy/{id}', 'Admin\LiteraturaController@destroyLiteratura');
