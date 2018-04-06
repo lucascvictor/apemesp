@@ -14,7 +14,6 @@ class AgendaController extends Controller{
 			'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'],
 			'Apemesp\Composers\FooterComposer'  => ['partials._footer'] 
         ]);
-
 	}
 
 	public function getAgenda(){

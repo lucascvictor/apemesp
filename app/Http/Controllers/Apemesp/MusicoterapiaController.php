@@ -13,12 +13,10 @@ class MusicoterapiaController extends Controller{
 
 	public function __construct()
     {
-         View::composers([
-            'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar']
-        ]);
-
-         View::composers([
-            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar']
+		View::composers([
+			'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'],
+			'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'],
+			'Apemesp\Composers\FooterComposer'  => ['partials._footer'] 
         ]);
      }
 
