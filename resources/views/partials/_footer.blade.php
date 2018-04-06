@@ -93,6 +93,11 @@
                   {{ Html::image('images/footer/wfmt.png',  '', array('style' => 'height: 50px; width: 100px;' )) }}
                   </a>
                         </li>
+                        <li>
+                             <a href="http://www.fmu.com" target="_blank">
+                  {{ Html::image('images/footer/fmu.png',  '', array('style' => 'height: 100px; width: 100px;' )) }}
+                  </a>
+                        </li>
                     </ul>
                     </div>
                 </div>
