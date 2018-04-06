@@ -3,13 +3,12 @@
 @section('titulo', 'Linha do tempo APEMESP')
 
 @section('extrastyle')
-<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript" src="{{ url('js/modernizr.js') }}"></script>
+<script type="text/javascript" src="http://apemesp.com/public/js/modernizr.js') }}"></script>
 
-<link rel="stylesheet" type="text/css" href="{{ url('css/timeline.css')}}" >
+<link rel="stylesheet" type="text/css" href="http://apemesp.com/public/css/timeline.css" >
 
-<link rel="stylesheet" type="text/css" href="{{ url('css/timeline_components.css') }}">
+<link rel="stylesheet" type="text/css" href="http://apemesp.com/public/css/timeline_components.css">
 
 <style type="text/css">
 	.cd-timeline-navigation a::after {
@@ -71,7 +70,7 @@
 
 
 @section('extrascript')
-<script type="text/javascript" src="{{ url('js/timeline.js') }}">	
+<script type="text/javascript" src="http://apemesp.com/public/js/timeline.js">	
 
 </script>
 

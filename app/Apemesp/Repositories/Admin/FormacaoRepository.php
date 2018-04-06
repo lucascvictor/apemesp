@@ -47,7 +47,7 @@ class FormacaoRepository
 	}
 	public function listAll()
 	{
-		return Formacao::select('*')->orderBy('id', 'desc')->paginate(5);
+		return Formacao::select('*')->orderBy('id', 'desc')->paginate(10);
 	}
 
 	public function getFormacao($id)

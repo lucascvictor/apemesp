@@ -20,6 +20,9 @@
 	</div>
 	@endforeach
 	</div>
+	<div class="row">
+	{{ $formacoes->render() }}
+	</div>
 </div>
 
 

@@ -273,6 +273,15 @@ Keynote Speaker: Barbara Wheeler.
                    	'updated_at' => $data,
                 ],
 
+                22 => [
+                    'id'             => 23,
+                    'ano'           => 2001,
+                    'acontecimentos' => "<p>	
+				 O curso de musicoterapia começa a ser oferecido pela FMU.	
+				</p>",
+					'created_at' => $data,
+                   	'updated_at' => $data,
+                ],
 
 
             ]);

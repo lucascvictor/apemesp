@@ -4,8 +4,6 @@
 
 @section('conteudo')
 
-
-
 <div class="row">
 	<div class="col-md-10">
 
@@ -28,32 +26,44 @@
                                 <tbody>
 
 								<tr>
-                                        <td>Adicionar item para Literatura</td>
+                                        <td>Literatura</td>
                                         <td>Adicione ou edite itens para a página: <a href="{{ url('/musicoterapia/literatura')}}"> {{ url('/musicoterapia/literatura')}}</a></td>
                                         <td><a class="btn btn-default" href="/admin/paginas/adicionar/literatura">Adicionar</a></td>
                                         <td><a class="btn btn-info" href="{{ url('/admin/paginas/literaturas')}}">Visualizar itens existentes</a></td>
                                 </tr>
                                 <tr>
-                                        <td>Adicionar item para Materiais informativos</td>
+                                        <td>Materiais informativos</td>
                                         <td>Adicione ou edite itens para a página: <a href="{{ url('/musicoterapia/materiais')}}"> {{ url('/musicoterapia/materiais')}}</a></td>
                                         <td><a class="btn btn-default" href="/admin/paginas/adicionar/material">Adicionar</a></td>
                                         <td><a class="btn btn-info" href="{{ url('/admin/paginas/material')}}">Visualizar itens existentes</a></td>
                                 </tr>
                                 <tr>
-                                        <td>Adicionar item para Conquistas</td>
+                                        <td>Conquistas</td>
                                         <td>Adicionar ou editar item para a página: <a href="{{ url('/musicoterapia/conquistas')}}"> {{ url('/musicoterapia/conquistas')}}</a></td>
                                         <td><a class="btn btn-default" href="/admin/paginas/adicionar/conquista">Adicionar</a></td>
                                         <td><a class="btn btn-info" href="{{ url('/admin/paginas/conquistas')}}">Visualizar itens existentes</a></td>
                                 </tr>
                                 <tr>
-                                        <td>Adicionar item para Formações</td>
+                                        <td>Formações</td>
                                         <td>Adicionar ou editar item para a página: <a href="{{ url('/musicoterapia/formacao')}}"> {{ url('/musicoterapia/formacao')}}</a></td>
                                         <td><a class="btn btn-default" href="/admin/paginas/adicionar/formacao">Adicionar</a></td>
                                         <td><a class="btn btn-info" href="{{ url('/admin/paginas/formacoes')}}">Visualizar itens existentes</a></td>
                                 </tr>
                                 <tr>
-                                        <td>Adicionar Comissão</td>
-                                        <td>Adicionar acomissão ou editar comissões existentes<a href="{{ url('/apemesp/comissoes')}}"> {{ url('/apemesp/comissoes')}}</a></td>
+                                        <td>Comissões</td>
+                                        <td>Adicionar a comissão ou editar comissões existentes<a href="{{ url('/apemesp/comissoes')}}"> {{ url('/apemesp/comissoes')}}</a></td>
+                                        <td><a class="btn btn-warning" href="{{ url('/admin/paginas/adicionar/comissao')}}">Adicionar</a></td>
+                                        <td><a class="btn btn-info" href="{{ url('/admin/paginas/comissoes')}}">Visualizar itens existentes</a></td>
+                                </tr>
+                                <tr>
+                                        <td>Linha do tempo</td>
+                                        <td>Adicionar ou editar itens da linha do tempo<a href="{{ url('/musicoterapia/linhadotempo')}}"> {{ url('/apemesp/comissoes')}}</a></td>
+                                        <td><a class="btn btn-warning" href="{{ url('/admin/paginas/adicionar/comissao')}}">Adicionar</a></td>
+                                        <td><a class="btn btn-info" href="{{ url('/admin/paginas/comissoes')}}">Visualizar itens existentes</a></td>
+                                </tr>
+                                <tr>
+                                        <td>Parceiros no rodapé da página</td>
+                                        <td>Adicionar ou editar icones de parceiros no rodapé da página</td>
                                         <td><a class="btn btn-warning" href="{{ url('/admin/paginas/adicionar/comissao')}}">Adicionar</a></td>
                                         <td><a class="btn btn-info" href="{{ url('/admin/paginas/comissoes')}}">Visualizar itens existentes</a></td>
                                 </tr>
