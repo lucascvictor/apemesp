@@ -36,7 +36,17 @@ class AssociadoRepository
 
 	public function getAssociadoIndex()
 	{
-		return DB::table('dados_pessoais')->select('*')->orderBy('name', 'asc')->paginate(10);
+		return DB::table('dados_pessoais')
+		->select('dados_pessoais.*')
+		->orderBy('dados_pessoais.name', 'asc')->paginate(10);
+	}
+
+	public function orderByUpdate()
+	{
+		return DB::table('dados_pessoais')
+		->join('aditional_users_data', 'aditional_users_data.id_user', '=', 'dados_pessoais.id_user')
+		->select('dados_pessoais.*', 'aditional_users_data.updated_at')
+		->orderBy('aditional_users_data.updated_at', 'asc')->paginate(10);
 	}
 
 	public function getAssociado($id)

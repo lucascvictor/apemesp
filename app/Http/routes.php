@@ -90,7 +90,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/search', 'Admin\UsuarioController@search');
         Route::get('/reset/{id}', 'Admin\UsuarioController@resetPassword');
         Route::get('/usuarios/mensagem/{id}', 'Adimin\UsuarioController@mensagem');
-
+        Route::get('/updated', 'Admin\UsuarioController@orderByUpdate');
     });
 
     Route::group(['prefix' => 'indicacoesliterarias'], function () {
@@ -112,6 +112,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/search', 'Admin\AssociadoController@search')->name('associados.search');
         Route::get('/perfil/{id}', 'Admin\AssociadoController@getPerfil');
         Route::get('/perfil/editar/{id}', 'Admin\AssociadoController@editPerfil');
+        Route::get('/updated', 'Admin\AssociadoController@orderByUpdate');
     });
 
     Route::group(['prefix' => 'paginas'], function () {
@@ -130,7 +131,6 @@ Route::group(['prefix' => 'admin'], function () {
           Route::get('/footer', 'Admin\FooterController@addItem');
           Route::get('/linhadotempo', 'Admin\LinhaDoTempoController@addItem');
         });
-
 
           Route::post('/literatura', 'Admin\LiteraturaController@storeLiteratura');
           Route::post('/material', 'Admin\MaterialController@storeMaterial');
@@ -243,8 +243,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('{id}', 'Admin\PostController@update');
     });
 });
-
-
 
 Route::group(['prefix' => 'associado'], function () {
     Route::group(['prefix' => 'dadospessoais'], function () {

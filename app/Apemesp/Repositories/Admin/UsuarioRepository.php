@@ -47,4 +47,12 @@ class UsuarioRepository
 		return $usuario->name;
 	}
 
+	public function orderByUpdate()
+	{
+		return DB::table('users')
+		->join('aditional_users_data', 'aditional_users_data.id_user', '=', 'users.id')
+		->select('users.*', 'aditional_users_data.updated_at')
+		->orderBy('aditional_users_data.updated_at', 'asc')->paginate(10);
+	}
+
 }

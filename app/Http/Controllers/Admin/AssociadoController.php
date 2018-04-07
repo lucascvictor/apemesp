@@ -63,4 +63,11 @@ class AssociadoController extends Controller
         return view('admin.admin.associados.associados')->with('associados', $associados);
     }
 
+    public function orderByUpdate()
+    {
+        $associadoRepository = new AssociadoRepository;
+        $associados = $associadoRepository->orderByUpdate();
+        return view('admin.admin.associados.associados')->with('associados', $associados);
+    }
+
 }

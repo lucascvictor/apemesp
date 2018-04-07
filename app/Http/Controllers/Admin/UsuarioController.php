@@ -102,4 +102,11 @@ class UsuarioController extends Controller
         return view('admin.admin.usuarios.new_redator');
     }
 
+    public function orderByUpdate()
+    {
+        $usuarioRepository = new UsuarioRepository;
+        $usuarios = $usuarioRepository->orderByUpdate();
+        return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
+    }
+
 }

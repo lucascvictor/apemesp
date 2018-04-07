@@ -1,6 +1,17 @@
 @extends('admin.dashboard')
 @section('titulo', 'Associados')
 @section('conteudo')
+<div class="row">
+    <?php $pagina = $_SERVER['PHP_SELF'];?>
+
+    <div class="col-md-4">
+    @if ($pagina == "/index.php/admin/associados")
+        <a class="btn btn-success"  href="{{ url('/admin/associados/updated') }}"> Visualizar ultimos associados inscritos </a>
+    @else
+        <a class="btn btn-success"  href="{{ url('/admin/associados') }}"> Visualizar lista completa em ordem alfabética</a>
+    @endif
+    </div>
+</div>
 <div class="col-md-4" style="float: right;">
    {{ Form::open(['action' => ['Admin\AssociadoController@search'], 'method' => 'GET']) }}
    <div class="form-group input-group">
@@ -10,9 +21,9 @@
    {{ Form::close() }}
 </div>
 <div class="row">
-<div class="col-md-10">
+<div class="col-md-12">
    <div class="row">
-      <div class="col-lg-10">
+      <div class="col-lg-12">
          <h2>Lista de Associados</h2>
          <div class="table-responsive">
             <table class="table table-hover table-striped">
