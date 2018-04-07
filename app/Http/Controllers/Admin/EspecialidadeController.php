@@ -12,6 +12,8 @@ use Apemesp\Apemesp\Repositories\Admin\EspecialidadeRepository;
 
 use View;
 
+use Session;
+
 class EspecialidadeController extends Controller
 {
 

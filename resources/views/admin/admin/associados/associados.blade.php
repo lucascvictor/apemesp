@@ -3,9 +3,10 @@
 @section('conteudo')
 <div class="row">
     <?php $pagina = $_SERVER['PHP_SELF'];?>
-
+    <?php $link = '/admin/associados';?>
+    
     <div class="col-md-4">
-    @if ($pagina == "/public/admin/associados")
+    @if (substr($pagina, -17) == $link)
         <a class="btn btn-success"  href="{{ url('/admin/associados/updated') }}"> Visualizar ultimos associados inscritos </a>
     @else
         <a class="btn btn-success"  href="{{ url('/admin/associados') }}"> Visualizar lista completa em ordem alfabética</a>
