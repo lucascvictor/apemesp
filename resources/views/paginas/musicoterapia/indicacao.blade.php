@@ -5,7 +5,7 @@
 @section('conteudo')
 
 
-<form method="post" action="{{ url('/musicoterapia/literatura/indicacao') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ url('/musicoterapia/literatura/indicacao') }}" enctype="multipart/form-data">
 	{{ csrf_field() }}
 	<fieldset> 
 	<legend>Indicação de item para o acervo</legend>

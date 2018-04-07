@@ -14,7 +14,7 @@ class CreateIndicacaoLiteraria extends Migration
     {
         Schema::create('indicacao_literaria', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titutlo');
+            $table->string('titulo');
             $table->string('imagem');
             $table->text('descricao');
             $table->text('nome');

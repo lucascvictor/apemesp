@@ -19,7 +19,7 @@
                 <tbody>
                     @foreach($indicacoes as $indicacao)
                         <tr>
-                            <td>{{$indicacao->name}}</td>
+                            <td>{{$indicacao->nome}}</td>
                             <td>{{$indicacao->email}}</td>
                             <td>{{$indicacao->titulo}}</td>
                             <td><a class="btn btn-success" href="{{ url('/admin/literatura/indicacao') }}/{{$indicacao->id}}">Avaliar</a></td>

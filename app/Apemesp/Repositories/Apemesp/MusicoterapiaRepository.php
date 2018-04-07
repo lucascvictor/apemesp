@@ -21,6 +21,23 @@ use Input;
 
 class MusicoterapiaRepository
 {
+
+	public function __construct()
+	{
+		$this->setData();
+	}
+
+	public function setData()
+	{
+		$this->data = date("Y-m-d H:i:s");
+	}
+
+	public function getData()
+	{
+		return $this->data;
+	}
+
+
 	public function getOquee()
 	{
 		return Page::find(3); //3 é o indice definido no seeder para esta página
@@ -41,16 +58,27 @@ class MusicoterapiaRepository
 		return Material::where('id', '>', 0)->orderBy('titulo', 'asc')->paginate(4);
 	}
 
-	public function storeIndicacao($request)
+	public function storeIndicacao($request, $imagem)
 	{
-			dd($request->file('imagem'));
+			$destinationPath = base_path() . DIRECTORY_SEPARATOR . 'public/images/indicacoes/';
+
 			$indicacao = new IndicacaoLiteraria;
-            $indicacao->imagem = $request->file('imagem');
-            $indicacao->titutlo = $request->titulo;
-            $indicacao->descricao= $request->descricao;
-			$indicacao->nome = $request->nome;
-			$indicacao->email = $request->email;
-            $indicacao->save();
+
+            $indicacao->titulo = $request['titulo'];
+            $indicacao->descricao= $request['descricao'];
+			$indicacao->nome = $request['nome'];
+			$indicacao->email = $request['email'];
+			$indicacao->save();
+
+			$fileName = "indicacao" . $indicacao->id . '.' . $imagem->getClientOriginalExtension();
+			$imagem->move($destinationPath, $fileName);
+
+			IndicacaoLiteraria::where('id', $indicacao->id )
+       		 ->update([
+            'imagem' => $fileName,
+            'updated_at' => $this->getData()
+            ]);
+
 	}
 
 	public function getIndicacoes()

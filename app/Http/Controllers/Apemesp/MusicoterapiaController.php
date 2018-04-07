@@ -60,10 +60,12 @@ class MusicoterapiaController extends Controller{
 		return view('paginas.musicoterapia.indicacao');
 	}
 
-	public function storeIndicacao(Request $request)
+	public function storeIndicacao()
 	{
+		$imagem = Request::file('imagem');
 		$musicoterapia = new MusicoterapiaRepository;
-		$musicoterapia->storeIndicacao($request);
+		$musicoterapia->storeIndicacao(Request::all(), $imagem);
+		Session::flash('sucesso', 'Sua indicação foi enviada');
 		return redirect()->back();
 	}
 
