@@ -39,7 +39,7 @@ class ChartRepository
 
 	public function getIntervalo($intervalo)
 	{
-		return AditionalUserData::where('created_at', '>', '(NOW() - INTERVAL'. $intervalo .'DAY)')->count();
+		return AditionalUserData::whereRaw('created_at > (NOW() - INTERVAL ? DAY)', [$intervalo])->count();
 	}
 
 	public function getPostsViews()
