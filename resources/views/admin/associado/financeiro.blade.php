@@ -7,8 +7,11 @@
 @endsection
 
 @section('conteudo')
-<a href="" class="btn btn-default" style="background-color: orange;color: white;">Adicionar lançamento financeiro</a>
-                        
+<div class="row">
+        <div class="col-md-4">
+        <a style="background-color: orange;color: white; border-color:orange;" class="btn btn-success btn-block" href="" data-toggle="modal" data-target="#lancFinanceiro">Adicionar lançamento financeiro</a>
+        </div>
+    </div>              
 <fieldset>
    <legend>Anuidades</legend>
    <div class="row">
@@ -83,15 +86,11 @@
    @endforeach
 </fieldset>
 
-
+@include('admin.associado.financeiro.modal')
 @endsection
 
 
 @section('extrascript')
-
-
-
-
 
 
 @endsection
