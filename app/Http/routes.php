@@ -200,6 +200,17 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/delete/{id}', 'Admin\AssuntoController@destroyAssunto')->name('destroy.assunto');
       });
 
+      Route::group(['prefix' => 'forumassuntos'], function () {
+        Route::get('', 'Admin\AssuntoController@indexForum')->name('show.assunto.forum');
+        Route::get('/add', 'Admin\AssuntoController@addAssuntoForum')->name('add.assuntos.forum');
+        Route::get('{id}', 'Admin\AssuntoController@editAssuntoForum')->name('edit.assuntos.forum');
+        Route::post('{id}', 'Admin\AssuntoController@updateAssuntoForum')->name('update.assuntos.forum');
+        Route::post('/', 'Admin\AssuntoController@storeAssuntoForum')->name('store.assunto.forum');
+        Route::get('/delete/{id}', 'Admin\AssuntoController@destroyAssuntoForum')->name('destroy.assunto.forum');
+      });
+
+      
+
       Route::group(['prefix' => 'escalas'], function () {
         Route::get('/', 'Admin\EscalaController@index');
         Route::get('/addescala', 'Admin\EscalaController@addEscala')->name('add.escala');

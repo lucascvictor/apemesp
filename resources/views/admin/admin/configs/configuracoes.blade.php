@@ -25,6 +25,10 @@
 		       <td>Configure os assuntos da páginas de mensagens (contato)</td>
 		     </tr>
 				 <tr>
+					<th><a href="{{ url('/admin/configs/forumassuntos') }}">Assuntos do forum</a></th>
+					<td>Administre todas os assuntos do forum </td>
+				 </tr>
+				 <tr>
 		       <th><a href="{{ url('/admin/configs/escalas') }}">Escalas</a></th>
 		       <td>Configure as escalas exibidas na página de dados profissionais do associado e na pesquisa dos musicoterapeutas</td>
 		     </tr>
