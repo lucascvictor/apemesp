@@ -37,7 +37,6 @@
                         } else {
                         echo "Não";
                         $documentacao[$i] = 0;
-                        
                         } ?>
                   </td>
                   <td><?php if ($anuidade->arq_avaliado == 0) { echo "Não"; } else
