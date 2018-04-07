@@ -8,7 +8,7 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Http\Requests;
 
-use Apemesp\Apemesp\Models\Menu;
+use Apemesp\Apemesp\Repositories\Apemesp\FooterRepository;
 
 use Auth;
 
@@ -30,13 +30,20 @@ class FooterController extends Controller
 
     }
 
-    public function addItem(Request $request)
+    public function addItem()
     {
+        return view('admin.admin.paginas.add.footer');
+    }
 
+    public function storeItem(Request $request)
+    {
+        return redirect()->back();
     }
 
     public function listFooter()
     {
-        return view('admin.admin.paginas.list.footer');
+        $footerRep = new FooterRepository;
+        $footer = $footerRep->listAll();
+        return view('admin.admin.paginas.list.footer')->with('footer', $footer);
     }
 }

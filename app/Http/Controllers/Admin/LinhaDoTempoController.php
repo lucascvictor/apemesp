@@ -30,9 +30,14 @@ class LinhaDoTempoController extends Controller
 
     }
 
-    public function addItem(Request $request)
+    public function addItem()
     {
-        
+        return view('admin.admin.paginas.add.linhadotempo');
+    }
+
+    public function storeItem(Request $request)
+    {
+        return redirect()->back();
     }
 
     public function listTimeLine()
