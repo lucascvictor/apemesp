@@ -1,10 +1,11 @@
-
-
 @extends('admin.dashboard')
+
 @section('titulo', 'Editar Linha do Tempo')
+
 @section('extrastyle')
-<script src=" {!! url('ckeditor/ckeditor.js') !!} "></script>
+    <script src="http://apemesp.com/public/ckeditor/ckeditor.js "></script>
 @endsection
+
 @section('conteudo')
 <form method="POST"  action="{{ url('/admin/paginas/linhadotempo/') }}/{{ $linhadotempo->id }}">
    {{ csrf_field() }}
@@ -37,6 +38,7 @@
    </fieldset>
 </form>
 @endsection
+
 @section('extrascript')
 {!! Html::script('js/parsley.min.js') !!}
 <script type="text/javascript">
