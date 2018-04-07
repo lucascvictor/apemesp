@@ -27,7 +27,7 @@
                     {{ $item->ano }}
                   </td>
                   <td><b>{{ $item->titulo }}</b></td>
-                  <td><a class="btn btn-default" href="{{ url('/admin/paginas/linhadotempo') }}/ {{ $item->id }}">Editar</a></td>
+                  <td><a class="btn btn-default" href="{{ url('/admin/paginas/linhadotempo') }}/{{ $item->id }}">Editar</a></td>
                   <td>
                      <button class="btn btn-danger" data-toggle="modal" data-target="#deletar{{ $item->id }}">Deletar</button>
                      <div class="modal fade" id="deletar{{ $item->id }}" role="dialog">

@@ -50,18 +50,17 @@ class LinhaDoTempoRepository
 		return LinhaDoTempo::select('*')->orderBy('id', 'desc')->paginate(10);
 	}
 
-	public function getLinhaDoTempo($id)
+	public function getItem($id)
 	{
-		return LinhaDoTempo::select('*')->where('id', '=', $id)->get();
+		return LinhaDoTempo::select('*')->where('id', '=', $id)->first();
 	}
 
-	public function update($request, $id)
+	public function updateItem($request, $id)
 	{
 		LinhaDoTempo::where('id', $id)
 						->update([
-								'titulo' => $request->titulo,
-								'conteudo' => $request->conteudo,
-								'imagem' => $request->imagem,
+								'ano' => $request->ano,
+								'acontecimentos' => $request->acontecimentos,
 								'updated_at' => $this->getData()
 								]);
 	}

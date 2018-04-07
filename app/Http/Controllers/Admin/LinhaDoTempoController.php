@@ -47,11 +47,26 @@ class LinhaDoTempoController extends Controller
         return view('admin.admin.paginas.list.linhadotempo')->with('linhadotempo', $linhaDoTempo);
     }
 
-
     public function editItem($id)
     {
         $linhaDoTempoRep = new LinhaDoTempoRepository;
         $linhaDoTempo = $linhaDoTempoRep->getItem($id);
-        return view('admin.admin.paginas.list.linhadotempo')->with('linhadotempo', $linhaDoTempo);
+        return view('admin.admin.paginas.edit.linhadotempo')->with('linhadotempo', $linhaDoTempo);
+    }
+
+    public function updateItem(Request $request, $id)
+    {
+        //Validar os dados
+            $this->validate($request, array(
+                    'ano' => 'required|max:255',
+                    'acontecimentos' => 'required',
+                    ));
+
+            $linhaDoTempoRep = new LinhaDoTempoRepository;
+            $linhaDoTempoRep->updateItem($request, $id);
+            
+            Session::flash('sucesso', 'O item da linha do tempo foi atualizado com sucesso');
+            //flash para esta request e put para salvar na sessao
+            return redirect()->route('list.linhadotempo');
     }
 }

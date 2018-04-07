@@ -26,4 +26,20 @@ class FooterRepository
 		return Footer::where('id', '>', 0)->orderBy('titulo', 'asc')->paginate(3);
 	}
 
+	public function getItem($id)
+	{
+		return Footer::select('*')->where('id', '=', $id)->first();
+	}
+
+	public function update($request, $id)
+	{
+		LinhaDoTempo::where('id', $id)
+						->update([
+								'link' => $request->link,
+								'imagem' => $request->imagem,
+								'formato' => $request->formato,
+								'updated_at' => $this->getData()
+								]);
+	}
+
 }

@@ -4,6 +4,11 @@
 
 @section('conteudo')
 
+@section('extrastyle')
+
+  <script src=" {!! url('ckeditor/ckeditor.js') !!} "></script>
+
+@endsection
 
 <form method="POST"  action="{{ url('/admin/paginas/linhadotempo/') }}">
  {{ csrf_field() }}
@@ -15,14 +20,13 @@
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="ano">Ano: </label>
-      <input type="text" name="ano" id="ano"\>
+      <input type="text" name="ano" id="ano" onkeyup="somenteNumeros(this);" \>
       <hr>
     </div>
   <!-- Campo Acontecimentos -->
     <div class="form-group">
       <label class="col-md-4 control-label" for="acontecimentos">Acontecimentos:</label>
-      <div class="col-md-6">
-
+      <div class="col-md-12">
         {{ Form::textarea('acontecimentos', '', array('class' => 'form-control input-md',
         'id' => 'acontecimentos',
         'name' => 'acontecimentos',
@@ -30,16 +34,41 @@
         'cols' => '30',
         'required' => '',
         )) }}
+        </div>
       </div>
-    </div>
     <br />
-
+    
     <hr>
+    <div class="row">
     <label class="col-md-4 control-label" for="salvar"></label>
-    <center class="col-md-1"><button type="submit" id="salvar" class="btn btn-success"> Salvar Linha do Tempo</button></center>
+    <center class="col-md-4"><button type="submit" id="salvar" class="btn btn-success"> Salvar Linha do Tempo</button></center>
+    </div>
   </fieldset>
 </form>
 
 @endsection
 
 
+@section('extrascript')
+
+    {!! Html::script('js/parsley.min.js') !!}
+
+    <script type="text/javascript">
+     CKEDITOR.replace( 'acontecimentos', {
+                filebrowserBrowseUrl: '{!! url('filemanager/index.html') !!}'
+            });
+     </script>
+
+    <!--validar o campo somente numeros -->
+    <script>
+        function somenteNumeros(num) {
+            var er = /[^0-9.]/;
+            er.lastIndex = 0;
+            var campo = num;
+            if (er.test(campo.value)) {
+              campo.value = "";
+            }
+        }
+    </script>
+
+@endsection

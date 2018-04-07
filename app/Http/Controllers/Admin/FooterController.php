@@ -46,4 +46,31 @@ class FooterController extends Controller
         $footer = $footerRep->listAll();
         return view('admin.admin.paginas.list.footer')->with('footer', $footer);
     }
+
+    public function editItem($id)
+    {
+        $footerRep = new FooterRepository;
+        $footer = $footerRep->getItem($id);
+        return view('admin.admin.paginas.edit.footer')->with('footer', $footer);
+    }
+
+
+    public function updateItem(Request $request, $id)
+    {
+        //Validar os dados
+            $this->validate($request, array(
+                    'link' => 'required|max:255',
+                    'imagem' => 'required',
+                    ));
+
+            $footerRep = new FooterRepository;
+            $footerRep->updateItem($request, $id);
+            $imagemAtual = $postRepository->getImage($id);
+            $imagem = $this->storeImage($request, $id, $imagemAtual);
+            $footerRep->storeImage($id, $imagem);
+
+            Session::flash('sucesso', 'O item do rodapé foi atualizado com sucesso');
+            //flash para esta request e put para salvar na sessao
+            return redirect()->route('list.footer');
+    }
 }
