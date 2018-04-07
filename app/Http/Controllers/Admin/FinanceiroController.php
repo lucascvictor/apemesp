@@ -62,5 +62,12 @@ class FinanceiroController extends Controller
         $associado = $financeiroRespository->getAssociado($id);
         return view('admin.admin.financeiro.associado')->with('associado',$associado);
     }
+
+    public function avaliarLancamento($id, $ano)
+	{
+        $financeiroRespository = new FinanceiroRepository;
+        $associado = $financeiroRespository->getLancamento($id, $ano);
+		return view('admin.admin.financeiro.avaliacao')->with('associado',$associado);
+	}
 }
 

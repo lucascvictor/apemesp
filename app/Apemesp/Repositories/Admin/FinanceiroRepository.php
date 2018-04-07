@@ -45,4 +45,15 @@ class FinanceiroRepository
 		return DadosPessoais::select('id','name', 'cpf', 'tel_celular')->where('name', 'LIKE', $query)->orderBy('name', 'asc')->paginate(6);
 	}
 
+	public function getLancamento($id_user, $ano)
+	{
+		return DB::table('anuidades')
+		->join('dados_pessoais', 'anuidades.id_user', '=', 'dados_pessoais.id_user')
+		->join('status_anuidade', 'status_anuidade.id', '=', 'anuidades.status')
+		->select('anuidades.*', 'dados_pessoais.name', 'dados_pessoais.cpf', 'status_anuidade.*')
+		->where('anuidades.id_user', '=', $id_user)
+		->where('anuidades.ano', '=', $ano)
+		->first();
+	}
+
 }

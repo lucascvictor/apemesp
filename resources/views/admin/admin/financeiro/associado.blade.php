@@ -42,7 +42,7 @@
                         Sim
                         @endif
                      </td>
-                     <td><a class="btn btn-success" href="{{ url('/admin/financeiro/associado/') }}">Avaliar</a></td>
+                     <td><a class="btn btn-success" href="{{ url('/admin/financeiro/associado') }}/{{ $fin->id_user }}/{{ $fin->ano }}">Avaliar</a></td>
                   </tr>
                   @endforeach
                </tbody>

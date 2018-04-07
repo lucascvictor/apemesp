@@ -1,28 +1,23 @@
-<div class="modal fade" id="lancFinanceiro" role="dialog">
-   <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Adicionar lançamento financeiro para o associado </h4>
-         </div>
-         <div class="modal-body">
-            <form class="form-horizontal" method="POST" action="{{ url('/admin/associado/financeiro') }}">
+@extends('admin.dashboard')
+@section('titulo', 'Financeiro')
+@section('conteudo')
+            <form class="form-horizontal" method="POST" action="{{ url('/admin/associado/financeiro') }}/{{ $associado->id_user }}/{{ $associado->ano }}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Lançamento financeiro</legend>
 
+
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="ano">ANO:</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="ano" name="ano" type="text" placeholder="ANO" class="form-control input-md" required="">
+                        <input onkeyup="somenteNumeros(this)" id="ano" name="ano" type="text" placeholder="ANO" class="form-control input-md" required="" value="{{ $associado->ano }}">
                      </div>
                   </div>
 
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="status">Status:</label>
                      <div class="col-md-4">
-                        <input id="status" name="status" type="text" placeholder=" Status " class="form-control input-md" required="">
+                        <input id="status" name="status" type="text" placeholder=" Status " class="form-control input-md" required="" value="{{ $associado->descricao }}">
                      </div>
                   </div>
 
@@ -41,7 +36,7 @@
                   </div>
                  
                </fieldset>
-               <div class="modal-footer">
+               <div class="modal-footer col-md-2">
                   <button class="btn btn-success btn-block" type="submit">
                   OK
                   </button>
@@ -51,3 +46,4 @@
       </div>
    </div>
 </div>
+@endsection()
