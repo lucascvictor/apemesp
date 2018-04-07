@@ -10,9 +10,9 @@
     <div class="col-md-4">
     @if ($pagina == "/index.php/admin/usuarios")
         <a class="btn btn-success"  href="{{ url('/admin/usuarios/updated') }}"> Visualizar ultimos usuários inscritos </a>
-   @else
+    @else
         <a class="btn btn-success"  href="{{ url('/admin/usuarios') }}"> Visualizar lista completa em ordem alfabética</a>
-   @endif
+    @endif
     </div>
 
 </div>
