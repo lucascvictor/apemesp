@@ -9,6 +9,8 @@ use Apemesp\Apemesp\Models\User;
 
 use Apemesp\Apemesp\Models\Literatura;
 
+use Apemesp\Apemesp\Models\IndicacaoLiteraria;
+
 use DB;
 
 class LiteraturaRepository
@@ -72,7 +74,10 @@ class LiteraturaRepository
 		$literatura->delete();
 	}
 
-
+	public function getIndicacoes()
+	{
+		return IndicacaoLiteraria::all();
+	}
 
 
 }

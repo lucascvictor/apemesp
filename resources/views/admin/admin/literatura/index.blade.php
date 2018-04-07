@@ -11,11 +11,22 @@
                <thead>
                   <tr>
                      <th>Nome</th>
-                     <th>CPF</th>
+                     <th>E-mail</th>
+                     <th>TItulo</th>
                      <th colspan="2"> </th>
                   </tr>
                </thead>
-               </tbody>
+                <tbody>
+                    @foreach($indicacoes as $indicacao)
+                        <tr>
+                            <td>{{$indicacao->name}}</td>
+                            <td>{{$indicacao->email}}</td>
+                            <td>{{$indicacao->titulo}}</td>
+                            <td><a class="btn btn-success" href="{{ url('/admin/literatura/indicacao') }}/{{$indicacao->id}}">Avaliar</a></td>
+                            <td><a class="btn btn-danger" href="{{ url('/admin/literatura/indicacao/destroy') }}/{{$indicacao->id}}">Excluir</a></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
             </table>
          </div>
       </div>

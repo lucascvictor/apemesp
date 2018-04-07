@@ -39,6 +39,7 @@ Route::group(['prefix' => 'musicoterapia'], function () {
     Route::get('/materiais', 'Apemesp\MusicoterapiaController@getMateriais')->name('apemesp.musicoterapia.materiais');
     Route::get('/literatura', 'Apemesp\MusicoterapiaController@getLiteratura')->name('apemesp.musicoterapia.literatura');
     Route::get('/literatura/indicacao', 'Apemesp\MusicoterapiaController@getIndicacao')->name('apemesp.musicoterapia.indicacao');
+    Route::post('/literatura/indicacao', 'Apemesp\MusicoterapiaController@storeIndicacao')->name('apemesp.musicoterapia.store.indicacao');
     Route::get('/linhadotempo', 'Apemesp\MusicoterapiaController@getLinhaDoTempo')->name('apemesp.musicoterapia.linhadotempo');
 });
 

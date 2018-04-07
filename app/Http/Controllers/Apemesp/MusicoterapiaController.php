@@ -6,8 +6,9 @@ use Apemesp\Apemesp\Repositories\Apemesp\MusicoterapiaRepository;
 use Apemesp\Apemesp\Repositories\Admin\ConquistaRepository;
 use Apemesp\Apemesp\Repositories\Admin\FormacaoRepository;
 use View;
+use Session;
+use Request;
 use Apemesp\Http\Controllers\Controller;
-
 
 class MusicoterapiaController extends Controller{
 
@@ -57,6 +58,13 @@ class MusicoterapiaController extends Controller{
 	public function getIndicacao()
 	{
 		return view('paginas.musicoterapia.indicacao');
+	}
+
+	public function storeIndicacao(Request $request)
+	{
+		$musicoterapia = new MusicoterapiaRepository;
+		$musicoterapia->storeIndicacao($request);
+		return redirect()->back();
 	}
 
 	public function getMateriais()

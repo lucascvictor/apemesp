@@ -13,7 +13,11 @@ use Apemesp\Apemesp\Models\Material;
 
 use Apemesp\Apemesp\Models\Page;
 
+use Apemesp\Apemesp\Models\IndicacaoLiteraria;
+
 use DB;
+
+use Input;
 
 class MusicoterapiaRepository
 {
@@ -35,5 +39,22 @@ class MusicoterapiaRepository
 	public function getMateriais()
 	{
 		return Material::where('id', '>', 0)->orderBy('titulo', 'asc')->paginate(4);
+	}
+
+	public function storeIndicacao($request)
+	{
+			dd($request->file('imagem'));
+			$indicacao = new IndicacaoLiteraria;
+            $indicacao->imagem = $request->file('imagem');
+            $indicacao->titutlo = $request->titulo;
+            $indicacao->descricao= $request->descricao;
+			$indicacao->nome = $request->nome;
+			$indicacao->email = $request->email;
+            $indicacao->save();
+	}
+
+	public function getIndicacoes()
+	{
+		return IndicacaoLiteraria::all();
 	}
 }

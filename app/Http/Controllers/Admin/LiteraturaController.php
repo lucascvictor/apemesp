@@ -70,7 +70,9 @@ class LiteraturaController extends Controller
         
         public function adminIndex()
         {
-            return view('admin.admin.literatura.index');
+            $repository = new LiteraturaRepository;
+			$indicacoes = $repository->getIndicacoes();
+            return view('admin.admin.literatura.index')->with('indicacoes', $indicacoes);
         }
     
 }
