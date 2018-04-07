@@ -5,7 +5,7 @@
     <?php $pagina = $_SERVER['PHP_SELF'];?>
 
     <div class="col-md-4">
-    @if ($pagina == "/index.php/admin/associados")
+    @if ($pagina == "/public/admin/associados")
         <a class="btn btn-success"  href="{{ url('/admin/associados/updated') }}"> Visualizar ultimos associados inscritos </a>
     @else
         <a class="btn btn-success"  href="{{ url('/admin/associados') }}"> Visualizar lista completa em ordem alfabética</a>
