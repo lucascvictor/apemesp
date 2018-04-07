@@ -85,7 +85,7 @@ class FooterTableSeeder extends Seeder
                     'formato' => 1,
 					'created_at' => $data,
                    	'updated_at' => $data,
-                ],
+                ]
         ]);
     }
 }
