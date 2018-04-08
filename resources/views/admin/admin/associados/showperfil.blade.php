@@ -12,7 +12,7 @@
 		<div class="row">
             <center>
                 <center>
-                     <img src="{{ url('files/') }}/{{ $associado->cpf }}/foto.jpg" style = "width: 140px; height: 140px;" class = "img-circle" value="{{ $associado->foto }}">
+                     <img src="{{ url('public/files/') }}/{{ $associado->cpf }}/foto.jpg" style = "width: 140px; height: 140px;" class = "img-circle" value="{{ $associado->foto }}">
 
                     <p>Foto do perfil</p>
                 </center>

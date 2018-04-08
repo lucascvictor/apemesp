@@ -30,7 +30,7 @@
 					 </div>
 			<div class="form-group">
 				<center>
-					 <img src="{{ url('files/') }}/{{ $dadospessoais[0]->cpf }}/{{$dadospessoais[0]->foto }}" style = "width: 140px; height: 140px;" class = "img-circle" value="{{ $dadospessoais[0]->foto }}">
+					 <img src="{{ url('public/files/') }}/{{ $dadospessoais[0]->cpf }}/{{$dadospessoais[0]->foto }}" style = "width: 140px; height: 140px;" class = "img-circle" value="{{ $dadospessoais[0]->foto }}">
 
           			<p>Foto do perfil</p>
           		</center>
