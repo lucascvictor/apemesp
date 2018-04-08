@@ -12,6 +12,7 @@ use Apemesp\Apemesp\Repositories\Admin\AdminRepository;
 use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 use Apemesp\Apemesp\Repositories\Admin\ChartRepository;
+use Apemesp\Apemesp\Repositories\Associado\FinanceiroRepository;
 use Auth;
 
 use Session;
@@ -111,8 +112,10 @@ class AdminController extends Controller
                
                 $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
                 $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
+                $financeiro = new FinanceiroRepository;
                 unset($adminRepository);
-                return view('admin.associado.index');
+                return view('admin.associado.index')
+                ->with('dadosbancarios', $financeiro->getDadosBancarios());
             } else {
                 return view('admin.inadimplente');
             }

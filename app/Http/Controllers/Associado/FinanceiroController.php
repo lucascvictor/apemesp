@@ -44,7 +44,8 @@ class FinanceiroController extends Controller{
 
          return view('admin.associado.financeiro')
          ->with('cpf', $dadosAcademicos->getCpf($this->getIdUsuario()))
-         ->with('anuidades', $financeiro->getAnuidades($this->getIdUsuario()));
+         ->with('anuidades', $financeiro->getAnuidades($this->getIdUsuario()))
+         ->with('dadosbancarios', $financeiro->getDadosBancarios());
       }
     }
 

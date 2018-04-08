@@ -130,13 +130,6 @@ class MenusTableSeeder extends Seeder
                "link"      => "/admin/edicoesjomesp",
                "id_perfil" => 2,
            ],
-           [
-            "id"        => 17,
-            "titulo"    => "Indicações literárias",
-            "icone"     => "glyphicon glyphicon-book",
-            "link"      => "/admin/edicoesjomesp",
-            "id_perfil" => 2,
-           ],
 
            [
                 "id"        => 17,
@@ -145,6 +138,14 @@ class MenusTableSeeder extends Seeder
                 "link"      => "/admin/indicacoesliterarias",
                 "id_perfil" => 2,
            ],
+
+           [
+                "id"        => 18,
+                "titulo"    => "Representante Legal",
+                "icone"     => "fa-gavel",
+                "link"      => "/admin/representantelegal",
+                "id_perfil" => 1,
+          ],
 
         ]);
     }

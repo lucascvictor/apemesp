@@ -7,11 +7,22 @@
 @endsection
 
 @section('conteudo')
-<div class="row">
+    <div class="row">
         <div class="col-md-4">
         <a style="background-color: orange;color: white; border-color:orange;" class="btn btn-success btn-block" href="" data-toggle="modal" data-target="#lancFinanceiro">Adicionar lançamento financeiro</a>
         </div>
-    </div>              
+    </div>    
+
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        <a class="btn btn-success" href="" data-toggle="modal" data-target="#dadosBancarios">Visualizar Dados Bancários da APEMESP</a>
+        </div>
+    </div>
+       
 <fieldset>
    <legend>Anuidades</legend>
    <div class="row">

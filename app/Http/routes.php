@@ -79,6 +79,7 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post('/alteraremail', 'Admin\AdminController@alterarEmail')->name('admin.alteraremail');
       Route::post('/alterarsenha', 'Admin\AdminController@alterarSenha')->name('admin.alterarsenha');
     });
+
     Route::group(['prefix' => 'usuarios'], function () {
         Route::get('', 'Admin\UsuarioController@index')->where('page', '.*')->name('users.index');
         Route::get('/new', 'Admin\UsuarioController@new')->name('users.new');
@@ -105,7 +106,14 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post('{id}', 'Jomesp\EdicoesJomespController@updateEdicao');
       Route::get('/download/{arquivo}', 'Jomesp\EdicoesJomespController@download');
       Route::delete('{id}', 'Jomesp\EdicoesJomespController@dropEdicao');
+    });
 
+    Route::group(['prefix' => 'representantelegal'], function () {
+      Route::get('', 'Admin\RepresentanteLegalController@index')->name('representantelegal.index');
+      Route::get('', 'Admin\RepresentanteLegalController@editEdicao');
+      Route::post('', 'Admin\RepresentanteLegalController@storeEdicao');
+      Route::post('', 'Admin\RepresentanteLegalController@updateEdicao');
+      Route::delete('', 'Admin\RepresentanteLegalController@dropEdicao');
     });
 
     Route::group(['prefix' => 'associados'], function () {
@@ -238,6 +246,9 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('associado/{id}', 'Admin\FinanceiroController@getAssociado');
       Route::get('associado/{id}/{ano}', 'Admin\FinanceiroController@avaliarLancamento');
       Route::get('search', 'Admin\FinanceiroController@search');
+        Route::group(['prefix' => 'dadosbancarios'], function () {
+
+        });
     });
 
     Route::group(['prefix' => 'posts'], function () {

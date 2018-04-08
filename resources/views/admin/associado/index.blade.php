@@ -35,6 +35,16 @@
 
             <div class="row bs-wizard col-md-12" style="margin-bottom: 15px;">
 
+            <div class="row">
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+              <a class="btn btn-success" href="" data-toggle="modal" data-target="#dadosBancarios">Visualizar Dados Bancários da APEMESP</a>
+              </div>
+          </div>
+
             <h3>Passos para obtenção do numero de registro:</h3>
                 <div class="col-xs-3 col-md-4 bs-wizard-step complete">
                   <div class="text-center bs-wizard-stepnum">Passo 1</div>
@@ -130,10 +140,8 @@
                 </div>
             </div>
 
-
-
-
 	</div>
 
+@include('admin.associado.financeiro.modal')
 
 @endsection
