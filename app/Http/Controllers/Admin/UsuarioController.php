@@ -90,7 +90,7 @@ class UsuarioController extends Controller
     {
         $user = new UserRepository;
         $result = $user->create($request);
-        Session::flash('sucesso', 'Usuário Comum salvo com sucesso');
+        Session::flash('sucesso', 'Usuário Associado padrão salvo com sucesso');
         return view('admin.admin.usuarios.new_comum');
     }
 

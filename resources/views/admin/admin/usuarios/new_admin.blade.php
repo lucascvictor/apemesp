@@ -38,7 +38,7 @@
         </form>
         <br>
         <p> OU </p>
-        <a class="btn btn-default" href="{{ url('/admin/usuarios/new/comum') }}"> Criar usuário Comum </a>
+        <a class="btn btn-default" href="{{ url('/admin/usuarios/new/comum') }}"> Criar usuário Comum (Associado padrão) </a>
         <a class="btn btn-warning" href="{{ url('/admin/usuarios/new/redator') }}"> Criar usuário Redator </a>
 
     </div>

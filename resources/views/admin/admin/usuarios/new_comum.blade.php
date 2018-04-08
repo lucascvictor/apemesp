@@ -34,7 +34,7 @@
                 <input type="password" class="form-control" id="repassword" name="repassword" required="">
             </div>
             <p><u> Ao salvar este usuário, o e-mail de confirmação será enviado automáticamente </u></p>
-            <button type="submit" class="btn btn-success">Salvar o novo usuário comum</button>
+            <button type="submit" class="btn btn-success">Salvar o novo usuário associado padrão</button>
         </form>
         <br>
         <p> OU </p>
