@@ -110,10 +110,9 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'representantelegal'], function () {
       Route::get('', 'Admin\RepresentanteLegalController@index')->name('representantelegal.index');
-      Route::get('', 'Admin\RepresentanteLegalController@editEdicao');
+      Route::get('/1', 'Admin\RepresentanteLegalController@editEdicao');
       Route::post('', 'Admin\RepresentanteLegalController@storeEdicao');
-      Route::post('', 'Admin\RepresentanteLegalController@updateEdicao');
-      Route::delete('', 'Admin\RepresentanteLegalController@dropEdicao');
+      Route::post('/1', 'Admin\RepresentanteLegalController@updateEdicao');
     });
 
     Route::group(['prefix' => 'associados'], function () {

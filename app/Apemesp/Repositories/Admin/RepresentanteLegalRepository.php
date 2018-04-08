@@ -13,14 +13,14 @@ use DB;
 class RepresentanteLegalRepository
 {
 
-	public function getRepresentanteLegal()
+	public function getRepresentante()
 	{
-		return DB::table('representante_legal')->select('*')->paginate(4);
+		return DB::table('responsavel_legal')->select('*')->first();
     }
     
     public function listRepresentanteLegal()
 	{
-		return DB::table('representante_legal')->select('*')->get();
+		return DB::table('responsavel_legal')->select('*')->get();
 	}
 
 	public function storeRepresentanteLegal($request)
