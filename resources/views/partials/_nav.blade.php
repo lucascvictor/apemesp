@@ -14,24 +14,24 @@
       <a href="{{ url('/admin') }}">
          <p style="font-size: 12px;">Área do<br />Administrador</p>
       </a>
-      {{  Html::image('images/perfis/admin.png',  '', array('style' => 'width: 60px; height: 60px;', 'class' => 'img-circle')) }}
+      {{  Html::image('public/images/perfis/admin.png',  '', array('style' => 'width: 60px; height: 60px;', 'class' => 'img-circle')) }}
       @elseif(Auth::user()->id_perfil == 2)
       <a href="{{ url('/admin') }}">
          <p style="font-size: 12px;">Área do<br />Redator</p>
       </a>
-      {{  Html::image('images/perfis/redator.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
+      {{  Html::image('public/images/perfis/redator.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
       @elseif(Auth::user()->id_perfil > 2)
       <?php $cpf = $dp->getCpf(Auth::user()->id); ?>
       @if (empty($cpf[0]))
       <a href="{{ url('/admin') }}">
          <p style="font-size: 12px;">Área do<br />Associado</p>
       </a>
-      {{  Html::image('files/apemesp' . 'foto.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
+      {{  Html::image('public/files/apemesp' . 'foto.png',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
       @else
       <a href="{{ url('/admin') }}">
          <p style="font-size: 12px;">Área do<br />Associado</p>
       </a>
-      {{  Html::image('files/' . $cpf[0]->cpf . '/' . 'foto.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
+      {{  Html::image('public/files/' . $cpf[0]->cpf . '/' . 'foto.jpg',  '', array('style' => 'width: 70px; height: 70px;', 'class' => 'img-circle')) }}
       @endif
       @endif
       <a href="{{ url('/logout')}}" title="Sair">Sair</a>
