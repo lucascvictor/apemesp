@@ -7,3 +7,7 @@
 
 
 @endsection
+
+@section('extrascript')
+    @include('admin.redator.chartRedator')
+@endsection

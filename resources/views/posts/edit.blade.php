@@ -9,7 +9,7 @@
 @endsection
 
 @section('conteudo')
-
+        @if(isset($post))
             {!! Form::open(array('route' => ['posts.update', $post->id], 'data-parsley-validate' => '', 'files' => true)) !!}
 
     			{{ Form::label('titulo', 'Titulo:') }}
@@ -66,7 +66,7 @@
         
     </div>
 
-
+    @endif
 @endsection
 
 
