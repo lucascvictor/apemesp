@@ -246,7 +246,7 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('associado/{id}/{ano}', 'Admin\FinanceiroController@avaliarLancamento');
       Route::get('search', 'Admin\FinanceiroController@search');
         Route::group(['prefix' => 'dadosbancarios'], function () {
-
+          Route::get('', 'Admin\FinanceiroController@indexDadosBancarios');
         });
     });
 

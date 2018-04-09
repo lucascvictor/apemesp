@@ -47,6 +47,15 @@ class FinanceiroController extends Controller
     	return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
     }
 
+    public function indexDadosBancarios()
+    {
+        $financeiroRespository = new FinanceiroRepository;
+        $dadosBancarios = $financeiroRespository->getDadosBancarios();
+        unset($financeiroRespository);
+     
+    	return view('admin.admin.financeiro.dadosbancarios.index')->with('dadosbancarios', $dadosBancarios);
+    }
+
     public function search(Request $request)
     {
         $associadoRepository = new AssociadoRepository;

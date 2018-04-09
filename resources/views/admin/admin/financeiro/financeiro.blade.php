@@ -3,7 +3,15 @@
 @section('titulo', 'Financeiro')
 
 @section('conteudo')
-
+<div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        <a class="btn btn-success" href="{{ url('/admin/financeiro/dadosbancarios') }}" data-toggle="modal">Editar Dados Bancários da APEMESP</a>
+        </div>
+    </div>
 <div class="row">
 	<div class="col-md-12">
 

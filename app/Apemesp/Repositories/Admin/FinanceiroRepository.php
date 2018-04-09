@@ -9,6 +9,8 @@ use Apemesp\Apemesp\Models\User;
 
 use Apemesp\Apemesp\Models\Anuidade;
 
+use Apemesp\Apemesp\Models\DadosBancarios;
+
 use DB;
 
 class FinanceiroRepository
@@ -54,6 +56,11 @@ class FinanceiroRepository
 		->where('anuidades.id_user', '=', $id_user)
 		->where('anuidades.ano', '=', $ano)
 		->first();
+	}
+
+	public function getDadosBancarios()
+	{
+		return DadosBancarios::select('*')->paginate(5);
 	}
 
 }
