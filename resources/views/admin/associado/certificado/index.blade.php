@@ -7,9 +7,39 @@ $ano = date('Y');
 if($mes == 'January')
 $mes = 'Janeiro';
 
-if($mes == 'April') {
+if($mes == 'February')
+$mes = 'Fevereiro';
+
+if($mes == 'March')
+$mes = 'Março';
+
+if($mes == 'April')
 $mes = 'Abril';
-}
+
+if($mes == 'May')
+$mes = 'Maio';
+
+if($mes == 'June')
+$mes = 'Junho';
+
+if($mes == 'July')
+$mes = 'Junho';
+
+if($mes == 'August')
+$mes = 'Agosto';
+
+if($mes == 'September')
+$mes = 'Setembro';
+
+if($mes == 'October')
+$mes = 'Outubro';
+
+if($mes == 'November')
+$mes = 'Novembro';
+
+if($mes == 'Dezember')
+$mes = 'Dezembro';
+
 ?>
 <div style="font-size: 15px; line-height: 25px; width: 700px;">
     {{  Html::image('images/posts/imagens/previas/apemesp.jpg', '', array('style' => 'width: 50%; height: 20%; margin-left: 10%;')) }}
