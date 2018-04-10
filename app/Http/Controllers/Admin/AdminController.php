@@ -33,33 +33,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function perfil()
-    {
-      $id_perfil = Auth::user()->id_perfil;
-      $id_status = Auth::user()->id_status;
-
-      if ($id_perfil == 1) {
-          return view('admin.perfil');
-      }
-      if ($id_perfil == 2) {
-          return view('admin.redator.perfil');
-      }
-      if ($id_perfil == 3 || $id_perfil == 4) {
-          if ($id_status == 1 || $id_status ==2) {
-              if ($id_status == 2) {
-                Session::flash('cuidado', "Você tem pendências com a associação, por favor verifique ou entre em contato.");
-              }
-            
-              $adminRepository = new AdminRepository;
-              $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
-              $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
-              unset($adminRepository);
-              return view('admin.associado.perfil');
-          } else {
-              return view('admin.inadimplente');
-          }
-      }
-    }
+   
     /**
      * Retorna a pagina inicial do dashboard por perfil.
      *
@@ -187,10 +161,5 @@ class AdminController extends Controller
         $request->file('estatuto')->move($pastaDestino, $nomeArquivo);
         return redirect()->back();
     }
-
-
-    public function alterarEmail(Request $request)
-    {
-
-    }
+    
 }

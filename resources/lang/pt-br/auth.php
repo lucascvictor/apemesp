@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Usuário ou senha incorreta. Esqueceu s senha? <a href="/reenviar"> Clique aqui para redefinir sua senha</a>',
+    'failed' => 'Usuário ou senha incorreta. Esqueceu s senha? <a href="/redefinir"> Clique aqui para redefinir sua senha</a>',
     'throttle' => 'Muitas tentativas de login. Por favor tente novamente em :segundos segundos.',
 
 ];

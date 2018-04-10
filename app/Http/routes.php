@@ -75,9 +75,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/chart', 'Admin\AdminController@indexChart')->name('admin');
 
     Route::group(['prefix' => 'perfil'], function () {
-      Route::get('', 'Admin\AdminController@perfil')->name('admin');
-      Route::post('/alteraremail', 'Admin\AdminController@alterarEmail')->name('admin.alteraremail');
-      Route::post('/alterarsenha', 'Admin\AdminController@alterarSenha')->name('admin.alterarsenha');
+      Route::get('', 'Admin\PerfilController@perfil')->name('admin');
+      Route::post('/alteraremail', 'Admin\PerfilController@alterarEmail')->name('admin.alteraremail');
+      Route::post('/alterarsenha', 'Admin\PerfilController@alterarSenha')->name('admin.alterarsenha');
     });
 
     Route::group(['prefix' => 'usuarios'], function () {

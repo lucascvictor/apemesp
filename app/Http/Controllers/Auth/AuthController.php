@@ -50,7 +50,8 @@ class AuthController extends Controller
          View::composers([
             'Apemesp\Composers\MaisVistosComposer'  => ['partials._sidebar'],
             'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens'],
-            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'] 
+            'Apemesp\Composers\PropagandasComposer'  => ['partials._sidebar'],
+            'Apemesp\Composers\FooterComposer'  => ['partials._footer'] 
         ]);
    
     }
