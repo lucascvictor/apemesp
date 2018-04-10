@@ -7,9 +7,13 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Apemesp\Repositories\Admin\AdminRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\UsuarioRepository;
+
 use Illuminate\Http\Request;
 
 use Auth;
+
+use Session;
 
 use View;
 
@@ -58,7 +62,16 @@ class PerfilController extends Controller
 
     public function alterarSenha(Request $request)
     {
+      $senhaAntiga = $request->old_password;
+      $novaSenha = $request->new_password;
+      $repSenha = $request->re_password;
+      $id = Auth::user()->id;
+      $usuRep = new UsuarioRepository;
+      
+      $name = $usuRep->resetPasswordPerfil($id, $novaSenha);
 
+      Session::flash('sucesso', $name . ', sua senha foi alterada.');
+      return redirect()->back();
     }
 
     public function alterarEmail(Request $request)

@@ -47,6 +47,15 @@ class UsuarioRepository
 		return $usuario->name;
 	}
 
+	public function resetPasswordPerfil($id, $senha)
+	{
+		$senha = bcrypt($senha);
+		$usuario = User::find($id);
+		$usuario->password= $senha;
+		$usuario->save();
+		return $usuario->name;
+	}
+
 	public function orderByUpdate()
 	{
 		return DB::table('users')
