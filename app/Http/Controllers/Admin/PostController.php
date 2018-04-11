@@ -38,7 +38,7 @@ class PostController extends Controller
     {
 
         $id_perfil = Auth::user()->id_perfil;
-        unset($postRepository);
+        
         if ($id_perfil == 1 || $id_perfil == 2) {
 
             return view('posts.index');
