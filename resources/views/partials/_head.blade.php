@@ -15,6 +15,10 @@
    background-color: #008B8B;
    border-color: #008B8B;
    }
+
+   .margem {
+    margin-left: 10px;
+    }
 </style>
 <!-- Para estilos especificos da p�gina -->
 <style type="text/css">

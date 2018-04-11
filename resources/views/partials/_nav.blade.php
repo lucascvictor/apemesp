@@ -2,6 +2,7 @@
 
 <?php use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository; ?>
 <?php $dp = new DadosPessoaisRepository; ?>
+
 <div id="header">
    <!-- LOGOTIPO -->
    <div class="logotipo_header">
@@ -66,9 +67,9 @@
       </div>
       <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse" aria-expanded="false" style="margin-left: 2%; ">
          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a class="margem" href="{{ url('/') }}">Home</a></li>
             <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> A Apemesp <b class="caret"></b></a>
+               <a class="margem" href="#" class="dropdown-toggle" data-toggle="dropdown"> A Apemesp <b class="caret"></b></a>
                <ul class="dropdown-menu">
                   <li><a href="{{ url('/apemesp/quemsomos') }}">Quem Somos</a></li>
                   <li><a href="{{ url('/apemesp/estatuto') }}">Estatuto</a></li>
@@ -77,7 +78,7 @@
                </ul>
             </li>
             <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Musicoterapia <b class="caret"></b></a>
+               <a class="margem" href="#" class="dropdown-toggle" data-toggle="dropdown"> Musicoterapia <b class="caret"></b></a>
                <ul class="dropdown-menu">
                   <li><a href="{{ url('/musicoterapia/oquee') }}">O que é?</a></li>
                   <li><a href="{{ url('/musicoterapia/formacao') }}">Formação</a></li>
@@ -87,13 +88,13 @@
                   <li><a href="{{ url('/musicoterapia/linhadotempo') }}">Linha do tempo da Mt em SP</a></li>
                </ul>
             </li>
-            <li><a href="{{ url('/agenda') }}"> Agenda</a></li>
+            <li><a class="margem" href="{{ url('/agenda') }}"> Agenda</a></li>
             @if(isset(Auth::user()->id))
-            <li><a href="{{ url('/forums') }}">Forum</a></li>
+            <li><a class="margem" href="{{ url('/forums') }}">Forum</a></li>
             @endif
-            <li><a href="{{ url('/jomesp') }}">Jomesp</a></li>
-            <li><a href="{{ url('/encontreummt') }}"> Encontre um MT</a></li>
-            <li><a href="{{ url('/contato/mensagens') }}">Contato</a></li>
+            <li><a class="margem" href="{{ url('/jomesp') }}">Jomesp</a></li>
+            <li><a class="margem" href="{{ url('/encontreummt') }}"> Encontre um MT</a></li>
+            <li><a class="margem" href="{{ url('/contato/mensagens') }}">Contato</a></li>
          </ul>
       </div>
    </nav>
@@ -113,4 +114,7 @@
    })(jQuery);
 </script>
 @endsection
+
+
+
 
