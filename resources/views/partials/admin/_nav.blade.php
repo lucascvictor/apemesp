@@ -82,7 +82,7 @@
             @else
          <li>
             @endif
-            <a href="{{ $menu[$i]->link }}"><i class="fa fa-fw {{ $menu[$i]->icone}}"></i> {{ $menu[$i]->titulo }}</a>
+            <a href="{{ url($menu[$i]->link) }}"><i class="fa fa-fw {{ $menu[$i]->icone}}"></i> {{ $menu[$i]->titulo }}</a>
          </li>
          <?php $i++;} //Fim do loop while?>
          @endforeach
