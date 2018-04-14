@@ -51,10 +51,10 @@ class RepresentanteLegalController extends Controller
 
     public function editRepresentante($id){
 
-        $representanteLegalRepository = New RepresentanteRepository;
-        $representanteLegal = $representanteLegalRepository->getRepresentante($id);
+        $representanteLegalRepository = New RepresentanteLegalRepository;
+        $representanteLegal = $representanteLegalRepository->getRepresentante();
 
-        return view('admin.admin.configs.comissoes.editrepresentanteLegal')->with('representanteLegal', $representanteLegal);
+        return view('admin.admin.representantelegal.edit')->with('representanteLegal', $representanteLegal);
     }
 
 
