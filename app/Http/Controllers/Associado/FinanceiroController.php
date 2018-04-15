@@ -60,4 +60,16 @@ class FinanceiroController extends Controller{
       return Auth::user()->id;
     }
 
+    public function storeAnuidade(Request $request)
+    {
+      $financeiroRespository = new FinanceiroRepository;
+      $anuidade = $financeiroRespository->storeAnuidade($request);
+      if ($anuidade) {
+          Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
+      } else {
+          Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
+      }
+      return redirect()->back(); 
+    }
+
 }

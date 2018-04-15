@@ -63,4 +63,9 @@ class FinanceiroRepository
 		return DadosBancarios::select('*')->paginate(5);
 	}
 
+	public function storeAnuidade($request)
+	{
+		return 0;
+	}
+
 }

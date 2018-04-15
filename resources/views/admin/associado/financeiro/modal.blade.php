@@ -7,7 +7,7 @@
             <h4 class="modal-title">Adicionar lançamento financeiro para o associado </h4>
          </div>
          <div class="modal-body">
-            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url('/admin/associado/financeiro') }}">
+            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url('/associado/financeiro') }}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Lançamento financeiro</legend>

@@ -20,6 +20,11 @@ class FinanceiroRepository
 		return Anuidade::where('id_user', $id_usuario)->select('*')->get();
 	}
 
+	public function storeAnuidade($request)
+	{
+		return 0;
+	}
+
 	public function getDadosBancarios()
 	{
 		return DadosBancarios::all();

@@ -316,6 +316,7 @@ Route::group(['prefix' => 'associado'], function () {
     //Financeiro do Associado
     Route::group(['prefix' => 'financeiro'], function () {
       Route::get('', 'Associado\FinanceiroController@getIndex');
+      Route::post('', 'Associado\FinanceiroController@storeAnuidade');
     });
 
 
