@@ -111,6 +111,8 @@ class DadosProfissionaisController extends Controller{
         ->with('proximidades', $dadosProfissionais->getProximidades())
         ->with('escalas', $dadosProfissionais->getEscalas());
         Session::flash('sucesso', 'Seus dados profissionais foram inseridos com sucesso');
+      } else {
+        Session::flash('cuidado', 'Algum dos dados estava incorreto ou você ultrapassou 3 locais de atendimento');
       }
 
     }
