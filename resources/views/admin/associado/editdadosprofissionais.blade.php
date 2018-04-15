@@ -141,17 +141,6 @@
 
 @section('extrascript')
 
-<!--validar o campo somente numeros -->
-<script>
-    function somenteNumeros(num) {
-        var er = /[^0-9.]/;
-        er.lastIndex = 0;
-        var campo = num;
-        if (er.test(campo.value)) {
-          campo.value = "";
-        }
-    }
- </script>
 
  <!-- Adicionando Javascript para busca de CEP -->
 <script type="text/javascript" >

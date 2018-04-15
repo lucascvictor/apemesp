@@ -41,7 +41,6 @@ class RepresentanteLegalController extends Controller
 
         return view('admin.admin.representantelegal.index')->with('representante',$representante);
 
-
     }
 
     public function addRepresentante(){

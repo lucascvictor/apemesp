@@ -100,8 +100,3 @@
 @include('admin.associado.financeiro.modal')
 @endsection
 
-
-@section('extrascript')
-
-
-@endsection

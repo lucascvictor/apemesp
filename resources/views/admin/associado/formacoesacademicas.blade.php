@@ -211,17 +211,6 @@
 @endsection
 
 @section('extrascript')
-<!--validar o campo somente numeros -->
-<script>
-    function somenteNumeros(num) {
-        var er = /[^0-9.]/;
-        er.lastIndex = 0;
-        var campo = num;
-        if (er.test(campo.value)) {
-          campo.value = "";
-        }
-    }
- </script>
 
 <!-- Carregar cidades baseadas no estado escolhido -->
 <script type = "text/javascript" language = "javascript">

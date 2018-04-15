@@ -29,7 +29,7 @@
                     <p>Envie uma mensagem!! Agradecemos o contato!</p>
                     <form role="form" action="/send" method="POST">
                     {{ csrf_field() }}
-                    <p>Obs: Se você está procurando por um musicoterapeuta, por favor, use o canal <a href="{{ url('/encontreummt')}}">Consulte um Musicoterapeuta</a>.</p>
+                    <p>Obs: Se você está procurando por um musicoterapeuta, por favor, utilize o canal <a href="{{ url('encontreummt') }}">Consulte um Musicoterapeuta</a>.</p>
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Nome</label>
