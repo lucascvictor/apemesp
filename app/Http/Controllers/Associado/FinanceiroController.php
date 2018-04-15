@@ -18,6 +18,8 @@ use Apemesp\Apemesp\Repositories\Associado\FinanceiroRepository;
 
 use View;
 
+use Session;
+
 use Auth;
 
 class FinanceiroController extends Controller{
