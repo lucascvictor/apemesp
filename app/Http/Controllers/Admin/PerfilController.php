@@ -71,7 +71,7 @@ class PerfilController extends Controller
       $name = $usuRep->resetPasswordPerfil($id, $novaSenha);
 
       Session::flash('sucesso', $name . ', sua senha foi alterada.');
-      return redirect()->back();
+      return redirect()->route('admin.perfil');
     }
 
     public function alterarEmail(Request $request)
@@ -79,5 +79,12 @@ class PerfilController extends Controller
 
     }
 
+
+    public function alterarOpcaoProfissional()
+    {
+        $name = 'Lucas';
+        Session::flash('sucesso', $name . ', sua opção de exibição dos dados profissionais foi salva.');
+        return redirect()->route('admin.perfil');
+    }
 
 }

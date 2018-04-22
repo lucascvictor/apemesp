@@ -35,11 +35,14 @@
    <div class="form-group">
       <label class="col-md-12 control-label" for="name">Deseja permitir a exibição de seus dados profissionais?</label>  
       <div class="col-md-4">
-         <select class="form-control form-control-lg">
+      <form method="post" action="{{ url('/admin/perfil/alteraropcaoprofissional')}}">
+        {{ csrf_field() }}
+         <select class="form-control form-control-lg" name="opcaoProfissional">
          <option @if(Auth::user()->opcao_dados_profissionais == 2) selected @endif>Sim</option>
          <option @if(Auth::user()->opcao_dados_profissionais == 1) selected @endif>Não</option>
          </select>
-         <a class="btn btn-warning" href="" data-toggle="modal" data-target="#AlterarEmail"> Confirmar</a>
+         <button class="btn btn-warning" type="submit"> Confirmar</button>
+      </form>
       </div>
    </div>
 </fieldset>

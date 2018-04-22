@@ -75,9 +75,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/chart', 'Admin\AdminController@indexChart')->name('admin');
 
     Route::group(['prefix' => 'perfil'], function () {
-      Route::get('', 'Admin\PerfilController@perfil')->name('admin');
+      Route::get('', 'Admin\PerfilController@perfil')->name('admin.perfil');
       Route::post('/alteraremail', 'Admin\PerfilController@alterarEmail')->name('admin.alteraremail');
       Route::post('/alterarsenha', 'Admin\PerfilController@alterarSenha')->name('admin.alterarsenha');
+      Route::post('/alteraropcaoprofissional', 'Admin\PerfilController@alterarOpcaoProfissional')->name('admin.alteraropcaoprofissional');
     });
 
     Route::group(['prefix' => 'usuarios'], function () {
