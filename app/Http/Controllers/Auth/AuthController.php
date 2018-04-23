@@ -207,7 +207,9 @@ class AuthController extends Controller
     public function enviarRedefinicao(Request $request)
     {
         $user = new UserRepository;
+        dd($user);
         $result = $user->findAditionalUserByEmail($request->email);
+        
         if ($result) {
             Session::flash('sucesso', 'Seu código de redefinição de senha foi enviado ao seu email.');
             $resetCode = $this->generateCode();
