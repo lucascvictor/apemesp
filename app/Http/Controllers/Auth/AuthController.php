@@ -134,6 +134,17 @@ class AuthController extends Controller
         });
     }
 
+    public function sendEmailReset($id, $resetCode)
+    {
+        $user = User::findOrFail($id);
+
+        Mail::send('emails.reset', ['resetCode' => $resetCode], function ($m) use ($user) {
+            $m->from('site.apemesp@gmail.com', 'APEMESP');
+
+            $m->to($user->email, $user->name)->subject('Redefinição de senha!');
+        });
+    }
+
     public function confirm($code)
     {
         $aud = new UserRepository;
@@ -180,14 +191,32 @@ class AuthController extends Controller
         }
     }
 
-    public function reset()
+    public function reset($code)
     {
-        return view('auth.passwords.reset');
+        $user = new UserRepository;
+        $usuario = $user->resetPasswordByCode($code);
+        Session::flash('sucesso', 'A senha foi reconfigurada');
+        return redirect()->route('index');
     }
 
     public function redefinir()
     {
         return view('auth.passwords.email');
+    }
+
+    public function enviarRedefinicao(Request $request)
+    {
+        $user = new UserRepository;
+        $result = $user->findAditionalUserByEmail($request->email);
+        if ($result) {
+            Session::flash('sucesso', 'Seu código de redefinição de senha foi enviado ao seu email.');
+            $resetCode = $this->generateCode();
+            $user->updateResetCodeById($result, $confirmCode);
+            $this->sendEmailReset($result, $resetCode);
+        } else {
+            Session::flash('cuidado', 'O e-mail informado já foi cadastrado ou é inválido, por favor tente novamente ou entre em contato');
+        }
+        return redirect()->back();
     }
   
 }

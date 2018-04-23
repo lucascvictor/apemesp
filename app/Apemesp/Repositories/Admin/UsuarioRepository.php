@@ -42,7 +42,7 @@ class UsuarioRepository
 	public function resetPassword($id)
 	{
 		$usuario = User::find($id);
-		$usuario->password= '$2y$10$irM/9sn55aVw2UIQz05/Rek34fL2WFeaGiQolTRwrzWiHrNmODTMK';
+		$usuario->password= bycrypt('apemesp@123');
 		$usuario->save();
 		return $usuario->name;
 	}

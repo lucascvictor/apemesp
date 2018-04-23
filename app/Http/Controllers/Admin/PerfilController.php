@@ -76,7 +76,17 @@ class PerfilController extends Controller
 
     public function alterarEmail(Request $request)
     {
+        $senhaAntiga = $request->old_email;
+        $novoEmail = $request->new_email;
+        $repEmail = $request->re_email;
+        $id = Auth::user()->id;
+        $usuRep = new UsuarioRepository;
 
+        $name = $usuRep->alterEmail($id, $novoEmail);
+
+        Session::flash('sucesso', $name . ', sua senha foi alterada.');
+        return redirect()->route('admin.perfil');
+      
     }
 
 

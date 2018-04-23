@@ -10,6 +10,7 @@ Route::get('/confirm/{code}', 'Auth\AuthController@confirm')->name('apemesp.conf
 Route::get('/reenviar', 'Auth\AuthController@reenviar')->name('apemesp.reenviar');
 Route::post('/reenviarconfirmacao', 'Auth\AuthController@reenviarconfirmacao');
 Route::get('/redefinir', 'Auth\AuthController@redefinir')->name('apemesp.redefinir');
+Route::post('/password/email', 'Auth\AuthController@enviarRedefinicao')->name('apemesp.redefinir.senha');
 Route::get('/reset/{token}', 'Auth\AuthController@reset')->name('apemesp.reset');
 Route::get('/verificar', 'Apemesp\PagesController@verificarCpf');
 

@@ -116,7 +116,13 @@ class UserRepository
 
         public function newResetCode($id_user, $code)
         {
-                AditionalUserData::where('id', $id)->update(['resetcode' => $code,'updated_at' => $this->getData()]);
+                return  AditionalUserData::where('id', $id)->update(['resetcode' => $code,'updated_at' => $this->getData()]);
+        }
+
+        public function resetPasswordByCode($code)
+        {
+                $user = AditionalUserData::where('resetcode', $code)->select("*")->first();
+                User::where('id', $user->id)->update(['password' => bycrypt('apemesp@123')]);
         }
 
         //return $id from aditional_users_data
@@ -143,6 +149,11 @@ class UserRepository
         public function updateCodeById($id, $code)
         {
                 AditionalUserData::where('id', $id)->update(['code' => $code,'updated_at' => $this->getData()]);
+        }
+
+        public function updateResetCodeById($id, $code)
+        {
+                AditionalUserData::where('id', $id)->update(['resetcode' => $code,'updated_at' => $this->getData()]);
         }
 
         public function confirmCodeById($id)
