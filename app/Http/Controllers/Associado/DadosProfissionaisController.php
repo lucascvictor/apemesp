@@ -196,5 +196,13 @@ class DadosProfissionaisController extends Controller{
     }
 
 
+    public function destroyDadosProfissionais($id)
+    {
+      $repository = new DadosProfissionaisRepository;
+      $repository->destroy($id);
+      return redirect()->back();
+    }
+
+
 
 }

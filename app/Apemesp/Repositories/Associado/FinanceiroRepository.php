@@ -30,4 +30,9 @@ class FinanceiroRepository
 		return DadosBancarios::all();
 	}
 
+	public function destroy($id)
+	{
+		return Anuidade::where('id', $id)->delete();
+	}
+
 }

@@ -27,4 +27,9 @@ class CarterinhaRepository
 		return Cidade::where('id_estado', $idEstado)->select('id', 'nome')->get();
 	}
 
+	public function destroy($id)
+	{
+		return Certeirinha::where('id', $id)->delete();
+	}
+
 }

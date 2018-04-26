@@ -42,5 +42,10 @@ class DocumentacaoRepository
   }
 
 
+  public function destroy($id)
+  {
+    return Documentacao::where('id', $id)->delete();
+  }
+
 
 }

@@ -153,5 +153,10 @@ class DadosProfissionaisRepository
     return DadosProfissionais::where('id_user', $this->getIdUser())->count();
   }
 
+  public function destroy($id)
+  {
+    return DadosProfissionais::where('id', $id)->delete();
+  }
+
 
 }

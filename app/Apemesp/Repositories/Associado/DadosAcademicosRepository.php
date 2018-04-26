@@ -178,6 +178,11 @@ class DadosAcademicosRepository
 		FormacoesAcademicas::where('id', $id)->update(['D_E_L_E_T_E_D' => 1]);
 	}
 
+	public function destroy($id)
+	{
+		return FormacoesAcademicas::where('id', $id)->delete();
+	}
+
 
 
 }
