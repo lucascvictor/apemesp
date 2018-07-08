@@ -207,7 +207,6 @@ class AuthController extends Controller
     public function enviarRedefinicao(Request $request)
     {
         $user = new UserRepository;
-        dd($user);
         $result = $user->findAditionalUserByEmail($request->email);
         
         if ($result) {

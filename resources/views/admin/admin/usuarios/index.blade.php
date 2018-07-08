@@ -60,7 +60,7 @@
             <h4 class="modal-title">Reset de senha</h4>
             </div>
             <div class="modal-body">
-            <p>Deseja realmente resetar a senha  deste usuário?</p>
+            <p>Deseja realmente resetar a senha  deste usuário? A senha padrão é apemesp123</p>
             </div>
             <div class="modal-footer">
             <a href="/admin/usuarios/reset/{{ $usuario->id }}" class="btn btn-danger btn-block">
