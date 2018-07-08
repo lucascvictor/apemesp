@@ -48,7 +48,7 @@
          <br>
          <button type="submit" class="badge badge-primary"  style="margin: 5px;">Entrar</button>
          <br>
-         <a href="{{ url('/register')}}" title="Associe-se">Associe-se</a>
+         <a href="{{ url('/redefinir')}}" title="Senha?">Senha?</a>
       </form>
    </div>
    <!-- ÁREA DO CLIENTE -->
