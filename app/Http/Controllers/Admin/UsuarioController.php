@@ -54,7 +54,7 @@ class UsuarioController extends Controller
     {
         $usuarioRepository = new UsuarioRepository;
         $usuario = $usuarioRepository->resetPassword($id);
-        Session::flash('sucesso', 'A senha foi reconfigurada para apemesp@123');
+        Session::flash('sucesso', 'A senha foi reconfigurada para apemesp123');
         return redirect()->route('users.index');
     }
 

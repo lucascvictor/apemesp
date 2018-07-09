@@ -122,7 +122,7 @@ class UserRepository
         public function resetPasswordByCode($code)
         {
                 $user = AditionalUserData::where('resetcode', $code)->select("*")->first();
-                User::where('id', $user->id)->update(['password' => bycrypt('apemesp@123')]);
+                User::where('id', $user->id)->update(['password' => bcrypt('apemesp123')]);
         }
 
         //return $id from aditional_users_data

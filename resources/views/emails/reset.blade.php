@@ -8,7 +8,7 @@
     <body>
         <p>Redefinição de senha.</p>
         <p>Por favor clique no link abaixo para redefinir sua senha temporáriamente.</p>
-        <p>Ao clicar no link sua senha será redefinida para <b>Apemesp@123</b></p>
+        <p>Ao clicar no link sua senha será redefinida para <b>Apemesp123</b></p>
         <p>Certifique-se de trocá-la logo após o seu primeiro login</p>
         <a href="http://apemesp.com/reset/{{ $resetCode }}"> Redefinição de senha APEMESP</a>
         <br>
