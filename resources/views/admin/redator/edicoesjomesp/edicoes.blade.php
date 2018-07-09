@@ -2,28 +2,22 @@
 
 @section('titulo', 'Manutenção de edições Jomesp')
 
-
 @section('conteudo')
-
-
-
 
 <div class="container">
 	<div class="row">
 <div class="col-lg-10 col-md-10">
 <h3> Os arquivos lançados neste painel são visível somente na página da JOMESP</h3>
 
-			<fieldset>
-				<legend>Edições</legend>
+	<fieldset>
+		<legend>Edições</legend>
 
-									<!-- Aviso sobre o tipo de arquivo -->
+		<!-- Aviso sobre o tipo de arquivo -->
 
-											  <div class="col-md-6 " role="alert">
-												  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-												  	<span style="color: gray;"><strong>Por favor.</strong> Carregue as edições abaixo no formato PDF.</span>
-											  </div>
-
-
+					<div class="col-md-6 " role="alert">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<span style="color: gray;"><strong>Por favor.</strong> Carregue as edições abaixo no formato PDF.</span>
+					</div>
 
 
 	<table class="table table-hover table-striped">
@@ -59,11 +53,8 @@
 </tr>
 @endforeach
 
-
 			</tbody>
 	</table>
-
-
 
 	<button class="btn btn-success" data-toggle="modal" data-target="#novaEdicao">
 		Enviar nova edição
@@ -90,7 +81,6 @@
 		 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/admin/edicoesjomesp/')}}">
 
 		 	{{ csrf_field() }}
-					<!-- Botão de Arquivo para CPF -->
 
 						<div class="form-group" id="mensagem1">
               <div class="row">
@@ -109,10 +99,11 @@
   						  </div>
               </div>
                 <div class="row">
-               <label class="col-md-4 control-label" for="linkExterno">Link externo: </label>
-               <div class="col-md-4">
+               <label class="col-md-4 control-label" for="linkExterno">Link para leitura online: </label>
+			   <div class="col-md-4">
                <input id="linkexterno" name="linkexterno" class="input" type="text" required>
               <br />
+			   <p> Para links do Google Drive, lembre-se de verificar se o link possui o /view no fim da URL, mesmo para links minificados</p>
             </div>
           </div>
 
