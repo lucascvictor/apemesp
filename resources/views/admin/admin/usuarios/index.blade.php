@@ -11,11 +11,9 @@
     <div class="col-md-4">
         <a class="btn btn-success"  href="{{ url('/admin/usuarios/updated') }}"> Visualizar últimos usuários inscritos </a>
     </div>
-    
     <div class="col-md-2">
         <a class="btn btn-default"  href="{{ url('/admin/usuarios') }}"> Visualizar lista completa em ordem alfabética</a>
     </div>
-
 </div>
 <hr>
 <div class="row">
