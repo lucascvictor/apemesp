@@ -9,11 +9,11 @@
     <?php $link = '/admin/usuarios';?>
     
     <div class="col-md-4">
-    @if (substr($pagina, -15) == $link)
-        <a class="btn btn-success"  href="{{ url('/admin/usuarios/updated') }}"> Visualizar ultimos usuários inscritos </a>
-    @else
-        <a class="btn btn-success"  href="{{ url('/admin/usuarios') }}"> Visualizar lista completa em ordem alfabética</a>
-    @endif
+        <a class="btn btn-success"  href="{{ url('/admin/usuarios/updated') }}"> Visualizar últimos usuários inscritos </a>
+    </div>
+    
+    <div class="col-md-2">
+        <a class="btn btn-default"  href="{{ url('/admin/usuarios') }}"> Visualizar lista completa em ordem alfabética</a>
     </div>
 
 </div>
