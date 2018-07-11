@@ -249,6 +249,7 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('search', 'Admin\FinanceiroController@search');
         Route::group(['prefix' => 'dadosbancarios'], function () {
           Route::get('', 'Admin\FinanceiroController@indexDadosBancarios');
+          Route::get('{id}', 'Admin\FinanceiroController@editDadosBancarios');
         });
     });
 

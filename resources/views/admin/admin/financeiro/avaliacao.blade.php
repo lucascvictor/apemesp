@@ -5,8 +5,7 @@
                {{ csrf_field() }}
                <fieldset>
                   <legend>Lançamento financeiro</legend>
-
-
+                  
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="ano">ANO:</label>
                      <div class="col-md-4">

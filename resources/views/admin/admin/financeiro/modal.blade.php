@@ -36,7 +36,7 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="arquivoavaliado">Arquivo Avaliado:</label>
                      <div class="col-md-4">
-                        <input readonly="true" id="arquivoavaliado" name="arquivoavaliado" type="text" placeholder="Arquivo Avaliado" class="form-control input-md" required="">
+                        <input id="arquivoavaliado" name="arquivoavaliado" class="input-file" type="file" required="" class="form-control input-md" >
                      </div>
                   </div>
                  
