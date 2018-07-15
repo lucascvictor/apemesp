@@ -123,6 +123,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/perfil/editar/{id}', 'Admin\AssociadoController@editPerfil');
         Route::get('/updated', 'Admin\AssociadoController@orderByUpdate');
         Route::get('/certificado', 'Admin\CertificadoController@index');
+        Route::get('/download/{cpf}/{arquivo}', 'Admin\AssociadoController@getDownload')->name('admin.download');
     });
 
     Route::group(['prefix' => 'paginas'], function () {

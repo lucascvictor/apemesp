@@ -14,6 +14,8 @@ use Session;
 
 use View;
 
+use Response;
+
 
 class AssociadoController extends Controller
 {
@@ -68,6 +70,19 @@ class AssociadoController extends Controller
         $associadoRepository = new AssociadoRepository;
         $associados = $associadoRepository->orderByUpdate();
         return view('admin.admin.associados.associados')->with('associados', $associados);
+    }
+
+    public function getDownload($cpf, $arquivo)
+    {
+
+        $file= public_path(). "/files/" . $cpf . "/" . $arquivo;
+        $headers = array('Content-Type: application/pdf',);
+        if (file_exists($file)) {
+          return Response::download($file, 'arquivo.pdf', $headers);
+        } else {
+          Session::flash('cuidado','Arquivo não encontrado para download');
+          return redirect()->back();
+        }
     }
 
 }

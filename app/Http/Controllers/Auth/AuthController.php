@@ -208,7 +208,6 @@ class AuthController extends Controller
     {
         $user = new UserRepository;
         $result = $user->findAditionalUserByEmail($request->email);
-        
         if ($result) {
             Session::flash('sucesso', 'Seu código de redefinição de senha foi enviado ao seu email.');
             $resetCode = $this->generateCode();
