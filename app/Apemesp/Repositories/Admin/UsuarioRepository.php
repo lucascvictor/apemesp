@@ -10,7 +10,6 @@ use DB;
 
 class UsuarioRepository
 {
-
 	protected $data;
 
 	public function __construct()
@@ -64,12 +63,8 @@ class UsuarioRepository
 		->orderBy('aditional_users_data.updated_at', 'asc')->paginate(10);
 	}
 
-
 	public function destroy($id)
 	{
 		return User::where('id', $id)->delete();
 	}
-
-	
-
 }

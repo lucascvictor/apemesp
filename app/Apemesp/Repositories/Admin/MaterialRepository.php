@@ -45,6 +45,7 @@ class MaterialRepository
 	{
 		Material::where('id', $id)->update(['imagem' => $nomeArquivo ]);
 	}
+
 	public function listAll()
 	{
 		return Material::select('*')->orderBy('id', 'desc')->paginate(10);
@@ -61,7 +62,6 @@ class MaterialRepository
 						->update([
 								'titulo' => $request->titulo,
 								'conteudo' => $request->conteudo,
-								'imagem' => $request->imagem,
 								'updated_at' => $this->getData()
 								]);
 	}

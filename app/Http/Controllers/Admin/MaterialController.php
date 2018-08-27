@@ -24,7 +24,7 @@ class MaterialController extends Controller
 {
 
 
-	 public function __construct()
+	public function __construct()
     {
         $this->middleware('auth', ['except' => 'logout']);
 
@@ -51,27 +51,31 @@ class MaterialController extends Controller
     public function storeMaterial(Request $request)
     {
 
+		$repository = new MaterialRepository;
 
-      $repository = new MaterialRepository;
-      $id = $repository->store($request);
+		$id = $repository->store($request);
 
-			$nomeArquivo = $this->storeImage($id, $request);
+		$nomeArquivo = $this->storeImage($id, $request);
 
-			$repository->updateImagem($nomeArquivo, $id);
+		$repository->updateImagem($nomeArquivo, $id);
 
-      return redirect()->route('list.materiais');
+		return redirect()->route('list.materiais');
     }
 
-		public function storeImage($id, $request)
-		{
-			//Armazenamento da imagem
-			$extensao = $request->file('imagem')->getClientOriginalExtension();
-			$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/musicoterapia/material/';
-			$nomeArquivo ='material'. $id . '.' . $extensao;
-			$request->file('imagem')->move($pastaDestino, $nomeArquivo);
-
-			return $nomeArquivo;
+	public function storeImage($id, $request)
+	{
+		//Armazenamento da imagem
+		$extensao = $request->file('imagem')->getClientOriginalExtension();
+		$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/musicoterapia/material/';
+		$nomeArquivo ='material'. $id . '.' . $extensao;
+		$arquivo = $pastaDestino . $nomeArquivo;
+		if (file_exists($arquivo)) {
+			unlink($arquivo);
 		}
+		$request->file('imagem')->move($pastaDestino, $nomeArquivo);
+		
+		return $nomeArquivo;
+	}
 
 
     public function destroyMaterial($id)
@@ -81,18 +85,20 @@ class MaterialController extends Controller
 			return redirect()->back();
     }
 
-		public function editMaterial($id)
-		{
-			$repository = new MaterialRepository;
-			$material = $repository->getMaterial($id);
-			return view('admin.admin.paginas.edit.material')->with('material', $material);
-		}
+	public function editMaterial($id)
+	{
+		$repository = new MaterialRepository;
+		$material = $repository->getMaterial($id);
+		return view('admin.admin.paginas.edit.material')->with('material', $material);
+	}
 
-		public function updateMaterial(Request $request, $id)
-		{
-			$repository = new MaterialRepository;
-			$repository->update($request, $id);
-			return route('list.material');
-		}
+	public function updateMaterial(Request $request, $id)
+	{
+		$repository = new MaterialRepository;
+		$nomeArquivo = $this->storeImage($id, $request);
+		$repository->updateImagem($nomeArquivo, $id);
+		$repository->update($request, $id);
+		return redirect()->route('list.materiais');
+	}
 
 }
