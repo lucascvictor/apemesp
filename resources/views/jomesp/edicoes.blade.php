@@ -21,8 +21,8 @@
 
                     ?></h4>
 
-                    <p> Download Direto: <a href="/jomesp/edicoesjomesp/download/{{ $edicao->arquivo }}">dowload</a></p>
-                    <p> Download Externo: <a href="{{ $edicao->linkexterno }}">dowload</a></p>
+                    <p> Download Direto: <a href="/jomesp/edicoesjomesp/download/{{ $edicao->arquivo }}">Dowload</a></p>
+                    <p> Leitura Online: <a href="{{ $edicao->linkexterno }}">Ler</a></p>
 
                 </div>
             </div>

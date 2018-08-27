@@ -9,13 +9,11 @@
     <?php $link = '/admin/usuarios';?>
     
     <div class="col-md-4">
-    @if (substr($pagina, -15) == $link)
-        <a class="btn btn-success"  href="{{ url('/admin/usuarios/updated') }}"> Visualizar ultimos usuários inscritos </a>
-    @else
-        <a class="btn btn-success"  href="{{ url('/admin/usuarios') }}"> Visualizar lista completa em ordem alfabética</a>
-    @endif
+        <a class="btn btn-success"  href="{{ url('/admin/usuarios/updated') }}"> Visualizar últimos usuários inscritos </a>
     </div>
-
+    <div class="col-md-2">
+        <a class="btn btn-default"  href="{{ url('/admin/usuarios') }}"> Visualizar lista completa em ordem alfabética</a>
+    </div>
 </div>
 <hr>
 <div class="row">
@@ -60,7 +58,7 @@
             <h4 class="modal-title">Reset de senha</h4>
             </div>
             <div class="modal-body">
-            <p>Deseja realmente resetar a senha  deste usuário?</p>
+            <p>Deseja realmente resetar a senha  deste usuário? A senha padrão é apemesp123</p>
             </div>
             <div class="modal-footer">
             <a href="/admin/usuarios/reset/{{ $usuario->id }}" class="btn btn-danger btn-block">

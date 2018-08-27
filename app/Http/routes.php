@@ -123,6 +123,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/perfil/editar/{id}', 'Admin\AssociadoController@editPerfil');
         Route::get('/updated', 'Admin\AssociadoController@orderByUpdate');
         Route::get('/certificado', 'Admin\CertificadoController@index');
+        Route::get('/download/{cpf}/{arquivo}', 'Admin\AssociadoController@getDownload')->name('admin.download');
     });
 
     Route::group(['prefix' => 'paginas'], function () {
@@ -249,6 +250,7 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('search', 'Admin\FinanceiroController@search');
         Route::group(['prefix' => 'dadosbancarios'], function () {
           Route::get('', 'Admin\FinanceiroController@indexDadosBancarios');
+          Route::get('{id}', 'Admin\FinanceiroController@editDadosBancarios');
         });
     });
 

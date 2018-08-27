@@ -46,6 +46,8 @@
             <div class="col-md-4">
             <input id="linkexterno" name="linkexterno" class="input" type="text" value="{{ $edicao->linkexterno }}">
            <br />
+
+			   <p> Para links do Google Drive, lembre-se de verificar se o link possui o /view no fim da URL, mesmo para links minificados</p>
          </div>
          </div>
 

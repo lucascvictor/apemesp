@@ -90,5 +90,10 @@ class FinanceiroController extends Controller
         }
         return redirect()->back();
     }
+
+    public function editDadosBancarios($id) 
+    {
+        return $id;
+    }
 }
 

@@ -13,26 +13,20 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('/password/email') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="email" class="col-md-4 control-label">Endereço de e-mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="email" type="email" class="form-control" name="email" required="">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="teste btn btn-primary">
                                     <i class="fa fa-btn fa-envelope"></i> Enviar link de alteração
                                 </button>
                             </div>
@@ -41,5 +35,6 @@
                 </div>
             </div>
         </div>
-
+        </div>
+        </script>
 @endsection

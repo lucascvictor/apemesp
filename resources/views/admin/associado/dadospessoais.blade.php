@@ -4,9 +4,7 @@
 
 @section('extrastyle')
 
-
   {!! Html::style('css/bootstrap-datetimepicker.min.css') !!}
-
 
 @endsection
 
@@ -179,10 +177,6 @@
 
     </fieldset>
 </form>
-
-
-
-
 
 @endsection
 
