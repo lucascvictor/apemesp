@@ -14,7 +14,7 @@
 <form method="POST"  enctype="multipart/form-data" action="{{ url('/admin/paginas/literatura') }}">
  {{ csrf_field() }}
   <fieldset>
-  <legend>Indicação de item para o acervo</legend>
+  <legend>Adicionar Literatura</legend>
   <!-- Botão de Arquivo para Imagem -->
     <div class="form-group" id="mensagem">
       <label class="col-md-4 control-label" for="filebutton">Imagem: </label>

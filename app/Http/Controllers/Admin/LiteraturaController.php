@@ -74,5 +74,12 @@ class LiteraturaController extends Controller
 			$indicacoes = $repository->getIndicacoes();
             return view('admin.admin.literatura.index')->with('indicacoes', $indicacoes);
         }
+
+        public function avaliar($id) 
+        {
+            $repository = new LiteraturaRepository;
+			$indicacao = $repository->getIndicacao($id);
+            return view('admin.admin.literatura.avaliacao')->with('indicacao', $indicacao);
+        }
     
 }

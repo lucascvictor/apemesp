@@ -13,7 +13,7 @@
 <form method="POST"  action="{{ url('/admin/paginas/linhadotempo/') }}">
  {{ csrf_field() }}
   <fieldset>
-  <legend>Indicação de item para o acervo</legend>
+  <legend>Adicionar item</legend>
   <!-- Botão de Arquivo para Imagem -->
 
 <br />

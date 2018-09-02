@@ -5,7 +5,7 @@
 @section('conteudo')
 
 
-<form method="POST" action="{{ url('/musicoterapia/literatura/indicacao') }}" enctype="multipart/form-data">
+<form method="POST"  action="{{ url('/musicoterapia/literatura/indicacao') }}" enctype="multipart/form-data">
 	{{ csrf_field() }}
 	<fieldset> 
 	<legend>Indicação de item para o acervo</legend>
@@ -13,7 +13,7 @@
 		<div class="form-group" id="mensagem">
 		  <label class="col-md-4 control-label" for="filebutton">Imagem: </label>
 		  <div class="col-md-4">
-		    <input id="imagem" name="imagem" class="input-file" type="file"> 
+		    <input id="imagem" name="imagem" class="input-file" type="file" required=""> 
 		  </div>
 		</div>
 		<br />

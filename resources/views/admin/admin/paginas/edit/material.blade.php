@@ -14,7 +14,7 @@
 <form method="POST"  enctype="multipart/form-data" action="{{ url('/admin/paginas/material/') }}/{{ $material[0]->id }}">
  {{ csrf_field() }}
   <fieldset>
-  <legend>Indicação de item para o acervo</legend>
+  <legend>Edição do material</legend>
   <!-- Botão de Arquivo para Imagem -->
 
 <br />

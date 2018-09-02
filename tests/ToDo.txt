@@ -30,3 +30,4 @@ FEITO:
 - Correção da imagem ao alterar o material informativo
 - Regra de exibição na pesquisa por MT (reavaliado para MTs desativados)
 - Erro ao redirecionar de documentação para a parte financeira durante o cadastro do associado
+- Correções relacionadas à indicações literárias

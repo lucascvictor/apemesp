@@ -79,5 +79,10 @@ class LiteraturaRepository
 		return IndicacaoLiteraria::all();
 	}
 
+	public function getIndicacao($id)
+	{
+		return IndicacaoLiteraria::select('*')->where('id', $id)->get()->first();
+	}
+
 
 }

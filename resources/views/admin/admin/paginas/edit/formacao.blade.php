@@ -14,7 +14,7 @@
 <form method="POST"  action="{{ url('/admin/paginas/formacao/') }}/{{ $formacao[0]->id }}">
  {{ csrf_field() }}
   <fieldset>
-  <legend>Indicação de item para o acervo</legend>
+  <legend>Edição da formação</legend>
   <!-- Botão de Arquivo para Imagem -->
 
 <br />

@@ -22,8 +22,8 @@
                             <td>{{$indicacao->nome}}</td>
                             <td>{{$indicacao->email}}</td>
                             <td>{{$indicacao->titulo}}</td>
-                            <td><a class="btn btn-success" href="{{ url('/admin/literatura/indicacao') }}/{{$indicacao->id}}">Avaliar</a></td>
-                            <td><a class="btn btn-danger" href="{{ url('/admin/literatura/indicacao/destroy') }}/{{$indicacao->id}}">Excluir</a></td>
+                            <td><a class="btn btn-success" href="{{ url('/admin/indicacoesliterarias') }}/{{$indicacao->id}}">Avaliar</a></td>
+                           
                         </tr>
                     @endforeach
                     </tbody>

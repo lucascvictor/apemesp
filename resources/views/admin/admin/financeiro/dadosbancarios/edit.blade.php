@@ -11,7 +11,7 @@
 
         
 
-         <div class="modal-body">
+
             <form class="form-horizontal" method="POST" action="{{ url('/admin/financeiro/dadosbancarios') }}/{{ $dadosbancarios->id}}">
                {{ csrf_field() }}
                <fieldset>
@@ -61,13 +61,13 @@
                   </button>
                </div>
             </form>
-         </div>
+
 
 
         
       </div>
    </div>
-
+    </div>
 </div>
 @endsection
 

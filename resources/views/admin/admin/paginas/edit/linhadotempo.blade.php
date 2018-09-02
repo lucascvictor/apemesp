@@ -10,7 +10,7 @@
 <form method="POST"  action="{{ url('/admin/paginas/linhadotempo/') }}/{{ $linhadotempo->id }}">
    {{ csrf_field() }}
    <fieldset>
-      <legend>Indicação de item para o acervo</legend>
+      <legend>Edição da linha do tempo</legend>
       <!-- Botão de Arquivo para Imagem -->
       <br />
       <div class="form-group">

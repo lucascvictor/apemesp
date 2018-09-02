@@ -15,7 +15,14 @@ class RepresentanteLegalRepository
 
 	public function getRepresentante()
 	{
-		return DB::table('responsavel_legal')->select('*')->first();
+		$representante = RepresentanteLegal::select('*')->get()->first();
+		if($representante){
+			return $representante;
+		} else {
+			$representante = new RepresentanteLegal;
+			return $representante;
+		}
+
     }
     
     public function listRepresentanteLegal()
