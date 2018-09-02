@@ -95,6 +95,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/reset/{id}', 'Admin\UsuarioController@resetPassword');
         Route::get('/usuarios/mensagem/{id}', 'Adimin\UsuarioController@mensagem');
         Route::get('/updated', 'Admin\UsuarioController@orderByUpdate');
+        Route::get('/desativar/{id}', 'Admin\UsuarioController@desativar');
+
     });
 
     Route::group(['prefix' => 'indicacoesliterarias'], function () {

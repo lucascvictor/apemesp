@@ -11,7 +11,6 @@ A FAZER:
 - Onde posso editar o número de associado/a?
 - Ao fazer qualquer pesquisa na página "Encontre um Musicoterapeuta", dá erro na página (erro com códigos).
 - Ainda não foi corrigido/aplicado o filtro necessário para a exibição dos dados da página
-- Ao tentar desativar um profissional, dá erro na página (apresentando aquele erro 404).
 - No perfil de usuário, ao clicar em "Já tenho carteirinha" não acontece nada
 - Em dados acadêmicos, não há link visível para envio de documentos (TCC/Certificado)
 - É possível extrair um relatório com os dados dos associados cadastrados e sua situação atual?
@@ -27,3 +26,4 @@ FEITO:
 - Mensagem de envio de recuperação de senha
 - Link de download de documentação não funciona
 - Como posso pegar a foto enviada para emissão de carteirinha? (consulte o associado)
+- Ao tentar desativar um profissional, dá erro na página (apresentando aquele erro 404).

@@ -109,4 +109,12 @@ class UsuarioController extends Controller
         return view('admin.admin.usuarios.index')->with('usuarios', $usuarios);
     }
 
+    public function desativar($id)
+    {
+        $usuarioRepository = new UsuarioRepository;
+        $usuario = $usuarioRepository->desativar($id);
+        Session::flash('sucesso', 'O usuário' . $usuario .'foi desativado');
+        return redirect()->back();
+    }
+
 }

@@ -67,4 +67,12 @@ class UsuarioRepository
 	{
 		return User::where('id', $id)->delete();
 	}
+
+	public function desativar($id)
+	{
+		$usuario = User::find($id);
+		$usuario->id_status = 4;
+		$usuario->save();
+		return $usuario->name;
+	}
 }
