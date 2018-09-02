@@ -252,8 +252,11 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('associado/{id}/{ano}', 'Admin\FinanceiroController@avaliarLancamento');
       Route::get('search', 'Admin\FinanceiroController@search');
         Route::group(['prefix' => 'dadosbancarios'], function () {
-          Route::get('', 'Admin\FinanceiroController@indexDadosBancarios');
-          Route::get('{id}', 'Admin\FinanceiroController@editDadosBancarios');
+          Route::get('', 'Admin\FinanceiroController@indexDadosBancarios')->name('admin.dadosbancarios');
+          Route::get('{id}', 'Admin\DadosBancariosController@edit');
+          Route::post('', 'Admin\DadosBancariosController@store');
+          Route::post('{id}', 'Admin\DadosBancariosController@update');
+          Route::get('destroy/{id}', 'Admin\DadosBancariosController@destroy');
         });
     });
 

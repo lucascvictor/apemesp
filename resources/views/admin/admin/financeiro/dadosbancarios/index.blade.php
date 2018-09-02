@@ -7,7 +7,9 @@
 <div class="col-md-12">
    <div class="row">
       <div class="col-lg-10">
-         <h2>Situações financeiras de dadosbancarios</h2>
+         <h2>Lista de bancos exibidos aos associados para transações</h2>
+         <br>
+         <a class="btn btn-success" href="" data-toggle="modal" data-target="#novosDados">Adicionar nova conta</a>
          <div class="table-responsive">
             <table class="table table-hover table-striped">
                <thead>
@@ -35,5 +37,22 @@
       <p> {{ $dadosbancarios->setPath('')->render() }} </p>
    </div>
 </div>
+@endsection
+
+@include('admin.admin.financeiro.dadosbancarios.modal')
+
+@section('extrascript')
+
+<script>
+    function somenteNumeros(num) {
+        var er = /[^0-9.]/;
+        er.lastIndex = 0;
+        var campo = num;
+        if (er.test(campo.value)) {
+          campo.value = "";
+        }
+    }
+ </script>
+
 @endsection
 

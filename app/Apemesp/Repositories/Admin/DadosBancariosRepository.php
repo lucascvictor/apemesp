@@ -23,7 +23,12 @@ class DadosBancariosRepository
 		return DB::table('dados_bancarios')->select('*')->get();
 	}
 
-	public function storeDadosBancarios($request)
+	public function edit($id)
+	{
+		return DadosBancarios::select('*')->where('id', $id)->get()->first();
+	}
+
+	public function store($request)
 	{
 		$table            = new DadosBancarios;
         $table->banco     = $request->banco;
@@ -31,7 +36,8 @@ class DadosBancariosRepository
         $table->conta     = $request->conta;
         $table->titular   = $request->titular;
         $table->documento = $request->documento;
-        $table->descricao = $request->descricao;
+		$table->descricao = $request->titular;
+		$table->titulo = $request->titular;
         $table->save();
 	}
 
@@ -44,8 +50,15 @@ class DadosBancariosRepository
 			'conta'     => $request->conta,
 			'titular'   => $request->titular,
 			'documento' => $request->documento,
-			'descricao' => $request->descricao
+			'descricao' => $request->descricao,
+			'titulo' => $request->descricao
 		]);
+	}
+
+	public function destroy($id)
+	{
+		$dadosBancarios = DadosBancarios::find($id);
+		$dadosBancarios->delete();
 	}
 
 }

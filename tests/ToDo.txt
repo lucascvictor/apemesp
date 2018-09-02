@@ -4,9 +4,7 @@ Trocar Endereço
 A FAZER:
 
 - Botão de novos associados
-- Regra de exibição na pesquisa por MT
 - Avaliar parte financeira
-- Nenhuma mensagem aparecendo
 - Formulário de representante legal
 - Onde posso editar o número de associado/a?
 - Ao fazer qualquer pesquisa na página "Encontre um Musicoterapeuta", dá erro na página (erro com códigos).
@@ -29,3 +27,6 @@ FEITO:
 - Link de download de documentação não funciona
 - Como posso pegar a foto enviada para emissão de carteirinha? (consulte o associado)
 - Ao tentar desativar um profissional, dá erro na página (apresentando aquele erro 404).
+- Correção da imagem ao alterar o material informativo
+- Regra de exibição na pesquisa por MT (reavaliado para MTs desativados)
+- Erro ao redirecionar de documentação para a parte financeira durante o cadastro do associado
