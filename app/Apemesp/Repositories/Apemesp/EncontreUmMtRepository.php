@@ -23,6 +23,7 @@ class EncontreUmMtRepository
 {
 	public function getEspecialidades()
 	{
+
 		return Especialidade::all();
 	}
 
@@ -83,8 +84,6 @@ class EncontreUmMtRepository
 
 
 	public function getMtAll($proximidade, $escala, $nome, $especialidade) {
-
-
 		return DB::table('dados_profissionais')
 						->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
 						->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
@@ -161,7 +160,9 @@ class EncontreUmMtRepository
 		return DB::table('dados_profissionais')
 		->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
 		->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
+		->join('users', 'dados_pessoais.id_user', '=', 'users.id')
 		->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
+		->where('users.id_status','<>',4)
 		->orderBy('dados_pessoais.name')
 		->paginate(30);
 	}

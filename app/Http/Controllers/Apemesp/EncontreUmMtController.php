@@ -30,11 +30,11 @@ class EncontreUmMtController extends Controller{
 			$pesquisa = 0;
 			$mtRepository = new EncontreUmMtRepository;
 			$mts = $mtRepository->getAll();
+			
         return view('paginas.encontreummt')
 				->with('especialidades', $especialidades->getEspecialidades())
 				->with('proximidades', $proximidades->getProximidades())
 				->with('escalas', $escalas->getEscalas())
-
 				->with('mts', $mts);
     }
 
