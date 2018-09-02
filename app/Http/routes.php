@@ -1,5 +1,6 @@
 <?php
 
+Route::post('/enviarreset', 'Auth\AuthController@enviarRedefinicao');
 Route::get('/', 'Apemesp\PagesController@getIndex')->name('apemesp.index');
 Route::post('/send', 'Emails\EmailController@send')->name('jomesp.email.send');
 Route::get('/contato/localizacao', 'Apemesp\ContatoController@getLocalizacao')->name('jomesp.localizacao');
@@ -10,7 +11,6 @@ Route::get('/confirm/{code}', 'Auth\AuthController@confirm')->name('apemesp.conf
 Route::get('/reenviar', 'Auth\AuthController@reenviar')->name('apemesp.reenviar');
 Route::post('/reenviarconfirmacao', 'Auth\AuthController@reenviarconfirmacao');
 Route::get('/redefinir', 'Auth\AuthController@redefinir')->name('apemesp.redefinir');
-Route::post('/password/email', 'Auth\AuthController@enviarRedefinicao')->name('apemesp.redefinir.senha');
 Route::get('/reset/{token}', 'Auth\AuthController@reset')->name('apemesp.reset');
 Route::get('/verificar', 'Apemesp\PagesController@verificarCpf');
 

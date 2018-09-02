@@ -137,7 +137,6 @@ class AuthController extends Controller
     public function sendEmailReset($id, $resetCode)
     {
         $user = User::findOrFail($id);
-
         Mail::send('emails.reset', ['resetCode' => $resetCode], function ($m) use ($user) {
             $m->from('site.apemesp@gmail.com', 'APEMESP');
 
@@ -196,7 +195,7 @@ class AuthController extends Controller
         $user = new UserRepository;
         $usuario = $user->resetPasswordByCode($code);
         Session::flash('sucesso', 'A senha foi reconfigurada');
-        return redirect()->route('index');
+        return redirect()->route('apemesp.index');
     }
 
     public function redefinir()
@@ -211,12 +210,12 @@ class AuthController extends Controller
         if ($result) {
             Session::flash('sucesso', 'Seu código de redefinição de senha foi enviado ao seu email.');
             $resetCode = $this->generateCode();
-            $user->updateResetCodeById($result, $confirmCode);
-            $this->sendEmailReset($result, $resetCode);
+            $user->updateResetCodeById($result, $resetCode);
+            $this->sendEmailReset($result->id, $resetCode);
         } else {
-            Session::flash('cuidado', 'O e-mail informado já foi cadastrado ou é inválido, por favor tente novamente ou entre em contato');
+            Session::flash('cuidado', 'O e-mail informado ainda não foi cadastrado ou é inválido, por favor tente novamente ou entre em contato');
         }
-        return redirect()->back();
+        return redirect()->route('apemesp.index');
     }
   
 }
