@@ -5,7 +5,6 @@ A FAZER:
 
 - Botão de novos associados
 - Avaliar parte financeira
-- Formulário de representante legal
 - Onde posso editar o número de associado/a?
 - Ao fazer qualquer pesquisa na página "Encontre um Musicoterapeuta", dá erro na página (erro com códigos).
 - Ainda não foi corrigido/aplicado o filtro necessário para a exibição dos dados da página
@@ -31,3 +30,4 @@ FEITO:
 - Regra de exibição na pesquisa por MT (reavaliado para MTs desativados)
 - Erro ao redirecionar de documentação para a parte financeira durante o cadastro do associado
 - Correções relacionadas à indicações literárias
+- Formulário de representante legal

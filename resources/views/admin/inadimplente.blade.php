@@ -49,8 +49,7 @@
                 </div>
                 <h3> Formas de contato: </h3>
                 <p> Nos envie uma <a href="{{ url('/contato/mensagens') }}">mensagem</a></p>
-                <p> Nos envie um e-mail: apemesp@apemesp.com </p>
-                <p> Por telefone: (11)0000-1111 </p>
+                <p> Nos envie um e-mail: contato@apemesp.com </p>
                 <p> <a href="{{ url('contato/localizacao ')}}">Pessoalmente</a> </p>
 
                 <p>Nossos atendimentos funcionam diáriamente das 08:00 às 17:00 </p>
