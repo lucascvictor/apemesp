@@ -25,14 +25,27 @@ class DadosBancariosRepository
 
 	public function storeDadosBancarios($request)
 	{
-		$table = new DadosBancarios;
-        $table->banco = $request->banco;
-        $table->agencia = $request->agencia;
-        $table->conta = $request->conta;
-        $table->titular = $request->titular;
+		$table            = new DadosBancarios;
+        $table->banco     = $request->banco;
+        $table->agencia   = $request->agencia;
+        $table->conta     = $request->conta;
+        $table->titular   = $request->titular;
         $table->documento = $request->documento;
         $table->descricao = $request->descricao;
         $table->save();
+	}
+
+	public function update($request, $id)
+	{
+		DadosBancarios::where('id', $id)
+		->update([
+			'banco'     => $request->banco,
+			'agencia'   => $request->agencia,
+			'conta'     => $request->conta,
+			'titular'   => $request->titular,
+			'documento' => $request->documento,
+			'descricao' => $request->descricao
+		]);
 	}
 
 }

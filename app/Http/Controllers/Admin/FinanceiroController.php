@@ -93,7 +93,7 @@ class FinanceiroController extends Controller
 
     public function editDadosBancarios($id) 
     {
-        return $id;
+        return ;
     }
 }
 

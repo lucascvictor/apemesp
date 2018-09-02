@@ -19,6 +19,8 @@ A FAZER:
 FEITO:
 
 - Imagem do material informativo e redireciona
+- Adicionar dados bancários em informações financeiras
+- Editar informações bancarias no painel do admin 
 - Senha padrão: apemesp123 (colocar no cabeçalho)
 - Trocar o "Associe-se" por esqueci a senha
 - Trocar Download por Leitura online em JOMNESP
