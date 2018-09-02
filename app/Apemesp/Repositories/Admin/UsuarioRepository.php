@@ -75,4 +75,12 @@ class UsuarioRepository
 		$usuario->save();
 		return $usuario->name;
 	}
+
+	public function reativar($id)
+	{
+		$usuario = User::find($id);
+		$usuario->id_status = 1;
+		$usuario->save();
+		return $usuario->name;
+	}
 }

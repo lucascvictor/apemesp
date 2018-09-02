@@ -117,4 +117,12 @@ class UsuarioController extends Controller
         return redirect()->back();
     }
 
+    public function reativar($id)
+    {
+        $usuarioRepository = new UsuarioRepository;
+        $usuario = $usuarioRepository->reativar($id);
+        Session::flash('sucesso', 'O usuário' . $usuario .'foi reativado');
+        return redirect()->back();
+    }
+
 }
