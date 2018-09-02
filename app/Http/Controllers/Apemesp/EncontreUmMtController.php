@@ -43,6 +43,7 @@ class EncontreUmMtController extends Controller{
 			$especialidades = new EspecialidadeRepository;
 			$escalas = new EscalaREpository;
 			$proximidades = new ProximidadeRepository;
+			$mts = array();
 
 				$encontreummtRepository = new EncontreUmMtRepository;
 

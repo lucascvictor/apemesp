@@ -3,16 +3,12 @@ Assinatura Digital
 Trocar Endereço
 A FAZER:
 
-- Mensagem de envio de recuperação de senha
-- Recebimento da recuperação de senha
 - Botão de novos associados
 - Regra de exibição na pesquisa por MT
 - Avaliar parte financeira
 - Nenhuma mensagem aparecendo
 - Formulário de representante legal
-- Link de download de documentação não funciona
 - Onde posso editar o número de associado/a?
-- Como posso pegar a foto enviada para emissão de carteirinha?
 - Ao fazer qualquer pesquisa na página "Encontre um Musicoterapeuta", dá erro na página (erro com códigos).
 - Ainda não foi corrigido/aplicado o filtro necessário para a exibição dos dados da página
 - Ao tentar desativar um profissional, dá erro na página (apresentando aquele erro 404).
@@ -27,3 +23,7 @@ FEITO:
 - Senha padrão: apemesp123 (colocar no cabeçalho)
 - Trocar o "Associe-se" por esqueci a senha
 - Trocar Download por Leitura online em JOMNESP
+- Recebimento da recuperação de senha
+- Mensagem de envio de recuperação de senha
+- Link de download de documentação não funciona
+- Como posso pegar a foto enviada para emissão de carteirinha? (consulte o associado)
