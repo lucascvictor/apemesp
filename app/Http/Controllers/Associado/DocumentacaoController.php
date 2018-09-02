@@ -124,7 +124,8 @@ class DocumentacaoController extends Controller{
           $documentacao->changeCadastro($this->getUserId(), $this->getUserCadastro());
           return view('admin.associado.financeiro')
           ->with('cpf', $dadosAcademicos->getCpf($this->getUserId()))
-          ->with('anuidades', $financeiro->getAnuidades($this->getUserId()));
+          ->with('anuidades', $financeiro->getAnuidades($this->getUserId()))
+          ->with('dadosbancarios', $financeiro->getDadosBancarios());
           Session::flash('sucesso','Documentação confirmada');
         }
         Session::flash('cuidado','Nenhum documento com foto foi enviado');
