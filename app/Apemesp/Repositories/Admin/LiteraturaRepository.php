@@ -71,7 +71,9 @@ class LiteraturaRepository
 	public function destroy($id)
 	{
 		$literatura = Literatura::find($id);
-		$literatura->delete();
+		if($literatura){
+			$literatura->delete();
+		}
 	}
 
 	public function getIndicacoes()

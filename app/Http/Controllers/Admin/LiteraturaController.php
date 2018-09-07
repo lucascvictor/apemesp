@@ -65,7 +65,7 @@ class LiteraturaController extends Controller
 		{
 			$repository = new LiteraturaRepository;
 			$repository->update($request, $id);
-			return route('list.literatura');
+			return redirect()->route('list.literatura');
         }
         
         public function adminIndex()
@@ -103,9 +103,10 @@ class LiteraturaController extends Controller
             if (!Empty($extensao)) {
                 copy($indicacao, $literatura ) && unlink( $indicacao );
             }
-
+            $nomeArquivo = 'literatura' . $idLiteratura . $extensao;
+            $repository->updateImagem($nomeArquivo, $idLiteratura);
             Session::flash('sucesso', 'Indicação aprovada com sucesso');
-            return route('list.literatura');
+            return redirect()->route('list.literatura');
         }
 
         public function excluir($id)
