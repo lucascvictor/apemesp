@@ -10,6 +10,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
 
+use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository;
+
 use Session;
 
 use View;
@@ -74,7 +76,11 @@ class AssociadoController extends Controller
 
     public function getDownload($cpf, $arquivo)
     {
-
+        $dadosPessoais = new DadosPessoaisRepository;
+        if (strlen($cpf) <=3 ) {
+            $cpf = $dadosPessoais->getCpf($cpf);
+            $cpf = $cpf[0]->cpf;
+        }
         $file= public_path(). "/files/" . $cpf . "/" . $arquivo;
         $headers = array('Content-Type: application/pdf',);
         if (file_exists($file)) {

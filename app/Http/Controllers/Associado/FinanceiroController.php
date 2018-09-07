@@ -64,14 +64,31 @@ class FinanceiroController extends Controller{
 
     public function storeAnuidade(Request $request)
     {
+
       $financeiroRespository = new FinanceiroRepository;
-      $anuidade = $financeiroRespository->storeAnuidade($request);
+      $anuidade = $financeiroRespository->storeAnuidade($this->getIdUsuario(), $request);
+      
       if ($anuidade) {
-          Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
+        $arquivo = $request->file('comprovante');
+        $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $financeiroRespository->getCpf($this->getIdUsuario());
+        $nomeArquivo = 'comprovante_'. $request->ano . '.' . $request->file('comprovante')->getClientOriginalExtension();
+        $request->file('comprovante')->move($pastaDestino, $nomeArquivo);
+        $financeiroRespository->gravaArquivo($nomeArquivo, $request->ano, $this->getIdUsuario());
+        Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
       } else {
-          Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
+        Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
       }
       return redirect()->back(); 
+    }
+
+    public function updateAnuidade(Request $request, $id_user)
+    {
+        $financeiroRespository = new FinanceiroRepository;
+        $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $financeiroRespository->getCpf($this->getIdUsuario());
+        $nomeArquivo = 'comprovante_'. $request->ano . '.' . $request->file('comprovante')->getClientOriginalExtension();
+        $request->file('comprovante')->move($pastaDestino, $nomeArquivo);
+        $financeiroRespository->gravaArquivo($nomeArquivo, $request->ano, $this->getIdUsuario());
+        return redirect()->back();
     }
 
 }

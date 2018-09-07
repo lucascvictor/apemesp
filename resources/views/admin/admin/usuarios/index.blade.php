@@ -38,7 +38,7 @@
             <tr>
             <th>Nome do Associado</th>
             <th>Usuário (e-mail)</th>
-            <th colspan="2"> </th>
+            <th colspan="4"> </th>
             </tr>
             </thead>
             <tbody>
@@ -73,9 +73,9 @@
             </td>
             <td><a href="mailto:{{ $usuario->email }}" class="btn btn-primary">Enviar e-mail</a></td>
             @if($usuario->id_status < 4)
-            <td><a href="/admin/usuarios/desativar/{{ $usuario->id }}" class="btn btn-danger">Desativar</a></td>
+            <td><a href="/admin/usuarios/desativar/{{ $usuario->id }}" class="btn btn-danger">Desativar Usuário</a></td>
             @else
-            <td><a href="/admin/usuarios/reativar/{{ $usuario->id }}" class="btn btn-success">Reativar</a></td>
+            <td><a href="/admin/usuarios/reativar/{{ $usuario->id }}" class="btn btn-success">Reativar Usuário</a></td>
             @endif
             </tr>
             @endforeach

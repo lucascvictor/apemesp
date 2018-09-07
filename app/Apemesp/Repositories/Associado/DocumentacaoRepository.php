@@ -17,8 +17,6 @@ use Auth;
 class DocumentacaoRepository
 {
 
-
-
   public function storeDocumentacao($rg, $cpf, $cnh, $id_user, $comprovante_e)
   {
 
@@ -31,7 +29,6 @@ class DocumentacaoRepository
     $documentacao->save();
 
   }
-
 
   public function changeCadastro($id_user, $id)
   {

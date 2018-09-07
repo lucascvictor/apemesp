@@ -75,7 +75,10 @@ class FinanceiroController extends Controller
 	{
         $financeiroRespository = new FinanceiroRepository;
         $associado = $financeiroRespository->getLancamento($id, $ano);
-		return view('admin.admin.financeiro.avaliacao')->with('associado',$associado);
+        $status = $financeiroRespository->getStatusAnuidade();
+        return view('admin.admin.financeiro.avaliacao')
+        ->with('associado',$associado)
+        ->with('status',$status);
     }
     
     public function storeAnuidade(Request $request)
@@ -88,6 +91,11 @@ class FinanceiroController extends Controller
             Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
         }
         return redirect()->back();
+    }
+
+    public function updateAnuidade(Request $request, $id_user)
+    {
+        return 0;
     }
 
 }

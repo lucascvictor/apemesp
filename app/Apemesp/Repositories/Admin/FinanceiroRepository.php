@@ -9,6 +9,8 @@ use Apemesp\Apemesp\Models\User;
 
 use Apemesp\Apemesp\Models\Anuidade;
 
+use Apemesp\Apemesp\Models\StatusAnuidade;
+
 use Apemesp\Apemesp\Models\DadosBancarios;
 
 use DB;
@@ -65,7 +67,29 @@ class FinanceiroRepository
 
 	public function storeAnuidade($request)
 	{
-		return 0;
+		$comprovante =0;
+
+		if($request->comprovante) {
+			$comprovante =1;
+		}
+		$verificacao = Anuidade::where('id_user', $id_user)->where('ano', $request->ano)->select('*')->get()->first();
+		
+		if($verificacao) {
+			return false;
+		} else {
+			$anuidade = new Anuidade;
+			$anuidade->id_user = $id_user;
+			$anuidade->ano = $request->ano;
+			$anuidade->arq_enviado = $comprovante;
+			$anuidade->arq_avaliado = 0;
+			$anuidade->save();
+		}
+		return $anuidade;
+	}
+
+	public function getStatusAnuidade()
+	{
+		return StatusAnuidade::all();
 	}
 
 }

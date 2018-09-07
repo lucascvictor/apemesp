@@ -21,16 +21,20 @@
                   </div>
 
                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="arquivoemento">Arquivo:</label>
+                     <label class="col-md-4 control-label" for="arquivoemento">Download do Arquivo:</label>
                      <div class="col-md-4">
-                        <input id="arquivoemento" name="arquivoemento" type="text" placeholder="Arquivo" class="form-control input-md">
+                     <a href="/admin/associados/download/{{ $associado->id_user }}/comprovante_{{ $associado->ano }}.pdf">dowload</a>
                      </div>
                   </div>
 
                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="arquivoavaliado">Arquivo Avaliado:</label>
+                     <label class="col-md-4 control-label" for="status">Status da avaliação:</label>
                      <div class="col-md-4">
-                        <input id="arquivoavaliado" name="arquivoavaliado" class="input-file" type="file" required="" class="form-control input-md" >
+                     <select id="status" name="status" class="form-control" required="">
+                        @foreach($status as $st)
+                            <option value="{{ $st->id }}">{{ $st->descricao }}</option>
+                        @endforeach
+                    </select>
                      </div>
                   </div>
                  

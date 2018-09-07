@@ -43,7 +43,8 @@
                @foreach ($anuidades as $anuidade)
                <tr>
                   <td><b>{{ $anuidade->ano }}</b></td>
-                  <?php $arquivo = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/anuidade_" . $anuidade->ano .".pdf" ?>
+                  <?php $arquivo = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/comprovante_" . $anuidade->ano .".pdf" ?>
+
                   <td>
                      <?php if (file_exists($arquivo)) {
                         echo "SIM";
@@ -57,7 +58,7 @@
                      {	echo "Sim"; } ?>
                   </td>
                   <td><a class="btn btn-default" href="" data-toggle="modal" data-target="#enviar_{{ $anuidade->ano }}">Editar</a></td>
-                  <td><a href="/associado/download/anuidade_{{ $anuidade->ano }}.pdf">dowload</a></td>
+                  <td><a href="/associado/download/comprovante_{{ $anuidade->ano }}.pdf">dowload</a></td>
                   <td><a href="{{ url('/associado/financeiro/anuidade/') }} {{ $anuidade->id }}">Solicitar verificação</a></td>
                </tr>
                <?php $i++; ?>
@@ -76,13 +77,14 @@
                <h4 class="modal-title">Enviar comprovante de {{ $anuidade->ano }}</h4>
             </div>
             <div class="modal-body">
-               <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/financeiro/comprovante/') }}{{ $anuidade->ano}}">
+               <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/financeiro/comprovante') }}/{{ $anuidade->ano}}">
                   {{ csrf_field() }}
                   <!-- Botão de Arquivo para CPF -->
                   <div class="form-group" id="mensagem1">
                      <label class="col-md-4 control-label" for="filebutton">Comprovante: </label>
                      <div class="col-md-4">
-                        <input id="comprovante_{{ $anuidade->ano }}" name="comprovante_{{ $anuidade->ano }}" class="input-file" type="file">
+                        <input id="comprovante" name="comprovante" class="input-file" type="file">
+                        <input id="ano" name="ano" type="hidden" value="{{ $anuidade->ano }}">
                         <br />
                         <button class="btn btn-success" id="botao1">
                         Enviar

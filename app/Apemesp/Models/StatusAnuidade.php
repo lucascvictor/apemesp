@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class StatusAnuidade extends Model
 {
-  protected $table = 'status_anuidades';
+  protected $table = 'status_anuidade';
   public  $timestamps = false;
 }

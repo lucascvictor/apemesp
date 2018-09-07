@@ -15,6 +15,7 @@ class CreateAnuidadesTable extends Migration
       Schema::create('anuidades', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('id_user')->unsigned();
+        $table->string('comprovante')->nullable();
         $table->integer('arq_enviado')->default(0); //0-Não; 1-Sim
         $table->integer('arq_avaliado')->default(0); //0-Não; 1-Sim
         $table->integer('ano')->default(2017);

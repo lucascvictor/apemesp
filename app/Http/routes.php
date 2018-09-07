@@ -329,6 +329,7 @@ Route::group(['prefix' => 'associado'], function () {
     Route::group(['prefix' => 'financeiro'], function () {
       Route::get('', 'Associado\FinanceiroController@getIndex');
       Route::post('', 'Associado\FinanceiroController@storeAnuidade');
+      Route::post('comprovante/{ano}', 'Associado\FinanceiroController@updateAnuidade');
     });
 
 
