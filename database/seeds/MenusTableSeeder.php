@@ -139,13 +139,21 @@ class MenusTableSeeder extends Seeder
                 "id_perfil" => 2,
            ],
 
-           [
+            [
                 "id"        => 18,
                 "titulo"    => "Representante Legal",
                 "icone"     => "fa-gavel",
                 "link"      => "/admin/representantelegal",
                 "id_perfil" => 1,
-          ],
+            ],
+
+            [
+            "id"        => 19,
+            "titulo"    => "Carteirinhas",
+            "icone"     => "fa-address-card",
+            "link"      => "/admin/carteirinhas",
+            "id_perfil" => 1,
+            ],
 
         ]);
     }

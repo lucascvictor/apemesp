@@ -15,33 +15,6 @@
    <!-- Top Menu Items -->
    <ul class="nav navbar-right top-nav">
      
-      <!--<li class="dropdown">
-         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-         <ul class="dropdown-menu alert-dropdown">
-             <li>
-                 <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-             </li>
-             <li>
-                 <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-             </li>
-             <li>
-                 <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-             </li>
-             <li>
-                 <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-             </li>
-             <li>
-                 <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-             </li>
-             <li>
-                 <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-             </li>
-             <li class="divider"></li>
-             <li>
-                 <a href="#">View All</a>
-             </li>
-         </ul>
-         </li> -->
       <li class="dropdown">
          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ Auth::user()->name }} <b class="caret"></b></a>
          <ul class="dropdown-menu">
@@ -81,17 +54,7 @@
          </li>
          <?php $i++;} //Fim do loop while?>
          @endforeach
-         <!--<li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
-                <li>
-                    <a href="#">Dropdown Item</a>
-                </li>
-                <li>
-                    <a href="#">Dropdown Item</a>
-                </li>
-            </ul>
-            </li>-->
+         
       </ul>
    </div>
    <!-- /.navbar-collapse -->
