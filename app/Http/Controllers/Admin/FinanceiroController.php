@@ -58,6 +58,7 @@ class FinanceiroController extends Controller
 
     public function search(Request $request)
     {
+
         $associadoRepository = new AssociadoRepository;
         $associados = $associadoRepository->search($request);
         unset($associadoRepository);

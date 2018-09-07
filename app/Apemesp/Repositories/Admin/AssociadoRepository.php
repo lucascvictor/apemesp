@@ -76,7 +76,7 @@ class AssociadoRepository
 	public function search($request)
 	{
 		$query = "%" . $request->input('q') . "%";
-		return DadosPessoais::select('id','name', 'cpf', 'tel_celular')->where('name', 'LIKE', $query)->orderBy('name', 'asc')->paginate(6);
+		return DadosPessoais::select('id','id_user','name', 'cpf', 'tel_celular')->where('name', 'LIKE', $query)->orderBy('name', 'asc')->paginate(6);
 	}
 
 }

@@ -14,7 +14,7 @@
                   </div>
 
                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="status">Status:</label>
+                     <label class="col-md-4 control-label" for="status">Status Atual:</label>
                      <div class="col-md-4">
                         <input id="status" name="status" type="text" placeholder=" Status " class="form-control input-md" required="" value="{{ $associado->descricao }}">
                      </div>
@@ -37,7 +37,12 @@
                     </select>
                      </div>
                   </div>
-                 
+                  <div class="form-group">
+                     <label class="col-md-4 control-label" for="arquivoemento">Alterar o arquivo:</label>
+                     <div class="col-md-4">
+                     <input id="comprovante" name="comprovante" class="input-file" type="file" required="">
+                     </div>
+                  </div>
                </fieldset>
                <div class="modal-footer col-md-2">
                   <button class="btn btn-success btn-block" type="submit">
