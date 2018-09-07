@@ -9,14 +9,14 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="ano">ANO:</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="ano" name="ano" type="text" placeholder="ANO" class="form-control input-md" required="" value="{{ $associado->ano }}">
+                        <input onkeyup="somenteNumeros(this)" id="ano" name="ano" type="text" placeholder="ANO" class="form-control input-md" required="" value="{{ $associado->ano }}" readonly="true">
                      </div>
                   </div>
 
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="status">Status Atual:</label>
                      <div class="col-md-4">
-                        <input id="status" name="status" type="text" placeholder=" Status " class="form-control input-md" required="" value="{{ $associado->descricao }}">
+                        <input id="status" name="status" type="text" placeholder=" Status " class="form-control input-md" required="" value="{{ $associado->descricao }}" readonly="true">
                      </div>
                   </div>
 
@@ -40,7 +40,7 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="arquivoemento">Alterar o arquivo:</label>
                      <div class="col-md-4">
-                     <input id="comprovante" name="comprovante" class="input-file" type="file" required="">
+                     <input id="comprovante" name="comprovante" class="input-file" type="file">
                      </div>
                   </div>
                </fieldset>

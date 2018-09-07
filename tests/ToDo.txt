@@ -28,7 +28,7 @@ FEITO:
 - Ao tentar desativar um profissional, dá erro na página (apresentando aquele erro 404).
 - Correção da imagem ao alterar o material informativo
 - Erro ao redirecionar de documentação para a parte financeira durante o cadastro do associado
-- Correções relacionadas à indicações literárias (FALTA APROVAÇAO)
+- Correções relacionadas à indicações literárias (Tudo ok)
 - Em dados acadêmicos, não há link visível para envio de documentos (TCC/Certificado)
 - Botão de novos associados
 - Formulário de representante legal (pegando dados do banco)

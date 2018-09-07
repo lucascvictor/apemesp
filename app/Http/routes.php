@@ -122,6 +122,12 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post('{id}', 'Admin\RepresentanteLegalController@updateRepresentante');
     });
 
+    Route::group(['prefix' => 'carteirinhas'], function () {
+      Route::get('', 'Admin\CarteirinhaController@index')->name('carteirinha.index');
+      Route::get('{id}', 'Admin\CarteirinhaController@editRepresentante');
+      Route::post('{id}', 'Admin\CarteirinhaController@updateRepresentante');
+    });
+
     Route::group(['prefix' => 'associados'], function () {
         Route::get('', 'Admin\AssociadoController@index')->name('admin.associados');
         Route::get('/search', 'Admin\AssociadoController@search')->name('associados.search');
