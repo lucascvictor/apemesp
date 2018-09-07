@@ -51,7 +51,10 @@ class EncontreUmMtController extends Controller{
 				$proximidade = $request->proximidade;
 				$escala = $request->escala;
 				$nome = $request->nome;
-
+				if($nome == null)
+				{
+					$nome = " ";
+				}
 				if ($proximidade == null && $escala == null && $nome == null && $especialidade ==null) {
 					Session::flash('cuidado', 'Nenhuma busca foi realizada');
 					return redirect()->back();
