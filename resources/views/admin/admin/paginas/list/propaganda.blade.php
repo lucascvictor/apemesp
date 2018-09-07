@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Adicionar Formação')
+@section('titulo', 'Gerenciar propagandas')
 
 @section('extrastyle')
 
@@ -14,8 +14,8 @@
   <div class="col-md-10">
 
 			<fieldset>
-				<legend>Formação</legend>
-<a class="btn btn-success" href="{{ url('admin/paginas/adicionar/propaganda') }}">Adicionar Formação</a>
+				<legend>Propagandas</legend>
+<a class="btn btn-success" href="{{ url('admin/paginas/adicionar/propaganda') }}">Adicionar Propaganda</a>
 
 
 

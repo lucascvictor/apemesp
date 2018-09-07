@@ -23,7 +23,7 @@
             <div class="col-md-12" style="float: right;">
                {{ Form::open(['action' => ['Admin\UsuarioController@search'], 'method' => 'GET']) }}
                <div class="form-group input-group">
-                  {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Procurar Usuarios', 'class' => 'form-control'])}}
+                  {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Procurar Usuários', 'class' => 'form-control'])}}
                   <span class="input-group-btn">
                      <button class="btn btn-default" type="submit">
                         <i class="fa fa-search"></i>

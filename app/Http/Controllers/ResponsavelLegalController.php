@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Apemesp\Http\Requests;
 
-class ResponsavelLegalController extends Controller
+class RepresentanteLegalController extends Controller
 {
     /**
      * Display a listing of the resource.

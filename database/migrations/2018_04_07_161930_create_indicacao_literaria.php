@@ -19,6 +19,7 @@ class CreateIndicacaoLiteraria extends Migration
             $table->text('descricao');
             $table->text('nome');
             $table->text('email');
+            $table->integer('status'); //1- Em aberto 2- Aprovado
             $table->timestamps();
         });
     }

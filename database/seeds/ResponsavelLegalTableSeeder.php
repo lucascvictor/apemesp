@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ResponsavelLegalTableSeeder extends Seeder
+class RepresentanteLegalTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

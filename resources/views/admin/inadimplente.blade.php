@@ -51,7 +51,6 @@
                 <p> Nos envie uma <a href="{{ url('/contato/mensagens') }}">mensagem</a></p>
                 <p> Nos envie um e-mail: contato@apemesp.com </p>
                 <p> <a href="{{ url('contato/localizacao ')}}">Pessoalmente</a> </p>
-
                 <p>Nossos atendimentos funcionam diáriamente das 08:00 às 17:00 </p>
             </div>
             <!-- /.container-fluid -->

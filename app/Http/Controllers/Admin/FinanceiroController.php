@@ -60,7 +60,6 @@ class FinanceiroController extends Controller
     {
         $associadoRepository = new AssociadoRepository;
         $associados = $associadoRepository->search($request);
-        
         unset($associadoRepository);
         return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
     }
