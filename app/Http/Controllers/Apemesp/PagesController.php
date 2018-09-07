@@ -168,7 +168,7 @@ class PagesController extends Controller{
 
 		if ($verificacao) {
 			$email = $associado->getEmailbyCpf($cpf);
-			Session::flash('sucesso', 'CPF encontrado, prossiga com o login utilizando o e-mail: '. $email[0]->email);
+			Session::flash('sucesso', 'CPF encontrado, prossiga com o login utilizando o e-mail: '. $email);
 		} else {
 			Session::flash('cuidado', 'CPF não encontrado, por favor prossiga com o cadastro');
 		}

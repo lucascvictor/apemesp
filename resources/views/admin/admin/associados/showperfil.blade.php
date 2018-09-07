@@ -7,7 +7,8 @@
 @endsection
 
 @section('conteudo')
-
+<?php use Apemesp\Apemesp\Classes\Associado; ?>
+<?php $musicoterapeuta = new Associado; ?>
 <div class="row">
 	<div class="col-md-10">
 		<div class="row">
@@ -26,6 +27,7 @@
                 <h4><b>Social:</b></h4>
                 <h4>facebook: {{ $associado->facebook }}</h4>
                 <h4>linkedin: {{ $associado->linkedin }}</h4>
+                <h4>E-mail: {{ $musicoterapeuta->getEmailByCpf($associado->cpf) }}</h4>
                 <hr />
                 <h4><b> Logradouro: </b></h4>
                 <h4> Endereço: {{ $associado->endereco }}</h4>
