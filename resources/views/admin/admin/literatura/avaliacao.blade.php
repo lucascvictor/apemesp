@@ -15,7 +15,7 @@
       <p>Nome: {{ $indicacao->nome }} </p>
       <p>Email para contato: {{ $indicacao->email }} </p>
       <a class="btn btn-success" href="{{ url('/admin/indicacoesliterarias/aprovar') }}/{{$indicacao->id}}">Aprovar</a>
-      <a class="btn btn-danger" href="{{ url('/admin/indicacoesliterarias/destroy') }}/{{$indicacao->id}}">Excluir</a>
+      <a class="btn btn-danger" href="{{ url('/admin/indicacoesliterarias/excluir') }}/{{$indicacao->id}}">Excluir</a>
       </div>
    </div>
    <div class="row">

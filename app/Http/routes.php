@@ -103,6 +103,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'indicacoesliterarias'], function () {
       Route::get('', 'Admin\LiteraturaController@adminIndex')->name('admin.literatura.index');
       Route::get('{id}', 'Admin\LiteraturaController@avaliar');
+      Route::get('aprovar/{id}', 'Admin\LiteraturaController@aprovar');
+      Route::get('excluir/{id}', 'Admin\LiteraturaController@excluir');
     });
 
     Route::group(['prefix' => 'edicoesjomesp'], function () {

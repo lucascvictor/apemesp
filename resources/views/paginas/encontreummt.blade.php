@@ -52,7 +52,7 @@
                <!-- Botão de busca por nome-->
                <div class="form-group col-xs-8 col-md-6">
                           <label>Filtre por Nome:</label>
-                         <input id="nome" name="nome" class="form-control" type="text" placeholder="Pesquisa por nome" width="100%">
+                         <input id="nome" name="nome" class="form-control" type="text" placeholder="Pesquisa por nome" width="100%" required="">
 
                  </div>
 

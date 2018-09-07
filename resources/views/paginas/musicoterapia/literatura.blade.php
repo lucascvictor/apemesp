@@ -19,7 +19,9 @@
 </div>
 </div>
    @endforeach
-   <p> {{ $literaturas->render() }} </p>
+</div>
+<div class="row">
+<p> {{ $literaturas->render() }} </p>
 </div>
 @endsection
 

@@ -34,11 +34,11 @@ class LiteraturaRepository
 
 	public function store($request)
 	{
-				$literatura = new Literatura;
+		$literatura = new Literatura;
         $literatura->titulo = $request->titulo;
         $literatura->conteudo = $request->conteudo;
         $literatura->created_at = $this->getData();
-				$literatura->updated_at = $this->getData();
+		$literatura->updated_at = $this->getData();
         $literatura->save();
         return $literatura->id;
 	}
@@ -60,12 +60,12 @@ class LiteraturaRepository
 	public function update($request, $id)
 	{
 		Literatura::where('id', $id)
-						->update([
-								'titulo' => $request->titulo,
-								'conteudo' => $request->conteudo,
-								'imagem' => $request->imagem,
-								'updated_at' => $this->getData()
-								]);
+		->update([
+				'titulo' => $request->titulo,
+				'conteudo' => $request->conteudo,
+				'imagem' => $request->imagem,
+				'updated_at' => $this->getData()
+				]);
 	}
 
 	public function destroy($id)
@@ -82,6 +82,26 @@ class LiteraturaRepository
 	public function getIndicacao($id)
 	{
 		return IndicacaoLiteraria::select('*')->where('id', $id)->get()->first();
+	}
+
+	public function aprovarIndicacao($id)
+	{
+		$indicacao = IndicacaoLiteraria::select('*')->where('id', $id)->get()->first();
+		$literatura = new Literatura;
+        $literatura->titulo = $indicacao->titulo;
+        $literatura->conteudo = $indicacao->descricao;
+        $literatura->created_at = $this->getData();
+		$literatura->updated_at = $this->getData();
+		$literatura->save();
+		
+		IndicacaoLiteraria::where('id', $id)->delete();
+
+        return $literatura->id;
+	}
+
+	public function excluirIndicacao($id)
+	{
+		
 	}
 
 

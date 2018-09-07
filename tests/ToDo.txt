@@ -4,7 +4,6 @@ Trocar Endereço
 A FAZER:
 
 - Visualizar dados academicos e profissionais
-- Formulário de representante legal (pegando dados do banco)
 - Avaliar parte financeira
 - Onde posso editar o número de associado/a?
 - Ainda não foi corrigido/aplicado o filtro necessário para a exibição dos dados da página
@@ -32,6 +31,7 @@ FEITO:
 - Correções relacionadas à indicações literárias (FALTA APROVAÇAO)
 - Em dados acadêmicos, não há link visível para envio de documentos (TCC/Certificado)
 - Botão de novos associados
+- Formulário de representante legal (pegando dados do banco)
 
 Avaliar após subir as correções para a UOL:
 
