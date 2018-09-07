@@ -42,7 +42,7 @@
                   <tr>
                      <td>{{$associado->name}}</td>
                      <td>{{$associado->cpf}}</td>
-                     <td><a class="btn btn-success" href="{{ url('/admin/financeiro/associado/') }}/{{$associado->id_user}}">Gerenciar</a></td>
+                     <td><a class="btn btn-success" href="{{ url('/admin/financeiro/associado/') }}/{{ $associado->id_user }}">Gerenciar</a></td>
                   </tr>
                   @endforeach
                </tbody>
