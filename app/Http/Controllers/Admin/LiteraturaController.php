@@ -105,7 +105,7 @@ class LiteraturaController extends Controller
             }
 
             Session::flash('sucesso', 'Indicação aprovada com sucesso');
-            return redirect()->back();
+            return route('list.literatura');
         }
 
         public function excluir($id)
