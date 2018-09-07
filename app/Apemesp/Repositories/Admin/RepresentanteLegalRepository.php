@@ -30,7 +30,7 @@ class RepresentanteLegalRepository
 		return DB::table('responsavel_legal')->select('*')->get();
 	}
 
-	public function storeRepresentanteLegal($request)
+	public function store($request)
 	{
 		$table = new RepresentanteLegal;
         $table->nome = $request->banco;
@@ -40,6 +40,19 @@ class RepresentanteLegalRepository
         $table->rg = $request->documento;
         $table->cpf = $request->descricao;
         $table->save();
+	}
+
+	public function update($request)
+	{
+		PropagandaAtiva::where('id', '=', 1)
+		->update([
+			'nome' => $request->nome,
+			'estado_civil' => $request->estado_civil,
+			'endereco' => $request->endereco,
+			'profissao' => $request->profissao,
+			'rg' => $request->rg,
+			'cpf' => $request->cpf
+		]);
 	}
 
 }

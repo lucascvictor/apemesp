@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                <tr>
-                  <td>@if(isset($representante->nome)) $representante->nome @endif</td>
+                  <td>@if(isset($representante->nome)) {{ $representante->nome }} @endif</td>
                   <td><a class="btn btn-default" href="{{ url('/admin/representantelegal/1') }}">Editar</a></td>
                </tr>
             </tbody>
