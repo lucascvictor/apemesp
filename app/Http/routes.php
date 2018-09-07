@@ -117,7 +117,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'representantelegal'], function () {
       Route::get('', 'Admin\RepresentanteLegalController@index')->name('representantelegal.index');
       Route::get('{id}', 'Admin\RepresentanteLegalController@editRepresentante');
-      Route::post('{id}', 'Admin\RepresentanteLegalController@updatRepresentante');
+      Route::post('{id}', 'Admin\RepresentanteLegalController@updateRepresentante');
     });
 
     Route::group(['prefix' => 'associados'], function () {

@@ -15,7 +15,7 @@
       <div class="col-lg-10">
          <h2>Edição dos dados do representante legal</h2>
 
-            <form class="form-horizontal" method="POST" action="{{ url('/admin/financeiro/representanteLegal') }}/{{ $representanteLegal->id}}">
+            <form class="form-horizontal" method="POST" action="{{ url('/admin/representantelegal') }}/{{ $representanteLegal->id}}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Dados do Representante</legend>
@@ -23,14 +23,14 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="nome">Nome Completo:</label>
                      <div class="col-md-4">
-                        <input id="nome" name="titular" type="text" placeholder="nome" class="form-control input-md" required="" value="{{ $representanteLegal->nome }}">
+                        <input id="nome" name="nome" type="text" placeholder="nome" class="form-control input-md" required="" value="{{ $representanteLegal->nome }}">
                      </div>
                   </div>
 
                    <div class="form-group">
                      <label class="col-md-4 control-label" for="endereco">Endereço:</label>
                      <div class="col-md-4">
-                        <input id="endereco" name="cenderecoonta" type="text" placeholder="endereco" class="form-control input-md" required="" value="{{ $representanteLegal->endereco}}">
+                        <input id="endereco" name="endereco" type="text" placeholder="endereco" class="form-control input-md" required="" value="{{ $representanteLegal->endereco}}">
                      </div>
                   </div>
 

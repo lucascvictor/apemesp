@@ -44,7 +44,7 @@ class RepresentanteLegalRepository
 
 	public function update($request)
 	{
-		PropagandaAtiva::where('id', '=', 1)
+		RepresentanteLegal::where('id', '=', 1)
 		->update([
 			'nome' => $request->nome,
 			'estado_civil' => $request->estado_civil,
