@@ -93,7 +93,7 @@ class LiteraturaController extends Controller
                 $extensao = '.jpg';
             } elseif (file_exists($indicacao . '.bmp'))  {
                 $extensao = '.bmp';
-            } else {
+            } elseif (file_exists($indicacao . '.gif')) {
                 $extensao = '.gif';
             }
 
