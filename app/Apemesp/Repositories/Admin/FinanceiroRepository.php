@@ -13,6 +13,8 @@ use Apemesp\Apemesp\Models\StatusAnuidade;
 
 use Apemesp\Apemesp\Models\DadosBancarios;
 
+use Apemesp\Apemesp\Models\DadosPessoais;
+
 use DB;
 
 class FinanceiroRepository
@@ -65,10 +67,9 @@ class FinanceiroRepository
 		return DadosBancarios::select('*')->paginate(5);
 	}
 
-	public function storeAnuidade($request)
+	public function storeAnuidade($id_user, $request)
 	{
 		$comprovante =0;
-
 		if($request->comprovante) {
 			$comprovante =1;
 		}
@@ -90,6 +91,12 @@ class FinanceiroRepository
 	public function getStatusAnuidade()
 	{
 		return StatusAnuidade::all();
+	}
+
+	public function getCpf($id_user)
+	{
+		$dado = DadosPessoais::where('id_user', $id_user)->select('cpf')->get()->first();
+		return $dado->cpf;
 	}
 
 }

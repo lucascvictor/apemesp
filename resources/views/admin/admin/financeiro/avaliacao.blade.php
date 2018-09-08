@@ -1,11 +1,12 @@
 @extends('admin.dashboard')
 @section('titulo', 'Financeiro')
 @section('conteudo')
-            <form class="form-horizontal" method="POST" action="{{ url('/admin/associado/financeiro') }}/{{ $associado->id_user }}/{{ $associado->ano }}">
+            <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="{{ url('/admin/financeiro/associado/') }}/{{ $associado->id_user }}/{{ $associado->ano }}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Lançamento financeiro</legend>
                   
+
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="ano">ANO:</label>
                      <div class="col-md-4">

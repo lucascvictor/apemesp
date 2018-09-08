@@ -13,6 +13,8 @@ use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
 
 use View;
 
+use Session;
+
 class FinanceiroController extends Controller
 {
     /**
@@ -28,15 +30,8 @@ class FinanceiroController extends Controller
             'Apemesp\Composers\MenuComposer'  => ['partials.admin._nav'] ,
             'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
         ]);
-
-        
+  
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function index()
     {
@@ -84,19 +79,31 @@ class FinanceiroController extends Controller
     
     public function storeAnuidade(Request $request)
     {
-        $financeiroRespository = new FinanceiroRepository;
-        $anuidade = $financeiroRespository->storeAnuidade($request);
-        if ($anuidade) {
-            Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
-        } else {
-            Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
-        }
-        return redirect()->back();
+  
+      $financeiroRespository = new FinanceiroRepository;
+      $anuidade = $financeiroRespository->storeAnuidade($request->id, $request);
+      
+      if ($anuidade) {
+        $arquivo = $request->file('comprovante');
+        $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $financeiroRespository->getCpf($id);
+        $nomeArquivo = 'comprovante_'. $ano . '.' . $request->file('comprovante')->getClientOriginalExtension();
+        $request->file('comprovante')->move($pastaDestino, $nomeArquivo);
+        $financeiroRespository->gravaArquivo($nomeArquivo, $ano, $id);
+        Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
+      } else {
+        Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
+      }
+      return redirect()->back(); 
     }
 
     public function updateAnuidade(Request $request, $id_user)
     {
-        return 0;
+        dd($request->ano);
+    }
+
+    public function salvarAvaliacao(Request $request)
+    {
+        dd($request->ano);
     }
 
 }

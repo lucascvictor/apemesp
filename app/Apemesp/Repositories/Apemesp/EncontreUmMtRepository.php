@@ -83,90 +83,52 @@ class EncontreUmMtRepository
 	}
 
 
-	public function getMtAll($proximidade, $escala, $nome, $especialidade) {
+	public function getMtAll() {
+
 		return DB::table('dados_profissionais')
 						->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
 						->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
 						->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
-						->where('dados_pessoais.name', 'like', '%' . $nome . '%')
-						->where('dados_profissionais.id_dias_atendimento', '=', $escala )
-						->where('dados_profissionais.id_especialidade', '=', $especialidade )
-						->where('dados_profissionais.id_proximidade', '=', $proximidade )
-						->where('dados_profissionais.id_especialidade', '<>', 0)
+						->join('users', 'dados_pessoais.id_user', '=', 'users.id')
+						->join('anuidades', 'dados_pessoais.id_user', '=', 'anuidades.id_user')
+						->Where('dados_profissionais.id_especialidade', '<>', 0)
+						->Where('users.id_status','<>',4)
+						->Where('anuidades.ano','==',date("Y"))
+						->Where('anuidades.status','==',2)
+						->orWhere('anuidades.status','==',3)
 						->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
 						->orderBy('dados_pessoais.name')
 						->get();
 	}
 
-
-	public function  getMtSemEspecialidade($proximidade, $escala, $nome) {
+	public function getMts($proximidade, $escala, $nome, $especialidade) {
 		return DB::table('dados_profissionais')
-						->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
-						->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
-						->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
-						->where('dados_pessoais.name', 'like', '%' . $nome . '%')
-						->where('dados_profissionais.id_dias_atendimento', '=', $escala )
-						->where('dados_profissionais.id_proximidade', '=', $proximidade )
-						->where('dados_profissionais.id_especialidade', '<>', 0)
-						->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
-						->orderBy('dados_pessoais.name')
-						->get();
+			->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
+			->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
+			->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
+			->join('users', 'dados_pessoais.id_user', '=', 'users.id')
+			->join('anuidades', 'dados_pessoais.id_user', '=', 'anuidades.id_user')
+			->when($nome, function ($query) use ($nome) {
+				return $query->where('dados_pessoais.name', 'like', '%' . $nome . '%');
+			})
+			->when($escala, function ($query) use ($escala) {
+				return $query->where('dados_profissionais.id_dias_atendimento', $escala);
+			})
+			->when($proximidade, function ($query) use ($proximidade) {
+				return $query->where('dados_profissionais.id_proximidade', $proximidade);
+			})
+			->when($especialidade, function ($query) use ($especialidade) {
+				return $query->where('dados_profissionais.id_especialidade', $especialidade);
+			})
+			->Where('users.id_status','<>',4)
+			->Where('anuidades.ano','==',date("Y"))
+			->Where('anuidades.status','==',2)
+			->orWhere('anuidades.status','==',3)
+			->Where('dados_profissionais.id_especialidade', '<>', 0)
+			->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
+			->orderBy('dados_pessoais.name')
+			->get();
 	}
-
-	public function  getMtSemNome($proximidade, $escala, $especialidade) {
-		return DB::table('dados_profissionais')
-						->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
-						->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
-						->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
-						->where('dados_profissionais.id_dias_atendimento', '=', $escala )
-						->where('dados_profissionais.id_especialidade', '=', $especialidade )
-						->where('dados_profissionais.id_proximidade', '=', $proximidade )
-						->where('dados_profissionais.id_especialidade', '<>', 0)
-						->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
-						->orderBy('dados_pessoais.name')
-						->get();
-	}
-
-	public function  getMtSemEscala($proximidade, $especialidade, $nome) {
-		return DB::table('dados_profissionais')
-						->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
-						->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
-						->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
-						->where('dados_pessoais.name', 'like', '%' . $nome . '%')
-						->where('dados_profissionais.id_proximidade', '=', $proximidade )
-						->where('dados_profissionais.id_especialidade', '=', $especialidade )
-						->where('dados_profissionais.id_especialidade', '<>', 0)
-						->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
-						->orderBy('dados_pessoais.name')
-						->get();
-	}
-
-	public function  getMtSemProximidade($especialidade, $nome, $escala) {
-		return DB::table('dados_profissionais')
-						->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
-						->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
-						->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
-						->where('dados_pessoais.name', 'like', '%' . $nome . '%')
-						->where('dados_profissionais.id_especialidade', '=', $especialidade )
-						->where('dados_profissionais.id_dias_atendimento', '=', $escala )
-						->where('dados_profissionais.id_especialidade', '<>', 0)
-						->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
-						->orderBy('dados_pessoais.name')
-						->get();
-	}
-
-	public function getAll()
-	{
-		return DB::table('dados_profissionais')
-		->join('dados_pessoais', 'dados_profissionais.id_user', '=', 'dados_pessoais.id_user')
-		->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
-		->join('users', 'dados_pessoais.id_user', '=', 'users.id')
-		->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
-		->where('users.id_status','<>',4)
-		->orderBy('dados_pessoais.name')
-		->paginate(30);
-	}
-
 
 
 }

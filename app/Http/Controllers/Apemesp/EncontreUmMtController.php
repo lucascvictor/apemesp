@@ -29,7 +29,7 @@ class EncontreUmMtController extends Controller{
 			$proximidades = new ProximidadeRepository;
 			$pesquisa = 0;
 			$mtRepository = new EncontreUmMtRepository;
-			$mts = $mtRepository->getAll();
+			$mts = $mtRepository->getMtAll();
 			
         return view('paginas.encontreummt')
 				->with('especialidades', $especialidades->getEspecialidades())
@@ -51,112 +51,16 @@ class EncontreUmMtController extends Controller{
 				$proximidade = $request->proximidade;
 				$escala = $request->escala;
 				$nome = $request->nome;
-				if($nome == null)
-				{
-					$nome = " ";
-				}
+
 				if ($proximidade == null && $escala == null && $nome == null && $especialidade ==null) {
-					Session::flash('cuidado', 'Nenhuma busca foi realizada');
-					return redirect()->back();
-				}
-
-				if ($proximidade == null && $escala == null && $nome == null) {
-					$mts = $encontreummtRepository->getMtEspecialidade($especialidade);
+					$mts = $encontreummtRepository->getMtAll();
 					$path = "search?especialidade=" . $especialidade;
 
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
+				} else {
+					$mts = $encontreummtRepository->getMts($proximidade, $escala, $nome, $especialidade);
 				}
 
-
-				if ($especialidade == null && $escala == null && $nome == null) {
-					$mts = $encontreummtRepository->getMtProximidade($proximidade);
-					$path = "search?especialidade=" . $especialidade;
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
-				if ($proximidade == null && $especialidade == null && $nome == null) {
-					$mts = $encontreummtRepository->getMtEscala($escala);
-					$path = "search?especialidade=" . $especialidade;
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
-
-				if ($proximidade == null && $especialidade == null && $escala == null) {
-					$mts = $encontreummtRepository->getMtNome($nome);
-					$path = "search?especialidade=" . $especialidade;
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
-				if ($proximidade != null && $escala != null && $nome != null && $especialidade != null) {
-					$mts = $encontreummtRepository->getMtAll($proximidade, $escala, $nome, $especialidade);
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
-
-				if ($proximidade != null && $escala != null && $nome != null && $especialidade == null) {
-					$mts = $encontreummtRepository->getMtSemEspecialidade($proximidade, $escala, $nome);
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
-				if ($proximidade != null && $escala != null && $nome == null && $especialidade != null) {
-					$mts = $encontreummtRepository->getMtSemNome($proximidade, $escala, $especialidade);
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
-				if ($proximidade != null && $escala == null && $nome != null && $especialidade != null) {
-					$mts = $encontreummtRepository->getMtSemEscala($proximidade, $especialidade, $nome);
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
-				if ($proximidade == null && $escala != null && $nome != null && $especialidade != null) {
-					$mts = $encontreummtRepository->getMtSemProximidade($especialidade, $nome, $escala);
-
-					unset($encontreummtRepository);
-					return view('paginas.encontreummt')->with('mts', $mts)
-					->with('especialidades', $especialidades->getEspecialidades())
-					->with('proximidades', $proximidades->getProximidades())
-					->with('escalas', $escalas->getEscalas());
-				}
-
+				unset($encontreummtRepository);
 				return view('paginas.encontreummt')->with('mts', $mts)
 				->with('especialidades', $especialidades->getEspecialidades())
 				->with('proximidades', $proximidades->getProximidades())

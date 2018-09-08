@@ -7,7 +7,7 @@
             <h4 class="modal-title">Adicionar lançamento financeiro para o associado </h4>
          </div>
          <div class="modal-body">
-            <form class="form-horizontal" method="POST" action="{{ url('/admin/associado/financeiro') }}">
+            <form class="form-horizontal" method="POST" action="{{ url('/admin/financeiro/anuidade') }}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Lançamento financeiro</legend>
@@ -27,18 +27,12 @@
                   </div>
 
                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="arquivoemento">Arquivo:</label>
+                     <label class="col-md-4 control-label" for="comprovante">Comprovante de pagamento:</label>
                      <div class="col-md-4">
-                        <input id="arquivoemento" name="arquivoemento" type="text" placeholder="Arquivo" class="form-control input-md">
+                        <input id="comprovante" name="comprovante" class="input-file" type="file" required="" class="form-control input-md" >
                      </div>
                   </div>
-
-                  <div class="form-group">
-                     <label class="col-md-4 control-label" for="arquivoavaliado">Arquivo Avaliado:</label>
-                     <div class="col-md-4">
-                        <input id="arquivoavaliado" name="arquivoavaliado" class="input-file" type="file" required="" class="form-control input-md" >
-                     </div>
-                  </div>
+                  <input id="id" name="id" type="hidden" value="{{ $fin->id_user }}">
                  
                </fieldset>
                <div class="modal-footer">
