@@ -136,7 +136,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/updated', 'Admin\AssociadoController@orderByUpdate');
         Route::get('/certificado', 'Admin\CertificadoController@index');
         Route::get('/download/{cpf}/{arquivo}', 'Admin\AssociadoController@getDownload')->name('admin.download');
-    });
+    }); 
 
     Route::group(['prefix' => 'paginas'], function () {
         Route::get('', 'Admin\AdminController@getPaginas')->name('paginas.show');

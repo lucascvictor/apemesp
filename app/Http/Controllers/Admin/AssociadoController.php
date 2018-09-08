@@ -12,6 +12,8 @@ use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository;
 
+use Apemesp\Apemesp\Repositories\Associado\DadosProfissionaisRepository;
+
 use Session;
 
 use View;
@@ -48,19 +50,40 @@ class AssociadoController extends Controller
         $estados = $associadoRepository->getEstados();
         $cidade = $associadoRepository->getCidades($associado->id_cidade);
         unset($associadoRepository);
-        return view("admin.admin.associados.editperfil")->with('associado', $associado)->with("nacionalidades", $nacionalidades)->with("estados", $estados)->with("cidade", $cidade);
+        return view("admin.admin.associados.editperfil")
+        ->with('associado', $associado)
+        ->with("nacionalidades", $nacionalidades)
+        ->with("estados", $estados)
+        ->with("cidade", $cidade);
     }
 
     public function getPerfil($id)
     {
         $associadoRepository = new AssociadoRepository;
+        $professionaldata = new DadosProfissionaisRepository;
+
         $associado = $associadoRepository->getAssociado($id);
         $dadosacademicos = $associadoRepository->getDadosAcademicos($id);
         $dadosprofissionais = $associadoRepository->getDadosProfissionais($id);
+        $nacionalidades = $associadoRepository->getNacionalidades();
+        $estados = $associadoRepository->getEstados();
+        $cidade = $associadoRepository->getCidades($associado->id_cidade);
+        $regioes = $professionaldata->getProximidades();
+        $especialidades = $professionaldata->getEspecialidades();
+        $atendimento = $professionaldata->getEscalas();
+        $cidades = $associadoRepository->getCidades();
+
         return view("admin.admin.associados.showperfil")
         ->with("associado", $associado)
         ->with("dadosacademicos", $dadosacademicos)
-        ->with("dadosprofissionais", $dadosprofissionais);
+        ->with("dadosprofissionais", $dadosprofissionais)
+        ->with("nacionalidades", $nacionalidades)
+        ->with("estados", $estados)
+        ->with("cidade", $cidade)
+        ->with("cidades", $cidades)
+        ->with("regioes", $regioes)
+        ->with("especialidades", $especialidades)
+        ->with("atendimento", $atendimento);
     }
 
     public function search(Request $request)

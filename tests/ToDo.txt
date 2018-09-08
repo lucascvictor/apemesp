@@ -3,7 +3,6 @@ Assinatura Digital
 Trocar Endereço
 A FAZER:
 
-- Visualizar dados academicos e profissionais
 - Avaliar parte financeira (parcial)
 - Onde posso editar o número de associado/a?
 - No perfil de usuário, ao clicar em "Já tenho carteirinha" não acontece nada
@@ -32,8 +31,6 @@ FEITO:
 - Botão de novos associados
 - Formulário de representante legal
 - Ainda não foi corrigido/aplicado o filtro necessário para a exibição dos dados da página
-
-Avaliar após subir as correções para a UOL:
-
+- Visualizar dados academicos e profissionais
 - Regra de exibição na pesquisa por MT (**reavaliado para MTs desativados**) --REAVALIAR AO SUBIR PARA O OFICIAL
 - Ao fazer qualquer pesquisa na página "Encontre um Musicoterapeuta", dá erro na página (erro com códigos).
