@@ -8,6 +8,10 @@ use Apemesp\Apemesp\Models\Nacionalidade;
 
 use Apemesp\Apemesp\Models\DadosPessoais;
 
+use Apemesp\Apemesp\Models\DadosProfissionais;
+
+use Apemesp\Apemesp\Models\FormacoesAcademicas;
+
 use Apemesp\Apemesp\Models\Estado;
 
 use Apemesp\Apemesp\Models\Cidade;
@@ -77,6 +81,16 @@ class AssociadoRepository
 	{
 		$query = "%" . $request->input('q') . "%";
 		return DadosPessoais::select('id','id_user','name', 'cpf', 'tel_celular')->where('name', 'LIKE', $query)->orderBy('name', 'asc')->paginate(6);
+	}
+
+	public function getDadosProfissionais($id)
+	{
+		return DadosProfissionais::where('id_user', $id)->select("*")->get();
+	}
+
+	public function getDadosAcademicos($id)
+	{
+		return FormacoesAcademicas::where('id_usuario', $id)->select("*")->get();
 	}
 
 }

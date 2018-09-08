@@ -55,7 +55,12 @@ class AssociadoController extends Controller
     {
         $associadoRepository = new AssociadoRepository;
         $associado = $associadoRepository->getAssociado($id);
-        return view("admin.admin.associados.showperfil")->with("associado", $associado);
+        $dadosacademicos = $associadoRepository->getDadosAcademicos($id);
+        $dadosprofissionais = $associadoRepository->getDadosProfissionais($id);
+        return view("admin.admin.associados.showperfil")
+        ->with("associado", $associado)
+        ->with("dadosacademicos", $dadosacademicos)
+        ->with("dadosprofissionais", $dadosprofissionais);
     }
 
     public function search(Request $request)
