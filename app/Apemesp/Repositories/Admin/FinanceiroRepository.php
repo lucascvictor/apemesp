@@ -99,4 +99,13 @@ class FinanceiroRepository
 		return $dado->cpf;
 	}
 
+	public function salvarAvaliacao($request)
+	{
+		Anuidade::where('id_user', $request->id)->where('ano', $request->ano)
+						->update([
+								'status' => $request->status,
+								'arq_avaliado' => 1
+								]);
+	}
+
 }

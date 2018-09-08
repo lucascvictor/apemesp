@@ -90,12 +90,9 @@ class EncontreUmMtRepository
 						->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
 						->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
 						->join('users', 'dados_pessoais.id_user', '=', 'users.id')
-						->join('anuidades', 'dados_pessoais.id_user', '=', 'anuidades.id_user')
+						
 						->Where('dados_profissionais.id_especialidade', '<>', 0)
-						->Where('users.id_status','<>',4)
-						->Where('anuidades.ano','==',date("Y"))
-						->Where('anuidades.status','==',2)
-						->orWhere('anuidades.status','==',3)
+						->Where('users.id_status','<>',4)				
 						->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
 						->orderBy('dados_pessoais.name')
 						->get();
@@ -107,7 +104,7 @@ class EncontreUmMtRepository
 			->join('proximidade_geografica', 'proximidade_geografica.id', '=', 'dados_profissionais.id_proximidade')
 			->join('escalas', 'escalas.id', '=', 'dados_profissionais.id_dias_atendimento')
 			->join('users', 'dados_pessoais.id_user', '=', 'users.id')
-			->join('anuidades', 'dados_pessoais.id_user', '=', 'anuidades.id_user')
+			
 			->when($nome, function ($query) use ($nome) {
 				return $query->where('dados_pessoais.name', 'like', '%' . $nome . '%');
 			})
@@ -121,9 +118,6 @@ class EncontreUmMtRepository
 				return $query->where('dados_profissionais.id_especialidade', $especialidade);
 			})
 			->Where('users.id_status','<>',4)
-			->Where('anuidades.ano','==',date("Y"))
-			->Where('anuidades.status','==',2)
-			->orWhere('anuidades.status','==',3)
 			->Where('dados_profissionais.id_especialidade', '<>', 0)
 			->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
 			->orderBy('dados_pessoais.name')

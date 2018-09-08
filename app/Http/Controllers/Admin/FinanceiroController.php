@@ -103,7 +103,11 @@ class FinanceiroController extends Controller
 
     public function salvarAvaliacao(Request $request)
     {
-        dd($request->ano);
+      $financeiroRespository = new FinanceiroRepository;
+      $financeiroRespository->salvarAvaliacao($request);
+
+      return redirect()->back();
+
     }
 
 }
