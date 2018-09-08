@@ -80,6 +80,7 @@
                                    </tr>
                                </thead>
                                <tbody>
+                               @if($mts)
                                  @foreach($mts as $mt)
                                       <tr>
 
@@ -91,6 +92,7 @@
 
                                        </tr>
                                 @endforeach
+                                @endif
                                </tbody>
                                
                            </table>

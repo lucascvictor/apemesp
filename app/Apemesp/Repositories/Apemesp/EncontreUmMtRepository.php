@@ -15,6 +15,8 @@ use Apemesp\Apemesp\Models\Especialidade;
 
 use Apemesp\Apemesp\Models\DadosProfissionais;
 
+use Apemesp\Apemesp\Models\Anuidade;
+
 use DB;
 
 use Auth;
@@ -122,6 +124,25 @@ class EncontreUmMtRepository
 			->select('dados_pessoais.name', 'dados_profissionais.*', 'escalas.escala')
 			->orderBy('dados_pessoais.name')
 			->get();
+	}
+
+	public function valida($mts)
+	{
+
+		$anuidade = new Anuidade;
+		$i = 0;
+		foreach($mts as $mt) {
+			$anuidades[$i] = Anuidade::where('id_user',$mt->id_user)->select("*")->get();
+			foreach ($anuidades[$i] as $anuidade) {
+				if($anuidade->ano == date('Y')) {
+					if($anuidade->status != 3 && $anuidade->status != 2) {
+						unset($mts[$i]);
+					}
+				}
+			}
+			$i++;
+		}
+		return $mts;
 	}
 
 

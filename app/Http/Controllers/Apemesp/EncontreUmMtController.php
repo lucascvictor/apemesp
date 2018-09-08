@@ -59,9 +59,11 @@ class EncontreUmMtController extends Controller{
 				} else {
 					$mts = $encontreummtRepository->getMts($proximidade, $escala, $nome, $especialidade);
 				}
+				
+				$musicoterapeutas = $encontreummtRepository->valida($mts);
 
 				unset($encontreummtRepository);
-				return view('paginas.encontreummt')->with('mts', $mts)
+				return view('paginas.encontreummt')->with('mts', $musicoterapeutas)
 				->with('especialidades', $especialidades->getEspecialidades())
 				->with('proximidades', $proximidades->getProximidades())
 				->with('escalas', $escalas->getEscalas());
