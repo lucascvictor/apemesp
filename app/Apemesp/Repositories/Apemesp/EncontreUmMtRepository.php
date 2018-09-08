@@ -138,10 +138,11 @@ class EncontreUmMtRepository
 					}
 				}
 			}
-			if(!isSet($anuidade[$i])) {
-				unset($mts[$i]);
-			}
-			$i++;
+
+		if(!isSet($anuidades[$i])) {
+			unset($mts[$i]);
+		}
+		$i++;
 		}
 		return $mts;
 	}
