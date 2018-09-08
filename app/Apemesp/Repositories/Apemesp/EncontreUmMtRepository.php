@@ -132,11 +132,14 @@ class EncontreUmMtRepository
 		foreach($mts as $mt) {
 			$anuidades[$i] = Anuidade::where('id_user',$mt->id_user)->select("*")->get();
 			foreach ($anuidades[$i] as $anuidade) {
-				if($anuidade->ano == date('Y') || Empty($anuidade->ano)) {
-					if($anuidade->status != 3 && $anuidade->status != 2 || Empty($anuidade->status)) {
+				if($anuidade->ano == date('Y')) {
+					if($anuidade->status != 3 && $anuidade->status != 2) {
 						unset($mts[$i]);
 					}
 				}
+			}
+			if(!isSet($anuidade[$i])) {
+				unset($mts[$i]);
 			}
 			$i++;
 		}

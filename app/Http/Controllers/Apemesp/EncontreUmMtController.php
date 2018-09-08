@@ -36,7 +36,7 @@ class EncontreUmMtController extends Controller{
 				->with('especialidades', $especialidades->getEspecialidades())
 				->with('proximidades', $proximidades->getProximidades())
 				->with('escalas', $escalas->getEscalas())
-				->with('mts', $mts);
+				->with('mts', $musicoterapeutas);
     }
 
 		public function search(Request $request)
