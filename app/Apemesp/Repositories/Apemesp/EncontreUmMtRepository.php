@@ -128,8 +128,6 @@ class EncontreUmMtRepository
 
 	public function valida($mts)
 	{
-
-		$anuidade = new Anuidade;
 		$i = 0;
 		foreach($mts as $mt) {
 			$anuidades[$i] = Anuidade::where('id_user',$mt->id_user)->select("*")->get();

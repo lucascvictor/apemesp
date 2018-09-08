@@ -32,7 +32,8 @@
                         <input id="comprovante" name="comprovante" class="input-file" type="file" required="" class="form-control input-md" >
                      </div>
                   </div>
-                  <input id="id" name="id" type="hidden" value="{{ $fin->id_user }}">
+ 
+                  <input id="id" name="id" type="hidden" value="{{ $id_user }}">
                  
                </fieldset>
                <div class="modal-footer">

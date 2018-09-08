@@ -24,14 +24,15 @@ class EncontreUmMtController extends Controller{
      }
 
     public function getIndex(){
-    		$especialidades = new EspecialidadeRepository;
-			$escalas = new EscalaREpository;
-			$proximidades = new ProximidadeRepository;
-			$pesquisa = 0;
-			$mtRepository = new EncontreUmMtRepository;
-			$mts = $mtRepository->getMtAll();
-			
-        return view('paginas.encontreummt')
+		$especialidades = new EspecialidadeRepository;
+		$escalas = new EscalaREpository;
+		$proximidades = new ProximidadeRepository;
+		$pesquisa = 0;
+		$mtRepository = new EncontreUmMtRepository;
+		$mts = $mtRepository->getMtAll();
+		$musicoterapeutas = $mtRepository->valida($mts);
+
+		return view('paginas.encontreummt')
 				->with('especialidades', $especialidades->getEspecialidades())
 				->with('proximidades', $proximidades->getProximidades())
 				->with('escalas', $escalas->getEscalas())
@@ -54,12 +55,10 @@ class EncontreUmMtController extends Controller{
 
 				if ($proximidade == null && $escala == null && $nome == null && $especialidade ==null) {
 					$mts = $encontreummtRepository->getMtAll();
-					$path = "search?especialidade=" . $especialidade;
-
 				} else {
 					$mts = $encontreummtRepository->getMts($proximidade, $escala, $nome, $especialidade);
 				}
-				
+
 				$musicoterapeutas = $encontreummtRepository->valida($mts);
 
 				unset($encontreummtRepository);
