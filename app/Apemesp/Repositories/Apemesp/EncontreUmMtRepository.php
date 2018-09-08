@@ -129,8 +129,10 @@ class EncontreUmMtRepository
 	public function valida($mts)
 	{
 		$i = 0;
+		$vazio = array();
 		foreach($mts as $mt) {
 			$anuidades[$i] = Anuidade::where('id_user',$mt->id_user)->select("*")->get();
+			
 			foreach ($anuidades[$i] as $anuidade) {
 				if($anuidade->ano == date('Y')) {
 					if($anuidade->status != 3 && $anuidade->status != 2) {
@@ -139,7 +141,7 @@ class EncontreUmMtRepository
 				}
 			}
 
-		if(!isSet($anuidades[$i])) {
+		if(!count($anuidades[$i])) {
 			unset($mts[$i]);
 		}
 		$i++;

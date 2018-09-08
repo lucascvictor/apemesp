@@ -82,7 +82,7 @@ class FinanceiroController extends Controller
         
       $financeiroRespository = new FinanceiroRepository;
       $anuidade = $financeiroRespository->storeAnuidade($request->id, $request);
-      
+      dd($request);
       if ($anuidade) {
         $arquivo = $request->file('comprovante');
         $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $financeiroRespository->getCpf($request->id);
