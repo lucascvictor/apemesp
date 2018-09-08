@@ -55,7 +55,7 @@ class AssociadoRepository
 
 	public function getAssociado($id)
 	{
-		return DadosPessoais::find($id);
+		return DadosPessoais::where('id_user',$id)->select("*")->get()->first();
 	}
 
 	public function getNacionalidades()
@@ -80,7 +80,14 @@ class AssociadoRepository
 	public function search($request)
 	{
 		$query = "%" . $request->input('q') . "%";
-		return DadosPessoais::select('id','id_user','name', 'cpf', 'tel_celular')->where('name', 'LIKE', $query)->orderBy('name', 'asc')->paginate(6);
+		return DB::table('dados_pessoais')
+		->join('users', 'dados_pessoais.id_user', '=', 'users.id')
+		->where('dados_pessoais.name', 'LIKE', $query)
+		->where('users.id_perfil','<>','2')
+		->where('users.id_perfil','<>','1')
+		->select('dados_pessoais.id','dados_pessoais.id_user','dados_pessoais.name', 'dados_pessoais.cpf', 'dados_pessoais.tel_celular')
+		->orderBy('name', 'asc')
+		->paginate(6);
 	}
 
 	public function getDadosProfissionais($id)

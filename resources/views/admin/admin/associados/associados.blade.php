@@ -40,7 +40,7 @@
                      <td>{{ $associado->cpf }}</td>
                      <td>{{ $associado->tel_celular }}</td>
                      <td><a class="btn btn-default" href="/admin/associados/perfil/editar/{{ $associado->id }}">Alterar</a></td>
-                     <td><a class="btn btn-primary" href="/admin/associados/perfil/{{ $associado->id }}">Visualizar Perfil</a></td>
+                     <td><a class="btn btn-primary" href="/admin/associados/perfil/{{ $associado->id_user }}">Visualizar Perfil</a></td>
                   </tr>
                   @endforeach
                </tbody>

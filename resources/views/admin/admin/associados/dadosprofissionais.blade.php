@@ -1,72 +1,74 @@
 <?php $cont =0;?>
 <h3> Dados Profissionais </h3>
+@foreach($dadosprofissionais as $dadoprofissional)
 <center>
          <table class="table table-hover table-striped">
             <tbody>
                <tr>
                   <td><b>CEP:</b></td>
-                  <?php $arquivorg = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/rg.pdf"; ?>
+                  <?php $arquivorg = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/rg.pdf"; ?>
                 
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/rg.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->cep}}</td>
                </tr>
                <tr>
                   <td><b>Endereço:</b></td>
-                  <?php $arquivocpf = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/cpf.pdf"; ?>
+                  <?php $arquivocpf = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/cpf.pdf"; ?>
                 
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/cpf.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->endereco}}</td>
                </tr>
                <tr>
                   <td><b>Complemento:</b></td>
-                  <?php $arquivocnh = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/cnh.pdf"; ?>
+                  <?php $arquivocnh = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/cnh.pdf"; ?>
                 
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/cnh.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->complemento}}</td>
                </tr>
                <tr>
                   <td><b>Bairro:</b></td>
-                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/comprovante_e.pdf"; ?>
+                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/comprovante_e.pdf"; ?>
                   
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->bairro}}</td>
                </tr>
                <tr>
                   <td><b>Local:</b></td>
-                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/comprovante_e.pdf"; ?>
+                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/comprovante_e.pdf"; ?>
                   
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->id_cidade}}/{{$dadoprofissional->id_estado}}</td>
                </tr>
                <tr>
                   <td><b>Região:</b></td> 
-                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/comprovante_e.pdf"; ?>
+                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/comprovante_e.pdf"; ?>
                   
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->id_proximidade}}</td>
                </tr>
                <tr>
-                  <td><b>Especialidade de atendimento:</b></td> <!-- Cidade / Estado-->
-                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/comprovante_e.pdf"; ?>
+                  <td><b>Especialidade de atendimento:</b></td> 
+                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/comprovante_e.pdf"; ?>
                   
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->id_especialidade}}</td>
                </tr>
 
                 <tr>
-                  <td><b>Linkedin:</b></td> <!-- Cidade / Estado-->
-                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/comprovante_e.pdf"; ?>
+                  <td><b>Linkedin:</b></td> 
+                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/comprovante_e.pdf"; ?>
                   
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->linkedin}}</td>
                </tr>
 
                <tr>
-                  <td><b>Telefone:</b></td> <!-- Cidade / Estado-->
-                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/comprovante_e.pdf"; ?>
+                  <td><b>Telefone:</b></td> 
+                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/comprovante_e.pdf"; ?>
                   
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->telefone}}</td>
                </tr>
                <tr>
-                  <td><b>Dias de atendimento:</b></td> <!-- Cidade / Estado-->
-                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $associado->cpf . "/comprovante_e.pdf"; ?>
+                  <td><b>Dias de atendimento:</b></td> 
+                  <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadoprofissional->cpf . "/comprovante_e.pdf"; ?>
                   
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td>{{$dadoprofissional->id_dias_atendimento}}</td>
                </tr>
 
             </tbody>
          </table>
          <hr/>
       </center>
+@endforeach
