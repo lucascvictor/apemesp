@@ -20,18 +20,13 @@ use DB;
 class CarteirinhaRepository
 {
 
-	public function busca($item)
-	{
-		$busca = '%' . $item . '%';
-        return Post::where('titulo', 'like', $busca)->get();
-	}
 
 	public function getAssociado($id_user)
 	{
 		return DB::table('carteirinhas')
 		->join('dados_pessoais', 'carteirinhas.id_user', '=', 'dados_pessoais.id_user')
-		->join('status_anuidade', 'status_anuidade.id', '=', 'carteirinhas.status')
-		->select('carteirinhas.*', 'dados_pessoais.name', 'dados_pessoais.cpf', 'status_anuidade.*')
+		->join('status_carteirinha', 'status_carteirinha.id', '=', 'carteirinhas.status')
+		->select('carteirinhas.*', 'dados_pessoais.name', 'dados_pessoais.cpf', 'status_carteirinha.*')
 		->where('carteirinhas.id_user', '=', $id_user)
 		->orderBy('ano', 'asc')
 		->get();
@@ -55,16 +50,16 @@ class CarteirinhaRepository
 	{
 		return DB::table('carteirinhas')
 		->join('dados_pessoais', 'carteirinhas.id_user', '=', 'dados_pessoais.id_user')
-		->join('status_anuidade', 'status_anuidade.id', '=', 'carteirinhas.status')
-		->select('carteirinhas.*', 'dados_pessoais.name', 'dados_pessoais.cpf', 'status_anuidade.*')
+		->join('status_carteirinha', 'status_carteirinha.id', '=', 'carteirinhas.status')
+		->select('carteirinhas.*', 'dados_pessoais.name', 'dados_pessoais.cpf', 'status_carteirinha.*')
 		->where('carteirinhas.id_user', '=', $id_user)
 		->where('carteirinhas.ano', '=', $ano)
 		->first();
 	}
 
-	public function getDadosBancarios()
+	public function getCarteirinha($id)
 	{
-		return DadosBancarios::select('*')->paginate(5);
+		return Carteirinha::select('*')->where('id_user', $id)->get()->first();
 	}
 
 	public function storeCarteirinha($id_user, $request)
@@ -78,15 +73,15 @@ class CarteirinhaRepository
 		if($verificacao) {
 			return false;
 		} else {
-			$anuidade = new Carteirinha;
-			$anuidade->id_user = $id_user;
-			$anuidade->ano = $request->ano;
-			$anuidade->arq_enviado = $comprovante;
-			$anuidade->arq_avaliado = 1;
-			$anuidade->status = $request->status;
-			$anuidade->save();
+			$carteirinha = new Carteirinha;
+			$carteirinha->id_user = $id_user;
+			$carteirinha->ano = $request->ano;
+			$carteirinha->arq_enviado = $comprovante;
+			$carteirinha->arq_avaliado = 1;
+			$carteirinha->status = $request->status;
+			$carteirinha->save();
 		}
-		return $anuidade;
+		return $carteirinha;
 	}
 
 	public function getCpf($id_user)

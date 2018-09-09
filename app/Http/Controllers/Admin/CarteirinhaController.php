@@ -53,9 +53,11 @@ class CarteirinhaController extends Controller
         return view('admin.admin.carteirinhas.index')->with('associados', $associados);
     }
 
-    public function editCarteirinha()
+    public function editCarteirinha($id)
     {
-        
+        $carteirinhaRespository = new CarteirinhaRepository;
+        $carteirinha = $carteirinhaRespository->getCarteirinha($id);
+        return view('admin.admin.carteirinhas.edit')->with('carteirinha', $carteirinha);
     }
 
 }
