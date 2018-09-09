@@ -355,5 +355,6 @@ Route::group(['prefix' => 'associado'], function () {
     Route::group(['prefix' => 'carteirinha'], function () {
       Route::get('', 'Associado\CarteirinhaController@getIndex');
       Route::post('/old', 'Associado\CarteirinhaController@storeOld');
+      Route::get('/certificado', 'Associado\CarteirinhaController@getCertificado');
     });
 });

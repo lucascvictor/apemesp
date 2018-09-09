@@ -16,6 +16,10 @@ use Apemesp\Apemesp\Repositories\Associado\CarteirinhaRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\FinanceiroRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
+
+use Apemesp\Apemesp\Repositories\Admin\RepresentanteLegalRepository;
+
 use Auth;
 
 use Session;
@@ -76,7 +80,22 @@ class CarteirinhaController extends Controller
 
   public function storeOld(Request $request)
   {
-    $carteirinhaRepository = new CarteirinhaRepository;
-    
+    $carteirinhaRepository = new CarteirinhaRepository; 
+  }
+
+
+  public function getCertificado()
+  {
+    $associadoRepository = new AssociadoRepository;
+    $repRepository = new RepresentanteLegalRepository;
+    $carteirinhaRepository = new CarteirinhaRepository; 
+    $numeroCarteirinha = $carteirinhaRepository->getNumero($this->getUserId());
+    $associado = $associadoRepository->getAssociado($this->getUserId()); 
+    $representante = $repRepository->getRepresentante();
+
+    return view("admin.associado.certificado.index")
+    ->with('associado', $associado)
+    ->with('numeroCarteirinha', $numeroCarteirinha)
+    ->with('representante', $representante);
   }
 }

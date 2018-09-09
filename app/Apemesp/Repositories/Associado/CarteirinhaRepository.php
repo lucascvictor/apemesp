@@ -37,4 +37,15 @@ class CarteirinhaRepository
 		return Carteirinha::where('id', $id)->select('status')->get()->first();
 	}
 
+	public function getNumero($id)
+	{
+		$carteirinha = Carteirinha::where('id', $id)->select('*')->get()->first();
+		if($carteirinha != null) {
+			$digito = $carteirinha->digito;
+			$numero = $carteirinha->numero;
+			return $digito . '-' . $numero;
+		}
+		return null;
+	}
+
 }

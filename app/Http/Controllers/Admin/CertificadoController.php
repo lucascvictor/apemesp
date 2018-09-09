@@ -20,10 +20,7 @@ class CertificadoController extends Controller
 
     public function index()
     {
-
         return view('admin.associado.certificado.index');
     }
-
-
 
 }
