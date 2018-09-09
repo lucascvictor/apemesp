@@ -2,8 +2,6 @@ Trocar Endereço
 A FAZER:
 
 - Onde posso editar o número de associado/a?
-- No perfil de usuário, ao clicar em "Já tenho carteirinha" não acontece nada
-- Validar o gerenciamento das carteirinhas
 __________________________________________________________________________________________
 - É possível extrair um relatório com os dados dos associados cadastrados e sua situação atual?
 
@@ -37,3 +35,5 @@ FEITO:
 - Avaliar parte financeira
 - É possível inserir um botão para visualizar o perfil desse profissional, de acordo com os dados profissionais preenchidos por eles e que forem permitidos serem exibidos?
 (Os dados foram colocados na mesma pagina de perfil do associado no painel do administrador)
+- Geração do numero do assoaciado caso não exista quando o status financeiro for alterado para "em dia" no ano vigente
+- No perfil de usuário, ao clicar em "Já tenho carteirinha" não acontece nada (agora o associado pode lançar o numero atual caso já não esteja em utilização)
