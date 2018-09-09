@@ -14,6 +14,8 @@ use View;
 
 use Session;
 
+use Auth;
+
 class EspecialidadeController extends Controller
 {
 
@@ -39,8 +41,12 @@ class EspecialidadeController extends Controller
       unset($especialidadeRepository);
       Session::flash("sucesso", "A especialidade foi salva com sucesso");
     }
+     if(Auth::user()->id_perfil == 1) {
+      return redirect()->route('index.especialidade');
+     } else { 
+       return redirect()->back();
+     }
      
-     return redirect()->back();
   }
 
   public function edit($id)
