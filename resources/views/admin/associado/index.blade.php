@@ -116,8 +116,10 @@
             <h3>Passos para emissão da carteirinha:</h3>
 
 						<div class="col-xs-3">
-						<a class="btn btn-info" type="button" name="opcaoCarteirinha" href="">Já possuo a carteirinha</a>
-						</div>
+            @if($statusCarteirinha == null)
+						  <a class="btn btn-info" type="button" name="opcaoCarteirinha" href="" data-toggle="modal" data-target="#japossuo">Já possuo a carteirinha</a>
+            @endif
+            </div>
                 <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
@@ -143,5 +145,8 @@
 	</div>
 
 @include('admin.associado.financeiro.modal')
-
+@include('admin.associado.carteirinha.modalindex')
 @endsection
+
+
+

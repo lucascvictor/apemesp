@@ -1,20 +1,16 @@
-Assinatura Digital
-
 Trocar Endereço
 A FAZER:
 
-- Avaliar parte financeira (parcial)
 - Onde posso editar o número de associado/a?
 - No perfil de usuário, ao clicar em "Já tenho carteirinha" não acontece nada
 - Validar o gerenciamento das carteirinhas
 __________________________________________________________________________________________
 - É possível extrair um relatório com os dados dos associados cadastrados e sua situação atual?
-- É possível inserir um botão para visualizar o perfil desse profissional, de acordo com os dados profissionais preenchidos por eles e que forem permitidos serem exibidos?
 
 FEITO:
 
 - Imagem do material informativo e redireciona
-- Adicionar dados bancários em informações financeiras
+- Adicionar dados bancários em infor                                                                                                mações financeiras
 - Editar informações bancarias no painel do admin 
 - Senha padrão: apemesp123 (colocar no cabeçalho)
 - Trocar o "Associe-se" por esqueci a senha
@@ -37,3 +33,7 @@ FEITO:
 - Especialidades para Dados Profissionais do Associado não lista os itens
 - Alteração do status de dados profissionais no painel
 - Validação de cadastro em manutenção de páginas
+- Gerenciamento da assinatura do representante
+- Avaliar parte financeira
+- É possível inserir um botão para visualizar o perfil desse profissional, de acordo com os dados profissionais preenchidos por eles e que forem permitidos serem exibidos?
+(Os dados foram colocados na mesma pagina de perfil do associado no painel do administrador)

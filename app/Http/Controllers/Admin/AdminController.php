@@ -13,6 +13,7 @@ use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 use Apemesp\Apemesp\Repositories\Admin\ChartRepository;
 use Apemesp\Apemesp\Repositories\Associado\FinanceiroRepository;
+use Apemesp\Apemesp\Repositories\Associado\CarteirinhaRepository;
 use Auth;
 
 use Session;
@@ -47,6 +48,7 @@ class AdminController extends Controller
         $user = new UserRepository;
         $adminRepository = new AdminRepository;
         $chart = new ChartRepository;
+        $carteirinhaRepository = new CarteirinhaRepository;
         
 
         if ($id_perfil == 1) {
@@ -89,7 +91,8 @@ class AdminController extends Controller
                 $financeiro = new FinanceiroRepository;
                 unset($adminRepository);
                 return view('admin.associado.index')
-                ->with('dadosbancarios', $financeiro->getDadosBancarios());
+                ->with('dadosbancarios', $financeiro->getDadosBancarios())
+                ->with('statusCarteirinha', $carteirinhaRepository->getStatus(Auth::user()->id));
             } else {
                 return view('admin.inadimplente');
             }

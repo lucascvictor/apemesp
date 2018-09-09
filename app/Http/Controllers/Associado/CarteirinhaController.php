@@ -61,4 +61,10 @@ class CarteirinhaController extends Controller
   {
     return Auth::user()->id;
   }
+
+  public function storeOld(Request $request)
+  {
+    $carteirinhaRepository = new CarteirinhaRepository;
+    
+  }
 }

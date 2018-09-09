@@ -13,13 +13,13 @@ use Apemesp\Apemesp\Models\Certeirinha;
 
 use Apemesp\Apemesp\Models\Financeiro;
 
-use Apemesp\Apemesp\Repository\CerteirinhaRepository;
+use Apemesp\Apemesp\Models\Carteirinha;
 
 use Apemesp\Apemesp\Repository\FinanceiroRepository;
 
 use DB;
 
-class CarterinhaRepository
+class CarteirinhaRepository
 {
 
 	public function getCidades($idEstado)

@@ -354,5 +354,6 @@ Route::group(['prefix' => 'associado'], function () {
     //Certeirinha do Associado
     Route::group(['prefix' => 'carteirinha'], function () {
       Route::get('', 'Associado\CarteirinhaController@getIndex');
+      Route::post('/old', 'Associado\CarteirinhaController@storeOld');
     });
 });
