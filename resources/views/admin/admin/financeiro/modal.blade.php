@@ -7,7 +7,7 @@
             <h4 class="modal-title">Adicionar lançamento financeiro para o associado </h4>
          </div>
          <div class="modal-body">
-            <form class="form-horizontal" method="POST" action="{{ url('/admin/financeiro/anuidade') }}">
+            <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{ url('/admin/financeiro/anuidade') }}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Lançamento financeiro</legend>
@@ -22,7 +22,11 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="status">Status:</label>
                      <div class="col-md-4">
-                        <input id="status" name="status" type="text" placeholder=" Status " class="form-control input-md" required="">
+                     <select id="status" name="status" class="form-control" required="">
+                        @foreach($status as $st)
+                            <option value="{{ $st->id }}">{{ $st->descricao }}</option>
+                        @endforeach
+                    </select>
                      </div>
                   </div>
 

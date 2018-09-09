@@ -37,6 +37,7 @@ class FinanceiroController extends Controller
     {
         $financeiroRespository = new FinanceiroRepository;
         $associados = $financeiroRespository->getAssociados();
+        
         unset($financeiroRespository);
      
     	return view('admin.admin.financeiro.financeiro')->with('associados', $associados);
@@ -64,7 +65,11 @@ class FinanceiroController extends Controller
     {
         $financeiroRespository = new FinanceiroRepository;
         $associado = $financeiroRespository->getAssociado($id);
-        return view('admin.admin.financeiro.associado')->with('associado',$associado)->with('id_user', $id);
+        $status = $financeiroRespository->getStatusAnuidade();
+        return view('admin.admin.financeiro.associado')
+        ->with('associado',$associado)
+        ->with('id_user', $id)
+        ->with('status', $status);
     }
 
     public function avaliarLancamento($id, $ano)
@@ -79,10 +84,10 @@ class FinanceiroController extends Controller
     
     public function storeAnuidade(Request $request)
     {
-        
+      
       $financeiroRespository = new FinanceiroRepository;
       $anuidade = $financeiroRespository->storeAnuidade($request->id, $request);
-      dd($request);
+      
       if ($anuidade) {
         $arquivo = $request->file('comprovante');
         $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $financeiroRespository->getCpf($request->id);
@@ -93,7 +98,7 @@ class FinanceiroController extends Controller
       } else {
         Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
       }
-      return redirect()->route('admin.financeiro'); 
+      return redirect()->back(); 
     }
 
     public function updateAnuidade(Request $request, $id_user)

@@ -82,7 +82,8 @@ class FinanceiroRepository
 			$anuidade->id_user = $id_user;
 			$anuidade->ano = $request->ano;
 			$anuidade->arq_enviado = $comprovante;
-			$anuidade->arq_avaliado = 0;
+			$anuidade->arq_avaliado = 1;
+			$anuidade->status = $request->status;
 			$anuidade->save();
 		}
 		return $anuidade;
