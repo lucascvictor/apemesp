@@ -82,8 +82,10 @@ class Associado
         ->select('users.email')
         ->where('dados_pessoais.cpf', '=', $cpf)
         ->first();
-
-        return $dadosPessoais->email;
         }
+        if($dadosPessoais == null || empty($dadosPessoais)) {
+            $dadosPessoais = array();
+        }
+        return $dadosPessoais->email;
 	}
 }

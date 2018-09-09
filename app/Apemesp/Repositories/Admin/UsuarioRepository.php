@@ -83,4 +83,11 @@ class UsuarioRepository
 		$usuario->save();
 		return $usuario->name;
 	}
+
+	public function alterarOpcaoProfissional($id, $opcao)
+	{
+		$usuario = User::find($id);
+		$usuario->opcao_dados_profissionais = $opcao;
+		$usuario->save();
+	}
 }
