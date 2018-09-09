@@ -35,3 +35,4 @@ FEITO:
 - Regra de exibição na pesquisa por MT (**reavaliado para MTs desativados**) --REAVALIAR AO SUBIR PARA O OFICIAL
 - Ao fazer qualquer pesquisa na página "Encontre um Musicoterapeuta", dá erro na página (erro com códigos).
 - Especialidades para Dados Profissionais do Associado não lista os itens
+- Alteração do status de dados profissionais no painel

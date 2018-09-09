@@ -30,12 +30,12 @@
          <table class="table table-hover table-striped">
             <thead>
                <tr>
-                  <th> </th>
+                  <th>Ano </th>
                   <th>Arquivo enviado?</th>
                   <th>Arquivo validado?</th>
                   <th>Status</th>
+                  <th></th>
                   <th>Download</th>
-                  <th colspan="3"></th>
                </tr>
             </thead>
             <tbody>
@@ -57,9 +57,15 @@
                   <td><?php if ($anuidade->arq_avaliado == 0) { echo "Não"; } else
                      {	echo "Sim"; } ?>
                   </td>
+                  <td> Avaliação 
+                  @foreach($status as $st)
+                        @if($anuidade->status == $st->id)
+                            {{ $st->descricao }}
+                        @endif
+                  @endforeach
+                  </td>
                   <td><a class="btn btn-default" href="" data-toggle="modal" data-target="#enviar_{{ $anuidade->ano }}">Editar</a></td>
                   <td><a href="/associado/download/comprovante_{{ $anuidade->ano }}.pdf">dowload</a></td>
-                  <td><a href="{{ url('/associado/financeiro/anuidade/') }} {{ $anuidade->id }}">Solicitar verificação</a></td>
                </tr>
                <?php $i++; ?>
                @endforeach

@@ -11,6 +11,8 @@ use Apemesp\Apemesp\Models\DadosBancarios;
 
 use Apemesp\Apemesp\Models\DadosPessoais;
 
+use Apemesp\Apemesp\Models\StatusAnuidade;
+
 use DB;
 
 class FinanceiroRepository
@@ -63,6 +65,12 @@ class FinanceiroRepository
 	{
 		Anuidade::where('id_user','=', $id,'and','ano','=',$ano)->update(['comprovante' => $nomeArquivo]);
 	}
+
+	public function getStatusAnuidades()
+	{
+		return StatusAnuidade::all();
+	}
+
 
 
 }

@@ -24,6 +24,11 @@
 					: Upload de documentação
 			@endif
 
+			@if (Auth::user()->id_cadastro + 1 == 6)
+					: Lançamento/Aprovação da anuidade
+					<br><br><br><br>
+					<p> Caso seja necessário entre em contato para solicitar a validação da anuidade</p>
+			@endif
 		</h3>
   </div>
 </div>
