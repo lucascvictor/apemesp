@@ -1,5 +1,8 @@
 @extends('admin.dashboard')
 @section('titulo', 'Gerenciamento da carteirinha')
+@section('extrastyle')
+  {!! Html::style('css/bootstrap-datetimepicker.min.css') !!}
+@endsection
 @section('conteudo')
 
 <div class="row">
