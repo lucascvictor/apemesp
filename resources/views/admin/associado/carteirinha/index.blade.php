@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h3>Associado: {{ $carteirinha->digito}}-{{ $carteirinha->numero }}</h3>
+        <h3>Associado: @if($carteirinha){{ $carteirinha->digito}}-{{ $carteirinha->numero }}@endif</h3>
     </div>
     </div>
     <hr>

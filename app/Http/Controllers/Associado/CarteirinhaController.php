@@ -49,9 +49,10 @@ class CarteirinhaController extends Controller
 
     $carteirinha = $carteirinhaRepository->getStatus($this->getUserId());
     $anuidades = $financeiroRepository->getAssociado($this->getUserId());
-
-      if($carteirinha->status >= 3) {
-        return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
+      if($carteirinha){
+        if($carteirinha->status >= 3) {
+          return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
+        }
       }
       
       foreach($anuidades as $anuidade) {

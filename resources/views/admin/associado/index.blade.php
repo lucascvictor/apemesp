@@ -120,21 +120,30 @@
 						  <a class="btn btn-info" type="button" name="opcaoCarteirinha" href="" data-toggle="modal" data-target="#japossuo">Já possuo a carteirinha</a>
             @endif
             </div>
-                <div class="col-xs-3 bs-wizard-step @if($statusCarteirinha->status >= 1)
-                                                    complete
-                                                    @else
-                                                    disabled
-                                                    @endif"><!-- complete -->
+                <div class="col-xs-3 bs-wizard-step @if($statusCarteirinha)
+                                                      @if($statusCarteirinha->status >= 1)
+                                                        complete
+                                                      @else
+                                                        disabled
+                                                      @endif
+                                                      @else
+                                                      disabled
+                                                    @endif
+                                                    "><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                   <div class="bs-wizard-info text-center">Pedido de confecção</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step @if($statusCarteirinha->status >=2 )
-                                                    complete
+                <div class="col-xs-3 bs-wizard-step @if($statusCarteirinha)
+                                                      @if($statusCarteirinha->status >=2 )
+                                                        complete
+                                                        @else
+                                                        disabled
+                                                      @endif
                                                     @else
-                                                    disabled
+                                                      disabled
                                                     @endif"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 2</div>
                   <div class="progress"><div class="progress-bar"></div></div>
@@ -142,10 +151,14 @@
                   <div class="bs-wizard-info text-center">Confecção realizada</div>
                 </div>
 
-                <div class="col-xs-3 bs-wizard-step @if($statusCarteirinha->status >= 3)
-                                                    complete
+                <div class="col-xs-3 bs-wizard-step @if($statusCarteirinha)
+                                                      @if($statusCarteirinha->status >= 3)
+                                                        complete
+                                                        @else
+                                                        disabled
+                                                      @endif
                                                     @else
-                                                    disabled
+                                                      disabled
                                                     @endif"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Passo 3</div>
                   <div class="progress"><div class="progress-bar"></div></div>
