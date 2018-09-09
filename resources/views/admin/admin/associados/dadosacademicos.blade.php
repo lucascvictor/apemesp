@@ -32,7 +32,19 @@
          </tr>
          <tr>
             <td><b>Local:</b></td>
-            <td>{{$dadoacademico->id_estado}}/{{$dadoacademico->id_cidade}}</td>
+            <td>
+            @foreach($cidades as $cidade)
+              @if($dadoacademico->id_cidade == $cidade->id)
+                {{ $cidade->nome }}
+              @endif
+            @endforeach
+            /
+            @foreach($estados as $estado)
+              @if($dadoacademico->id_estado == $estado->id)
+                {{ $estado->nome }}
+              @endif
+            @endforeach
+            </td>
          </tr>
          <tr>
             <td><b>Download Certificado/TCC:</b></td>
