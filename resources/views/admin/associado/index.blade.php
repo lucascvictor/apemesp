@@ -116,7 +116,7 @@
             <h3>Passos para emissão da carteirinha:</h3>
 
 						<div class="col-xs-3">
-						<button class="btn btn-info" type="button" name="opcaoCarteirinha">Já possuo a carteirinha</button>
+						<a class="btn btn-info" type="button" name="opcaoCarteirinha" href="">Já possuo a carteirinha</a>
 						</div>
                 <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Passo 1</div>

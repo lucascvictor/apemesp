@@ -48,5 +48,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ComissoesTableSeeder::class);
         $this->call(EdicoesJomespTableSeeder::class);
         $this->call(AditionalUserDataTableSeeder::class);
+        $this->call(ResponsavelLegalTableSeeder::class);
+        
     }
 }

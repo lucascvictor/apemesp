@@ -20,6 +20,8 @@ class CreateResponsavelLegalTable extends Migration
             $table->string('rg');
             $table->string('cpf');
             $table->string('endereco');
+            $table->string('gestao');
+            $table->string('assinatura');
             $table->timestamps();
         });
     }

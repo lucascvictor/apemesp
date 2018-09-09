@@ -15,7 +15,7 @@
       <div class="col-lg-10">
          <h2>Edição dos dados do representante legal</h2>
 
-            <form class="form-horizontal" method="POST" action="{{ url('/admin/representantelegal') }}/{{ $representanteLegal->id}}">
+            <form class="form-horizontal" enctype="multipart/form-data" smethod="POST" action="{{ url('/admin/representantelegal') }}/{{ $representanteLegal->id}}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Dados do Representante</legend>
@@ -60,7 +60,21 @@
                      <div class="col-md-4">
                         <input onkeyup="somenteNumeros(this)" id="cpf" name="cpf" type="text" placeholder="cpf" class="form-control input-md" required="" value="{{ $representanteLegal->cpf}}">
                      </div>
-                  </div>              
+                  </div>   
+
+                  <div class="form-group">
+                     <label class="col-md-4 control-label" for="agencia">Gestão:</label>
+                     <div class="col-md-4">
+                        <input  id="gestao" name="gestaocpf" type="text" placeholder="Ex.: 2010 - 2014" class="form-control input-md" required="" value="{{ $representanteLegal->gestao}}">
+                     </div>
+                  </div>    
+
+                  <div class="form-group">
+                     <label class="col-md-4 control-label" for="agencia">Assinatura:</label>
+                     <div class="col-md-4">
+                     <input id="assinatura" name="assinatura" class="input-file" type="file" required="">
+                     </div>
+                  </div>               
                  
                </fieldset>
                <div class="modal-footer">
