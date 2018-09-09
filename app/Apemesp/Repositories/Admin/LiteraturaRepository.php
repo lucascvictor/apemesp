@@ -63,7 +63,6 @@ class LiteraturaRepository
 		->update([
 				'titulo' => $request->titulo,
 				'conteudo' => $request->conteudo,
-				'imagem' => $request->imagem,
 				'updated_at' => $this->getData()
 				]);
 	}

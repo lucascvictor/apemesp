@@ -92,6 +92,9 @@ class FinanceiroController extends Controller
         $arquivo = $request->file('comprovante');
         $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $financeiroRespository->getCpf($request->id);
         $nomeArquivo = 'comprovante_'. $request->ano . '.' . $request->file('comprovante')->getClientOriginalExtension();
+        if (file_exists($pastaDestino . $nomeArquivo)) {
+			unlink($pastaDestino . $nomeArquivo);
+		}
         $request->file('comprovante')->move($pastaDestino, $nomeArquivo);
         $financeiroRespository->gravaArquivo($nomeArquivo, $request->ano, $request->id);
         Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
@@ -101,16 +104,20 @@ class FinanceiroController extends Controller
       return redirect()->back(); 
     }
 
-    public function updateAnuidade(Request $request, $id_user)
-    {
-        dd($request->ano);
-    }
-
     public function salvarAvaliacao(Request $request)
     {
       $financeiroRespository = new FinanceiroRepository;
       $financeiroRespository->salvarAvaliacao($request);
-
+      
+      $arquivo = $request->file('comprovante');
+      $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $financeiroRespository->getCpf($request->id);
+      $nomeArquivo = 'comprovante_'. $request->ano . '.' . $request->file('comprovante')->getClientOriginalExtension();
+      if (file_exists($pastaDestino . $nomeArquivo)) {
+          unlink($pastaDestino . $nomeArquivo);
+      }
+      $request->file('comprovante')->move($pastaDestino, $nomeArquivo);
+      $financeiroRespository->gravaArquivo($nomeArquivo, $request->ano, $request->id);
+      Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
       return redirect()->back();
 
     }

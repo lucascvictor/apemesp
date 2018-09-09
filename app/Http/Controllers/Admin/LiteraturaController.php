@@ -34,8 +34,10 @@ class LiteraturaController extends Controller
     {
         $repository = new LiteraturaRepository;
         $id = $repository->store($request);
-        $nomeArquivo = $this->storeImage($id, $request);
-        $repository->updateImagem($nomeArquivo, $id);
+        if($request->file('imagem') != null) {
+            $nomeArquivo = $this->storeImage($id, $request);
+            $repository->updateImagem($nomeArquivo, $id);
+        }
       return redirect()->route('list.literatura');
     }
 		public function storeImage($id, $request)
@@ -43,7 +45,10 @@ class LiteraturaController extends Controller
 			//Armazenamento da imagem
 			$extensao = $request->file('imagem')->getClientOriginalExtension();
 			$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/musicoterapia/literatura/';
-			$nomeArquivo ='literatura'. $id . '.' . $extensao;
+            $nomeArquivo ='literatura'. $id . '.' . $extensao;
+            if (file_exists($pastaDestino . $nomeArquivo)) {
+				unlink($pastaDestino . $nomeArquivo);
+			}
 			$request->file('imagem')->move($pastaDestino, $nomeArquivo);
 			return $nomeArquivo;
 		}
@@ -64,7 +69,11 @@ class LiteraturaController extends Controller
 		public function updateLiteratura(Request $request, $id)
 		{
 			$repository = new LiteraturaRepository;
-			$repository->update($request, $id);
+            $repository->update($request, $id);
+            if($request->file('imagem') != null) {
+                $nomeArquivo = $this->storeImage($id, $request);
+                $repository->updateImagem($nomeArquivo, $id);
+            }
 			return redirect()->route('list.literatura');
         }
         

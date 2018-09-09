@@ -10,7 +10,7 @@
 
 @endsection
 
-<form method="POST"  action="{{ url('/admin/paginas/linhadotempo/') }}">
+<form method="POST"  enctype="multipart/form-data" action="{{ url('/admin/paginas/linhadotempo/') }}">
  {{ csrf_field() }}
   <fieldset>
   <legend>Adicionar item</legend>

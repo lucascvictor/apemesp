@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-<form class="form-horizontal" action="{{ url('admin/configs/assuntos')}}/{{ $assunto[0]->id }}" method="POST">
+<form class="form-horizontal" action="{{ url('admin/configs/assuntos')}}/{{ $assunto[0]->id }}" method="POST" enctype="multipart/form-data">
         <fieldset>
 
 

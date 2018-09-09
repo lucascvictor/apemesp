@@ -86,6 +86,9 @@ class DadosAcademicosController extends Controller{
             $formato = $request->file('arquivotcc')->getClientOriginalExtension();
             $numero = $dadosAcademicos->getUltimoTcc(Auth::user()->id);
             $arquivoTcc =  'tcc' . $numero . "." . $formato;
+            if (file_exists($pastaDestino . $arquivoTcc)) {
+				unlink($pastaDestino . $arquivoTcc);
+			}
             $request->file('arquivotcc')->move($pastaDestino, $arquivoTcc);
         }
 
@@ -97,6 +100,9 @@ class DadosAcademicosController extends Controller{
             $formato = $request->file('certificado')->getClientOriginalExtension();
             $numero = $dadosAcademicos->getUltimoCertificado(Auth::user()->id);
             $arquivoCertificado =  'certificado' . $numero . "." . $formato;
+            if (file_exists($pastaDestino . $arquivoCertificado)) {
+				unlink($pastaDestino . $arquivoCertificado);
+			}
             $request->file('certificado')->move($pastaDestino, $arquivoCertificado);
         }
 
@@ -167,7 +173,9 @@ class DadosAcademicosController extends Controller{
                 $numero = $dadosAcademicos->getUltimoTcc(Auth::user()->id);
                 $arquivoTcc =  'tcc' . $numero . "." . $formato;
             }
-
+        if (file_exists($pastaDestino . $arquivoTcc)) {
+            unlink($pastaDestino . $arquivoTcc);
+        }
             $request->file('arquivotcc')->move($pastaDestino, $arquivoTcc);
             $dadosAcademicos->updateArquivoTCC($id, $arquivoTcc);
 

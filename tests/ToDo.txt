@@ -36,3 +36,4 @@ FEITO:
 - Ao fazer qualquer pesquisa na página "Encontre um Musicoterapeuta", dá erro na página (erro com códigos).
 - Especialidades para Dados Profissionais do Associado não lista os itens
 - Alteração do status de dados profissionais no painel
+- Validação de cadastro em manutenção de páginas

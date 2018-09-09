@@ -52,22 +52,24 @@ class FormacaoController extends Controller
     {
       $repository = new FormacaoRepository;
       $id = $repository->store($request);
-
-			$nomeArquivo = $this->storeImage($id, $request);
-
-			$repository->updateImagem($nomeArquivo, $id);
-
+	  if($request->file('imagem') != null) {
+		$nomeArquivo = $this->storeImage($id, $request);
+		$repository->updateImagem($nomeArquivo, $id);
+	  }
       return redirect()->route('list.formacao');
     }
 
 		public function storeImage($id, $request)
 		{
 			//Armazenamento da imagem
+			
 			$extensao = $request->file('imagem')->getClientOriginalExtension();
 			$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/musicoterapia/formacao/';
 			$nomeArquivo ='formacao'. $id . '.' . $extensao;
+			if (file_exists($pastaDestino . $nomeArquivo)) {
+				unlink($pastaDestino . $nomeArquivo);
+			}
 			$request->file('imagem')->move($pastaDestino, $nomeArquivo);
-
 			return $nomeArquivo;
 		}
 
@@ -90,7 +92,11 @@ class FormacaoController extends Controller
 		{
 			$repository = new FormacaoRepository;
 			$repository->update($request, $id);
-			return route('list.formacao');
+			if($request->file('imagem') != null) {
+				$nomeArquivo = $this->storeImage($id, $request);
+				$repository->updateImagem($nomeArquivo, $id);
+			}
+			return redirect()->route('list.formacao');
 		}
 
 }

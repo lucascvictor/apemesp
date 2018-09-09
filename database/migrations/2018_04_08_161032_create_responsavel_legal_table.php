@@ -33,6 +33,6 @@ class CreateResponsavelLegalTable extends Migration
      */
     public function down()
     {
-        Schema::create('responsavel_legal');
+        Schema::drop('responsavel_legal');
     }
 }

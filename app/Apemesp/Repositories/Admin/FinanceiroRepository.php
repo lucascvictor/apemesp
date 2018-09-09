@@ -109,4 +109,9 @@ class FinanceiroRepository
 								]);
 	}
 
+	public function gravaArquivo($nomeArquivo, $ano, $id)
+	{
+		Anuidade::where('id_user','=', $id,'and','ano','=',$ano)->update(['comprovante' => $nomeArquivo]);
+	}
+
 }

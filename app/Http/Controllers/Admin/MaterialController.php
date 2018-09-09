@@ -54,11 +54,10 @@ class MaterialController extends Controller
 		$repository = new MaterialRepository;
 
 		$id = $repository->store($request);
-
-		$nomeArquivo = $this->storeImage($id, $request);
-
-		$repository->updateImagem($nomeArquivo, $id);
-
+		if($request->file('imagem') != null) {
+			$nomeArquivo = $this->storeImage($id, $request);
+			$repository->updateImagem($nomeArquivo, $id);
+		}
 		return redirect()->route('list.materiais');
     }
 
@@ -95,8 +94,10 @@ class MaterialController extends Controller
 	public function updateMaterial(Request $request, $id)
 	{
 		$repository = new MaterialRepository;
-		$nomeArquivo = $this->storeImage($id, $request);
-		$repository->updateImagem($nomeArquivo, $id);
+		if($request->file('imagem') != null) {
+			$nomeArquivo = $this->storeImage($id, $request);
+			$repository->updateImagem($nomeArquivo, $id);
+		}
 		$repository->update($request, $id);
 		return redirect()->route('list.materiais');
 	}

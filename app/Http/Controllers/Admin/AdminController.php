@@ -158,6 +158,9 @@ class AdminController extends Controller
         $extensao = $request->file('estatuto')->getClientOriginalExtension();
         $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/apemesp/estatuto/';
         $nomeArquivo ='estatuto.'. $extensao;
+        if (file_exists($pastaDestino . $nomeArquivo)) {
+			unlink($pastaDestino . $nomeArquivo);
+		}
         $request->file('estatuto')->move($pastaDestino, $nomeArquivo);
         return redirect()->back();
     }

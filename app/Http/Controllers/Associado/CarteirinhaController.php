@@ -12,6 +12,8 @@ use Apemesp\Apemesp\Classes\Associado;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
 
+use Apemesp\Apemesp\Repositories\Associado\CarteirinhaRepository;
+
 use Auth;
 
 use Session;
@@ -36,13 +38,18 @@ class CarteirinhaController extends Controller
 
   public function getIndex()
   {
-    $dadosAcademicos = new DadosAcademicosRepository;
+    $carteirinhaRepository = new CarteirinhaRepository;
+    $status = $carteirinhaRepository->getStatus($this->getUserId());
+
+      if($status >= 3) {
+        return view('admin.associado.carteirinha.index');
+      }
       if($this->getIdCadastro() < 6){
-           return view('admin.associado.restricao');
+        return view('admin.associado.restricao');
       }
       if($this->getIdCadastro() >= 6 ){
-       return view('admin.associado.carteirinha')->with('cpf', $dadosAcademicos->getCpf($this->getIdUsuario()));
-    }
+       return view('admin.associado.carteirinha.index');
+      }
   }
 
   public function getIdCadastro()

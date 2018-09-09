@@ -67,6 +67,9 @@ class DocumentacaoController extends Controller{
       $arquivo = $request->file('rg');
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
       $nomeArquivo = 'rg' . '.' . $request->file('rg')->getClientOriginalExtension();
+      if (file_exists($pastaDestino . $nomeArquivo)) {
+        unlink($pastaDestino . $nomeArquivo);
+      }
       $request->file('rg')->move($pastaDestino, $nomeArquivo);
       return redirect()->back();
 
@@ -81,6 +84,9 @@ class DocumentacaoController extends Controller{
       $arquivo = $request->file('rg');
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
       $nomeArquivo = 'cpf' . '.' . $request->file('cpf')->getClientOriginalExtension();
+      if (file_exists($pastaDestino . $nomeArquivo)) {
+        unlink($pastaDestino . $nomeArquivo);
+      }
       $request->file('cpf')->move($pastaDestino, $nomeArquivo);
       return redirect()->back();
     }
@@ -94,6 +100,9 @@ class DocumentacaoController extends Controller{
       $arquivo = $request->file('rg');
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
       $nomeArquivo = 'cnh' . '.' . $request->file('cnh')->getClientOriginalExtension();
+      if (file_exists($pastaDestino . $nomeArquivo)) {
+        unlink($pastaDestino . $nomeArquivo);
+      }
       $request->file('cnh')->move($pastaDestino, $nomeArquivo);
       return redirect()->back();
     }
@@ -108,6 +117,9 @@ class DocumentacaoController extends Controller{
       $arquivo = $request->file('rg');
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
       $nomeArquivo = 'comprovante_e' . '.' . $request->file('cnh')->getClientOriginalExtension();
+      if (file_exists($pastaDestino . $nomeArquivo)) {
+        unlink($pastaDestino . $nomeArquivo);
+      }
       $request->file('cnh')->move($pastaDestino, $nomeArquivo);
       return redirect()->back();
     }

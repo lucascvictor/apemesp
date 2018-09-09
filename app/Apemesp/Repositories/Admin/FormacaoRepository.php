@@ -32,11 +32,11 @@ class FormacaoRepository
 
 	public function store($request)
 	{
-				$formacao = new Formacao;
+		$formacao = new Formacao;
         $formacao->titulo = $request->titulo;
         $formacao->conteudo = $request->conteudo;
         $formacao->created_at = $this->getData();
-				$formacao->updated_at = $this->getData();
+		$formacao->updated_at = $this->getData();
         $formacao->save();
         return $formacao->id;
 	}
@@ -61,7 +61,6 @@ class FormacaoRepository
 						->update([
 								'titulo' => $request->titulo,
 								'conteudo' => $request->conteudo,
-								'imagem' => $request->imagem,
 								'updated_at' => $this->getData()
 								]);
 	}

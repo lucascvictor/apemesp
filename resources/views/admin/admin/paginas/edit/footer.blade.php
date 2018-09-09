@@ -3,7 +3,7 @@
 @extends('admin.dashboard')
 @section('titulo', 'Editar Item do Rodapé')
 @section('conteudo')
-<form method="POST"  action="{{ url('/admin/paginas/footer/') }}/{{ $footer->id }}">
+<form method="POST"  action="{{ url('/admin/paginas/footer/') }}/{{ $footer->id }}" enctype="multipart/form-data">
    {{ csrf_field() }}
    <!-- Botão de Arquivo para Imagem -->
    <br />

@@ -14,7 +14,7 @@
 <form method="POST"  enctype="multipart/form-data" action="{{ url('/admin/paginas/material') }}">
  {{ csrf_field() }}
   <fieldset>
-  <legend>Edição do material/legend>
+  <legend>Adição do material</legend>
   <!-- Botão de Arquivo para Imagem -->
     <div class="form-group" id="mensagem">
       <label class="col-md-4 control-label" for="filebutton">Imagem: </label>

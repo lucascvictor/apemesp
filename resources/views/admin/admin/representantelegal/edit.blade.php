@@ -15,7 +15,7 @@
       <div class="col-lg-10">
          <h2>Edição dos dados do representante legal</h2>
 
-            <form class="form-horizontal" enctype="multipart/form-data" smethod="POST" action="{{ url('/admin/representantelegal') }}/{{ $representanteLegal->id}}">
+            <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{ url('/admin/representantelegal') }}/{{ $representanteLegal->id}}">
                {{ csrf_field() }}
                <fieldset>
                   <legend>Dados do Representante</legend>
@@ -63,18 +63,27 @@
                   </div>   
 
                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="agencia">Gestão:</label>
+                     <label class="col-md-4 control-label" for="gestao">Gestão:</label>
                      <div class="col-md-4">
-                        <input  id="gestao" name="gestaocpf" type="text" placeholder="Ex.: 2010 - 2014" class="form-control input-md" required="" value="{{ $representanteLegal->gestao}}">
+                        <input  id="gestao" name="gestao" type="text" placeholder="Ex.: 2010 - 2014" class="form-control input-md" required="" value="{{ $representanteLegal->gestao}}">
                      </div>
                   </div>    
 
                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="agencia">Assinatura:</label>
+                     <label class="col-md-4 control-label" for="assinatura">Assinatura:</label>
                      <div class="col-md-4">
-                     <input id="assinatura" name="assinatura" class="input-file" type="file" required="">
+                     <input id="assinatura" name="assinatura" class="input-file" type="file">
                      </div>
-                  </div>               
+                  </div>     
+
+                  <div class="form-group">
+                     <label class="col-md-4 control-label" for="assinatura">Assinatura Atual:</label>
+                     <div class="col-md-4">
+                        <img src="{{ url('images/Assinatura') }}/{{ $representanteLegal->assinatura }}" height="150px">
+                     </div>
+                  </div>           
+
+                      
                  
                </fieldset>
                <div class="modal-footer">

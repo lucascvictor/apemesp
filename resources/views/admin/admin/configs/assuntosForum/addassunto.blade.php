@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-<form class="form-horizontal" action="{{ url('admin/configs/forumassuntos')}}" method="POST">
+<form class="form-horizontal" enctype="multipart/form-data"  action="{{ url('admin/configs/forumassuntos')}}" method="POST">
         <fieldset>
 
 

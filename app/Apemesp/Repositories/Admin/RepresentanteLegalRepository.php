@@ -30,7 +30,7 @@ class RepresentanteLegalRepository
 		return DB::table('responsavel_legal')->select('*')->get();
 	}
 
-	public function store($request)
+	public function store($request, $nomeArquivo)
 	{
 		$table = new RepresentanteLegal;
         $table->nome = $request->banco;
@@ -38,7 +38,9 @@ class RepresentanteLegalRepository
         $table->endereco = $request->conta;
         $table->profissao = $request->titular;
         $table->rg = $request->documento;
-        $table->cpf = $request->descricao;
+		$table->cpf = $request->descricao;
+		$table->gestao = $request->gestao;
+		$table->assinatura = $nomeArquivo;
         $table->save();
 	}
 
@@ -51,8 +53,18 @@ class RepresentanteLegalRepository
 			'endereco' => $request->endereco,
 			'profissao' => $request->profissao,
 			'rg' => $request->rg,
-			'cpf' => $request->cpf
+			'cpf' => $request->cpf,
+			'gestao' => $request->gestao,
 		]);
 	}
+
+	public function updateImagem($id, $nomeArquivo)
+	{
+		RepresentanteLegal::where('id', '=', $id)
+		->update([
+			'assinatura' => $nomeArquivo
+		]);
+	}
+
 
 }

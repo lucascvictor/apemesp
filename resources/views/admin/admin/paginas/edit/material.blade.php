@@ -27,7 +27,7 @@
     <div class="form-group" id="mensagem">
       <label class="col-md-4 control-label" for="filebutton">Alterar Imagem: </label>
       <div class="col-md-4">
-        <input id="imagem" name="imagem" class="input-file" type="file" required>
+        <input id="imagem" name="imagem" class="input-file" type="file">
       </div>
       <hr>
     </div>

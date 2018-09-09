@@ -32,4 +32,9 @@ class CarterinhaRepository
 		return Certeirinha::where('id', $id)->delete();
 	}
 
+	public function getStatus($id)
+	{
+		return Carteirinha::where('id', $id)->select('status')->get()->first();
+	}
+
 }

@@ -52,24 +52,23 @@ class PropagandaController extends Controller
 
       $repository = new PropagandaRepository;
       $id = $repository->store($request);
-
+	  if($request->file('imagem') != null) {
 			$nomeArquivo = $this->storeImage($id, $request);
-
 			$repository->updateImagem($nomeArquivo, $id);
-
+	  }
       return redirect()->route('list.propaganda');
     }
 
-		public function storeImage($id, $request)
-		{
-			//Armazenamento da imagem
-			$extensao = $request->file('imagem')->getClientOriginalExtension();
-			$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/propagandas/';
-			$nomeArquivo ='propaganda'. $id . '.' . $extensao;
-			$request->file('imagem')->move($pastaDestino, $nomeArquivo);
+	public function storeImage($id, $request)
+	{
+		//Armazenamento da imagem
+		$extensao = $request->file('imagem')->getClientOriginalExtension();
+		$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/propagandas/';
+		$nomeArquivo ='propaganda'. $id . '.' . $extensao;
+		$request->file('imagem')->move($pastaDestino, $nomeArquivo);
 
-			return $nomeArquivo;
-		}
+		return $nomeArquivo;
+	}
 
 
     public function destroyPropaganda($id)

@@ -11,7 +11,7 @@
 @section('conteudo')
 
 
-<form method="POST"  action="{{ url('/admin/paginas/formacao/') }}/{{ $formacao[0]->id }}">
+<form method="POST"  enctype="multipart/form-data" action="{{ url('/admin/paginas/formacao/') }}/{{ $formacao[0]->id }}">
  {{ csrf_field() }}
   <fieldset>
   <legend>Edição da formação</legend>
@@ -27,7 +27,7 @@
     <div class="form-group" id="mensagem">
       <label class="col-md-4 control-label" for="filebutton">Alterar Imagem: </label>
       <div class="col-md-4">
-        <input id="imagem" name="imagem" class="input-file" type="file" required>
+        <input id="imagem" name="imagem" class="input-file" type="file">
       </div>
       <hr>
     </div>

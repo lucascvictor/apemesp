@@ -4,11 +4,6 @@ use Illuminate\Database\Seeder;
 
 class ResponsavelLegalTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('responsavel_legal')->delete();
@@ -21,6 +16,8 @@ class ResponsavelLegalTableSeeder extends Seeder
                 "rg"    => 00000000,
                 "cpf"    => 99999999999,
                 "endereco"    => "Endereço inicial",
+                "gestao"    => "2017 - 2021",
+                "assinatura"    => "assinatura1.jpg",
             ],
         ]);
     }

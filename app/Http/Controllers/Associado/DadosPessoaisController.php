@@ -93,7 +93,9 @@ class DadosPessoaisController extends Controller{
 
             $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $request->cpf;
             $nomeArquivo = 'foto' . '.' . $request->file('foto')->getClientOriginalExtension();
-
+            if (file_exists($pastaDestino . $nomeArquivo)) {
+                unlink($pastaDestino . $nomeArquivo);
+            }
             $request->file('foto')->move($pastaDestino, $nomeArquivo);
 
             $dadosPessoais = new DadosPessoaisRepository;

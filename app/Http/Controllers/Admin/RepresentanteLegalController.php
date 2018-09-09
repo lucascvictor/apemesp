@@ -52,12 +52,30 @@ class RepresentanteLegalController extends Controller
 
 
      public function updateRepresentante(Request $request, $id=1) {
-
         $representanteLegalRepository = New RepresentanteLegalRepository;
+        if($request->file('assinatura') != null) {
+            $nomeArquivo = $this->storeImage($id, $request);
+            $representanteLegalRepository->updateImagem($id, $nomeArquivo);
+        }
         $representanteLegalRepository->update($request);
-        Session::flash('sucesso', 'A representanteLegal foi atualizado');
+        Session::flash('sucesso', 'A representante legal foi atualizado');
         return redirect()->route('representantelegal.index');
     }
+
+    public function storeImage($id, $request)
+	{
+		//Armazenamento da imagem
+		$extensao = $request->file('assinatura')->getClientOriginalExtension();
+		$pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/images/Assinatura/';
+		$nomeArquivo ='assinatura'. $id . '.' . $extensao;
+		$arquivo = $pastaDestino . $nomeArquivo;
+		if (file_exists($arquivo)) {
+			unlink($arquivo);
+		}
+		$request->file('assinatura')->move($pastaDestino, $nomeArquivo);
+		
+		return $nomeArquivo;
+	}
 
   
 
