@@ -8,7 +8,7 @@
         <fieldset>
 
 
-                <legend>Adicionar Assunto para a página de mensagens</legend>
+                <legend>Editar Assunto para a página de mensagens</legend>
 
                  {{ csrf_field() }}
                 <!-- Campo Assunto -->

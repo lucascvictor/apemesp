@@ -32,7 +32,6 @@ class AssuntoRepository
 
 	public function getAssuntoForum($id)
 	{
-		dd(DB::table('chatter_categories')->select('*')->where('id', '=',$id)->first());
 		return DB::table('chatter_categories')->select('*')->where('id', '=',$id)->first();
 	}
 
@@ -48,7 +47,7 @@ class AssuntoRepository
 
 	public function updateAssuntoForum($request, $id)
 	{
-		Assunto::where('id', $id)
+		Category::where('id', $id)
             ->update([
                 'name' => $request->name,
                 'slug' => $request->name,
@@ -76,9 +75,8 @@ class AssuntoRepository
 	public function setAssuntoForum()
 	{
 		$table = new Category;
-        $table->name = $assunto;
-		$table->slug = $email;
-		$table->color = $email;
+        $table->name = $name;
+		$table->slug = $name;
         $table->save();
 	}
 

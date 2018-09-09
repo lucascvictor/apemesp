@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRepresentanteLegalTable extends Migration
+class CreateResponsavelLegalTable extends Migration
 {
     /**
      * Run the migrations.

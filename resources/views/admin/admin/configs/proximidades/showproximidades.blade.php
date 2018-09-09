@@ -10,7 +10,7 @@
 		<div class="row">
                     <div class="col-lg-10">
                         <h2>Proximidades geograficas para Dados Profissionais do Associado</h2>
-                        <p><a class="btn btn-success" href="{{ url('/admin/configs/proximidades/addproximidade') }}">Adicionar Localização </a></p>
+                        <p><a class="btn btn-success" href="{{ url('/admin/configs/proximidades/add') }}">Adicionar Localização </a></p>
                         <div class="table-responsive">
                             <table class="table table-hover table-striped">
                                 <thead>
@@ -25,8 +25,8 @@
 								<tr>
                                         <td>{{ $proximidade->localidade }}</td>
 
-                                        <td><a href="" class="btn btn-default">Editar</a></td>
-                                        <td><a href="" class="btn btn-danger">Deletar</a></td>
+                                        <td><a href="{{ url('/admin/configs/proximidades/') }}/{{ $proximidade->id }}" class="btn btn-default">Editar</a></td>
+                                        <td><a href="{{ url('/admin/configs/proximidades/destroy') }}/{{ $proximidade->id }}" class="btn btn-danger">Deletar</a></td>
                                     </tr>
 
 								@endforeach

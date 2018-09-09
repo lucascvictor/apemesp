@@ -29,6 +29,24 @@ class EspecialidadeRepository
   public function getEspecialidades()
   {
     return Especialidade::select('*')->paginate(10);
-  }
+	}
+	
+	public function getEspecialidade($id)
+  {
+    return Especialidade::select('*')->where('id', $id)->get()->first();
+	}
+	
+	public function update($request)
+	{
+		Especialidade::where('id', $request->id)
+						->update([
+								'nome' => $request->especialidade,
+								]);
+	}
+
+	public function delete($id)
+	{
+		Especialidade::where('id', $id)->delete();
+	}
 
 }

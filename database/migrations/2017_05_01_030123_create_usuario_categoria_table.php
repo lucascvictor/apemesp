@@ -13,7 +13,7 @@ class CreateUsuarioCategoriaTable extends Migration
     public function up()
     {
         Schema::create('usuario_categoria', function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->integer('id_user')->unsigned();
             $table->integer('id_categoria')->unsigned();
             $table->integer('D_E_L_E_T_E_D')->defatul(0);

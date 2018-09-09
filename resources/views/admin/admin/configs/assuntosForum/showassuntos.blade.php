@@ -5,7 +5,7 @@
 @section('conteudo')
 <div class="row">
                 <div class="col-lg-10">
-                    <h2>Assuntos da página de mensagens</h2>
+                    <h2>Assuntos dos tópicos no forum</h2>
                     <p><a class="btn btn-success" href="{{ url('/admin/configs/assuntos/forum/add') }}">Adicionar assunto </a></p>
                     <div class="table-responsive">
                         <table class="table table-hover table-striped">

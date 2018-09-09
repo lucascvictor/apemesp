@@ -4,30 +4,20 @@
 
 @section('conteudo')
 
-<form class="form-horizontal" action="{{ url('admin/configs/assuntos')}}" method="POST">
+<form class="form-horizontal" action="{{ url('admin/configs/forumassuntos')}}" method="POST">
         <fieldset>
 
 
-                <legend>Adicionar Assunto para a página de mensagens</legend>
+                <legend>Adicionar Assunto para a página do fórum</legend>
 
            {{ csrf_field() }}
                 <!-- Campo Assunto -->
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="assunto">Assunto:</label>
+                      <label class="col-md-4 control-label" for="name">Assunto:</label>
                       <div class="col-md-4">
-                      <input id="assunto" name="assunto" type="text" placeholder="Assunto" class="form-control input-md" required="">
+                      <input id="name" name="name" type="text" placeholder="Assunto" class="form-control input-md" required="">
                       </div>
                     </div>
-
-                 <!-- Campo E-mail -->
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="email">E-mail:</label>
-                      <div class="col-md-4">
-                      <input id="email" name="email" type="text" placeholder="E-mail" class="form-control input-md" required="">
-                      </div>
-                    </div>
-
-
 
                 <!-- Botão -->
                     <div class="form-group">

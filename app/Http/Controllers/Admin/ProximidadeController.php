@@ -47,10 +47,46 @@ class ProximidadeController extends Controller
     }
 
 
-    public function addProximidade(){
+    public function add(){
 
         return view('admin.admin.configs.proximidades.addproximidade');
     }
+
+    public function store(Request $request)
+    {
+        if ($request->proximidade == null) {
+            Session::flash("cuidado", "Nenhuma informação inserida");
+            
+        } else {
+            $proximidadeRepository = new ProximidadeRepository;
+            $proximidadeRepository->setProximidade($request->proximidade);
+            unset($proximidadeRepository);
+            Session::flash("sucesso", "A proximidade foi salva com sucesso");
+        }
+            
+            return redirect()->route('index.proximidade');
+    }
+    
+      public function edit($id)
+      {
+        $proximidadeRepository = new ProximidadeRepository;
+        $proximidade = $proximidadeRepository->getProximidade($id);
+        return view('admin.admin.configs.proximidades.editproximidade')->with('proximidade', $proximidade);
+      }
+    
+      public function update(Request $request)
+      {
+        $proximidadeRepository = new ProximidadeRepository;
+        $proximidade = $proximidadeRepository->update($request);
+        return redirect()->route('index.proximidade');
+      }
+
+      public function delete($id)
+      {
+        $proximidadeRepository = new ProximidadeRepository;
+        $proximidade = $proximidadeRepository->delete($id);
+        return redirect()->route('index.proximidade');
+      }
 
 
 

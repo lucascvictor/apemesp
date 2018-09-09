@@ -9,6 +9,8 @@ use Apemesp\Apemesp\Models\User;
 
 use Apemesp\Apemesp\Models\Assunto;
 
+use DevDojo\Chatter\Models\Category;
+
 use DB;
 
 class ConfigsRepository
@@ -34,6 +36,15 @@ class ConfigsRepository
 		$table = new Assunto;
         $table->assunto = $assunto;
         $table->email = $email;
+        $table->save();
+	}
+
+	public function setAssuntoForum($name)
+	{
+		$table = new Category;
+        $table->name = $name;
+		$table->slug = $name;
+		$table->color = "#".rand(1000000, 999999);
         $table->save();
 	}
 

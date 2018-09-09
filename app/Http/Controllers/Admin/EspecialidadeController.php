@@ -32,14 +32,29 @@ class EspecialidadeController extends Controller
     
     if ($request->especialidade == null) {
       Session::flash("cuidado", "Nenhuma informação inserida");
-      return redirect()->back();
+      
+    } else {
+      $especialidadeRepository = new EspecialidadeRepository;
+      $especialidadeRepository->setEspecialidade($request->especialidade);
+      unset($especialidadeRepository);
+      Session::flash("sucesso", "A especialidade foi salva com sucesso");
     }
      
-     $especialidadeRepository = new EspecialidadeRepository;
-     $especialidadeRepository->setEspecialidade($request->especialidade);
-     unset($especialidadeRepository);
-     Session::flash("sucesso", "A especialidade foi salva com sucesso");
-     return redirect()->back();
+     return redirect()->route('index.especialidade');
+  }
+
+  public function edit($id)
+  {
+    $especialidadeRepository = new EspecialidadeRepository;
+    $especialidade = $especialidadeRepository->getEspecialidade($id);
+    return view('admin.admin.configs.especialidades.editespecialidade')->with('especialidade', $especialidade);
+  }
+
+  public function updateEspecialidade(Request $request)
+  {
+    $especialidadeRepository = new EspecialidadeRepository;
+    $especialidade = $especialidadeRepository->update($request);
+    return redirect()->route('index.especialidade');
   }
 
   public function index()
@@ -48,6 +63,18 @@ class EspecialidadeController extends Controller
     $especialidades = $especialidadeRepository->getEspecialidades();
 
     return view('admin.admin.configs.especialidades.showespecialidades')->with('especialidades', $especialidades);
+  }
+
+  public function add()
+  {
+    return view('admin.admin.configs.especialidades.addespecialidade');
+  }
+
+  public function delete($id)
+  {
+    $especialidadeRepository = new EspecialidadeRepository;
+    $especialidade = $especialidadeRepository->delete($id);
+    return redirect()->route('index.especialidade');
   }
 
 }

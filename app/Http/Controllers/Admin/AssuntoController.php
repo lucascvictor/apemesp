@@ -84,12 +84,6 @@ class AssuntoController extends Controller
 
 
      public function updateAssunto(Request $request, $id){
-
-         $this->validate($request, array(
-                'assunto' => 'required|max:255',
-                'email' => 'required|max:255',
-                ));
-
         $assuntoRepository = New AssuntoRepository;
         $assuntoRepository->updateAssunto($request, $id);
         $assuntos = $assuntoRepository->getAssuntos();
@@ -101,25 +95,15 @@ class AssuntoController extends Controller
 
     public function updateAssuntoForum(Request $request, $id){
 
-        $this->validate($request, array(
-               'assunto' => 'required|max:255',
-               'email' => 'required|max:255',
-               ));
-
        $assuntoRepository = New AssuntoRepository;
        $assuntoRepository->updateAssuntoForum($request, $id);
        $assuntos = $assuntoRepository->getAssuntosForum();
        Session::flash('sucesso', 'O assunto do forum foi atualizado');
-        return view('admin.admin.configs.assuntosForum.showassuntos')
+       return view('admin.admin.configs.assuntosForum.showassuntos')
                ->with('assuntos', $assuntos);
    }
 
      public function storeAssunto(Request $request){
-
-        $this->validate($request, array(
-                'assunto' => 'required|max:255',
-                'email' => 'required|max:255',
-                ));
 
         $configsRepository = new ConfigsRepository;
         $configsRepository->setAssunto($request->assunto, $request->email);
@@ -129,16 +113,12 @@ class AssuntoController extends Controller
     }
 
     public function storeAssuntoForum(Request $request){
-
-        $this->validate($request, array(
-                'name' => 'required|max:255',
-                ));
-
+        
         $configsRepository = new ConfigsRepository;
-        $configsRepository->setAssuntoForum($request->assunto, $request->email);
+        $configsRepository->setAssuntoForum($request->name);
         unset($configsRepository);
         Session::flash('sucesso', 'O assunto do forum foi adicionado com sucesso!');
-        return redirect()->route('show.assuntos.forum');
+        return redirect()->route('show.assunto.forum');
     }
 
     public function destroyAssunto($id)
@@ -154,7 +134,7 @@ class AssuntoController extends Controller
         $assuntoRepository = new AssuntoRepository;
         $assuntoRepository->deleteAssuntoForum($id);
         Session::flash('cuidado', 'O assunto do forum foi removido com sucesso!');
-        return redirect()->route('show.assuntos.forum');
+        return redirect()->route('show.assunto.forum');
     }
 
 }

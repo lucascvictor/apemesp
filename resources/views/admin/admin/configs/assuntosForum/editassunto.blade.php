@@ -4,14 +4,13 @@
 
 @section('conteudo')
 
-<form class="form-horizontal" action="{{ url('admin/configs/assuntos')}}/{{ $assunto->id }}" method="POST">
+<form class="form-horizontal" action="{{ url('admin/configs/forumassuntos')}}/{{ $assunto->id }}" method="POST">
         <fieldset>
 
 
-                <legend>Adicionar Assunto para a página de mensagens</legend>
+                <legend>Editar Assunto para a página de mensagens</legend>
 
                  {{ csrf_field() }}
- 
 
                  <!-- Campo E-mail -->
                     <div class="form-group">
