@@ -3,11 +3,7 @@
 @section('titulo', 'Cadastro e Edição de dados pessoais')
 
 @section('extrastyle')
-
-
-  {!! Html::style('css/bootstrap-datetimepicker.min.css') !!}
-
-
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-datetimepicker.min.css">
 @endsection
 
 @section('conteudo')
@@ -73,11 +69,8 @@
 
                 <label class="col-md-4 control-label" for="nascimento">Data de Nascimento:</label>
                 <div class="col-md-4">
-                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
-                    <input name="nascimento" id="nascimento" class="form-control" type="text" value="{{ $dadospessoais[0]->nascimento }}" readonly="">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
+               <input name="nascimento" id="nascimento" class="form-control" type="date" value="{{ $dadospessoais[0]->nascimento }}">
+                   
                 </div>
       			  </div>
 

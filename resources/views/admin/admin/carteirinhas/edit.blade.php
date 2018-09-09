@@ -1,7 +1,7 @@
 @extends('admin.dashboard')
 @section('titulo', 'Gerenciamento da carteirinha')
 @section('extrastyle')
-  {!! Html::style('css/bootstrap-datetimepicker.min.css') !!}
+  <link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-datetimepicker.min.css">
 @endsection
 @section('conteudo')
 
@@ -15,7 +15,7 @@
 <div class="row">
     <div class="col-md-12">
         @if($carteirinha)
-        <h2>Edição dos dados bancários</h2>
+        <h2>Edição da carteirinha</h2>
 
         
 
@@ -23,7 +23,6 @@
 <form class="form-horizontal" method="POST" action="{{ url('/admin/carteirinhas') }}/{{ $carteirinha->id}}">
    {{ csrf_field() }}
    <fieldset>
-      <legend>Dados Bancários</legend>
     
       <div class="form-group">
          <label class="col-md-4 control-label" for="id">Id do usuário:</label>
@@ -82,33 +81,25 @@
       <div class="form-group">
          <label class="col-md-4 control-label" for="datapedido">Data do pedido:</label>
          <div class="col-md-4">
-                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
-                    <input name="datapedido" id="datapedido" class="form-control" type="text" value="{{ $carteirinha->data_pedido }}" readonly="">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
+               
+                    <input name="datapedido" id="datapedido" class="form-control" type="date" value="{{ $carteirinha->data_pedido }}">
+                 
         </div>
       </div>
 
       <div class="form-group">
          <label class="col-md-4 control-label" for="dataconfeccao">Data da confecção:</label>
          <div class="col-md-4">
-                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
-                    <input name="dataconfeccao" id="dataconfeccao" class="form-control" type="text" value="{{ $carteirinha->data_confeccao }}" readonly="">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
+               
+                    <input name="dataconfeccao" id="dataconfeccao" class="form-control" type="date" value="{{ $carteirinha->data_confeccao }}" >
+                   
         </div>
       </div>
 
       <div class="form-group">
          <label class="col-md-4 control-label" for="dataultimavia">Data da ultima via:</label>
          <div class="col-md-4">
-                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="nascimento" data-link-format="yyyy-mm-dd">
-                    <input name="dataconfeccao" id="dataconfeccao" class="form-control" type="text" value="{{ $carteirinha->data_ultimavia }}" readonly="">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
+                 <input name="dataconfeccao" id="dataconfeccao" class="form-control" type="date" value="{{ $carteirinha->data_ultimavia }}">
         </div>
       </div>
 
