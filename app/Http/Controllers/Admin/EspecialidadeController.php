@@ -40,7 +40,7 @@ class EspecialidadeController extends Controller
       Session::flash("sucesso", "A especialidade foi salva com sucesso");
     }
      
-     return redirect()->route('index.especialidade');
+     return redirect()->back();
   }
 
   public function edit($id)
