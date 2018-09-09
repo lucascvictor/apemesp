@@ -231,12 +231,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/delete/{id}', 'Admin\AssuntoController@destroyAssuntoForum')->name('destroy.assunto.forum');
       });
 
-      
-
+    
       Route::group(['prefix' => 'escalas'], function () {
-        Route::get('/', 'Admin\EscalaController@index');
+        Route::get('/', 'Admin\EscalaController@index')->name('index.escala');
         Route::get('/addescala', 'Admin\EscalaController@addEscala')->name('add.escala');
         Route::post('/', 'Admin\EscalaController@storeEscala')->name('store.escala');
+        Route::get('/{id}', 'Admin\EscalaController@edit')->name('edit.escala');
+        Route::get('/destroy/{id}', 'Admin\EscalaController@delete')->name('delete.escala');
+        Route::post('/update', 'Admin\EscalaController@update')->name('update.escala');
       });
 
       Route::group(['prefix' => 'proximidades'], function () {

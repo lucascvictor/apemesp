@@ -61,4 +61,26 @@ class EscalaController extends Controller
         return redirect()->back();
     }
 
+  public function edit($id)
+  {
+    $escalaRepository = new EscalaRepository;
+    $escala = $escalaRepository->getEscala($id);
+    return view('admin.admin.configs.escalas.editescala')->with('escala', $escala);
+  }
+
+  public function update(Request $request)
+  {
+    $escalaRepository = new EscalaRepository;
+    $escala = $escalaRepository->update($request);
+    return redirect()->route('index.escala');
+  }
+
+  public function delete($id)
+  {
+    $escalaRepository = new EscalaRepository;
+    $escala = $escalaRepository->delete($id);
+    return redirect()->route('index.especialidade');
+  }
+
+
 }

@@ -25,8 +25,8 @@
 								<tr>
                                         <td>{{ $escala->escala }}</td>
 
-                                        <td><a href="" class="btn btn-default">Editar</a></td>
-                                        <td><a href="" class="btn btn-danger">Deletar</a></td>
+                                        <td><a href="{{ url('/admin/configs/escalas/') }}/{{ $escala->id }}" class="btn btn-default">Editar</a></td>
+                                        <td><a href="{{ url('/admin/configs/escalas/destroy') }}/{{ $escala->id }}" class="btn btn-danger">Deletar</a></td>
                                     </tr>
 
 								@endforeach
