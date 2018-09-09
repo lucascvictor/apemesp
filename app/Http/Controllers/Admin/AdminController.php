@@ -96,13 +96,14 @@ class AdminController extends Controller
                 
                 foreach($anuidades as $anuidade) {
                     
-                    if($anuidade->ano == date("Y") && $anuidade->status != 2 && $anuidade->status != 3) {
+                    if($anuidade->ano == date("Y") && $anuidade->status != 2  && $anuidade->status != 3) {
                     $status6 = false;
                     } else {
                     $status6 = true;
                     }
                 }
                 
+    
                 unset($adminRepository);
                 return view('admin.associado.index')
                 ->with('dadosbancarios', $financeiro->getDadosBancarios())

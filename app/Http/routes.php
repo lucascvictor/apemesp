@@ -123,8 +123,9 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'carteirinhas'], function () {
+      Route::get('/search', 'Admin\CarteirinhaController@search');
       Route::get('', 'Admin\CarteirinhaController@index')->name('carteirinha.index');
-      Route::get('{id}', 'Admin\CarteirinhaController@editRepresentante');
+      Route::get('{id}', 'Admin\CarteirinhaController@editCarteirinha');
       Route::post('{id}', 'Admin\CarteirinhaController@updateRepresentante');
     });
 

@@ -57,7 +57,7 @@
                   <td><?php if ($anuidade->arq_avaliado == 0) { echo "Não"; } else
                      {	echo "Sim"; } ?>
                   </td>
-                  <td> Avaliação 
+                  <td>
                   @foreach($status as $st)
                         @if($anuidade->status == $st->id)
                             {{ $st->descricao }}

@@ -8,6 +8,10 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Http\Controllers\Controller;
 
+use Apemesp\Apemesp\Repositories\Admin\CarteirinhaRepository;
+
+use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
+
 use Auth;
 
 use Session;
@@ -30,9 +34,28 @@ class CarteirinhaController extends Controller
 
   }
 
-  public function index()
-  {
-      return view("admin.admin.carteirinhas.index");
-  }
+
+    public function index()
+    {
+        $carteirinhaRespository = new CarteirinhaRepository;
+        $associados = $carteirinhaRespository->getAssociados();
+        
+        unset($carteirinhaRespository);
+     
+    	return view("admin.admin.carteirinhas.index")->with('associados', $associados);
+    }
+      
+    public function search(Request $request)
+    {
+        $associadoRepository = new AssociadoRepository;
+        $associados = $associadoRepository->search($request);
+        unset($associadoRepository);
+        return view('admin.admin.carteirinhas.index')->with('associados', $associados);
+    }
+
+    public function editCarteirinha()
+    {
+        
+    }
 
 }
