@@ -79,7 +79,7 @@
                               </label>
 
                                <label class="col-md-10 radio-inline">
-                                  <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5">Outros
+                                  <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="3">Outros
                               </label>
 														</center>
 									        </div>

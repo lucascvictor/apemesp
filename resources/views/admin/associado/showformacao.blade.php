@@ -18,12 +18,11 @@
                                      <div class="col-md-4">Graduação</div>
                                      @endif
                                      @if($formacao->id_categoria_formacao == 2)
-                                     <div class="col-md-4">Graduação</div>
+                                     <div class="col-md-4">Especialização</div>
                                      @endif
                                      @if($formacao->id_categoria_formacao == 3)
-                                     <div class="col-md-4">Mestrado</div>
+                                     <div class="col-md-4">Outros</div>
                                      @endif
-
                                 </strong>
 
                 </div>

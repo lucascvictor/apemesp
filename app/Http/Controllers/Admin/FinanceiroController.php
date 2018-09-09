@@ -11,6 +11,8 @@ use Apemesp\Apemesp\Repositories\Admin\FinanceiroRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
 
+use Apemesp\Apemesp\Repositories\Associado\CarteirinhaRepository;
+
 use View;
 
 use Session;
@@ -101,12 +103,18 @@ class FinanceiroController extends Controller
       } else {
         Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
       }
+      if($request->ano == date("Y") && $request->status == 2 || $request->ano == date("Y") && $request->status == 3)
+      {
+        $carteirinhaRespository->gerarNumeroAssociado($request);
+      }
       return redirect()->back(); 
     }
 
     public function salvarAvaliacao(Request $request)
     {
       $financeiroRespository = new FinanceiroRepository;
+      $carteirinhaRespository = new CarteirinhaRepository;
+
       $financeiroRespository->salvarAvaliacao($request);
 
       $arquivo = $request->file('comprovante');
@@ -122,6 +130,11 @@ class FinanceiroController extends Controller
          $financeiroRespository->gravaArquivo($nomeArquivo, $request->ano, $request->id);
        }
       Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
+
+      if($request->ano == date("Y") && $request->status == 2 || $request->ano == date("Y") && $request->status == 3)
+      {
+        $carteirinhaRespository->gerarNumeroAssociado($request);
+      }
       return redirect()->back();
 
     }

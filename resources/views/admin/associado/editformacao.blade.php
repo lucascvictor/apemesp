@@ -23,7 +23,7 @@
                                 </label>
 
                                  <label class="radio-inline">
-                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="5" @if($formacao->id_categoria_formacao == 5)checked="" @endif>Outros
+                                    <input type="radio" name="id_categoria_formacao" id="id_categoria_formacao" value="3" @if($formacao->id_categoria_formacao == 5)checked="" @endif>Outros
                                 </label>
 
                 </div>
