@@ -14,6 +14,8 @@ use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\CarteirinhaRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\FinanceiroRepository;
+
 use Auth;
 
 use Session;
@@ -39,17 +41,27 @@ class CarteirinhaController extends Controller
   public function getIndex()
   {
     $carteirinhaRepository = new CarteirinhaRepository;
+    $financeiroRepository = new FinanceiroRepository;
+
     $status = $carteirinhaRepository->getStatus($this->getUserId());
+    $anuidades = $financeiroRepository->getAssociado($this->getUserId());
 
       if($status >= 3) {
         return view('admin.associado.carteirinha.index');
       }
-      if($this->getIdCadastro() < 6){
+      
+      foreach($anuidades as $anuidade) {
+        if($anuidade->ano == date("Y") && $anuidade->status != 2 && $anuidade->status != 3) {
+          return view('admin.associado.restricao');
+        } else {
+          return view('admin.associado.carteirinha.index');
+        }
+      }
+      
+      if(empty($anuidade) || !isset($anuidade) || $anuidade == null) {
         return view('admin.associado.restricao');
       }
-      if($this->getIdCadastro() >= 6 ){
-       return view('admin.associado.carteirinha.index');
-      }
+
   }
 
   public function getIdCadastro()
