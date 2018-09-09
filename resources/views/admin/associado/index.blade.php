@@ -97,7 +97,7 @@
                   <div class="bs-wizard-info text-center"> Confirmação da documentação necessária</div>
                 </div>
 
-                <div class="col-xs-3 col-md-4 bs-wizard-step @if(Auth::user()->id_cadastro > 6)
+                <div class="col-xs-3 col-md-4 bs-wizard-step @if($status6)
                                                     complete
                                                     @else
                                                     disabled

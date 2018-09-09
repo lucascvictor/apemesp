@@ -13,6 +13,7 @@ use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 use Apemesp\Apemesp\Repositories\Admin\ChartRepository;
 use Apemesp\Apemesp\Repositories\Associado\FinanceiroRepository;
+use Apemesp\Apemesp\Repositories\Admin\FinanceiroRepository as FinanceiroAdmin;
 use Apemesp\Apemesp\Repositories\Associado\CarteirinhaRepository;
 use Auth;
 
@@ -49,7 +50,9 @@ class AdminController extends Controller
         $adminRepository = new AdminRepository;
         $chart = new ChartRepository;
         $carteirinhaRepository = new CarteirinhaRepository;
-        
+        $financeiro = new FinanceiroRepository;
+        $admfim = new FinanceiroAdmin;
+        $status6 = false;
 
         if ($id_perfil == 1) {
         $dados_dez = $chart->getIntervalo(10);
@@ -88,11 +91,22 @@ class AdminController extends Controller
                
                 $dadospessoais = $adminRepository->getDadosPessoais(Auth::user()->id);
                 $dadosprofissionais = $adminRepository->getDadosProfissionais(Auth::user()->id);
-                $financeiro = new FinanceiroRepository;
+
+                $anuidades = $admfim->getAssociado(Auth::user()->id);
+                
+                foreach($anuidades as $anuidade) {
+                    if($anuidade->ano == date("Y") && $anuidade->status != 2 && $anuidade->status != 3) {
+                    $status6 = false;
+                    } else {
+                    $status6 = true;
+                    }
+                }
+
                 unset($adminRepository);
                 return view('admin.associado.index')
                 ->with('dadosbancarios', $financeiro->getDadosBancarios())
-                ->with('statusCarteirinha', $carteirinhaRepository->getStatus(Auth::user()->id));
+                ->with('statusCarteirinha', $carteirinhaRepository->getStatus(Auth::user()->id))
+                ->with('status6',$status6);
             } else {
                 return view('admin.inadimplente');
             }
