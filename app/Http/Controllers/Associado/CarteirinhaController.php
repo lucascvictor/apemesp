@@ -47,18 +47,18 @@ class CarteirinhaController extends Controller
     $carteirinhaRepository = new CarteirinhaRepository;
     $financeiroRepository = new FinanceiroRepository;
 
-    $status = $carteirinhaRepository->getStatus($this->getUserId());
+    $carteirinha = $carteirinhaRepository->getStatus($this->getUserId());
     $anuidades = $financeiroRepository->getAssociado($this->getUserId());
 
-      if($status >= 3) {
-        return view('admin.associado.carteirinha.index');
+      if($carteirinha->status >= 3) {
+        return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
       }
       
       foreach($anuidades as $anuidade) {
         if($anuidade->ano == date("Y") && $anuidade->status != 2 && $anuidade->status != 3) {
           return view('admin.associado.restricao');
         } else {
-          return view('admin.associado.carteirinha.index');
+          return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
         }
       }
       
@@ -80,8 +80,14 @@ class CarteirinhaController extends Controller
 
   public function storeOld(Request $request)
   {
-    dd($request);
-    $carteirinhaRepository = new CarteirinhaRepository; 
+    if($request->numero != "999999" && $request->numero != "000000") {
+      $carteirinhaRepository = new CarteirinhaRepository; 
+      $carteirinha = $carteirinhaRepository->storeOld($request);
+
+    } 
+      return $this->getIndex();
+
+    
   }
 
   public function getCertificado()
@@ -89,13 +95,30 @@ class CarteirinhaController extends Controller
     $associadoRepository = new AssociadoRepository;
     $repRepository = new RepresentanteLegalRepository;
     $carteirinhaRepository = new CarteirinhaRepository; 
+    $admfim = new FinanceiroRepository;
+
+    $carteirinha = $carteirinhaRepository->getStatus($this->getUserId());
     $numeroCarteirinha = $carteirinhaRepository->getNumero($this->getUserId());
     $associado = $associadoRepository->getAssociado($this->getUserId()); 
     $representante = $repRepository->getRepresentante();
 
-    return view("admin.associado.certificado.index")
-    ->with('associado', $associado)
-    ->with('numeroCarteirinha', $numeroCarteirinha)
-    ->with('representante', $representante);
+    $anuidades = $admfim->getAssociado(Auth::user()->id);
+    foreach($anuidades as $anuidade) {
+      if($anuidade->ano == date("Y") && $anuidade->status != 2 && $anuidade->status != 3) {
+      $status6 = false;
+      } else {
+      $status6 = true;
+      }
+  }
+    if($status6) {
+      return view("admin.associado.certificado.index")
+      ->with('associado', $associado)
+      ->with('numeroCarteirinha', $numeroCarteirinha)
+      ->with('representante', $representante)
+      ->with('carteirinha', $carteirinha);
+    } else {
+      Session::get("cuidado", "Sua situação financeira atual não permite a emissão do comprovante");
+      return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
+    }
   }
 }

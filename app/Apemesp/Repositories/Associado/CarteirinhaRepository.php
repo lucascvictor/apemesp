@@ -34,7 +34,7 @@ class CarteirinhaRepository
 
 	public function getStatus($id)
 	{
-		return Carteirinha::where('id', $id)->select('status')->get()->first();
+		return Carteirinha::where('id_user', $id)->select('status', 'digito', 'numero')->get()->first();
 	}
 
 	public function getNumero($id)
@@ -46,6 +46,24 @@ class CarteirinhaRepository
 			return $digito . '-' . $numero;
 		}
 		return null;
+	}
+
+	public function storeOld($request)
+	{
+		$verifica = false;
+		$carteirinha = new Carteirinha;
+		$verifica = Carteirinha::where('digito', $request->digito)->where('numero', $request->numero)->select('*')->get()->first();
+		if($verifica){
+			return false;
+		} else {
+			$carteirinha->id_user = $request->id;
+			$carteirinha->digito = $request->digito;
+			$carteirinha->numero = $request->numero;
+			$carteirinha->japossui = 1;
+			$carteirinha->status = 4;
+			$carteirinha->save();
+		}
+		return $carteirinha;
 	}
 
 }
