@@ -118,7 +118,7 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="cpf">CPF:</label>
 					  <div class="col-md-4">
-					  <input id="cpf" name="cpf" type="text" onkeyup="somenteNumeros(this);" maxlength="11" placeholder=" CPF " class="form-control input-md" required="" value="{{ $dadospessoais[0]->cpf }}">
+					  <input id="cpf" name="cpf" type="number" maxlength="11" placeholder=" CPF " class="form-control input-md" required="" value="{{ $dadospessoais[0]->cpf }}">
 					  </div>
 					</div>
 
@@ -197,18 +197,14 @@
                  <input type="hidden" value="{{ $idEstado }}" name="estado" id="estado">
                 </div>
               </div>
-
-
-
-
-
+							
 				<legend>Numeros de Telefones</legend>
 
 				<!-- Celular -->
 					<div class="form-group">
 					 <label class="col-md-4 control-label" for="tel_celular">Tel. Celular</label>
 					  <div class="col-md-4">
-					    <input id="tel_celular" name="tel_celular" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control" value="{{ $dadospessoais[0]->tel_celular }}" required="">
+					    <input id="tel_celular" name="tel_celular" type="number" maxlength="11" class="form-control" value="{{ $dadospessoais[0]->tel_celular }}" required="">
 
 					  </div>
 					</div>
@@ -217,7 +213,7 @@
 					<div class="form-group">
 					 <label class="col-md-4 control-label" for="tel_residencial">Tel. Residêncial</label>
 					  <div class="col-md-4">
-					    <input id="tel_residencial" name="tel_residencial" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control" value="{{ $dadospessoais[0]->tel_residencial }}">
+					    <input type="number" id="tel_residencial" name="tel_residencial"  maxlength="11" class="form-control" value="{{ $dadospessoais[0]->tel_residencial }}">
 					  </div>
 					</div>
 

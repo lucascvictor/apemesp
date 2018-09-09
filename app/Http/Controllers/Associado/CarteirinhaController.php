@@ -80,9 +80,9 @@ class CarteirinhaController extends Controller
 
   public function storeOld(Request $request)
   {
+    dd($request);
     $carteirinhaRepository = new CarteirinhaRepository; 
   }
-
 
   public function getCertificado()
   {

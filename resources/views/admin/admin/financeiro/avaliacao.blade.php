@@ -10,7 +10,7 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="ano">ANO:</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="ano" name="ano" type="text" placeholder="ANO" class="form-control input-md" required="" value="{{ $associado->ano }}" readonly="true">
+                        <input id="ano" name="ano" type="number" min="1990" placeholder="ANO" class="form-control input-md" required="" value="{{ $associado->ano }}" readonly="true">
                      </div>
                   </div>
 

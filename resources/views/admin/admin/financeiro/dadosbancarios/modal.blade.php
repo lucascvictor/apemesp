@@ -24,7 +24,7 @@
                    <div class="form-group">
                      <label class="col-md-4 control-label" for="banco">Documento (CPF/CNPJ):</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)"  id="documento" name="documento" type="text" placeholder="documento" class="form-control input-md" required="">
+                        <input   id="documento" name="documento" type="number" placeholder="documento" class="form-control input-md" required="">
                      </div>
                   </div>
 
@@ -38,14 +38,14 @@
                     <div class="form-group">
                      <label class="col-md-4 control-label" for="agencia">Agencia:</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="agencia" name="agencia" type="text" placeholder="agencia" class="form-control input-md" required="">
+                        <input  id="agencia" name="agencia" type="number" placeholder="agencia" class="form-control input-md" required="">
                      </div>
                   </div>
 
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="agencia">Conta:</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="conta" name="conta" type="text" placeholder="conta" class="form-control input-md" required="">
+                        <input  id="conta" name="conta" type="number" placeholder="conta" class="form-control input-md" required="">
                      </div>
                   </div>  
                </fieldset>

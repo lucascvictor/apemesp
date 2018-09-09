@@ -17,7 +17,7 @@
          <div class="form-group">
            <label class="col-md-4 control-label" for="cep">CEP:</label>
            <div class="col-md-4">
-           <input onkeyup="somenteNumeros(this)" id="cep" name="cep" type="text" placeholder="CEP" class="form-control input-md" required="" value="{{ $dados[0]->cep }}">
+           <input  id="cep" name="cep" type="number" placeholder="CEP" class="form-control input-md" required="" value="{{ $dados[0]->cep }}">
            </div>
          </div>
 
@@ -110,7 +110,7 @@
          <div class="form-group">
            <label class="col-md-4 control-label" for="telefone">Telefone para atendimento</label>
            <div class="col-md-4">
-             <input onkeyup="somenteNumeros(this)" id="telefone" name="telefone" type="text" placeholder="Somente numeros" class="form-control input-md" required="" value="{{ $dados[0]->telefone }}">
+             <input  id="telefone" name="telefone" type="number" placeholder="Somente numeros" class="form-control input-md" required="" value="{{ $dados[0]->telefone }}">
            </div>
          </div>
 

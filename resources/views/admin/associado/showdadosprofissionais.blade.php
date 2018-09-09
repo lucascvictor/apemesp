@@ -106,7 +106,7 @@
          <div class="form-group">
            <label class="col-md-4 control-label" for="telefone">Telefone para atendimento</label>
            <div class="col-md-4">
-             <input readonly="" onkeyup="somenteNumeros(this)" id="telefone" name="telefone" type="text" placeholder="Somente numeros" class="form-control input-md" value="{{ $dados[0]->telefone }}">
+             <input readonly=""  id="telefone" name="telefone" type="number" placeholder="Somente numeros" class="form-control input-md" value="{{ $dados[0]->telefone }}">
            </div>
          </div>
 

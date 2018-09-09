@@ -43,8 +43,7 @@
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Numero de Telefone</label>
-                                <input type="tel" class="form-control nota " placeholder="Numero com DDD (XX)" id="telefone" name="telefone" required data-validation-required-message="Por favor insira seu telefone."
-                                onkeyup="somenteNumeros(this)">
+                                <input type="number" class="form-control nota " placeholder="Numero com DDD (XX)" id="telefone" name="telefone" required data-validation-required-message="Por favor insira seu telefone.">
                             <p class="help-block text-danger"></p>
                             </div>
 

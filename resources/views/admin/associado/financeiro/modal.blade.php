@@ -15,7 +15,7 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="ano">ANO:</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="ano" name="ano" type="text" placeholder="ANO" class="form-control input-md" required="">
+                        <input  id="ano" name="ano" type="number" placeholder="ANO" class="form-control input-md" required="">
                      </div>
                   </div>
 

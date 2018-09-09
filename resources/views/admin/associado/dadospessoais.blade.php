@@ -78,7 +78,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="cpf"><span style="color:red;">*</span>CPF:</label>
             <div class="col-md-4">
-            <input id="cpf" name="cpf" type="text" onkeyup="somenteNumeros(this);" maxlength="11" placeholder=" CPF (somente numeros) " class="form-control input-md" required="">
+            <input id="cpf" name="cpf" type="number" maxlength="11" placeholder=" CPF (somente numeros) " class="form-control input-md" required="">
             </div>
           </div>
 
@@ -152,7 +152,7 @@
           <div class="form-group">
            <label class="col-md-4 control-label" for="selectbasic"><span style="color:red;">*</span>Tel. Celular</label>
             <div class="col-md-4">
-              <input id="tel_celular" name="tel_celular" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control" required="">
+              <input id="tel_celular" name="tel_celular" type="number" maxlength="11" class="form-control" required="">
 
             </div>
           </div>
@@ -161,7 +161,7 @@
           <div class="form-group">
            <label class="col-md-4 control-label" for="selectbasic">Tel. Residêncial</label>
             <div class="col-md-4">
-              <input id="tel_residencial" name="tel_residencial" onkeyup="somenteNumeros(this);" maxlength="11" class="form-control">
+              <input id="tel_residencial" name="tel_residencial" type="number" maxlength="11" class="form-control">
             </div>
           </div>
 

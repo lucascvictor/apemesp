@@ -107,7 +107,7 @@
 									                <label class="col-md-4 control-label" for="ano">Ano de Conclusão/ Previsão:</label>
 									                <div class="col-md-4">
 									                <div class="input-group" data-link-format="yyyy">
-									                    <input name="anodeconclusao" id="anodeconclusao" onkeyup="somenteNumeros(this);" maxlength="4" class="form-control" type="text" value="">
+									                    <input name="anodeconclusao" id="anodeconclusao" maxlength="4" class="form-control" type="number" value="">
 														<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 									                </div>
 									                </div>
@@ -186,7 +186,7 @@
 									                <label class="col-md-4 control-label" for="ano">Carga horária:</label>
 									                <div class="col-md-4">
 									                <div class="input-group" data-link-format="yyyy">
-									                    <input name="cargahoraria" id="cargahoraria" onkeyup="somenteNumeros(this);" maxlength="5" class="form-control" type="text" value="" placeholder="Apenas números">
+									                    <input name="cargahoraria" id="cargahoraria"  maxlength="5" class="form-control" type="number" value="" placeholder="Apenas números">
 														<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
 									                </div>
 									                </div>

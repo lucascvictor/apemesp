@@ -20,7 +20,7 @@
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="ano">Ano: </label>
-      <input type="text" name="ano" id="ano" onkeyup="somenteNumeros(this);" \>
+      <input type="number" name="ano" id="ano" \>
       <hr>
     </div>
   <!-- Campo Acontecimentos -->

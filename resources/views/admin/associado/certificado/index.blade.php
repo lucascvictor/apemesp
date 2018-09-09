@@ -2,7 +2,39 @@
 
      {!! Html::style('css/bootstrap.min.css') !!}-->
     <link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap.min.css">
+    <style>
+        @media print {
+            * {
+                background:transparent !important;
+                color:#000 !important;
+                text-shadow:none !important;
+                filter:none !important;
+                -ms-filter:none !important;
+            }
 
+            body {
+                margin:0;
+                padding:0;
+                line-height: 1.4em;
+            }
+
+            header {
+                display: none;
+            } 
+
+            footer {
+                display: none;
+            }
+
+            .content {
+                display: block;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+    </style>
 @endsection
 <?php
 
@@ -88,3 +120,4 @@ $mes = 'Dezembro';
 
 
 </div>
+

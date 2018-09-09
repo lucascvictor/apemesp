@@ -51,14 +51,14 @@
                     <div class="form-group">
                      <label class="col-md-4 control-label" for="rg">Documento 1 (RG):</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="rg" name="rg" type="text" placeholder="rg" class="form-control input-md" required="" value="{{ $representanteLegal->rg}}">
+                        <input  id="rg" name="rg" type="number" placeholder="rg" class="form-control input-md" required="" value="{{ $representanteLegal->rg}}">
                      </div>
                   </div>
 
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="agencia">Documento 2 (CPF):</label>
                      <div class="col-md-4">
-                        <input onkeyup="somenteNumeros(this)" id="cpf" name="cpf" type="text" placeholder="cpf" class="form-control input-md" required="" value="{{ $representanteLegal->cpf}}">
+                        <input  id="cpf" name="cpf" type="number" placeholder="cpf" class="form-control input-md" required="" value="{{ $representanteLegal->cpf}}">
                      </div>
                   </div>   
 
