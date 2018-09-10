@@ -2,12 +2,8 @@
 
 @section('titulo', 'Cadastro e Edição de dados pessoais')
 
-@section('extrastyle')
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-datetimepicker.min.css">
-@endsection
 
 @section('conteudo')
-
 
 
 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/foto', $dadospessoais[0]->cpf )}}">

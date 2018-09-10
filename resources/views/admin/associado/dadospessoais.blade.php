@@ -2,9 +2,6 @@
 
 @section('titulo', 'Cadastro e Edição de dados pessoais')
 
-@section('extrastyle')
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-datetimepicker.min.css">
-@endsection
 
 @section('conteudo')
 

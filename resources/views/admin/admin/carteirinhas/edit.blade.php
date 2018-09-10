@@ -1,8 +1,6 @@
 @extends('admin.dashboard')
 @section('titulo', 'Gerenciamento da carteirinha')
-@section('extrastyle')
-  <link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-datetimepicker.min.css">
-@endsection
+
 @section('conteudo')
 
 <div class="row">
