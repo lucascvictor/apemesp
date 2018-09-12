@@ -50,7 +50,7 @@ class AssociadoRepository
 		return DB::table('dados_pessoais')
 		->join('aditional_users_data', 'aditional_users_data.id_user', '=', 'dados_pessoais.id_user')
 		->select('dados_pessoais.*', 'aditional_users_data.updated_at')
-		->orderBy('aditional_users_data.updated_at', 'asc')->paginate(10);
+		->orderBy('aditional_users_data.updated_at', 'desc')->paginate(10);
 	}
 
 	public function getAssociado($id)

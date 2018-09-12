@@ -60,7 +60,7 @@ class UsuarioRepository
 		return DB::table('users')
 		->join('aditional_users_data', 'aditional_users_data.id_user', '=', 'users.id')
 		->select('users.*', 'aditional_users_data.updated_at')
-		->orderBy('aditional_users_data.updated_at', 'asc')->paginate(10);
+		->orderBy('aditional_users_data.updated_at', 'desc')->paginate(10);
 	}
 
 	public function destroy($id)
