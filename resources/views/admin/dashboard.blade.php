@@ -19,7 +19,7 @@
             <div class="container-fluid">
                  
                  @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger" id="#noprint">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -33,7 +33,7 @@
                         <h1 class="page-header">
                             @yield('titulo')
                         </h1>
-                        <ol class="breadcrumb">
+                        <ol class="breadcrumb" id="#noprint">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="javascript:history.back()">Voltar</a>
                             </li>
