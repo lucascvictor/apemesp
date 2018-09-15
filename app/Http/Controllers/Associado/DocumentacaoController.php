@@ -137,6 +137,7 @@ class DocumentacaoController extends Controller{
           return view('admin.associado.financeiro')
           ->with('cpf', $dadosAcademicos->getCpf($this->getUserId()))
           ->with('anuidades', $financeiro->getAnuidades($this->getUserId()))
+          ->with('status', $financeiro->getStatusAnuidades())
           ->with('dadosbancarios', $financeiro->getDadosBancarios());
           Session::flash('sucesso','Documentação confirmada');
         }
