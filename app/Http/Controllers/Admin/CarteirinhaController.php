@@ -57,7 +57,7 @@ class CarteirinhaController extends Controller
     {
         $carteirinhaRespository = new CarteirinhaRepository;
         $carteirinha = $carteirinhaRespository->getCarteirinha($id);
-        return view('admin.admin.carteirinhas.edit')->with('carteirinha', $carteirinha);
+        return view('admin.admin.carteirinhas.edit')->with('carteirinha', $carteirinha)->with('id_user', $id);
     }
 
     public function updateCarteirinha(Request $request, $id)
@@ -74,6 +74,13 @@ class CarteirinhaController extends Controller
             return redirect()->route('carteirinha.index');
         }
         
+    }
+
+    public function gerarNumero(Request $request)
+    {
+        $carteirinhaRespository = new CarteirinhaRepository;
+        $carteirinha = $carteirinhaRespository->gerarNumero($request);
+        return redirect()->back();
     }
 
 

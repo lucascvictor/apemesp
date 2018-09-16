@@ -87,7 +87,13 @@
          </div>
       </form>
       @else
-      <a class="btn btn-info" href="">Gerar numero para este associado </a>
+      <form class="form-horizontal" method="GET" action="/admin/carteirinhas/gerarnumero/">
+        {{ csrf_field() }}
+        <input type="hidden" id="id" name="id" value="{{ $id_user }}">
+            <button class="btn btn-info">
+            Gerar numero para este associado
+            </button>
+      </form>
       @endif
    </div>
 </div>

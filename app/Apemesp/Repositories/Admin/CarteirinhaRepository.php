@@ -15,6 +15,8 @@ use Apemesp\Apemesp\Models\DadosBancarios;
 
 use Apemesp\Apemesp\Models\DadosPessoais;
 
+use Apemesp\Apemesp\Models\FormacoesAcademicas;
+
 use DB;
 
 class CarteirinhaRepository
@@ -123,6 +125,53 @@ class CarteirinhaRepository
 	public function gravaArquivo($nomeArquivo, $ano, $id)
 	{
 		Carteirinha::where('id_user','=', $id,'and','ano','=',$ano)->update(['comprovante' => $nomeArquivo]);
+	}
+
+
+	public function gerarNumero($request)
+	{
+		$i = 0;
+		$formacoes = new FormacoesAcademicas;
+		$carteirinha = new Carteirinha;
+
+		$formacoesAssociado = $formacoes->where('id_usuario','=',$request->id)->get();
+
+		if(isset($formacoesAssociado[0])) {
+			foreach($formacoesAssociado as $formacao) {
+				if($i%2 == 0) {
+					$f = $formacao->id_categoria_formacao;
+				}
+				if($f > $formacao->id_categoria_formacao) {
+				$digito = $f;
+				} else {
+				$digito = $formacao->id_categoria_formacao;
+				}
+				$i++;
+			}
+		} else {
+			$digito = 1;
+		}
+		
+		
+		$numeros = $carteirinha->where('numero','>=',180000)->get();
+
+		if(!empty($numeros[0])) {
+		$numeroAssociado = $numeros->last()->numero + 1;
+		} else {
+		$numeroAssociado = 180000;
+		}
+		
+		$verifica = Carteirinha::where('id_user', $request->id)->select('*')->get()->first();
+	
+		if($verifica == null) {
+			$carteirinha->id_user = $request->id;
+			$carteirinha->digito = $digito;
+			$carteirinha->numero = $numeroAssociado;
+			$carteirinha->japossui = 2;
+			$carteirinha->status = 1;
+			$carteirinha->data_pedido = date("Y-m-d");
+			$carteirinha->save();
+		}
 	}
 
 }
