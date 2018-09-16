@@ -84,6 +84,27 @@ class CarteirinhaRepository
 		return $carteirinha;
 	}
 
+	public function updateCarteirinha($request, $id)
+	{
+		$verificacao = Carteirinha::where('digito', $request->digito)->where('numero', $request->numero)->select('*')->get();
+		if(!isset($verificacao[0])) {
+		Carteirinha::where('id', $id)
+		->update([
+				'digito' => $request->digito,
+				'numero' => $request->numero,
+				'status' => $request->status,
+				'japossui' => $request->japossui,
+				'data_pedido' => $request->data_pedido,
+				'data_confeccao' => $request->data_confeccao,
+				'data_ultimavia' => $request->data_ultimavia,
+				'updated_at' => date("Y-m-d H:i:s")
+				]);
+		} else {
+			return $verificacao;
+		}
+		
+	}
+
 	public function getCpf($id_user)
 	{
 		$dado = DadosPessoais::where('id_user', $id_user)->select('cpf')->get()->first();

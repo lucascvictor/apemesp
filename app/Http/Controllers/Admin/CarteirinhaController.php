@@ -60,4 +60,21 @@ class CarteirinhaController extends Controller
         return view('admin.admin.carteirinhas.edit')->with('carteirinha', $carteirinha);
     }
 
+    public function updateCarteirinha(Request $request, $id)
+    {
+        $carteirinhaRespository = new CarteirinhaRepository;
+        $carteirinha = $carteirinhaRespository->updateCarteirinha($request, $id);
+        unset($carteirinhaRespository);
+        
+        if ($carteirinha) {
+            Session::flash("cuidado", "O numero de associado já está em utilização");
+            return redirect()->back();
+        } else {
+            Session::flash("sucesso", "Atualização realizada com sucesso.");
+            return redirect()->route('carteirinha.index');
+        }
+        
+    }
+
+
 }

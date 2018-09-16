@@ -1,16 +1,29 @@
-                   
-<li class="message-preview">
-        <a href="#">
-            <div class="media">
-                <span class="pull-left">
-                    <img class="media-object" src="http://placehold.it/50x50" alt="">
-                </span>
-                <div class="media-body">
-                    <h5 class="media-heading"><strong>John Smith</strong>
-                    </h5>
-                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                    <p><?= strtotime(date('Y-m-d')); ?>.</p>
-                </div>
-            </div>
-        </a>
-    </li>
+@if (Session::has('sucesso'))
+
+	<div class="alert alert-success" role="alert">
+
+		<strong>Sucesso:</strong> {{ Session::get('sucesso') }}
+	</div>
+
+@endif
+
+
+@if (count($errors) > 0)
+	<div class="alert alert-danger" role="alert">
+		<strong> Erros: </strong>
+		<ul>
+			@foreach($errors->all() as $error)
+				<li> {!! $error !!}</li>
+			@endforeach
+		</ul>
+	</div>
+@endif
+
+@if (Session::has('cuidado'))
+
+	<div class="alert alert-warning" role="alert">
+
+		<strong>Cuidado:</strong> {!! Session::get('cuidado') !!}
+	</div>
+
+@endif
