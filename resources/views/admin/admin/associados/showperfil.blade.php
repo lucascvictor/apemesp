@@ -7,6 +7,13 @@
 <?php use Apemesp\Apemesp\Classes\Associado; ?>
 <?php $musicoterapeuta = new Associado; ?>
 <div class="row">
+	<div class="col-md-4">
+		@if($carteirinha)
+		<h4>Numero do associado: {{ $carteirinha->digito }}-{{ $carteirinha->numero }}</h4>
+		@endif
+	</div>
+</div>
+<div class="row">
    <div class="col-md-4">
     @include('admin.admin.associados.dadospessoais')
    </div>

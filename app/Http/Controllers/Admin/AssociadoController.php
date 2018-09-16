@@ -14,6 +14,8 @@ use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosProfissionaisRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\CarteirinhaRepository;
+
 use Session;
 
 use View;
@@ -61,6 +63,7 @@ class AssociadoController extends Controller
     {
         $associadoRepository = new AssociadoRepository;
         $professionaldata = new DadosProfissionaisRepository;
+        $carteirinhaRepository = new CarteirinhaRepository;
 
         $associado = $associadoRepository->getAssociado($id);
         $dadosacademicos = $associadoRepository->getDadosAcademicos($id);
@@ -72,6 +75,7 @@ class AssociadoController extends Controller
         $especialidades = $professionaldata->getEspecialidades();
         $atendimento = $professionaldata->getEscalas();
         $cidades = $associadoRepository->getCidades();
+        $carteirinha = $carteirinhaRepository->getCarteirinha($id);
 
         return view("admin.admin.associados.showperfil")
         ->with("associado", $associado)
@@ -83,7 +87,8 @@ class AssociadoController extends Controller
         ->with("cidades", $cidades)
         ->with("regioes", $regioes)
         ->with("especialidades", $especialidades)
-        ->with("atendimento", $atendimento);
+        ->with("atendimento", $atendimento)
+        ->with("carteirinha", $carteirinha);
     }
 
     public function search(Request $request)

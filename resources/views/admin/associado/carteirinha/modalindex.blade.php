@@ -18,7 +18,7 @@
                  <div class="form-group">
                      <label class="col-md-4 control-label" for="digito">Digito:</label>
                      <div class="col-md-4">
-                        <input  id="digito" name="digito" type="number"   size=1 maxlength=1 placeholder="Ex.: 1" class="form-control input-md" required="">
+                        <input  id="digito" name="digito" type="number" min=1 max=9 placeholder="Ex.: 1" class="form-control input-md" required="">
                      </div>
                   </div>
                   <div class="form-group">

@@ -50,23 +50,19 @@ class CarteirinhaController extends Controller
     $carteirinha = $carteirinhaRepository->getStatus($this->getUserId());
     $anuidades = $financeiroRepository->getAssociado($this->getUserId());
       if($carteirinha){
-        if($carteirinha->status >= 3) {
-          return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
+        foreach($anuidades as $anuidade) {
+          if($anuidade->ano == date("Y") && $anuidade->status != 2 && $anuidade->status != 3) {
+            return view('admin.associado.restricao');
+          } else {
+            return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
+          }
         }
-      }
-      
-      foreach($anuidades as $anuidade) {
-        if($anuidade->ano == date("Y") && $anuidade->status != 2 && $anuidade->status != 3) {
+        if(empty($anuidade) || !isset($anuidade) || $anuidade == null) {
           return view('admin.associado.restricao');
-        } else {
-          return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
         }
-      }
-      
-      if(empty($anuidade) || !isset($anuidade) || $anuidade == null) {
+      } else {
         return view('admin.associado.restricao');
       }
-
   }
 
   public function getIdCadastro()
@@ -87,8 +83,6 @@ class CarteirinhaController extends Controller
 
     } 
       return $this->getIndex();
-
-    
   }
 
   public function getCertificado()

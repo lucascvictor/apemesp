@@ -108,7 +108,8 @@ class AdminController extends Controller
                 return view('admin.associado.index')
                 ->with('dadosbancarios', $financeiro->getDadosBancarios())
                 ->with('statusCarteirinha', $carteirinhaRepository->getStatus(Auth::user()->id))
-                ->with('status6',$status6);
+                ->with('status6',$status6)
+                ->with('carteirinha', $carteirinhaRepository->getNumero(Auth::user()->id));
             } else {
                 return view('admin.inadimplente');
             }
