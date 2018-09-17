@@ -31,7 +31,7 @@
 
   </head>
 
-    <body style="background-color: #dbe3e9" id="app-layout">
+    <body style="background-color: #dbe3e9" id="app-layout" onLoad="codeAddress()">
 
 
 

@@ -3,8 +3,6 @@ A FAZER:
 
 
 
-- É possível inserir um botão para visualizar o perfil desse profissional, de acordo com os dados profissionais preenchidos por eles e que forem permitidos serem exibidos? (Isso ocorre na área de associado/admin, mas é possível que isso fique aberto na área de pesquisa, o que não acontece ainda)
-
 - O link para envio de Comprovante de residência aparece como "Enviar CNH", e parece estar conectado com a CNH, pois ao enviar documento por um link, o envio aparece em ambos os campos
 
 - Não consigo deletar uma informação profissional repetiva/indesejada
@@ -19,7 +17,6 @@ A FAZER:
 
 - É possível disponibilizar um botão com a opção de download em pdf desse comprovante?
 
-- Na página "Encontre um Musicoterapeuta", é possível aparecer apenas o nome do musicoterapeuta e no lugar do link "enviar e-mail" (que não está funcionando), direcionar para os dados profissionais do associado e, na página de exibição desses dados, colocar o botão de envio de e-mail
 __________________________________________________________________________________________
 - É possível extrair um relatório com os dados dos associados cadastrados e sua situação atual?
 
@@ -56,3 +53,6 @@ FEITO:
 - Geração do numero do assoaciado caso não exista quando o status financeiro for alterado para "em dia" no ano vigente
 - No perfil de usuário, ao clicar em "Já tenho carteirinha" não acontece nada (agora o associado pode lançar o numero atual caso já não esteja em utilização)
 - Onde posso editar o número de associado/a? (opção de gerenciamento de carteirinhas)
+- É possível inserir um botão para visualizar o perfil desse profissional, de acordo com os dados profissionais preenchidos por eles e que forem permitidos serem exibidos? (Isso ocorre na área de associado/admin, mas é possível que isso fique aberto na área de pesquisa, o que não acontece ainda)
+
+- Na página "Encontre um Musicoterapeuta", é possível aparecer apenas o nome do musicoterapeuta e no lugar do link "enviar e-mail" (que não está funcionando), direcionar para os dados profissionais do associado e, na página de exibição desses dados, colocar o botão de envio de e-mail
