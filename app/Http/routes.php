@@ -50,9 +50,8 @@ Route::get('/agenda', 'Apemesp\AgendaController@getAgenda')->name('apemesp.agend
 Route::group(['prefix' => 'encontreummt'], function () {
   Route::post('/search', 'Apemesp\EncontreUmMtController@search')->name('apemesp.encontreummt.search');
   Route::get('', 'Apemesp\EncontreUmMtController@getIndex')->name('apemesp.encontreummt');
+  Route::get('/perfil/{id_user}/dadosprofissionais/{id}', 'Apemesp\EncontreUmMtController@getPerfil')->name('encontreummt.perfil');
 });
-
-
 
 //Rotas de autenticação
 Route::get('auth/login', 'Apemesp\PagesController@getIndex')->name('login');

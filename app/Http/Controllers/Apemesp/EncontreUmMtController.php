@@ -7,6 +7,8 @@ use Apemesp\Apemesp\Repositories\Apemesp\EncontreUmMtRepository;
 use Apemesp\Apemesp\Repositories\Admin\EspecialidadeRepository;
 use Apemesp\Apemesp\Repositories\Admin\EscalaRepository;
 use Apemesp\Apemesp\Repositories\Admin\ProximidadeRepository;
+use Apemesp\Apemesp\Repositories\Associado\DadosProfissionaisRepository;
+use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository;
 use Illuminate\Http\Request;
 use Apemesp\Http\Requests;
 use View;
@@ -39,34 +41,53 @@ class EncontreUmMtController extends Controller{
 				->with('mts', $musicoterapeutas);
     }
 
-		public function search(Request $request)
-		{
-			$especialidades = new EspecialidadeRepository;
-			$escalas = new EscalaREpository;
-			$proximidades = new ProximidadeRepository;
-			$mts = array();
+	public function search(Request $request)
+	{
+		$especialidades = new EspecialidadeRepository;
+		$escalas = new EscalaREpository;
+		$proximidades = new ProximidadeRepository;
+		$mts = array();
 
-				$encontreummtRepository = new EncontreUmMtRepository;
+			$encontreummtRepository = new EncontreUmMtRepository;
 
-				$especialidade = $request->especialidade;
-				$proximidade = $request->proximidade;
-				$escala = $request->escala;
-				$nome = $request->nome;
+			$especialidade = $request->especialidade;
+			$proximidade = $request->proximidade;
+			$escala = $request->escala;
+			$nome = $request->nome;
 
-				if ($proximidade == null && $escala == null && $nome == null && $especialidade ==null) {
-					$mts = $encontreummtRepository->getMtAll();
-				} else {
-					$mts = $encontreummtRepository->getMts($proximidade, $escala, $nome, $especialidade);
-				}
+			if ($proximidade == null && $escala == null && $nome == null && $especialidade ==null) {
+				$mts = $encontreummtRepository->getMtAll();
+			} else {
+				$mts = $encontreummtRepository->getMts($proximidade, $escala, $nome, $especialidade);
+			}
 
-				$musicoterapeutas = $encontreummtRepository->valida($mts);
+			$musicoterapeutas = $encontreummtRepository->valida($mts);
 
-				unset($encontreummtRepository);
-				return view('paginas.encontreummt')->with('mts', $musicoterapeutas)
-				->with('especialidades', $especialidades->getEspecialidades())
-				->with('proximidades', $proximidades->getProximidades())
-				->with('escalas', $escalas->getEscalas());
+			unset($encontreummtRepository);
+			return view('paginas.encontreummt')->with('mts', $musicoterapeutas)
+			->with('especialidades', $especialidades->getEspecialidades())
+			->with('proximidades', $proximidades->getProximidades())
+			->with('escalas', $escalas->getEscalas());
 
-		}
+	}
+
+	public function getPerfil($id_user, $id)
+	{
+		$dpRep = new DadosProfissionaisRepository;
+		$dpssRep = new DadosPessoaisRepository;
+		$especialidades = new EspecialidadeRepository;
+		$escalas = new EscalaREpository;
+		$proximidades = new ProximidadeRepository;
+
+		$dadosPro = $dpRep->getDadoProfissional($id, $id_user);
+		$dadosPess = $dpssRep->getDadosPessoais($id_user);
+		
+		return view('paginas.encontreummt.perfil')
+		->with('dadosPess', $dadosPess)
+		->with('dadosPro', $dadosPro)
+		->with('especialidades', $especialidades->getEspecialidades())
+		->with('proximidades', $proximidades->getProximidades())
+		->with('escalas', $escalas->getEscalas());
+	}
 
 }
