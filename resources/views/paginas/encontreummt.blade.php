@@ -67,7 +67,7 @@
                   <td>{{ $mt->endereco}}</td>
                   <td>{{ $mt->telefone }}</td>
                   <td>{{ $mt->escala }}</td>
-                  <td><a class="btn btn-primary">Enviar e-mail</a></td>
+                  <td><a class="btn btn-primary" href="{{ url('/encontreummt/perfil/$mt->id_user/dadosprofissionais/$mt->id')}}" target="_blank">Visualizar Perfil Completo</a></td>
                </tr>
                @endforeach
                @endif
