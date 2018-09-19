@@ -91,6 +91,7 @@ class CarteirinhaController extends Controller
     $repRepository = new RepresentanteLegalRepository;
     $carteirinhaRepository = new CarteirinhaRepository; 
     $admfim = new FinanceiroRepository;
+    $dadosAcademicos = new DadosAcademicosRepository;
 
     $carteirinha = $carteirinhaRepository->getStatus($this->getUserId());
     $numeroCarteirinha = $carteirinhaRepository->getNumero($this->getUserId());
@@ -110,7 +111,9 @@ class CarteirinhaController extends Controller
       ->with('associado', $associado)
       ->with('numeroCarteirinha', $numeroCarteirinha)
       ->with('representante', $representante)
-      ->with('carteirinha', $carteirinha);
+      ->with('carteirinha', $carteirinha)
+      ->with('cidade', $dadosAcademicos->getCidadeEspecifica($associado->id_cidade))
+      ->with('estados', $dadosAcademicos->getEstados());
     } else {
       Session::get("cuidado", "Sua situação financeira atual não permite a emissão do comprovante");
       return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);

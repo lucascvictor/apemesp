@@ -100,10 +100,16 @@ $mes = 'Dezembro';
             tendo por representante legal, {{ $representante->nome }}, {{ $representante->estado_civil }};{{ $representante->profissao }},
             portador do Documento de Identidade RG nº {{ $representante->rg }}; inscrito no CPF/MF sob
             o nº {{ $representante->cpf }}; residente e domiciliado em {{ $representante->endereco }};
-            reconhece o vínculo de associada de {{ $associado->nome }}, inscrita na APEMESP sob o número {{ $numeroCarteirinha }},
+            reconhece o vínculo de associado(a) de {{ $associado->name }}, inscrito(a) na APEMESP sob o número {{ $numeroCarteirinha }},
             carteira de identidade nº {{ $associado->rg }}, CPF {{ $associado->cpf }},
             residente e domiciliado na {{ $associado->endereco }}, na cidade de
-            {{ $associado->id_cidade }}, no estado de {{ $associado->id_estado }} e declara que o/a associado/a está em
+            {{ $cidade }}, no estado de 
+            @foreach($estados as $estado)
+                @if($estado->id == $associado->id_estado)
+                    {{ $estado->nome }} 
+                @endif
+            @endforeache 
+            declara que o/a associado/a está em
             dia com suas obrigações financeiras e documentais junto a associação no ano de <?= $ano ?>.</p>
             <br>
            </div>

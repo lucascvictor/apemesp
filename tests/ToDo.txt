@@ -5,11 +5,7 @@ A FAZER:
 
 - O link para envio de Comprovante de residência aparece como "Enviar CNH", e parece estar conectado com a CNH, pois ao enviar documento por um link, o envio aparece em ambos os campos
 
-- Não consigo deletar uma informação profissional repetiva/indesejada
-
 - Na área de admin, a cada ano que precise ser gerenciado, é necessário voltar a área financeira e buscar novamente o usuário. É possível otimizar isso e o site passar para o próximo ano ou voltar ao perfil do usuário já pesquisado quando um gerenciamento for feito?
-
-- Ao enviar um arquivo como comprovante de anuidade, não há alteração no campo "Arquivo enviado?", o que não deixa claro (nem no login de associado nem no login de admin) se o arquivo realmente foi enviado
 
 - A declaração de associado não está coletando os dados do usuário corretamente, deixando números no campo cidade ou apresentando um número padrão no campo de CPF (ver imagem)
 
@@ -55,3 +51,6 @@ FEITO:
 - Na página "Encontre um Musicoterapeuta", é possível aparecer apenas o nome do musicoterapeuta e no lugar do link "enviar e-mail" (que não está funcionando), direcionar para os dados profissionais do associado e, na página de exibição desses dados, colocar o botão de envio de e-mail
 - Vou enviar por e-mail a assinatura que deve ser utilizada no comprovante, pois está aparecendo o modelo antigo, que está com uns pixels estranhos sombreando.
 (Foi corrigido diretamente no site | painel do representante legal)
+- Não consigo deletar uma informação profissional repetiva/indesejada (CORRIGIDO)
+- Ao enviar um arquivo como comprovante de anuidade, não há alteração no campo "Arquivo enviado?", o que não deixa claro (nem no login de associado nem no login de admin) se o arquivo realmente foi enviado
+(Eu testei no perfil de usuario e administrador, os dois funcionam normalmente)
