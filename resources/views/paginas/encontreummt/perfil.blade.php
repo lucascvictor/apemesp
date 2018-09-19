@@ -38,7 +38,7 @@
    </div>
    <div class="col-md-4">
    @if($dadosPess[0]->foto == "foto.jpg")
-    <img src="{{ url('files/') }}/{{ $dadosPess[0]->cpf }}/foto.jpg" style="width: 60%; height: 70%;">
+    <img src="{{ url('public/files/') }}/{{ $dadosPess[0]->cpf }}/foto.jpg" style="width: 60%; height: 70%;">
    @endif
    </div>
 </div>
