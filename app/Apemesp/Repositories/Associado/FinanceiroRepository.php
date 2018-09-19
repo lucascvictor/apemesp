@@ -20,7 +20,7 @@ class FinanceiroRepository
 
   	public function getAnuidades($id_usuario)
 	{
-		return Anuidade::where('id_user', $id_usuario)->select('*')->get();
+		return Anuidade::where('id_user', $id_usuario)->select('*')->orderBy('ano', 'desc')->get();
 	}
 
 	public function storeAnuidade($id_user, $request)

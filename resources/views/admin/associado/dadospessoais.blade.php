@@ -39,7 +39,7 @@
 
                 <label class="col-md-4 control-label" for="nascimento"><span style="color:red;">*</span>Data de Nascimento:</label>
                 <div class="col-md-4">
-                <input name="nascimento" id="nascimento" class="form-control" type="date" value="" required="">
+                <input name="nascimento" id="nascimento" placeholder="ano-mes-dia" class="form-control" type="date" value="" required="">
 
                 </div>
               </div>

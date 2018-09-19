@@ -108,7 +108,6 @@
 									                <div class="col-md-4">
 									                <div class="input-group" data-link-format="yyyy">
 									                    <input name="anodeconclusao" id="anodeconclusao" maxlength="4" class="form-control" type="number" value="">
-														<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 									                </div>
 									                </div>
 									      			  </div>
@@ -187,14 +186,9 @@
 									                <div class="col-md-4">
 									                <div class="input-group" data-link-format="yyyy">
 									                    <input name="cargahoraria" id="cargahoraria"  maxlength="5" class="form-control" type="number" value="" placeholder="Apenas números">
-														<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
 									                </div>
 									                </div>
 									      			  </div>
-
-
-
-
 
 											</fieldset>
 											<div class="modal-footer">

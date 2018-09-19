@@ -37,7 +37,6 @@
          <div class="col-md-4">
             <div class="input-group" data-link-format="yyyy">
                <input name="anodeconclusao" id="anodeconclusao"  maxlength="4" class="form-control" type="number" value="{{ $formacao->anodeconclusao }}">
-               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
          </div>
       </div>
