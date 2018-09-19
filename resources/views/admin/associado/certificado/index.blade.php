@@ -103,7 +103,7 @@ $mes = 'Dezembro';
             reconhece o vínculo de associado(a) de {{ $associado->name }}, inscrito(a) na APEMESP sob o número {{ $numeroCarteirinha }},
             carteira de identidade nº {{ $associado->rg }}, CPF {{ $associado->cpf }},
             residente e domiciliado na {{ $associado->endereco }}, na cidade de
-            {{ $cidade }}, no estado de 
+            {{ $cidade->nome }}, no estado de 
             @foreach($estados as $estado)
                 @if($estado->id == $associado->id_estado)
                     {{ $estado->nome }} 
