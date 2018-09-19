@@ -108,7 +108,7 @@ $mes = 'Dezembro';
                 @if($estado->id == $associado->id_estado)
                     {{ $estado->nome }} 
                 @endif
-            @endforeache 
+            @endforeach 
             declara que o/a associado/a está em
             dia com suas obrigações financeiras e documentais junto a associação no ano de <?= $ano ?>.</p>
             <br>
