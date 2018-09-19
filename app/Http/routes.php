@@ -329,7 +329,7 @@ Route::group(['prefix' => 'associado'], function () {
       Route::post('{id}', 'Associado\DadosProfissionaisController@updateDadosProfissionais');
       Route::get('/edit/{id}', 'Associado\DadosProfissionaisController@editDadosProfissionais');
       Route::post('', 'Associado\DadosProfissionaisController@storeDadosProfissionais');
-      Route::post('/destroy/{id}', 'Associado\DadosProfissionaisController@destroyDadosProfissionais');
+      Route::get('/destroy/{id}', 'Associado\DadosProfissionaisController@destroyDadosProfissionais');
     });
 
     Route::post('especpro', 'Admin\EspecialidadeController@storeEspecialidade');

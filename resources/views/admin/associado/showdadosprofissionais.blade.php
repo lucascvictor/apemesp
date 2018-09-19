@@ -127,7 +127,7 @@
    </fieldset>
    <div class="modal-footer">
      <a class="btn btn-info" href="{{ url('/associado/dadosprofissionais/edit/') }}/{{ $dados[0]->id }}">Editar</a>
-     <a class="btn btn-danger" href="{{ url('/associado/dadosprofissionais/edit/') }}/{{ $dados[0]->id }}">Excluir</a>
+     <a class="btn btn-danger" href="{{ url('/associado/dadosprofissionais/destroy/') }}/{{ $dados[0]->id }}">Excluir</a>
   </div>
 </form>
 

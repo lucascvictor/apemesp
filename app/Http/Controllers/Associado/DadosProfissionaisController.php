@@ -200,7 +200,7 @@ class DadosProfissionaisController extends Controller{
     {
       $repository = new DadosProfissionaisRepository;
       $repository->destroy($id);
-      return redirect()->back();
+      return $this->index();
     }
 
 
