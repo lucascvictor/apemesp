@@ -81,7 +81,7 @@
                   <td><b>Comprovante de Endereço:</b></td>
                   <?php $comprovante_e = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $cpf . "/comprovante_e.pdf"; ?>
                   <td>
-                     <?php if (file_exists($arquivocnh)) {
+                     <?php if (file_exists($comprovante_e)) {
                         echo "SIM";
 						$documentacao[3] = 1;
                         } else {
@@ -91,7 +91,7 @@
                         ?>
                   </td>
                   <td><a href="/associado/download/comprovante_e.pdf">dowload</a></td>
-                  <td><a class="btn btn-default" href="" data-toggle="modal" data-target="#cnhModal">Editar</a></td>
+                  <td><a class="btn btn-default" href="" data-toggle="modal" data-target="#comprovanteModal">Editar</a></td>
                </tr>
             </tbody>
          </table>
@@ -199,11 +199,11 @@
             <div class="modal-body">
                <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/documentacao/comprovante')}}">
                   {{ csrf_field() }}
-                  <!-- Botão de Arquivo para CNH-->
+                  <!-- Botão de Arquivo para comprovante_e-->
                   <div class="form-group" id="mensagem3">
                      <label class="col-md-4 control-label" for="filebutton">Comprovante: </label>
                      <div class="col-md-4">
-                        <input id="documento4" name="cnh" class="input-file" type="file">
+                        <input id="comprovante_e" name="comprovante_e" class="input-file" type="file">
                         <br />
                         <button class="btn btn-success">
                         Enviar novo comprovante

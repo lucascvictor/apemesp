@@ -81,7 +81,7 @@ class DocumentacaoController extends Controller{
               'cpf' => 'required|max:2550',
           ));
       $dadosAcademicos = new DadosAcademicosRepository;
-      $arquivo = $request->file('rg');
+      $arquivo = $request->file('cpf');
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
       $nomeArquivo = 'cpf' . '.' . $request->file('cpf')->getClientOriginalExtension();
       if (file_exists($pastaDestino . $nomeArquivo)) {
@@ -97,7 +97,7 @@ class DocumentacaoController extends Controller{
               'cnh' => 'required|max:2550',
           ));
       $dadosAcademicos = new DadosAcademicosRepository;
-      $arquivo = $request->file('rg');
+      $arquivo = $request->file('cnh');
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
       $nomeArquivo = 'cnh' . '.' . $request->file('cnh')->getClientOriginalExtension();
       if (file_exists($pastaDestino . $nomeArquivo)) {
@@ -111,16 +111,16 @@ class DocumentacaoController extends Controller{
     public function storeComprovante(Request $request)
     {
       $teste = $this->validate($request, array(
-              'cnh' => 'required|max:2550',
+              'comprovante_e' => 'required|max:2550',
           ));
       $dadosAcademicos = new DadosAcademicosRepository;
-      $arquivo = $request->file('rg');
+      $arquivo = $request->file('comprovante_e');
       $pastaDestino = base_path() . DIRECTORY_SEPARATOR . 'public/files/' . $dadosAcademicos->getCpf($this->getIdUsuario());
-      $nomeArquivo = 'comprovante_e' . '.' . $request->file('cnh')->getClientOriginalExtension();
+      $nomeArquivo = 'comprovante_e' . '.' . $request->file('comprovante_e')->getClientOriginalExtension();
       if (file_exists($pastaDestino . $nomeArquivo)) {
         unlink($pastaDestino . $nomeArquivo);
       }
-      $request->file('cnh')->move($pastaDestino, $nomeArquivo);
+      $request->file('comprovante_e')->move($pastaDestino, $nomeArquivo);
       return redirect()->back();
     }
 

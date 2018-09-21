@@ -7,8 +7,6 @@ A FAZER:
 
 - Na área de admin, a cada ano que precise ser gerenciado, é necessário voltar a área financeira e buscar novamente o usuário. É possível otimizar isso e o site passar para o próximo ano ou voltar ao perfil do usuário já pesquisado quando um gerenciamento for feito?
 
-- A declaração de associado não está coletando os dados do usuário corretamente, deixando números no campo cidade ou apresentando um número padrão no campo de CPF (ver imagem)
-
 - É possível disponibilizar um botão com a opção de download em pdf desse comprovante?
 
 __________________________________________________________________________________________
@@ -54,3 +52,4 @@ FEITO:
 - Não consigo deletar uma informação profissional repetiva/indesejada (CORRIGIDO)
 - Ao enviar um arquivo como comprovante de anuidade, não há alteração no campo "Arquivo enviado?", o que não deixa claro (nem no login de associado nem no login de admin) se o arquivo realmente foi enviado
 (Eu testei no perfil de usuario e administrador, os dois funcionam normalmente)
+- A declaração de associado não está coletando os dados do usuário corretamente, deixando números no campo cidade ou apresentando um número padrão no campo de CPF (ver imagem)
