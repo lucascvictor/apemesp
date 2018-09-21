@@ -3,7 +3,6 @@ A FAZER:
 
 
 
-- O link para envio de Comprovante de residência aparece como "Enviar CNH", e parece estar conectado com a CNH, pois ao enviar documento por um link, o envio aparece em ambos os campos
 
 - Na área de admin, a cada ano que precise ser gerenciado, é necessário voltar a área financeira e buscar novamente o usuário. É possível otimizar isso e o site passar para o próximo ano ou voltar ao perfil do usuário já pesquisado quando um gerenciamento for feito?
 
@@ -53,3 +52,4 @@ FEITO:
 - Ao enviar um arquivo como comprovante de anuidade, não há alteração no campo "Arquivo enviado?", o que não deixa claro (nem no login de associado nem no login de admin) se o arquivo realmente foi enviado
 (Eu testei no perfil de usuario e administrador, os dois funcionam normalmente)
 - A declaração de associado não está coletando os dados do usuário corretamente, deixando números no campo cidade ou apresentando um número padrão no campo de CPF (ver imagem)
+- O link para envio de Comprovante de residência aparece como "Enviar CNH", e parece estar conectado com a CNH, pois ao enviar documento por um link, o envio aparece em ambos os campos
