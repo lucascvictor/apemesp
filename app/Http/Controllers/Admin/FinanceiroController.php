@@ -88,6 +88,7 @@ class FinanceiroController extends Controller
     {
       
       $financeiroRespository = new FinanceiroRepository;
+      $carteirinhaRespository = new CarteirinhaRepository;
       $anuidade = $financeiroRespository->storeAnuidade($request->id, $request);
       
       if ($anuidade) {
@@ -135,7 +136,7 @@ class FinanceiroController extends Controller
       {
         $carteirinhaRespository->gerarNumeroAssociado($request);
       }
-      return redirect()->back();
+      return $this->getAssociado($request->id);
 
     }
 

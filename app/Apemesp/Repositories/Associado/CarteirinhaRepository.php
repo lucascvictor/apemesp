@@ -71,40 +71,41 @@ class CarteirinhaRepository
 		$i = 0;
 		$formacoes = new FormacoesAcademicas;
 		$carteirinha = new Carteirinha;
-
-		$formacoesAssociado = $formacoes->where('id_usuario','=',$request->id)->get();
-
-		foreach($formacoesAssociado as $formacao) {
-			if($i%2 == 0) {
-				$f = $formacao->id_categoria_formacao;
-			}
-			if($f > $formacao->id_categoria_formacao) {
-			$digito = $f;
-			} else {
-			$digito = $formacao->id_categoria_formacao;
-			}
-			$i++;
-		}
-		
-		$numeros = $carteirinha->where('numero','>=',180000)->get();
-
-		if(!empty($numeros[0])) {
-		$numeroAssociado = $numeros->last()->numero + 1;
-		} else {
-		$numeroAssociado = 180000;
-		}
+		$digito = 1;
 		
 		$verifica = Carteirinha::where('id_user', $request->id)->select('*')->get()->first();
 	
 		if($verifica == null) {
-			$carteirinha->id_user = $request->id;
-			$carteirinha->digito = $digito;
-			$carteirinha->numero = $numeroAssociado;
-			$carteirinha->japossui = 2;
-			$carteirinha->status = 1;
-			$carteirinha->data_pedido = date("Y-m-d");
-			$carteirinha->save();
-		}
+				$formacoesAssociado = $formacoes->where('id_usuario','=',$request->id)->get();
+
+				foreach($formacoesAssociado as $formacao) {
+					if($i%2 == 0) {
+						$f = $formacao->id_categoria_formacao;
+					}
+					if($f > $formacao->id_categoria_formacao) {
+					$digito = $f;
+					} else {
+					$digito = $formacao->id_categoria_formacao;
+					}
+					$i++;
+				}
+				
+				$numeros = $carteirinha->where('numero','>=',180000)->get();
+
+				if(!empty($numeros[0])) {
+				$numeroAssociado = $numeros->last()->numero + 1;
+				} else {
+				$numeroAssociado = 180000;
+				}
+				
+				$carteirinha->id_user = $request->id;
+				$carteirinha->digito = $digito;
+				$carteirinha->numero = $numeroAssociado;
+				$carteirinha->japossui = 2;
+				$carteirinha->status = 1;
+				$carteirinha->data_pedido = date("Y-m-d");
+				$carteirinha->save();
+			}
 	}
 
 }
