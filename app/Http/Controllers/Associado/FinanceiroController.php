@@ -79,7 +79,7 @@ class FinanceiroController extends Controller{
       } else {
         Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
       }
-      return redirect()->back(); 
+      return $this->getIndex(); 
     }
 
     public function updateAnuidade(Request $request, $id_user)
@@ -89,7 +89,7 @@ class FinanceiroController extends Controller{
         $nomeArquivo = 'comprovante_'. $request->ano . '.' . $request->file('comprovante')->getClientOriginalExtension();
         $request->file('comprovante')->move($pastaDestino, $nomeArquivo);
         $financeiroRespository->gravaArquivo($nomeArquivo, $request->ano, $this->getIdUsuario());
-        return redirect()->back();
+        return $this->getIndex();
     }
 
 }
