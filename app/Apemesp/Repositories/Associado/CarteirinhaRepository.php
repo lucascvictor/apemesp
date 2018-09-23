@@ -93,9 +93,9 @@ class CarteirinhaRepository
 				$numeros = $carteirinha->where('numero','>=',180000)->get();
 
 				if(!empty($numeros[0])) {
-				$numeroAssociado = $numeros->last()->numero + 1;
+					$numeroAssociado = $numeros->last()->numero + 1;
 				} else {
-				$numeroAssociado = 180000;
+					$numeroAssociado = 180000;
 				}
 				
 				$carteirinha->id_user = $request->id;

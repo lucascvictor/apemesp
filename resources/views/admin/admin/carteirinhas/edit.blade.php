@@ -4,8 +4,6 @@
 <div class="row">
    <div class="col-md-4">
    </div>
-   <div class="col-md-4">
-   </div>
 </div>
 <div class="row">
    <div class="col-md-12">
@@ -36,15 +34,15 @@
                <label class="col-md-4 control-label" for="status">Status:</label>
                <div class="col-md-4">
                   <select id="status" name="status" class="form-control">
-                  <option value="1" @if($carteirinha->status == 1) selected @endif>
-                  Pedido de confecção
-                  </option>
-                  <option value="2" @if($carteirinha->status == 2) selected @endif>
-                  Confecção realizada
-                  </option>
-                  <option value="3" @if($carteirinha->status == 3) selected @endif>
-                  Envio da carteirinha
-                  </option>
+                    <option value="1" @if($carteirinha->status == 1) selected @endif>
+                    Pedido de confecção
+                    </option>
+                    <option value="2" @if($carteirinha->status == 2) selected @endif>
+                    Confecção realizada
+                    </option>
+                    <option value="3" @if($carteirinha->status == 3) selected @endif>
+                    Envio da carteirinha
+                    </option>
                   </select>
                </div>
             </div>
@@ -52,12 +50,12 @@
                <label class="col-md-4 control-label" for="japossui">Já possui:</label>
                <div class="col-md-4">
                   <select id="japossui" name="japossui" class="form-control">
-                  <option value="1" @if($carteirinha->japossui == 1) selected @endif>
-                  Sim
-                  </option>
-                  <option value="2" @if($carteirinha->japossui == 2) selected @endif>
-                  Não
-                  </option>
+                    <option value="1" @if($carteirinha->japossui == 1) selected @endif>
+                    Sim
+                    </option>
+                    <option value="2" @if($carteirinha->japossui == 2) selected @endif>
+                    Não
+                    </option>
                   </select>
                </div>
             </div>

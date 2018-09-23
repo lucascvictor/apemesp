@@ -65,13 +65,12 @@ class CarteirinhaController extends Controller
         $carteirinhaRespository = new CarteirinhaRepository;
         $carteirinha = $carteirinhaRespository->updateCarteirinha($request, $id);
         unset($carteirinhaRespository);
-        
         if ($carteirinha) {
             Session::flash("cuidado", "O numero de associado já está em utilização");
             return redirect()->back();
         } else {
             Session::flash("sucesso", "Atualização realizada com sucesso.");
-            return redirect()->route('carteirinha.index');
+            return redirect()->back();
         }
         
     }
