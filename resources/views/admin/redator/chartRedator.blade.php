@@ -1,17 +1,18 @@
  <script>
 
    var barChartData = {
-            labels: [
-                <?php ?>
-                "10 dias", "20 dias", "30 dias"],
+            labels: [@foreach($maisVistos as $maisVisto)
+                    "{{ $maisVisto->id }}",
+                    @endforeach
+                ],
            datasets: [{
                 type: 'bar',
-                label: 'Novos Associados',
+                label: 'Quantidade de visualizações',
                 backgroundColor: "#4BC0C0",
                 data: [
-                "19",
-                "25",
-                "40"    
+                    @foreach($maisVistos as $maisVisto)
+                    "{{ $maisVisto->total_visitas }}",
+                    @endforeach
                 ]
             }]
         };
@@ -23,13 +24,13 @@
                 options: {
                     title:{
                         display:true,
-                        text:"Acompanhamento da confirmação de e-mail"
+                        text:"Posts mais visualizados"
                     },
                     tooltips: {
                         mode: 'index',
                         intersect: false
                     },
-                    responsive: true,
+                    responsive: false,
                     scales: {
                         xAxes: [{
                             stacked: true,

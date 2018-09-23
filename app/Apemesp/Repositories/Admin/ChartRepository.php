@@ -47,5 +47,24 @@ class ChartRepository
 		return PostView::select("*")->get();
 	}
 
+	public function getVisualizacoes()
+	{
+		return DB::table('posts_views')
+		->join('posts', 'posts.id', '=', 'posts_views.id')
+		->select('posts.titulo', 'posts.id', 'posts_views.total_visitas')
+		->orderBy('posts_views.total_visitas', 'desc')
+		->get();
+	}
+
+	public function getPostsMaisVistos()
+	{
+		return DB::table('posts_views')
+		->join('posts', 'posts.id', '=', 'posts_views.id')
+		->select('posts.titulo', 'posts.id', 'posts_views.total_visitas')
+		->orderBy('posts_views.total_visitas', 'desc')
+		->limit(10)
+		->get();
+	}
+
 
 }
