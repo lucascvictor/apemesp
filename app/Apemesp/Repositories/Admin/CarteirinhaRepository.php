@@ -130,7 +130,7 @@ class CarteirinhaRepository
 	}
 
 
-	public function gerarNumeroAssociado($request)
+	public function gerarNumero($request)
 	{
 		$i = 0;
 		$formacoes = new FormacoesAcademicas;
