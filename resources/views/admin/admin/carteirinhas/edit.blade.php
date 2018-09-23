@@ -77,6 +77,12 @@
                   <input name="data_ultimavia" id="data_ultimavia" class="form-control" type="date" value="{{ $carteirinha->data_ultimavia }}">
                </div>
             </div>
+            <div class="form-group">
+               <label class="col-md-4 control-label" for="observacao">Observações:</label>
+               <div class="col-md-4">
+                  <textarea name="observacao" id="observacao" class="form-control" >{{ $carteirinha->observacao }} </textarea>
+               </div>
+            </div>
          </fieldset>
          <div class="modal-footer">
             <button class="btn btn-success" type="submit">

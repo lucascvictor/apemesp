@@ -9,7 +9,7 @@
 <center><h2>E-mail de contato APEMESP</h2></center>
 <hr>
 <b>Nome do remetente:</b> {{ $nome }} <br />
-<b>Telefone para retorno:</b> {{ $telefone }} <br />
+<b>Telefone para retorno:</b> @if(isset($telefone)){{ dd($telefone) }}@endif <br />
 <b>Email para contato: </b> {{ $email }}
 
 <h4>Categoria:<span style="color: red;"> {{ $titulo }}</span></h4>

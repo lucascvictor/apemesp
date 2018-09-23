@@ -88,7 +88,6 @@ class CarteirinhaRepository
 
 	public function updateCarteirinha($request, $id)
 	{
-
 		$verifAssoc = Carteirinha::where('digito', $request->digito)->where('numero', $request->numero)->where('id_user', $request->id)->select('*')->get();
 		$verifNum = Carteirinha::where('numero', $request->numero)->where('id_user','<>', $request->id)->select('*')->get();
 		if(isset($verifAssoc[0]) && !isset($verifNum[0])) {
@@ -98,6 +97,7 @@ class CarteirinhaRepository
 				'numero' => $request->numero,
 				'status' => $request->status,
 				'japossui' => $request->japossui,
+				'observacao' => $request->observacao,
 				'data_pedido' => $request->data_pedido,
 				'data_confeccao' => $request->data_confeccao,
 				'data_ultimavia' => $request->data_ultimavia,

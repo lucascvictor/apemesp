@@ -108,4 +108,17 @@ class CarteirinhaRepository
 			}
 	}
 
+	public function segundaVia($request)
+	{
+		Carteirinha::where('id_user', $request->id)
+		->update([
+				'status' => 1,
+				'japossui' => 1,
+				'observacao' => $request->observacao,
+				'data_pedido' => date("Y-m-d"),
+				'updated_at' => date("Y-m-d")
+				]);
+		
+	}
+
 }

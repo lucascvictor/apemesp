@@ -19,6 +19,7 @@ class CreateCarteirinhasTable extends Migration
             $table->integer('numero');
             $table->integer('status');
             $table->integer('japossui');
+            $table->text('observacao');
             $table->date('data_pedido')->nullable();
             $table->date('data_confeccao')->nullable();
             $table->date('data_ultimavia')->nullable();

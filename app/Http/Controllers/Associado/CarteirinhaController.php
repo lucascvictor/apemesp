@@ -20,6 +20,10 @@ use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\RepresentanteLegalRepository;
 
+use Apemesp\Apemesp\Models\Assunto;
+
+use Mail;
+
 use Auth;
 
 use Session;
@@ -118,5 +122,58 @@ class CarteirinhaController extends Controller
       Session::get("cuidado", "Sua situação financeira atual não permite a emissão do comprovante");
       return view('admin.associado.carteirinha.index')->with('carteirinha', $carteirinha);
     }
+  }
+
+  public function segundaVia(Request $request)
+  {
+    $carteirinhaRepository = new CarteirinhaRepository; 
+
+    $mensagem = "Solicito a segunda via da minha carteirinha" ."<br>" . "Observações: ". $request->observacao . "<br>" . "Estas informações estão disponiveis dentro do painel da Carteirinha na área do administrador";
+    $mensagemAssociado = "Sua solicitação foi enviada com sucesso, aguarde o nosso retorno";
+
+    $dados = array(
+			'titulo' => "Segunda Via da Carteirinha",
+			'mensagem' => $mensagem, 
+			'nome' => $this->getName(),
+			'email' => $this->getEmail(),
+			'data' => date('Y-m-d'),
+      );
+
+    $dados2 = array(
+      'titulo' => "Segunda Via da Carteirinha",
+      'mensagem' => $mensagemAssociado, 
+      'nome' => $this->getName(),
+      'email' => $this->getEmail(),
+      'data' => date('Y-m-d'),
+      );
+      
+      $oEmail = Assunto::Where('assunto', 'like', '%anuidade%')->select('*')->get()->first();
+    	Mail::send('emails.send', $dados, function ($message) use ($oEmail)
+    	{
+    		$message->from($this->getEmail(), $this->getName());
+    		$message->to($oEmail->email)->subject("Segunda Via da Carteirinha");
+      });
+      
+      Mail::send('emails.send', $dados2, function ($message) use ($oEmail)
+    	{
+    		$message->from($this->getEmail(), $this->getName());
+    		$message->to($this->getEmail())->subject("Segunda Via da Carteirinha");
+    	});
+      
+      
+      $carteirinhaRepository->segundaVia($request);
+      Session::flash('sucesso', 'A mensagem foi enviada com sucesso');
+      
+      return redirect()->back();
+  }
+
+  public function getEmail()
+  {
+    return Auth::user()->email;
+  }
+
+  public function getName()
+  {
+    return Auth::user()->name;
   }
 }
