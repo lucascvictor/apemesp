@@ -44,7 +44,7 @@
                                                       <p>Deseja realmente excluir este post?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="/posts/destroy/{{ $post->id }}" class="btn btn-danger btn-block">
+                                                        <a href="/admin/posts/destroy/{{ $post->id }}" class="btn btn-danger btn-block">
                                                           Sim
                                                         </a>
                                               <button type="button" class="btn btn-info btn-block" data-dismiss="modal">Não</button>

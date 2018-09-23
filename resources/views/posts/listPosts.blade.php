@@ -56,10 +56,10 @@
 
 
             <th>
-                    <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#myModal">Deletar</button>
+                    <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#myModal{{$post->id}}">Deletar</button>
 
                       <!-- Modal -->
-                      <div class="modal fade" id="myModal" role="dialog">
+                      <div class="modal fade" id="myModal{{$post->id}}" role="dialog">
                             <div class="modal-dialog">
 
                               <!-- Modal content-->
@@ -72,7 +72,7 @@
                                                       <p>Deseja realmente excluir este post?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="/posts/destroy/{{ $post->id }}" class="btn btn-danger btn-block">
+                                                        <a href="/admin/posts/destroy/{{ $post->id }}" class="btn btn-danger btn-block">
                                                           Sim
                                                         </a>
                                               <button type="button" class="btn btn-info btn-block" data-dismiss="modal">Não</button>

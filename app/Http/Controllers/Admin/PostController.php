@@ -202,7 +202,7 @@ class PostController extends Controller
         $postRepository = new PostRepository;
         $postRepository->destroy($id);
         Session::flash('sucesso', 'O post foi deletado com sucesso');
-        return redirect()->route('posts.index');
+        return redirect()->back();
     }
 
      public function search(Request $request)
