@@ -282,8 +282,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'posts'], function () {
         Route::get('', 'Admin\PostController@index');
-        Route::get('/apemesp/list', 'Admin\PostController@indexApemesp');
-        Route::get('/jomesp/list', 'Admin\PostController@indexJomesp');
+        Route::get('/apemesp/list', 'Admin\PostController@indexApemesp')->name('posts.apemesp.list');
+        Route::get('/jomesp/list', 'Admin\PostController@indexJomesp')->name('posts.jomesp.list');;
         Route::get('/create', 'Admin\PostController@create');
         Route::post('/store', 'Admin\PostController@store')->name('posts.store');
         Route::get('/show/{id}', 'Admin\PostController@show')->name('posts.show');

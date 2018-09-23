@@ -10,6 +10,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\PostRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\ChartRepository;
+
 use Auth;
 
 use Session;
@@ -36,12 +38,17 @@ class PostController extends Controller
 
     public function index()
     {
+        $chart = new ChartRepository;
 
+        $views = $chart->getVisualizacoes();
+        $maisVistos = $chart->getPostsMaisVistos();
         $id_perfil = Auth::user()->id_perfil;
         
         if ($id_perfil == 1 || $id_perfil == 2) {
 
-            return view('posts.index');
+            return view('posts.index')
+                   ->with('views',$views)
+                   ->with('maisVistos',$maisVistos);
 
         } else {
 
@@ -201,14 +208,12 @@ class PostController extends Controller
      public function search(Request $request)
     {
         $postRepository = new PostRepository;
+
         $posts = $postRepository->search($request, 1);
-
-
         $postsjomesp = $postRepository->search($request, 2);
 
-
         unset($postRepository);
-        return view('posts.index')->with('posts', $posts)->with('postsjomesp', $postsjomesp);
+        return view('posts.listPosts')->with('posts', $posts)->with('postsjomesp', $postsjomesp)->with('pagina', $request->pagina);
     }
 
 }

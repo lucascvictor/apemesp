@@ -23,7 +23,7 @@
                     {{ Form::open(['action' => ['Admin\PostController@search'], 'method' => 'GET']) }}
                     <div class="form-group input-group">
                     {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Procurar Posts', 'class' => 'form-control'])}}
-
+                    <input type="hidden" value="{{ $pagina }}" name="pagina"/>
                     <span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></span>
                     </div>
                    {{ Form::close() }}
