@@ -151,7 +151,7 @@ class CarteirinhaController extends Controller
     	Mail::send('emails.send', $dados, function ($message) use ($oEmail)
     	{
     		$message->from($this->getEmail(), $this->getName());
-    		$message->to($oEmail->email)->subject("Segunda Via da Carteirinha");
+    		$message->to("secretaria@apemesp.com")->subject("Segunda Via da Carteirinha");
       });
       
       Mail::send('emails.send', $dados2, function ($message) use ($oEmail)
