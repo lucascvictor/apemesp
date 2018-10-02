@@ -23,7 +23,20 @@ class RepresentanteLegalRepository
 			return $representante;
 		}
 
-    }
+	}
+	
+	public function getLocalizacaoSede()
+	{
+		return RepresentanteLegal::where('id',1)->select('localizacao_sede')->get()->first();
+	}
+
+	public function updateLocalizacao($request)
+	{
+		return RepresentanteLegal::where('id', '=', 1)
+		->update([
+			'localizacao_sede' => $request->localizacao_sede,
+		]);
+	}
     
     public function listRepresentanteLegal()
 	{

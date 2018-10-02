@@ -10,6 +10,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Apemesp\FooterRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\RepresentanteLegalRepository;
+
 use Auth;
 
 use Session;
@@ -72,5 +74,13 @@ class FooterController extends Controller
             Session::flash('sucesso', 'O item do rodapé foi atualizado com sucesso');
             //flash para esta request e put para salvar na sessao
             return redirect()->route('list.footer');
+    }
+
+    public function updateLocalizacao(Request $request)
+    {
+        $representante = new RepresentanteLegalRepository;
+        $rep = $representante->updateLocalizacao($request);
+        return redirect()->route('paginas.show');
+
     }
 }

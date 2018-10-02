@@ -16,6 +16,8 @@ use Apemesp\Apemesp\Repositories\Admin\PropagandaRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\ComissaoRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\RepresentanteLegalRepository;
+
 use Apemesp\Apemesp\Classes\Associado;
 
 use View;
@@ -42,13 +44,18 @@ class PagesController extends Controller{
 		$posts = $page->getIndex();
 		$tags = $page->getTags();
 		$propagandasRepositoy = new PropagandaRepository;
+		$representante = new RepresentanteLegalRepository;
 		$propagandas_ativas = $propagandasRepositoy->getPropagandasAtivas();
 		unset($page);
 		unset($propagandasRepositoy);
 		if(count($posts) == 0) {
 			return view('errors.404');
 		} else {
-    	return view('paginas.welcome')->with('posts', $posts)->with('tags', $tags)->with('propagandasAtivas', $propagandas_ativas);
+		return view('paginas.welcome')
+		->with('posts', $posts)
+		->with('tags', $tags)
+		->with('propagandasAtivas', $propagandas_ativas)
+		->with('representante', $representante->getLocalizacaoSede());
 		}
     //return view('paginas.manutencao');
 	}

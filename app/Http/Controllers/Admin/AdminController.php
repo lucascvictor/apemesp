@@ -15,6 +15,7 @@ use Apemesp\Apemesp\Repositories\Admin\ChartRepository;
 use Apemesp\Apemesp\Repositories\Associado\FinanceiroRepository;
 use Apemesp\Apemesp\Repositories\Admin\FinanceiroRepository as FinanceiroAdmin;
 use Apemesp\Apemesp\Repositories\Associado\CarteirinhaRepository;
+use Apemesp\Apemesp\Repositories\Admin\RepresentanteLegalRepository;
 use Auth;
 
 use Session;
@@ -144,12 +145,14 @@ class AdminController extends Controller
     {
         $adminRepository = new AdminRepository;
         $propagandasRepositoy = new PropagandaRepository;
+        $representanteLegal = new RepresentanteLegalRepository;
         $paginas = $adminRepository->getPaginasIndex();
         $propagandas_ativas = $propagandasRepositoy->getPropagandasAtivas();
         unset($adminRepository);
         return view('admin.admin.paginas.paginas')
         ->with('paginas', $paginas)
-        ->with('propagandasAtivas', $propagandas_ativas);
+        ->with('propagandasAtivas', $propagandas_ativas)
+        ->with('representanteLegal', $representanteLegal->getLocalizacaoSede());
     }
 
     public function updatePagina(Request $request, $id)

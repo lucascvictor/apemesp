@@ -130,6 +130,32 @@
             </div>
          </div>
       </div>
+      <div class="row">
+         <div class="col-lg-10">
+            <h2>Endereço de localização da sede na página inicial</h2>
+            <div class="table-responsive">
+               <table class="table table-hover table-striped">
+                  <thead>
+                     <tr>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>
+                           Localização completa:
+                           <form action="{{ url('/admin/paginas/localizacaosede') }}" method="POST">
+                              {{ csrf_field() }}
+                              <input size="90" name="localizacao_sede" id="localizacao_sede" value="{{ $representanteLegal->localizacao_sede }}">
+                              <button>Salvar</button>
+                           </form>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
    </div>
 </div>
 @endsection

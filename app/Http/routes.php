@@ -144,6 +144,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/edit/{id}', 'Admin\AdminController@editPagina')->name('pagina.edit');
         Route::post('/update/{id}', 'Admin\AdminController@updatePagina')->name('pagina.update');
         Route::post('/update/estatuto/pdf', 'Admin\AdminController@updateEstatutoPdf');
+       
         Route::group(['prefix' => 'adicionar'], function () {
           Route::get('/literatura', 'Admin\LiteraturaController@addLiteratura');
           Route::get('/material', 'Admin\MaterialController@addMaterial');
@@ -210,6 +211,8 @@ Route::group(['prefix' => 'admin'], function () {
           Route::post('/propagandaativa', 'Admin\PropagandaController@updatePropagandaAtiva');
           Route::post('/linhadotempo/{id}', 'Admin\LinhaDoTempoController@updateItem');
           Route::post('/footer/{id}', 'Admin\FooterController@updateItem');
+
+          Route::post('/localizacaosede', 'Admin\FooterController@updateLocalizacao');
     });
 
     Route::group(['prefix' => 'configs'], function () {

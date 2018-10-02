@@ -22,6 +22,7 @@ class CreateResponsavelLegalTable extends Migration
             $table->string('endereco');
             $table->string('gestao');
             $table->string('assinatura');
+            $table->string('localizacao_sede');
             $table->timestamps();
         });
     }
