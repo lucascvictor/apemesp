@@ -7,7 +7,7 @@
             <div class="row">
                <div class="footer-col col-md-2 col-sm-10">
                   <h3>Localização</h3>
-                  <a href="{{ url('/contato/localizacao') }}">
+                  <a href="#">
                      {{ $representante->localizacao_sede }}
                   </a>
                </div>
