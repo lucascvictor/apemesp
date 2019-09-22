@@ -145,9 +145,8 @@ var form = document.querySelector('form');
 form.onsubmit = function() {
   // Populate hidden form on submit
   var about = document.querySelector('input[id=conteudo]');
-  about.value = JSON.stringify(quill.getContents());
+  about.value = $('#quill')[0].outerHTML;
   
-  console.log("Submitted", $(form).serialize(), $(form).serializeArray());
   return true;
 };
 </script>
