@@ -4,8 +4,14 @@
 
 @section('extrastyle')
 
-<script src="http://apemesp.com/public/ckeditor/ckeditor.js "></script>
+<script src="http://apemesp.com/public/quill/quill.js "></script>
+<!-- Main Quill library -->
+{!! Html::script('//cdn.quilljs.com/1.3.6/quill.js') !!}
+{!! Html::script('//cdn.quilljs.com/1.3.6/quill.min.js') !!}
 
+<!-- Theme included stylesheets -->
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
      
 @endsection
 
@@ -13,58 +19,59 @@
 @section('conteudo')
 
           {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate' => '', 'files' => true)) !!}
-          <!-- Titulo -->
+              <!-- Titulo -->
     			{{ Form::label('titulo', 'Titulo:') }}
                 {{ Form::text('titulo', null, array('class' => 'form-control')) }}
 
-          <!-- subtitulo -->
+              <!-- subtitulo -->
           {{ Form::label('subtitulo', 'Subtitulo:') }}
     			{{ Form::text('subtitulo', null, array('class' => 'form-control')) }}
 
-          <!-- Tags -->
+              <!-- Tags -->
           {{ Form::label('tags', 'Tags:') }}
-           <select id="tag" name="tag" class="form-control">
+    <select id="tag" name="tag" class="form-control">
              @foreach($tags as $tag)
-                <option value="{{ $tag->id }}">{{ $tag->tag }} </option>
+      <option value="{{ $tag->id }}">{{ $tag->tag }} </option>
               @endforeach
-            </select>
+    </select>
 
-            <!-- Destinos -->
+    <!-- Destinos -->
             {{ Form::label('destino', 'Destino:') }}
-           <select id="destino" name="destino" class="form-control">
-            
-                <option value="1"> APEMESP </option>
-                <option value="2"> JOMESP </option>
-            </select>
+    <select id="destino" name="destino" class="form-control">
 
-            <!-- Imagem previa -->
-            <hr>
-            <label class="control-label" for="filebutton">Imagem prévia: </label>
-            <input id="imagem" name="imagem" class="input-file" type="file"> 
+      <option value="1"> APEMESP </option>
+      <option value="2"> JOMESP </option>
+    </select>
+
+    <!-- Imagem previa -->
+    <hr>
+      <label class="control-label" for="filebutton">Imagem prévia: </label>
+      <input id="imagem" name="imagem" class="input-file" type="file"> 
             * Esta imagem será exibida na página principal.
-            <div id="mensagem">
-            </div>
-            <hr>
-            
-            <!-- Texto prévio -->
+        <div id="mensagem">
+        </div>
+        <hr>
+
+          <!-- Texto prévio -->
            {{ Form::label('previa', 'Prévia:') }}
           {{ Form::textarea('previa', null, array('class' => 'form-control', 'id' => 'previa', 'rows' => '5', 'placeholder' => 'Descreva aqui de forma resumida o conteúdo desta publicação para que seja exibida na tela principal.')) }} 
 
-          <!-- Conteudo do POST -->
+                    <!-- Conteudo do POST -->
 
-    			{{ Form::label('conteudo', 'Conteudo:') }}
-    			{{ Form::textarea('conteudo', null, array('class' => 'form-control', 'id' => 'conteudo')) }}
-
-          
+          {{ Form::label('conteudo', 'Conteudo:') }}
+          <div id="quill" class= "form-control">
+          </div>
+          <input id="conteudo" type="hidden" name="conteudo">
+        </input>
 
     			{{ Form::submit('Salvar', array('class' => 'btn btn-success btn-lg btn-block')) }}
-
+          <button class="btn btn-primary" type="submit">Save Profile</button>
 			{!! Form::close() !!}
 
           
-          </div>
-        
-    </div>
+        </div>
+
+      </div>
 
 
 @endsection
@@ -72,15 +79,9 @@
 
 @section('extrascript')
 
-    {!! Html::script('js/parsley.min.js') !!}
+{!! Html::script('public/js/parsley.min.js') !!}
 
-    <script type="text/javascript">
-     CKEDITOR.replace( 'conteudo', {
-                filebrowserBrowseUrl: '{!! url('filemanager/index.html') !!}'
-            });
-     </script>
-
-     <script type="text/javascript">
+ <script type="text/javascript">
      //validação do tipo de imagem
      
   var i = 0;
@@ -106,6 +107,48 @@
           }
           
         });
-</script>
 
+
+    var toolbarOptions = [
+['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+['link', 'image'],
+['blockquote', 'code-block'],
+
+[{ 'header': 1 }, { 'header': 2 }],               // custom button values
+[{ 'list': 'ordered'}, { 'list': 'bullet' }],
+[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+[{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+[{ 'direction': 'rtl' }],                         // text direction
+
+[{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+[{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+[{ 'font': [] }],
+[{ 'align': [] }],
+
+['clean']                                         // remove formatting button
+];
+
+
+var options = {
+    placeholder: 'Digite aqui o seu texto..',
+    modules: {
+        toolbar: toolbarOptions
+    },
+    theme: 'snow'
+    };
+var quill = new Quill('#quill', options);
+
+
+var form = document.querySelector('form');
+form.onsubmit = function() {
+  // Populate hidden form on submit
+  var about = document.querySelector('input[id=conteudo]');
+  about.value = JSON.stringify(quill.getContents());
+  
+  console.log("Submitted", $(form).serialize(), $(form).serializeArray());
+  return true;
+};
+</script>
 @endsection

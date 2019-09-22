@@ -62,7 +62,7 @@
 
 @section('extrascript')
 
-    {!! Html::script('js/parsley.min.js') !!}
+    {!! Html::script('public/js/parsley.min.js') !!}
 
     <script type="text/javascript">
      CKEDITOR.replace( 'conteudo', {
