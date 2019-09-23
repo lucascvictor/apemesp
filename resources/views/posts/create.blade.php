@@ -65,7 +65,6 @@
         </input>
 
     			{{ Form::submit('Salvar', array('class' => 'btn btn-success btn-lg btn-block')) }}
-          <button class="btn btn-primary" type="submit">Save Profile</button>
 			{!! Form::close() !!}
 
           
