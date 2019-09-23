@@ -141,6 +141,11 @@ class UserRepository
                 return User::where('email', '=', $email)->select('id', 'name', 'email')->get()->first();
         }
 
+        public function findAllAdmins()
+        {       
+                return User::where('id_perfil', '=', 1)->select('id', 'name', 'email')->get();
+        }
+
         public function updateAditionalUserData($id)
         {
                 AditionalUserData::where('id', $id)->update(['confirm_mail' => 1]);

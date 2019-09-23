@@ -26,8 +26,8 @@ class User extends Authenticatable
     ];
 
     public function accessMediasAll()
-{
-    return true;
-}
+    {
+        return true;
+    }
 
 }

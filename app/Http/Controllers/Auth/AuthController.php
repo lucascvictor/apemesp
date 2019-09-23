@@ -86,11 +86,28 @@ class AuthController extends Controller
             Session::flash('sucesso', 'Seus dados foram salvos com sucesso. Por favor verifique o seu e-mail.');
             $confirmCode = $this->generateCode();
             $user->storeCode($result, $confirmCode);
+            $this->sendEmailAdministradores($result);
             $this->sendEmailReminder($result, $confirmCode);
         } else {
             Session::flash('cuidado', 'O e-mail informado já foi cadastrado ou é inválido, por favor tente novamente ou entre em contato');
         }
         return redirect()->back();
+    }
+
+    public function sendEmailAdministradores($id)
+    {
+
+        $user = User::findOrFail($id);
+        $userRepo = new UserRepository;
+
+        $administradores = $userRepo->findAllAdmins();
+        foreach($administradores as $administrador) {
+            Mail::send('emails.administradores', ['nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
+                $m->from('site.apemesp@gmail.com', 'APEMESP');
+
+                $m->to($administrador->email, $administrador->name)->subject('Novo usuário cadastrado!');
+            });
+        }
     }
 
     public function getLogin(){
@@ -112,7 +129,12 @@ class AuthController extends Controller
     {
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            if (User::id_status != 4) {
+                return redirect()->intended('dashboard');
+            } else {
+                Auth::logout();
+                return redire()->back();
+           }
         }
     }
 
