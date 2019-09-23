@@ -4,8 +4,13 @@
 
 @section('extrastyle')
 
-  <script src="http://apemesp.com/public/ckeditor/ckeditor.js "></script>
-
+  {!! Html::script('//cdn.quilljs.com/1.3.6/quill.js') !!}
+  {!! Html::script('//cdn.quilljs.com/1.3.6/quill.min.js') !!}
+  
+  <!-- Theme included stylesheets -->
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+  
 @endsection
 
 @section('conteudo')
@@ -55,8 +60,12 @@
           
 
     			{{ Form::label('conteudo', 'Conteudo:') }}
-    			{{ Form::textarea('conteudo', $post->body, array('class' => 'form-control')) }}
-
+          <div id="quill" class= "form-control">
+            {!! $post->body !!}
+          </div>
+           <input id="conteudo" type="hidden" name="conteudo">
+           </input>
+  
     			{{ Form::submit('Atualizar', array('class' => 'btn btn-success btn-lg btn-block')) }}
 
 			{!! Form::close() !!}
@@ -69,16 +78,78 @@
     @endif
 @endsection
 
-
 @section('extrascript')
 
     {!! Html::script('public/js/parsley.min.js') !!}
 
-    <script type="text/javascript">
-     CKEDITOR.replace( 'conteudo', {
-                filebrowserBrowseUrl: '{!! url('filemanager/index.html') !!}'
-            });
-     </script>
+
+<script type="text/javascript">
+  var i = 0;
+  $('#imagem').on('change',function () {
+            var imagem = $(this).val();
+            var formato = '';
+            var limite = imagem.length - 3;
+            while(limite < imagem.length)
+            {
+              formato = formato + imagem[limite];
+              limite++;
+            }
+          
+          if(!(formato == 'jpg' || formato == 'png' || formato == 'gif' || formato == 'jpeg')){
+  
+            if(i < 1){
+            $("#mensagem").append('<div id="imagemmensagem" class=" alert alert-danger" role="alert"><strong>Cuidado:</strong> Esta imagem não é de um tipo válido</div>');
+            i++;
+          }
+            $("#imagem").val('');
+          }else{
+            document.getElementById("imagemmensagem").remove();
+          }
+          
+        });
+
+
+    var toolbarOptions = [
+['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+['link', 'image'],
+['blockquote', 'code-block'],
+
+[{ 'header': 1 }, { 'header': 2 }],               // custom button values
+[{ 'list': 'ordered'}, { 'list': 'bullet' }],
+[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+[{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+[{ 'direction': 'rtl' }],                         // text direction
+
+[{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+[{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+[{ 'font': [] }],
+[{ 'align': [] }],
+
+['clean']                                         // remove formatting button
+];
+
+
+var options = {
+    placeholder: 'Digite aqui o seu texto..',
+    modules: {
+        toolbar: toolbarOptions
+    },
+    theme: 'snow'
+    };
+var quill = new Quill('#quill', options);
+
+
+var form = document.querySelector('form');
+form.onsubmit = function() {
+  // Populate hidden form on submit
+  var about = document.querySelector('input[id=conteudo]');
+  about.value = $('#quill')[0].outerHTML;
+  
+  return true;
+};
+</script>
 
 
 @endsection

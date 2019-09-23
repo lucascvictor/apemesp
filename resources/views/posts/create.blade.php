@@ -11,7 +11,7 @@
 
 <!-- Theme included stylesheets -->
 <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
      
 @endsection
 
@@ -62,7 +62,7 @@
           <div id="quill" class= "form-control">
           </div>
           <input id="conteudo" type="hidden" name="conteudo">
-        </input>
+          </input>
 
     			{{ Form::submit('Salvar', array('class' => 'btn btn-success btn-lg btn-block')) }}
 			{!! Form::close() !!}
@@ -81,7 +81,7 @@
 {!! Html::script('public/js/parsley.min.js') !!}
 
  <script type="text/javascript">
-     //validação do tipo de imagem
+  //validação do tipo de imagem
      
   var i = 0;
   $('#imagem').on('change',function () {
