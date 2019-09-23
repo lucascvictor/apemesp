@@ -92,7 +92,7 @@ class FinanceiroController extends Controller{
 
         $administradores = $userRepo->findAllAdmins();
         foreach($administradores as $administrador) {
-            Mail::send('emails.administradores.financeiro', ['nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
+            Mail::send('emails.administradores.financeiro', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
                 $m->from('site.apemesp@gmail.com', 'APEMESP');
 
                 $m->to($administrador->email, $administrador->name)->subject('Nova anuidade cadastrada!');

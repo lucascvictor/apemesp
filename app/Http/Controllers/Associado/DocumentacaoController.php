@@ -10,6 +10,8 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Http\Requests;
 
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
+
 use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DocumentacaoRepository;
@@ -45,7 +47,6 @@ class DocumentacaoController extends Controller{
           return view('admin.associado.documentacao')->with('cpf', $dadosAcademicos->getCpf($this->getIdUsuario()));
       }
     }
-
 
     public function getIdCadastro()
     {

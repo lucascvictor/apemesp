@@ -12,6 +12,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Classes\Associado;
 
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
+
 use Apemesp\Apemesp\Repositories\Associado\DadosProfissionaisRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
@@ -49,7 +51,6 @@ class DadosProfissionaisController extends Controller{
     {
       return Auth::user()->id;
     }
-
 
     public function getDadosProfissionais()
     {
@@ -110,6 +111,7 @@ class DadosProfissionaisController extends Controller{
         ->with('especialidades', $dadosProfissionais->getEspecialidades())
         ->with('proximidades', $dadosProfissionais->getProximidades())
         ->with('escalas', $dadosProfissionais->getEscalas());
+        $this->sendEmailAdministradores(Auth::user()->id);
         Session::flash('sucesso', 'Seus dados profissionais foram inseridos com sucesso');
       } else {
         Session::flash('cuidado', 'Algum dos dados estava incorreto ou você ultrapassou 3 locais de atendimento');
@@ -187,7 +189,7 @@ class DadosProfissionaisController extends Controller{
         ->with('especialidades', $dadosProfissionais->getEspecialidades())
         ->with('proximidades', $dadosProfissionais->getProximidades())
         ->with('escalas', $dadosProfissionais->getEscalas());
-
+        $this->sendEmailAdministradores(Auth::user()->id);
         Session::flash('sucesso', 'Seus dados profissionais foram atualizados com sucesso');
       }
 
@@ -203,6 +205,20 @@ class DadosProfissionaisController extends Controller{
       return $this->index();
     }
 
+    public function sendEmailAdministradores($id)
+    {
+        $user = User::findOrFail($id);
+        $userRepo = new UserRepository;
+
+        $administradores = $userRepo->findAllAdmins();
+        foreach($administradores as $administrador) {
+            Mail::send('emails.administradores_perfil', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
+                $m->from('site.apemesp@gmail.com', 'APEMESP');
+
+                $m->to($administrador->email, $administrador->name)->subject('Nova anuidade cadastrada!');
+            });
+        }
+    }
 
 
 }

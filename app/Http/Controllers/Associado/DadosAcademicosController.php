@@ -12,6 +12,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Classes\Associado;
 
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
+
 use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
 
 use Auth;
@@ -115,9 +117,9 @@ class DadosAcademicosController extends Controller{
         //redirecionar a pagina
             Session::flash('sucesso', 'Seus dados  salvos com sucesso');
             //flash para esta request e put para salvar na sessao
+            $this->sendEmailAdministradores(Auth::user()->id);
             return redirect()->route('dadosacademicos');
-        }
-
+    }
 
     public function showFormacao($id)
     {
@@ -144,9 +146,6 @@ class DadosAcademicosController extends Controller{
             ->with('estados', $estados)
             ->with('cidade', $cidade);
     }
-
-
-
 
     public function updateFormacao(Request $request, $id)
     {
@@ -198,10 +197,9 @@ class DadosAcademicosController extends Controller{
 
            $dadosAcademicos->updateDadosAcademicos($id, $request);
 
-
             Session::flash('sucesso', 'Seus dados acadêmicos foram atualizados com sucesso');
             //flash para esta request e put para salvar na sessao
-
+            $this->sendEmailAdministradores(Auth::user()->id);
             return redirect()->route('dadosacademicos');
       }
 
@@ -212,5 +210,19 @@ class DadosAcademicosController extends Controller{
 
       }
 
+      public function sendEmailAdministradores($id)
+      {
+          $user = User::findOrFail($id);
+          $userRepo = new UserRepository;
+  
+          $administradores = $userRepo->findAllAdmins();
+          foreach($administradores as $administrador) {
+              Mail::send('emails.administradores_perfil', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
+                  $m->from('site.apemesp@gmail.com', 'APEMESP');
+  
+                  $m->to($administrador->email, $administrador->name)->subject('Nova anuidade cadastrada!');
+              });
+          }
+      }
 
 }
