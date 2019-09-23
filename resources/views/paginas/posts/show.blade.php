@@ -11,16 +11,16 @@
 	?>
 
 
-    <meta charset="utf-8">
-    <meta property="fb:app_id" content="174472043066729"/>
-	<meta property="og:url"           content="<?php echo "http://" . $server . $endereco;?>" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="{{ $post[0]->titulo  }}" />
-    <meta property="og:description"   content="{{ $post[0]->subtitulo  }}" />
-    <meta property="og:image"         content="{{ url('/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }}" />
-    <meta property="og:image:type" 	  content="image/jpeg">
-	<meta property="og:image:width"   content="800"> 
-	<meta property="og:image:height"  content="600">
+<meta charset="utf-8">
+	<meta property="fb:app_id" content="174472043066729"/>
+	<meta property="og:url" content="<?php echo "http://" . $server . $endereco;?>" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{ $post[0]->titulo  }}" />
+	<meta property="og:description" content="{{ $post[0]->subtitulo  }}" />
+	<meta property="og:image" content="{{ url('/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }}" />
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content="800"/>
+	<meta property="og:image:height" content="600"/>
 
 
 @endsection
@@ -29,66 +29,83 @@
 
 @include('partials._mensagens')
 
-		<div class="row" style="background-color: #eff3f5; padding: 5%;">
-			<div class="col-md-10">
-		<fieldset>
+				<div class="row" style="background-color: #eff3f5; padding: 5%;">
+					<div class="col-md-10">
+						<fieldset>
 
-						<legend><h1>{{ $post[0]->titulo  }}</h1></legend>
+							<legend>
+								<h1>{{ $post[0]->titulo  }}</h1>
+							</legend>
 
-						<h4> {{ $post[0]->subtitulo }}</h4>
+							<h4> {{ $post[0]->subtitulo }}</h4>
 
-						<p class="lead"> {!! $post[0]->body !!} </p>
-		</fieldset>
+						</fieldset>
 					</div>
 				</div>
 
 
 
+				<div class="row">
+					<div class="col-md-10">
+
+						<?php 
+							$body = str_replace('<div', '', $post[0]->body);
+							$body = str_replace('</div>', '', $body);
+							$body = str_replace('type="text"', 'type="hidden"', $body);
+							$body = str_replace('class="ql-clipboard" tabindex="-1" contenteditable="true"> class="ql-tooltip ql-hidden">', '', $body);
+							$body = str_replace('id="quill" class="form-control ql-container ql-snow"> class="ql-editor" data-gramm="false" data-placeholder="Digite aqui o seu texto.." contenteditable="true">', '', $body);
+						?>
+						{!!  $body !!}
+				</div>
+			</div>
 
 
+			<div class="row">
+				<div class="col-md-6" style="float: right;">
+					<hr>
+						<div class="panel panel-default" style="float:right;">
 
-		<div class="row">
-			<div class="col-md-4" style="float: right;">
-			<hr>
-			<div class="panel panel-default" style="float:right;">
-
-			  <div class="panel-heading">Postagem</div>
+							<div class="panel-heading">Postagem</div>
 
 
-			  <ul class="list-group">
-			    <li class="list-group-item"><b>Autor: {{ $post[0]->name }}</b></li>
-			    <li class="list-group-item"><b>Criado em: <?php
+							<ul class="list-group">
+								<li class="list-group-item">
+									<b>Autor: {{ $post[0]->name }}</b>
+								</li>
+								<li class="list-group-item">
+									<b>Criado em: 																					<?php
 
                         $data = new DateTime($post[0]->created_at);
                         echo $data->format('d-m-Y');
 
                         ?>
-                        </b></li>
-			    <li class="list-group-item"><b>Ultima atualização em: <?php
+									</b>
+								</li>
+								<li class="list-group-item">
+									<b>Ultima atualização em: 																					<?php
 
                         $data = new DateTime($post[0]->updated_at);
                         echo $data->format('d-m-Y');
 
-                        ?></b></li>
-			  </ul>
-			</div>
-		</div>
-	</div>
+                        ?></b>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-			<div class="row">
-			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-10">
 
-			<div class="fb-share-button" 
-			    
-			    data-layout="button_count">
-  			</div>
+						<div class="fb-share-button" data-layout="button_count">
+						</div>
 
 
 			@include('paginas.posts.comentarios');
-			</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
 @endsection
@@ -96,8 +113,8 @@
 
 @section('extrascript')
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;

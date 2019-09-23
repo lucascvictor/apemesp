@@ -40,7 +40,7 @@
 @endsection
 
 @section('extrascript')
-{!! Html::script('js/parsley.min.js') !!}
+{!! Html::script('public/js/parsley.min.js') !!}
 <script type="text/javascript">
    CKEDITOR.replace( 'acontecimentos', {
               filebrowserBrowseUrl: '{!! url('filemanager/index.html') !!}'

@@ -8,7 +8,9 @@
                <div class="footer-col col-md-2 col-sm-10">
                   <h3>Localização</h3>
                   <a href="#">
+                     @if ($representante)
                      {{ $representante->localizacao_sede }}
+                     @endif
                   </a>
                </div>
                <div class="footer-col col-md-2 col-sm-10">

@@ -10,7 +10,14 @@
 		<div class="row">
 			<div class="col-md-8">
 				<h1>{{ $post->titulo  }}</h1>
-				<p class="lead"> {!! $post->body !!} </p> 
+				<?php 
+				$body = str_replace('<div', '', $post->body);
+				$body = str_replace('</div>', '', $body);
+				$body = str_replace('type="text"', 'type="hidden"', $body);
+				$body = str_replace('class="ql-clipboard" tabindex="-1" contenteditable="true"> class="ql-tooltip ql-hidden">', '', $body);
+				$body = str_replace('id="quill" class="form-control ql-container ql-snow"> class="ql-editor" data-gramm="false" data-placeholder="Digite aqui o seu texto.." contenteditable="true">', '', $body);
+				?>
+				<p class="lead"> {!! $body !!} </p> 
 				
 			</div>	
 
