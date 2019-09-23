@@ -18,9 +18,9 @@
 	<meta property="og:title" content="{{ $post[0]->titulo  }}" />
 	<meta property="og:description" content="{{ $post[0]->subtitulo  }}" />
 	<meta property="og:image" content="{{ url('/images/posts/imagens/previas') }}/{{ $post[0]->imagem_previa }}" />
-	<meta property="og:image:type" content="image/jpeg">
-		<meta property="og:image:width" content="800">
-			<meta property="og:image:height" content="600">
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content="800"/>
+	<meta property="og:image:height" content="600"/>
 
 
 @endsection
@@ -38,76 +38,74 @@
 							</legend>
 
 							<h4> {{ $post[0]->subtitulo }}</h4>
-						
+
 						</fieldset>
 					</div>
 				</div>
 
 
 
-				<div class="container">
-						<div class="row">
-								<div class="col-md-12">
-								<?php $body_head = str_replace('<div id="quill" class="form-control ql-container ql-snow"><div class="ql-editor" data-gramm="false" data-placeholder="Digite aqui o seu texto.." contenteditable="true">', '',$post[0]->body ); ?>
-								<?php
-								$body_foot = str_replace('<div ', '', $body_head);
-								$body_foot = str_replace('class="ql-clipboard" tabindex="-1" contenteditable="true">', '', $body_foot);
-								$body_foot = str_replace('class="ql-tooltip ql-hidden">', '', $body_foot);
-								$body_foot = str_replace('type="text"', 'type="hidden"', $body_foot);
-								?>
-								<?php $body = str_replace('</div>', '', $body_foot);?> 
-									{!!  $body !!}
-								</div>
-						</div>
-					</div>
-
-
 				<div class="row">
-					<div class="col-md-4" style="float: right;">
-						<hr>
-							<div class="panel panel-default" style="float:right;">
+					<div class="col-md-10">
 
-								<div class="panel-heading">Postagem</div>
+						<?php 
+							$body = str_replace('<div', '', $post[0]->body);
+							$body = str_replace('</div>', '', $body);
+							$body = str_replace('type="text"', 'type="hidden"', $body);
+							$body = str_replace('class="ql-clipboard" tabindex="-1" contenteditable="true"> class="ql-tooltip ql-hidden">', '', $body);
+							$body = str_replace('id="quill" class="form-control ql-container ql-snow"> class="ql-editor" data-gramm="false" data-placeholder="Digite aqui o seu texto.." contenteditable="true">', '', $body);
+						?>
+						{!!  $body !!}
+				</div>
+			</div>
 
 
-								<ul class="list-group">
-									<li class="list-group-item">
-										<b>Autor: {{ $post[0]->name }}</b>
-									</li>
-									<li class="list-group-item">
-										<b>Criado em: 											<?php
+			<div class="row">
+				<div class="col-md-6" style="float: right;">
+					<hr>
+						<div class="panel panel-default" style="float:right;">
+
+							<div class="panel-heading">Postagem</div>
+
+
+							<ul class="list-group">
+								<li class="list-group-item">
+									<b>Autor: {{ $post[0]->name }}</b>
+								</li>
+								<li class="list-group-item">
+									<b>Criado em: 																					<?php
 
                         $data = new DateTime($post[0]->created_at);
                         echo $data->format('d-m-Y');
 
                         ?>
-										</b>
-									</li>
-									<li class="list-group-item">
-										<b>Ultima atualização em: 											<?php
+									</b>
+								</li>
+								<li class="list-group-item">
+									<b>Ultima atualização em: 																					<?php
 
                         $data = new DateTime($post[0]->updated_at);
                         echo $data->format('d-m-Y');
 
                         ?></b>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-10">
-
-							<div class="fb-share-button" data-layout="button_count">
-							</div>
-
-
-			@include('paginas.posts.comentarios');
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-md-10">
+
+						<div class="fb-share-button" data-layout="button_count">
+						</div>
+
+
+			@include('paginas.posts.comentarios');
+					</div>
+				</div>
 			</div>
+		</div>
 
 
 @endsection
@@ -115,8 +113,8 @@
 
 @section('extrascript')
 
-			<div id="fb-root"></div>
-			<script>(function(d, s, id) {
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
