@@ -59,6 +59,7 @@
                     <!-- Conteudo do POST -->
 
           {{ Form::label('conteudo', 'Conteudo:') }}
+          <p> **Faça upload de imagens de até 50kb</p>
           <div id="quill" class= "form-control">
           </div>
           <input id="conteudo" type="hidden" name="conteudo">
