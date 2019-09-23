@@ -23,8 +23,6 @@ use View;
 class PostController extends Controller
 {
 
-
-
     public function __construct()
     {
         $this->middleware('auth', ['except' => 'logout']);
@@ -194,15 +192,19 @@ class PostController extends Controller
             return redirect()->route('posts.show', $id);
     }
 
-
-
-
     public function destroy($id)
     {
         $postRepository = new PostRepository;
         $postRepository->destroy($id);
         Session::flash('sucesso', 'O post foi deletado com sucesso');
-        return redirect()->back();
+        
+        $postRepository = new PostRepository;
+
+        $posts = $postRepository->getPosts(1);
+        $postsjomesp = $postRepository->getPosts(2);
+        $pagina = '';
+        unset($postRepository);
+        return view('posts.listPosts')->with('posts', $posts)->with('postsjomesp', $postsjomesp)->with('pagina', $pagina);
     }
 
      public function search(Request $request)
