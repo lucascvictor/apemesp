@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Criar Posts')
+@section('titulo', 'Editar Posts')
 
 @section('extrastyle')
 
@@ -8,7 +8,7 @@
   {!! Html::script('//cdn.quilljs.com/1.3.6/quill.min.js') !!}
   
   <!-- Theme included stylesheets -->
-  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
   
 @endsection
@@ -28,30 +28,30 @@
                 <select id="tag" name="tag" class="form-control">
                  @foreach($tags as $tag)
                     <option value="{{ $tag->id }}" 
-                    @if($tag->id == $post->id_tag) 
-                    selected="true"
-                    @endif >{{ $tag->tag }} </option>
+                      @if($tag->id == $post->id_tag) selected="true"
+                      @endif >{{ $tag->tag }} 
+                    </option>
                   @endforeach
                 </select>
 
-            <!-- Destinos -->
+<!-- Destinos -->
             {{ Form::label('destino', 'Destino:') }}
            <select id="destino" name="destino" class="form-control">
-            
-                <option value="1" @if($post->id_destino == 1) selected @endif> APEMESP </option>
-                <option value="2" @if($post->id_destino == 2) selected @endif> JOMESP </option>
 
-            </select>
+        <option value="1" @if($post->id_destino == 1) selected @endif> APEMESP </option>
+<option value="2" @if($post->id_destino == 2) selected @endif> JOMESP </option>
 
-             <!-- Imagem previa -->
-            <hr>
-            <label class="control-label" for="filebutton">Imagem prévia: </label>
-            <input id="imagem" name="imagem" class="input-file" type="file"> 
+</select>
+
+<!-- Imagem previa -->
+<hr>
+<label class="control-label" for="filebutton">Imagem prévia: </label>
+        <input id="imagem" name="imagem" class="input-file" type="file"> 
             * Esta imagem será exibida na página principal.
-            <div id="mensagem">
-            </div>
-            <h3> Imgem atual </h3>
-            <img class="img-responsive img-border img-left" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
+          <div id="mensagem">
+          </div>
+          <h3> Imgem atual </h3>
+          <img class="img-responsive img-border img-left" src="{{ url('images/') }}/posts/imagens/previas/{{ $post->imagem_previa }}" style="height: 120px; width: 300px;" alt="">
             <hr>
 
         
@@ -59,21 +59,24 @@
           {{ Form::textarea('previa', $post->previa, array('class' => 'form-control', 'id' => 'previa', 'rows' => '5', 'placeholder' => 'Descreva aqui de forma resumida o conteúdo desta publicação para que seja exibida na tela principal.')) }} 
           
 
-    			{{ Form::label('conteudo', 'Conteudo:') }}
-          <div id="quill" class= "form-control">
-            {!! $post->body !!}
-          </div>
-           <input id="conteudo" type="hidden" name="conteudo">
-           </input>
+          {{ Form::label('conteudo', 'Conteudo:') }}
+          <p> **Faça upload de imagens de até 50kb</p>
+              <div id="quill" class= "form-control">  
+                
+                {!! $post->body !!}
+              </img>
+              </div>
+              <input id="conteudo" type="hidden" name="conteudo">
+              </input>
   
     			{{ Form::submit('Atualizar', array('class' => 'btn btn-success btn-lg btn-block')) }}
 
 			{!! Form::close() !!}
 
           
+            </div>
+
           </div>
-        
-    </div>
 
     @endif
 @endsection
@@ -83,7 +86,7 @@
     {!! Html::script('public/js/parsley.min.js') !!}
 
 
-<script type="text/javascript">
+          <script type="text/javascript">
   var i = 0;
   $('#imagem').on('change',function () {
             var imagem = $(this).val();
