@@ -23,7 +23,7 @@
           <div class="form-group" id="mensagem">
             <label class="col-md-4 control-label" for="filebutton"><span style="color:red;">*</span>Foto do perfil: </label>
             <div class="col-md-4">
-              <input id="foto" name="foto" class="input-file" type="file" required="">
+              <input id="foto" name="foto" class="input-file" type="file" required="" accept=".jpg">
             </div>
           </div>
         <!-- Campo Nome -->
