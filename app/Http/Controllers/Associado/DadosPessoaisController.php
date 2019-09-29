@@ -8,6 +8,8 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Http\Requests;
 
+use Apemesp\Apemesp\Models\User;
+
 use Apemesp\Apemesp\Classes\Associado;
 
 use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
@@ -21,6 +23,8 @@ use Session;
 use View;
 
 use Input;
+
+use Mail;
 
 class DadosPessoaisController extends Controller{
 
