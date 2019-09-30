@@ -28,7 +28,12 @@
          </tr>
          <tr>
             <td><b>Certificado de Conclusão: </b></td>
-            <td><a href="/admin/associados/download/{{ $associado->cpf }}/{{$dadoacademico->certificado}}">{{$dadoacademico->certificado}}</a></td>
+            <td>
+               @if($dadoacademico->certificado)
+                  <a href="/admin/associados/download/{{ $associado->cpf }}/{{$dadoacademico->certificado}}">Baixar</a> </ br> 
+                  <a href="/public/files/{{ $associado->cpf }}/{{$dadoacademico->certificado}}"> <br> Visualizar</a>
+               @endif
+            </td>
          </tr>
          <tr>
             <td><b>Titulo do TCC:</b></td>
@@ -51,8 +56,13 @@
             </td>
          </tr>
          <tr>
-            <td><b>Download Certificado/TCC:</b></td>
-            <td><a href="/admin/associados/download/{{ $associado->cpf }}/{{$dadoacademico->arquivotcc}}">{{$dadoacademico->arquivotcc}}</a></td>
+            <td><b>TCC:</b></td>
+            <td>
+            @if ($dadoacademico->arquivotcc)
+               <a href="/admin/associados/download/{{ $associado->cpf }}/{{$dadoacademico->arquivotcc}}">Baixar</a> </ br> 
+               <a href="/public/files/{{ $associado->cpf }}/{{$dadoacademico->arquivotcc}}"> <br> Visualizar</a>
+            @endif
+            </td>
          </tr>
          <tr>
             <td><b>Carga Horária:</b></td>

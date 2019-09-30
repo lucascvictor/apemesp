@@ -6,6 +6,7 @@
                   <th> </th>
                   <th>Arquivo enviado?</th>
                   <th>Link para Download</th>
+                  <th></th>
                   <th colspan="2"></th>
                </tr>
             </thead>
@@ -22,7 +23,8 @@
                         $documentacao[0] = 0;
                         } ?>
                   </td>
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/rg.pdf">dowload</a></td>
+                  <td><a href="/admin/associados/download/{{$associado->cpf}}/rg.pdf">download</a></td>
+                  <td><a href="/public/files/{{$associado->cpf}}/rg.pdf">Visualizar RG</a></td>
                </tr>
                <tr>
                   <td><b>CPF:</b></td>
@@ -36,7 +38,8 @@
                         $documentacao[1] = 0;
                         } ?>
                   </td>
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/cpf.pdf">dowload</a></td>
+                  <td><a href="/admin/associados/download/{{$associado->cpf}}/cpf.pdf">download</a></td>
+                  <td><a href="/public/files/{{$associado->cpf}}/cpf.pdf">Visualizar CPF</a></td>
                </tr>
                <tr>
                   <td><b>CNH:</b></td>
@@ -50,7 +53,8 @@
                         $documentacao[2] = 0;
                         } ?>
                   </td>
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/cnh.pdf">dowload</a></td>
+                  <td><a href="/admin/associados/download/{{$associado->cpf}}/cnh.pdf">download</a></td>
+                  <td><a href="/public/files/{{$associado->cpf}}/cnh.pdf">Visualizar CNH</a></td>
                </tr>
                <tr>
                   <td><b>Comprovante de Endereço:</b></td>
@@ -65,7 +69,8 @@
                         }
                         ?>
                   </td>
-                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">dowload</a></td>
+                  <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">download</a></td>
+                  <td><a href="/public/files/{{$associado->cpf}}/comprovante_e.pdf">Visualizar Comprovante</a></td>
                </tr>
             </tbody>
          </table>
