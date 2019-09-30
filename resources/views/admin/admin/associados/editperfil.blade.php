@@ -32,7 +32,7 @@
 					  </label>
 
 					  <div class="col-md-4" id="mensagem">
-					    <input id="foto" name="foto" class="input-file" type="file">
+					    <input id="foto" name="foto" class="input-file" type="file" accept=".jpg">
 					  </div>
 			</div>
 

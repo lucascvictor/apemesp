@@ -10,6 +10,8 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Http\Requests;
 
+use Apemesp\Apemesp\Models\User;
+
 use Apemesp\Apemesp\Repositories\Associado\AssociadoRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
@@ -21,6 +23,10 @@ use View;
 use Session;
 
 use Auth;
+
+use Mail;
+
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 
 class FinanceiroController extends Controller{
 
@@ -76,10 +82,26 @@ class FinanceiroController extends Controller{
         $request->file('comprovante')->move($pastaDestino, $nomeArquivo);
         $financeiroRespository->gravaArquivo($nomeArquivo, $request->ano, $this->getIdUsuario());
         Session::flash('sucesso', 'Sua anuidade foi salva com sucesso');
+        $this->sendEmailAdministradores($this->getIdUsuario());
       } else {
         Session::flash('cuidado', 'Verifique o arquivo ou o ano deste comprovante, sua anuidade não foi salva.');
       }
       return $this->getIndex(); 
+    }
+
+    public function sendEmailAdministradores($id)
+    {
+        $user = User::findOrFail($id);
+        $userRepo = new UserRepository;
+
+        $administradores = $userRepo->findAllAdmins();
+        foreach($administradores as $administrador) {
+            Mail::send('emails.administradores_financeiro', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
+                $m->from('site.apemesp@gmail.com', 'APEMESP');
+
+                $m->to($administrador->email, $administrador->name)->subject('Nova anuidade cadastrada!');
+            });
+        }
     }
 
     public function updateAnuidade(Request $request, $id_user)

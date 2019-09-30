@@ -8,7 +8,11 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Http\Requests;
 
+use Apemesp\Apemesp\Models\User;
+
 use Apemesp\Apemesp\Classes\Associado;
+
+use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository;
 
@@ -19,6 +23,8 @@ use Session;
 use View;
 
 use Input;
+
+use Mail;
 
 class DadosPessoaisController extends Controller{
 
@@ -31,7 +37,6 @@ class DadosPessoaisController extends Controller{
             'Apemesp\Composers\MensagensComposer'  => ['partials.admin._mensagens']
         ]);
     }
-
 
     /**
      * Display a listing of the resource.
@@ -64,8 +69,6 @@ class DadosPessoaisController extends Controller{
         }
 
     }
-
-
 
     public function storeDadosPessoais(Request $request)
     {
@@ -105,6 +108,7 @@ class DadosPessoaisController extends Controller{
             unset($dadosPessoais);
 
             Session::flash('sucesso', 'Seus dados foram salvos com sucesso');
+            $this->sendEmailAdministradores(Auth::user()->id);
             //flash para esta request e put para salvar na sessao
             return redirect()->route('dadosacademicos');
         }
@@ -170,11 +174,27 @@ class DadosPessoaisController extends Controller{
 
             Session::flash('sucesso', 'Seus daos pessoais foram atualizado com sucesso');
             //flash para esta request e put para salvar na sessao
+            $this->sendEmailAdministradores(Auth::user()->id);
             if (Auth::user()->id_perfil == 1) {
                 return redirect()->route('admin');
             } else {
                 return redirect()->route('dadospessoais');
             }
+        }
+    }
+
+    public function sendEmailAdministradores($id)
+    {
+        $user = User::findOrFail($id);
+        $userRepo = new UserRepository;
+
+        $administradores = $userRepo->findAllAdmins();
+        foreach($administradores as $administrador) {
+            Mail::send('emails.administradores_perfil', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
+                $m->from('site.apemesp@gmail.com', 'APEMESP');
+
+                $m->to($administrador->email, $administrador->name)->subject('Nova atualização cadastral!');
+            });
         }
     }
 
