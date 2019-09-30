@@ -11,7 +11,7 @@
         <p> <b>Nome: {{ $nome }}</b></p>
         <p> <b>E-mail: {{ $email }}</b></p>
         <br>
-        <p>Valide os documentos enviados, <a href="http://apemesp.com/admin/associados/perfil/{{ $id }}">acesse agora</a> </p>
+        <p>Valide o(s) documento(s) enviado(s), <a href="http://apemesp.com/admin/associados/perfil/{{ $id }}">acesse agora</a> </p>
         <br>
         <img src="http://apemesp.com/images/posts/imagens/previas/apemesp.jpg" width="200px" height="100px"></img>
         </p>

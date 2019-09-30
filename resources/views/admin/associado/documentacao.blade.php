@@ -118,11 +118,11 @@
             <div class="modal-body">
                <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('/associado/documentacao/rg')}}">
                   {{ csrf_field() }}
-                  <!-- Botão de Arquivo para CPF -->
+                  <!-- Botão de Arquivo para RG -->
                   <div class="form-group" id="mensagem1">
                      <label class="col-md-4 control-label" for="filebutton">RG: </label>
                      <div class="col-md-4">
-                        <input id="documento1" name="rg" class="input-file" type="file">
+                        <input id="documento1" name="rg" class="input-file" type="file" accept=".pdf">
                         <br />
                         <button class="btn btn-success" id="botao1">
                         Enviar novo RG
@@ -149,7 +149,7 @@
                   <div class="form-group" id="mensagem2">
                      <label class="col-md-4 control-label" for="filebutton">CPF: </label>
                      <div class="col-md-4">
-                        <input id="documento2" name="cpf" class="input-file" type="file">
+                        <input id="documento2" name="cpf" class="input-file" type="file" accept=".pdf">
                         <br />
                         <button class="btn btn-success">
                         Enviar novo CPF
@@ -176,7 +176,7 @@
                   <div class="form-group" id="mensagem3">
                      <label class="col-md-4 control-label" for="filebutton">CNH: </label>
                      <div class="col-md-4">
-                        <input id="documento3" name="cnh" class="input-file" type="file">
+                        <input id="documento3" name="cnh" class="input-file" type="file" accept=".pdf">
                         <br />
                         <button class="btn btn-success">
                         Enviar nova CNH
@@ -203,7 +203,7 @@
                   <div class="form-group" id="mensagem3">
                      <label class="col-md-4 control-label" for="filebutton">Comprovante: </label>
                      <div class="col-md-4">
-                        <input id="comprovante_e" name="comprovante_e" class="input-file" type="file">
+                        <input id="comprovante_e" name="comprovante_e" class="input-file" type="file" accept=".pdf">
                         <br />
                         <button class="btn btn-success">
                         Enviar novo comprovante

@@ -7,7 +7,7 @@
     </head>
     <body>
         <p>O upload de uma nova anuidade foi realizado em apemesp.com .</p>
-        <p>O usuário abaixo realizou o procedimento </p>
+        <p>O usuário abaixo realizou o procedimento: </p>
         <br>
         <p> <b>Nome: {{ $nome }}</b></p>
         <p> <b>E-mail: {{ $email }}</b></p>

@@ -10,6 +10,8 @@ use Apemesp\Http\Controllers\Controller;
 
 use Apemesp\Http\Requests;
 
+use Apemesp\Apemesp\Models\User;
+
 use Apemesp\Apemesp\Repositories\Associado\AssociadoRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosAcademicosRepository;
@@ -21,6 +23,8 @@ use View;
 use Session;
 
 use Auth;
+
+use Mail;
 
 use Apemesp\Apemesp\Repositories\Apemesp\UserRepository;
 
@@ -92,7 +96,7 @@ class FinanceiroController extends Controller{
 
         $administradores = $userRepo->findAllAdmins();
         foreach($administradores as $administrador) {
-            Mail::send('emails.administradores.financeiro', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
+            Mail::send('emails.administradores_financeiro', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
                 $m->from('site.apemesp@gmail.com', 'APEMESP');
 
                 $m->to($administrador->email, $administrador->name)->subject('Nova anuidade cadastrada!');

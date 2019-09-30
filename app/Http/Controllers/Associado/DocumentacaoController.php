@@ -18,11 +18,15 @@ use Apemesp\Apemesp\Repositories\Associado\DocumentacaoRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\FinanceiroRepository;
 
+use Apemesp\Apemesp\Models\User;
+
 use View;
 
 use Auth;
 
 use Session;
+
+use Mail;
 
 class DocumentacaoController extends Controller{
 

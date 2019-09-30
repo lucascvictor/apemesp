@@ -22,7 +22,7 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label" for="arquivoemento">Arquivo:</label>
                      <div class="col-md-4">
-                      <input id="comprovante" name="comprovante" class="input-file" type="file" required="">
+                      <input id="comprovante" name="comprovante" class="input-file" type="file" required="" accept=".pdf">
                       <p> O comprovante de pagamento da anuidade pode ser enviado no formato pdf</p>
                      </div>
                   </div>
