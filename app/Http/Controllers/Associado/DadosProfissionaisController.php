@@ -215,7 +215,7 @@ class DadosProfissionaisController extends Controller{
             Mail::send('emails.administradores_perfil', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email], function ($m) use ($user, $administrador) {
                 $m->from('site.apemesp@gmail.com', 'APEMESP');
 
-                $m->to($administrador->email, $administrador->name)->subject('Nova anuidade cadastrada!');
+                $m->to($administrador->email, $administrador->name)->subject('Novos dados profissionais!');
             });
         }
     }

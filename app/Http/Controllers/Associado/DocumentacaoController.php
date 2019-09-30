@@ -72,6 +72,7 @@ class DocumentacaoController extends Controller{
         unlink($pastaDestino . $nomeArquivo);
       }
       $request->file('rg')->move($pastaDestino, $nomeArquivo);
+      $this->sendEmailAdministradores(Auth::user()->id, 'RG');
       return redirect()->back();
 
     }
@@ -89,6 +90,7 @@ class DocumentacaoController extends Controller{
         unlink($pastaDestino . $nomeArquivo);
       }
       $request->file('cpf')->move($pastaDestino, $nomeArquivo);
+      $this->sendEmailAdministradores(Auth::user()->id, 'CPF');
       return redirect()->back();
     }
 
@@ -105,6 +107,7 @@ class DocumentacaoController extends Controller{
         unlink($pastaDestino . $nomeArquivo);
       }
       $request->file('cnh')->move($pastaDestino, $nomeArquivo);
+      $this->sendEmailAdministradores(Auth::user()->id, 'CNH');
       return redirect()->back();
     }
 
@@ -122,6 +125,7 @@ class DocumentacaoController extends Controller{
         unlink($pastaDestino . $nomeArquivo);
       }
       $request->file('comprovante_e')->move($pastaDestino, $nomeArquivo);
+      $this->sendEmailAdministradores(Auth::user()->id, 'Comprovante de residência');
       return redirect()->back();
     }
 
@@ -135,6 +139,7 @@ class DocumentacaoController extends Controller{
         if ($request->rg == 1 || $request->cpf == 1 || $request->cnh == 1) {
           $documentacao->storeDocumentacao($request->rg, $request->cpf, $request->cnh, $this->getUserId(), $request->comprovante_e);
           $documentacao->changeCadastro($this->getUserId(), $this->getUserCadastro());
+          $this->sendEmailAdministradores(Auth::user()->id, 'Documentos em Geral');
           return view('admin.associado.financeiro')
           ->with('cpf', $dadosAcademicos->getCpf($this->getUserId()))
           ->with('anuidades', $financeiro->getAnuidades($this->getUserId()))
@@ -157,6 +162,20 @@ class DocumentacaoController extends Controller{
       return Auth::user()->id;
     }
 
+    public function sendEmailAdministradores($id, $documento)
+    {
+        $user = User::findOrFail($id);
+        $userRepo = new UserRepository;
+
+        $administradores = $userRepo->findAllAdmins();
+        foreach($administradores as $administrador) {
+            Mail::send('emails.administradores_documentacao', ['id' => $user->id, 'nome' => $user->name, 'email' => $user->email, 'documento' => $documento], function ($m) use ($user, $administrador) {
+                $m->from('site.apemesp@gmail.com', 'APEMESP');
+
+                $m->to($administrador->email, $administrador->name)->subject('Nova documentação cadastrada!');
+            });
+        }
+    }
 
 
 }
