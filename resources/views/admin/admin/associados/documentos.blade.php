@@ -24,7 +24,11 @@
                         } ?>
                   </td>
                   <td><a href="/admin/associados/download/{{$associado->cpf}}/rg.pdf">download</a></td>
-                  <td><a href="/public/files/{{$associado->cpf}}/rg.pdf">Visualizar RG</a></td>
+                  <td>
+                     @if($documentacao[0] == 1)
+                        <a href="/public/files/{{$associado->cpf}}/rg.pdf">Visualizar RG</a>
+                     @endif
+                  </td>
                </tr>
                <tr>
                   <td><b>CPF:</b></td>
@@ -39,7 +43,11 @@
                         } ?>
                   </td>
                   <td><a href="/admin/associados/download/{{$associado->cpf}}/cpf.pdf">download</a></td>
-                  <td><a href="/public/files/{{$associado->cpf}}/cpf.pdf">Visualizar CPF</a></td>
+                  <td>
+                     @if($documentacao[1] == 1)
+                        <a href="/public/files/{{$associado->cpf}}/cpf.pdf">Visualizar CPF</a>
+                     @endif
+                  </td>
                </tr>
                <tr>
                   <td><b>CNH:</b></td>
@@ -54,7 +62,11 @@
                         } ?>
                   </td>
                   <td><a href="/admin/associados/download/{{$associado->cpf}}/cnh.pdf">download</a></td>
-                  <td><a href="/public/files/{{$associado->cpf}}/cnh.pdf">Visualizar CNH</a></td>
+                  <td>
+                     @if($documentacao[2] == 1)
+                     <a href="/public/files/{{$associado->cpf}}/cnh.pdf">Visualizar CNH</a>
+                     @endif
+                  </td>
                </tr>
                <tr>
                   <td><b>Comprovante de Endereço:</b></td>
@@ -70,7 +82,11 @@
                         ?>
                   </td>
                   <td><a href="/admin/associados/download/{{$associado->cpf}}/comprovante_e.pdf">download</a></td>
-                  <td><a href="/public/files/{{$associado->cpf}}/comprovante_e.pdf">Visualizar Comprovante</a></td>
+                  <td>
+                     @if($documentacao[3] == 1)
+                        <a href="/public/files/{{$associado->cpf}}/comprovante_e.pdf">Visualizar Comprovante</a>
+                     @endif   
+                  </td>
                </tr>
             </tbody>
          </table>
