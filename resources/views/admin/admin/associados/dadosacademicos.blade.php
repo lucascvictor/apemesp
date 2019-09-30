@@ -1,5 +1,5 @@
 <?php $cont =0;?>
-<h3> Dados Academicos </h3>
+<h3> Dados Acadêmicos </h3>
 @foreach($dadosacademicos as $dadoacademico)
 <center>
    <table class="table table-hover table-striped">
@@ -25,6 +25,10 @@
          <tr>
             <td><b>Ano de Conclusão/ Previsão:</b></td>
             <td>{{$dadoacademico->anodeconclusao}}</td>
+         </tr>
+         <tr>
+            <td><b>Certificado de Conclusão: </b></td>
+            <td><a href="/admin/associados/download/{{ $associado->cpf }}/{{$dadoacademico->certificado}}">{{$dadoacademico->certificado}}</a></td>
          </tr>
          <tr>
             <td><b>Titulo do TCC:</b></td>
