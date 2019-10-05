@@ -27,6 +27,19 @@
                         </ul>
                     </div>
                 @endif
+                <div class="col-md-4">
+                        @if(Session::has('sucesso'))
+                           <div class="alert alert-success" role="alert">
+                              <a class="close" data-dismiss="alert">×</a>
+                              <strong> {!!Session::get('sucesso')!!} </strong>
+                           </div>
+                        @elseif (Session::has('cuidado'))
+                           <div class="alert alert-danger" role="alert">
+                              <a class="close" data-dismiss="alert">×</a>
+                              <strong> {!!Session::get('cuidado')!!} </strong>
+                           </div>
+                        @endif
+                  </div>
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
