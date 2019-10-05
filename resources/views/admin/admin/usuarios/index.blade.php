@@ -8,12 +8,19 @@
     <?php $pagina = $_SERVER['PHP_SELF'];?>
     <?php $link = '/admin/usuarios';?>
     
-    <div class="col-md-4">
+    <div class="col-md-2">
         <a class="btn btn-success"  href="{{ url('/admin/usuarios/updated') }}"> Visualizar últimos usuários inscritos </a>
+    </div>
+    <div class="col-md-2">
     </div>
     <div class="col-md-2">
         <a class="btn btn-default"  href="{{ url('/admin/usuarios') }}"> Visualizar lista completa em ordem alfabética</a>
     </div>
+    <div class="col-md-2">
+      </div>
+    <div class="col-md-2">
+      <a class="btn btn-info" href="{{ url('/admin/usuarios/new') }}">Criar novo usuário</a>
+   </div>
 </div>
 <hr>
 <div class="row">
@@ -88,9 +95,7 @@
          <p> {!! $usuarios->appends(request()->query())->render() !!} </p>
       </div>
    </div>
-   <div class="col-md-2">
-      <a class="btn btn-success" href="{{ url('/admin/usuarios/new') }}">Criar novo usuário</a>
-   </div>
+   
 </div>
 @endsection
 @section('extrascript')

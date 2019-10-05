@@ -21,13 +21,13 @@
             <div class="form-group">
                <label class="col-md-4 control-label" for="digito">Digito:</label>
                <div class="col-md-4">
-                  <input id="digito" name="digito" type="numer" placeholder="digito" class="form-control input-md" required="" value="{{ $carteirinha->digito}}">
+                  <input id="digito" name="digito" type="numer" placeholder="digito" class="form-control input-md" required="" value="{{ $carteirinha->digito}}" maxlength="2" max="99">
                </div>
             </div>
             <div class="form-group">
                <label class="col-md-4 control-label" for="numero">Numero:</label>
                <div class="col-md-4">
-                  <input id="numero" name="numero" type="number" placeholder="numero" class="form-control input-md" required="" value="{{ $carteirinha->numero}}">
+                  <input id="numero" name="numero" type="number" placeholder="numero" class="form-control input-md" required="" value="{{ $carteirinha->numero}}" maxlength="10" max="9999999999">
                </div>
             </div>
             <div class="form-group">
