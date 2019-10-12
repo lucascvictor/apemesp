@@ -326,7 +326,7 @@ Route::group(['prefix' => 'associado'], function () {
 
     //Dados Profissionais
     Route::group(['prefix' => 'dadosprofissionais'], function () {
-      Route::get('', 'Associado\DadosProfissionaisController@getDadosProfissionais');
+      Route::get('', 'Associado\DadosProfissionaisController@getDadosProfissionais')->name('admin.dadosprofissionais');
       Route::get('/atendimento', 'Associado\DadosProfissionaisController@storeOpcaoDeAtendimento');
       Route::get('{id}', 'Associado\DadosProfissionaisController@showDadosProfissionais');
       Route::post('{id}', 'Associado\DadosProfissionaisController@updateDadosProfissionais');
