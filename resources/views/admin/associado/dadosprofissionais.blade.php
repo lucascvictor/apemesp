@@ -57,6 +57,7 @@
                <option @if(Auth::user()->opcao_dados_profissionais == 2) selected @endif value="2">Sim</option>
                <option @if(Auth::user()->opcao_dados_profissionais == 1) selected @endif value="1">Não</option>
                </select>
+               <br />
                <button class="btn btn-warning" type="submit"> Confirmar</button>
             </form>
             </div>
