@@ -96,7 +96,7 @@ class PerfilController extends Controller
         $id = Auth::user()->id;
         $usuRep->alterarOpcaoProfissional($id, $request->opcaoProfissional);
         Session::flash('sucesso', 'Sua opção de exibição dos dados profissionais foi salva.');
-        return redirect()->route('admin.perfil');
+        return redirect()->route('admin.dadosprofissionais');
     }
 
 }

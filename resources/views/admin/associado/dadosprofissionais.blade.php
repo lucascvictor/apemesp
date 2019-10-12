@@ -1,10 +1,10 @@
 
 @extends('admin.dashboard')
-@section('titulo', 'Cadastro de dados profissionais')
+@section('titulo', 'Manutenção de dados profissionais')
 @section('conteudo')
 <legend>Dados Profissionais Cadastrados</legend>
 <div class="row">
-   <div class="col-lg-12">
+   <div class="col-md-12">
       <table class="table table-hover table-striped">
          <thead>
             <tr>
@@ -36,13 +36,33 @@
    <p> {{ $dados->render() }}</p>
 </div>
 <div class="row" style="margin-top: 20%;">
-   <div class="col-md-4">
+   <div class="col-md-3">
       <a class="btn btn-success btn-block" href="" data-toggle="modal" data-target="#CadastroModal">Adicionar novos dados profissionais</a>
       <a href="" data-toggle="modal" data-target="#myModal">Sua especialidade não está listada? Clique aqui </a>
    </div>
-   <div class="col-md-4">
+   <div class="col-md-3">
       <a class="btn btn-info btn-block" href="" data-toggle="modal" data-target="#Atendimento">Não realizo atendimentos no momento</a>
    </div>
+   @if($dados[0]) 
+      <!-- Grupo exibido apenas se um ou mais cadastros existirem-->
+      <fieldset style="margin: 20px;">
+         <legend>Exibição de dados profissionais</legend>
+         <!-- Campo Nome -->
+         <div class="form-group">
+            <label class="col-md-12 control-label" for="name">Deseja permitir a exibição de seus dados profissionais?</label>  
+            <div class="col-md-4">
+            <form method="post" action="{{ url('/admin/perfil/alteraropcaoprofissional')}}">
+            {{ csrf_field() }}
+               <select class="form-control form-control-lg" name="opcaoProfissional">
+               <option @if(Auth::user()->opcao_dados_profissionais == 2) selected @endif value="2">Sim</option>
+               <option @if(Auth::user()->opcao_dados_profissionais == 1) selected @endif value="1">Não</option>
+               </select>
+               <button class="btn btn-warning" type="submit"> Confirmar</button>
+            </form>
+            </div>
+         </div>
+      </fieldset>
+   @endif
 </div>
 <div class="modal fade" id="Atendimento" role="dialog">
    <div class="modal-dialog">

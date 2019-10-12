@@ -1,9 +1,13 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Cadastro de dados profissionais')
+@section('titulo', 'Visualização de dados profissionais')
 
 @section('conteudo')
 
+<div class="modal-footer">
+  <a class="btn btn-info" href="{{ url('/associado/dadosprofissionais/edit/') }}/{{ $dados[0]->id }}">Editar</a>
+  <a class="btn btn-danger" href="{{ url('/associado/dadosprofissionais/destroy/') }}/{{ $dados[0]->id }}">Excluir</a>
+</div>
 
 <legend>Dados Profissionais Cadastrados</legend>
 
@@ -125,10 +129,6 @@
          </div>
 
    </fieldset>
-   <div class="modal-footer">
-     <a class="btn btn-info" href="{{ url('/associado/dadosprofissionais/edit/') }}/{{ $dados[0]->id }}">Editar</a>
-     <a class="btn btn-danger" href="{{ url('/associado/dadosprofissionais/destroy/') }}/{{ $dados[0]->id }}">Excluir</a>
-  </div>
 </form>
 
 @endsection
