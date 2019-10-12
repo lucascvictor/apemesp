@@ -36,7 +36,7 @@
          <label class="col-md-4 control-label" for="ano">Ano de Conclusão/ Previsão:</label>
          <div class="col-md-4">
             <div class="input-group" data-link-format="yyyy">
-               <input name="anodeconclusao" id="anodeconclusao"  maxlength="4" class="form-control" type="number" value="{{ $formacao->anodeconclusao }}">
+               <input min="1910" name="anodeconclusao" id="anodeconclusao"  maxlength="4" class="form-control" type="number" value="{{ $formacao->anodeconclusao }}">
             </div>
          </div>
       </div>
@@ -122,7 +122,7 @@
          <label class="col-md-4 control-label" for="ano">Carga horária:</label>
          <div class="col-md-4">
             <div class="input-group" data-link-format="yyyy">
-               <input name="cargahoraria" id="cargahoraria" maxlength="5" class="form-control" type="number" value="{{ $formacao->cargahoraria }}" placeholder="Apenas números" required="">
+               <input min="10" name="cargahoraria" id="cargahoraria" maxlength="5" class="form-control" type="number" value="{{ $formacao->cargahoraria }}" placeholder="Apenas números" required="">
             </div>
          </div>
       </div>
