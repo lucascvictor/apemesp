@@ -71,13 +71,16 @@ class AdminController extends Controller
             ->with('anos', $anos)
             ->with('year', $ano);
         }
+
         if ($id_perfil == 2) {
             $views = $chart->getVisualizacoes();
             $maisVistos = $chart->getPostsMaisVistos();
+            $views->setPath('views');
             return view('admin.redator.index')
             ->with('views', $views)
             ->with('maisVistos', $maisVistos);
         }
+
         if ($id_perfil == 3 || $id_perfil == 4) {
             if ($id_status == 1 || $id_status ==2) {
 

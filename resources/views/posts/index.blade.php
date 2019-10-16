@@ -48,6 +48,9 @@
             @endforeach
          </tbody>
       </table>
+      <div class="row">
+         <p> {!! $views->appends(request()->query())->render() !!} </p>
+      </div>
    </div>
 </div>
 
