@@ -53,7 +53,7 @@ class ChartRepository
 		->join('posts', 'posts.id', '=', 'posts_views.id')
 		->select('posts.titulo', 'posts.id', 'posts_views.total_visitas')
 		->orderBy('posts_views.total_visitas', 'desc')
-		->get();
+		->paginate(10);
 	}
 
 	public function getPostsMaisVistos()
