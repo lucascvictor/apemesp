@@ -59,6 +59,17 @@ class AssociadoController extends Controller
         ->with("cidade", $cidade);
     }
 
+    public function avaliarPerfil($id)
+    {
+        $associadoRepository = new AssociadoRepository;
+        $associado = $associadoRepository->getAssociado($id);
+        $usuario = $associadoRepository->getUser($id);
+        unset($associadoRepository);
+        return view("admin.admin.associados.avaliarperfil")
+        ->with('associado', $associado)
+        ->with('usuario', $usuario);
+    }
+
     public function getPerfil($id)
     {
         $associadoRepository = new AssociadoRepository;
