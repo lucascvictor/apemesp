@@ -17,12 +17,12 @@ class ValidacaoCadastralRepository
 
 	public function historico($id)
 	{
-        return ValidacaoCadastral::where('id_user', $id)->paginate(5);
+        return ValidacaoCadastral::where('id_user', $id)->orderBy('created_at', 'desc')->paginate(5);
     }
     
     public function emails($id)
     {
-        return EmailsValidacao::where('id_user', $id)->paginate(5);
+        return EmailsValidacao::where('id_user', $id)->orderBy('created_at', 'desc')->paginate(5);
     }
 
 	public function status($id_user, $status, $observacoes)
