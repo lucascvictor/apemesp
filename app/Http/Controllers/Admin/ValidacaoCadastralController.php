@@ -14,11 +14,15 @@ use Apemesp\Apemesp\Repositories\Admin\ValidacaoCadastralRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DocumentacaoRepository;
 
+use Apemesp\Apemesp\Models\User;
+
 use Auth;
 
 use Session;
 
 use View;
+
+use Mail;
 
 class ValidacaoCadastralController extends Controller
 {
@@ -45,12 +49,21 @@ class ValidacaoCadastralController extends Controller
         return redirect()->back();
     }
 
-    public function email($id)
+    public function email(Request $request)
     {
-        $assuntoRepository = new AssuntoRepository;
-        $assuntoRepository->deleteAssunto($id);
-        Session::flash('cuidado', 'O assunto foi removido com sucesso!');
-        return redirect()->route('show.assuntos');
+        $user = User::findOrFail($request->id);
+
+        if($user) {
+            Mail::send('emails.validacao_cadastral', ['mensagem' => $request->mensagem], function ($m) use ($user) {
+                $m->from('site.apemesp@gmail.com', 'APEMESP');
+                $m->to($user->email, $user->name)->subject('Avaliação de dados cadastrais!');
+            });
+            Session::flash('sucesso', 'O e-mail foi enviado!');
+        } else {
+            Session::flash('cuidado', 'Não foi possivel enviar o e-mail');
+        }   
+
+        return redirect()->back();
     }
 
 }

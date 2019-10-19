@@ -178,6 +178,7 @@
 	<div class="col-md-6">
 			<h4>Enviar e-mail para o associado:</h4>
 			<h5>Informe brevemente os motivos desta avaliação</h5>
+			<h6> O e-mail será enviado para: {{ $usuario[0]->email }} </h6>
 			<form class="form-horizontal" method="POST" action="{{ url('/admin/validacao/email')}}">
 				{{ csrf_field() }}
 				<textarea name="mensagem" id="mensagem" cols="45" rows="10"> </textarea>
