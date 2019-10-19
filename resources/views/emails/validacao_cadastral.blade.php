@@ -6,7 +6,7 @@
     </style>
     </head>
     <body>
-        <p>Os dados cadastros em nosso site foram avaliados .</p>
+        <p>Os dados cadastrados em nosso site foram avaliados .</p>
         <br>
         <p> {!! $mensagem !!} </p>
         <br>
