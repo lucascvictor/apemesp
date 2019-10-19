@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('titulo', 'Gerenciamento de dados cadastrais')
+@section('titulo', 'Gerenciamento de dados cadastrais' )
 
 @section('extrastyle')
 
@@ -33,6 +33,7 @@
 
 @section('conteudo')
 
+<h5>{{ $usuario[0]->name }} </h5>
 <div class="row bs-wizard col-md-12" style="margin-bottom: 15px;">
 
 	<div class="row">

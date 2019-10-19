@@ -40,7 +40,7 @@ class ValidacaoCadastralController extends Controller
         $documentacao = new DocumentacaoRepository;
         $validacao = new ValidacaoCadastralRepository;
 //        $documentacao->changeCadastro($request->id, $request->validacao);
-        $validacao->status($request->id, $request->validacao);
+        $validacao->status($request->id, $request->validacao, $request->observacoes);
         Session::flash('sucesso', 'A avaliação cadastral foi salva com sucesso!');
         return redirect()->back();
     }

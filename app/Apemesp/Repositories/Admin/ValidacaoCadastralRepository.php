@@ -20,11 +20,12 @@ class ValidacaoCadastralRepository
         return ValidacaoCadastral::where('id_user', $id)->paginate(10);
 	}
 
-	public function status($id_user, $status)
+	public function status($id_user, $status, $observacoes)
 	{
         $table             = new ValidacaoCadastral;
         $table->id_user    = $id_user;
         $table->status     = $status;
+        $table->observacoes = $observacoes;
         $table->created_at = date("Y-m-d H:i:s");
         $table->save();
 
