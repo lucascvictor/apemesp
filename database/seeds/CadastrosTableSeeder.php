@@ -42,6 +42,12 @@ class CadastrosTableSeeder extends Seeder
 
                 ],
 
+                5 => [
+                    'id'             => 6,
+                    'desc'          => 'Validação Cadastraç Concluída',
+
+                ],
+
 
             ]);
     

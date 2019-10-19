@@ -30,10 +30,14 @@ class DocumentacaoRepository
 
   }
 
-  public function changeCadastro($id_user, $id)
+  public function changeCadastro($id_user, $status)
   {
-    $id_atual = User::where('id', $id)->get();
-    if ($id_atual[0]->id < 5) {
+    $id_atual = User::select('id_cadastro')->where('id', $id_user)->get();
+    if ($id_atual[0]->id_cadastro == 5 && $status == 5) {
+      User::where('id', $id_user)->update(['id_cadastro' => 6]);
+    }
+
+    if($id_atual[0]->id_cadastro == 4) {
       User::where('id', $id_user)->update(['id_cadastro' => 5]);
     }
   }

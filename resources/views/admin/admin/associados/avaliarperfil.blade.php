@@ -121,7 +121,7 @@
 			<br>
 			<label class="form-horizontal">Observações:</label>
 			<br>
-			<textarea name="observacoes" class="form-horizontal" cols="50" rows="10">
+			<textarea name="observacoes" class="form-horizontal" cols="45" rows="5">
 			</textarea>
 			<br />
 			<input name="id" type="hidden" value="{{ $usuario[0]->id }}">
@@ -180,7 +180,7 @@
 			<h5>Informe brevemente os motivos desta avaliação</h5>
 			<form class="form-horizontal" method="POST" action="{{ url('/admin/validacao/email')}}">
 				{{ csrf_field() }}
-				<textarea name="mensagem" id="mensagem" cols="50" rows="10"> </textarea>
+				<textarea name="mensagem" id="mensagem" cols="45" rows="10"> </textarea>
 				<br>
 				<input name="id" type="hidden" value="{{ $usuario[0]->id }}">
 				<button class="btn btn-success" type="submit">Enviar</button>

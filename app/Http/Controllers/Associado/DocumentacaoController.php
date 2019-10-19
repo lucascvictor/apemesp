@@ -142,6 +142,7 @@ class DocumentacaoController extends Controller{
 
         if ($request->rg == 1 || $request->cpf == 1 || $request->cnh == 1) {
           $documentacao->storeDocumentacao($request->rg, $request->cpf, $request->cnh, $this->getUserId(), $request->comprovante_e);
+          $documentacao->changeCadastro($this->getUserId(), $this->getUserCadastro());
           $this->sendEmailAdministradores(Auth::user()->id, 'Documentos em Geral');
           return view('admin.associado.financeiro')
           ->with('cpf', $dadosAcademicos->getCpf($this->getUserId()))
