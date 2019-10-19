@@ -10,6 +10,8 @@ use Apemesp\Http\Requests;
 
 use Apemesp\Apemesp\Repositories\Admin\AssociadoRepository;
 
+use Apemesp\Apemesp\Repositories\Admin\ValidacaoCadastralRepository;
+
 use Apemesp\Apemesp\Repositories\Associado\DadosPessoaisRepository;
 
 use Apemesp\Apemesp\Repositories\Associado\DadosProfissionaisRepository;
@@ -62,12 +64,15 @@ class AssociadoController extends Controller
     public function avaliarPerfil($id)
     {
         $associadoRepository = new AssociadoRepository;
-        $associado = $associadoRepository->getAssociado($id);
+        $avaliacao = new ValidacaoCadastralRepository;
         $usuario = $associadoRepository->getUser($id);
+        $historico = $avaliacao->historico($id);
+        $emails = $avaliacao->emails($id);
         unset($associadoRepository);
         return view("admin.admin.associados.avaliarperfil")
-        ->with('associado', $associado)
-        ->with('usuario', $usuario);
+        ->with('usuario', $usuario)
+        ->with('historico', $historico)
+        ->with('emails', $emails);
     }
 
     public function getPerfil($id)

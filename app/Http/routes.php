@@ -81,6 +81,11 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post('/alteraropcaoprofissional', 'Admin\PerfilController@alterarOpcaoProfissional')->name('admin.alteraropcaoprofissional');
     });
 
+    Route::group(['prefix' => 'validacao'], function () {
+      Route::post('/status', 'Admin\ValidacaoCadastralController@status')->name('admin.validacaoStatus');
+      Route::post('/email', 'Admin\ValidacaoCadastralController@email')->name('admin.validacaoEmail');
+    });
+
     Route::group(['prefix' => 'usuarios'], function () {
         Route::get('', 'Admin\UsuarioController@index')->where('page', '.*')->name('users.index');
         Route::get('/new', 'Admin\UsuarioController@new')->name('users.new');

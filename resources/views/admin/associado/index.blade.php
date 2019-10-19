@@ -44,7 +44,9 @@
               <div class="col-md-4">
               </div>
               <div class="col-md-4">
-              <a class="btn btn-success" href="" data-toggle="modal" data-target="#dadosBancarios">Visualizar Dados Bancários da APEMESP</a>
+              @if(Auth::user()->id_cadastro >= 5)                
+                <a class="btn btn-success" href="" data-toggle="modal" data-target="#dadosBancarios">Visualizar Dados Bancários da APEMESP</a>
+              @endif
               </div>
           </div>
             <h3>Passos para obtenção do numero de registro:</h3>

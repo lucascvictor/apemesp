@@ -21,7 +21,13 @@
 			@endif
 
 			@if (Auth::user()->id_cadastro + 1 == 5)
-					: Upload de documentação
+					: 
+					<br>
+					Os administradores da Apemesp precisam avaliar sua documentação antes do próximo passo.
+					<br>
+					Este processo é realizado logo após o envio de seus documentos no passo anterior.
+					<br>
+					Assim que seus documentos forem aprovados, novas funcionalidades estarão disponíveis.
 			@endif
 
 			@if (Auth::user()->id_cadastro + 1 == 6)

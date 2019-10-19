@@ -14,8 +14,6 @@ use Apemesp\Apemesp\Repositories\Admin\AssuntoRepository;
 
 use Apemesp\Apemesp\Repositories\Admin\ConfigsRepository;
 
-
-
 use Auth;
 
 use Session;
