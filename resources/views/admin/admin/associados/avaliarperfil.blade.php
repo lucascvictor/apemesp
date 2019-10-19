@@ -121,7 +121,7 @@
 			<br>
 			<label class="form-horizontal">Observações:</label>
 			<br>
-			<textarea name="observacoes" class="form-horizontal">
+			<textarea name="observacoes" class="form-horizontal" cols="50" rows="10">
 			</textarea>
 			<br />
 			<input name="id" type="hidden" value="{{ $usuario[0]->id }}">
@@ -163,8 +163,8 @@
 							}
 							?>
 							<td>{{ $avlc }}</td>
-							<td>{{ $avaliacao->observacoes }}</td>
 							<td>{{ $avaliacao->created_at }}</td>
+							<td>{{ $avaliacao->observacoes }}</td>
 						</tr>
 						@endforeach
 					</tbody>
@@ -180,7 +180,7 @@
 			<h5>Informe brevemente os motivos desta avaliação</h5>
 			<form class="form-horizontal" method="POST" action="{{ url('/admin/validacao/email')}}">
 				{{ csrf_field() }}
-				<textarea name="mensagem" id="mensagem"> </textarea>
+				<textarea name="mensagem" id="mensagem" cols="50" rows="10"> </textarea>
 				<br>
 				<input name="id" type="hidden" value="{{ $usuario[0]->id }}">
 				<button class="btn btn-success" type="submit">Enviar</button>
@@ -192,23 +192,21 @@
 				<table class="table table-hover table-striped">
 					<thead>
 						<tr>
-							<th>Data de envio</th>
 							<th>Mensagem</th>
+							<th>Data de envio</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($historico as $avaliacao)
-							
-							<td>{{ $avaliacao->created_at }}</td>
-							<td><a href="{{ $avlc }}">Visualizar mensagem</a></td>
+						@foreach($emails as $email)
+							<td><a href="#{{ $email->id }}">Visualizar mensagem</a></td>
+							<td>{{ $email->created_at }}</td>
 						</tr>
 						@endforeach
 					</tbody>
 				</table>
 		</div>
-		{!! $historico->appends(request()->query())->render() !!}
+		{!! $emails->appends(request()->query())->render() !!}
 	</div>
 </div>
-
 
 @endsection

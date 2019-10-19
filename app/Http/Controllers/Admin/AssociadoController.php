@@ -65,14 +65,14 @@ class AssociadoController extends Controller
     {
         $associadoRepository = new AssociadoRepository;
         $avaliacao = new ValidacaoCadastralRepository;
-        $associado = $associadoRepository->getAssociado($id);
         $usuario = $associadoRepository->getUser($id);
         $historico = $avaliacao->historico($id);
+        $emails = $avaliacao->emails($id);
         unset($associadoRepository);
         return view("admin.admin.associados.avaliarperfil")
-        ->with('associado', $associado)
         ->with('usuario', $usuario)
-        ->with('historico', $historico);
+        ->with('historico', $historico)
+        ->with('emails', $emails);
     }
 
     public function getPerfil($id)
