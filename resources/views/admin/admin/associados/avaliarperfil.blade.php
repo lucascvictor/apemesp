@@ -33,67 +33,78 @@
 
 @section('conteudo')
 
-            <div class="row bs-wizard col-md-12" style="margin-bottom: 15px;">
+<div class="row bs-wizard col-md-12" style="margin-bottom: 15px;">
 
-            <div class="row">
-              <div class="col-md-4">
-              </div>
-              <div class="col-md-4">
-              </div>
-             
-          </div>
-            <h3>Passos para obtenção do numero de registro:</h3>
-                <div class="col-xs-3 col-md-4 bs-wizard-step complete">
-                  <div class="text-center bs-wizard-stepnum">Passo 1</div>
-                  <div class="progress"><div class="progress-bar"></div></div>
-                  <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Cadastro de usuário e senha.</div>
-                </div>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+		</div>
 
-                <div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 1)
-                                                    complete
-                                                    @else
-                                                    disabled
-                                                    @endif"><!-- complete -->
-                  <div class="text-center bs-wizard-stepnum">Passo 2</div>
-                  <div class="progress"><div class="progress-bar"></div></div>
-                  <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Cadastro dos dados pessoais</div>
-                </div>
-
-                <div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 2)
-                                                    complete
-                                                    @else
-                                                    disabled
-                                                    @endif" ><!-- complete -->
-                  <div class="text-center bs-wizard-stepnum">Passo 3</div>
-                  <div class="progress"><div class="progress-bar"></div></div>
-                  <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Cadastro dos dados acadêmicos</div>
-                </div>
-                <br><br><br><br><br><br><br>                
-                <div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 3)
-                                                    complete
-                                                    @else
-                                                    disabled
-                                                    @endif"  ><!-- complete -->
-                  <div class="text-center bs-wizard-stepnum">Passo 4</div>
-                  <div class="progress"><div class="progress-bar"></div></div>
-                  <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Cadastro dos dados profissionais</div>
-                </div>
-
-                <div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 4)
-                                                    complete
-                                                    @else
-                                                    disabled
-                                                    @endif" ><!-- active -->
-                  <div class="text-center bs-wizard-stepnum">Passo 5</div>
-                  <div class="progress"><div class="progress-bar"></div></div>
-                  <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center"> Confirmação da documentação necessária</div>
-                </div>
-           
 	</div>
+	<div class="col-xs-3 col-md-4 bs-wizard-step complete">
+		<div class="text-center bs-wizard-stepnum">Passo 1</div>
+		<div class="progress">
+			<div class="progress-bar"></div>
+		</div>
+		<a href="#" class="bs-wizard-dot"></a>
+		<div class="bs-wizard-info text-center">Cadastro de usuário e senha.</div>
+	</div>
+
+	<div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 1)
+                                                    complete
+                                                    @else
+                                                    disabled
+                                                    @endif">		<!-- complete -->
+		<div class="text-center bs-wizard-stepnum">Passo 2</div>
+		<div class="progress">
+			<div class="progress-bar"></div>
+		</div>
+		<a href="#" class="bs-wizard-dot"></a>
+		<div class="bs-wizard-info text-center">Cadastro dos dados pessoais</div>
+	</div>
+
+	<div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 2)
+                                                    complete
+                                                    @else
+                                                    disabled
+                                                    @endif">		<!-- complete -->
+		<div class="text-center bs-wizard-stepnum">Passo 3</div>
+		<div class="progress">
+			<div class="progress-bar"></div>
+		</div>
+		<a href="#" class="bs-wizard-dot"></a>
+		<div class="bs-wizard-info text-center">Cadastro dos dados acadêmicos</div>
+	</div>
+	<div class="row">
+		
+	</div>
+	<div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 3)
+                                                    complete
+                                                    @else
+                                                    disabled
+                                                    @endif">		<!-- complete -->
+		<div class="text-center bs-wizard-stepnum">Passo 4</div>
+		<div class="progress">
+			<div class="progress-bar"></div>
+		</div>
+		<a href="#" class="bs-wizard-dot"></a>
+		<div class="bs-wizard-info text-center">Cadastro dos dados profissionais</div>
+	</div>
+
+	<div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 4)
+                                                    complete
+                                                    @else
+                                                    disabled
+                                                    @endif">		<!-- active -->
+		<div class="text-center bs-wizard-stepnum">Passo 5</div>
+		<div class="progress">
+			<div class="progress-bar"></div>
+		</div>
+		<a href="#" class="bs-wizard-dot"></a>
+		<div class="bs-wizard-info text-center"> Confirmação da documentação necessária</div>
+	</div>
+
+</div>
 
 @endsection
