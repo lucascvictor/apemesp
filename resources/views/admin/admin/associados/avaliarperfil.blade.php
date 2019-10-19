@@ -103,7 +103,46 @@
 		<a href="#" class="bs-wizard-dot"></a>
 		<div class="bs-wizard-info text-center"> Confirmação da documentação necessária</div>
 	</div>
-
 </div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h4>Resultado da avaliação:</h4>
+		<form class="form-horizontal" method="POST" action="{{ url('/admin/validacao/status' )}}">
+			{{ csrf_field() }}
+			<select id="validacao" name="validacao">
+				<option value="1">Dados incompletos</option>
+				<option value="2">Informações falsas ou não coerentes</option>
+				<option value="3">Documentos ilegiveis</option>
+				<option value="4">Foto para reconhecimento do musicoterapeuta é inválida</option>
+				<option value="5">Informações válidas</option>
+			</select>
+			<br />
+			<input name="id" type="hidden" value="{{ $usuario[0]->id }}">
+			<button class="btn btn-success" type="submit">Salvar Avaliação</button>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<h4>Histórico de avaliações</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+			<h4>Enviar e-mail para o associado:</h4>
+			<h5>Informe brevemente os motivos desta avaliação</h5>
+			<form class="form-horizontal" method="POST" action="{{ url('/admin/validacao/email')}}">
+				{{ csrf_field() }}
+				<textarea name="mensagem" id="mensagem"> </textarea>
+				<br>
+				<input name="id" type="hidden" value="{{ $usuario[0]->id }}">
+				<button class="btn btn-success" type="submit">Enviar</button>
+			</form>
+		</div>
+	<div class="col-md-6">
+		<h4>E-mails enviados anteriormente</h4>
+
+	</div>
+</div>
+
 
 @endsection
