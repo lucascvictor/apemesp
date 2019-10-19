@@ -40,7 +40,6 @@
 		</div>
 		<div class="col-md-4">
 		</div>
-
 	</div>
 	<div class="col-xs-3 col-md-4 bs-wizard-step complete">
 		<div class="text-center bs-wizard-stepnum">Passo 1</div>
@@ -60,7 +59,7 @@
 		<div class="progress">
 			<div class="progress-bar"></div>
 		</div>
-		<a href="#" class="bs-wizard-dot"></a>
+		<a href="/admin/associados/perfil/{{ $usuario[0]->id }}" class="bs-wizard-dot"></a>
 		<div class="bs-wizard-info text-center">Cadastro dos dados pessoais</div>
 	</div>
 
@@ -73,11 +72,11 @@
 		<div class="progress">
 			<div class="progress-bar"></div>
 		</div>
-		<a href="#" class="bs-wizard-dot"></a>
+		<a href="/admin/associados/perfil/{{ $usuario[0]->id }}" class="bs-wizard-dot"></a>
 		<div class="bs-wizard-info text-center">Cadastro dos dados acadêmicos</div>
 	</div>
 	<div class="row">
-		
+
 	</div>
 	<div class="col-xs-3 col-md-4 bs-wizard-step @if($usuario[0]->id_cadastro > 3)
                                                     complete
@@ -88,7 +87,7 @@
 		<div class="progress">
 			<div class="progress-bar"></div>
 		</div>
-		<a href="#" class="bs-wizard-dot"></a>
+		<a href="/admin/associados/perfil/{{ $usuario[0]->id }}" class="bs-wizard-dot"></a>
 		<div class="bs-wizard-info text-center">Cadastro dos dados profissionais</div>
 	</div>
 
