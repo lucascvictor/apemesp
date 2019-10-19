@@ -40,10 +40,10 @@ class ValidacaoCadastralRepository
 
 	public function email($request)
 	{
-		$table            = new EmailsValidacao;
+		$table              = new EmailsValidacao;
         $table->id_user     = $request->id;
-        $table->mensagem   = $request->mensagem;
-        $table->created_at = date("Y-m-d H:i:s");
+        $table->mensagem    = $request->mensagem;
+        $table->created_at  = date("Y-m-d H:i:s");
         $table->save();
 
         return 1;

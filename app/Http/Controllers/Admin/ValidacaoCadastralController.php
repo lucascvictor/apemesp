@@ -52,13 +52,14 @@ class ValidacaoCadastralController extends Controller
     public function email(Request $request)
     {
         $user = User::findOrFail($request->id);
-
+        $validacao = new ValidacaoCadastralRepository;
         if($user) {
             Mail::send('emails.validacao_cadastral', ['mensagem' => $request->mensagem], function ($m) use ($user) {
                 $m->from('site.apemesp@gmail.com', 'APEMESP');
                 $m->to($user->email, $user->name)->subject('Avaliação de dados cadastrais!');
             });
             Session::flash('sucesso', 'O e-mail foi enviado!');
+            $validacao->email($request);
         } else {
             Session::flash('cuidado', 'Não foi possivel enviar o e-mail');
         }   
