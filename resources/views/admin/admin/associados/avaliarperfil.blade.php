@@ -110,13 +110,18 @@
 		<h4>Resultado da avaliação:</h4>
 		<form class="form-horizontal" method="POST" action="{{ url('/admin/validacao/status' )}}">
 			{{ csrf_field() }}
-			<select id="validacao" name="validacao">
+			<select class="form-horizontal" id="validacao" name="validacao">
 				<option value="1">Dados incompletos</option>
 				<option value="2">Informações falsas ou não coerentes</option>
 				<option value="3">Documentos ilegiveis</option>
 				<option value="4">Foto para reconhecimento do musicoterapeuta é inválida</option>
 				<option value="5">Informações válidas</option>
 			</select>
+			<br>
+			<label class="form-horizontal">Observações:</label>
+			<br>
+			<textarea name="observacoes" class="form-horizontal">
+			</textarea>
 			<br />
 			<input name="id" type="hidden" value="{{ $usuario[0]->id }}">
 			<button class="btn btn-success" type="submit">Salvar Avaliação</button>
@@ -124,6 +129,48 @@
 	</div>
 	<div class="col-md-6">
 		<h4>Histórico de avaliações</h4>
+		<div class="row">
+		<div class="table-responsive">
+				<table class="table table-hover table-striped">
+					<thead>
+						<tr>
+							<th>Avaliacao</th>
+							<th>Data da avaiacação</th>
+							<th>Observações</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($historico as $avaliacao)
+						<tr>
+							<?php
+							switch($avaliacao->status) {
+								case(1):
+									$avlc = "Dados incompletos";		
+									break;
+								case(2):
+									$avlc = "Informações falsas ou não coerentes";
+									break;
+								case(3):
+									$avlc = "Documentos ilegiveis";
+									break;
+								case(4):
+									$avlc = "Foto para reconhecimento do musicoterapeuta é inválida";
+									break;
+								case(5):
+									$avlc = "Informações válidas";
+									break;
+							}
+							?>
+							<td>{{ $avlc }}</td>
+							<td>{{ $avaliacao->observacoes }}</td>
+							<td>{{ $avaliacao->created_at }}</td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+				</div>
+			{!! $historico->appends(request()->query())->render() !!} 
+		</div>
 	</div>
 </div>
 <div class="row">

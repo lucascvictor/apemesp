@@ -39,13 +39,13 @@ class ValidacaoCadastralController extends Controller
 
         $documentacao = new DocumentacaoRepository;
         $validacao = new ValidacaoCadastralRepository;
-        $documentacao->changeCadastro($request->id, $request->validacao);
-
-        Session::flash('sucesso', 'O assunto foi adicionado com sucesso!');
-        return redirect()->route('show.assuntos');
+//        $documentacao->changeCadastro($request->id, $request->validacao);
+        $validacao->status($request->id, $request->validacao);
+        Session::flash('sucesso', 'A avaliação cadastral foi salva com sucesso!');
+        return redirect()->back();
     }
 
-    public function destroyAssunto($id)
+    public function email($id)
     {
         $assuntoRepository = new AssuntoRepository;
         $assuntoRepository->deleteAssunto($id);

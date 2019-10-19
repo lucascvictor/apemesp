@@ -16,6 +16,7 @@ class CreateAvaliacaoCadastral extends Migration
             $table->increments('id');
             $table->integer('id_user');
             $table->string('status');
+            $table->text('observacoes');
             $table->timestamps();
         });
     }

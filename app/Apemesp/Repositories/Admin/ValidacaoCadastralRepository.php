@@ -8,6 +8,8 @@ use Apemesp\Apemesp\Models\User;
 
 use Apemesp\Apemesp\Models\ValidacaoCadastral;
 
+use Apemesp\Apemesp\Models\EmailsValidacao;
+
 use DB;
 
 class ValidacaoCadastralRepository
@@ -15,23 +17,30 @@ class ValidacaoCadastralRepository
 
 	public function historico($id)
 	{
-        return ValidacaoCadastral::where('id_user', $id)->all();
+        return ValidacaoCadastral::where('id_user', $id)->paginate(10);
 	}
 
-	public function status($id_user)
+	public function status($id_user, $status)
 	{
-		return DB::table('anuidades')
-		->join('dados_pessoais', 'anuidades.id_user', '=', 'dados_pessoais.id_user')
-		->join('status_anuidade', 'status_anuidade.id', '=', 'anuidades.status')
-		->select('anuidades.*', 'dados_pessoais.name', 'dados_pessoais.cpf', 'status_anuidade.*')
-		->where('anuidades.id_user', '=', $id_user)
-		->orderBy('ano', 'asc')
-		->get();
-	}
+        $table             = new ValidacaoCadastral;
+        $table->id_user    = $id_user;
+        $table->status     = $status;
+        $table->created_at = date("Y-m-d H:i:s");
+        $table->save();
+
+        return 1;
+    }
+    
 
 	public function email($request)
 	{
-		return DB::table('emails_validacao');
+		$table            = new EmailsValidacao;
+        $table->id_user     = $request->id;
+        $table->mensagem   = $request->mensagem;
+        $table->created_at = date("Y-m-d H:i:s");
+        $table->save();
+
+        return 1;
 	}
 
 }
