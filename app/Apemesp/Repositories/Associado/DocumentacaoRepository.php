@@ -5,7 +5,6 @@ namespace Apemesp\Apemesp\Repositories\Associado;
 
 use Apemesp\Http\Requests;
 
-
 use Apemesp\Apemesp\Models\Documentacao;
 
 use Apemesp\Apemesp\Models\User;
