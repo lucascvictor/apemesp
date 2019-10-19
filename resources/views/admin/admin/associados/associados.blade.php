@@ -39,6 +39,7 @@
                      <td>{{ $associado->name }}</td>
                      <td>{{ $associado->cpf }}</td>
                      <td>{{ $associado->tel_celular }}</td>
+                     <td><a class="btn btn-warning" href="/admin/associados/perfil/avaliar/{{ $associado->id }}">Avaliar situação cadastral</a></td>
                      <td><a class="btn btn-default" href="/admin/associados/perfil/editar/{{ $associado->id }}">Alterar Dados Pessoais</a></td>
                      <td><a class="btn btn-primary" href="/admin/associados/perfil/{{ $associado->id_user }}">Visualizar Perfil</a></td>
                   </tr>
