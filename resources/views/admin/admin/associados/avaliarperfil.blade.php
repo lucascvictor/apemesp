@@ -164,7 +164,7 @@
 							?>
 							<td>{{ $avlc }}</td>
 							<td>{{ $avaliacao->created_at }}</td>
-							<td>{{ $avaliacao->observacoes }}</td>
+							<td><a data-toggle="modal" data-target="#observacaoModal{{ $avaliacao->id }}">Visualizar observação</a></td>
 						</tr>
 						@endforeach
 					</tbody>
@@ -199,9 +199,8 @@
 					</thead>
 					<tbody>
 						@foreach($emails as $email)
-							<td><a href="#{{ $email->id }}">Visualizar mensagem</a></td>
+							<td><a data-toggle="modal" data-target="#emailModal{{ $email->id }}">Visualizar mensagem</a></td>
 							<td>{{ $email->created_at }}</td>
-						</tr>
 						@endforeach
 					</tbody>
 				</table>
@@ -210,4 +209,11 @@
 	</div>
 </div>
 
+@foreach($emails as $email)
+	@include('admin.admin.associados.emailmodal')
+@endforeach
+
+@foreach($historico as $avaliacao)
+	@include('admin.admin.associados.observacaomodal')
+@endforeach
 @endsection
