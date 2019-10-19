@@ -100,4 +100,11 @@ class AssociadoRepository
 		return FormacoesAcademicas::where('id_usuario', $id)->select("*")->get();
 	}
 
+	public function getUser($id)
+	{
+		return DB::table('users')
+		->select('users.*')
+		->where('id', $id)->get();
+	}
+
 }
