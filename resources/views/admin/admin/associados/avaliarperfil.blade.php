@@ -136,7 +136,7 @@
 					<thead>
 						<tr>
 							<th>Avaliacao</th>
-							<th>Data da avaiacação</th>
+							<th>Data da avaliacação</th>
 							<th>Observações</th>
 						</tr>
 					</thead>
@@ -187,8 +187,26 @@
 			</form>
 		</div>
 	<div class="col-md-6">
-		<h4>E-mails enviados anteriormente</h4>
-
+		<h4>E-mails enviados</h4>
+		<div class="table-responsive">
+				<table class="table table-hover table-striped">
+					<thead>
+						<tr>
+							<th>Data de envio</th>
+							<th>Mensagem</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($historico as $avaliacao)
+							
+							<td>{{ $avaliacao->created_at }}</td>
+							<td><a href="{{ $avlc }}">Visualizar mensagem</a></td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+		</div>
+		{!! $historico->appends(request()->query())->render() !!}
 	</div>
 </div>
 
