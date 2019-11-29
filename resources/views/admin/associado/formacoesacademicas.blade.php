@@ -120,7 +120,7 @@
 														<div class="form-group">
 															<label class="col-md-4 control-label" for="nome">Titulo do TCC:</label>
 															<div class="col-md-4">
-																<input id="titulotcc" name="titulotcc" type="text" placeholder="TCC" class="form-control input-md" required="">
+																<input id="titulotcc" name="titulotcc" type="text" placeholder="TCC" class="form-control input-md">
 
 																</div>
 															</div>
