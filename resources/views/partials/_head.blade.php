@@ -1,11 +1,11 @@
 
 
 <title>APEMESP | Home</title>
-<link rel="icon" type="imagem/jpg" href="http://www.apemesp.com/public/images/posts/imagens/previas/apemesp.jpg" />
+<link rel="icon" type="imagem/jpg" href="http://www.apemesp.com.br/public/images/posts/imagens/previas/apemesp.jpg" />
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-social.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com.br/public/css/bootstrap-social.css">
 <style>
    .btn{
    background-color: #00CED1;
@@ -37,9 +37,9 @@
 <![endif] -->
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/font-awesome/css/font-awesome.min.css">
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/rodape.css">
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap-social.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com.br/public/font-awesome/css/font-awesome.min.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com.br/public/css/rodape.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com.br/public/css/bootstrap-social.css">
 <style type="text/css">
    .navbar .ul .li{
    background-color: transparent;
@@ -66,9 +66,9 @@
 </style>
 </head>
 <!-- CSS NOVO -->
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/style_new.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com.br/public/css/style_new.css">
 <!-- CSS NOVO -->
-<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/main.css">
+<link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com.br/public/css/main.css">
 <script type=”text/javascript”>
    function submitenter(myfield,e)
    {

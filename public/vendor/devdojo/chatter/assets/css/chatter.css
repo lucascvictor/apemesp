@@ -32,7 +32,7 @@ body {
   outline: none;
 }
 #chatter #chatter_hero {
-  background-image: url('http://apemesp.com/public/vendor/devdojo/chatter/assets/images/hero_bg.jpg');
+  background-image: url('http://apemesp.com.br/public/vendor/devdojo/chatter/assets/images/hero_bg.jpg');
   width: 100%;
   min-height: 150px;
   position: relative;
@@ -904,8 +904,8 @@ div.mce-edit-area {
 /********** FONTS USED FOR CHATTER **********/
 @font-face {
   font-family: "chatter";
-  src: url("http://apemesp.com/public/vendor/devdojo/chatter/assets/fonts/chatter.eot");
-  src: url("http://apemesp.com/public/vendor/devdojo/chatter/assets/fonts/chatter.eot?#iefix") format("embedded-opentype"), url("http://apemesp.com/public/vendor/devdojo/chatter/assets/fonts/chatter.woff") format("woff"), url("http://apemesp.com/public/vendor/devdojo/chatter/assets/fonts/chatter.ttf") format("truetype"), url("http://apemesp.com/public/vendor/devdojo/chatter/assets/fonts/chatter.svg#chatter") format("svg");
+  src: url("http://apemesp.com.br/public/vendor/devdojo/chatter/assets/fonts/chatter.eot");
+  src: url("http://apemesp.com.br/public/vendor/devdojo/chatter/assets/fonts/chatter.eot?#iefix") format("embedded-opentype"), url("http://apemesp.com.br/public/vendor/devdojo/chatter/assets/fonts/chatter.woff") format("woff"), url("http://apemesp.com.br/public/vendor/devdojo/chatter/assets/fonts/chatter.ttf") format("truetype"), url("http://apemesp.com.br/public/vendor/devdojo/chatter/assets/fonts/chatter.svg#chatter") format("svg");
   font-weight: normal;
   font-style: normal;
 }

@@ -4,11 +4,11 @@
 
 @section('extrastyle')
 
-<script type="text/javascript" src="http://apemesp.com/public/js/modernizr.js') }}"></script>
+<script type="text/javascript" src="http://apemesp.com.br/public/js/modernizr.js') }}"></script>
 
-<link rel="stylesheet" type="text/css" href="http://apemesp.com/public/css/timeline.css" >
+<link rel="stylesheet" type="text/css" href="http://apemesp.com.br/public/css/timeline.css" >
 
-<link rel="stylesheet" type="text/css" href="http://apemesp.com/public/css/timeline_components.css">
+<link rel="stylesheet" type="text/css" href="http://apemesp.com.br/public/css/timeline_components.css">
 
 <style type="text/css">
 	.cd-timeline-navigation a::after {
@@ -70,7 +70,7 @@
 
 
 @section('extrascript')
-<script type="text/javascript" src="http://apemesp.com/public/js/timeline.js">	
+<script type="text/javascript" src="http://apemesp.com.br/public/js/timeline.js">	
 
 </script>
 
