@@ -4,7 +4,7 @@
 
 @section('extrastyle')
 
-  <script src="http://apemesp.com/public/ckeditor/ckeditor.js "></script>
+  <script src="http://apemesp.com.br/public/ckeditor/ckeditor.js "></script>
 
 @endsection
 

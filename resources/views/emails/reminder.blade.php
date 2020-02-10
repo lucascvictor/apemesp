@@ -8,7 +8,7 @@
     <body>
         <p>Confirmação de cadastro.</p>
         <p>Por favor clique no link abaixo para confirmar a sua inscrição.</p>
-        <a href="http://apemesp.com/confirm/{{ $confirmCode }}"> Confirmação de cadastro APEMESP</a>
+        <a href="http://apemesp.com.br/confirm/{{ $confirmCode }}"> Confirmação de cadastro APEMESP</a>
         <br>
         <br>
         <br>
@@ -18,7 +18,7 @@
         <p>para divulgação no site desta entidade e outras atividades e mídias por ela desenvolvidas..</p>
 
         <p>
-            <img src="http://apemesp.com/images/posts/imagens/previas/apemesp.jpg" width="200px" height="100px"></img>
+            <img src="http://apemesp.com.br/images/posts/imagens/previas/apemesp.jpg" width="200px" height="100px"></img>
         </P>
         <p>
             <b>Desconsidere esta mensagem, caso não pertença a você.</b>

@@ -1,8 +1,8 @@
 @extends(Config::get('chatter.master_file_extend'))
 
 @section(Config::get('chatter.yields.head'))
-	<link href="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/css/chatter.css" rel="stylesheet">
-	<link href="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/css/simplemde.min.css" rel="stylesheet">
+	<link href="http://www.apemesp.com.br/public/vendor/devdojo/chatter/assets/css/chatter.css" rel="stylesheet">
+	<link href="http://www.apemesp.com.br/public/vendor/devdojo/chatter/assets/css/simplemde.min.css" rel="stylesheet">
 @stop
 
 
@@ -320,6 +320,6 @@
 
 
 </script>
-<script src="http://www.apemesp.com/public/vendor/devdojo/chatter/assets/js/chatter.js"></script>
+<script src="http://www.apemesp.com.br/public/vendor/devdojo/chatter/assets/js/chatter.js"></script>
 
 @stop

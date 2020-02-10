@@ -1,7 +1,7 @@
 @section('extrastyle')
 
      {!! Html::style('public/css/bootstrap.min.css') !!}-->
-    <link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com/public/css/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://www.apemesp.com.br/public/css/bootstrap.min.css">
     <style>
         @media print {
             * {

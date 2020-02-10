@@ -4,7 +4,7 @@
 
 @section('extrastyle')
 
-<script src="http://apemesp.com/public/quill/quill.js "></script>
+<script src="http://apemesp.com.br/public/quill/quill.js "></script>
 <!-- Main Quill library -->
 {!! Html::script('//cdn.quilljs.com/1.3.6/quill.js') !!}
 {!! Html::script('//cdn.quilljs.com/1.3.6/quill.min.js') !!}

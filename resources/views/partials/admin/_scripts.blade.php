@@ -11,17 +11,17 @@
     {!! Html::script('public/js/plugins/morris/morris-data.js') !!}
     -->
 
-    <script src="http://www.apemesp.com/public/js/plugins/morris/raphael.min.js"></script>
-    <script src="http://www.apemesp.com/public/js/plugins/morris/morris.min.js"></script>
-    <script src="http://www.apemesp.com/public/js/plugins/morris/morris-data.js"></script>
+    <script src="http://www.apemesp.com.br/public/js/plugins/morris/raphael.min.js"></script>
+    <script src="http://www.apemesp.com.br/public/js/plugins/morris/morris.min.js"></script>
+    <script src="http://www.apemesp.com.br/public/js/plugins/morris/morris-data.js"></script>
 
     <!--
     {!! Html::script('public/js/bootstrap-datetimepicker.js') !!}
     {!! Html::script('public/js/locales/bootstrap-datetimepicker.br.js') !!}
     -->
 
-    <script src="http://www.apemesp.com/public/js/bootstrap-datetimepicker.js"></script>
-    <script src="http://www.apemesp.com/public/js/locales/bootstrap-datetimepicker.br.js"></script>
+    <script src="http://www.apemesp.com.br/public/js/bootstrap-datetimepicker.js"></script>
+    <script src="http://www.apemesp.com.br/public/js/locales/bootstrap-datetimepicker.br.js"></script>
 
 
 <script type="text/javascript">
